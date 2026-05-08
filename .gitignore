@@ -9,5 +9,6 @@ CLAUDE.md
 scripts/*
 !scripts/convert-order-to-meta.ts
 !scripts/generate-link-graph.ts
+!scripts/mirror-zh-cn-to-zh-hk.ts
 .playwright-mcp
 graphrag_quickstart

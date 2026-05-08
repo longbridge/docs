@@ -27,8 +27,10 @@ export default defineConfig({
     ],
   },
   // 旧 VitePress 的 .vitepress 与 README 排除在内容路由外
+  // cleanUrls: true 让 nav/sidebar/语言切换器生成的链接全部不带 .html 后缀
   route: {
     exclude: ['**/.vitepress/**', '**/README.md'],
+    cleanUrls: true,
   },
   themeConfig: {
     enableContentAnimation: false,
@@ -51,7 +53,6 @@ export default defineConfig({
         searchPlaceholderText: 'Search docs',
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'Docs', link: '/docs/' },
           { text: 'Developers', link: 'https://open.longbridge.com' },
         ],
       },
@@ -66,7 +67,6 @@ export default defineConfig({
         searchPlaceholderText: '搜索文档',
         nav: [
           { text: '首页', link: '/zh-CN/' },
-          { text: '文档', link: '/zh-CN/docs/' },
           { text: 'Developers', link: 'https://open.longbridge.com' },
         ],
       },
