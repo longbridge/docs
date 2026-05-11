@@ -85,7 +85,7 @@
 /* Results list */
 .VPLocalSearchBox .results,
 .dark .VPLocalSearchBox .results {
-  padding: 8px 10px 12px;
+  padding: 5px 8px 8px;
   background: transparent !important;
 }
 
@@ -95,7 +95,7 @@
   border-radius: 10px !important;
   background: transparent !important;
   margin-bottom: 1px;
-  padding: 10px 12px !important;
+  padding: 7px 10px !important;
   outline: none !important;
   transition: background 0.1s;
 }
@@ -119,7 +119,7 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 1px !important;
+  gap: 0px !important;
 }
 
 /* Hide the # icon */
@@ -157,8 +157,87 @@
 .dark .VPLocalSearchBox .excerpt {
   font-size: 12px !important;
   color: rgba(0, 0, 0, 0.42) !important;
-  margin-top: 3px !important;
-  line-height: 1.55 !important;
+  margin-top: 2px !important;
+  line-height: 1.5 !important;
+}
+
+/* Custom blocks (tip/info/warning/danger/steps) inside excerpts — strip heavy bg */
+.VPLocalSearchBox .excerpt .custom-block,
+.dark .VPLocalSearchBox .excerpt .custom-block {
+  background: transparent !important;
+  border: none !important;
+  border-left: 2px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 0 3px 3px 0 !important;
+  padding: 1px 6px !important;
+  margin: 2px 0 !important;
+}
+
+.VPLocalSearchBox .excerpt .custom-block-title,
+.dark .VPLocalSearchBox .excerpt .custom-block-title {
+  display: none !important;
+}
+
+.VPLocalSearchBox .excerpt .custom-block p,
+.VPLocalSearchBox .excerpt .custom-block li,
+.dark .VPLocalSearchBox .excerpt .custom-block p,
+.dark .VPLocalSearchBox .excerpt .custom-block li {
+  color: rgba(0, 0, 0, 0.42) !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+}
+
+/* Steps container */
+.VPLocalSearchBox .excerpt .steps,
+.dark .VPLocalSearchBox .excerpt .steps {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.VPLocalSearchBox .excerpt .steps > ol,
+.dark .VPLocalSearchBox .excerpt .steps > ol {
+  counter-reset: none;
+  list-style: decimal !important;
+}
+
+/* Lists inside excerpts */
+.VPLocalSearchBox .excerpt ol,
+.VPLocalSearchBox .excerpt ul,
+.dark .VPLocalSearchBox .excerpt ol,
+.dark .VPLocalSearchBox .excerpt ul {
+  padding-left: 14px !important;
+  margin: 1px 0 !important;
+}
+
+.VPLocalSearchBox .excerpt li,
+.dark .VPLocalSearchBox .excerpt li {
+  margin: 0 !important;
+  font-size: 12px !important;
+  color: rgba(0, 0, 0, 0.42) !important;
+}
+
+/* Code blocks in excerpts */
+.VPLocalSearchBox .excerpt pre,
+.dark .VPLocalSearchBox .excerpt pre {
+  display: none !important;
+}
+
+/* Tables in excerpts */
+.VPLocalSearchBox .excerpt table,
+.dark .VPLocalSearchBox .excerpt table {
+  font-size: 11px !important;
+  margin: 2px 0 !important;
+  width: auto !important;
+}
+
+.VPLocalSearchBox .excerpt th,
+.VPLocalSearchBox .excerpt td,
+.dark .VPLocalSearchBox .excerpt th,
+.dark .VPLocalSearchBox .excerpt td {
+  padding: 1px 6px !important;
+  background: transparent !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Keyword highlight */

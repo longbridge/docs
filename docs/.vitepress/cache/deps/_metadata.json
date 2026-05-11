@@ -1,0 +1,127 @@
+{
+  "hash": "05a11d80",
+  "configHash": "1a350d49",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "c6dabdcb",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "c91224bb",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "9aa6bbd8",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/vitepress/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "dfed93d0",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/integrations/useFocusTrap": {
+      "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
+      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+      "fileHash": "54134c48",
+      "needsInterop": false
+    },
+    "vitepress > mark.js/src/vanilla.js": {
+      "src": "../../../../node_modules/mark.js/src/vanilla.js",
+      "file": "vitepress___mark__js_src_vanilla__js.js",
+      "fileHash": "b8f3fcf3",
+      "needsInterop": false
+    },
+    "vitepress > minisearch": {
+      "src": "../../../../node_modules/minisearch/dist/es/index.js",
+      "file": "vitepress___minisearch.js",
+      "fileHash": "864dbc28",
+      "needsInterop": false
+    },
+    "fetch-event-stream": {
+      "src": "../../../../node_modules/fetch-event-stream/esm/mod.js",
+      "file": "fetch-event-stream.js",
+      "fileHash": "8167399d",
+      "needsInterop": false
+    },
+    "markstream-vue": {
+      "src": "../../../../node_modules/markstream-vue/dist/index.js",
+      "file": "markstream-vue.js",
+      "fileHash": "ff7bee64",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../../node_modules/@vueuse/core/dist/index.js",
+      "file": "@vueuse_core.js",
+      "fileHash": "8097d337",
+      "needsInterop": false
+    },
+    "lucide-vue-next": {
+      "src": "../../../../node_modules/lucide-vue-next/dist/esm/lucide-vue-next.js",
+      "file": "lucide-vue-next.js",
+      "fileHash": "8e966fb0",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "index7-CGAZDPXO": {
+      "file": "index7-CGAZDPXO.js"
+    },
+    "__vite-optional-peer-dep_stream-markdown_markstream-vue-AUZBV3JS": {
+      "file": "__vite-optional-peer-dep_stream-markdown_markstream-vue-AUZBV3JS.js"
+    },
+    "CodeBlockNode-B7QSHBUD": {
+      "file": "CodeBlockNode-B7QSHBUD.js"
+    },
+    "chunk-OXCUENKG": {
+      "file": "chunk-OXCUENKG.js"
+    },
+    "index4-QF3KIZQO": {
+      "file": "index4-QF3KIZQO.js"
+    },
+    "infographic_markstream-vue-5PAKC3DQ": {
+      "file": "infographic_markstream-vue-5PAKC3DQ.js"
+    },
+    "index5-XBSX6WJD": {
+      "file": "index5-XBSX6WJD.js"
+    },
+    "index6-GEAYPF5B": {
+      "file": "index6-GEAYPF5B.js"
+    },
+    "d2_markstream-vue-WXVM7MSO": {
+      "file": "d2_markstream-vue-WXVM7MSO.js"
+    },
+    "__vite-optional-peer-dep_mermaid_markstream-vue-33EYC5JA": {
+      "file": "__vite-optional-peer-dep_mermaid_markstream-vue-33EYC5JA.js"
+    },
+    "__vite-optional-peer-dep_katex_markstream-vue-2FFTFGQT": {
+      "file": "__vite-optional-peer-dep_katex_markstream-vue-2FFTFGQT.js"
+    },
+    "mhchem_markstream-vue-FAVB5Q72": {
+      "file": "mhchem_markstream-vue-FAVB5Q72.js"
+    },
+    "index2-UUL5H4G2": {
+      "file": "index2-UUL5H4G2.js"
+    },
+    "index3-35QX5BG4": {
+      "file": "index3-35QX5BG4.js"
+    },
+    "__vite-optional-peer-dep_stream-monaco_markstream-vue-LMH2SPQP": {
+      "file": "__vite-optional-peer-dep_stream-monaco_markstream-vue-LMH2SPQP.js"
+    },
+    "extended-76T3QQPL": {
+      "file": "extended-76T3QQPL.js"
+    },
+    "chunk-VF4QCHVU": {
+      "file": "chunk-VF4QCHVU.js"
+    },
+    "chunk-URVHZSMY": {
+      "file": "chunk-URVHZSMY.js"
+    },
+    "chunk-7N2WBUNW": {
+      "file": "chunk-7N2WBUNW.js"
+    }
+  }
+}

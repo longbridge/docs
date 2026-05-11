@@ -182,9 +182,24 @@
 #VPContent {
   transition: margin-right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+.VPNav {
+  transition: right 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-@media (min-width: 481px) {
+/* Tablet and above: push content, shrink nav */
+@media (min-width: 769px) {
   html.ai-drawer-open #VPContent {
     margin-right: 380px;
+  }
+  html.ai-drawer-open .VPNav {
+    right: 380px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #VPContent,
+  .VPNav {
+    transition: none !important;
   }
 }
