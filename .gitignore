@@ -7,3 +7,6 @@ CLAUDE.md
 scripts/*
 .playwright-mcp
 graphrag_quickstart
+.superpowers/
+.impeccable/
+docs/superpowers/
