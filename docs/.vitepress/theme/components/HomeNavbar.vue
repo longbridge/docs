@@ -3,11 +3,9 @@ import { computed } from 'vue'
 import { useRoute, inBrowser } from 'vitepress'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
 import { useAIModal } from '../composables/useAIModal'
-import { useColorMode } from '../composables/useColorMode'
 
 const route = useRoute()
-const { modalOpen, toggleAIModal } = useAIModal()
-const { isDark, toggle: toggleColorMode } = useColorMode()
+const { toggleAIModal } = useAIModal()
 
 const activeTab = computed(() => {
   const p = route.path
@@ -71,39 +69,6 @@ function openSearch() {
               <path d="M6 4H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-2M9 4h3v3M9 7l3-3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-
-          <!-- 主题切换 -->
-          <button
-            class="hn-icon-btn"
-            :title="isDark ? '切换到亮色模式' : '切换到暗色模式'"
-            :aria-label="isDark ? '切换到亮色模式' : '切换到暗色模式'"
-            @click="toggleColorMode"
-          >
-            <svg v-if="!isDark" class="hn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <circle cx="8" cy="8" r="3"/>
-              <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.22 3.22l1.06 1.06M11.72 11.72l1.06 1.06M3.22 12.78l1.06-1.06M11.72 4.28l1.06-1.06"/>
-            </svg>
-            <svg v-else class="hn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 9A7 7 0 0 1 7 3c0-.49.05-.97.14-1.43A7.001 7.001 0 1 0 14.43 8.86A7.03 7.03 0 0 1 13 9z"/>
-            </svg>
-          </button>
-
-          <!-- Assistant 抽屉切换 -->
-          <button
-            class="hn-icon-btn"
-            :title="modalOpen ? '关闭 AI 助手' : '打开 AI 助手'"
-            :aria-label="modalOpen ? '关闭 AI 助手' : '打开 AI 助手'"
-            :class="{ 'hn-icon-btn--active': modalOpen }"
-            @click="toggleAIModal"
-          >
-            <svg v-if="modalOpen" class="hn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M12 4L4 12M4 4l8 8"/>
-            </svg>
-            <svg v-else class="hn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="1" y="2" width="14" height="12" rx="2"/>
-              <path d="M10 2v12"/>
-            </svg>
-          </button>
 
           <!-- 登录 -->
           <a href="https://longbridgeapp.com/login" class="hn-register" target="_blank" rel="noopener">登录</a>

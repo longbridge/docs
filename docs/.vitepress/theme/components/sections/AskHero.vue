@@ -40,14 +40,6 @@ function browseAllDocs() {
     <div class="ask-hero__bg" aria-hidden="true" />
 
     <div class="ask-hero__inner">
-      <!-- 顶部 badge -->
-      <div class="ask-hero__badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" />
-        </svg>
-        长桥帮助中心&nbsp;·&nbsp;AI 原生&nbsp;·&nbsp;每日同步
-      </div>
-
       <!-- 主标题：两行 -->
       <div class="ask-hero__heading">
         <h1 class="ask-hero__title">
@@ -187,21 +179,6 @@ function browseAllDocs() {
   flex-direction: column;
   align-items: center;
   gap: 32px;
-}
-
-/* ─── Badge ─── */
-.ask-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 16px;
-  border: 1px solid rgba(0, 184, 184, 0.35);
-  border-radius: 99px;
-  background: rgba(0, 184, 184, 0.06);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--vp-c-brand-1);
-  line-height: 1;
 }
 
 /* ─── 标题 ─── */

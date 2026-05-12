@@ -1382,7 +1382,7 @@ html.ai-resizing #VPContent {
     @apply flex items-center gap-2 h-8 min-w-56 py-0 px-3.5 text-sm font-medium;
     background: var(--vp-c-bg-soft);
     border: 1px solid var(--vp-c-border);
-    border-radius: 6px;
+    border-radius: 99px;
     cursor: pointer;
     color: var(--vp-c-text-3);
     white-space: nowrap;
@@ -1503,7 +1503,7 @@ html.ai-resizing #VPContent {
   }
 
   .hn-bottom-inner {
-    @apply max-w-screen-2xl max-lg:px-6 px-3 w-full h-full flex items-center justify-between;
+    @apply max-w-7xl w-full mx-auto px-6 h-full flex items-center justify-between;
   }
 
   .hn-tabs {
