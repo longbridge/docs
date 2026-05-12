@@ -1708,41 +1708,7 @@ html.ai-resizing #VPContent {
   border-left-color: var(--vp-c-brand-2);
 }
 
-/* F.6 — Aside AI 卡片（AI 模块常驻深色调色板，不随主题切换，走 --lb-ai-* token） */
-.lb-aside-ai {
-  margin-top: 24px;
-  padding: 14px;
-  border: 1px solid var(--lb-ai-border);
-  border-radius: 12px;
-  background: var(--lb-ai-surface);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.lb-aside-ai__title {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--lb-ai-text-2);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.lb-aside-ai__btn {
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: var(--lb-ai-accent);
-  color: var(--lb-ai-on-accent);
-  border: 0;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: filter .15s;
-}
-.lb-aside-ai__btn:hover { filter: brightness(0.92); }
-.lb-aside-ai__hint { font-size: 11px; color: var(--lb-ai-text-3); }
-
-/* F.7 — 桌面端隐藏右下浮动 FAB（AsideAI 卡片承担） */
+/* F.7 — 移动端浮动 FAB 桌面隐藏 */
 @media (min-width: 960px) {
   .ai-fab-mobile { display: none !important; }
 }

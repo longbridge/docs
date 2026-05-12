@@ -57,8 +57,6 @@ watch(modalOpen, (open) => {
       <!-- <Breadcrumb /> -->
       <PageHero v-if="isDocPage" />
     </template>
-    <template #aside-outline-after>
-    </template>
     <template #doc-after>
       <PageFeedback v-if="isDocPage" />
     </template>
