@@ -1188,8 +1188,24 @@ html.ai-resizing #VPContent {
     transition: border-color 0.15s;
   }
   .hn-icon-btn:hover { border-color: var(--vp-c-divider); }
-  .hn-icon { width: 12px; height: 12px; flex-shrink: 0; }
-  .hn-auth { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .hn-icon-btn--active { background: var(--vp-c-default-soft); border-color: var(--vp-c-divider); color: var(--vp-c-text-1); }
+  .hn-icon { width: 14px; height: 14px; flex-shrink: 0; }
+  .hn-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .hn-dev-platform {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+  }
+  .hn-dev-platform:hover { color: var(--vp-c-text-1); background: var(--vp-c-default-soft); }
   .hn-login {
     height: 32px;
     padding: 0 14px;
@@ -1540,7 +1556,8 @@ html.ai-resizing #VPContent {
     .tasks-grid { grid-template-columns: 1fr; }
     .hero-onboard { flex-direction: column; align-items: flex-start; gap: 10px; }
     .hn-search-label { display: none; }
-    .hn-auth .hn-register { display: none; }
+    .hn-dev-platform { display: none; }
+    .hn-actions .hn-register { display: none; }
     .hn-bottom-bar { display: none; }
   }
   @media (max-width: 640px) {
@@ -1611,7 +1628,7 @@ html.ai-resizing #VPContent {
 }
 
 /* ============================================================
-   详情页优化 — 三栏布局 & Hero & TOC & AsideAI
+   详情页优化 — 三栏布局 & Hero & TOC
    ============================================================ */
 
 /* F.2 — 三栏布局尺寸 */

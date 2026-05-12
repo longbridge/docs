@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, inBrowser } from 'vitepress'
 
 const route = useRoute()
 const submitted = ref(false)
 
 watch(() => route.path, () => {
+  if (!inBrowser) return
   const stored = localStorage.getItem(`lb-feedback:${route.path}`)
   submitted.value = !!stored
 }, { immediate: true })
 
 function vote(type: 'up' | 'down') {
+  if (!inBrowser) return
   localStorage.setItem(`lb-feedback:${route.path}`, type)
   submitted.value = true
 }

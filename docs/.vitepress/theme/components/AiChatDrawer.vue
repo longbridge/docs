@@ -272,7 +272,7 @@ function toggleExpand() {
         </div>
       </div>
       <!-- Disclaimer -->
-      <p class="ai-disclaimer">基于 AI 生成，结果仅供参考，可能存在偏差。</p>
+      <p class="ai-disclaimer">Responses are generated using AI and may contain mistakes.</p>
 
       <!-- Messages -->
       <div ref="messagesRef" class="ai-messages" aria-live="polite" aria-atomic="false" @scroll="checkAtBottom">
@@ -466,10 +466,11 @@ function toggleExpand() {
 /* Disclaimer */
 .ai-disclaimer {
   margin: 0;
-  padding: 6px 20px 10px;
+  padding: 10px 20px 12px;
   font-size: 12px;
   line-height: 1.5;
   color: var(--vp-c-text-3);
+  text-align: center;
   border-bottom: 0.5px solid var(--vp-c-divider);
   flex-shrink: 0;
 }
@@ -664,7 +665,7 @@ function toggleExpand() {
 }
 .ai-input-box {
   border: 1px solid var(--vp-c-border);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--vp-c-bg);
   padding: 12px 14px 10px;
   display: flex;
