@@ -168,8 +168,8 @@
 
 .custom-nav-layout .VPSidebar {
   top: var(--hn-height, 112px);
-  /* 滚动区域从 header 底部开始，内容 padding 只保留间距 */
-  padding-top: 48px;
+  padding-top: 32px;
+  /* padding-left / right 由 @media (min-width: 1280px) 接管，不在此写死 */
 }
 
 .custom-nav-layout .VPLocalNav {
@@ -232,10 +232,6 @@
    ============================================================ */
 
 @layer components {
-  :root {
-    --vp-sidebar-width: 300px;
-  }
-
   .VPSidebar {
     outline: none;
     background: transparent !important;
@@ -312,11 +308,11 @@
     color: var(--vp-c-text-1);
   }
 
-  /* ─── Leaf links (VPLink) ────────────────────────────────── */
+  /* ─── Leaf links (VPLink，适用所有层级叶节点）────────────── */
 
   .VPSidebarItem .VPLink {
-    border-radius: 12px;
-    @apply pt-1.5 pr-3 pb-1.5 pl-4 flex items-center text-sm;
+    border-radius: 8px;
+    @apply pt-1.5 pr-3 pb-1.5 pl-3 flex items-center text-sm;
     color: #3e3e3e;
     transition:
       background 0.12s,
@@ -331,38 +327,71 @@
     @apply pt-0 pb-0 m-0;
   }
 
+  /* hover：与 level-0/1 统一用 default-soft */
   .VPSidebarItem .VPLink:hover {
-    background: rgba(75, 85, 99, 0.07);
+    background: var(--vp-c-default-soft);
     color: var(--vp-c-text-1);
   }
 
-  /* ─── Active leaf ────────────────────────────────────────── */
+  /* ─── Active ─────────────────────────────────────────────── */
 
+  /* is-active section header（非叶节点）不高亮背景 */
   .VPSidebarItem.is-active > .item > .link {
     background: transparent;
-    border-radius: 0;
+    border-radius: 8px;
   }
 
-  /* 只高亮真正的叶节点链接（level-1+），且用直接子选择器防止蔓延到子 section */
+  /* 叶节点 active：灰色背景 + 加粗，所有层级（level-1/2/3…）统一处理 */
   .VPSidebar .VPSidebarItem.is-active.is-link:not(.level-0) > .item > .VPLink {
-    background: var(--vp-c-brand-soft) !important;
-    color: var(--vp-c-brand-1) !important;
-    font-weight: 500;
-    border-radius: 12px !important;
+    background: rgba(75, 85, 99, 0.12) !important;
+    color: var(--vp-c-text-1) !important;
+    font-weight: 600;
+    border-radius: 8px !important;
   }
 
+  /* active 时 hover 保持 active 背景不淡出 */
   .VPSidebar .VPSidebarItem.is-active.is-link:not(.level-0) > .item > .VPLink:hover {
-    background: var(--vp-c-brand-soft) !important;
-    color: var(--vp-c-brand-1) !important;
+    background: rgba(75, 85, 99, 0.16) !important;
+    color: var(--vp-c-text-1) !important;
   }
 
-  /* level-0 section header 即使是链接且 active，也不高亮 */
+  /* level-0 section header 即使 active 也不高亮 */
   .VPSidebar .VPSidebarItem.level-0.is-active > .item > .VPLink,
   .VPSidebar .VPSidebarItem.level-0.is-active > .item > .link {
     background: transparent !important;
     color: var(--vp-c-text-1) !important;
     text-shadow: none !important;
   }
+}
+
+/* ============================================================
+   覆盖 VitePress VPSidebarItem.vue scoped 样式
+   （scoped CSS 优先级高于 @layer，须放在 layer 外）
+   ============================================================ */
+
+/* 隐藏品牌色竖线指示器 */
+.VPSidebarItem .indicator {
+  display: none !important;
+}
+
+/* active 叶节点文字不用品牌色 */
+.VPSidebarItem.level-0.is-active > .item .link > .text,
+.VPSidebarItem.level-1.is-active > .item .link > .text,
+.VPSidebarItem.level-2.is-active > .item .link > .text,
+.VPSidebarItem.level-3.is-active > .item .link > .text,
+.VPSidebarItem.level-4.is-active > .item .link > .text,
+.VPSidebarItem.level-5.is-active > .item .link > .text {
+  color: var(--vp-c-text-1) !important;
+}
+
+/* hover 叶节点文字不用品牌色 */
+.VPSidebarItem.level-0.is-link > .item > .link:hover .text,
+.VPSidebarItem.level-1.is-link > .item > .link:hover .text,
+.VPSidebarItem.level-2.is-link > .item > .link:hover .text,
+.VPSidebarItem.level-3.is-link > .item > .link:hover .text,
+.VPSidebarItem.level-4.is-link > .item > .link:hover .text,
+.VPSidebarItem.level-5.is-link > .item > .link:hover .text {
+  color: var(--vp-c-text-1) !important;
 }
 
 /* ============================================================
@@ -1594,7 +1623,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-bottom-inner {
-    @apply max-w-7xl w-full mx-auto px-3 h-full flex items-center justify-between;
+    @apply max-w-7xl w-full mx-auto px-6 h-full flex items-center justify-between;
   }
 
   .hn-tabs {
@@ -2610,9 +2639,30 @@ html.ai-resizing .hn-root {
 /* F.2 — 三栏布局尺寸 */
 :root {
   --hn-height: 112px;
-  --vp-sidebar-width: 288px;
-  --vp-aside-width: 272px;
+  --vp-layout-max-width: 1280px;   /* 与 header max-w-7xl 一致 */
+  --vp-sidebar-width: 256px;       /* 收紧体宽，缩短 sidebar 与 body 间距 */
+  --vp-aside-width: 224px;         /* 同步收紧右栏 */
   --vp-sidebar-bg-color: transparent;
+}
+
+/* 把 VitePress 默认 1440 居中规则下沉到 1280，与 header max-w-7xl 对齐 */
+@media (min-width: 1280px) {
+  .VPSidebar {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + 24px) !important;
+    width: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)) !important;
+    padding-right: 0 !important;
+  }
+
+  .VPContent.has-sidebar {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)) !important;
+    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 24px) !important;
+  }
+
+  /* VPDoc 自带 padding:32px，在宽屏下清零，让右侧 TOC 右缘对齐 header 右缘 */
+  .VPDoc {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 .VPDoc .content-container .content {
@@ -2733,7 +2783,7 @@ html.ai-resizing .hn-root {
 
 .VPDocAside {
   @apply text-sm;
-  padding-right: 32px;
+  padding-right: 0; /* 右外间距由 VPContent padding-right 统一管控 */
 }
 
 .VPDocAside .content {
