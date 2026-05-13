@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import type { Ref } from 'vue'
-import SegmentedControl from '../ui/SegmentedControl.vue'
+import Tabs from '../ui/Tabs.vue'
 import { markets, type Market } from '../../data/journey'
 import { useI18n } from '../../../i18n/useI18n'
 
@@ -18,7 +18,8 @@ function updateMarket(value: string) {
     <div class="journey-header__inner">
       <div class="journey-header__top">
         <h2 class="journey-header__title">{{ t('journey.heading') }}</h2>
-        <SegmentedControl
+        <Tabs
+          variant="pills"
           :model-value="activeMarketRef"
           :tabs="markets"
           class="journey-header__market"

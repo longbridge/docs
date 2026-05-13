@@ -1,0 +1,19 @@
+{
+  "$schema": "https://shadcn-vue.com/schema.json",
+  "style": "default",
+  "typescript": true,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "docs/.vitepress/theme/tailwind.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "ui": "@/components/ui",
+    "composables": "@/composables",
+    "lib": "@/lib",
+    "utils": "@/lib/utils"
+  },
+  "iconLibrary": "lucide"
+}

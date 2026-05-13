@@ -24,6 +24,35 @@
 }
 
 /* ============================================================
+   shadcn-vue CSS variable tokens — 映射到 VitePress 变量
+   .dark 覆盖由 VitePress 已处理（在下面的 .dark {} 块中），无需重复定义
+   ============================================================ */
+@layer base {
+  :root {
+    --background: var(--vp-c-bg);
+    --foreground: var(--vp-c-text-1);
+    --card: var(--vp-c-bg-soft);
+    --card-foreground: var(--vp-c-text-1);
+    --popover: var(--vp-c-bg-elv);
+    --popover-foreground: var(--vp-c-text-1);
+    --primary: var(--vp-c-brand-1);
+    --primary-foreground: var(--vp-c-bg);
+    --secondary: var(--vp-c-bg-soft);
+    --secondary-foreground: var(--vp-c-text-1);
+    --muted: var(--vp-c-bg-mute, var(--vp-c-bg-soft));
+    --muted-foreground: var(--vp-c-text-2);
+    --accent: var(--vp-c-bg-soft);
+    --accent-foreground: var(--vp-c-text-1);
+    --destructive: var(--lb-c-danger);
+    --destructive-foreground: var(--vp-c-bg);
+    --border: var(--vp-c-divider);
+    --input: var(--vp-c-border);
+    --ring: var(--vp-c-brand-1);
+    --radius: 0.5rem;
+  }
+}
+
+/* ============================================================
    Longbridge Docs — 颜色 Token 体系（Longbridge UX 5.0 / DESIGN.md 对齐）
    ============================================================ */
 
