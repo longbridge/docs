@@ -6,7 +6,6 @@ import AnswerShowcase from './sections/AnswerShowcase.vue'
 import NewUserPath from './sections/NewUserPath.vue'
 import JourneyHeader from './sections/JourneyHeader.vue'
 import TaskIndex from './sections/TaskIndex.vue'
-import CategoryGroups from './sections/CategoryGroups.vue'
 import FooterMini from './sections/FooterMini.vue'
 import { useAIModal } from '../composables/useAIModal'
 import { type Market } from '../data/journey'
@@ -34,9 +33,6 @@ provide('journeyMarket', activeMarket)
       <JourneyHeader />
       <TaskIndex />
     </div>
-
-    <!-- 第三屏：按产品类目 -->
-    <CategoryGroups />
 
     <!-- 底部 -->
     <FooterMini />

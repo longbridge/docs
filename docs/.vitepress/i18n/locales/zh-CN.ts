@@ -139,6 +139,8 @@ const zhCN = {
     official: '长桥官网',
     privacy: '隐私政策',
     compliance: '合规与税务',
+    tagline: '长桥官方帮助中心，覆盖港股、美股、新加坡市场的专业文档库',
+    copyright: '© 2026 Longbridge. All rights reserved.',
   },
   footerCta: {
     headline: '还有其他问题？AI 助手随时在',
