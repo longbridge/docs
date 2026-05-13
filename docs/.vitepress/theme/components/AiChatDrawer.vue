@@ -263,7 +263,7 @@ function toggleExpand() {
               <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
             </svg>
             <svg v-else width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 14h6v6M14 4h6v6M10 20l-7-7M20 10l-7 7" />
+              <path d="M4 14h6v6M20 10h-6V4M10 20l-7-7M21 3l-7 7" />
             </svg>
           </button>
           <button class="ai-header-btn" @click="close" :aria-label="t('ai.close')">
@@ -448,7 +448,7 @@ function toggleExpand() {
 
 /* Disclaimer */
 .ai-disclaimer {
-  @apply m-0 pt-2 px-5 pb-3 text-xs leading-normal text-center;
+  @apply m-0 px-5 pb-3 text-xs leading-normal text-center;
   color: var(--vp-c-text-3);
   flex-shrink: 0;
 }
@@ -589,7 +589,7 @@ function toggleExpand() {
 
 /* ── Input area ──────────────────────────────────────────── */
 .ai-input-wrap {
-  @apply pt-3 px-4 pb-5;
+  @apply pt-3 px-4 pb-2;
   flex-shrink: 0;
 }
 .ai-input-box {
@@ -643,8 +643,8 @@ function toggleExpand() {
 
 /* Scroll to latest button */
 .ai-scroll-latest {
-  @apply absolute pt-1.5 pr-3 pb-1.5 pl-2.5 text-xs flex items-center gap-1.5;
-  bottom: 120px;
+  @apply absolute p-2 flex items-center justify-center;
+  bottom: 164px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--vp-c-bg-soft);
@@ -653,15 +653,15 @@ function toggleExpand() {
   color: var(--vp-c-text-2);
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--vp-c-divider);
-  white-space: nowrap;
   z-index: 10;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: background 0.15s, box-shadow 0.15s;
+  transition: background 0.15s, box-shadow 0.15s, color 0.15s;
 }
 .ai-scroll-latest:hover {
-  background: var(--vp-c-bg-mute);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16), 0 0 0 1px var(--vp-c-border);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 .fade-up-enter-active,
 .fade-up-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
