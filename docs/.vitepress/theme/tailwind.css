@@ -320,7 +320,7 @@
 
   .VPSidebarItem.level-1 > .item > .link,
   .VPSidebarItem.level-1 > .item > .text {
-    @apply py-1.5 px-2.5 font-medium text-sm flex items-center;
+    @apply py-1.5 px-2.5 font-semibold text-sm flex items-center;
     border-radius: 8px;
     color: var(--vp-c-text-2);
   }
@@ -1660,7 +1660,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-tab {
-    @apply flex items-center py-0 px-3 h-12 text-sm font-normal;
+    @apply flex items-center py-0 px-3 h-12 text-sm font-medium;
     color: var(--vp-c-text-2);
     text-decoration: none;
     border-bottom: 2px solid transparent;
@@ -2704,10 +2704,8 @@ html.ai-resizing .hn-root {
 }
 
 .lb-doc-hero .lb-eyebrow {
-  @apply text-xs font-semibold mb-2.5;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--vp-c-brand-1); /* brand 色强化品牌识别，替代 Claude 的中性灰 */
+  @apply text-sm font-semibold mb-2.5;
+  color: var(--vp-c-brand-1);
 }
 
 .lb-doc-hero .lb-title {
@@ -2745,7 +2743,7 @@ html.ai-resizing .hn-root {
 }
 
 .lb-doc-hero .lb-lead {
-  @apply text-base m-0;
+  @apply text-lg m-0;
   line-height: 1.6;
   color: var(--vp-c-text-2);
   max-width: 60ch;
@@ -2763,11 +2761,12 @@ html.ai-resizing .hn-root {
   margin-bottom: 1rem;
   padding-top: 0;
   border-top: none;
+  font-weight: 700;
 }
 
 .vp-doc p,
 .vp-doc li {
-  @apply leading-relaxed;
+  line-height: 1.75;
 }
 
 .vp-doc table {
@@ -2820,17 +2819,17 @@ html.ai-resizing .hn-root {
   padding-left: 0 !important;
 }
 
-/* "本页内容" header：icon + semibold + text-1 */
+/* "本页内容" header：icon + medium + text-1 */
 .VPDocAside .outline-title {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: normal;
   text-transform: none;
   color: var(--vp-c-text-1);
-  line-height: 1.4;
+  line-height: 24px;
   padding-bottom: 4px;
 }
 
@@ -2854,8 +2853,8 @@ html.ai-resizing .hn-root {
 /* 所有层级共享基础 */
 .VPDocOutlineItem .outline-link {
   display: block;
-  padding: 6px 0;
-  line-height: 1.5;
+  padding: 4px 0;
+  line-height: 24px;
   border-left: none;
   background: transparent;
   transition: color 0.15s ease;
