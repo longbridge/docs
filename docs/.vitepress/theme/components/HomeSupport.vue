@@ -3,7 +3,7 @@ import { provide } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 import AskHero from './sections/AskHero.vue'
 import JourneyHeader from './sections/JourneyHeader.vue'
-import JourneySteps from './sections/JourneySteps.vue'
+import TaskIndex from './sections/TaskIndex.vue'
 import CategoryGroups from './sections/CategoryGroups.vue'
 import FooterMini from './sections/FooterMini.vue'
 import { useAIModal } from '../composables/useAIModal'
@@ -24,7 +24,7 @@ provide('journeyMarket', activeMarket)
     <!-- 视觉断层 + V2 主体：Journey 旅程 -->
     <div class="home-journey-section">
       <JourneyHeader />
-      <JourneySteps />
+      <TaskIndex />
     </div>
 
     <!-- 第三屏：按产品类目 -->
