@@ -4,6 +4,7 @@ import { useRouter } from 'vitepress'
 import { hotSearchTags } from '../../data/featured-asks'
 import UiInput from '../ui/Input.vue'
 import UiButton from '../ui/Button.vue'
+import HeroGridBg from '../HeroGridBg.vue'
 
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
 const router = useRouter()
@@ -36,8 +37,10 @@ function browseAllDocs() {
 
 <template>
   <section class="ask-hero">
-    <!-- 背景渐变装饰 -->
+    <!-- 环境光晕渐变 -->
     <div class="ask-hero__bg" aria-hidden="true" />
+    <!-- 科技感网格动画 -->
+    <HeroGridBg />
 
     <div class="ask-hero__inner">
       <!-- 主标题：两行 -->
