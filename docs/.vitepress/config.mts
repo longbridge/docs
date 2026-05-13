@@ -485,6 +485,11 @@ export default defineConfig({
 
   vite: {
     plugins: [rawMarkdownPlugin()],
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './theme'),
+      },
+    },
     define: {
       __VUE_PROD_DEVTOOLS__: false,
     },

@@ -9,6 +9,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        // ── VitePress 业务调色板 ──
         brand: {
           DEFAULT: 'var(--vp-c-brand-1)',
           1: 'var(--vp-c-brand-1)',
@@ -47,8 +48,45 @@ export default {
           danger: 'var(--lb-c-danger)',
           info: 'var(--lb-c-info)',
         },
+        // ── shadcn-vue 标准 token（指向 tailwind.css 中的 shadcn 桥接变量）──
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
+        primary: {
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        destructive: {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
       },
       borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
         pill: '12px',
         card: '12px',
       },
