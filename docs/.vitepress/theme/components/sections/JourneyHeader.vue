@@ -17,7 +17,7 @@ function updateMarket(value: string) {
   <div class="journey-header">
     <div class="journey-header__inner">
       <div class="journey-header__top">
-        <h2 class="journey-header__title">{{ t('journey.heading') }}</h2>
+        <h2 class="journey-header__title">{{ t('journey.headingExperienced') }}</h2>
         <Tabs
           variant="pills"
           :model-value="activeMarketRef"
