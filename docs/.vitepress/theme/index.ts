@@ -1,7 +1,6 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { inBrowser } from 'vitepress'
-import 'markstream-vue/index.css'
 import './tailwind.css'
 import Layout from './layouts/Layout.vue'
 import HomeCards from './components/HomeCards.vue'

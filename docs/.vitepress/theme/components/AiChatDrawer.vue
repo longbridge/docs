@@ -1,15 +1,23 @@
 <!-- docs/.vitepress/theme/components/AiChatDrawer.vue -->
 <script setup lang="ts">
-import { ref, watch, nextTick, onMounted, computed } from 'vue'
-import { useLocalStorage, useMediaQuery } from '@vueuse/core'
-import { stream } from 'fetch-event-stream'
-import MarkdownRender from 'markstream-vue'
-import { useAIModal } from '../composables/useAIModal'
-import RiveThinkingIcon from './RiveThinkingIcon.vue'
+import { ref, computed, onMounted, watch, nextTick } from 'vue'
+import { useLocalStorage, useMediaQuery, useEventListener } from '@vueuse/core'
+import { Chat } from '@ai-sdk/vue'
+import type { UIMessage } from 'ai'
+import { nanoid } from 'nanoid'
+import { Trash2, Maximize2, Minimize2, X, Copy, Check, RotateCcw, Paperclip } from 'lucide-vue-next'
 import { useI18n } from '../../i18n/useI18n'
-import { Trash2, Maximize2, Minimize2, X } from 'lucide-vue-next'
-
-import { AI_ENDPOINT, AI_HEADERS } from '../config/ai'
+import { LbAiTransport } from '../composables/useLbAiTransport'
+import RiveThinkingIcon from './RiveThinkingIcon.vue'
+import { MessageResponse } from './ai-elements/message'
+import { MessageAction, MessageActions } from './ai-elements/message'
+import {
+  PromptInput,
+  PromptInputBody,
+  PromptInputFooter,
+  PromptInputTextarea,
+  PromptInputSubmit,
+} from './ai-elements/prompt-input'
 
 const props = defineProps<{
   modelValue: boolean
@@ -20,37 +28,110 @@ const emit = defineEmits<{
   'update:modelValue': [boolean]
 }>()
 
-const { messages, clearMessages } = useAIModal()
 const { t } = useI18n()
 
-const inputRef = ref<HTMLTextAreaElement>()
-const messagesRef = ref<HTMLDivElement>()
-const query = ref('')
-const isLoading = ref(false)
-const currentController = ref<AbortController | null>(null)
-const copiedIndex = ref<number | null>(null)
-const isAtBottom = ref(true)
+// ── Chat state via AI SDK ─────────────────────────────────────
+const savedMessages = useLocalStorage<UIMessage[]>('lb-ai-chat-v2', [], {
+  serializer: {
+    read: (raw) => {
+      try { return JSON.parse(raw) as UIMessage[] } catch { return [] }
+    },
+    write: (val) => JSON.stringify(val),
+  },
+})
 
-function checkAtBottom() {
-  if (!messagesRef.value) return
-  const el = messagesRef.value
-  isAtBottom.value = el.scrollHeight - el.scrollTop - el.clientHeight < 60
+const chat = new Chat({
+  transport: new LbAiTransport(),
+  messages: savedMessages.value,
+  generateId: () => nanoid(),
+})
+
+watch(
+  () => chat.messages,
+  (msgs) => { savedMessages.value = [...msgs] },
+  { deep: true },
+)
+
+const isStreaming = computed(
+  () => chat.status === 'streaming' || chat.status === 'submitted',
+)
+
+function extractText(msg: UIMessage): string {
+  if (!msg.parts?.length) return (msg as { content?: string }).content ?? ''
+  return msg.parts
+    .filter((p): p is { type: 'text'; text: string } => p.type === 'text')
+    .map(p => p.text)
+    .join('')
 }
 
-function scrollToLatest() {
-  if (messagesRef.value) {
-    messagesRef.value.scrollTo({ top: messagesRef.value.scrollHeight, behavior: 'smooth' })
+const showThinking = computed(() => {
+  if (chat.status !== 'submitted' && chat.status !== 'streaming') return false
+  const last = chat.messages[chat.messages.length - 1]
+  if (!last || last.role !== 'assistant') return true
+  return !extractText(last)
+})
+
+// ── Actions ───────────────────────────────────────────────────
+const copiedId = ref<string | null>(null)
+
+async function copyMessage(msg: UIMessage) {
+  await navigator.clipboard.writeText(extractText(msg))
+  copiedId.value = msg.id
+  setTimeout(() => { copiedId.value = null }, 2000)
+}
+
+function clearChat() {
+  chat.messages = []
+  savedMessages.value = []
+}
+
+async function handlePromptSubmit({ text }: { text: string }) {
+  if (chat.status === 'streaming' || chat.status === 'submitted') {
+    await chat.stop()
+    return
   }
+  const trimmed = text.trim()
+  if (!trimmed) return
+  await chat.sendMessage({ text: trimmed })
 }
 
-function autoGrow() {
-  const el = inputRef.value
-  if (!el) return
-  el.style.height = 'auto'
-  el.style.height = `${Math.min(el.scrollHeight, 120)}px`
+function isMessageFinal(msg: UIMessage, index: number): boolean {
+  if (msg.role !== 'assistant') return false
+  if (index < chat.messages.length - 1) return true
+  return chat.status === 'ready'
 }
 
-// ── Resizable drawer ─────────────────────────────────────────
+// ── InitialQuery handling ─────────────────────────────────────
+watch(
+  () => props.modelValue,
+  (open) => {
+    if (!open) return
+    sheetRatio.value = DEFAULT_SHEET
+    nextTick(() => {
+      if (props.initialQuery) {
+        void chat.sendMessage({ text: props.initialQuery })
+      }
+    })
+  },
+)
+
+watch(
+  () => props.initialQuery,
+  (q) => {
+    if (!props.modelValue || !q) return
+    void chat.sendMessage({ text: q })
+  },
+)
+
+function close() {
+  emit('update:modelValue', false)
+}
+
+useEventListener('keydown', (e: KeyboardEvent) => {
+  if (e.key === 'Escape' && props.modelValue) close()
+})
+
+// ── Resizable drawer ──────────────────────────────────────────
 const MIN_WIDTH = 320
 const MAX_WIDTH = 720
 const drawerWidth = useLocalStorage('lb-ai-drawer-width', 380)
@@ -67,7 +148,6 @@ function startResize(e: MouseEvent) {
   const startX = e.clientX
   const startW = drawerWidth.value
   document.documentElement.classList.add('ai-resizing')
-
   function onMove(ev: MouseEvent) {
     const newW = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startW + startX - ev.clientX))
     drawerWidth.value = newW
@@ -82,167 +162,19 @@ function startResize(e: MouseEvent) {
   document.addEventListener('mouseup', onUp)
 }
 
-async function copy(content: string, index: number) {
-  await navigator.clipboard.writeText(content)
-  copiedIndex.value = index
-  setTimeout(() => { copiedIndex.value = null }, 2000)
-}
-
-watch(
-  () => props.modelValue,
-  (open) => {
-    if (!open) {
-      query.value = ''
-      return
-    }
-    sheetRatio.value = DEFAULT_SHEET
-    nextTick(() => {
-      if (props.initialQuery) {
-        submitText(props.initialQuery)
-      } else {
-        inputRef.value?.focus()
-        inputRef.value?.focus()
-      }
-    })
-  }
-)
-
-// 抽屉已打开时处理新的搜索词（modalOpen 不变，watch 上面的不会触发）
-watch(() => props.initialQuery, (q) => {
-  if (!props.modelValue || !q) return
-  submitText(q)
-})
-
-function scrollToBottom() {
-  nextTick(() => {
-    if (messagesRef.value) {
-      messagesRef.value.scrollTop = messagesRef.value.scrollHeight
-      isAtBottom.value = true
-    }
-  })
-}
-
-watch(query, () => nextTick(autoGrow))
-
-async function submitText(text: string) {
-  const trimmed = text.trim()
-  if (!trimmed || isLoading.value) return
-
-  messages.value.push({ role: 'user', content: trimmed })
-  messages.value.push({ role: 'assistant', content: '', loading: true, final: false })
-
-  isLoading.value = true
-  scrollToBottom()
-
-  const controller = new AbortController()
-  currentController.value = controller
-
-  const assistantMsg = messages.value[messages.value.length - 1]
-  let firstChunk = true
-
-  try {
-    const iter = await stream(AI_ENDPOINT, {
-      method: 'POST',
-      headers: AI_HEADERS,
-      body: JSON.stringify({ message: trimmed }),
-      signal: controller.signal,
-    })
-
-    for await (const event of iter) {
-      if (event.data === '[DONE]') break
-
-      let piece = ''
-      try {
-        const parsed = JSON.parse(event.data)
-        if (parsed && typeof parsed === 'object') {
-          if (parsed.type && parsed.type !== 'text-delta') continue
-          piece = typeof parsed.delta === 'string'
-            ? parsed.delta
-            : (parsed.delta?.content ?? parsed.content ?? parsed.text ?? '')
-        } else {
-          piece = String(parsed)
-          piece = String(parsed)
-        }
-      } catch {
-        piece = event.data
-        piece = event.data
-      }
-
-      if (!piece) continue
-      if (firstChunk) {
-        assistantMsg.loading = false
-        firstChunk = false
-      }
-      assistantMsg.content += piece
-      scrollToBottom()
-    }
-
-    if (firstChunk) assistantMsg.loading = false
-    assistantMsg.final = true
-  } catch (err) {
-    if (err instanceof DOMException && err.name === 'AbortError') {
-      assistantMsg.loading = false
-      assistantMsg.final = true
-      return
-    }
-    assistantMsg.content = assistantMsg.content || t('ai.error')
-    assistantMsg.loading = false
-    assistantMsg.final = true
-  } finally {
-    isLoading.value = false
-    currentController.value = null
-    currentController.value = null
-    currentController.value = null
-  }
-}
-
-async function submit() {
-  const text = query.value.trim()
-  if (!text) return
-  query.value = ''
-  await submitText(text)
-}
-
-function stop() {
-  currentController.value?.abort()
-}
-
-function retry(assistantIndex: number) {
-  if (isLoading.value) return
-  const userMsg = messages.value[assistantIndex - 1]
-  if (!userMsg || userMsg.role !== 'user') return
-  messages.value.splice(assistantIndex)
-  submitText(userMsg.content)
-}
-
-function onKeydown(e: KeyboardEvent) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault()
-    submit()
-  }
-}
-
-function close() {
-  emit('update:modelValue', false)
-}
-
 function toggleExpand() {
   drawerWidth.value = drawerWidth.value >= MAX_WIDTH ? 380 : MAX_WIDTH
 }
 
 // ── Mobile bottom sheet ───────────────────────────────────────
 const isMobile = useMediaQuery('(max-width: 639.98px)')
-
 const SNAP_POINTS = [0.5, 0.88]
 const DEFAULT_SHEET = 0.88
 const CLOSE_THRESHOLD = 0.3
 const VELOCITY_THRESHOLD = 0.8
-
 const sheetRatio = ref(DEFAULT_SHEET)
 const isDragging = ref(false)
-const sheetStyle = computed(() => ({
-  '--ai-sheet-height': `${sheetRatio.value * 100}vh`,
-}))
+const sheetStyle = computed(() => ({ '--ai-sheet-height': `${sheetRatio.value * 100}vh` }))
 
 let dragStartY = 0
 let dragStartRatio = 0
@@ -258,8 +190,7 @@ function onDragStart(e: TouchEvent) {
 function onDragMove(e: TouchEvent) {
   if (!isDragging.value) return
   e.preventDefault()
-  const dy = e.touches[0].clientY - dragStartY
-  const delta = dy / window.innerHeight
+  const delta = (e.touches[0].clientY - dragStartY) / window.innerHeight
   sheetRatio.value = Math.max(0.05, Math.min(0.95, dragStartRatio - delta))
 }
 
@@ -269,18 +200,17 @@ function onDragEnd(e: TouchEvent) {
   const dt = Math.max(1, Date.now() - dragStartTime)
   const velocity = (dy / window.innerHeight) * 100 / dt
   isDragging.value = false
-
   if (sheetRatio.value < CLOSE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
     close()
     nextTick(() => { sheetRatio.value = DEFAULT_SHEET })
     return
   }
-  const candidates = velocity < -VELOCITY_THRESHOLD
-    ? [SNAP_POINTS[SNAP_POINTS.length - 1]]
-    : SNAP_POINTS
-  sheetRatio.value = candidates.reduce((best, p) =>
-    Math.abs(p - sheetRatio.value) < Math.abs(best - sheetRatio.value) ? p : best
-  , candidates[0])
+  const candidates =
+    velocity < -VELOCITY_THRESHOLD ? [SNAP_POINTS[SNAP_POINTS.length - 1]] : SNAP_POINTS
+  sheetRatio.value = candidates.reduce(
+    (best, p) => (Math.abs(p - sheetRatio.value) < Math.abs(best - sheetRatio.value) ? p : best),
+    candidates[0],
+  )
 }
 </script>
 
@@ -310,6 +240,7 @@ function onDragEnd(e: TouchEvent) {
       >
         <div class="ai-sheet-grabber" />
       </div>
+
       <!-- Header -->
       <div class="ai-drawer-header">
         <div class="ai-drawer-title">
@@ -321,140 +252,125 @@ function onDragEnd(e: TouchEvent) {
         </div>
         <div class="ai-drawer-header-actions">
           <button
-            v-if="messages.length > 0"
+            v-if="chat.messages.length > 0"
             class="ai-header-btn"
             :title="t('ai.clearChat')"
-            @click="clearMessages"
+            @click="clearChat"
           >
             <Trash2 :size="14" />
           </button>
-          <!-- Expand / shrink (desktop only) -->
-          <button v-if="!isMobile" class="ai-header-btn" :title="drawerWidth >= MAX_WIDTH ? t('ai.collapse') : t('ai.expand')" @click="toggleExpand">
+          <button
+            v-if="!isMobile"
+            class="ai-header-btn"
+            :title="drawerWidth >= MAX_WIDTH ? t('ai.collapse') : t('ai.expand')"
+            @click="toggleExpand"
+          >
             <Maximize2 v-if="drawerWidth < MAX_WIDTH" :size="14" />
             <Minimize2 v-else :size="14" />
           </button>
-          <button class="ai-header-btn" @click="close" :aria-label="t('ai.close')">
+          <button class="ai-header-btn" :aria-label="t('ai.close')" @click="close">
             <X :size="15" />
           </button>
         </div>
       </div>
 
       <!-- Messages -->
-      <div ref="messagesRef" class="ai-messages" aria-live="polite" aria-atomic="false" @scroll="checkAtBottom">
-        <div v-if="messages.length === 0" class="ai-empty" />
+      <div class="ai-messages" aria-live="polite" aria-atomic="false">
+        <div v-if="chat.messages.length === 0" class="ai-empty" />
 
         <div
-          v-for="(msg, i) in messages"
-          :key="i"
+          v-for="(msg, i) in chat.messages"
+          :key="msg.id"
           class="ai-msg"
           :class="msg.role"
         >
           <div class="ai-msg-bubble">
-            <template v-if="msg.role === 'user'">{{ msg.content }}</template>
+            <!-- User message: plain text -->
+            <template v-if="msg.role === 'user'">{{ extractText(msg) }}</template>
+
+            <!-- Assistant message -->
             <template v-else>
-              <div v-if="msg.loading && !msg.content" class="ai-thinking">
+              <!-- Thinking state: status=submitted and no content yet -->
+              <div v-if="showThinking && i === chat.messages.length - 1 && !extractText(msg)" class="ai-thinking">
                 <ClientOnly>
-                  <RiveThinkingIcon :size="16" />
+                  <RiveThinkingIcon :size="16" class="ai-thinking-rive" />
                 </ClientOnly>
                 <span class="ai-thinking-text">{{ t('ai.thinking') }}</span>
               </div>
-              <ClientOnly v-else>
-                <MarkdownRender
-                  :custom-id="`msg-${i}`"
-                  :content="msg.content"
-                  :final="!!msg.final"
-                  :max-live-nodes="0"
-                  :typewriter="!msg.final"
-                  :fade="false"
-                />
+
+              <!-- Streaming / final markdown -->
+              <ClientOnly v-else-if="extractText(msg)">
+                <MessageResponse :content="extractText(msg)" />
               </ClientOnly>
-              <div v-if="msg.final && !isLoading" class="ai-msg-actions">
-                <button
-                  class="ai-action-btn"
-                  :class="{ copied: copiedIndex === i }"
-                  :aria-label="copiedIndex === i ? t('ai.copied') : t('ai.copy')"
-                  @click="copy(msg.content, i)"
+
+              <!-- Action buttons (copy / regenerate) shown on final messages -->
+              <MessageActions v-if="isMessageFinal(msg, i)" class="ai-msg-actions-row">
+                <MessageAction
+                  :tooltip="copiedId === msg.id ? t('ai.copied') : t('ai.copy')"
+                  :class="{ 'text-green-600': copiedId === msg.id }"
+                  @click="copyMessage(msg)"
                 >
-                  <svg v-if="copiedIndex === i" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <svg v-else width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                  </svg>
-                  <span class="ai-action-tooltip">{{ copiedIndex === i ? t('ai.copied') : t('ai.copy') }}</span>
-                </button>
-                <button class="ai-action-btn" :aria-label="t('ai.regenerate')" @click="retry(i)">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="1 4 1 10 7 10" />
-                    <path d="M3.51 15a9 9 0 1 0 .49-4" />
-                  </svg>
-                  <span class="ai-action-tooltip">{{ t('ai.regenerate') }}</span>
-                </button>
-              </div>
+                  <Check v-if="copiedId === msg.id" :size="13" />
+                  <Copy v-else :size="13" />
+                </MessageAction>
+                <MessageAction
+                  :tooltip="t('ai.regenerate')"
+                  @click="chat.regenerate({ messageId: msg.id })"
+                >
+                  <RotateCcw :size="12" />
+                </MessageAction>
+              </MessageActions>
             </template>
           </div>
         </div>
-      </div>
 
-      <!-- Scroll to latest button -->
-      <Transition name="fade-up">
-        <button
-          v-if="!isAtBottom && messages.length > 0"
-          class="ai-scroll-latest"
-          @click="scrollToLatest"
-          :aria-label="t('ai.scrollToLatest')"
+        <!-- Standalone thinking indicator: shown when waiting for first delta (no assistant msg yet) -->
+        <div
+          v-if="showThinking && (!chat.messages.length || chat.messages[chat.messages.length - 1].role !== 'assistant')"
+          class="ai-msg assistant"
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-        </button>
-      </Transition>
+          <div class="ai-msg-bubble">
+            <div class="ai-thinking">
+              <ClientOnly>
+                <RiveThinkingIcon :size="16" class="ai-thinking-rive" />
+              </ClientOnly>
+              <span class="ai-thinking-text">{{ t('ai.thinking') }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error state -->
+        <div v-if="chat.status === 'error'" class="ai-error">
+          {{ chat.error?.message || t('ai.error') }}
+        </div>
+      </div>
 
       <!-- Input area -->
       <div class="ai-input-wrap">
-        <div class="ai-input-box">
-          <textarea
-            ref="inputRef"
-            v-model="query"
-            class="ai-input"
-            :placeholder="t('ai.placeholder')"
-            rows="1"
-            :disabled="isLoading"
-            @keydown="onKeydown"
-          />
-          <div class="ai-input-footer">
-            <!-- Attachment placeholder (visual only) -->
+        <PromptInput
+          class="ai-prompt-input"
+          @submit="handlePromptSubmit"
+        >
+          <PromptInputBody>
+            <PromptInputTextarea
+              :placeholder="t('ai.placeholder')"
+              class="ai-prompt-textarea"
+            />
+          </PromptInputBody>
+          <PromptInputFooter class="ai-prompt-footer">
+            <!-- Attachment placeholder -->
             <button class="ai-attach-btn" disabled :aria-label="t('ai.attach')" tabindex="-1">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
-              </svg>
+              <Paperclip :size="15" />
             </button>
-            <!-- Stop / Send -->
-            <button
-              v-if="isLoading"
-              class="ai-send-btn ai-stop-btn"
-              @click="stop"
-              :aria-label="t('ai.stop')"
-            >
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-              </svg>
-            </button>
-            <button
-              v-else
-              class="ai-send-btn"
-              :disabled="!query.trim()"
-              @click="submit"
-              :aria-label="t('ai.send')"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
+            <PromptInputSubmit
+              :status="chat.status"
+              class="ai-prompt-submit"
+              :aria-label="isStreaming ? t('ai.stop') : t('ai.send')"
+            />
+          </PromptInputFooter>
+        </PromptInput>
       </div>
+
       <!-- Disclaimer -->
       <p class="ai-disclaimer">{{ t('ai.disclaimer') }}</p>
     </div>
@@ -467,12 +383,9 @@ function onDragEnd(e: TouchEvent) {
   top: 0;
   right: 0;
   bottom: 0;
-  /* width is set via :style binding; fallback here for safety */
   width: var(--ai-drawer-width, 380px);
   background: var(--vp-c-bg);
   border-left: 1px solid var(--vp-c-border);
-  /* Higher than VPNav (z-index:20) and HomeNavbar (z-index:100) so the drawer
-     properly covers the top-right corner without pushing nav bars. */
   z-index: 200;
   max-width: 100vw;
   @apply fixed flex flex-col;
@@ -517,7 +430,7 @@ function onDragEnd(e: TouchEvent) {
   background: var(--vp-c-divider);
 }
 
-/* Resize handle — left edge, dash indicator on hover */
+/* Resize handle — left edge */
 .ai-resize-handle {
   @apply absolute w-3 flex items-center justify-center;
   left: 0;
@@ -550,7 +463,6 @@ function onDragEnd(e: TouchEvent) {
 }
 .ai-star-icon { color: var(--vp-c-brand-1); flex-shrink: 0; }
 
-/* Disclaimer */
 .ai-disclaimer {
   @apply m-0 px-5 pb-3 text-xs leading-normal text-center;
   color: var(--vp-c-text-3);
@@ -601,14 +513,53 @@ function onDragEnd(e: TouchEvent) {
   color: var(--vp-c-text-1);
 }
 
-/* Hide markstream-vue scroll-to-bottom button */
-.assistant .ai-msg-bubble :deep([class*="scroll"]),
-.assistant .ai-msg-bubble :deep([class*="goto"]) {
-  @apply !hidden;
+/* Thinking state */
+.ai-thinking {
+  @apply inline-flex items-center gap-1.5 py-1 px-0;
+}
+.ai-thinking-rive {
+  flex-shrink: 0;
+  display: block;
+}
+.ai-thinking-text {
+  @apply text-sm;
+  color: var(--vp-c-text-2);
+  animation: ai-text-breathe 2s ease-in-out infinite;
+}
+@keyframes ai-text-breathe {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
 }
 
-/* Markdown overrides */
-.assistant .ai-msg-bubble :deep(.markstream-vue) { font-size: 14px; line-height: 1.7; color: var(--vp-c-text-1); }
+/* Error state */
+.ai-error {
+  @apply text-sm px-3 py-2 rounded-lg;
+  color: var(--lb-c-danger);
+  background: color-mix(in srgb, var(--lb-c-danger) 8%, transparent);
+}
+
+/* Message actions row */
+.ai-msg-actions-row {
+  @apply mt-1;
+}
+
+/* Override AI Elements MessageAction button to match theme */
+.ai-msg-bubble :deep(button) {
+  color: var(--vp-c-text-3);
+  transition: color 0.15s, background 0.15s;
+}
+.ai-msg-bubble :deep(button:hover) {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-mute);
+}
+
+/* Markdown overrides for vue-stream-markdown */
+.assistant .ai-msg-bubble :deep(.markdown-body),
+.assistant .ai-msg-bubble :deep([class*="markdown"]) {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--vp-c-text-1);
+}
 .assistant .ai-msg-bubble :deep(pre) {
   border-radius: 8px;
   @apply text-sm;
@@ -635,93 +586,54 @@ function onDragEnd(e: TouchEvent) {
   @apply pl-3 my-2 mx-0;
   color: var(--vp-c-text-2);
 }
-.assistant .ai-msg-bubble :deep(hr) {
-  border: none;
-  border-top: 0.5px solid var(--vp-c-divider);
-  @apply my-3 mx-0;
-}
 .assistant .ai-msg-bubble :deep(table) { width: 100%; border-collapse: collapse; font-size: 13px; }
 .assistant .ai-msg-bubble :deep(th),
 .assistant .ai-msg-bubble :deep(td) { padding: 6px 10px; border: 1px solid var(--vp-c-border); color: var(--vp-c-text-1); }
 .assistant .ai-msg-bubble :deep(th) { background: var(--vp-c-bg-soft); color: var(--vp-c-text-1); }
-
-/* Thinking state */
-.ai-thinking {
-  @apply inline-flex items-center gap-1.5 py-1 px-0;
-}
-.ai-thinking-rive {
-  flex-shrink: 0;
-  display: block;
-}
-.ai-thinking-text {
-  @apply text-sm;
-  color: var(--vp-c-text-2);
-  animation: ai-text-breathe 2s ease-in-out infinite;
-}
-@keyframes ai-text-breathe {
-  0%, 100% { opacity: 0.45; }
-  50% { opacity: 0.85; }
-}
-
-/* Message actions */
-.ai-msg-actions { display: flex; gap: 4px; align-self: flex-start; }
-.ai-action-btn {
-  @apply relative inline-flex items-center justify-center p-1.5 leading-none;
-  background: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  color: var(--vp-c-text-3);
-  border-radius: 6px;
-  transition: color .15s, border-color .15s, background .15s;
-}
-.ai-action-btn:hover { color: var(--vp-c-text-1); border-color: var(--vp-c-border); background: var(--vp-c-bg-mute); }
-.ai-action-btn.copied { color: var(--lb-c-success); }
-.ai-action-tooltip {
-  @apply absolute text-xs py-1 px-2;
-  bottom: calc(100% + 6px);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--vp-c-text-1);
-  color: var(--vp-c-bg);
-  border-radius: 4px;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .15s;
-}
-.ai-action-btn:hover .ai-action-tooltip { opacity: 1; }
 
 /* ── Input area ──────────────────────────────────────────── */
 .ai-input-wrap {
   @apply pt-3 px-4 pb-2;
   flex-shrink: 0;
 }
-.ai-input-box {
+
+/* Override PromptInput / InputGroup to match our design */
+.ai-prompt-input :deep([data-slot="input-group"]) {
   border: 1px solid var(--vp-c-border);
   border-radius: 16px;
   background: var(--vp-c-bg);
-  @apply pt-3 px-3.5 pb-2.5 flex flex-col gap-2;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  transition: border-color .15s, box-shadow .15s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  overflow: hidden;
+  /* reset focus ring — we add our own below */
+  --tw-ring-shadow: none !important;
 }
-.ai-input-box:focus-within {
+.ai-prompt-input:focus-within :deep([data-slot="input-group"]) {
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
 }
-.ai-input {
-  @apply w-full text-sm leading-normal min-h-6 max-h-32;
-  resize: none;
-  border: none;
-  background: transparent;
+
+.ai-prompt-input :deep([data-slot="input-group-control"]) {
+  @apply text-sm leading-normal;
   color: var(--vp-c-text-1);
+  background: transparent;
   font-family: inherit;
-  outline: none;
-  overflow-y: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+  min-height: 1.5rem;
+  max-height: 8rem;
+  resize: none;
 }
-.ai-input::placeholder { color: var(--vp-c-text-3); }
-.ai-input-footer {
-  @apply flex justify-between items-center;
+.ai-prompt-input :deep([data-slot="input-group-control"]::placeholder) {
+  color: var(--vp-c-text-3);
 }
+
+.ai-prompt-input :deep([data-slot="input-group-addon"]) {
+  @apply px-2.5 py-2;
+  background: transparent;
+  border: none;
+}
+
 .ai-attach-btn {
   background: none;
   border: none;
@@ -730,47 +642,22 @@ function onDragEnd(e: TouchEvent) {
   @apply p-1 flex items-center;
   opacity: 0.5;
 }
-.ai-send-btn {
+
+.ai-prompt-submit :deep(button) {
   @apply w-8 h-8 flex items-center justify-center;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  background: var(--vp-c-text-1);
-  color: var(--vp-c-bg);
-  transition: opacity .15s;
+  border-radius: 50% !important;
+  background: var(--vp-c-text-1) !important;
+  color: var(--vp-c-bg) !important;
+  transition: opacity 0.15s !important;
   flex-shrink: 0;
 }
-.ai-send-btn:hover:not(:disabled):not(.ai-stop-btn) { opacity: 0.8; }
-.ai-send-btn:disabled { opacity: 0.2; cursor: not-allowed; }
-.ai-stop-btn { background: var(--lb-c-danger); color: white; }
-.ai-stop-btn:hover { opacity: 1; filter: brightness(0.88); }
-
-/* Scroll to latest button */
-.ai-scroll-latest {
-  @apply absolute p-2 flex items-center justify-center;
-  bottom: 164px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 20px;
-  color: var(--vp-c-text-2);
-  cursor: pointer;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--vp-c-divider);
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background 0.15s, box-shadow 0.15s, color 0.15s;
+.ai-prompt-submit :deep(button:hover:not(:disabled)) {
+  opacity: 0.8;
 }
-.ai-scroll-latest:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--vp-c-brand-1);
-  color: var(--vp-c-brand-1);
+.ai-prompt-submit :deep(button:disabled) {
+  opacity: 0.2 !important;
+  cursor: not-allowed !important;
 }
-.fade-up-enter-active,
-.fade-up-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
-.fade-up-enter-from,
-.fade-up-leave-to { opacity: 0; transform: translateX(-50%) translateY(6px); }
 
 /* Desktop slide-in from right */
 .drawer-enter-active,
