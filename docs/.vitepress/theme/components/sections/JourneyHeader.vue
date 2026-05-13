@@ -5,8 +5,12 @@ import SegmentedControl from '../ui/SegmentedControl.vue'
 import { markets, type Market } from '../../data/journey'
 import { useI18n } from '../../../i18n/useI18n'
 
-const activeMarket = inject<Ref<Market>>('journeyMarket')!
+const activeMarketRef = inject<Ref<Market>>('journeyMarket')!
 const { t } = useI18n()
+
+function updateMarket(value: string) {
+  activeMarketRef.value = value as Market
+}
 </script>
 
 <template>
@@ -15,9 +19,10 @@ const { t } = useI18n()
       <div class="journey-header__top">
         <h2 class="journey-header__title">{{ t('journey.heading') }}</h2>
         <SegmentedControl
-          v-model="activeMarket"
+          :model-value="activeMarketRef"
           :tabs="markets"
           class="journey-header__market"
+          @update:model-value="updateMarket"
         />
       </div>
     </div>

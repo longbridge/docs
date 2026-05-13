@@ -66,6 +66,7 @@ const zhCN = {
     titleEm: '答案在这里',
     subtitle: '覆盖港股、美股、新加坡等市场的专业文档库，搭配 AI 问答助手，让每一个金融问题都有迹可查。',
     placeholder: '输入关键词或直接提问，如"港股交易费用怎么算"',
+    placeholderExample: '港股交易费用怎么算',
     search: '搜索',
     hotSearchLabel: '热搜：',
     askAi: '向 AI 提问',
@@ -77,6 +78,15 @@ const zhCN = {
     marketEmpty: '该市场暂未覆盖，欢迎问 AI',
     askThisStep: '问 AI 这一步',
     askTemplate: '关于长桥的{title}：{context}',
+    branchLabel: '进阶',
+    viewDocs: '查看文档',
+    notFound: '没找到？',
+    askAi: '直接问 AI →',
+    markets: {
+      hk: '港币市场',
+      us: '美元市场',
+      sg: '新元市场',
+    },
   },
   category: {
     heading: '按产品类目',

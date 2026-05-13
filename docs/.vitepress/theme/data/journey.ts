@@ -5,13 +5,25 @@ export interface DocLink {
   path: string
 }
 
-export interface JourneyStep {
+export interface MarketDetail {
+  chips: string[]
+  settlement?: string
+  hours?: string
+}
+
+export interface PipelineNode {
   id: string
   num: string
+  kind: 'main' | 'branch'
   title: string
-  desc: string
   docCount: number
   aiContext: string
+  marketDetails: {
+    hk?: MarketDetail
+    us?: MarketDetail
+    sg?: MarketDetail
+    common?: MarketDetail
+  }
   docs: {
     common?: DocLink[]
     hk?: DocLink[]
@@ -20,14 +32,31 @@ export interface JourneyStep {
   }
 }
 
-export const journeySteps: JourneyStep[] = [
+// Legacy alias
+export type JourneyStep = PipelineNode
+
+export function getNodeDetails(node: PipelineNode, market: Market): MarketDetail {
+  return node.marketDetails[market] ?? node.marketDetails.common ?? { chips: [] }
+}
+
+export function getNodeDocs(node: PipelineNode, market: Market): DocLink[] {
+  return node.docs[market] ?? node.docs.common ?? []
+}
+
+// Legacy alias
+export const getStepDocs = getNodeDocs
+
+export const pipelineNodes: PipelineNode[] = [
   {
     id: 'account',
     num: '01',
+    kind: 'main',
     title: 'data.journey.account.title',
-    desc: 'data.journey.account.desc',
     docCount: 13,
     aiContext: '长桥开户流程和账户类型',
+    marketDetails: {
+      common: { chips: ['个人账户', '联名账户', '机构账户'] },
+    },
     docs: {
       common: [
         { title: '如何开户', path: '/zh-CN/account/opening/' },
@@ -39,10 +68,15 @@ export const journeySteps: JourneyStep[] = [
   {
     id: 'deposit',
     num: '02',
+    kind: 'main',
     title: 'data.journey.deposit.title',
-    desc: 'data.journey.deposit.desc',
     docCount: 17,
     aiContext: '长桥入金方式和操作流程',
+    marketDetails: {
+      hk: { chips: ['FPS', 'eDDA', '电汇'] },
+      us: { chips: ['电汇', 'eDDA', 'ACH'] },
+      sg: { chips: ['PayNow', 'DDA', 'Wise'] },
+    },
     docs: {
       hk: [
         { title: '如何选择入金方式', path: '/zh-CN/deposit/how-to-choose-deposit-method' },
@@ -64,10 +98,15 @@ export const journeySteps: JourneyStep[] = [
   {
     id: 'trade',
     num: '03',
+    kind: 'main',
     title: 'data.journey.trade.title',
-    desc: 'data.journey.trade.desc',
     docCount: 11,
     aiContext: '长桥首次买入股票，交易规则和时段',
+    marketDetails: {
+      hk: { chips: ['主板', 'GEM'], hours: '09:30–16:00' },
+      us: { chips: ['NYSE', 'NASDAQ'], hours: '21:30–04:00' },
+      sg: { chips: ['主板', '凯利板'], hours: '09:00–17:00' },
+    },
     docs: {
       hk: [
         { title: '买入第一只港股', path: '/zh-CN/getting-started/buy-first-hk-stock' },
@@ -89,10 +128,13 @@ export const journeySteps: JourneyStep[] = [
   {
     id: 'portfolio',
     num: '04',
+    kind: 'main',
     title: 'data.journey.portfolio.title',
-    desc: 'data.journey.portfolio.desc',
     docCount: 9,
     aiContext: '长桥持仓查看和对账单',
+    marketDetails: {
+      common: { chips: ['持仓', '盈亏', '对账单'] },
+    },
     docs: {
       common: [
         { title: '持仓总览', path: '/zh-CN/portfolio-and-statements/overview' },
@@ -104,10 +146,15 @@ export const journeySteps: JourneyStep[] = [
   {
     id: 'withdrawal',
     num: '05',
+    kind: 'main',
     title: 'data.journey.withdrawal.title',
-    desc: 'data.journey.withdrawal.desc',
     docCount: 6,
     aiContext: '长桥出金到银行卡',
+    marketDetails: {
+      hk: { chips: ['港币', '美元'], settlement: 'T+2' },
+      us: { chips: ['美元', '港币'], settlement: 'T+1' },
+      sg: { chips: ['新元', '港币'], settlement: 'T+2' },
+    },
     docs: {
       hk: [
         { title: '出金到香港银行卡', path: '/zh-CN/withdrawal/to-hk-bank-card' },
@@ -129,10 +176,13 @@ export const journeySteps: JourneyStep[] = [
   {
     id: 'advanced',
     num: '06',
+    kind: 'branch',
     title: 'data.journey.advanced.title',
-    desc: 'data.journey.advanced.desc',
     docCount: 24,
     aiContext: '长桥进阶交易功能和常见问题',
+    marketDetails: {
+      common: { chips: ['期权 24', '融资 11', '税务 9'] },
+    },
     docs: {
       common: [
         { title: '期权开通与入门', path: '/zh-CN/derivatives/options/enable-options' },
@@ -143,12 +193,11 @@ export const journeySteps: JourneyStep[] = [
   },
 ]
 
-export const markets: { value: Market; label: string }[] = [
-  { value: 'hk', label: 'data.markets.hk' },
-  { value: 'us', label: 'data.markets.us' },
-  { value: 'sg', label: 'data.markets.sg' },
-]
+// Legacy alias
+export const journeySteps = pipelineNodes
 
-export function getStepDocs(step: JourneyStep, market: Market): DocLink[] {
-  return step.docs[market] ?? step.docs.common ?? []
-}
+export const markets: { value: Market; label: string }[] = [
+  { value: 'hk', label: 'journey.markets.hk' },
+  { value: 'us', label: 'journey.markets.us' },
+  { value: 'sg', label: 'journey.markets.sg' },
+]

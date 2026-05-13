@@ -13,11 +13,11 @@ const { t } = useI18n()
 
 const inputValue = ref('')
 const searchPlaceholder = computed(() => t('askHero.placeholder'))
+const searchExample = computed(() => t('askHero.placeholderExample'))
 
 function submit() {
   const q = inputValue.value.trim()
-  if (!q) return
-  openAIModal(q)
+  openAIModal(q || searchExample.value)
   inputValue.value = ''
 }
 
@@ -121,8 +121,9 @@ function browseAllDocs() {
       <!-- CTA 按钮组 -->
       <div class="ask-hero__cta">
         <UiButton variant="brand" size="pill" @click="openAIModal('')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M7.111 2.34728C7.29334 1.80026 8.06709 1.80026 8.24942 2.34728L9.5054 6.1152C9.56512 6.29437 9.70571 6.43496 9.88487 6.49468L13.6528 7.75065C14.1998 7.93299 14.1998 8.70673 13.6528 8.88907L9.88487 10.145C9.70571 10.2048 9.56512 10.3454 9.5054 10.5245L8.24942 14.2924C8.06709 14.8395 7.29334 14.8395 7.111 14.2924L5.85503 10.5245C5.79531 10.3454 5.65472 10.2048 5.47556 10.145L1.70763 8.88907C1.16061 8.70673 1.16061 7.93299 1.70763 7.75065L5.47556 6.49468C5.65472 6.43496 5.79531 6.29437 5.85503 6.1152L7.111 2.34728Z" fill="currentColor"/>
+            <path d="M13.0648 1.0138C13.1937 0.665555 13.6862 0.665555 13.8151 1.0138L14.0676 1.69612C14.1081 1.80561 14.1944 1.89194 14.3039 1.93245L14.9862 2.18493C15.3345 2.31379 15.3345 2.80635 14.9862 2.93521L14.3039 3.18769C14.1944 3.22821 14.1081 3.31453 14.0676 3.42402L13.8151 4.10634C13.6862 4.45459 13.1937 4.45459 13.0648 4.10634L12.8123 3.42402C12.7718 3.31453 12.6855 3.22821 12.576 3.18769L11.8937 2.93521C11.5454 2.80635 11.5454 2.31379 11.8937 2.18493L12.576 1.93245C12.6855 1.89194 12.7718 1.80561 12.8123 1.69612L13.0648 1.0138Z" fill="currentColor"/>
           </svg>
           {{ t('askHero.askAi') }}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -331,6 +332,80 @@ function browseAllDocs() {
   .ask-hero__cta {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+/* ── Hero 入场动画 ── */
+.ask-hero {
+  --anim-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes sweep-pass {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(300%); }
+}
+
+@keyframes search-glow {
+  0%, 100% { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05); }
+  50%      { box-shadow: 0 0 0 6px rgba(0, 184, 184, 0.14); }
+}
+
+/* 整体内容淡入 */
+.ask-hero__inner {
+  animation: hero-fade-in 400ms var(--anim-ease) both;
+}
+
+/* 品牌字光扫:伪元素白光从左到右划过一次 */
+.ask-hero__title-brand {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.ask-hero__title-brand::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -80%;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 40%,
+    rgba(255, 255, 255, 0.50) 50%,
+    rgba(255, 255, 255, 0.35) 60%,
+    transparent 100%
+  );
+  animation: sweep-pass 900ms 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 1;
+  pointer-events: none;
+}
+
+.dark .ask-hero__title-brand::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 240, 196, 0.25) 40%,
+    rgba(0, 240, 196, 0.45) 50%,
+    rgba(0, 240, 196, 0.25) 60%,
+    transparent 100%
+  );
+}
+
+/* 搜索栏入场后微闪一次 */
+.ask-hero__search-bar {
+  animation: search-glow 700ms 750ms ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ask-hero__inner,
+  .ask-hero__title-brand::after,
+  .ask-hero__search-bar {
+    animation: none !important;
   }
 }
 </style>

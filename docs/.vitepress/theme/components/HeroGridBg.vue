@@ -45,8 +45,6 @@ onMounted(() => {
   const blips: Blip[] = []
   let nextBlipAt = performance.now() + 600
 
-  const t0 = performance.now()
-
   const frame = (now: number) => {
     if (W === 0 || H === 0) {
       rafId = requestAnimationFrame(frame)
@@ -62,52 +60,21 @@ onMounted(() => {
     const offsetX = (W % GRID_SPACING) / 2
     const offsetY = (H % GRID_SPACING) / 2
 
-    // ── Scan line position ──────────────────────────────────────────────────
-    const elapsed = now - t0
-    const SCAN_PERIOD = 7200
-    const scanProgress = (elapsed % SCAN_PERIOD) / SCAN_PERIOD
-    const scanY = scanProgress * H
-
-    // ── Dot grid ─── (with scan boost) ─────────────────────────────────────
+    // ── Dot grid ────────────────────────────────────────────────────────────
     const baseAlpha = dark ? 0.11 : 0.13
 
     for (let c = 0; c < cols; c++) {
       for (let r = 0; r < rows; r++) {
         const x = offsetX + c * GRID_SPACING
         const y = offsetY + r * GRID_SPACING
-
-        let dotAlpha = baseAlpha
-        let dotR = 1
-
-        if (!prefersReduced) {
-          const dist = Math.abs(y - scanY)
-          if (dist < 44) {
-            const boost = 1 - dist / 44
-            dotAlpha = baseAlpha + boost * 0.38
-            dotR = 1 + boost * 0.6
-          }
-        }
-
         ctx.beginPath()
-        ctx.arc(x, y, dotR, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${teal}, ${dotAlpha.toFixed(3)})`
+        ctx.arc(x, y, 1, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(${teal}, ${baseAlpha})`
         ctx.fill()
       }
     }
 
     if (!prefersReduced) {
-      // ── Scan line gradient ──────────────────────────────────────────────
-      const scanHeight = 72
-      const scanGrad = ctx.createLinearGradient(0, scanY - scanHeight, 0, scanY + scanHeight)
-      const sa = dark ? 0.045 : 0.055
-      scanGrad.addColorStop(0, `rgba(${teal}, 0)`)
-      scanGrad.addColorStop(0.35, `rgba(${teal}, ${sa})`)
-      scanGrad.addColorStop(0.5, `rgba(${teal}, ${(sa * 1.6).toFixed(3)})`)
-      scanGrad.addColorStop(0.65, `rgba(${teal}, ${sa})`)
-      scanGrad.addColorStop(1, `rgba(${teal}, 0)`)
-      ctx.fillStyle = scanGrad
-      ctx.fillRect(0, scanY - scanHeight, W, scanHeight * 2)
-
       // ── Spawn blips ─────────────────────────────────────────────────────
       if (now >= nextBlipAt && blips.length < 7) {
         const c = Math.floor(Math.random() * (cols - 1))

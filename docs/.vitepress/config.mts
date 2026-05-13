@@ -270,6 +270,19 @@ function generateSidebar(localeDir: string, dirNames: Record<string, string>) {
       .map(cat => itemByCategory[cat])
   }
 
+  // 补齐各分类自身的路径前缀：
+  // 例如 troubleshooting 的 URL 是 /troubleshooting/...，
+  // 但它隶属于 /getting-started/ tab，VitePress 无法匹配，导致侧边栏消失。
+  // 这里为每个非 tab-root 的分类额外注册同一份 sidebar。
+  for (const tab of NAV_TABS) {
+    for (const cat of tab.categories) {
+      const catPath = `/${cat}/`
+      if (catPath !== tab.path) {
+        sidebar[catPath] = sidebar[tab.path]
+      }
+    }
+  }
+
   return sidebar
 }
 
