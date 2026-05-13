@@ -88,6 +88,16 @@ const zhCN = {
       us: '美元市场',
       sg: '新元市场',
     },
+    taskIndex: {
+      expandAll: '展开更多 {count} 篇',
+      collapseAll: '收起',
+      noMatch: '该市场暂无相关文档',
+    },
+    askBanner: {
+      title: '没找到对应文档？',
+      subtitle: 'AI 会读完全站文档后直接回答你的问题。',
+      cta: '直接问 AI',
+    },
   },
   category: {
     heading: '按产品类目',
