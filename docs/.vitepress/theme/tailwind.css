@@ -1427,7 +1427,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-container {
-    @apply max-w-7xl w-full mx-auto py-0 px-6 flex items-center justify-between gap-4;
+    @apply max-w-7xl w-full mx-auto py-0 px-6 max-sm:px-3 flex items-center justify-between gap-4 max-sm:gap-2;
   }
 
   .hn-logo {
@@ -1464,7 +1464,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-search-btn {
-    @apply flex items-center gap-2 h-9 min-w-[272px] py-0 px-4 text-sm;
+    @apply flex items-center gap-2 h-9 min-w-[272px] py-0 px-4 text-sm max-md:min-w-0 max-md:w-9 max-md:px-2.5 max-md:justify-center;
     background: var(--vp-c-bg-soft);
     border: 1px solid var(--vp-c-border);
     border-radius: 99px;
@@ -1485,7 +1485,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-kbd {
-    @apply ml-auto text-xs;
+    @apply ml-auto text-xs max-md:hidden;
     color: var(--vp-c-text-3);
     font-family: ui-monospace, "SF Mono", monospace;
     letter-spacing: -0.2px;
@@ -1493,7 +1493,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-askai-btn {
-    @apply flex items-center gap-1.5 h-9 py-0 px-4 text-sm font-medium;
+    @apply flex items-center gap-1.5 h-9 py-0 px-4 text-sm font-medium max-md:px-2.5;
     background: transparent;
     border: 1px solid var(--vp-c-border);
     border-radius: 99px;
@@ -1639,6 +1639,65 @@ html.ai-resizing .hn-root {
     background: var(--vp-c-default-soft);
     color: var(--vp-c-text-1);
   }
+
+  /* ── Kebab "more" menu (md and below) ─────────────────────── */
+  .hn-more {
+    @apply relative hidden max-md:flex items-center;
+  }
+
+  .hn-more-btn {
+    @apply flex items-center justify-center w-9 h-9 p-0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--vp-c-text-2);
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .hn-more-btn:hover {
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+  }
+
+  .hn-more-popover {
+    @apply absolute right-0 py-1.5 min-w-[200px];
+    top: calc(100% + 6px);
+    background: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    z-index: 110;
+  }
+
+  .hn-more-item {
+    @apply flex items-center justify-between gap-2 py-2 px-3 text-sm;
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.1s, color 0.1s;
+  }
+
+  .hn-more-item:hover {
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+  }
+
+  .hn-more-item.is-active {
+    color: var(--vp-c-text-1);
+    font-weight: 500;
+  }
+
+  .hn-more-divider {
+    @apply my-1 mx-2;
+    border-top: 1px solid var(--vp-c-divider);
+  }
+
+  /* popover fade transition */
+  .hn-more-fade-enter-active,
+  .hn-more-fade-leave-active { transition: opacity .15s ease, transform .15s ease; }
+  .hn-more-fade-enter-from,
+  .hn-more-fade-leave-to { opacity: 0; transform: translateY(-4px); }
 
   /* ─── HomeCards_A.vue ─── */
   .home-wrap {
@@ -2391,10 +2450,6 @@ html.ai-resizing .hn-root {
 
     .feat-visual {
       @apply max-w-sm mx-auto;
-    }
-
-    .hn-actions .hn-register {
-      @apply hidden;
     }
   }
 

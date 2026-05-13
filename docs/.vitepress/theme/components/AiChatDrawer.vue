@@ -1,7 +1,7 @@
 <!-- docs/.vitepress/theme/components/AiChatDrawer.vue -->
 <script setup lang="ts">
-import { ref, watch, nextTick, onMounted } from 'vue'
-import { useLocalStorage } from '@vueuse/core'
+import { ref, watch, nextTick, onMounted, computed } from 'vue'
+import { useLocalStorage, useMediaQuery } from '@vueuse/core'
 import { stream } from 'fetch-event-stream'
 import MarkdownRender from 'markstream-vue'
 import { useAIModal } from '../composables/useAIModal'
@@ -95,6 +95,7 @@ watch(
       query.value = ''
       return
     }
+    sheetRatio.value = DEFAULT_SHEET
     nextTick(() => {
       if (props.initialQuery) {
         submitText(props.initialQuery)
@@ -228,13 +229,87 @@ function close() {
 function toggleExpand() {
   drawerWidth.value = drawerWidth.value >= MAX_WIDTH ? 380 : MAX_WIDTH
 }
+
+// ── Mobile bottom sheet ───────────────────────────────────────
+const isMobile = useMediaQuery('(max-width: 639.98px)')
+
+const SNAP_POINTS = [0.5, 0.88]
+const DEFAULT_SHEET = 0.88
+const CLOSE_THRESHOLD = 0.3
+const VELOCITY_THRESHOLD = 0.8
+
+const sheetRatio = ref(DEFAULT_SHEET)
+const isDragging = ref(false)
+const sheetStyle = computed(() => ({
+  '--ai-sheet-height': `${sheetRatio.value * 100}vh`,
+}))
+
+let dragStartY = 0
+let dragStartRatio = 0
+let dragStartTime = 0
+
+function onDragStart(e: TouchEvent) {
+  dragStartY = e.touches[0].clientY
+  dragStartRatio = sheetRatio.value
+  dragStartTime = Date.now()
+  isDragging.value = true
+}
+
+function onDragMove(e: TouchEvent) {
+  if (!isDragging.value) return
+  e.preventDefault()
+  const dy = e.touches[0].clientY - dragStartY
+  const delta = dy / window.innerHeight
+  sheetRatio.value = Math.max(0.05, Math.min(0.95, dragStartRatio - delta))
+}
+
+function onDragEnd(e: TouchEvent) {
+  if (!isDragging.value) return
+  const dy = e.changedTouches[0].clientY - dragStartY
+  const dt = Math.max(1, Date.now() - dragStartTime)
+  const velocity = (dy / window.innerHeight) * 100 / dt
+  isDragging.value = false
+
+  if (sheetRatio.value < CLOSE_THRESHOLD || velocity > VELOCITY_THRESHOLD) {
+    close()
+    nextTick(() => { sheetRatio.value = DEFAULT_SHEET })
+    return
+  }
+  const candidates = velocity < -VELOCITY_THRESHOLD
+    ? [SNAP_POINTS[SNAP_POINTS.length - 1]]
+    : SNAP_POINTS
+  sheetRatio.value = candidates.reduce((best, p) =>
+    Math.abs(p - sheetRatio.value) < Math.abs(best - sheetRatio.value) ? p : best
+  , candidates[0])
+}
 </script>
 
 <template>
-  <Transition name="drawer">
-    <div v-if="modelValue" class="ai-drawer" :style="{ width: drawerWidth + 'px' }">
-      <!-- Resize handle -->
-      <div class="ai-resize-handle" @mousedown="startResize" />
+  <!-- Mobile backdrop -->
+  <Transition name="fade">
+    <div v-if="modelValue && isMobile" class="ai-sheet-backdrop" @click="close" />
+  </Transition>
+
+  <Transition :name="isMobile ? 'sheet' : 'drawer'">
+    <div
+      v-if="modelValue"
+      class="ai-drawer"
+      :class="{ 'is-sheet': isMobile, 'is-dragging': isDragging }"
+      :style="isMobile ? sheetStyle : { width: drawerWidth + 'px' }"
+    >
+      <!-- Desktop: resize handle on left edge -->
+      <div v-if="!isMobile" class="ai-resize-handle" @mousedown="startResize" />
+
+      <!-- Mobile: drag handle at top -->
+      <div
+        v-if="isMobile"
+        class="ai-sheet-handle"
+        @touchstart.passive="onDragStart"
+        @touchmove="onDragMove"
+        @touchend="onDragEnd"
+      >
+        <div class="ai-sheet-grabber" />
+      </div>
       <!-- Header -->
       <div class="ai-drawer-header">
         <div class="ai-drawer-title">
@@ -253,8 +328,8 @@ function toggleExpand() {
           >
             <Trash2 :size="14" />
           </button>
-          <!-- Expand / shrink -->
-          <button class="ai-header-btn" :title="drawerWidth >= MAX_WIDTH ? t('ai.collapse') : t('ai.expand')" @click="toggleExpand">
+          <!-- Expand / shrink (desktop only) -->
+          <button v-if="!isMobile" class="ai-header-btn" :title="drawerWidth >= MAX_WIDTH ? t('ai.collapse') : t('ai.expand')" @click="toggleExpand">
             <Maximize2 v-if="drawerWidth < MAX_WIDTH" :size="14" />
             <Minimize2 v-else :size="14" />
           </button>
@@ -400,7 +475,46 @@ function toggleExpand() {
      properly covers the top-right corner without pushing nav bars. */
   z-index: 200;
   max-width: 100vw;
-  @apply max-sm:w-screen fixed flex flex-col;
+  @apply fixed flex flex-col;
+}
+
+/* ── Mobile bottom sheet overrides ──────────────────────────── */
+.ai-drawer.is-sheet {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: none;
+  border-left: none;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+  height: var(--ai-sheet-height, 88vh);
+  max-height: 92vh;
+  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ai-drawer.is-sheet.is-dragging {
+  transition: none !important;
+}
+
+.ai-sheet-backdrop {
+  @apply fixed inset-0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+}
+
+.ai-sheet-handle {
+  @apply flex items-center justify-center;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: grab;
+  touch-action: none;
+}
+.ai-sheet-handle:active { cursor: grabbing; }
+.ai-sheet-grabber {
+  @apply w-9 h-1 rounded-full;
+  background: var(--vp-c-divider);
 }
 
 /* Resize handle — left edge, dash indicator on hover */
@@ -658,16 +772,33 @@ function toggleExpand() {
 .fade-up-enter-from,
 .fade-up-leave-to { opacity: 0; transform: translateX(-50%) translateY(6px); }
 
-/* Slide-in transition */
+/* Desktop slide-in from right */
 .drawer-enter-active,
 .drawer-leave-active { transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1); }
 .drawer-enter-from,
 .drawer-leave-to { transform: translateX(100%); }
 
+/* Mobile sheet slide-up from bottom */
+.sheet-enter-active,
+.sheet-leave-active { transition: transform .28s cubic-bezier(0.4, 0, 0.2, 1); }
+.sheet-enter-from,
+.sheet-leave-to { transform: translateY(100%); }
+
+/* Backdrop fade */
+.fade-enter-active,
+.fade-leave-active { transition: opacity .2s ease; }
+.fade-enter-from,
+.fade-leave-to { opacity: 0; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .drawer-enter-active,
-  .drawer-leave-active { transition: none; }
+  .drawer-leave-active,
+  .sheet-enter-active,
+  .sheet-leave-active,
+  .fade-enter-active,
+  .fade-leave-active { transition: none; }
+  .ai-drawer.is-sheet:not(.is-dragging) { transition: none; }
   .ai-thinking-text { animation: none; opacity: 0.6; }
 }
 </style>

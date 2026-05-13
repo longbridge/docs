@@ -62,6 +62,7 @@ watch(modalOpen, (open) => {
       <AiChatDrawer v-model="modalOpen" :initial-query="initialQuery" />
       <button
         v-if="!isHomePage"
+        v-show="!modalOpen"
         class="ai-fab-mobile fixed bottom-7 right-7 w-12 h-12 rounded-full bg-brand-1 text-white border-0 cursor-pointer flex items-center justify-center z-[999] transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5"
         style="box-shadow: 0 4px 16px var(--vp-c-brand-soft);"
         @click="openAIModal()"

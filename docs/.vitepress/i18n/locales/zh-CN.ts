@@ -9,6 +9,7 @@ const zhCN = {
     regenerate: '重新生成',
     openAiAssistant: '打开 AI 助手',
     breadcrumbAria: '面包屑导航',
+    more: '更多',
   },
   brand: {
     logoAlt: 'Longbridge',
