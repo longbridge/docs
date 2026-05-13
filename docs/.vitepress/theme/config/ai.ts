@@ -15,6 +15,4 @@ export const AI_ENDPOINT: string =
 
 export const AI_HEADERS: Record<string, string> = {
   'Content-Type': 'application/json',
-  'account-channel': env.VITE_AI_ACCOUNT_CHANNEL || 'lb',
-  'app-id': env.VITE_AI_APP_ID || 'longbridge',
 }
