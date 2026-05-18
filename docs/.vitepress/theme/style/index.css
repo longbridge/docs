@@ -1,0 +1,16 @@
+/* 排版骨架样式 — 移植自 openapi-website (open.longbridge.com)
+ *
+ * 设计原则:
+ * - 颜色 token 全部走 docs 自己的 Longbridge UX 5.0 体系(--vp-c-brand-1 = #00b8b8 teal),
+ *   不引入 openapi-website 的蓝色 token (#37a0ff)。
+ * - 只移植"结构层":代码块/代码组/blockquote/custom-block 的圆角、阴影、留白。
+ * - light-only,所有 .dark 分支均已剥离。
+ */
+
+@import './marker.css';
+@import './custom-block.css';
+@import './blockquote.css';
+@import './vp-code.css';
+@import './vp-code-group.css';
+@import './vp-code-title.css';
+@import './sidebar.css';

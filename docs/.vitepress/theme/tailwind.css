@@ -188,7 +188,7 @@
 
 /* 告知 VitePress 真实 navbar 高度，使 .aside sticky top 计算正确 */
 .custom-nav-layout {
-  --vp-nav-height: var(--hn-height, 112px);
+  --vp-nav-height: var(--hn-height, 104px);
 }
 
 .custom-nav-layout .VPContent {
@@ -196,13 +196,13 @@
 }
 
 .custom-nav-layout .VPSidebar {
-  top: var(--hn-height, 112px);
+  top: var(--hn-height, 104px);
   padding-top: 32px;
   /* padding-left / right 由 @media (min-width: 1280px) 接管，不在此写死 */
 }
 
 .custom-nav-layout .VPLocalNav {
-  top: var(--hn-height, 112px);
+  top: var(--hn-height, 104px);
 }
 
 /* 首页额外隐藏 VPNav（兼容旧逻辑，custom-nav-layout 已涵盖） */
@@ -216,12 +216,10 @@
 }
 
 /* ============================================================
-   Tailwind 指令
+   UnoCSS 注入由 theme/index.ts 中 `import 'virtual:uno.css'` 处理。
+   原 `@tailwind base/components/utilities` 指令已删除。
+   `@apply` 指令由 UnoCSS transformer-directives 接管,无需改动。
    ============================================================ */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* ============================================================
    @layer base — 文档排版（原 docs.css）
@@ -262,171 +260,17 @@
 }
 
 /* ============================================================
-   @layer components — Sidebar（原 sidebar.css）
+   Sidebar 样式已迁移到 docs/.vitepress/theme/style/sidebar.css
+   对齐 docs.cdp.coinbase.com:
+   - default:中等灰文字,透明底
+   - hover:浅灰底 + 加深文字(不变品牌色)
+   - active:品牌色浅底 + 品牌色文字 + text-shadow 拟加粗
    ============================================================ */
 
-@layer components {
-  .VPSidebar {
-    outline: none;
-    background: transparent !important;
-  }
-
-  .VPNavBarTitle.has-sidebar .title {
-    border: 0;
-  }
-
-  /* Remove default group separator lines and add chapter spacing */
-  .VPSidebar .group + .group {
-    border-top: none !important;
-    @apply pt-0 mt-5;
-  }
-
-  /* Remove sub-item left border, normalise indentation */
-  .VPSidebar .items {
-    border-left: none !important;
-    @apply !pl-2;
-  }
-
-  /* ─── Top-level section headers (level-0) ───────────────── */
-
-  .VPSidebarItem.level-0 > .item {
-    @apply py-0 px-1;
-  }
-
-  .VPSidebarItem.level-0 > .item > .link,
-  .VPSidebarItem.level-0 > .item > .text {
-    @apply py-1.5 px-2.5 font-semibold text-sm flex items-center;
-    border-radius: 8px;
-    color: var(--vp-c-text-1);
-  }
-
-  /* Fixed expand: hide top-level caret */
-  .VPSidebarItem.level-0 > .item > .caret {
-    @apply hidden;
-  }
-
-  /* Top-level hover: subtle gray, no brand fill */
-  .VPSidebarItem.level-0 > .item > .link:hover {
-    background: var(--vp-c-default-soft);
-    color: var(--vp-c-text-1);
-  }
-
-  /* Top-level active: section headers are never pill-highlighted. */
-  .VPSidebarItem.level-0.is-active > .item > .link {
-    background: transparent !important;
-    color: var(--vp-c-text-1);
-  }
-
-  /* ─── Level-1 group headers ──────────────────────────────── */
-
-  .VPSidebarItem.level-1 > .item {
-    @apply py-0 px-1;
-  }
-
-  .VPSidebarItem.level-1 > .item > .link,
-  .VPSidebarItem.level-1 > .item > .text {
-    @apply py-1.5 px-2.5 font-semibold text-sm flex items-center;
-    border-radius: 8px;
-    color: var(--vp-c-text-2);
-  }
-
-  /* Lighter caret for level-1 */
-  .VPSidebarItem.level-1 > .item > .caret {
-    opacity: 0.5;
-  }
-
-  /* Level-1 hover */
-  .VPSidebarItem.level-1 > .item > .link:hover,
-  .VPSidebarItem.level-1:not(.is-link) > .item > .text:hover {
-    background: var(--vp-c-default-soft);
-    color: var(--vp-c-text-1);
-  }
-
-  /* ─── Leaf links (VPLink，适用所有层级叶节点）────────────── */
-
-  .VPSidebarItem .VPLink {
-    border-radius: 8px;
-    @apply pt-1.5 pr-3 pb-1.5 pl-3 flex items-center text-sm;
-    color: #3e3e3e;
-    transition:
-      background 0.12s,
-      color 0.12s;
-  }
-
-  .dark .VPSidebarItem .VPLink {
-    color: var(--vp-c-text-2);
-  }
-
-  .VPSidebarItem.is-link .VPLink > p {
-    @apply pt-0 pb-0 m-0;
-  }
-
-  /* hover：与 level-0/1 统一用 default-soft */
-  .VPSidebarItem .VPLink:hover {
-    background: var(--vp-c-default-soft);
-    color: var(--vp-c-text-1);
-  }
-
-  /* ─── Active ─────────────────────────────────────────────── */
-
-  /* is-active section header（非叶节点）不高亮背景 */
-  .VPSidebarItem.is-active > .item > .link {
-    background: transparent;
-    border-radius: 8px;
-  }
-
-  /* 叶节点 active：灰色背景 + 加粗，所有层级（level-1/2/3…）统一处理 */
-  .VPSidebar .VPSidebarItem.is-active.is-link:not(.level-0) > .item > .VPLink {
-    background: rgba(75, 85, 99, 0.12) !important;
-    color: var(--vp-c-text-1) !important;
-    font-weight: 600;
-    border-radius: 8px !important;
-  }
-
-  /* active 时 hover 保持 active 背景不淡出 */
-  .VPSidebar .VPSidebarItem.is-active.is-link:not(.level-0) > .item > .VPLink:hover {
-    background: rgba(75, 85, 99, 0.16) !important;
-    color: var(--vp-c-text-1) !important;
-  }
-
-  /* level-0 section header 即使 active 也不高亮 */
-  .VPSidebar .VPSidebarItem.level-0.is-active > .item > .VPLink,
-  .VPSidebar .VPSidebarItem.level-0.is-active > .item > .link {
-    background: transparent !important;
-    color: var(--vp-c-text-1) !important;
-    text-shadow: none !important;
-  }
-}
-
-/* ============================================================
-   覆盖 VitePress VPSidebarItem.vue scoped 样式
-   （scoped CSS 优先级高于 @layer，须放在 layer 外）
-   ============================================================ */
-
-/* 隐藏品牌色竖线指示器 */
-.VPSidebarItem .indicator {
-  display: none !important;
-}
-
-/* active 叶节点文字不用品牌色 */
-.VPSidebarItem.level-0.is-active > .item .link > .text,
-.VPSidebarItem.level-1.is-active > .item .link > .text,
-.VPSidebarItem.level-2.is-active > .item .link > .text,
-.VPSidebarItem.level-3.is-active > .item .link > .text,
-.VPSidebarItem.level-4.is-active > .item .link > .text,
-.VPSidebarItem.level-5.is-active > .item .link > .text {
-  color: var(--vp-c-text-1) !important;
-}
-
-/* hover 叶节点文字不用品牌色 */
-.VPSidebarItem.level-0.is-link > .item > .link:hover .text,
-.VPSidebarItem.level-1.is-link > .item > .link:hover .text,
-.VPSidebarItem.level-2.is-link > .item > .link:hover .text,
-.VPSidebarItem.level-3.is-link > .item > .link:hover .text,
-.VPSidebarItem.level-4.is-link > .item > .link:hover .text,
-.VPSidebarItem.level-5.is-link > .item > .link:hover .text {
-  color: var(--vp-c-text-1) !important;
-}
+/* (已移除)Sidebar VPSidebarItem.vue 覆盖规则。
+ * 全部 sidebar 视觉与交互由 `docs/.vitepress/theme/style/sidebar.css` 接管。
+ * 该文件只保留 sidebar 容器的 sticky/宽屏对齐布局规则。
+ */
 
 /* ============================================================
    AI Drawer push layout（行为类逻辑保留为纯 CSS）
@@ -1486,7 +1330,8 @@ html.ai-resizing .hn-root {
   }
 
   .hn-top-bar {
-    @apply h-16 flex items-center;
+    /* 顶部行从 64px 压到 56px,贴近 docs.cdp.coinbase.com 的轻量感 */
+    @apply h-14 flex items-center;
   }
 
   .hn-container {
@@ -1679,8 +1524,9 @@ html.ai-resizing .hn-root {
   }
 
   .hn-tab--active {
+    /* active indicator 使用品牌色下划线,对齐 docs.cdp.coinbase.com */
     color: var(--vp-c-text-1);
-    border-bottom-color: var(--vp-c-text-1);
+    border-bottom-color: var(--vp-c-brand-1);
     @apply font-medium;
   }
 
@@ -3002,20 +2848,7 @@ html.ai-resizing .hn-root {
   text-overflow: unset;
 }
 
-/* ============================================================
-   侧边栏 section header h2 字号强制 14px（覆盖浏览器 h2 默认值）
-   ============================================================ */
-
-.VPSidebarItem.level-0 > .item > .link .text,
-.VPSidebarItem.level-0 > .item > .text {
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-/* ============================================================
-   侧边栏叶节点左缩进与参考站对齐（减少 pl 使左边距统一）
-   ============================================================ */
-
-.VPSidebarItem .VPLink {
-  padding-left: 10px !important;
-}
+/* (已移除)旧的 sidebar 视觉规则。
+ * 全部 sidebar 视觉(level-0 字号、leaf padding-left 等)由
+ * `docs/.vitepress/theme/style/sidebar.css` 完整接管,对齐 docs.cdp.coinbase.com。
+ */

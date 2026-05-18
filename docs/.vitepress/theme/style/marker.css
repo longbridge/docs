@@ -1,0 +1,21 @@
+/* 文本 highlight 工具类:用法 <span class="marker-text">关键术语</span> */
+.marker-text {
+  white-space: nowrap;
+  position: relative;
+}
+
+.marker-text::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 66%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+  background-color: var(--vp-c-brand-soft);
+}
+
+.marker-text:hover::after {
+  top: 0;
+}

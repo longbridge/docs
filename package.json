@@ -9,10 +9,18 @@
     "graph": "tsx scripts/generate-link-graph.ts"
   },
   "devDependencies": {
-    "autoprefixer": "^10.5.0",
-    "postcss": "^8.5.14",
-    "tailwindcss": "^3.4",
-    "vitepress": "^1.6.3",
+    "@iconify-json/lucide": "^1.2.0",
+    "@unocss/extractor-mdc": "^66.1.2",
+    "@unocss/preset-icons": "^66.1.2",
+    "@unocss/preset-wind3": "^66.1.2",
+    "@unocss/transformer-directives": "^66.1.2",
+    "@unocss/transformer-variant-group": "^66.1.2",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "@types/markdown-it-container": "^2.0.10",
+    "sass-embedded": "^1.89.2",
+    "unocss": "^66.1.2",
+    "vitepress": "2.0.0-alpha.8",
     "vue": "^3.5.13"
   },
   "dependencies": {
