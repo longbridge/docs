@@ -2397,6 +2397,31 @@ html.ai-resizing .hn-root {
   }
 }
 
+/* ============================================================
+   Navbar button visual overrides — 必须放在 @layer 外
+   `@layer components { ... }` 优先级比无 layer 的 VitePress `button {}` reset 低,
+   不放外面 border / background 会被 `button { background: transparent; border: 0; }` 抹掉。
+   ============================================================ */
+.hn-search-btn {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 99px;
+  cursor: pointer;
+  color: var(--vp-c-text-3);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.hn-search-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 3px var(--vp-c-brand-soft);
+}
+
+.hn-askai-btn {
+  background: var(--vp-c-brand-1);
+  border: 0;
+  cursor: pointer;
+}
+
 /* ─── @keyframes (outside @layer for browser compat) ─── */
 @keyframes tab-fade-in {
   from {
