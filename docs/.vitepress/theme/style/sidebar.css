@@ -41,7 +41,7 @@
   padding: 0 !important;
   margin: 0 !important;
   background: transparent !important;
-  color: var(--vp-c-text-2) !important;
+  color: #3e4045 !important;
   font-size: 12px !important;
   line-height: 16px !important;
   font-weight: 600 !important;
@@ -91,7 +91,7 @@
   --at-apply: flex items-center rounded-xl pr-3 py-1.5;
   padding-left: var(--lb-sidebar-indent, 16px) !important;
   background-color: transparent !important;
-  color: var(--vp-c-text-2) !important;
+  color: #3e4045 !important;
   font-size: 14px !important;
   line-height: 20px !important;
   font-weight: 400 !important;
@@ -157,7 +157,7 @@
   --at-apply: flex items-center rounded-xl pr-2 py-1.5 cursor-pointer w-full;
   padding-left: var(--lb-sidebar-indent-group, 16px) !important;
   background-color: transparent !important;
-  color: var(--vp-c-text-2) !important;
+  color: #3e4045 !important;
   transition: background-color 0.15s ease, color 0.15s ease !important;
 }
 
@@ -171,7 +171,7 @@
   padding: 0 !important;
   margin: 0 !important;
   background-color: transparent !important;
-  color: var(--vp-c-text-2) !important;
+  color: #3e4045 !important;
   font-size: 14px !important;
   line-height: 20px !important;
   font-weight: 400 !important;
