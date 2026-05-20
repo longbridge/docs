@@ -9,6 +9,10 @@ sidebar: true
 
 ## 本章导航
 
+### 关于长桥
+
+- [长桥证券背景与资质](/getting-started/about-longbridge) — 持牌资质、监管机构及 ICF 客户资产保障
+
 ### App 准备
 
 - [交易平台](/getting-started/trading-platforms) — App、桌面端、Web Trade、OpenAPI 概览

@@ -21,6 +21,8 @@ sidebar: true
 
 长桥 App - 资产 - 全部功能 - 股票划转，选择划转方向（综合账户 → 日内融账户，或反向），选择股票和数量，点击「确认提交」完成划转。
 
+![股票划转操作界面](./images/master-sub-transfer.png)
+
 <!-- backlinks:start -->
 
 ## 引用此页面的文档

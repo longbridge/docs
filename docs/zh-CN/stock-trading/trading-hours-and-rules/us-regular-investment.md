@@ -54,7 +54,12 @@ sidebar: true
 ## 查看定投提醒与订单记录
 
 - 定投通知：长桥 App - 右上角通知 - 股票定投
-- 订单记录：长桥 App - 资产 - 全部功能 - 订单记录（定投订单会有定投标识）
+
+![定投通知消息](./images/LBC2bm4AVofvKqxdVpZjHA2lpcg.png)
+
+- 订单记录：长桥 App - 资产 - 全部功能 - 订单记录（定投订单会有定投标识，可在「策略订单」标签页查看）
+
+![定投订单记录](./images/A5OhbnpzaouiNdx9VR5joZXTpTe.png)
 
 ## 免责声明
 

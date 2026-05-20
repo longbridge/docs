@@ -79,6 +79,35 @@ sidebar: true
 
 例如客户原本持有 1,000 股股权，申请超额认购 10,000 股，最终结果可能为：仅拿到 1,000 股；或拿到 1,000 + 部分超额；或拿到 1,000 + 10,000 股。
 
+## 供股公告查询工具
+
+- 港股公司行动：[香港交易所披露易](https://www.hkexnews.hk/index_c.htm)
+- 美股公司行动：[SEC EDGAR](https://www.sec.gov/edgar/search/)
+
+## 供股公告解读示例
+
+以港股 00080 供股公告为例，了解如何从公告中获取关键信息：
+
+**供股比例**（每持有 2 股可获得 1 股股权）：
+
+![供股比例公告截图](./images/GDO0bNJkioZ0D0xN7XMjzjMYpAc.png)
+
+**认购价**（0.35 港币 / 股）：
+
+![认购价公告截图](./images/Il9PbMcp8oL8ksxVpBTjEp0Ppeh.png)
+
+**除权日**（2025 年 10 月 9 日）：
+
+![除权日公告截图](./images/TT0kbNythoRRyEx3Emajg4dipVd.png)
+
+**超额认购条款**：
+
+![超额认购公告截图](./images/WQxIb2quuoFT9WxCf2ijKSE4ptc.png)
+
+**股权代码及价格**：
+
+![股权代码及价格截图](./images/Hv3mbkWhioZeu7xeZj7jZh5fpKH.png)
+
 ## 供股收费
 
 合资格股东收到派发股权时会产生代收费用，由长桥代交易所收取。
@@ -87,6 +116,8 @@ sidebar: true
 - 交易所代收费：1.5 港币 / 手
 
 例如港股 00080 一手 10000 股，客户持有一手并获派股权，会产生 30 港币（长桥）+ 1.5 港币（交易所）的代收费。
+
+![供股代收费明细](./images/FYJCbJ2b5o75rhxednNjRIGppTh.png)
 
 若客户并非合资格股东，未收到额定分配的股权，不会产生代收费。此类客户若想参与供股，需先从市场上买入可交易股权（按正常交易费用收取）。
 

@@ -68,6 +68,8 @@ sidebar: true
 
 开户或交易前需完成风险测评，风险测评默认有效期 1 年。若未提交过或即将过期，APP 会弹出填写界面，按照页面提示根据自己实际情况填写即可。
 
+![风险测评问卷界面](./images/virtual-asset-risk-assessment.png)
+
 ## 注销账户
 
 如需注销虚拟资产账户，请填写注销申请表并发送邮件至香港官方邮箱。
@@ -76,6 +78,8 @@ sidebar: true
 提交邮箱：service@longbridge.hk
 
 如仅注销虚拟资产账户（保留证券账户），请在申请表中勾选"取消证券交易账户"，并备注虚拟资产账户的证券号码。
+
+![注销申请表选项示意](./images/virtual-asset-cancel-form.png)
 
 <!-- backlinks:start -->
 

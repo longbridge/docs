@@ -23,6 +23,10 @@ CRS（Common Reporting Standard，共同申报标准）也称 AEOI（Automatic E
 - 开设账户或投资新金融产品时，需要填写并签署自我证明表格
 - 税务身份或个人信息发生改变时，需及时通知更新税务资料
 
+相关表格：
+- [CRS 自我证明表格](https://pub.lbkrs.com/files/202504/i9v9JXMP1bCppLFG/CRS.pdf)（长桥提供）
+- [自我认证表格参考资料](https://www.ird.gov.hk/chs/tax/aeoi/self_cert.htm)（香港税务局）
+
 ## 受影响的客户
 
 所有在长桥持有金融账户的客户均受 CRS 尽职审查程序约束，包括个人（直接或间接持有）、独资经营者及公司。

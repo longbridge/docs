@@ -12,14 +12,23 @@ sidebar: true
 长桥提供在线网络诊断工具，可检测网络连接状况。
 
 访问方式：
-[- 网页访问](http://detect.longbridge-inc.com/)
+- [网页访问](http://detect.longbridge-inc.com/)
 - App 入口：设置 - 通用 - 使用浏览器打开网络诊断
+
+![网络诊断工具界面](./images/network-diagnostic-tool.png)
 
 ### 检测功能
 
 1. **浏览器和系统信息**：检测浏览器、操作系统及 Cookie/localStorage 状态
 2. **网络速度测试**：测量 LongBridge API、WebSocket 连接和静态资源的延迟，以及第三方服务（Google、Bing、Baidu）的连接性能
 3. **隐私保障**：工具不收集或存储私人信息，仅收集诊断所需的技术数据
+
+## 工具结果说明
+
+运行诊断后，页面会显示以下信息：
+
+- **Local IP**：您的本地 IP 地址（如 `34.96.47.35`），用于判断您当前所在地区
+- **Local DNS**：您正在使用的 DNS 服务器地址（如 `74.125.186.155`），辅助判断网络路由情况
 
 ## 典型网络故障场景
 

@@ -9,6 +9,8 @@ sidebar: true
 
 ## 账户介绍
 
+![日内融账户概览](./images/intraday-overview.png)
+
 日内融业务是长桥香港针对成熟交易类型投资者开通的专属交易模式。投资者需在当前券商账户下开设日内融子账户，通过主子账户资金或股票划转后，实现日内融账户下的交易。
 
 ## 开通账户
@@ -43,6 +45,10 @@ sidebar: true
 查询个别股票是否支持日内融：长桥 App - 选择日内融账户 - 选择股票 - 点开「支持融资」了解更多。
 
 ![App 查询日内融支持股票](https://pub.pbkrs.com/uploads/2025/56dfb22f5ac82cd8a9822bb2c911226c)
+
+![可交易股票说明](./images/intraday-eligible-stocks.png)
+
+[日内融资交易合资格股票名单](https://support.longbridgehk.com/topics/2y8a2ip/8we2bz)
 
 日内融资交易账户不支持香港市场的竞价订单。
 

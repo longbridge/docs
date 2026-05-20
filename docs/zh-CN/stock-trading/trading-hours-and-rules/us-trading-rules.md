@@ -11,6 +11,8 @@ sidebar: true
 
 美股提供夜盘、盘前、盘中、盘后四个交易时段，组成 24 小时交易体系。
 
+![美股交易时间总览](./images/us-trading-overview.png)
+
 夏令时为每年 3 月第二个星期日至 11 月第一个星期日，冬令时为每年 11 月第一个星期日至次年 3 月第二个星期日。
 
 | 时段 | 美东时间 | 北京时间（夏令时） | 北京时间（冬令时） |
@@ -134,8 +136,65 @@ ADR 托管费用平均每股 1 至 5 美分，收取金额和时间因不同 ADR
 
 ### 查询 ADR 费用
 
-- 长桥 App - 资产 - 全部功能 - 资金记录或结单查询
-- 也可通过四大托管行官网查询：纽约梅隆银行、摩根大通银行、花旗银行、德意志银行
+**方式一：长桥 App**
+
+长桥 App - 资产 - 全部功能 - 资金记录或结单查询
+
+![App 查询 ADR 费用入口](./images/us/LPqnb80j8oCWKGxI6oejEghMpPe.png)
+
+日结单中的 ADR 费用显示：
+
+![日结单 ADR 费用显示](./images/us/LtNSblPefokmunxvA4TjtWIypQh.png)
+
+注意：账户没有现金时，ADR 费用会通过融资垫付并产生利息。
+
+![ADR 费用融资垫付说明](./images/us/MtGibZ5g0o71xqxAVPnjA3K1p0g.png)
+
+**方式二：四大托管行官网查询**
+
+可通过以下四家托管行官网查询 ADR 费用详情，若一家银行找不到，请尝试另外三家。
+
+![ADR 股票托管行查询示例](./images/us/NhombX6PzofVFIx9qRQjeGWcpae.png)
+
+**纽约梅隆银行（BNY Mellon）**
+
+1. 登录 [BNY Mellon ADR 目录](https://www.adrbnymellon.com/directory/dr-directory)，在 Symbol 栏输入股票代码搜索
+
+   ![BNY Mellon 搜索 ADR](./images/us/NGNubosINojqS0xfVdmjt4QRpcd.png)
+
+2. 在 ADR 详情页点击 Distribution/DSF → Depositary Service Fee，点击 PDF 可下载原文通告
+
+   ![BNY Mellon DSF 详情](./images/us/OugEbQAXto7iO6xTwkmjwTg4pWc.png)
+
+**摩根大通银行（J.P. Morgan）**
+
+1. 登录 [摩根大通 ADR 官网](https://www.adr.com)，输入股票代码搜索
+
+   ![摩根大通搜索 ADR](./images/us/ZkexbuCfQoRnYUxDws1jnNGFpQ0.png)
+
+2. 在详情页下方 Program Activity 点击 Fees 查看收费详情，也可下载 PDF 原文通告
+
+   ![摩根大通 ADR 费用详情](./images/us/YMPSbLJWvoGMObxPOhijgO8epDh.png)
+
+**花旗银行（Citibank）**
+
+1. 登录 [花旗 ADR 官网](https://citiadr.factsetdigitalsolutions.com/www/drfront_page.idms)，输入股票代码搜索
+
+   ![花旗搜索 ADR](./images/us/IXeJbg0H9oKpHCx9n2TjmInypfb.png)
+
+2. 在详情页右侧导航栏点击 Company Dividends/GDN Interest Payments 或 Company DSF Notices，可下载 PDF 原文通告
+
+   ![花旗 ADR DSF 详情](./images/us/KnG4bEc5ooa7inxEKWyj1x59pbf.png)
+
+**德意志银行（Deutsche Bank）**
+
+1. 登录 [德意志银行 ADR 页面](https://www.adr.db.com/drwebrebrand/dr-universe/dr_universe_type_e.html)，输入股票代码后点击对应 DR Ticker
+
+   ![德意志银行搜索 ADR](./images/us/HaHbbTF7CoQdyMxn246jglkZpHh.png)
+
+2. 在详情页点击 Corporate Actions 查看收费详情，也可点击右侧链接下载原文通告
+
+   ![德意志银行 ADR Corporate Actions](./images/us/PWuybbXHUo26FOxKpSejEvprp0e.png)
 
 ## PTP 公开交易合伙企业
 

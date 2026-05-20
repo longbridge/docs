@@ -11,6 +11,10 @@ sidebar: true
 
 底部导航「资产」→ 顶部切换「现金」标签。
 
+![现金页面（HKD 视图）](./images/V3gKbi8zFojB3oxgfB1jGGufpxe.png)
+
+![现金页面（USD 视图）](./images/PvJvbh4CaoT2TExpoUkjNqV9pMg.png)
+
 ## 总金额卡片
 
 | 字段    | 说明                     |
@@ -45,6 +49,10 @@ sidebar: true
 ### 现金可提（最大可提）
 
 账户内现金及余额通按实时汇率折算后可用于交易或出金的资金。开启余额通后，该字段标注为「最大可提」。
+
+### 可用余额
+
+可用于交易的现金及余额通资金。
 
 ### 入金未到账
 

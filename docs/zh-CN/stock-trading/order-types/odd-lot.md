@@ -88,7 +88,7 @@ sidebar: true
 
 ## 碎股转仓
 
-长桥支持碎股转入及转出。
+长桥支持碎股转入及转出。详见[股票转仓](/stock-trading/stock-transfer/hk-transfer)。
 
 <!-- backlinks:start -->
 

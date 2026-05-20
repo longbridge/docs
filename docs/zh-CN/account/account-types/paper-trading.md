@@ -15,11 +15,17 @@ sidebar: true
 
 在长桥 App 资产页面左上角，切换账户，选择模拟账户进行申请，申请后大约 5 分钟内开通。桌面客户端操作方式相同。
 
+![App 切换至模拟账户](./images/paper-trading-app.png)
+
+![桌面端切换至模拟账户](./images/paper-trading-desktop.png)
+
 开通自带虚拟练习资金：800,000 HKD。
 
 ## 注销与重置
 
 注销路径：长桥 App - 我的 - 设置 - 账户设置，滑到最下面可以直接注销模拟账户。
+
+![注销模拟账户入口](./images/paper-trading-cancel.png)
 
 注销后重新申请开通会重置虚拟练习资金。
 

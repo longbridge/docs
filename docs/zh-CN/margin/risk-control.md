@@ -9,7 +9,7 @@ sidebar: true
 
 注：适用版本为 4.0.1 及以上。
 
-![融资状态入口](https://pub.pbkrs.com/uploads/2025/3dcc0df60e4c037d7a5b8d6a6c0af796)
+![融资状态入口](./images/risk-control-entry.png)
 
 ## 风控状态等级
 

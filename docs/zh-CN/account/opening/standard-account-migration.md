@@ -11,9 +11,13 @@ sidebar: true
 
 长桥标准账户已停止运营，现有长桥标准账户用户需迁移至香港或新加坡柜台。
 
+[查看官方停运通知](https://support.longbridgehk.com/topics/28nggs8/alzhoa)
+
 ## 迁移方案
 
-当前标准账户支持迁移至香港柜台或新加坡柜台。
+当前标准账户支持迁移至香港柜台或新加坡柜台。如需切换至新西兰账户查看，请参考以下操作：
+
+![App 切换新西兰账户入口](./images/nz-account-switch.png)
 
 [迁移至 HK 柜台](https://longbridge.activity.wbrks.com/pages/longbridge/9100/index.html?app_id=longbridge&org_id=1&account_channel=lb&lang=zh-CN)
 

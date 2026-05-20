@@ -25,6 +25,7 @@ sidebar: true
 | 收款人账号 | 0725885663 |
 | 收款银行 | DBS BANK LTD |
 | SWIFT 代码 | DBSSSGSGXXX |
+| 银行地址 | 12 Marina Boulevard, Marina Bay Financial Centre Tower 3, Singapore 018982 |
 | 附言（汇款备注） | 填写证券账户号（如 SG10039100），**必填** |
 
 费用承担方：SHA（各环节各自扣除）

@@ -21,7 +21,12 @@ sidebar: true
 ### 中国大陆通过 TestFlight 下载
 
 - HK App：使用大陆 Apple ID 下载 TestFlight，[点击加入](https://testflight.apple.com/join/q27PHAxw)后选择长桥 App 安装。
+
+  ![TestFlight 安装长桥 HK App](./images/testflight-hk.png)
+
 - SG App：使用其他地区 Apple ID 下载 TestFlight，[点击加入](https://testflight.apple.com/join/WVQMKEyl)后选择长桥 App 安装。
+
+  ![TestFlight 安装长桥 SG App](./images/testflight-sg.png)
 
 ### 更新已安装的 App
 

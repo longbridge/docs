@@ -35,6 +35,8 @@ DDA（Direct Debit Authorisation）是新加坡银行与长桥证券合作的授
 
 > 仅操作一端不会彻底解除：仅在 App 删除不会解除银行端授权；仅在银行端解除，App 不会自动更新，继续入金会显示失败。
 
+![DDA 解除需双向操作](./images/dda-delete.png)
+
 ## 常见授权失败原因
 
 | 错误码 | 含义 |
@@ -43,6 +45,8 @@ DDA（Direct Debit Authorisation）是新加坡银行与长桥证券合作的授
 | 1100（Other reason） | 曾在银行端删除 DDA 绑定，需联系客服关闭旧记录后重新授权 |
 | ID number verification failed | 长桥注册的身份证号与银行端不一致 |
 | BA3002（Consent not given） | 授权页面条款未完整阅读即取消，需重新操作并完整阅读后提交 |
+
+![BA3002：需划到底端点击 Submit](./images/dda-ba3002-consent.png)
 
 ## 出金限制与账户信息一致性
 

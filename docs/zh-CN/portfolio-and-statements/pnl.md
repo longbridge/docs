@@ -11,11 +11,11 @@ sidebar: true
 
 - 点击资产总览页面的空白处，选择「盈亏分析」
 
-![入口一：资产总览](https://pub.pbkrs.com/uploads/2025/dad8f05593395d8f8bcbab46adb2b073)
+![入口一：资产总览](./images/SsapbYNa2ompLMxZNVYj6R2bpMq.png)
 
 - 长桥 App → 资产 → 全部功能 → 盈亏分析
 
-![入口二：全部功能](https://pub.pbkrs.com/uploads/2025/041a9d1cfe29c77ad3b20dd960bdb0d3)
+![入口二：全部功能](./images/HpscbEoIRornZCxYR3qjox9JpQf.png)
 
 ## 功能概述
 
@@ -26,7 +26,7 @@ sidebar: true
 - **个股收益**：各标的盈亏明细，实时更新
 - **资产变动**：资金存取、转仓等资产变动记录
 
-![盈亏分析页面总览](https://pub.pbkrs.com/uploads/2025/e19eef4a4be71268d4d9a2f36adaeb7a)
+![盈亏分析页面总览](./images/UjQKbapDioHgjexOwnKjfdTtp9g.png)
 
 ## 盈亏字段说明
 
@@ -71,6 +71,8 @@ sidebar: true
 | 关闭 | 关闭 | 仅昨收价和盘中价 | T 日 04:00 ～ T+1 日 04:00 |
 
 当日盈亏只计算实际持仓数据，手续费不计入。
+
+若同时关闭盘前盘后价和夜盘，且当天发生拆股/合股等企业行动，盘前阶段可能短暂沿用昨收价导致资产显示异常。开启盘前盘后价后可恢复正常。
 
 ## 收益率计算方法
 

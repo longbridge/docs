@@ -61,6 +61,10 @@ sidebar: true
 
 ---
 
+## 期权策略下单界面
+
+![期权策略下单页面](./images/options-strategy-order.png)
+
 ## 常见期权策略
 
 ### Covered Call（备兑看涨）
@@ -134,6 +138,8 @@ sidebar: true
 
 - 借方策略：作为权利方，需付出权利金（如牛市看涨、熊市看跌）
 - 贷方策略：作为义务方，可收取权利金（如牛市看跌、熊市看涨）
+
+![全部期权策略汇总表](./images/options-strategy-table.png)
 
 <!-- backlinks:start -->
 
