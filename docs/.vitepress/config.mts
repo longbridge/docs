@@ -153,7 +153,7 @@ function generateSidebarItemsFromDir(dir: string, base: string, dirNames: Record
   try {
     const order = loadOrder(dir)
     const allEntries = fs.readdirSync(dir)
-      .filter(e => !e.startsWith('.') && e !== '_order.json')
+      .filter(e => !e.startsWith('.') && e !== '_order.json' && e !== 'images')
 
     // 按 _order.json 排序；未列出的追加到末尾（字母序）
     const sorted = [
