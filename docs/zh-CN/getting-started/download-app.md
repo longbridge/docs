@@ -16,7 +16,7 @@ sidebar: true
 
 ## 苹果（iOS）
 
-长桥 iOS App 已在中国大陆 App Store 下架，中国大陆地区用户无法通过中国大陆 Apple ID 下载。海外其他地区用户可使用当地 Apple ID 在 App Store 正常搜索并下载。
+长桥 iOS App 已在中国大陆 App Store 下架，中国大陆地区用户无法通过中国大陆 Apple ID 下载。海外其他地区用户可使用当地 Apple ID 在 App Store 正常搜索并下载。 
 
 ### 中国大陆通过 TestFlight 下载
 
