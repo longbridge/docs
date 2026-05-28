@@ -32,11 +32,3 @@ sidebar: true
 ---
 
 *本文仅供参考，不构成任何投资建议。*
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [新手入门](/getting-started)
-
-<!-- backlinks:end -->

@@ -125,11 +125,3 @@ sidebar: true
 |------|---------|---------|
 | IB 上海客服 | +86 (21) 6086 8586 | 周一至周五 09:00–18:00 |
 | IB 香港客服 | +852-2156-7907 | 周一至周五 08:00–17:00 |
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

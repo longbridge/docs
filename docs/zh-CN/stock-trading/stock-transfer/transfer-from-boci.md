@@ -62,11 +62,3 @@ sidebar: true
    - 联系人：clearing operation
 
 完成以上操作后耐心等待，双方券商会跟进处理。转出后预计 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

@@ -88,12 +88,3 @@ sidebar: true
 ## 组件数量限制
 
 同一页面最多支持打开 **15 个组件**，组件拼接中的每个子组件均计入此上限。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [自定义布局](/stock-trading/desktop-tools/custom-layout)
-- [桌面端工具](/stock-trading/desktop-tools)
-
-<!-- backlinks:end -->

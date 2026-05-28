@@ -111,11 +111,3 @@ sidebar: true
 ## 相关文档
 
 - [美股深度摆盘（桌面端）](/market-data/us-market-depth-desktop) — Longbridge Pro 桌面端深度摆盘说明
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [行情数据](/market-data)
-
-<!-- backlinks:end -->

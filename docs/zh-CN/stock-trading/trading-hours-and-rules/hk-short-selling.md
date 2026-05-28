@@ -73,12 +73,3 @@ sidebar: true
 ### 证券借贷协议的登记一般要多久？
 
 提交给税局后，审核时间一般为 30 天左右。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [港股交易规则与结算](/stock-trading/trading-hours-and-rules/hk-trading-rules)
-- [交易市场与规则](/stock-trading/trading-hours-and-rules)
-
-<!-- backlinks:end -->

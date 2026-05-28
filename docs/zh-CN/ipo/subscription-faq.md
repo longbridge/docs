@@ -128,12 +128,3 @@ sidebar: true
 | 交易费（Trading fee） | 0.00565% |
 | 财汇局交易征费（FRC Transaction levy） | 0.00015% |
 | **合计** | **1.0085%** |
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [新股认购 / IPO](/ipo)
-- [新股申购](/ipo/subscription)
-
-<!-- backlinks:end -->

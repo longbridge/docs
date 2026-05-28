@@ -52,11 +52,3 @@ sidebar: true
 如仅注销虚拟资产账户（保留证券账户），请在申请表中勾选「取消证券交易账户」，并备注虚拟资产账户的证券号码。
 
 ![注销申请表选项示意](./images/virtual-asset-cancel-form.png)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [虚拟资产](/crypto)
-
-<!-- backlinks:end -->

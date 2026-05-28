@@ -41,11 +41,3 @@ sidebar: true
 
 - [新股申购](/ipo/subscription) — 认购方式、时间、收费及资金退回
 - [新股认购常见问题](/ipo/subscription-faq) — 资金、利息、Margin Call 等详细问答
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [新股认购 / IPO](/ipo)
-
-<!-- backlinks:end -->

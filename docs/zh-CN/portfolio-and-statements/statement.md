@@ -229,11 +229,3 @@ sidebar: true
 | 货币 | 证券组合费的币种 |
 | 费率 | 结单日证券组合费费率 |
 | 当月累计费用 | 截止结单日的当月未扣收证券组合费 |
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [资产与账单](/portfolio-and-statements)
-
-<!-- backlinks:end -->

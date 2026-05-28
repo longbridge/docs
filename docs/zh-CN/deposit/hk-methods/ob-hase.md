@@ -64,11 +64,3 @@ sidebar: true
    ![上传汇款凭证](./images/c352d326b1070265a8196967ecda8a19.png)
 
    > 凭证必须在汇款完成后立即上传，否则影响入金进度。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [网银转账入金](/deposit/hk-methods/online-banking-transfer)
-
-<!-- backlinks:end -->

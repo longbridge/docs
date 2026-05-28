@@ -37,11 +37,3 @@ sidebar: true
    ![上传汇款凭证](./images/151c0b95c405e3a91346482cc4d26c8d.png)
 
    > 凭证必须在转账后立即上传，否则影响入金进度。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [FPS 转数快入金](/deposit/hk-methods/fps)
-
-<!-- backlinks:end -->

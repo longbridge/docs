@@ -77,11 +77,3 @@ sidebar: true
 3. 表格填写完毕后拍照，将图片**发给盈立在线客服（人工客服）**，并催促尽快处理转仓
 
 完成后耐心等待，双方券商确认后开始转移，股票转出后将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

@@ -88,11 +88,3 @@ sidebar: true
 完成以上 IB 操作后，**还须联系荷马证券客户经理**，请其在荷马侧也提交一张咨询单，双方均提交后转仓才会正式启动。
 
 完成后耐心等待，股票转出后将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

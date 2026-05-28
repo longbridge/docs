@@ -146,23 +146,3 @@ sidebar: true
 实际追缴金额及截止时间请以账户内通知为准。
 
 > 注：实际追缴金额可能较高，视乎股票性质和公司政策而定。
-
----
-
-## 相关文档
-
-- [融资额度](/margin/credit-limit) — 额度评估、降低与关闭操作
-- [账户风控](/margin/risk-control) — 安全/中等/预警/危险四级风控状态与购买力影响
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [期权卖方](/derivatives/options/options-seller)
-- [融资额度](/margin/credit-limit)
-- [如何应对追加保证金通知](/margin/how-to-respond-to-margin-call)
-- [融资融券](/margin)
-- [融资利息](/margin/interest-rules)
-- [账户风控](/margin/risk-control)
-
-<!-- backlinks:end -->

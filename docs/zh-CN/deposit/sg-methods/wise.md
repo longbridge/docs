@@ -51,20 +51,3 @@ Wise（原名 TransferWise）是国际汇款和货币转换服务平台，可以
 ### 出金操作步骤
 
 打开长桥 App，进入**资产 → 全部功能 → 提取资金**，选择币种（新币、港币或美元），填写收款信息后提交。
-
----
-
-## 相关文档
-
-- [入金方式总览](/deposit/methods-overview) — 对比所有入金方式的预计到账时间与手续费
-- [入金未到账排查](/troubleshooting/deposit-not-received) — 超出预期时间未到账时的排查步骤
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [如何选择入金方式](/deposit/how-to-choose-deposit-method)
-- [入金](/deposit)
-- [入金方式](/deposit/methods-overview)
-
-<!-- backlinks:end -->

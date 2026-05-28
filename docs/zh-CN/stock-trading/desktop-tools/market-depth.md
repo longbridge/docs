@@ -140,12 +140,3 @@ sidebar: true
 市场深度按档位展示价格，展示范围较小；止盈止损偏离最新价较多时，一屏内可能看不全。结合图表交易使用，可以清楚看到当前价格在走势图中的位置，判断更直观。
 
 ![市场深度与图表交易结合使用](./images/8bb811c56ce86b0b7c88e180386a385c.png)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [桌面端工具](/stock-trading/desktop-tools)
-- [股票交易](/stock-trading)
-
-<!-- backlinks:end -->

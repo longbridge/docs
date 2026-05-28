@@ -40,12 +40,3 @@ sidebar: true
 ## 港股还是 T+2 交收，账户购买力如何计算？
 
 购买力的计算没有变化。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [美股交易规则与结算](/stock-trading/trading-hours-and-rules/us-trading-rules)
-- [交易市场与规则](/stock-trading/trading-hours-and-rules)
-
-<!-- backlinks:end -->

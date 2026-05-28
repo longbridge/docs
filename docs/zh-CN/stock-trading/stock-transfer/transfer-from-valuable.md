@@ -72,11 +72,3 @@ sidebar: true
 3. 填写转出股票代码和股数，点击**下一步**，确认所有信息后提交
 
 完成后耐心等待，华盛转出后股票将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

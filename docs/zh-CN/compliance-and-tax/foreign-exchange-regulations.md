@@ -22,11 +22,3 @@ sidebar: true
 ## 更多信息
 
 如有外汇合规方面的疑问，建议向银行或持牌外汇服务机构咨询。长桥不提供税务或法律意见。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [合规与税务](/compliance-and-tax)
-
-<!-- backlinks:end -->

@@ -69,11 +69,3 @@ sidebar: true
    **附件**：转仓表格照片
 
 完成后耐心等待，哈富转出后股票将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

@@ -78,11 +78,3 @@ sidebar: true
    > 佳兆业客服会在 **1–3 个工作日内致电**（香港号码），核对身份信息并确认转仓意愿，请注意接听。
 
 完成后耐心等待，佳兆业确认转出后，股票将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

@@ -7,11 +7,11 @@ sidebar: true
 
 通过香港银行 ATM 或银行柜台将资金转账至长桥收款账户，转账完成后需上传汇款凭证。
 
-| 项目 | 说明 |
-|------|------|
-| 支持币种 | 港元（HKD）、美元（USD） |
+| 项目     | 说明                       |
+|--------|--------------------------|
+| 支持币种   | 港元（HKD）、美元（USD）          |
 | 预计到账时间 | 同行转账：2 小时内；跨行转账：1–3 个工作日 |
-| 手续费 | 长桥免费，具体费用以银行实际收取为准 |
+| 手续费    | 长桥免费，具体费用以银行实际收取为准       |
 
 ## 收款银行信息
 
@@ -49,20 +49,5 @@ sidebar: true
 
 ## 出金
 
-银行线下不支持办理出金，如需出金请使用 [FPS 转数快](/withdrawal/hk-online-banking)、[网银转账](/withdrawal/hk-online-banking) 或 [电汇](/withdrawal/wire-transfer)。
-
----
-
-## 相关文档
-
-- [入金方式总览](/deposit/methods-overview) — 对比所有入金方式的预计到账时间与手续费
-- [入金未到账排查](/troubleshooting/deposit-not-received) — 超出预期时间未到账时的排查步骤
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [入金](/deposit)
-- [入金方式](/deposit/methods-overview)
-
-<!-- backlinks:end -->
+银行线下不支持办理出金，如需出金请使用 [FPS 转数快](/withdrawal/hk-online-banking)、[网银转账](/withdrawal/hk-online-banking)
+或 [电汇](/withdrawal/wire-transfer)。

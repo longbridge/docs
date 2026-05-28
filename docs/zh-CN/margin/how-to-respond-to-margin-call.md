@@ -69,22 +69,3 @@ sidebar: true
 **末日期权仓位**：持有到期日当天的期权时，可能跳过追缴期直接强平。若账户中有临近到期的期权，需优先处理。
 
 **追缴金额高于通知差额**：实际需补足金额通常高于维持保证金缺口，需补至初始保证金水平。以 App 内显示的「应追缴保证金」数值为准。
-
----
-
-## 相关文档
-
-- [保证金](/margin/margin-requirements) — 三层保证金结构（IM/MM/FM）与追缴触发条件说明
-- [账户风控](/margin/risk-control) — 安全/中等/预警/危险四级状态定义
-- [如何选择入金方式](/deposit/how-to-choose-deposit-method) — 各入金方式到账速度与手续费对比
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [如何选择入金方式](/deposit/how-to-choose-deposit-method)
-- [完成首笔融资买入](/getting-started/first-margin-buy)
-- [保证金](/margin/margin-requirements)
-- [账户风控](/margin/risk-control)
-
-<!-- backlinks:end -->

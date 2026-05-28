@@ -63,11 +63,3 @@ sidebar: true
 App 支持自定义是否使用盘前价格计算期权持仓市值和盈亏。设置路径：我的 - 设置 - 资产设置 - 开启或关闭「期权使用延长时段价格」。
 
 ![期权延长时段价格设置](./images/f1d1b7d348968f03cd2f0bce64279ca0.png)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [衍生品](/derivatives)
-
-<!-- backlinks:end -->

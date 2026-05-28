@@ -83,11 +83,3 @@ sidebar: true
    **附件**：转仓表格照片
 
 完成后请留意恒星证券的邮件回复，如有异常情况，恒星会以邮件通知。股票转出后将在 **1–2 个工作日**存入长桥账户。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [其他券商转入](/stock-trading/stock-transfer/broker-transfer-guide)
-
-<!-- backlinks:end -->

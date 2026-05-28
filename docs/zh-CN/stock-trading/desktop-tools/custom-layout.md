@@ -190,12 +190,3 @@ sidebar: true
 组件拼接仅在自适应布局下可用，允许将多个组件合并到同一区域，通过切换 Tab 页查看不同组件内容，节省屏幕空间。同一页面最多支持 15 个组件（含拼接内的子组件）。
 
 详细操作说明（阴影色块、多种拼接方式、Tab 排序、移除）请参阅：[组件拼接详细说明](/stock-trading/desktop-tools/component-splicing)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [桌面端工具](/stock-trading/desktop-tools)
-- [股票交易](/stock-trading)
-
-<!-- backlinks:end -->

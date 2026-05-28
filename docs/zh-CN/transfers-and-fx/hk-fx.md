@@ -76,11 +76,3 @@ CNH 只能兑换为 SGD，不支持兑换 USD 或 HKD。
 
   </TabItem>
 </Tabs>
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [资金划转与换汇](/transfers-and-fx)
-
-<!-- backlinks:end -->

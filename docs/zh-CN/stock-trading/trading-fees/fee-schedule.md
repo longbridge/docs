@@ -323,12 +323,3 @@ sidebar: true
 ---
 
 [费率计算器](https://longbridgehk.com/calc)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [股票交易](/stock-trading)
-- [交易费用](/stock-trading/trading-fees)
-
-<!-- backlinks:end -->

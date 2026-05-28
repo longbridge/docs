@@ -45,18 +45,3 @@ sidebar: true
 关闭后，系统在最近一个交易日赎回当前持仓，最晚 T+1 资金到账。
 
 **注意**：若账户持有融资仓位，关闭余额通会降低购买力，可能触发追缴保证金通知，请在关闭前确认账户风控状态。
-
----
-
-## 相关文档
-
-- [余额通](/funds-and-wealth/cash-plus/cash-plus) — 运作机制、各市场规则与关闭说明
-- [闲钱理财](/funds-and-wealth/idle-cash) — 余额通与进阶理财产品对比
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [闲钱理财](/funds-and-wealth/idle-cash)
-
-<!-- backlinks:end -->

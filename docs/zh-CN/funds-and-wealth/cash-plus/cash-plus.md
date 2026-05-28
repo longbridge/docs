@@ -204,13 +204,3 @@ sidebar: true
 香港账户：关闭后余额通持仓立即转入普通基金账户，现金购买力同步减少，若账户有融资存在触发追缴保证金的风险，请注意。进行中的申购订单成交后同样转仓至普通基金。
 
 ![关闭余额通确认界面](./images/hk-close-cash-plus.png)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [如何开通余额通](/funds-and-wealth/how-to-enable-cash-plus)
-- [闲钱理财](/funds-and-wealth/idle-cash)
-- [基金与理财](/funds-and-wealth)
-
-<!-- backlinks:end -->

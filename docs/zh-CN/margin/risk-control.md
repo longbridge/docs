@@ -57,22 +57,3 @@ sidebar: true
 | 中等 | 无限制 | 关注杠杆倍数，控制风险 |
 | 预警 | 不可新增开仓 | 补充资金或减仓，补足应追缴保证金 |
 | 危险 | 不可新增开仓 | 在 15:00 前补足保证金或主动减仓，否则强制平仓 |
-
----
-
-## 相关文档
-
-- [保证金](/margin/margin-requirements) — 保证金三层结构（IM/MM/FM）、追缴机制与强制平仓说明
-- [融资额度](/margin/credit-limit) — 额度评估、降低与关闭操作
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [完成首笔融资买入](/getting-started/first-margin-buy)
-- [融资额度](/margin/credit-limit)
-- [如何应对追加保证金通知](/margin/how-to-respond-to-margin-call)
-- [融资融券](/margin)
-- [保证金](/margin/margin-requirements)
-
-<!-- backlinks:end -->

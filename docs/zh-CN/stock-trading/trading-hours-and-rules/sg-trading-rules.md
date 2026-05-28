@@ -158,12 +158,3 @@ SIP 交易资格才能投资 DLC。
 ## 相关文档
 
 - [限价单与市价单](/stock-trading/订单类型/限价单与市价单) — 订单类型
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [股票交易](/stock-trading)
-- [交易市场与规则](/stock-trading/trading-hours-and-rules)
-
-<!-- backlinks:end -->

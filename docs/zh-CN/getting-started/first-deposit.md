@@ -91,12 +91,3 @@ sidebar: true
 ---
 
 下一步：[买入第一只港股](/getting-started/buy-first-hk-stock)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [账户常见问题](/account/account-faq)
-- [新手入门](/getting-started)
-
-<!-- backlinks:end -->

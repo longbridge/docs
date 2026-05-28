@@ -57,11 +57,3 @@ sidebar: true
 ---
 
 *以上均为一般性规律分析，不代表市场运行必然结果，不构成任何投资建议。*
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [行情数据](/market-data)
-
-<!-- backlinks:end -->

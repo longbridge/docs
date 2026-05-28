@@ -71,20 +71,3 @@ sidebar: true
 下单成功后，进入「资产」→「持仓」，确认期权仓位已出现。
 
 持仓显示为**多头（正数数量）**，说明你持有该期权的买方权利。权利金已从账户余额扣除。
-
----
-
-## 相关文档
-
-- [期权买方](/derivatives/options/options-buyer) — 看涨/看跌期权盈亏结构与行权逻辑说明
-- [期权链](/derivatives/options/options-chain) — 期权链页面各字段含义说明
-- [开通期权交易](/derivatives/options/enable-options) — 权限级别与申请流程
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [期权买方](/derivatives/options/options-buyer)
-- [期权卖方](/derivatives/options/options-seller)
-
-<!-- backlinks:end -->

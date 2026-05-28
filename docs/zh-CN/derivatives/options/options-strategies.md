@@ -140,11 +140,3 @@ sidebar: true
 - 贷方策略：作为义务方，可收取权利金（如牛市看跌、熊市看涨）
 
 ![全部期权策略汇总表](./images/options-strategy-table.png)
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [衍生品](/derivatives)
-
-<!-- backlinks:end -->

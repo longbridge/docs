@@ -120,13 +120,3 @@ sidebar: true
 ![供股代收费明细](./images/FYJCbJ2b5o75rhxednNjRIGppTh.png)
 
 若客户并非合资格股东，未收到额定分配的股权，不会产生代收费。此类客户若想参与供股，需先从市场上买入可交易股权（按正常交易费用收取）。
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [股东大会](/stock-trading/corporate-actions/general-meeting)
-- [公司行动](/stock-trading/corporate-actions)
-- [股票交易](/stock-trading)
-
-<!-- backlinks:end -->

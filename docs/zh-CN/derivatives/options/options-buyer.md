@@ -81,22 +81,3 @@ sidebar: true
 - 市场价格不利：可选择放弃权利，最大损失为已支付的权利金
 
 注意：长桥目前不支持主动提前行权，到期时价内期权自动行权，价外期权自动作废。
-
----
-
-## 相关文档
-
-- [如何买入期权](/derivatives/options/how-to-buy-options) — 期权链查找、行权价选择与下单操作步骤
-- [开通期权交易](/derivatives/options/enable-options) — 权限级别与申请流程
-- [期权卖方](/derivatives/options/options-seller) — 卖方义务方的风险收益特征
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [衍生品](/derivatives)
-- [如何买入期权](/derivatives/options/how-to-buy-options)
-- [期权交易入门](/derivatives/options/options-getting-started)
-- [期权卖方](/derivatives/options/options-seller)
-
-<!-- backlinks:end -->

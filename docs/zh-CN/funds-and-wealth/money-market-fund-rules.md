@@ -50,11 +50,3 @@ sidebar: true
 ## 相关文档
 
 - [基金交易规则](/funds-and-wealth/funds/fund-trading-rules) — 普通基金买卖截止时间与撤单规则
-
-<!-- backlinks:start -->
-
-## 引用此页面的文档
-
-- [基金与理财](/funds-and-wealth)
-
-<!-- backlinks:end -->
