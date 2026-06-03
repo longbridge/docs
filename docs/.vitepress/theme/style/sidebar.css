@@ -1,275 +1,88 @@
-/* Sidebar 完全对齐 docs.cdp.coinbase.com
- * (light only,与 docs 现有 brand teal #00b8b8 协同)
- *
- * 设计参考:https://docs.cdp.coinbase.com/(实测于 chrome-devtools MCP)
- *
- * 层级映射:
- *   level-0   = 顶级分组 header(装饰性,有 icon + 大写小字,**不可点**)
- *   level-1   = 二级 leaf 链接或 collapsible group header(带 chevron caret)
- *   level-2   = 三级 leaf(嵌套在 collapsible 内)
- *   level-3+  = 更深层级
- *
- * Specificity 策略:`.VPSidebar` 前缀把规则提到 (0,6,0),并叠 !important 跨过 Vue scoped。
+/* Sidebar 完全对齐 openapi-website
+ * 源整合：
+ *   - openapi-website/docs/.vitepress/theme/style/sidebar.css
+ *   - openapi-website/docs/.vitepress/theme/style/custom.scss (--vp-sidebar-bg-color)
+ *   - openapi-website/docs/.vitepress/theme/layouts/Layout.vue <style> 段
+ *     (.level-0 pb-2.5 + .level-1.is-link -ml-2)
  */
 
-.VPSidebar {
-  --at-apply: outline-none;
+:root:root {
+  --vp-sidebar-bg-color: var(--vp-c-bg);
+}
+
+:root.dark:root {
+  --vp-sidebar-bg-color: var(--vp-c-bg);
 }
 
 :root {
-  --vp-sidebar-width: 288px;        /* cdp 18rem */
+  --vp-sidebar-width: 300px;
 }
 
-/* ──────────────────────────────────────────────────────────
- * 顶级分组 header(level-0,装饰性,不可点)
- * 对齐 cdp 的 .sidebar-group-header
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem.level-0 {
+.VPNavBarTitle.has-sidebar .title {
+  border: 0;
+}
+
+.VPSidebar {
+  --at-apply: outline-none;
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem:hover {
+  color: var(--vp-c-brand-1);
+}
+
+.VPSidebarItem:not(.is-link) > .item {
+  --at-apply: px-2;
+}
+
+.VPSidebarItem .VPLink {
+  --at-apply: rounded-lg px-4 py-1 flex items-center;
+}
+
+.VPSidebarItem.is-link .VPLink > p {
+  --at-apply: py-0;
+}
+
+/* 关键修复：VitePress alpha.8 把 collapsible 分组渲染为 <h2/h3/h4> 标签，
+ * 浏览器默认 heading margin 造成巨大行间距。zero out all .text margin. */
+.VPSidebarItem .text {
   margin: 0;
 }
 
-.VPSidebar .VPSidebarItem.level-0 > .item {
-  --at-apply: flex items-center gap-2.5 pl-4;
-  margin-bottom: 4px !important;
-  pointer-events: none;
-  background: transparent !important;
+/* 直接子选择器：只染当前 active 项本身的 link，不向下污染子级
+ * （descendant `.is-active .VPLink` 会让父级 active 时把所有子级 leaf 都加 bg） */
+.VPSidebarItem.is-active > .item > .VPLink {
+  background: color-mix(in oklab, var(--vp-c-brand-1) 10%, transparent);
 }
 
-.VPSidebar .VPSidebarItem.level-0 > .item > .VPLink,
-.VPSidebar .VPSidebarItem.level-0 > .item > .text {
-  --at-apply: flex items-center gap-2.5;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: transparent !important;
-  color: #3e4045 !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em;
-  cursor: default !important;
-  text-shadow: none !important;
+/* 关键：压缩 level-0 分组下边距（VitePress 默认 24px → 10px） */
+.VPSidebar .VPSidebarItem.level-0 {
+  --at-apply: pb-2.5;
 }
 
-/* 顶级 caret 隐藏(顶级不折叠,永远展开) */
-.VPSidebar .VPSidebarItem.level-0 > .item > .caret,
-.VPSidebar .VPSidebarItem.level-0 > .item > .caret-icon {
-  display: none !important;
+/* level-1 leaf 链接左侧再外推 8px，对齐 openapi-website 视觉缩进 */
+.VPSidebar .level-1.is-link {
+  --at-apply: -ml-2;
 }
 
-/* icon 大小(由 UnoCSS preset-icons mask 注入) */
-.VPSidebar .sidebar-group-icon {
-  width: 14px !important;
-  height: 14px !important;
-  flex-shrink: 0;
-}
-
-.VPSidebar .sidebar-group-label {
-  display: inline-block;
-}
-
-/* ──────────────────────────────────────────────────────────
- * leaf link 与 collapsible button 共同基底(level >= 1)
- * 对齐 cdp 的 .group flex items-start pr-3 py-1.5 rounded-xl
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem:not(.level-0) > .item {
-  /* leaf 与 collapsible 的 .item 都强制清掉默认 padding,
-   * 由内部 .VPLink 接管视觉 padding(rounded-xl 圆角靠 link 表达) */
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 防止 VitePress scoped CSS 在 leaf item 的 hover 状态给 .item 加 brand-soft 底
- * (那个底会和内部 .VPLink 的 hover 灰底重叠,产生色块叠层) */
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item,
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item:hover,
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item:focus,
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item:focus-within {
-  background-color: transparent !important;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).is-link > .item > .VPLink {
-  --at-apply: flex items-center rounded-xl pr-3 py-1.5;
-  padding-left: var(--lb-sidebar-indent, 16px) !important;
-  background-color: transparent !important;
-  color: #3e4045 !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  font-weight: 400 !important;
-  transition: background-color 0.15s ease, color 0.15s ease !important;
-  text-shadow: none;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).is-link > .item > .VPLink .text {
-  color: inherit !important;
-  font-weight: inherit !important;
-  font-size: inherit !important;
-  /* VitePress 默认给 <p.text> 加了 padding:4px 0 + line-height:24px,导致 leaf 高 44px 太大,
-   * 这里 reset 让 leaf 真实高度 = 6(py) + 20(line) + 6(py) = 32px,对齐 cdp */
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 20px !important;
-  background: transparent !important;
-}
-
-/* 缩进:按 level 递增,公式 16 + (level - 1) * 12 (px) */
-.VPSidebar .VPSidebarItem.level-1.is-link > .item > .VPLink { --lb-sidebar-indent: 16px; }
-.VPSidebar .VPSidebarItem.level-2.is-link > .item > .VPLink { --lb-sidebar-indent: 28px; }
-.VPSidebar .VPSidebarItem.level-3.is-link > .item > .VPLink { --lb-sidebar-indent: 40px; }
-.VPSidebar .VPSidebarItem.level-4.is-link > .item > .VPLink { --lb-sidebar-indent: 52px; }
-
-/* hover(仅 leaf,不动 collapsible header — collapsible 单独处理见下) */
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item > .VPLink:hover {
-  background-color: rgba(75, 85, 99, 0.05) !important;
-  color: var(--vp-c-text-1) !important;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).is-link:not(.collapsible) > .item > .VPLink:hover .text {
-  color: var(--vp-c-text-1) !important;
-}
-
-/* ──────────────────────────────────────────────────────────
- * active leaf:brand teal 浅底 + brand teal 文字 + text-shadow 拟加粗
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem:not(.level-0).is-active.is-link:not(.collapsible) > .item > .VPLink {
-  background-color: var(--vp-c-brand-soft) !important;
-  color: var(--vp-c-brand-1) !important;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).is-active.is-link:not(.collapsible) > .item > .VPLink .text {
-  color: var(--vp-c-brand-1) !important;
-  text-shadow:
-    -0.2px 0 0 currentColor,
-    0.2px 0 0 currentColor;
-}
-
-/* active leaf 上 hover 保持品牌色 */
-.VPSidebar .VPSidebarItem:not(.level-0).is-active.is-link:not(.collapsible) > .item > .VPLink:hover {
-  background-color: var(--vp-c-brand-soft) !important;
-  color: var(--vp-c-brand-1) !important;
-}
-
-/* ──────────────────────────────────────────────────────────
- * collapsible group(level-1 及以下,带子项的目录节点)
- * - 行视觉与 leaf 一致(同 padding/字号/圆角)
- * - 右侧 chevron caret,展开旋转 90°
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item {
-  --at-apply: flex items-center rounded-xl pr-2 py-1.5 cursor-pointer w-full;
-  padding-left: var(--lb-sidebar-indent-group, 16px) !important;
-  background-color: transparent !important;
-  color: #3e4045 !important;
-  transition: background-color 0.15s ease, color 0.15s ease !important;
-}
-
-.VPSidebar .VPSidebarItem.level-1.collapsible > .item { --lb-sidebar-indent-group: 16px; }
-.VPSidebar .VPSidebarItem.level-2.collapsible > .item { --lb-sidebar-indent-group: 28px; }
-.VPSidebar .VPSidebarItem.level-3.collapsible > .item { --lb-sidebar-indent-group: 40px; }
-
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item > .VPLink,
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item > .text {
-  flex: 1;
-  padding: 0 !important;
-  margin: 0 !important;
-  background-color: transparent !important;
-  color: #3e4045 !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  font-weight: 400 !important;
-  text-shadow: none !important;
-}
-
-/* collapsible 的 .VPLink 内部如果也有 <p.text> wrapper,reset 它 */
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item > .VPLink > .text,
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item > .VPLink > p {
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 20px !important;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item:hover {
-  background-color: rgba(75, 85, 99, 0.05) !important;
-}
-
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item:hover > .VPLink,
-.VPSidebar .VPSidebarItem:not(.level-0).collapsible > .item:hover > .text {
-  color: var(--vp-c-text-1) !important;
-}
-
-/* ──────────────────────────────────────────────────────────
- * Caret(展开/收起箭头),对齐 cdp:8×1lh,gray-400,旋转过渡
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem .caret {
-  display: flex !important;
+/* docs 项目用 .sidebar-group-icon（config.mts:242），openapi-website 用 .sidebar-item-icon
+ * 两个 class 共用同一套视觉 */
+.sidebar-item-icon,
+.sidebar-group-icon {
+  display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
-  width: 16px;
-  height: 20px;
-  margin-left: 4px;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+  margin-right: 12px;
   color: var(--vp-c-text-3);
-  transition: color 0.15s ease;
 }
 
-.VPSidebar .VPSidebarItem .caret-icon {
-  width: 12px;
-  height: 12px;
-  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+/* 让含 icon 的 .text 容器变 flex，icon + label 自然垂直居中对齐
+ * （level-0 是 sidebar-group-icon 所在；不影响其它无 icon 的 .text） */
+.VPSidebarItem.level-0 > .item > .text {
+  display: flex;
+  align-items: center;
 }
 
-/* collapsed (默认收起):caret 朝右 */
-.VPSidebar .VPSidebarItem.collapsible.collapsed > .item > .caret > .caret-icon {
-  transform: rotate(0deg);
-}
-
-/* expanded(展开):caret 旋转 90° */
-.VPSidebar .VPSidebarItem.collapsible:not(.collapsed) > .item > .caret > .caret-icon {
-  transform: rotate(90deg);
-}
-
-.VPSidebar .VPSidebarItem.collapsible > .item:hover > .caret {
-  color: var(--vp-c-text-2);
-}
-
-/* ──────────────────────────────────────────────────────────
- * 子级容器:去掉 VitePress 默认的左缩进 / 左边框
- * (我们的缩进是靠 leaf 自身的 padding-left 控制)
- * ────────────────────────────────────────────────────────── */
-.VPSidebar .VPSidebarItem .items {
-  padding-left: 0 !important;
-  border-left: none !important;
-}
-
-/* 隐藏 VitePress 默认的品牌色竖线指示器(我们用 brand 浅底替代) */
-.VPSidebar .VPSidebarItem .indicator {
-  display: none !important;
-}
-
-/* 去掉 VitePress 默认 .group 之间的 1px 灰色 horizontal divider
- * (cdp 风格 — 各 section 之间只靠 margin 隔开,无分隔线) */
-.VPSidebar .group {
-  border-top: none !important;
-  padding-top: 0 !important;
-}
-
-/* section 之间的间距 — 缩到 12px,给 collapsible group 让出气口空间 */
-.VPSidebar .group + .group {
-  margin-top: 12px !important;
-}
-
-/* 同 group 内 sibling .VPSidebarItem 之间留 1px 气口
- * (cdp / mintlify 通过 `space-y-px` 实现的同款节奏感) */
-.VPSidebar .VPSidebarItem:not(.level-0) + .VPSidebarItem:not(.level-0) {
-  margin-top: 1px !important;
-}
-
-/* collapsible group header(可展开/收起)在前后再多 2px 气口,让它和 leaf 视觉上有差异 */
-.VPSidebar .VPSidebarItem.collapsible:not(.level-0) {
-  margin-top: 2px !important;
-}
-
-.VPSidebar .VPSidebarItem.collapsible:not(.level-0):first-child {
-  margin-top: 0 !important;
+.VPSidebarItem.is-active .sidebar-item-icon,
+.VPSidebarItem.is-active .sidebar-group-icon {
+  color: var(--vp-c-brand-1);
 }

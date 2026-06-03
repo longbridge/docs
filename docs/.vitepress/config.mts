@@ -135,17 +135,28 @@ function generateSidebarItemsFromDir(dir: string, base: string, dirNames: Record
       if (stat.isDirectory()) {
         const subItems = generateSidebarItemsFromDir(fullPath, `${base}/${entry}`, dirNames, depth + 1)
         const displayName = dirNames[entry] || entry
-        const hasIndex = fs.existsSync(path.join(fullPath, 'index.md'))
 
-        // openapi-website sidebar 风格:无图标,完全用排版层级
-        const text = displayName
+        // 若目录下有 index.md，自动在子菜单顶部插入 Overview leaf（对齐 openapi-website）
+        // 父级 collapsible 仍**不设 link**，点击只展开/收起
+        const indexPath = path.join(fullPath, 'index.md')
+        if (fs.existsSync(indexPath)) {
+          const overviewFallback = dir.includes('/zh-CN/')
+            ? '概览'
+            : dir.includes('/zh-HK/')
+              ? '概覽'
+              : 'Overview'
+          const overviewText = extractTitle(indexPath, overviewFallback)
+          subItems.unshift({
+            text: overviewText,
+            link: `${base}/${entry}/`,
+          })
+        }
 
         const groupItem: any = {
-          text,
+          text: displayName,
           collapsed: true,
           items: subItems,
         }
-        if (hasIndex) groupItem.link = `${base}/${entry}/`
 
         items.push(groupItem)
       } else if (entry.endsWith('.md') && entry !== 'index.md') {

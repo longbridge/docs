@@ -188,21 +188,36 @@
 
 /* 告知 VitePress 真实 navbar 高度，使 .aside sticky top 计算正确 */
 .custom-nav-layout {
-  --vp-nav-height: var(--hn-height, 104px);
+  --vp-nav-height: var(--hn-height, 56px);
 }
 
+/* nav 改为 position: fixed 后，VPContent 需 padding-top 给固定 nav 让位
+ * 注：VitePress 默认在 960+ 也加这条；这里显式覆盖确保所有断点都生效 */
 .custom-nav-layout .VPContent {
-  @apply !pt-0;
+  padding-top: var(--hn-height, 56px) !important;
 }
 
 .custom-nav-layout .VPSidebar {
-  top: var(--hn-height, 104px);
-  padding-top: 32px;
+  top: var(--hn-height, 56px);
+  /* 顶部紧贴 nav，覆盖 VitePress 默认 @media 960+ 的 padding-top: var(--vp-nav-height) */
+  padding-top: 0 !important;
   /* padding-left / right 由 @media (min-width: 1280px) 接管，不在此写死 */
 }
 
+/* 内容和右侧 TOC 的顶部距离对齐 sidebar 首项（VPSidebarGroup.padding-top: 10px）
+ * VitePress 默认：VPDoc padding-top 48px、aside-container 内部 +48px → 内容比 sidebar 低 38px
+ * 把这两处都降到 10px 让三栏顶部齐平 */
+.VPDoc {
+  padding-top: 10px !important;
+}
+
+.VPDoc .aside-container {
+  /* 原计算式 var(--vp-nav-height) + ... + 48px → 改 10px 跟 VPDoc 一致 */
+  padding-top: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 10px) !important;
+}
+
 .custom-nav-layout .VPLocalNav {
-  top: var(--hn-height, 104px);
+  top: var(--hn-height, 56px);
 }
 
 /* 首页额外隐藏 VPNav（兼容旧逻辑，custom-nav-layout 已涵盖） */
@@ -218,7 +233,7 @@
 /* ============================================================
    UnoCSS 注入由 theme/index.ts 中 `import 'virtual:uno.css'` 处理。
    原 `@tailwind base/components/utilities` 指令已删除。
-   `@apply` 指令由 UnoCSS transformer-directives 接管,无需改动。
+   `@apply` 指令由 UnoCSS transformer-directives 接管，无需改动。
    ============================================================ */
 
 /* ============================================================
@@ -262,8 +277,8 @@
 /* ============================================================
    Sidebar 样式已迁移到 docs/.vitepress/theme/style/sidebar.css
    对齐 docs.cdp.coinbase.com:
-   - default:中等灰文字,透明底
-   - hover:浅灰底 + 加深文字(不变品牌色)
+   - default:中等灰文字，透明底
+   - hover:浅灰底 + 加深文字 (不变品牌色)
    - active:品牌色浅底 + 品牌色文字 + text-shadow 拟加粗
    ============================================================ */
 
@@ -1320,9 +1335,12 @@ html.ai-resizing .hn-root {
   }
 
   /* ─── HomeNavbar.vue（全部使用 token，无 .dark 硬编码覆盖）─── */
+  /* 改 fixed，强制贴顶（sticky 在某些 layout 上下文会被祖先 overflow 影响失效） */
   .hn-root {
-    @apply sticky;
+    @apply fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     background: var(--vp-c-bg);
     border-bottom: 1px solid var(--vp-c-divider);
@@ -1330,7 +1348,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-top-bar {
-    /* 顶部行从 64px 压到 56px,贴近 docs.cdp.coinbase.com 的轻量感 */
+    /* 顶部行从 64px 压到 56px，贴近 docs.cdp.coinbase.com 的轻量感 */
     @apply h-14 flex items-center;
   }
 
@@ -1373,11 +1391,11 @@ html.ai-resizing .hn-root {
 
   /* 精致 pill 搜索按钮 — 完全对齐 docs.cdp.coinbase.com:
    * - fully rounded pill(border-radius: 9999px)
-   * - 半透明黑底 (3% alpha) + ring 形成柔和边界(无 1px hard border)
-   * - icon 18px,文字 14px gray-500,⌘K 纯文字符号靠右,无 key cap
-   * - 宽度 ~350px,高度 36px */
+   * - 半透明黑底 (3% alpha) + ring 形成柔和边界 (无 1px hard border)
+   * - icon 18px，文字 14px gray-500,⌘K 纯文字符号靠右，无 key cap
+   * - 宽度 ~350px，高度 36px */
   .hn-search-btn {
-    @apply flex items-center gap-3 h-9 w-[350px] py-0 pl-3.5 pr-3 text-sm max-md:w-9 max-md:px-2 max-md:gap-0 max-md:justify-center;
+    @apply flex items-center h-9 w-[350px] text-sm max-md:w-9 max-md:gap-0 max-md:justify-center;
   }
 
   .hn-search-label {
@@ -1399,7 +1417,7 @@ html.ai-resizing .hn-root {
   }
 
   .hn-askai-btn {
-    @apply flex items-center gap-1.5 h-9 py-0 px-4 text-sm font-medium max-md:px-2.5;
+    @apply flex items-center gap-2 h-9 text-sm font-medium;
     background: transparent;
     border: 1px solid var(--vp-c-border);
     border-radius: 99px;
@@ -1493,39 +1511,6 @@ html.ai-resizing .hn-root {
 
   .hn-register:hover {
     opacity: 0.85;
-  }
-
-  .hn-bottom-bar {
-    @apply flex items-center max-md:hidden h-12;
-  }
-
-  .hn-bottom-inner {
-    @apply max-w-7xl w-full mx-auto px-6 h-full flex items-center justify-between;
-  }
-
-  .hn-tabs {
-    @apply max-lg:gap-0 max-lg:overflow-x-auto flex items-center h-full;
-  }
-
-  .hn-tab {
-    @apply flex items-center py-0 px-3 h-12 text-sm font-medium;
-    color: var(--vp-c-text-2);
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: color 0.15s;
-    box-sizing: border-box;
-  }
-
-  .hn-tab:hover {
-    color: var(--vp-c-brand-1);
-  }
-
-  .hn-tab--active {
-    /* active indicator 使用品牌色下划线,对齐 docs.cdp.coinbase.com */
-    color: var(--vp-c-text-1);
-    border-bottom-color: var(--vp-c-brand-1);
-    @apply font-medium;
   }
 
   .hn-extra-links {
@@ -1781,18 +1766,19 @@ html.ai-resizing .hn-root {
     @apply max-md:grid-cols-1 grid-cols-2 gap-0.5;
   }
 
-  .item {
+  /* scoped 到 .section-list，避免裸 .item 选择器渗透到 VPSidebarItem 的内部 .item */
+  .section-list .item {
     @apply flex items-center justify-between py-5 px-6 gap-4;
     background: var(--vp-c-bg);
     text-decoration: none;
     transition: background 0.15s;
   }
 
-  .item:hover {
+  .section-list .item:hover {
     background: var(--vp-c-brand-soft);
   }
 
-  .item:hover .item-title {
+  .section-list .item:hover .item-title {
     color: var(--vp-c-brand-1);
   }
 
@@ -1828,7 +1814,7 @@ html.ai-resizing .hn-root {
       transform 0.15s;
   }
 
-  .item:hover .item-arrow {
+  .section-list .item:hover .item-arrow {
     color: var(--vp-c-brand-1);
     transform: translateX(2px);
   }
@@ -2397,24 +2383,32 @@ html.ai-resizing .hn-root {
 
 /* ============================================================
    Navbar button visual overrides — 必须放在 @layer 外
-   `@layer components { ... }` 优先级比无 layer 的 VitePress `button {}` reset 低,
+   `@layer components { ... }` 优先级比无 layer 的 VitePress `button {}` reset 低，
    不放外面 border / background 会被 `button { background: transparent; border: 0; }` 抹掉。
    ============================================================ */
 .hn-search-btn {
-  /* 3% 黑透明,在 navbar 暖白底上呈现温和灰雾感(cdp 实测) */
+  /* 3% 黑透明，在 navbar 暖白底上呈现温和灰雾感 (cdp 实测) */
   background: rgba(10, 12, 17, 0.03);
   border: 0;
-  /* ring-1 风格 — 1px 灰雾 box-shadow,比 border 更柔和 */
-  box-shadow: 0 0 0 1px rgba(159, 163, 169, 0.3);
+  box-shadow: none;
   border-radius: 9999px;
   cursor: pointer;
   color: var(--vp-c-text-3);
-  transition: box-shadow 0.15s, background 0.15s;
+  transition: background 0.15s;
+  /* 显式 padding/gap：unlayered 优先级高于 @layer components，避免被 button reset 抹掉 */
+  padding: 0 20px;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .hn-search-btn {
+    padding: 0 8px;
+    gap: 0;
+  }
 }
 
 .hn-search-btn:hover {
   background: rgba(10, 12, 17, 0.05);
-  box-shadow: 0 0 0 1px rgba(159, 163, 169, 0.5);
 }
 
 .hn-search-btn:hover .hn-search-label {
@@ -2428,9 +2422,27 @@ html.ai-resizing .hn-root {
 }
 
 .hn-askai-btn {
-  background: var(--vp-c-brand-1);
+  /* 与 .hn-search-btn 同款：灰底 pill，仅 sparkle 保留品牌色 */
+  background: rgba(10, 12, 17, 0.03);
   border: 0;
+  box-shadow: none;
+  border-radius: 9999px;
   cursor: pointer;
+  color: var(--vp-c-text-1);
+  transition: background 0.15s;
+  /* 显式 padding：unlayered 优先级高于 @layer components，避免被 button reset 干扰 */
+  padding: 0 20px;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .hn-askai-btn {
+    padding: 0 14px;
+  }
+}
+
+.hn-askai-btn:hover {
+  background: rgba(10, 12, 17, 0.05);
 }
 
 /* ─── @keyframes (outside @layer for browser compat) ─── */
@@ -2552,16 +2564,14 @@ html.ai-resizing .hn-root {
    详情页优化 — 三栏布局 & Hero & TOC
    ============================================================ */
 
-/* F.2 — 三栏布局尺寸 */
+/* docs-specific nav height + layout max-width 对齐 hn-container max-w-7xl */
 :root {
-  --hn-height: 112px;
-  --vp-layout-max-width: 1280px;   /* 与 header max-w-7xl 一致 */
-  --vp-sidebar-width: 256px;       /* 收紧体宽，缩短 sidebar 与 body 间距 */
-  --vp-aside-width: 224px;         /* 同步收紧右栏 */
-  --vp-sidebar-bg-color: transparent;
+  --hn-height: 56px;
+  --vp-layout-max-width: 1280px;
 }
 
-/* 把 VitePress 默认 1440 居中规则下沉到 1280，与 header max-w-7xl 对齐 */
+/* ≥1280 viewport：sidebar 内容左缘对齐 hn-container 的 px-6 左缘
+ * 计算：(viewport - max-w-7xl) / 2 + 24（px-6 = 1.5rem = 24px） */
 @media (min-width: 1280px) {
   .VPSidebar {
     padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + 24px) !important;
@@ -2571,18 +2581,41 @@ html.ai-resizing .hn-root {
 
   .VPContent.has-sidebar {
     padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width)) !important;
-    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2 + 24px) !important;
-  }
-
-  /* VPDoc 自带 padding:32px，在宽屏下清零，让右侧 TOC 右缘对齐 header 右缘 */
-  .VPDoc {
-    padding-left: 0 !important;
+    /* 不再限制 padding-right，让 content + aside 可以延伸到 VPContent 右缘
+     * （对齐 openapi-website custom.scss 的 `padding-right: 0 !important`） */
     padding-right: 0 !important;
   }
 }
 
-.VPDoc .content-container .content {
-  @apply lg:!max-w-[45rem]; /* 720px — 对齐 Claude Code Docs 实测宽度 */
+/* 正文 + TOC 布局：让 content-container 撑满可用空间，TOC（aside）推到右边
+ * VitePress 默认 has-aside: container 居中 + content-container max-width 688px → 正文挤压，TOC 居中不靠右
+ * Override：container 改 space-between，content-container 取消 max-width 限制 */
+@media (min-width: 1280px) {
+  .VPDoc.has-aside .container {
+    justify-content: space-between !important;
+  }
+
+  .VPDoc.has-aside .content-container {
+    max-width: none !important;
+    flex: 1;
+    min-width: 0;
+    margin-right: 64px;
+  }
+
+  .VPDoc.has-aside .aside {
+    flex-grow: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* 分割线挂在 .aside-content（fixed 容器内、TOC items 的直接包裹层），
+   * 高度跟随 TOC 内容自然撑开，不被 flex stretch 拉到正文等高 */
+  .VPDoc.has-aside .aside-content {
+    /* 默认 min-height: calc(100vh - ...) 会把容器撑到一屏，导致分割线超过 TOC 长度 */
+    min-height: 0 !important;
+    border-left: 1px solid var(--vp-c-divider);
+    padding-left: 16px;
+    padding-bottom: 0;
+  }
 }
 
 /* F.3 — Hero 标题区 */
@@ -2720,16 +2753,9 @@ html.ai-resizing .hn-root {
   padding-bottom: 4px;
 }
 
-/* lucide align-justify 18px，currentColor 跟随文字色，dark 自动 */
+/* 移除 outline-title 左侧的 hamburger icon */
 .VPDocAside .outline-title::before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='3' y1='6' x2='21' y2='6'/><line x1='3' y1='12' x2='21' y2='12'/><line x1='3' y1='18' x2='21' y2='18'/></svg>") no-repeat center / contain;
-          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='3' y1='6' x2='21' y2='6'/><line x1='3' y1='12' x2='21' y2='12'/><line x1='3' y1='18' x2='21' y2='18'/></svg>") no-repeat center / contain;
+  display: none;
 }
 
 /* 移除 VitePress 默认浮动 marker 竖线 */
@@ -2884,7 +2910,7 @@ html.ai-resizing .hn-root {
   text-overflow: unset;
 }
 
-/* (已移除)旧的 sidebar 视觉规则。
- * 全部 sidebar 视觉(level-0 字号、leaf padding-left 等)由
- * `docs/.vitepress/theme/style/sidebar.css` 完整接管,对齐 docs.cdp.coinbase.com。
+/* (已移除) 旧的 sidebar 视觉规则。
+ * 全部 sidebar 视觉 (level-0 字号、leaf padding-left 等) 由
+ * `docs/.vitepress/theme/style/sidebar.css` 完整接管，对齐 docs.cdp.coinbase.com。
  */

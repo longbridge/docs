@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, onBeforeUnmount, watch } from 'vue'
-import { useData, inBrowser } from 'vitepress'
+import { computed, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
+import { useData, useRoute, inBrowser } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import DocBackground from '../components/DocBackground.vue'
 import HomeNavbar from '../components/HomeNavbar.vue'
 import PageHero from '../components/PageHero.vue'
 import PageFeedback from '../components/PageFeedback.vue'
@@ -43,13 +42,33 @@ watch(modalOpen, (open) => {
   if (!inBrowser) return
   document.documentElement.classList.toggle('ai-drawer-open', open)
 }, { immediate: true })
+
+// 文章页：把侧边栏激活项滚动到视口中间（仅初次进入或路由切换时执行一次）
+const route = useRoute()
+async function centerActiveSidebarItem() {
+  if (!inBrowser) return
+  await nextTick()
+  // 等 sidebar 渲染完毕（VitePress 切换路由后，is-active 类是异步打的）
+  requestAnimationFrame(() => {
+    const sidebar = document.querySelector<HTMLElement>('.VPSidebar')
+    if (!sidebar) return
+    const active = sidebar.querySelector<HTMLElement>('.VPSidebarItem.is-active > .item > .link, .VPSidebarItem.is-active .link.active, a.link.active, .VPSidebarItem.is-active')
+    if (!active) return
+    const sRect = sidebar.getBoundingClientRect()
+    const aRect = active.getBoundingClientRect()
+    // 把激活项相对 sidebar 顶部的偏移移到 sidebar 视口高度的一半
+    const target = sidebar.scrollTop + (aRect.top - sRect.top) - sRect.height / 2 + aRect.height / 2
+    sidebar.scrollTo({ top: Math.max(0, target), behavior: 'auto' })
+  })
+}
+watch(() => route.path, centerActiveSidebarItem, { immediate: true })
+onMounted(centerActiveSidebarItem)
 </script>
 
 <template>
   <DefaultTheme.Layout>
     <template #layout-top>
       <HomeNavbar />
-      <DocBackground v-if="isDocPage" />
     </template>
     <template #doc-before>
       <PageHero v-if="isDocPage" />

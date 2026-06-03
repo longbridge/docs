@@ -89,7 +89,7 @@ onBeforeUnmount(() => {
         <div class="hn-actions">
           <!-- Developer Platform 入口（md 以上显示） -->
           <a
-            href="https://open.longbridge.co"
+            href="https://open.longbridge.com"
             class="hn-dev-platform"
             target="_blank"
             rel="noopener"
@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
             <Transition name="hn-more-fade">
               <div v-if="moreOpen" ref="morePopoverRef" class="hn-more-popover" role="menu">
                 <a
-                  href="https://open.longbridge.co"
+                  href="https://open.longbridge.com"
                   class="hn-more-item"
                   target="_blank"
                   rel="noopener"
@@ -144,21 +144,5 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <!-- 第二行：主题分类导航 -->
-    <div class="hn-bottom-bar">
-      <div class="hn-bottom-inner">
-        <div class="hn-tabs" role="tablist">
-          <a
-            v-for="tab in NAV_TABS"
-            :key="tab.path"
-            :href="tab.path"
-            class="hn-tab"
-            :class="{ 'hn-tab--active': activeTab === tab.path }"
-            role="tab"
-            :aria-selected="activeTab === tab.path"
-          >{{ t(tab.label) }}</a>
-        </div>
-      </div>
-    </div>
   </nav>
 </template>

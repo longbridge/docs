@@ -1,371 +1,354 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, inject } from 'vue'
-import { answerExamples } from '../../data/answer-showcase'
+import { ref, onMounted, onBeforeUnmount, inject, computed } from 'vue'
 import { useI18n } from '../../../i18n/useI18n'
 
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
 const { t } = useI18n()
 
-const activeIndex = ref(0)
+interface Demo {
+  q: string
+  intro: string
+  steps: string[]
+  cite: string
+}
+
+const demos: Demo[] = [
+  {
+    q: '我的港股入金没到账，怎么办？',
+    intro: '入金通常在 1–2 个工作日到账。先按以下步骤自查：',
+    steps: [
+      '在银行 App 确认转账已成功，记录参考号',
+      '打开长桥 App →「资金」→「入金记录」核对状态',
+      '若超过 2 个工作日仍未到账，在 App 内联系客服并附转账凭证',
+    ],
+    cite: '入金方式说明',
+  },
+  {
+    q: '美股期权 PCP 策略，保证金怎么算？',
+    intro: 'PCP（保护性认购）保证金取以下两者较大值：',
+    steps: [
+      '期权市值 × 15%（当前期权报价 × 合约乘数）',
+      '标的证券价值 × 10%（当前股价 × 股数）',
+      '实时保证金可在「账户 → 保证金详情」随时查看',
+    ],
+    cite: '期权保证金说明',
+  },
+  {
+    q: 'W-8BEN 表格多久需要重新提交一次？',
+    intro: 'W-8BEN 有效期为签署日起 3 年（至当年年末）：',
+    steps: [
+      '到期前 30 天，系统会自动向您发送提醒通知',
+      '在 App「账户 → 税务信息」重新填写并提交',
+      '未及时更新将按 30% 最高税率预扣美股股息税',
+    ],
+    cite: 'FATCA 与税务信息',
+  },
+]
+
+const idx = ref(0)
+const current = computed(() => demos[idx.value])
+const features = computed(() => [
+  t('answerShowcase.feat0'),
+  t('answerShowcase.feat1'),
+  t('answerShowcase.feat2'),
+])
+
 let timer: ReturnType<typeof setInterval> | null = null
 
-const current = computed(() => answerExamples[activeIndex.value])
-
-function selectIndex(i: number) {
-  activeIndex.value = i
-  resetTimer()
-}
-
-function resetTimer() {
-  if (timer) clearInterval(timer)
+function start() {
+  stop()
   timer = setInterval(() => {
-    activeIndex.value = (activeIndex.value + 1) % answerExamples.length
-  }, 6000)
+    idx.value = (idx.value + 1) % demos.length
+  }, 3200)
+}
+function stop() {
+  if (timer) clearInterval(timer)
+  timer = null
 }
 
-onMounted(resetTimer)
-onUnmounted(() => { if (timer) clearInterval(timer) })
+onMounted(start)
+onBeforeUnmount(stop)
+
+function jump(i: number) {
+  idx.value = i
+}
+
+function askDemo() {
+  openAIModal(current.value.q)
+}
 </script>
 
 <template>
-  <section class="answer-showcase">
+  <section
+    class="answer-showcase"
+    @mouseenter="stop"
+    @mouseleave="start"
+  >
     <div class="answer-showcase__inner">
-
-      <!-- 左文 -->
-      <div class="answer-showcase__text">
+      <div class="answer-showcase__left">
         <span class="answer-showcase__eyebrow">{{ t('answerShowcase.eyebrow') }}</span>
-        <h2 class="answer-showcase__title">{{ t('answerShowcase.title') }}</h2>
-        <ul class="answer-showcase__features">
-          <li>
-            <CheckIcon />
-            {{ t('answerShowcase.feat0') }}
-          </li>
-          <li>
-            <CheckIcon />
-            {{ t('answerShowcase.feat1') }}
-          </li>
-          <li>
-            <CheckIcon />
-            {{ t('answerShowcase.feat2') }}
+        <h2 class="answer-showcase__title">
+          用一句话提问，<br />直接给到操作步骤
+        </h2>
+        <ul class="answer-showcase__feats">
+          <li v-for="f in features" :key="f" class="answer-showcase__feat">
+            <span class="answer-showcase__check">
+              <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4.5 8l2.5 2.5 4.5-4.5" />
+              </svg>
+            </span>
+            {{ f }}
           </li>
         </ul>
-        <button
-          class="answer-showcase__cta"
-          @click="openAIModal(current.question)"
-        >
+        <button type="button" class="answer-showcase__cta" @click="askDemo">
           {{ t('answerShowcase.cta') }}
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
           </svg>
         </button>
       </div>
 
-      <!-- 右侧 demo 卡区 -->
-      <div
-        class="answer-showcase__demo"
-        @mouseenter="() => { if (timer) clearInterval(timer) }"
-        @mouseleave="resetTimer"
-      >
-        <Transition name="as-card" mode="out-in">
+      <div class="answer-showcase__demo">
+        <div :key="'q-' + idx" class="answer-showcase__bubble-row answer-showcase__fade">
+          <div class="answer-showcase__user">{{ current.q }}</div>
+        </div>
+        <div :key="'a-' + idx" class="answer-showcase__ai answer-showcase__fade answer-showcase__fade--delay">
+          <div class="answer-showcase__ai-head">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            {{ t('answerShowcase.aiName') }}
+          </div>
+          <p class="answer-showcase__intro">{{ current.intro }}</p>
+          <ol class="answer-showcase__steps">
+            <li v-for="(s, i) in current.steps" :key="i">{{ s }}</li>
+          </ol>
+          <div class="answer-showcase__cite">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            {{ t('answerShowcase.source') }}：<span class="answer-showcase__cite-link">{{ current.cite }}</span>
+          </div>
+        </div>
+        <div class="answer-showcase__dots">
           <button
-            :key="current.id"
-            class="answer-showcase__card"
-            :aria-label="`${t('answerShowcase.cardAriaLabel')}: ${current.question}`"
-            @click="openAIModal(current.question)"
-          >
-            <!-- 用户问 -->
-            <div class="as-chat-row as-chat-row--user">
-              <div class="as-bubble as-bubble--user">{{ current.question }}</div>
-            </div>
-            <!-- AI 答 -->
-            <div class="as-chat-row as-chat-row--ai">
-              <div class="as-bubble as-bubble--ai">
-                <span class="as-ai-label">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  {{ t('answerShowcase.aiName') }}
-                </span>
-                <p class="as-answer-intro">{{ current.answer }}</p>
-                <ol class="as-answer-steps">
-                  <li v-for="(step, i) in current.answerSteps" :key="i">{{ step }}</li>
-                </ol>
-                <div class="as-citation">
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M2 2h7l4 4v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M9 2v4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span>{{ t('answerShowcase.source') }}: </span>
-                  <span class="as-citation-label">{{ current.citation.label }}</span>
-                </div>
-              </div>
-            </div>
-          </button>
-        </Transition>
-
-        <!-- 指示器 -->
-        <div class="answer-showcase__dots" role="tablist" :aria-label="t('answerShowcase.dotsAriaLabel')">
-          <button
-            v-for="(_, i) in answerExamples"
+            v-for="(_, i) in demos"
             :key="i"
-            role="tab"
-            :aria-selected="i === activeIndex"
+            type="button"
             class="answer-showcase__dot"
-            :class="{ 'answer-showcase__dot--active': i === activeIndex }"
-            @click="selectIndex(i)"
+            :class="{ 'is-active': i === idx }"
+            :aria-label="t('answerShowcase.dotsAriaLabel')"
+            @click="jump(i)"
           />
         </div>
       </div>
-
     </div>
   </section>
 </template>
 
-<!-- CheckIcon 内联子组件 -->
-<script lang="ts">
-import { defineComponent, h } from 'vue'
-const CheckIcon = defineComponent({
-  render() {
-    return h('svg', { width: 14, height: 14, viewBox: '0 0 16 16', fill: 'none', 'aria-hidden': 'true' }, [
-      h('circle', { cx: 8, cy: 8, r: 8, fill: 'var(--vp-c-brand-1)', 'fill-opacity': '0.12' }),
-      h('path', { d: 'M4.5 8l2.5 2.5 4.5-4.5', stroke: 'var(--vp-c-brand-1)', 'stroke-width': '1.5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }),
-    ])
-  },
-})
-export { CheckIcon }
-</script>
-
 <style scoped>
-/* ── 外层 ── */
 .answer-showcase {
+  padding: 80px 32px;
   background: var(--vp-c-bg);
-  padding: 80px 48px;
-  border-top: 1px solid var(--vp-c-divider);
 }
 
 .answer-showcase__inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 72px;
   align-items: center;
 }
 
-/* ── 左文 ── */
 .answer-showcase__eyebrow {
-  display: block;
+  display: inline-block;
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-weight: 600;
   color: var(--vp-c-brand-1);
-  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
 }
 
 .answer-showcase__title {
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
+  margin: 0 0 22px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: var(--vp-c-text-1);
-  margin: 0 0 24px;
 }
 
-.answer-showcase__features {
+.answer-showcase__feats {
   list-style: none;
+  margin: 0 0 34px;
   padding: 0;
-  margin: 0 0 32px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
-.answer-showcase__features li {
+.answer-showcase__feat {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--vp-c-text-2);
+  gap: 9px;
+  font-size: 15px;
+  color: var(--vp-c-text-1);
+}
+
+.answer-showcase__check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .answer-showcase__cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 7px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--vp-c-text-1);
+  background: transparent;
   font-size: 14px;
   font-weight: 600;
-  color: var(--vp-c-brand-1);
-  border: 1.5px solid var(--vp-c-brand-1);
-  border-radius: 99px;
-  background: transparent;
+  color: var(--vp-c-text-1);
   cursor: pointer;
-  transition: background 150ms ease-out, color 150ms ease-out;
+  transition: background 0.15s, color 0.15s;
 }
 
 .answer-showcase__cta:hover {
-  background: var(--vp-c-brand-1);
+  background: var(--vp-c-text-1);
   color: #fff;
 }
 
-/* ── 右侧 Demo ── */
 .answer-showcase__demo {
+  background: #f6f8f9;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
+}
+
+.answer-showcase__bubble-row {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.answer-showcase__card {
-  all: unset;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 16px;
-  padding: 20px;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
-}
-
-.answer-showcase__card:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-}
-
-/* ── 气泡 ── */
-.as-chat-row {
-  display: flex;
-}
-
-.as-chat-row--user {
   justify-content: flex-end;
+  margin-bottom: 14px;
 }
 
-.as-chat-row--ai {
-  justify-content: flex-start;
-}
-
-.as-bubble {
-  max-width: 85%;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.as-bubble--user {
+.answer-showcase__user {
   background: var(--vp-c-brand-1);
   color: #fff;
-  border-bottom-right-radius: 4px;
+  border-radius: 18px 18px 4px 18px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 80%;
+  line-height: 1.4;
 }
 
-.as-bubble--ai {
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-1);
-  border-bottom-left-radius: 4px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.answer-showcase__ai {
+  background: #fff;
+  border-radius: 4px 18px 18px 18px;
+  padding: 16px;
+  border: 1px solid var(--vp-c-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-.as-ai-label {
+.answer-showcase__ai-head {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
+  margin-bottom: 9px;
+  font-size: 12px;
   color: var(--vp-c-text-3);
-  letter-spacing: 0.04em;
+  font-weight: 500;
 }
 
-.as-answer-intro {
-  margin: 0;
-  font-size: 13px;
+.answer-showcase__intro {
+  margin: 0 0 10px;
+  font-size: 13.5px;
   color: var(--vp-c-text-2);
   line-height: 1.6;
 }
 
-.as-answer-steps {
+.answer-showcase__steps {
   margin: 0;
-  padding-left: 16px;
+  padding-left: 18px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 7px;
 }
 
-.as-answer-steps li {
-  font-size: 13px;
-  line-height: 1.6;
+.answer-showcase__steps li {
+  font-size: 13.5px;
   color: var(--vp-c-text-1);
+  line-height: 1.55;
 }
 
-.as-citation {
+.answer-showcase__cite {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--vp-c-divider);
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--vp-c-text-3);
-  padding-top: 4px;
-  border-top: 1px solid var(--vp-c-divider);
 }
 
-.as-citation-label {
+.answer-showcase__cite-link {
   color: var(--vp-c-brand-1);
-  text-decoration: none;
+  font-weight: 500;
 }
 
-/* ── 指示器 ── */
 .answer-showcase__dots {
   display: flex;
-  gap: 8px;
   justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
 }
 
 .answer-showcase__dot {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
+  border-radius: 999px;
+  background: var(--vp-c-border);
   border: none;
-  background: var(--vp-c-divider);
-  cursor: pointer;
   padding: 0;
-  transition: background 200ms ease-out, transform 200ms ease-out;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.answer-showcase__dot.is-active {
+  width: 18px;
+  background: var(--vp-c-brand-1);
 }
 
 .answer-showcase__dot:hover {
-  background: var(--vp-c-text-3);
+  opacity: 0.7;
 }
 
-.answer-showcase__dot--active {
-  background: var(--vp-c-brand-1);
-  transform: scale(1.3);
+@keyframes fade-slide-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── 卡片切换过渡 ── */
-.as-card-enter-active,
-.as-card-leave-active {
-  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1), transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+.answer-showcase__fade {
+  animation: fade-slide-in 0.28s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }
 
-.as-card-enter-from {
-  opacity: 0;
-  transform: translateY(8px);
+.answer-showcase__fade--delay {
+  animation-delay: 0.08s;
 }
 
-.as-card-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
-}
-
-/* ── 响应式 ── */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .answer-showcase__inner {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -374,14 +357,10 @@ export { CheckIcon }
 
 @media (max-width: 768px) {
   .answer-showcase {
-    padding: 64px 16px;
+    padding: 56px 20px;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .as-card-enter-active,
-  .as-card-leave-active {
-    transition: none !important;
+  .answer-showcase__title {
+    font-size: 26px;
   }
 }
 </style>
