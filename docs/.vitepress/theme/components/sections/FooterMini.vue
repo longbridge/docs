@@ -6,65 +6,49 @@ import { categoryGroups } from '../../data/category-groups'
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
 const { t } = useI18n()
 
-const tradingGroup = categoryGroups[0]
-const accountGroup = categoryGroups[3]
-const helpGroup = categoryGroups[4]
+const cols = [
+  categoryGroups[0], // 交易类
+  categoryGroups[3], // 账户支撑
+  categoryGroups[4], // 帮助
+]
+
+function askAi() {
+  openAIModal('')
+}
 </script>
 
 <template>
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <!-- 品牌列 -->
-      <div class="site-footer__brand">
-        <div class="site-footer__logo">Longbridge Docs</div>
-        <p class="site-footer__tagline">{{ t('footerMini.tagline') }}</p>
-        <button class="site-footer__ask-btn" @click="openAIModal('')">
-          {{ t('footerMini.askAi') }}
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
+  <footer class="ftm">
+    <div class="ftm__inner">
+      <div class="ftm__grid">
+        <div class="ftm__brand">
+          <div class="ftm__brand-name">Longbridge Docs</div>
+          <p class="ftm__tagline">{{ t('footerMini.tagline') }}</p>
+          <button type="button" class="ftm__ai" @click="askAi">
+            {{ t('footerMini.askAi') }}
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        <div v-for="col in cols" :key="col.name" class="ftm__col">
+          <div class="ftm__col-title">{{ t(col.name) }}</div>
+          <ul class="ftm__list">
+            <li v-for="item in col.items" :key="item.path">
+              <a :href="item.path" class="ftm__link">{{ t(item.label) }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <!-- 交易列 -->
-      <div class="site-footer__col">
-        <div class="site-footer__col-title">{{ t(tradingGroup.name) }}</div>
-        <ul class="site-footer__links">
-          <li v-for="item in tradingGroup.items" :key="item.path">
-            <a :href="item.path">{{ t(item.label) }}</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 账户列 -->
-      <div class="site-footer__col">
-        <div class="site-footer__col-title">{{ t(accountGroup.name) }}</div>
-        <ul class="site-footer__links">
-          <li v-for="item in accountGroup.items" :key="item.label">
-            <a :href="item.path">{{ t(item.label) }}</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- 帮助列 -->
-      <div class="site-footer__col">
-        <div class="site-footer__col-title">{{ t(helpGroup.name) }}</div>
-        <ul class="site-footer__links">
-          <li v-for="item in helpGroup.items" :key="item.path">
-            <a :href="item.path">{{ t(item.label) }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 底部栏 -->
-    <div class="site-footer__bottom">
-      <div class="site-footer__bottom-inner">
-        <span class="site-footer__copyright">{{ t('footerMini.copyright') }}</span>
-        <nav class="site-footer__bottom-links" :aria-label="t('footerMini.navAriaLabel')">
-          <a href="https://longbridgeapp.com" target="_blank" rel="noopener noreferrer">{{ t('footerMini.official') }}</a>
-          <a href="/zh-CN/compliance-and-tax/privacy-policy">{{ t('footerMini.privacy') }}</a>
-          <a href="/zh-CN/compliance-and-tax/">{{ t('footerMini.compliance') }}</a>
+      <div class="ftm__bottom">
+        <span class="ftm__copy">{{ t('footerMini.copyright') }}</span>
+        <nav class="ftm__bottom-nav" :aria-label="t('footerMini.navAriaLabel')">
+          <a href="https://longbridge.com" target="_blank" rel="noopener" class="ftm__bottom-link">{{ t('footerMini.official') }}</a>
+          <a href="/zh-CN/compliance-and-tax/privacy-policy" class="ftm__bottom-link">{{ t('footerMini.privacy') }}</a>
+          <a href="/zh-CN/compliance-and-tax/" class="ftm__bottom-link">{{ t('footerMini.compliance') }}</a>
         </nav>
       </div>
     </div>
@@ -72,163 +56,136 @@ const helpGroup = categoryGroups[4]
 </template>
 
 <style scoped>
-.site-footer {
-  background: var(--vp-c-bg-alt);
+.ftm {
+  background: var(--vp-c-bg-soft);
   border-top: 1px solid var(--vp-c-divider);
 }
 
-.site-footer__inner {
-  max-width: 1200px;
+.ftm__inner {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 64px 48px 48px;
+  padding: 56px 32px 0;
+}
+
+.ftm__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
+  padding-bottom: 52px;
 }
 
-/* 品牌列 */
-.site-footer__logo {
-  font-size: 16px;
+.ftm__brand-name {
+  font-size: 17px;
   font-weight: 700;
-  color: var(--vp-c-text-1);
+  margin-bottom: 10px;
   letter-spacing: -0.01em;
-  margin-bottom: 12px;
+  color: var(--vp-c-text-1);
 }
 
-.site-footer__tagline {
-  font-size: 13px;
+.ftm__tagline {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  color: var(--vp-c-text-2);
   line-height: 1.7;
-  color: var(--vp-c-text-3);
-  margin: 0 0 20px;
   max-width: 220px;
 }
 
-.site-footer__ask-btn {
+.ftm__ai {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--vp-c-text-1);
+  background: transparent;
   font-size: 13px;
   font-weight: 600;
-  color: var(--vp-c-brand-1);
-  background: rgba(0, 184, 184, 0.08);
-  border: 1px solid rgba(0, 184, 184, 0.2);
-  border-radius: 99px;
-  padding: 7px 16px;
+  color: var(--vp-c-text-1);
   cursor: pointer;
-  transition: background 150ms ease-out, border-color 150ms ease-out;
+  transition: background 0.15s, color 0.15s;
 }
 
-.site-footer__ask-btn:hover {
-  background: rgba(0, 184, 184, 0.16);
-  border-color: rgba(0, 184, 184, 0.4);
+.ftm__ai:hover {
+  background: var(--vp-c-text-1);
+  color: #fff;
 }
 
-/* 链接列 */
-.site-footer__col-title {
-  font-size: 12px;
+.ftm__col-title {
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.06em;
   color: var(--vp-c-text-3);
+  margin-bottom: 14px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  letter-spacing: 0.08em;
 }
 
-.site-footer__links {
+.ftm__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
 }
 
-.site-footer__links a {
-  font-size: 13px;
+.ftm__link {
+  font-size: 14px;
   color: var(--vp-c-text-2);
   text-decoration: none;
-  transition: color 150ms ease-out;
-  line-height: 1.4;
+  transition: color 0.15s;
 }
 
-.site-footer__links a:hover {
-  color: var(--vp-c-brand-1);
+.ftm__link:hover {
+  color: var(--vp-c-text-1);
 }
 
-/* 底部栏 */
-.site-footer__bottom {
+.ftm__bottom {
   border-top: 1px solid var(--vp-c-divider);
-}
-
-.site-footer__bottom-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 48px;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ftm__copy {
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+}
+
+.ftm__bottom-nav {
+  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.site-footer__copyright {
-  font-size: 12px;
-  color: var(--vp-c-text-3);
-}
-
-.site-footer__bottom-links {
-  display: flex;
-  gap: 20px;
-}
-
-.site-footer__bottom-links a {
-  font-size: 12px;
+.ftm__bottom-link {
+  font-size: 13px;
   color: var(--vp-c-text-3);
   text-decoration: none;
-  transition: color 150ms ease-out;
+  transition: color 0.15s;
 }
 
-.site-footer__bottom-links a:hover {
-  color: var(--vp-c-brand-1);
+.ftm__bottom-link:hover {
+  color: var(--vp-c-text-1);
 }
 
-/* 响应式 */
-@media (max-width: 960px) {
-  .site-footer__inner {
+@media (max-width: 900px) {
+  .ftm__grid {
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
-    padding: 48px 32px 40px;
-  }
-}
-
-@media (max-width: 640px) {
-  .site-footer__inner {
-    grid-template-columns: 1fr;
     gap: 32px;
-    padding: 40px 20px 32px;
-  }
-
-  .site-footer__tagline {
-    max-width: 100%;
-  }
-
-  .site-footer__bottom-inner {
-    padding: 16px 20px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .site-footer__bottom-links {
-    flex-wrap: wrap;
-    gap: 12px 20px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .site-footer__ask-btn,
-  .site-footer__links a,
-  .site-footer__bottom-links a {
-    transition: none !important;
+@media (max-width: 768px) {
+  .ftm__inner {
+    padding: 40px 20px 0;
+  }
+  .ftm__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 36px;
   }
 }
 </style>

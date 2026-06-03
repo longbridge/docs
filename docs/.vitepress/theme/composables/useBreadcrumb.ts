@@ -115,7 +115,17 @@ export function useBreadcrumb() {
 
     // 始终在面包屑路径前添加主页链接
     if (breadcrumbPath && breadcrumbPath.length > 0) {
-      return [homeItem, ...breadcrumbPath]
+      // 给 group 节点（无 link）按当前页 URL 截到对应层级补 link，
+      // 例如当前页 /app-guide/profile，group「App 导览」补成 /app-guide/
+      const segments = normalizePath(currentPath).split('/').filter(Boolean)
+      const filled = breadcrumbPath.map((crumb, i) => {
+        if (crumb.link) return crumb
+        // 末位通常是当前页本身（一定有 link），这里只处理中间 group
+        const depth = i + 1
+        if (depth >= segments.length) return crumb
+        return { ...crumb, link: `/${segments.slice(0, depth).join('/')}` }
+      })
+      return [homeItem, ...filled]
     }
 
     return [homeItem]

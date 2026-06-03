@@ -228,7 +228,7 @@ const zhCN = {
   vp: {
     title: 'Longbridge Docs',
     description: 'Longbridge Docs',
-    outline: '本页内容',
+    outline: '页面导航',
     lastUpdated: '最近更新',
     editLink: '在 GitHub 上编辑此页',
     prev: '上一篇',
