@@ -6,6 +6,7 @@ import path from 'path'
 import UnoCSS from 'unocss/vite'
 import { tipContainerPlugin } from './md-plugins/tip-container'
 import { normalizeMdPlugin } from './md-plugins/normalize-md'
+import { buildEndCdnPrefix } from './cdn-prefix'
 import { NAV_TABS } from './tabs.config'
 import zhCN from './i18n/locales/zh-CN'
 import en from './i18n/locales/en'
@@ -304,6 +305,13 @@ export default defineConfig({
   appearance: 'light',
   ignoreDeadLinks: true,
   cleanUrls: true,
+
+  // 部署到 OSS + 主域 nginx 反代时启用：把所有 dist 产物 URL 重写为完整 CDN URL
+  // （JS/CSS/字体/图片/runtime 拼接的 hashmap.json 与 page chunk），同时保留 page
+  // link href 不动，确保导航留在主域。无 env var 时 no-op，本地 dev 不受影响。
+  buildEnd: process.env.ASSETS_CDN_PREFIX
+    ? buildEndCdnPrefix(process.env.ASSETS_CDN_PREFIX)
+    : undefined,
 
   head: [
     ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: 'https://assets.wbrks.com/assets/logo/logo1.png' }],
