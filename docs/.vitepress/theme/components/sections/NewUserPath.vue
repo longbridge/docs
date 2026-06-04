@@ -164,13 +164,13 @@ function goDoc() {
 }
 
 .nup__nav-btn.is-active {
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   border-color: var(--vp-c-border);
   box-shadow: 0 2px 10px rgba(43, 62, 92, 0.08);
 }
 
 .nup__nav-btn:hover:not(.is-active) {
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--vp-c-bg);
 }
 
 .nup__nav-num {
@@ -212,7 +212,7 @@ function goDoc() {
 }
 
 .nup__card {
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   border: 1px solid var(--vp-c-border);
   border-radius: 16px;
   padding: 44px 52px;
@@ -277,7 +277,7 @@ function goDoc() {
   padding: 8px 22px;
   border-radius: 8px;
   background: var(--vp-c-brand-1);
-  color: #fff;
+  color: var(--vp-c-bg);
   font-size: 13.5px;
   font-weight: 600;
   border: 0;
@@ -286,7 +286,7 @@ function goDoc() {
 }
 
 .nup__cta:hover {
-  background: #00a0a0;
+  background: var(--vp-c-brand-2);
 }
 
 .nup__cta:active {

@@ -1,0 +1,9 @@
+[
+  "limit-orders",
+  "market-orders",
+  "conditional-order",
+  "bounce-order",
+  "grid-trading",
+  "odd-lot",
+  "cancel-order"
+]

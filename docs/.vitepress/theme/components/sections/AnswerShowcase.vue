@@ -227,11 +227,11 @@ function askDemo() {
 
 .answer-showcase__cta:hover {
   background: var(--vp-c-text-1);
-  color: #fff;
+  color: var(--vp-c-bg);
 }
 
 .answer-showcase__demo {
-  background: #f6f8f9;
+  background: var(--vp-c-bg-soft);
   border-radius: 20px;
   padding: 24px 24px 20px;
 }
@@ -254,7 +254,7 @@ function askDemo() {
 }
 
 .answer-showcase__ai {
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   border-radius: 4px 18px 18px 18px;
   padding: 16px;
   border: 1px solid var(--vp-c-border);

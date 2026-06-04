@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "build": "NODE_DISABLE_COMPILE_CACHE=1 node --stack-size=8000 ./node_modules/.bin/vitepress build docs",
     "preview": "vitepress preview docs",
     "graph": "tsx scripts/generate-link-graph.ts"
   },

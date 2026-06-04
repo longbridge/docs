@@ -256,7 +256,7 @@ onMounted(updateIndicator)
   position: absolute;
   top: 3px;
   bottom: 3px;
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -364,7 +364,7 @@ onMounted(updateIndicator)
   padding: 18px 18px 16px;
   border-radius: 12px;
   border: 1px solid var(--vp-c-border);
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   cursor: pointer;
   transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
 }
@@ -436,7 +436,7 @@ onMounted(updateIndicator)
   align-items: center;
   gap: 12px;
   padding: 13px 20px;
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   text-align: left;
   border: 0;
   border-top: 1px solid var(--vp-c-divider);

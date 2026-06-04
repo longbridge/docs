@@ -1367,22 +1367,8 @@ html.ai-resizing .hn-root {
     color: var(--vp-c-brand-1);
   }
 
-  .hn-logo-icon {
-    @apply w-6 h-6;
-    object-fit: contain;
-  }
-
-  .hn-logo-text {
-    @apply text-lg font-bold leading-none;
-    color: var(--vp-c-text-1);
-    letter-spacing: -0.5px;
-    white-space: nowrap;
-  }
-
-  .hn-logo-docs {
-    @apply font-normal;
-    color: var(--vp-c-text-2);
-  }
+  /* .hn-logo-img 的样式放到 @layer 外（见下方 unlayered 区块），
+   * 避免被 VitePress 默认 img reset 覆盖 */
 
   .hn-center {
     @apply flex items-center gap-2;
@@ -1482,6 +1468,76 @@ html.ai-resizing .hn-root {
   .hn-dev-platform:hover {
     color: var(--vp-c-brand-1);
     background: var(--vp-c-brand-soft);
+  }
+
+  /* 右侧图标按钮：32×32 透明方格，hover 浅灰底（openapi-website 风格） */
+  .hn-icon-btn {
+    @apply inline-grid place-items-center w-8 h-8 p-0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--vp-c-text-2);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .hn-icon-btn:hover {
+    color: var(--vp-c-text-1);
+    background: var(--vp-c-bg-soft);
+  }
+
+  /* 语言切换下拉容器（hover 触发，无需边界 padding 也能稳定悬停） */
+  .hn-lang {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .hn-lang-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 160px;
+    padding: 6px;
+    background: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 1100;
+    display: grid;
+  }
+
+  .hn-lang-item {
+    display: block;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--vp-c-text-2);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .hn-lang-item:hover {
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+  }
+
+  .hn-lang-item.is-active {
+    color: var(--vp-c-brand-1);
+    font-weight: 600;
+  }
+
+  /* hover 触发的淡入淡出过渡 */
+  .hn-lang-fade-enter-active,
+  .hn-lang-fade-leave-active {
+    transition: opacity 0.15s, transform 0.15s;
+  }
+
+  .hn-lang-fade-enter-from,
+  .hn-lang-fade-leave-to {
+    opacity: 0;
+    transform: translateY(-4px);
   }
 
   .hn-login {
@@ -2386,6 +2442,32 @@ html.ai-resizing .hn-root {
    `@layer components { ... }` 优先级比无 layer 的 VitePress `button {}` reset 低，
    不放外面 border / background 会被 `button { background: transparent; border: 0; }` 抹掉。
    ============================================================ */
+
+/* AskHero dark 渐变覆盖：Vue scoped style 里写 :global(.dark) 不生效，挪到全局 */
+.dark .ask-hero {
+  background: linear-gradient(170deg, rgba(0, 184, 184, 0.08) 0%, var(--vp-c-bg) 55%) !important;
+}
+
+/* Logo 同理：放 unlayered 才能稳定锁住 height（VitePress 对 img 也有重置规则） */
+.hn-logo-img {
+  display: block;
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hn-logo-img--dark {
+  display: none;
+}
+
+.dark .hn-logo-img--light {
+  display: none;
+}
+
+.dark .hn-logo-img--dark {
+  display: block;
+}
+
 .hn-search-btn {
   /* 3% 黑透明，在 navbar 暖白底上呈现温和灰雾感 (cdp 实测) */
   background: rgba(10, 12, 17, 0.03);

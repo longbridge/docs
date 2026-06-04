@@ -143,7 +143,7 @@ function askHot(tag: { q: string; initialPrompt: string }) {
   align-items: center;
   gap: 8px;
   padding: 6px 6px 6px 16px;
-  background: #fff;
+  background: var(--vp-c-bg-elv);
   border-radius: 14px;
   border: 1px solid var(--vp-c-border);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
@@ -174,20 +174,20 @@ function askHot(tag: { q: string; initialPrompt: string }) {
   padding: 9px 22px;
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
+  color: var(--vp-c-bg);
   background: var(--vp-c-text-1);
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.15s, transform 0.15s;
+  transition: opacity 0.15s, transform 0.15s;
 }
 
 .ask-hero__btn:hover {
-  background: #1a2238;
+  opacity: 0.85;
 }
 
 .ask-hero__btn:active {
-  background: #0a0e19;
+  opacity: 0.75;
   transform: scale(0.97);
 }
 

@@ -1,16 +1,61 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
-import { useRoute } from 'vitepress'
-import { MoreVertical, ExternalLink } from 'lucide-vue-next'
+import { useRoute, useData, inBrowser } from 'vitepress'
+import { MoreVertical, ExternalLink, Sun, Moon, Globe, Github } from 'lucide-vue-next'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
 import { useAIModal } from '../composables/useAIModal'
 import { useSearchDialog } from '../composables/useSearchDialog'
+import { useColorMode } from '../composables/useColorMode'
 import { useI18n } from '../../i18n/useI18n'
 
 const route = useRoute()
+const { lang } = useData()
 const { toggleAIModal } = useAIModal()
 const { open: openSearch } = useSearchDialog()
+const { isDark, toggle: toggleTheme } = useColorMode()
 const { t } = useI18n()
+
+// ── Language switcher ─────────────────────────────────────────
+const LANGS = [
+  { code: 'en',    label: 'English',   link: '/' },
+  { code: 'zh-CN', label: '简体中文', link: '/zh-CN/' },
+  { code: 'zh-HK', label: '繁體中文', link: '/zh-HK/' },
+]
+
+const langOpen = ref(false)
+const langBtnRef = ref<HTMLButtonElement>()
+const langPopoverRef = ref<HTMLElement>()
+
+function toggleLang() {
+  langOpen.value = !langOpen.value
+}
+
+const currentLang = computed(() => {
+  const p = route.path
+  if (p.startsWith('/zh-CN/')) return 'zh-CN'
+  if (p.startsWith('/zh-HK/')) return 'zh-HK'
+  return 'en'
+})
+
+function switchLang(target: typeof LANGS[number]) {
+  if (target.code === currentLang.value) {
+    langOpen.value = false
+    return
+  }
+  if (!inBrowser) return
+  // 仅切换 locale 前缀，保留后续路径
+  const p = route.path
+  let rest = p
+  for (const code of ['zh-CN', 'zh-HK']) {
+    if (rest.startsWith(`/${code}/`)) {
+      rest = rest.slice(`/${code}`.length)
+      break
+    }
+  }
+  if (!rest.startsWith('/')) rest = '/' + rest
+  const nextPath = target.link.replace(/\/$/, '') + rest
+  window.location.href = nextPath
+}
 
 const activeTab = computed(() => {
   const p = route.path
@@ -30,14 +75,24 @@ function toggleMore() {
 }
 
 function onDocClick(e: MouseEvent) {
-  if (!moreOpen.value) return
   const target = e.target as Node
-  if (moreBtnRef.value?.contains(target) || morePopoverRef.value?.contains(target)) return
-  moreOpen.value = false
+  if (moreOpen.value) {
+    if (!moreBtnRef.value?.contains(target) && !morePopoverRef.value?.contains(target)) {
+      moreOpen.value = false
+    }
+  }
+  if (langOpen.value) {
+    if (!langBtnRef.value?.contains(target) && !langPopoverRef.value?.contains(target)) {
+      langOpen.value = false
+    }
+  }
 }
 
 function onDocKey(e: KeyboardEvent) {
-  if (e.key === 'Escape') moreOpen.value = false
+  if (e.key === 'Escape') {
+    moreOpen.value = false
+    langOpen.value = false
+  }
 }
 
 onMounted(() => {
@@ -59,11 +114,15 @@ onBeforeUnmount(() => {
         <!-- Logo -->
         <a href="/" class="hn-logo" :aria-label="t('brand.homeAriaLabel')">
           <img
-            src="https://assets.wbrks.com/assets/logo/logo-without-title-lb.svg"
+            src="https://assets.lbctrl.com/uploads/34ee0a83-6f70-4aea-aa49-7ba5df3c64c4/longbridge-light.png"
             :alt="t('brand.logoAlt')"
-            class="hn-logo-icon"
+            class="hn-logo-img hn-logo-img--light"
           />
-          <span class="hn-logo-text">Longbridge <span class="hn-logo-docs">docs</span></span>
+          <img
+            src="https://assets.lbctrl.com/uploads/e8c481df-25aa-4e17-baee-953f9ae2cecf/longbridge-dark.png"
+            :alt="t('brand.logoAlt')"
+            class="hn-logo-img hn-logo-img--dark"
+          />
         </a>
 
         <!-- 搜索 + Ask AI -->
@@ -87,18 +146,61 @@ onBeforeUnmount(() => {
 
         <!-- 右侧操作区 -->
         <div class="hn-actions">
-          <!-- Developer Platform 入口（md 以上显示） -->
+          <!-- 语言切换（点击展开） -->
+          <div class="hn-lang">
+            <button
+              ref="langBtnRef"
+              type="button"
+              class="hn-icon-btn"
+              :aria-label="t('common.switchLanguage')"
+              :aria-expanded="langOpen"
+              aria-haspopup="true"
+              @click="toggleLang"
+            >
+              <Globe :size="16" />
+            </button>
+            <Transition name="hn-lang-fade">
+              <div
+                v-if="langOpen"
+                ref="langPopoverRef"
+                class="hn-lang-popover"
+                role="menu"
+              >
+                <a
+                  v-for="l in LANGS"
+                  :key="l.code"
+                  href="#"
+                  class="hn-lang-item"
+                  :class="{ 'is-active': l.code === currentLang }"
+                  role="menuitem"
+                  @click.prevent="switchLang(l)"
+                >
+                  {{ l.label }}
+                </a>
+              </div>
+            </Transition>
+          </div>
+
+          <!-- 主题切换 -->
+          <button
+            type="button"
+            class="hn-icon-btn"
+            :aria-label="isDark ? t('common.switchToLight') : t('common.switchToDark')"
+            @click="toggleTheme"
+          >
+            <Sun v-if="isDark" :size="16" />
+            <Moon v-else :size="16" />
+          </button>
+
+          <!-- GitHub -->
           <a
-            href="https://open.longbridge.com"
-            class="hn-dev-platform"
+            class="hn-icon-btn"
+            href="https://github.com/longbridge/docs"
             target="_blank"
             rel="noopener"
-            :aria-label="t('brand.devPlatformAriaLabel')"
+            aria-label="GitHub"
           >
-            {{ t('brand.devPlatformLabel') }}
-            <svg class="hn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M6 4H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-2M9 4h3v3M9 7l3-3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <Github :size="16" />
           </a>
 
           <!-- Kebab 更多菜单（md 以下显示） -->

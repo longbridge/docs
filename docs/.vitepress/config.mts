@@ -19,90 +19,6 @@ const env = loadEnv('development', path.resolve(__dirname, '..'), '')
 const AI_ENDPOINT_PATH = env.VITE_AI_API_ENDPOINT || '/api/forward/v1/customer-service/docs/chat'
 const AI_PROXY_PREFIX = AI_ENDPOINT_PATH
 
-// build 模式标记（影响 i18n fallback 与 rewrites/locales 切换）
-const isBuild = process.argv.includes('build')
-
-// 构建期 i18n fallback：把 zh-CN 内容铺到根目录（英文）和 zh-HK 占位目录
-// 仅在 build 时执行；构建结束后通过插件 closeBundle 自动清理，源码目录保持干净
-const docsRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
-const zhCnSrc = path.join(docsRoot, 'zh-CN')
-const zhHkDir = path.join(docsRoot, 'zh-HK')
-const i18nFallbackCreated: string[] = []
-
-function seedI18nFallback(srcDir: string, destDir: string, overwrite: boolean) {
-  if (!fs.existsSync(srcDir)) return
-  fs.mkdirSync(destDir, { recursive: true })
-  for (const entry of fs.readdirSync(srcDir, { withFileTypes: true })) {
-    const src = path.join(srcDir, entry.name)
-    const dest = path.join(destDir, entry.name)
-    if (entry.isDirectory()) {
-      const existedBefore = fs.existsSync(dest)
-      if (!existedBefore) {
-        fs.mkdirSync(dest, { recursive: true })
-        i18nFallbackCreated.push(dest + '/')
-      }
-      seedI18nFallback(src, dest, overwrite)
-    } else if (entry.isFile()) {
-      const existedBefore = fs.existsSync(dest)
-      if (!existedBefore) {
-        fs.copyFileSync(src, dest)
-        // 只追踪原本不存在的文件，避免清理时把占位 index.md 等原始文件删掉
-        i18nFallbackCreated.push(dest)
-      } else if (overwrite) {
-        // 覆盖已有文件但不追踪，构建后还原原始内容
-        const backup = fs.readFileSync(dest)
-        fs.copyFileSync(src, dest)
-        i18nFallbackOverwritten.push({ path: dest, content: backup })
-      }
-    }
-  }
-}
-
-// 追踪 build 期间被覆盖的原始文件，构建结束时把内容还原回去
-const i18nFallbackOverwritten: { path: string; content: Buffer }[] = []
-
-if (isBuild) {
-  // 英文根目录：zh-CN 内容直接 fallback 到 docs/（不覆盖已存在文件，保护 README.md 等）
-  seedI18nFallback(zhCnSrc, docsRoot, /* overwrite */ false)
-  // zh-HK 用 zh-CN 内容整体覆盖（当前 zh-HK/ 下只有占位 index.md，整体替换）
-  seedI18nFallback(zhCnSrc, zhHkDir, /* overwrite */ true)
-  console.log(`[i18n-fallback] seeded ${i18nFallbackCreated.length} entries`)
-}
-
-// closeBundle 钩子：构建结束后把 i18n fallback 期间创建的临时文件/目录清掉
-// VitePress 会跑 client + server 两个 bundle，closeBundle 会触发两次；
-// 仅在最后一次触发后做清理，避免中途删文件导致第二个 bundle 找不到入口
-let cleanupTicks = 0
-function i18nFallbackCleanupPlugin(): Plugin {
-  return {
-    name: 'longbridge-i18n-fallback-cleanup',
-    closeBundle() {
-      if (!isBuild || i18nFallbackCreated.length === 0) return
-      cleanupTicks++
-      if (cleanupTicks < 2) return
-      // 先删文件，再删空目录（深度倒序）
-      const files = i18nFallbackCreated.filter(p => !p.endsWith('/'))
-      const dirs = i18nFallbackCreated
-        .filter(p => p.endsWith('/'))
-        .map(p => p.slice(0, -1))
-        .sort((a, b) => b.length - a.length)
-      for (const f of files) {
-        try { fs.rmSync(f, { force: true }) } catch { }
-      }
-      for (const d of dirs) {
-        try {
-          if (fs.existsSync(d) && fs.readdirSync(d).length === 0) fs.rmdirSync(d)
-        } catch { }
-      }
-      // 还原 build 期间被覆盖的原始文件
-      for (const { path: p, content } of i18nFallbackOverwritten) {
-        try { fs.writeFileSync(p, content) } catch { }
-      }
-      console.log(`[i18n-fallback] cleaned up ${files.length} files + ${dirs.length} dirs, restored ${i18nFallbackOverwritten.length} files`)
-    },
-  }
-}
-
 // 访问 /some/page.md 返回原始 markdown 源码（开发模式 + 生产构建）
 function rawMarkdownPlugin(): Plugin {
   return {
@@ -117,9 +33,9 @@ function rawMarkdownPlugin(): Plugin {
         const accept = req.headers['accept'] ?? ''
         if (!accept.includes('text/html')) return next()
 
-        // 优先从 zh-CN 目录查找（rewrites 映射的内容）
+        // 优先从 en 目录查找（rewrites 把 en/* 映射到根）
         const candidates = [
-          path.join('docs/zh-CN', url),
+          path.join('docs/en', url),
           path.join('docs', url),
         ]
 
@@ -156,8 +72,13 @@ function rawMarkdownPlugin(): Plugin {
         }
       }
 
-      // zh-CN 内容通过 rewrites 映射到根路径，dest 也用根路径
-      copyMdFiles(path.resolve('docs/zh-CN'), '')
+      // 三个 locale 各自从对应源目录复制 .md：
+      //   docs/en/* → dist/*（英文落到根，rewrites 已剥前缀）
+      //   docs/zh-CN/* → dist/zh-CN/*
+      //   docs/zh-HK/* → dist/zh-HK/*
+      copyMdFiles(path.resolve('docs/en'), '')
+      copyMdFiles(path.resolve('docs/zh-CN'), '/zh-CN')
+      copyMdFiles(path.resolve('docs/zh-HK'), '/zh-HK')
     },
   }
 }
@@ -379,12 +300,6 @@ export default defineConfig({
   ignoreDeadLinks: true,
   cleanUrls: true,
 
-  // build 时跳过原始 zh-CN/ 源目录扫描——内容已经通过 seedI18nFallback 铺到 root/zh-HK，
-  // 再让 VitePress 把 zh-CN/ 作为独立 locale 再生成一遍只会产生体积冗余（同样内容、不同
-  // chunk hash）。跳过后 /zh-CN/* URL 不再存在，可由 nginx 301 → / 兜底。
-  // dev 模式不跳过（保留原始路径供本地开发使用，与 rewrites 一起生效）。
-  srcExclude: isBuild ? ['zh-CN/**'] : undefined,
-
   // 部署到 OSS + 主域 nginx 反代时启用：把所有 dist 产物 URL 重写为完整 CDN URL
   // （JS/CSS/字体/图片/runtime 拼接的 hashmap.json 与 page chunk），同时保留 page
   // link href 不动，确保导航留在主域。无 env var 时 no-op，本地 dev 不受影响。
@@ -396,74 +311,62 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: 'https://assets.wbrks.com/assets/logo/logo1.png' }],
   ],
 
-  // dev：保留 zh-CN → 根路径 的 rewrites（与原行为一致）。
-  // build：i18nFallback 已把 zh-CN 内容铺到根 + zh-HK，因此不需要 rewrites，
-  //        每个 locale 各自从自己的目录构建。
-  rewrites: isBuild
-    ? {}
-    : {
-        'zh-CN/index.md': 'index.md',
-        'zh-CN/docs/overview.md': 'docs/overview.md',
-        'zh-CN/:path*': ':path*',
-      },
+  // en/ 内容映射到根路径，使英文成为默认 locale
+  rewrites: {
+    'en/index.md': 'index.md',
+    'en/docs/index.md': 'docs/index.md',
+    'en/:path*': ':path*',
+  },
 
-  locales: isBuild
-    ? {
-        // build 产物：英文落到 /（默认，内容由 seedI18nFallback 用 zh-CN 兜底）；
-        // 繁体在 /zh-HK/。原本的 zh-CN locale 已撤掉，srcExclude 一并跳过 zh-CN/ 源
-        // 目录扫描，避免与 root 重复生成同内容的独立 chunk（节省 ~33% 体积）。
-        // 用户访问 /zh-CN/* 由 nginx 301 重定向到 /*。
-        root: {
-          label: 'English',
-          lang: 'en',
-          link: '/',
-          title: 'Longbridge Docs',
-          description: 'Longbridge Docs',
-          themeConfig: {
-            nav: sharedNav,
-            sidebar: sidebarRoot,
-            outline: { level: [2, 4], label: 'On this page' },
-            lastUpdated: { text: 'Last updated', formatOptions: { dateStyle: 'medium' } },
-            editLink: { pattern: editLinkPattern, text: 'Edit this page on GitHub' },
-            docFooter: { prev: 'Previous', next: 'Next' },
-          },
-        },
-        'zh-HK': {
-          label: '繁體中文',
-          lang: 'zh-HK',
-          link: '/zh-HK/',
-          title: 'Longbridge Docs',
-          description: 'Longbridge Docs',
-          themeConfig: {
-            nav: sharedNav,
-            sidebar: sidebarZhHK,
-            outline: { level: [2, 4], label: '本頁內容' },
-            lastUpdated: { text: '最近更新', formatOptions: { dateStyle: 'medium' } },
-            editLink: { pattern: editLinkPattern, text: '在 GitHub 上編輯此頁' },
-            docFooter: { prev: '上一篇', next: '下一篇' },
-            footer: { message: '© 2026 Longbridge. All rights reserved.' },
-          },
-        },
-      }
-    : {
-        // dev：保持原有单 root=zh-CN 配置，避免与 rewrites 冲突影响本地开发
-        root: {
-          label: '简体中文',
-          lang: 'zh-CN',
-          link: '/',
-          title: zhCN.vp.title,
-          description: zhCN.vp.description,
-          themeConfig: {
-            nav: sharedNav,
-            sidebar: sidebarRoot,
-            outline: { level: [2, 4], label: zhCN.vp.outline },
-            lastUpdated: { text: zhCN.vp.lastUpdated, formatOptions: { dateStyle: 'medium' } },
-            editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
-            docFooter: { prev: zhCN.vp.prev, next: zhCN.vp.next },
-            footer: { message: zhCN.vp.footerMessage },
-          },
-        },
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en',
+      link: '/',
+      title: 'Longbridge Docs',
+      description: 'Longbridge Docs',
+      themeConfig: {
+        nav: sharedNav,
+        sidebar: sidebarRoot,
+        outline: { level: [2, 4], label: 'On this page' },
+        lastUpdated: { text: 'Last updated', formatOptions: { dateStyle: 'medium' } },
+        editLink: { pattern: editLinkPattern, text: 'Edit this page on GitHub' },
+        docFooter: { prev: 'Previous', next: 'Next' },
       },
+    },
+    'zh-CN': {
+      label: '简体中文',
+      lang: 'zh-CN',
+      link: '/zh-CN/',
+      title: zhCN.vp.title,
+      description: zhCN.vp.description,
+      themeConfig: {
+        nav: sharedNav,
+        sidebar: sidebarZhCN,
+        outline: { level: [2, 4], label: zhCN.vp.outline },
+        lastUpdated: { text: zhCN.vp.lastUpdated, formatOptions: { dateStyle: 'medium' } },
+        editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
+        docFooter: { prev: zhCN.vp.prev, next: zhCN.vp.next },
+        footer: { message: zhCN.vp.footerMessage },
+      },
+    },
+    'zh-HK': {
+      label: '繁體中文',
+      lang: 'zh-HK',
+      link: '/zh-HK/',
+      title: 'Longbridge Docs',
+      description: 'Longbridge Docs',
+      themeConfig: {
+        nav: sharedNav,
+        sidebar: sidebarZhHK,
+        outline: { level: [2, 4], label: '本頁內容' },
+        lastUpdated: { text: '最近更新', formatOptions: { dateStyle: 'medium' } },
+        editLink: { pattern: editLinkPattern, text: '在 GitHub 上編輯此頁' },
+        docFooter: { prev: '上一篇', next: '下一篇' },
+        footer: { message: '© 2026 Longbridge. All rights reserved.' },
+      },
+    },
+  },
 
   themeConfig: {
     logo: {
@@ -561,7 +464,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [UnoCSS(), rawMarkdownPlugin(), i18nFallbackCleanupPlugin()],
+    plugins: [UnoCSS(), rawMarkdownPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './theme'),

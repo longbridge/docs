@@ -10,6 +10,9 @@ const zhCN = {
     openAiAssistant: '打开 AI 助手',
     breadcrumbAria: '面包屑导航',
     more: '更多',
+    switchToLight: '切换到亮色主题',
+    switchToDark: '切换到暗色主题',
+    switchLanguage: '切换语言',
   },
   brand: {
     logoAlt: 'Longbridge',
