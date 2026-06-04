@@ -78,6 +78,16 @@ export function buildEndCdnPrefix(prefix: string) {
         /`\/assets\/\$\{/g,
         '`' + prefixSlash + 'assets/${',
       ],
+      [
+        // (a) Vite 内置 __vitePreload 的 assetsURL helper：
+        //   const Gp = function(s) { return "/" + s }
+        // 给每个 preload dep 硬编码加 "/" 前缀，跟 base 无关。当 calling module
+        // 在 CDN 上时，"/assets/..." 解析为 CDN_HOST/assets/...（缺子路径）→ 404。
+        // backref \1 保证形参名前后一致，避免误伤别的同形函数（minified bundle
+        // 里这种 single-param "/" 前缀 helper 仅此一处）。
+        /function\(([A-Za-z_$])\)\{return"\/"\+\1\}/g,
+        `function($1){return"${prefixSlash}"+$1}`,
+      ],
     ]
     const isFrameworkChunk = /[\\/]assets[\\/]chunks[\\/]framework\.[A-Za-z0-9_-]+\.js$/
 
