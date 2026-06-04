@@ -5,7 +5,7 @@ sidebar: true
 
 # 桌面端工具
 
-长桥桌面端提供专业级的交易工具，包括高级图表、市场深度数据和自定义布局。这些工具帮助你更高效地分析行情、做出交易决策。
+长桥桌面端专属功能说明，涵盖图表交易、市场深度、自定义布局、组件拼接与快捷键操作。
 
 ## 核心工具介绍
 
@@ -23,3 +23,11 @@ sidebar: true
 - [自定义布局](/stock-trading/desktop-tools/custom-layout) — 自定义工作区、系统和自适应布局管理
 - [组件拼接](/stock-trading/desktop-tools/component-splicing) — 多组件 Tab 合并、阴影色块操作、Tab 排序与移除
 - [桌面端快捷键](/stock-trading/desktop-tools/keyboard-shortcuts) — 键盘快捷操作速查表
+
+## 本章导航
+
+- [图表交易](/stock-trading/desktop-tools/chart-trading)
+- [组件拼接](/stock-trading/desktop-tools/component-splicing)
+- [自定义布局](/stock-trading/desktop-tools/custom-layout)
+- [桌面端快捷键](/stock-trading/desktop-tools/keyboard-shortcuts)
+- [市场深度](/stock-trading/desktop-tools/market-depth)
