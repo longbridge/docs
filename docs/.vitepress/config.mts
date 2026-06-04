@@ -379,6 +379,12 @@ export default defineConfig({
   ignoreDeadLinks: true,
   cleanUrls: true,
 
+  // build 时跳过原始 zh-CN/ 源目录扫描——内容已经通过 seedI18nFallback 铺到 root/zh-HK，
+  // 再让 VitePress 把 zh-CN/ 作为独立 locale 再生成一遍只会产生体积冗余（同样内容、不同
+  // chunk hash）。跳过后 /zh-CN/* URL 不再存在，可由 nginx 301 → / 兜底。
+  // dev 模式不跳过（保留原始路径供本地开发使用，与 rewrites 一起生效）。
+  srcExclude: isBuild ? ['zh-CN/**'] : undefined,
+
   // 部署到 OSS + 主域 nginx 反代时启用：把所有 dist 产物 URL 重写为完整 CDN URL
   // （JS/CSS/字体/图片/runtime 拼接的 hashmap.json 与 page chunk），同时保留 page
   // link href 不动，确保导航留在主域。无 env var 时 no-op，本地 dev 不受影响。
@@ -403,7 +409,10 @@ export default defineConfig({
 
   locales: isBuild
     ? {
-        // build 产物：英文落到 /（默认）；中文在 /zh-CN/；繁体在 /zh-HK/
+        // build 产物：英文落到 /（默认，内容由 seedI18nFallback 用 zh-CN 兜底）；
+        // 繁体在 /zh-HK/。原本的 zh-CN locale 已撤掉，srcExclude 一并跳过 zh-CN/ 源
+        // 目录扫描，避免与 root 重复生成同内容的独立 chunk（节省 ~33% 体积）。
+        // 用户访问 /zh-CN/* 由 nginx 301 重定向到 /*。
         root: {
           label: 'English',
           lang: 'en',
@@ -417,22 +426,6 @@ export default defineConfig({
             lastUpdated: { text: 'Last updated', formatOptions: { dateStyle: 'medium' } },
             editLink: { pattern: editLinkPattern, text: 'Edit this page on GitHub' },
             docFooter: { prev: 'Previous', next: 'Next' },
-          },
-        },
-        'zh-CN': {
-          label: '简体中文',
-          lang: 'zh-CN',
-          link: '/zh-CN/',
-          title: zhCN.vp.title,
-          description: zhCN.vp.description,
-          themeConfig: {
-            nav: sharedNav,
-            sidebar: sidebarZhCN,
-            outline: { level: [2, 4], label: zhCN.vp.outline },
-            lastUpdated: { text: zhCN.vp.lastUpdated, formatOptions: { dateStyle: 'medium' } },
-            editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
-            docFooter: { prev: zhCN.vp.prev, next: zhCN.vp.next },
-            footer: { message: zhCN.vp.footerMessage },
           },
         },
         'zh-HK': {
