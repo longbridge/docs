@@ -27,12 +27,14 @@ import type { SiteConfig } from 'vitepress'
  */
 export function buildEndCdnPrefix(prefix: string) {
   const normalized = prefix.replace(/\/+$/, '')
-  const prefixSlash = normalized + '/'
 
   return async (siteConfig: SiteConfig) => {
     const dist = siteConfig.outDir
+    // base 由 VitePress 注入到 HTML/JS/CSS 的所有 site-root asset URL 前缀
+    // （默认 "/"，多区域构建下为 "/hk/"、"/sg/"），保留尾部斜杠。
+    const base = siteConfig.site.base
 
-    // 收集 dist 内所有非 HTML 产物的 site-root URL（base=/ 时即 `/<rel>`）
+    // 收集 dist 内所有非 HTML 产物的 site-root URL（与 HTML 里的写法对齐：`<base><rel>`）
     const assetUrls: string[] = []
     const collect = (dir: string) => {
       for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -40,7 +42,7 @@ export function buildEndCdnPrefix(prefix: string) {
         if (entry.isDirectory()) collect(full)
         else if (!entry.name.endsWith('.html')) {
           const rel = path.relative(dist, full).split(path.sep).join('/')
-          assetUrls.push('/' + rel)
+          assetUrls.push(base + rel)
         }
       }
     }
@@ -64,29 +66,31 @@ export function buildEndCdnPrefix(prefix: string) {
     //       → 改 CDN 完整 URL，让浏览器去 CDN 取
     //   (b) 构造 page 导航 URL（history.replaceState / link href）
     //       → 必须保持同源相对路径，否则跨域 URL 触发 SecurityError
-    // 只 patch (a) 类用法。
+    // 只 patch (a) 类用法。base 不为 "/" 时（多区域），Vite 会把 base 硬编码进
+    // 这些 helper（如 `/hk/assets/${...}`、`function(s){return"/hk/"+s}`），
+    // 正则需对应替换 base，否则匹配不到。
+    const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const baseRe = escapeRe(base) // e.g. "\\/hk\\/" 或 "\\/"
     const frameworkPatterns: Array<[RegExp, string]> = [
       [
         // (a) fetch(<id>.value.base + "hashmap.json")
         /[A-Za-z_$][A-Za-z0-9_$]*\.value\.base\s*\+\s*"hashmap\.json"/g,
-        `"${prefixSlash}hashmap.json"`,
+        `"${normalized}${base}hashmap.json"`,
       ],
       [
-        // (a) VitePress SPA 动态 chunk loader：t = `/assets/${t}.${n}.js`
-        // 反引号模板字符串，浏览器 import absolute path 时按 calling module 的
-        // origin（CDN host）解析，缺 OSS 子路径会 404。补完整 CDN URL。
-        /`\/assets\/\$\{/g,
-        '`' + prefixSlash + 'assets/${',
+        // (a) VitePress SPA 动态 chunk loader：t = `<base>assets/${t}.${n}.js`
+        new RegExp('`' + baseRe + 'assets\\/\\$\\{', 'g'),
+        '`' + normalized + base + 'assets/${',
       ],
       [
         // (a) Vite 内置 __vitePreload 的 assetsURL helper：
-        //   const Gp = function(s) { return "/" + s }
-        // 给每个 preload dep 硬编码加 "/" 前缀，跟 base 无关。当 calling module
-        // 在 CDN 上时，"/assets/..." 解析为 CDN_HOST/assets/...（缺子路径）→ 404。
-        // backref \1 保证形参名前后一致，避免误伤别的同形函数（minified bundle
-        // 里这种 single-param "/" 前缀 helper 仅此一处）。
-        /function\(([A-Za-z_$])\)\{return"\/"\+\1\}/g,
-        `function($1){return"${prefixSlash}"+$1}`,
+        //   const Gp = function(s) { return "<base>" + s }
+        // backref \1 保证形参名前后一致，避免误伤别的同形函数。
+        new RegExp(
+          'function\\(([A-Za-z_$])\\)\\{return"' + baseRe + '"\\+\\1\\}',
+          'g',
+        ),
+        `function($1){return"${normalized}${base}"+$1}`,
       ],
     ]
     const isFrameworkChunk = /[\\/]assets[\\/]chunks[\\/]framework\.[A-Za-z0-9_-]+\.js$/
