@@ -1,9 +1,13 @@
+// 字符串字段统一使用 i18n key（消费方调 t()），翻译在 i18n/locales/zh-CN.ts:newUserPath.steps
 export interface UserPathStep {
   id: string
   num: string
+  /** i18n key */
   title: string
+  /** i18n key */
   subtitle: string
   path: string
+  /** i18n key */
   durationLabel: string
 }
 
@@ -11,41 +15,41 @@ export const newUserSteps: UserPathStep[] = [
   {
     id: 'download-app',
     num: '01',
-    title: '下载 App',
-    subtitle: '支持 iOS 与 Android',
+    title: 'newUserPath.steps.downloadApp.title',
+    subtitle: 'newUserPath.steps.downloadApp.subtitle',
     path: '/app-guide/',
-    durationLabel: '~2 分钟',
+    durationLabel: 'newUserPath.steps.downloadApp.duration',
   },
   {
     id: 'register',
     num: '02',
-    title: '注册账号',
-    subtitle: '手机号或邮箱注册，完成基本资料',
+    title: 'newUserPath.steps.register.title',
+    subtitle: 'newUserPath.steps.register.subtitle',
     path: '/account/opening/open-account',
-    durationLabel: '~3 分钟',
+    durationLabel: 'newUserPath.steps.register.duration',
   },
   {
     id: 'kyc',
     num: '03',
-    title: '完成开户',
-    subtitle: '提交证件，通过 KYC 身份核验',
+    title: 'newUserPath.steps.kyc.title',
+    subtitle: 'newUserPath.steps.kyc.subtitle',
     path: '/account/opening/open-account',
-    durationLabel: '~10 分钟',
+    durationLabel: 'newUserPath.steps.kyc.duration',
   },
   {
     id: 'deposit',
     num: '04',
-    title: '首次入金',
-    subtitle: '选择 FPS、eDDA 或银行转账',
+    title: 'newUserPath.steps.deposit.title',
+    subtitle: 'newUserPath.steps.deposit.subtitle',
     path: '/deposit/how-to-choose-deposit-method',
-    durationLabel: '~5 分钟',
+    durationLabel: 'newUserPath.steps.deposit.duration',
   },
   {
     id: 'buy-stock',
     num: '05',
-    title: '买入第一只股票',
-    subtitle: '下市价单或限价单，完成首笔交易',
+    title: 'newUserPath.steps.buyStock.title',
+    subtitle: 'newUserPath.steps.buyStock.subtitle',
     path: '/stock-trading/trading-hours-and-rules/hk-trading-rules',
-    durationLabel: '~3 分钟',
+    durationLabel: 'newUserPath.steps.buyStock.duration',
   },
 ]

@@ -35,6 +35,12 @@
   --at-apply: px-2;
 }
 
+/* .item 默认 stretch 对齐，level-0 (h2) 比 caret(32px) 高时 chevron 会顶上方，
+ * 强制 align-items center 让 caret 与 group 标题垂直居中 */
+.VPSidebarItem > .item {
+  align-items: center;
+}
+
 .VPSidebarItem .VPLink {
   --at-apply: rounded-lg px-4 py-1 flex items-center;
 }
@@ -43,15 +49,31 @@
   --at-apply: py-0;
 }
 
+/* level-0 (最外层 group) link 左内边距收紧到 0.4rem，与 caret 视觉对齐 */
+.VPSidebarItem.level-0 > .item > .VPLink {
+  /* padding-left: 0.4rem; */
+}
+
 /* 关键修复：VitePress alpha.8 把 collapsible 分组渲染为 <h2/h3/h4> 标签，
  * 浏览器默认 heading margin 造成巨大行间距。zero out all .text margin. */
 .VPSidebarItem .text {
   margin: 0;
 }
 
+/* VitePress 默认 level-1 ~ level-5 .text 是 font-weight 500，改回 400 */
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text,
+.VPSidebarItem.level-4 .text,
+.VPSidebarItem.level-5 .text {
+  font-weight: 400 !important;
+}
+
 /* 直接子选择器：只染当前 active 项本身的 link，不向下污染子级
- * （descendant `.is-active .VPLink` 会让父级 active 时把所有子级 leaf 都加 bg） */
-.VPSidebarItem.is-active > .item > .VPLink {
+ * （descendant `.is-active .VPLink` 会让父级 active 时把所有子级 leaf 都加 bg）
+ * 排除 collapsible：一级/二级 group 标题（即使本身是 link）激活时不要背景，
+ * 只有真正的叶子节点选中时才出现高亮 */
+.VPSidebarItem.is-active:not(.collapsible) > .item > .VPLink {
   background: color-mix(in oklab, var(--vp-c-brand-1) 10%, transparent);
 }
 
@@ -60,10 +82,25 @@
   --at-apply: pb-2.5;
 }
 
-/* level-1 leaf 链接左侧再外推 8px，对齐 openapi-website 视觉缩进 */
-.VPSidebar .level-1.is-link {
-  --at-apply: -ml-2;
+/* sidebar group 展开/收起过渡：用 max-height 替代 VitePress 默认 display:none，
+ * caret 旋转 VitePress 已自带（caret-icon transform 0.25s） */
+.VPSidebarItem .items {
+  overflow: hidden;
+  max-height: 1200px;
+  transition: max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+  opacity: 1;
 }
+
+.VPSidebarItem.collapsed > .items {
+  display: block !important;
+  max-height: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* （已废弃）原 level-1 leaf 用 -ml-2 外推，但父 .items 有 overflow:hidden
+ * 用于 max-height transition，外推后 background box 会被裁掉一截。
+ * 视觉缩进改为靠 .items padding-left 控制即可，不再 negative margin。 */
 
 /* docs 项目用 .sidebar-group-icon（config.mts:242），openapi-website 用 .sidebar-item-icon
  * 两个 class 共用同一套视觉 */
@@ -73,11 +110,14 @@
   align-items: center;
   margin-right: 12px;
   color: var(--vp-c-text-3);
+  width: 1.3em;
+  height: 1.3em;
 }
 
 /* 让含 icon 的 .text 容器变 flex，icon + label 自然垂直居中对齐
- * （level-0 是 sidebar-group-icon 所在；不影响其它无 icon 的 .text） */
-.VPSidebarItem.level-0 > .item > .text {
+ * group 有 link 时 .text 被 VPLink 包了一层，需要同时覆盖两种结构 */
+.VPSidebarItem.level-0 > .item > .text,
+.VPSidebarItem.level-0 > .item > .link > .text {
   display: flex;
   align-items: center;
 }

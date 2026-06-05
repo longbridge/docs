@@ -140,27 +140,21 @@ function generateSidebarItemsFromDir(dir: string, base: string, dirNames: Record
         const subItems = generateSidebarItemsFromDir(fullPath, `${base}/${entry}`, dirNames, depth + 1)
         const displayName = dirNames[entry] || entry
 
-        // 若目录下有 overview.md，自动在子菜单顶部插入 Overview leaf
-        // 父级 collapsible 仍**不设 link**，点击只展开/收起
+        // 若目录下有 overview.md，把 group 标题本身做成 overview link：
+        // 点击 group 文字 → 展开 + 跳转 overview（Layout.vue 全局拦截补 caret 触发）。
+        // 不再额外插入 Overview leaf，避免父子两条相同标题被同时高亮
         const overviewPath = path.join(fullPath, 'overview.md')
-        if (fs.existsSync(overviewPath)) {
-          const overviewFallback = dir.includes('/zh-CN/')
-            ? '概览'
-            : dir.includes('/zh-HK/')
-              ? '概覽'
-              : 'Overview'
-          const overviewText = extractTitle(overviewPath, overviewFallback)
-          subItems.unshift({
-            text: overviewText,
-            link: `${base}/${entry}/overview`,
-          })
-        }
+        const groupLink = fs.existsSync(overviewPath)
+          ? `${base}/${entry}/overview`
+          : undefined
 
         const groupItem: any = {
+          // 二级及以下 group 默认收起；active 时 VitePress 的 watchPostEffect 会自动展开
           text: displayName,
           collapsed: true,
           items: subItems,
         }
+        if (groupLink) groupItem.link = groupLink
 
         items.push(groupItem)
       } else if (entry.endsWith('.md') && entry !== 'overview.md') {
@@ -250,11 +244,18 @@ function generateSidebar(dirNames: Record<string, string>, urlPrefix = '') {
       ? `<span class="sidebar-group-icon i-lucide-${iconName}" aria-hidden="true"></span>`
       : ''
     const label = dirNames[dir] || dir
-    itemByCategory[dir] = {
+    // 顶级分类目录如果有 overview.md，也让标题可点
+    const overviewPath = path.join(dirPath, 'overview.md')
+    const overviewLink = fs.existsSync(overviewPath)
+      ? `${urlPrefix}/${dir}/overview`
+      : undefined
+    const group: any = {
       text: `${iconHtml}<span class="sidebar-group-label">${label}</span>`,
       collapsed: false,
       items,
     }
+    if (overviewLink) group.link = overviewLink
+    itemByCategory[dir] = group
   }
 
   // 每个 tab 路径前缀对应该 tab 下的分类列表

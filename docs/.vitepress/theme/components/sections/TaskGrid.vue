@@ -57,8 +57,8 @@ watch([() => props.categoryId, () => activeMarket.value], () => {
             class="expand-row"
             @click="router.go(task.href)"
           >
-            <span class="expand-row__title">{{ task.title }}</span>
-            <span class="expand-row__subtitle">{{ task.subtitle }}</span>
+            <span class="expand-row__title">{{ t(task.title) }}</span>
+            <span class="expand-row__subtitle">{{ t(task.subtitle) }}</span>
             <svg class="expand-row__icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>

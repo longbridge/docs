@@ -75,9 +75,10 @@
   --vp-c-bg-alt: #f3f5f6;
   --vp-c-bg-elv: #ffffff;
 
-  /* ── Divider / Border ── */
-  --vp-c-divider: #dddddf;
-  --vp-c-border: #e6e7e8;
+  /* ── Divider / Border ──
+   * divider 用于文档/侧边栏内部的分隔线，全局调淡到 ~5% 黑透明，避免视觉过重 */
+  --vp-c-divider: rgba(15, 23, 42, 0.06);
+  --vp-c-border: #ebedef;
 
   /* ── Status（theme-invariant）── */
   --lb-c-up: #00ada2;
@@ -162,7 +163,7 @@
   --vp-c-bg-elv: #232630;
 
   /* ── Divider / Border ── */
-  --vp-c-divider: #3b3e47;
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
   --vp-c-border: #2c3039;
 
   /* ── HomeGraphBg 暗色 ── */
@@ -198,10 +199,19 @@
 }
 
 .custom-nav-layout .VPSidebar {
-  top: var(--hn-height, 56px);
-  /* 顶部紧贴 nav，覆盖 VitePress 默认 @media 960+ 的 padding-top: var(--vp-nav-height) */
-  padding-top: 0 !important;
+  /* 用 padding-top 而不是 top 偏移，避免因 sub-bar 高度估算误差导致顶部被遮挡。
+   * 让 sidebar 容器从 top:0 起，内部用 padding 顶开 nav 高度即可。 */
+  top: 0;
+  padding-top: var(--hn-height, 56px) !important;
   /* padding-left / right 由 @media (min-width: 1280px) 接管，不在此写死 */
+}
+
+/* VitePress curtain 是 sidebar 顶部 sticky 的 nav 占位填充块（z-index:1 高于
+ * sidebar items），它的 top:-64px 硬编码不跟 --vp-nav-height 走；我们 nav 高
+ * 97px 时它的 sticky 行为会错位遮住第一个菜单项。
+ * 我们 hn-root 自身不透明且 fixed 完全遮挡 sidebar 顶部，curtain 多余，直接隐藏。 */
+.custom-nav-layout .VPSidebar .curtain {
+  display: none !important;
 }
 
 /* 内容和右侧 TOC 的顶部距离对齐 sidebar 首项（VPSidebarGroup.padding-top: 10px）
@@ -1352,6 +1362,114 @@ html.ai-resizing .hn-root {
     @apply h-14 flex items-center;
   }
 
+  /* 第二行：高频分类入口，平铺 + brand 色下划线激活态 */
+  .hn-sub-bar {
+    @apply max-md:hidden;
+  }
+
+  .hn-sub-inner {
+    /* 不设 overflow-x: auto，否则会创建 BFC 裁掉 .hn-api-popover 的绝对定位下拉 */
+    @apply max-w-7xl w-full mx-auto px-6 flex items-center gap-1;
+  }
+
+  .hn-sub-tab {
+    @apply relative inline-flex items-center text-sm px-3 py-2 whitespace-nowrap;
+    color: var(--vp-c-text-2);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  /* 下划线用伪元素，宽度严格跟随 padding 内的文字盒，不会被 padding 撑长 */
+  .hn-sub-tab::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: -1px;
+    height: 2px;
+    background: transparent;
+    transition: background 0.15s;
+  }
+
+  /* 第一项的文字左缘对齐 logo 左缘 */
+  .hn-sub-tab:first-child {
+    padding-left: 0;
+  }
+
+  .hn-sub-tab:first-child::after {
+    left: 0;
+  }
+
+  .hn-sub-tab:hover {
+    color: var(--vp-c-text-1);
+  }
+
+  .hn-sub-tab.is-active {
+    color: var(--vp-c-brand-1);
+  }
+
+  .hn-sub-tab.is-active::after {
+    background: var(--vp-c-brand-1);
+  }
+
+  /* API 和 SDK 下拉，靠右贴边 */
+  .hn-api-dropdown {
+    position: relative;
+    margin-left: auto;
+  }
+
+  .hn-api-trigger {
+    gap: 4px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .hn-api-chevron {
+    transition: transform 0.18s;
+  }
+
+  .hn-api-trigger.is-open .hn-api-chevron {
+    transform: rotate(180deg);
+  }
+
+  .hn-api-popover {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    min-width: 100px;
+    padding: 6px;
+    background: var(--vp-c-bg);
+    border: 1px solid var(--vp-c-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hn-api-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vp-c-text-1);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+
+  .hn-api-item:hover {
+    background: var(--vp-c-bg-soft);
+  }
+
+  .hn-api-ext {
+    color: var(--vp-c-text-3);
+    flex-shrink: 0;
+  }
+
   .hn-container {
     @apply max-w-7xl w-full mx-auto py-0 px-6 max-sm:px-3 flex items-center justify-between gap-4 max-sm:gap-2;
   }
@@ -1497,35 +1615,55 @@ html.ai-resizing .hn-root {
     position: absolute;
     top: calc(100% + 6px);
     right: 0;
-    min-width: 160px;
-    padding: 6px;
+    min-width: 230px;
+    padding: 8px;
     background: var(--vp-c-bg);
     border: 1px solid var(--vp-c-border);
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     z-index: 1100;
-    display: grid;
+    display: flex;
+    flex-direction: column;
   }
 
-  .hn-lang-item {
-    display: block;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: var(--vp-c-text-2);
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-  }
-
-  .hn-lang-item:hover {
-    background: var(--vp-c-bg-soft);
-    color: var(--vp-c-text-1);
-  }
-
-  .hn-lang-item.is-active {
-    color: var(--vp-c-brand-1);
+  .hn-lang-section-title {
+    padding: 8px 12px 4px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--vp-c-text-3);
+    text-transform: uppercase;
+  }
+
+  /* .hn-lang-item 的样式放到 @layer 外（见下方 unlayered 区块），
+   * 否则 button 元素的 background 会被 VitePress 的 unlayered button reset 抹掉 */
+
+  .hn-lang-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .hn-lang-text {
+    flex: 1;
+  }
+
+  .hn-lang-check {
+    color: var(--vp-c-text-2);
+    flex-shrink: 0;
+  }
+
+  .hn-lang-divider {
+    height: 1px;
+    background: var(--vp-c-divider);
+    margin: 8px 4px;
   }
 
   /* hover 触发的淡入淡出过渡 */
@@ -2443,6 +2581,34 @@ html.ai-resizing .hn-root {
    不放外面 border / background 会被 `button { background: transparent; border: 0; }` 抹掉。
    ============================================================ */
 
+/* .hn-lang-item：region 项是 button，VitePress unlayered `button {}` reset 会把
+ * @layer components 内的 background/border 抹掉，需要放在 unlayered 区域。 */
+.hn-lang-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.hn-lang-item:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.hn-lang-item.is-active {
+  background: var(--vp-c-bg-soft);
+}
+
 /* AskHero dark 渐变覆盖：Vue scoped style 里写 :global(.dark) 不生效，挪到全局 */
 .dark .ask-hero {
   background: linear-gradient(170deg, rgba(0, 184, 184, 0.08) 0%, var(--vp-c-bg) 55%) !important;
@@ -2646,10 +2812,17 @@ html.ai-resizing .hn-root {
    详情页优化 — 三栏布局 & Hero & TOC
    ============================================================ */
 
-/* docs-specific nav height + layout max-width 对齐 hn-container max-w-7xl */
+/* docs-specific nav height + layout max-width 对齐 hn-container max-w-7xl
+ * 桌面端 56(top) + 41(sub-bar) ≈ 97；移动端 sub-bar 隐藏只剩 56 */
 :root {
-  --hn-height: 56px;
+  --hn-height: 97px;
   --vp-layout-max-width: 1280px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hn-height: 56px;
+  }
 }
 
 /* ≥1280 viewport：sidebar 内容左缘对齐 hn-container 的 px-6 左缘

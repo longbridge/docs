@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter } from 'vitepress'
+import { useI18n } from '../../../i18n/useI18n'
 import {
   UserPlus, Users, Layers, CircleHelp, ArrowLeftRight,
   ArrowDownToLine, Zap, RefreshCw, RefreshCcw, Send, Smartphone, Globe, Globe2,
@@ -14,6 +15,7 @@ import type { TaskCard } from '../../data/journey'
 const props = defineProps<{ task: TaskCard }>()
 
 const router = useRouter()
+const { t } = useI18n()
 
 const iconMap: Record<string, unknown> = {
   UserPlus, Users, Layers, CircleHelp, ArrowLeftRight,
@@ -40,9 +42,9 @@ const iconComponent = computed(() => iconMap[props.task.icon] ?? null)
         :size="16"
         class="task-card__icon"
       />
-      <h3 class="task-card__title">{{ task.title }}</h3>
+      <h3 class="task-card__title">{{ t(task.title) }}</h3>
     </div>
-    <p class="task-card__subtitle">{{ task.subtitle }}</p>
+    <p class="task-card__subtitle">{{ t(task.subtitle) }}</p>
     <span class="task-card__arrow" aria-hidden="true">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 12h14M12 5l7 7-7 7" />

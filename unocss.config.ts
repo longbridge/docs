@@ -127,6 +127,7 @@ export default defineConfig({
     'i-lucide-arrow-left-right',
     'i-lucide-trending-up',
     'i-lucide-layers',
+    'i-lucide-bitcoin',
     'i-lucide-star',
     'i-lucide-scale',
     'i-lucide-wallet',

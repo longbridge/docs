@@ -19,7 +19,7 @@ const emit = defineEmits<{
 const activeMarket = inject<Ref<Market>>('journeyMarket', ref('hk') as Ref<Market>)
 
 const tabList = computed(() => [
-  { value: 'all', label: '全部', badge: getMarketCount('all', activeMarket.value) },
+  { value: 'all', label: t('category.all'), badge: getMarketCount('all', activeMarket.value) },
   ...props.categories.map(cat => ({
     value: cat.id,
     label: t(cat.label),
@@ -33,7 +33,7 @@ const tabList = computed(() => [
     <Tabs
       :model-value="activeCategory"
       :tabs="tabList"
-      aria-label="文档分类"
+      :aria-label="t('category.ariaLabel')"
       @update:model-value="emit('update:activeCategory', $event)"
     />
   </div>

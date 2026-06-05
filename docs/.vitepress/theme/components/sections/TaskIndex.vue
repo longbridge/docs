@@ -50,7 +50,7 @@ const hiddenTasks = computed(() => filteredTasks.value.slice(MAX_VISIBLE))
 const catList = computed<{ id: string; label: string }[]>(() => {
   const m = activeMarketRef.value
   return [
-    { id: 'all', label: '全部' },
+    { id: 'all', label: t('category.all') },
     ...categories
       .filter(c => c.tasks.some(t => t.markets.includes(m)))
       .map(c => ({ id: c.id, label: t(c.label) })),
@@ -169,14 +169,14 @@ onMounted(updateIndicator)
                 class="ti__card-icon"
                 aria-hidden="true"
               />
-              <span class="ti__card-title">{{ task.title }}</span>
+              <span class="ti__card-title">{{ t(task.title) }}</span>
             </div>
             <svg class="ti__card-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
           </div>
-          <p class="ti__card-sub">{{ task.subtitle }}</p>
+          <p class="ti__card-sub">{{ t(task.subtitle) }}</p>
         </button>
       </div>
 
@@ -192,8 +192,8 @@ onMounted(updateIndicator)
           class="ti__hidden-row"
           @click="goTask(task.href)"
         >
-          <span class="ti__hidden-title">{{ task.title }}</span>
-          <span class="ti__hidden-sub">{{ task.subtitle }}</span>
+          <span class="ti__hidden-title">{{ t(task.title) }}</span>
+          <span class="ti__hidden-sub">{{ t(task.subtitle) }}</span>
           <svg class="ti__hidden-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M5 12h14" />
             <path d="m12 5 7 7-7 7" />

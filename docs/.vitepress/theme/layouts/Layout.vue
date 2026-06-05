@@ -27,15 +27,38 @@ function syncHomeClass(val: boolean) {
   document.documentElement.classList.toggle('home-page-layout', val)
 }
 watch(isHomePage, syncHomeClass, { immediate: true })
+// 动态测 navbar 实际高度（hn-top-bar + hn-sub-bar），写到 --hn-height CSS 变量。
+// 避免靠手算导致 sidebar/VPDoc padding-top 估算偏小、被 nav 遮挡。
+function syncNavHeight() {
+  if (!inBrowser) return
+  const nav = document.querySelector<HTMLElement>('.hn-root')
+  if (!nav) return
+  const h = nav.offsetHeight
+  if (h > 0) document.documentElement.style.setProperty('--hn-height', h + 'px')
+}
+
+let navResizeObserver: ResizeObserver | null = null
+
 onMounted(() => {
   if (!inBrowser) return
   document.documentElement.classList.add('custom-nav-layout')
   syncHomeClass(isHomePage.value)
+  // 首次同步 + 监听 nav 自身尺寸变化（语言切换/字号变化/响应式）
+  requestAnimationFrame(syncNavHeight)
+  const nav = document.querySelector<HTMLElement>('.hn-root')
+  if (nav && typeof ResizeObserver !== 'undefined') {
+    navResizeObserver = new ResizeObserver(syncNavHeight)
+    navResizeObserver.observe(nav)
+  }
+  window.addEventListener('resize', syncNavHeight)
 })
 onBeforeUnmount(() => {
   if (!inBrowser) return
   document.documentElement.classList.remove('custom-nav-layout')
   document.documentElement.classList.remove('home-page-layout')
+  navResizeObserver?.disconnect()
+  navResizeObserver = null
+  window.removeEventListener('resize', syncNavHeight)
 })
 
 watch(modalOpen, (open) => {
@@ -45,24 +68,112 @@ watch(modalOpen, (open) => {
 
 // 文章页：把侧边栏激活项滚动到视口中间（仅初次进入或路由切换时执行一次）
 const route = useRoute()
-async function centerActiveSidebarItem() {
+function centerActiveSidebarItem() {
   if (!inBrowser) return
-  await nextTick()
-  // 等 sidebar 渲染完毕（VitePress 切换路由后，is-active 类是异步打的）
-  requestAnimationFrame(() => {
+  // 等 VitePress 完成激活计算 + .items max-height transition (~0.28s) 完全结束
+  setTimeout(() => {
     const sidebar = document.querySelector<HTMLElement>('.VPSidebar')
     if (!sidebar) return
-    const active = sidebar.querySelector<HTMLElement>('.VPSidebarItem.is-active > .item > .link, .VPSidebarItem.is-active .link.active, a.link.active, .VPSidebarItem.is-active')
+    const active = sidebar.querySelector<HTMLElement>(
+      '.VPSidebarItem.is-active:not(.collapsible) > .item > .link, ' +
+      '.VPSidebarItem.is-active:not(.collapsible) > .item > .VPLink'
+    )
     if (!active) return
-    const sRect = sidebar.getBoundingClientRect()
     const aRect = active.getBoundingClientRect()
-    // 把激活项相对 sidebar 顶部的偏移移到 sidebar 视口高度的一半
-    const target = sidebar.scrollTop + (aRect.top - sRect.top) - sRect.height / 2 + aRect.height / 2
-    sidebar.scrollTo({ top: Math.max(0, target), behavior: 'auto' })
-  })
+    if (aRect.height === 0) return
+    const sRect = sidebar.getBoundingClientRect()
+    // sidebar top:0；顶部 padding-top(--hn-height) 区被 nav 遮挡，可见区
+    // 中心 = navHeight + (sidebar.height - navHeight)/2
+    const navHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hn-height')) || 0
+    const visibleHeight = sRect.height - navHeight
+    const target = sidebar.scrollTop + (aRect.top - sRect.top) - navHeight - visibleHeight / 2 + aRect.height / 2
+    sidebar.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
+  }, 400)
 }
 watch(() => route.path, centerActiveSidebarItem, { immediate: true })
 onMounted(centerActiveSidebarItem)
+
+// 点击 group link 的拦截逻辑挪到 theme/index.ts 顶层，
+// 必须先于 VitePress router click 拦截注册才能 stopImmediatePropagation 生效。
+// 这里只接收它派出的事件，rAF 后持久化用户偏好
+function onGroupToggled(e: Event) {
+  const detail = (e as CustomEvent<{ group: HTMLElement }>).detail
+  if (!detail?.group) return
+  requestAnimationFrame(() => persistGroupState(detail.group))
+}
+
+// ── client-side 持久化用户折叠偏好 ─────────────────────────────────────
+// 二级及以下 group 默认收起；localStorage 记录"被用户主动展开"的 key 集合。
+// 这样即使 VitePress watchPostEffect 因 active 强制展开了它们，apply 也会按
+// 用户偏好覆盖回去（未展开过的保持收起）。
+const EXPANDED_KEY = 'lb-sidebar-expanded-groups'
+
+function loadExpanded(): Set<string> {
+  if (!inBrowser) return new Set()
+  try {
+    return new Set(JSON.parse(localStorage.getItem(EXPANDED_KEY) || '[]'))
+  } catch { return new Set() }
+}
+
+function saveExpanded(set: Set<string>) {
+  if (!inBrowser) return
+  try { localStorage.setItem(EXPANDED_KEY, JSON.stringify([...set])) } catch { /* ignore */ }
+}
+
+function groupKey(el: HTMLElement): string {
+  // 优先用 link href（稳定且唯一），fallback 到 text 文本
+  const a = el.querySelector<HTMLAnchorElement>(':scope > .item > .link')
+  const href = a?.getAttribute('href')
+  if (href) return href
+  const text = el.querySelector<HTMLElement>(':scope > .item > .text')
+  return (text?.textContent || '').trim()
+}
+
+function persistGroupState(groupItem: HTMLElement) {
+  // 只持久化二级及以下（level-0 默认展开，不参与）
+  if (groupItem.classList.contains('level-0')) return
+  const k = groupKey(groupItem)
+  if (!k) return
+  const set = loadExpanded()
+  if (groupItem.classList.contains('collapsed')) set.delete(k)
+  else set.add(k)
+  saveExpanded(set)
+}
+
+function applyCollapsedPreference() {
+  if (!inBrowser) return
+  const expanded = loadExpanded()
+  document.querySelectorAll<HTMLElement>('.VPSidebar .VPSidebarItem.collapsible').forEach(el => {
+    // 一级菜单（level-0）始终展开，不参与
+    if (el.classList.contains('level-0')) return
+    // 当前页所在分支始终展开（is-active = 自身就是 active leaf；
+    // has-active = 内部含 active 后代），保持 VitePress 默认"父级展开到当前页"行为
+    if (el.classList.contains('is-active') || el.classList.contains('has-active')) return
+    const k = groupKey(el)
+    if (!k) return
+    // 默认收起：只有 localStorage 标记为"展开"才展开
+    const wantCollapsed = !expanded.has(k)
+    const isCollapsed = el.classList.contains('collapsed')
+    if (wantCollapsed === isCollapsed) return
+    const caret = el.querySelector<HTMLElement>(':scope > .item > .caret')
+    caret?.click()
+  })
+}
+
+onMounted(() => {
+  if (!inBrowser) return
+  window.addEventListener('lb:sidebar:group-toggled', onGroupToggled)
+})
+onBeforeUnmount(() => {
+  if (!inBrowser) return
+  window.removeEventListener('lb:sidebar:group-toggled', onGroupToggled)
+})
+
+// 路由切换/首次挂载后，把用户偏好应用回去
+watch(() => route.path, () => {
+  requestAnimationFrame(() => requestAnimationFrame(applyCollapsedPreference))
+}, { immediate: true })
+onMounted(applyCollapsedPreference)
 </script>
 
 <template>

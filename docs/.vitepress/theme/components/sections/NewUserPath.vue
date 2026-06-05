@@ -61,7 +61,7 @@ function goDoc() {
             >
               {{ st.num }}
             </span>
-            <span class="nup__nav-label" :class="{ 'is-active': i === cur }">{{ st.title }}</span>
+            <span class="nup__nav-label" :class="{ 'is-active': i === cur }">{{ t(st.title) }}</span>
           </button>
         </div>
 
@@ -69,12 +69,12 @@ function goDoc() {
           <div class="nup__card-body">
             <span class="nup__big-num">{{ current.num }}</span>
             <div class="nup__card-text">
-              <div class="nup__step-title">{{ current.title }}</div>
-              <div class="nup__step-sub">{{ current.subtitle }}</div>
+              <div class="nup__step-title">{{ t(current.title) }}</div>
+              <div class="nup__step-sub">{{ t(current.subtitle) }}</div>
               <div class="nup__card-foot">
-                <span class="nup__duration">预计 {{ current.durationLabel }}</span>
+                <span class="nup__duration">{{ t('newUserPath.estimate') }} {{ t(current.durationLabel) }}</span>
                 <button type="button" class="nup__cta" @click="goDoc">
-                  查看文档
+                  {{ t('newUserPath.viewDoc') }}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
@@ -97,7 +97,7 @@ function goDoc() {
         </div>
       </div>
 
-      <p class="nup__note">每步点击可跳转到对应文档，所有步骤均可独立进入</p>
+      <p class="nup__note">{{ t('newUserPath.note') }}</p>
     </div>
   </section>
 </template>

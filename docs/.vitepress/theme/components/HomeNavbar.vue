@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useData, inBrowser } from 'vitepress'
-import { MoreVertical, ExternalLink, Sun, Moon, Globe, Github } from 'lucide-vue-next'
+import { MoreVertical, ExternalLink, Sun, Moon, Globe, Github, ChevronDown } from 'lucide-vue-next'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
 import { useAIModal } from '../composables/useAIModal'
 import { useSearchDialog } from '../composables/useSearchDialog'
@@ -15,7 +15,24 @@ const { open: openSearch } = useSearchDialog()
 const { isDark, toggle: toggleTheme } = useColorMode()
 const { t } = useI18n()
 
-// ── Language switcher ─────────────────────────────────────────
+// ── API & SDK 下拉 ─────────────────────────────────────────────
+const API_SDK_ITEMS = [
+  { label: 'Skill',   href: 'https://open.longbridge.com/skill' },
+  { label: 'CLI',     href: 'https://open.longbridge.com/docs/cli' },
+  { label: 'MCP',     href: 'https://open.longbridge.com/docs/mcp' },
+  { label: 'Pricing', href: 'https://open.longbridge.com/pricing' },
+]
+const apiOpen = ref(false)
+const apiBtnRef = ref<HTMLButtonElement>()
+const apiPopoverRef = ref<HTMLElement>()
+function toggleApi() { apiOpen.value = !apiOpen.value }
+
+// ── Region / Language switcher ─────────────────────────────────
+const REGIONS = [
+  { code: 'hk', labelKey: 'common.regionHK'},
+  { code: 'sg', labelKey: 'common.regionSG' },
+]
+
 const LANGS = [
   { code: 'en',    label: 'English',   link: '/' },
   { code: 'zh-CN', label: '简体中文', link: '/zh-CN/' },
@@ -28,6 +45,36 @@ const langPopoverRef = ref<HTMLElement>()
 
 function toggleLang() {
   langOpen.value = !langOpen.value
+}
+
+// ── Region (cookie) ──
+function readCookie(name: string): string {
+  if (!inBrowser) return ''
+  const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'))
+  return match ? decodeURIComponent(match[1]) : ''
+}
+
+function writeCookie(name: string, value: string) {
+  if (!inBrowser) return
+  // 1 年有效，全站可见
+  const expires = new Date(Date.now() + 365 * 24 * 3600 * 1000).toUTCString()
+  document.cookie = `${name}=${encodeURIComponent(value)}; path=/; expires=${expires}; SameSite=Lax`
+}
+
+const currentRegion = ref<string>('hk')
+if (inBrowser) {
+  const r = readCookie('region')
+  if (r === 'hk' || r === 'sg') currentRegion.value = r
+}
+
+function switchRegion(target: typeof REGIONS[number]) {
+  if (target.code === currentRegion.value) {
+    langOpen.value = false
+    return
+  }
+  writeCookie('region', target.code)
+  currentRegion.value = target.code
+  if (inBrowser) window.location.reload()
 }
 
 const currentLang = computed(() => {
@@ -43,7 +90,6 @@ function switchLang(target: typeof LANGS[number]) {
     return
   }
   if (!inBrowser) return
-  // 仅切换 locale 前缀，保留后续路径
   const p = route.path
   let rest = p
   for (const code of ['zh-CN', 'zh-HK']) {
@@ -86,12 +132,18 @@ function onDocClick(e: MouseEvent) {
       langOpen.value = false
     }
   }
+  if (apiOpen.value) {
+    if (!apiBtnRef.value?.contains(target) && !apiPopoverRef.value?.contains(target)) {
+      apiOpen.value = false
+    }
+  }
 }
 
 function onDocKey(e: KeyboardEvent) {
   if (e.key === 'Escape') {
     moreOpen.value = false
     langOpen.value = false
+    apiOpen.value = false
   }
 }
 
@@ -166,6 +218,25 @@ onBeforeUnmount(() => {
                 class="hn-lang-popover"
                 role="menu"
               >
+                <div class="hn-lang-section-title">{{ t('common.selectRegion') }}</div>
+                <button
+                  v-for="r in REGIONS"
+                  :key="r.code"
+                  type="button"
+                  class="hn-lang-item hn-lang-item--region"
+                  :class="{ 'is-active': r.code === currentRegion }"
+                  role="menuitem"
+                  @click="switchRegion(r)"
+                >
+                  <span class="hn-lang-text">{{ t(r.labelKey) }}</span>
+                  <svg v-if="r.code === currentRegion" class="hn-lang-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </button>
+
+                <div class="hn-lang-divider" />
+
+                <div class="hn-lang-section-title">{{ t('common.selectLanguage') }}</div>
                 <a
                   v-for="l in LANGS"
                   :key="l.code"
@@ -175,7 +246,10 @@ onBeforeUnmount(() => {
                   role="menuitem"
                   @click.prevent="switchLang(l)"
                 >
-                  {{ l.label }}
+                  <span class="hn-lang-text">{{ l.label }}</span>
+                  <svg v-if="l.code === currentLang" class="hn-lang-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                 </a>
               </div>
             </Transition>
@@ -203,7 +277,7 @@ onBeforeUnmount(() => {
             <Github :size="16" />
           </a>
 
-          <!-- Kebab 更多菜单（md 以下显示） -->
+          <!-- 移动端：高频菜单触发器（md 以下显示，复用 kebab popover） -->
           <div class="hn-more">
             <button
               ref="moreBtnRef"
@@ -246,5 +320,52 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
+    <!-- 第二行：高频菜单组（NAV_TABS） -->
+    <div class="hn-sub-bar">
+      <div class="hn-sub-inner">
+        <a
+          v-for="tab in NAV_TABS"
+          :key="tab.path"
+          :href="`${tab.path}overview`"
+          class="hn-sub-tab"
+          :class="{ 'is-active': activeTab === tab.path }"
+        >
+          {{ t(tab.label) }}
+        </a>
+
+        <!-- API 和 SDK 下拉，靠右 -->
+        <div class="hn-api-dropdown">
+          <button
+            ref="apiBtnRef"
+            type="button"
+            class="hn-sub-tab hn-api-trigger"
+            :class="{ 'is-open': apiOpen }"
+            :aria-expanded="apiOpen"
+            aria-haspopup="true"
+            @click="toggleApi"
+          >
+            {{ t('common.apiSdk') }}
+            <ChevronDown :size="14" class="hn-api-chevron" />
+          </button>
+          <Transition name="hn-lang-fade">
+            <div v-if="apiOpen" ref="apiPopoverRef" class="hn-api-popover" role="menu">
+              <a
+                v-for="item in API_SDK_ITEMS"
+                :key="item.label"
+                :href="item.href"
+                target="_blank"
+                rel="noopener"
+                class="hn-api-item"
+                role="menuitem"
+                @click="apiOpen = false"
+              >
+                {{ item.label }}
+                <ExternalLink :size="12" class="hn-api-ext" />
+              </a>
+            </div>
+          </Transition>
+        </div>
+      </div>
+    </div>
   </nav>
 </template>

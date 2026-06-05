@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { inject } from 'vue'
+import { useI18n } from '../../../i18n/useI18n'
 
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
+const { t } = useI18n()
 
 function handleClick() {
   openAIModal('')
@@ -13,7 +15,7 @@ function handleClick() {
     <div class="divider-copy__inner">
       <div class="divider-copy__line" />
       <button type="button" class="divider-copy__text" @click="handleClick">
-        不知道从哪开始？<span class="divider-copy__highlight">用一句话问 AI，直接给你答案</span>
+        {{ t('divider.pre') }}<span class="divider-copy__highlight">{{ t('divider.highlight') }}</span>
       </button>
       <div class="divider-copy__line" />
     </div>

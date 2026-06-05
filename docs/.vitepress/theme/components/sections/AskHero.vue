@@ -25,7 +25,8 @@ function handleKeydown(e: KeyboardEvent) {
 }
 
 function askHot(tag: { q: string; initialPrompt: string }) {
-  openAIModal(tag.initialPrompt)
+  // initialPrompt 现在也是 i18n key（data.featuredAsks.prompts.<id>），按当前 locale 解析
+  openAIModal(t(tag.initialPrompt))
 }
 </script>
 

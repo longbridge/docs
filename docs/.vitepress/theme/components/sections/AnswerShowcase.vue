@@ -12,41 +12,20 @@ interface Demo {
   cite: string
 }
 
-const demos: Demo[] = [
-  {
-    q: '我的港股入金没到账，怎么办？',
-    intro: '入金通常在 1–2 个工作日到账。先按以下步骤自查：',
-    steps: [
-      '在银行 App 确认转账已成功，记录参考号',
-      '打开长桥 App →「资金」→「入金记录」核对状态',
-      '若超过 2 个工作日仍未到账，在 App 内联系客服并附转账凭证',
-    ],
-    cite: '入金方式说明',
-  },
-  {
-    q: '美股期权 PCP 策略，保证金怎么算？',
-    intro: 'PCP（保护性认购）保证金取以下两者较大值：',
-    steps: [
-      '期权市值 × 15%（当前期权报价 × 合约乘数）',
-      '标的证券价值 × 10%（当前股价 × 股数）',
-      '实时保证金可在「账户 → 保证金详情」随时查看',
-    ],
-    cite: '期权保证金说明',
-  },
-  {
-    q: 'W-8BEN 表格多久需要重新提交一次？',
-    intro: 'W-8BEN 有效期为签署日起 3 年（至当年年末）：',
-    steps: [
-      '到期前 30 天，系统会自动向您发送提醒通知',
-      '在 App「账户 → 税务信息」重新填写并提交',
-      '未及时更新将按 30% 最高税率预扣美股股息税',
-    ],
-    cite: 'FATCA 与税务信息',
-  },
-]
+const DEMO_KEYS = ['deposit', 'optionPcp', 'w8ben']
+const demos = computed<Demo[]>(() => DEMO_KEYS.map(k => ({
+  q: t(`answerShowcase.demos.${k}.q`),
+  intro: t(`answerShowcase.demos.${k}.intro`),
+  steps: [
+    t(`answerShowcase.demos.${k}.s1`),
+    t(`answerShowcase.demos.${k}.s2`),
+    t(`answerShowcase.demos.${k}.s3`),
+  ],
+  cite: t(`answerShowcase.demos.${k}.cite`),
+})))
 
 const idx = ref(0)
-const current = computed(() => demos[idx.value])
+const current = computed(() => demos.value[idx.value])
 const features = computed(() => [
   t('answerShowcase.feat0'),
   t('answerShowcase.feat1'),
@@ -58,7 +37,7 @@ let timer: ReturnType<typeof setInterval> | null = null
 function start() {
   stop()
   timer = setInterval(() => {
-    idx.value = (idx.value + 1) % demos.length
+    idx.value = (idx.value + 1) % demos.value.length
   }, 3200)
 }
 function stop() {
@@ -88,7 +67,7 @@ function askDemo() {
       <div class="answer-showcase__left">
         <span class="answer-showcase__eyebrow">{{ t('answerShowcase.eyebrow') }}</span>
         <h2 class="answer-showcase__title">
-          用一句话提问，<br />直接给到操作步骤
+          {{ t('answerShowcase.title') }}<br />{{ t('answerShowcase.titleEm') }}
         </h2>
         <ul class="answer-showcase__feats">
           <li v-for="f in features" :key="f" class="answer-showcase__feat">
