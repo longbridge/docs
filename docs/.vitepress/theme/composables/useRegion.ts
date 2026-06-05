@@ -1,15 +1,17 @@
 import { ref } from 'vue'
 import { inBrowser, withBase } from 'vitepress'
 
-// region 来自 cookie（HomeNavbar 中写入），fallback 到当前 URL 第一段，再 fallback 'hk'。
-// 单次 build 内 region 是恒定的（VitePress base = /<region>/）。useRegion 主要给跨 region
-// 跳转用：构造目标 region 的绝对 URL。
+// region 优先级：URL 第一段 > cookie > 'hk' 默认。
+// URL 是当前实际访问的 region，必须最权威；cookie 仅在 URL 无 region 段时兜底
+// （e.g. 用户从子页 / 站外 fallback 到首页）。单次 build 内 region 是恒定的
+// （VitePress base = /<region>/）。useRegion 主要给跨 region 跳转用：构造目标 region 的绝对 URL。
 function readRegion(): 'hk' | 'sg' {
   if (!inBrowser) return 'hk'
+  const p = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
+  if (p) return p[1] as 'hk' | 'sg'
   const m = document.cookie.match(/(?:^|; )region=([^;]*)/)
   if (m && (m[1] === 'sg' || m[1] === 'hk')) return m[1]
-  const p = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
-  return p ? (p[1] as 'hk' | 'sg') : 'hk'
+  return 'hk'
 }
 
 export function useRegion() {

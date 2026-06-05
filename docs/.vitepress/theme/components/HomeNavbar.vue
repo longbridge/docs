@@ -61,10 +61,17 @@ function writeCookie(name: string, value: string) {
   document.cookie = `${name}=${encodeURIComponent(value)}; path=/; expires=${expires}; SameSite=Lax`
 }
 
+// region 优先级：URL 第一段 > cookie > 'hk'。URL 是当前实际访问的 region，
+// 永远权威，避免 cookie 残留状态与可见 URL 不一致。
 const currentRegion = ref<string>('hk')
 if (inBrowser) {
-  const r = readCookie('region')
-  if (r === 'hk' || r === 'sg') currentRegion.value = r
+  const pathMatch = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
+  if (pathMatch) {
+    currentRegion.value = pathMatch[1]
+  } else {
+    const r = readCookie('region')
+    if (r === 'hk' || r === 'sg') currentRegion.value = r
+  }
 }
 
 function switchRegion(target: typeof REGIONS[number]) {
