@@ -90,8 +90,9 @@ function switchRegion(target: typeof REGIONS[number]) {
 
 const currentLang = computed(() => {
   const p = route.path
-  // 现在 URL 形如 /<region>/<locale>/...，需要在 region 后判断
-  const m = p.match(/^\/(hk|sg)\/(zh-CN|zh-HK)\//)
+  // URL 形如 /<region>/<locale>(/...)?；与 currentRegion 对齐，
+  // 允许 /hk/zh-CN 这类语言根 URL（无尾斜杠）也命中
+  const m = p.match(/^\/(hk|sg)\/(zh-CN|zh-HK)(\/|$)/)
   if (m) return m[2]
   return 'en'
 })
