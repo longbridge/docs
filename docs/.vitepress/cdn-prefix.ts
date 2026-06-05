@@ -83,6 +83,12 @@ export function buildEndCdnPrefix(prefix: string) {
         '`' + normalized + base + 'assets/${',
       ],
       [
+        // (a) VitePress 2 变体：base 被压成变量插值 `${e}assets/${t}.${a}.js`
+        // （e 在 runtime = site base，如 "/hk/"），需把整段前置 CDN 前缀。
+        /`\$\{([A-Za-z_$][A-Za-z0-9_$]*)\}assets\/\$\{/g,
+        '`' + normalized + '${$1}assets/${',
+      ],
+      [
         // (a) Vite 内置 __vitePreload 的 assetsURL helper：
         //   const Gp = function(s) { return "<base>" + s }
         // backref \1 保证形参名前后一致，避免误伤别的同形函数。
