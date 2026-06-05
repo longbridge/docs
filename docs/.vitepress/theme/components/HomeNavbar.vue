@@ -320,15 +320,16 @@ onBeforeUnmount(() => {
             </Transition>
           </div>
 
-          <!-- 主题切换：两个图标都渲染，避免 SSR / 重渲染丢失 -->
+          <!-- 主题切换：v-show 用 inline display:none，避免被 VitePress 默认
+               theme 的 unlayered svg 规则覆盖（class 切换失败导致双图标叠加） -->
           <button
             type="button"
             class="hn-icon-btn hn-theme-toggle"
             :aria-label="isDark ? t('common.switchToLight') : t('common.switchToDark')"
             @click="toggleTheme"
           >
-            <Sun :size="16" class="hn-theme-icon hn-theme-icon--dark" />
-            <Moon :size="16" class="hn-theme-icon hn-theme-icon--light" />
+            <Sun v-show="isDark" :size="16" class="hn-theme-icon" />
+            <Moon v-show="!isDark" :size="16" class="hn-theme-icon" />
           </button>
 
           <!-- GitHub -->

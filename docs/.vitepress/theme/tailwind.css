@@ -1602,12 +1602,6 @@ html.ai-resizing .hn-root {
     background: var(--vp-c-bg-soft);
   }
 
-  /* 主题切换：根据 html.dark 显示对应图标，避免 SSR / hydration 抖动 */
-  .hn-theme-toggle .hn-theme-icon--dark { display: none; }
-  .hn-theme-toggle .hn-theme-icon--light { display: block; }
-  .dark .hn-theme-toggle .hn-theme-icon--dark { display: block; }
-  .dark .hn-theme-toggle .hn-theme-icon--light { display: none; }
-
   /* 语言切换下拉容器（hover 触发，无需边界 padding 也能稳定悬停） */
   .hn-lang {
     position: relative;
