@@ -27,7 +27,10 @@
   border-right: 1px solid var(--vp-c-divider);
 }
 
-.VPSidebarItem:hover {
+/* 只在直接 hover level-0 自身那行（.item，包含 icon+label）时变色，
+ * hover 子菜单不会冒泡触发顶级 group 的变色 */
+.VPSidebarItem.level-0 > .item:hover,
+.VPSidebarItem:not(.level-0):hover {
   color: var(--vp-c-brand-1);
 }
 
@@ -109,9 +112,9 @@
   display: inline-flex;
   align-items: center;
   margin-right: 12px;
-  color: var(--vp-c-text-3);
-  width: 1.3em;
-  height: 1.3em;
+  color: var(--vp-c-text-1);
+  font-size: 20px;
+  transition: color 0.15s;
 }
 
 /* 让含 icon 的 .text 容器变 flex，icon + label 自然垂直居中对齐
@@ -120,9 +123,26 @@
 .VPSidebarItem.level-0 > .item > .link > .text {
   display: flex;
   align-items: center;
+  min-width: 0;
+}
+
+/* 顶级 group 标签强制单行；过长走 ellipsis 而不是换行 */
+.sidebar-group-label {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .VPSidebarItem.is-active .sidebar-item-icon,
 .VPSidebarItem.is-active .sidebar-group-icon {
+  color: var(--vp-c-brand-1);
+}
+
+/* hover 时 icon 跟随 label 一起变品牌色：
+ * 仅当 hover 在顶级 group 自身那行（.item）时触发，hover 子菜单不影响顶级 icon */
+.VPSidebarItem.level-0 > .item:hover .sidebar-item-icon,
+.VPSidebarItem.level-0 > .item:hover .sidebar-group-icon {
   color: var(--vp-c-brand-1);
 }

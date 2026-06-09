@@ -7,7 +7,7 @@ import { useRegion } from '../../composables/useRegion'
 
 const router = useRouter()
 const { t } = useI18n()
-const { withRegion } = useRegion()
+const { withRegionAndLocale } = useRegion()
 
 const cur = ref(0)
 const current = computed(() => newUserSteps[cur.value])
@@ -31,7 +31,7 @@ function select(i: number) {
 }
 
 function goDoc() {
-  router.go(withRegion(current.value.path))
+  router.go(withRegionAndLocale(current.value.path))
 }
 </script>
 

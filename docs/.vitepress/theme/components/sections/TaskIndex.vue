@@ -1,14 +1,39 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick, onMounted } from 'vue'
 import { useRouter } from 'vitepress'
+// Phosphor 不区分 BarChart2/3，统一 PhChartBar；FileCheck 用 PhSealCheck 表达"已验证"
 import {
-  UserPlus, Users, Layers, CircleHelp, ArrowLeftRight,
-  ArrowDownToLine, Zap, RefreshCw, RefreshCcw, Send, Smartphone, Globe, Globe2,
-  TrendingUp, TrendingDown, BookOpen, Receipt, BarChart2, BarChart3, Timer, ListOrdered,
-  PieChart, FileText,
-  ArrowUpFromLine, Building2, Shuffle,
-  Flame, ShieldCheck, FileCheck, Wrench,
-} from 'lucide-vue-next'
+  PhUserPlus as UserPlus,
+  PhUsers as Users,
+  PhStack as Layers,
+  PhQuestion as CircleHelp,
+  PhArrowsLeftRight as ArrowLeftRight,
+  PhArrowLineDown as ArrowDownToLine,
+  PhLightning as Zap,
+  PhArrowsClockwise as RefreshCw,
+  PhArrowsCounterClockwise as RefreshCcw,
+  PhPaperPlaneTilt as Send,
+  PhDeviceMobile as Smartphone,
+  PhGlobe as Globe,
+  PhGlobeSimple as Globe2,
+  PhTrendUp as TrendingUp,
+  PhTrendDown as TrendingDown,
+  PhBookOpen as BookOpen,
+  PhReceipt as Receipt,
+  PhChartBar as BarChart2,
+  PhTimer as Timer,
+  PhListNumbers as ListOrdered,
+  PhChartPie as PieChart,
+  PhFileText as FileText,
+  PhArrowLineUp as ArrowUpFromLine,
+  PhBuildingOffice as Building2,
+  PhShuffle as Shuffle,
+  PhFire as Flame,
+  PhShieldCheck as ShieldCheck,
+  PhSealCheck as FileCheck,
+  PhWrench as Wrench,
+} from '@phosphor-icons/vue'
+const BarChart3 = BarChart2 // Phosphor 单一 ChartBar，两个 lucide 变体共用
 import { categories, type Market } from '../../data/journey'
 import { useI18n } from '../../../i18n/useI18n'
 import { useRegion } from '../../composables/useRegion'
@@ -24,7 +49,7 @@ const iconMap: Record<string, unknown> = {
 
 const router = useRouter()
 const { t } = useI18n()
-const { withRegion, region } = useRegion()
+const { withRegionAndLocale, region } = useRegion()
 
 // region → 显示哪些 market 的任务：
 //   hk 用户能买港股 + 美股 → ['hk', 'us']
@@ -76,7 +101,7 @@ function goTask(href: string) {
   if (href.startsWith('http')) {
     window.open(href, '_blank')
   } else {
-    router.go(withRegion(href))
+    router.go(withRegionAndLocale(href))
   }
 }
 

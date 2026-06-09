@@ -286,6 +286,11 @@ const zhCN = {
     prev: '上一篇',
     next: '下一篇',
     footerMessage: '© 2026 Longbridge. All rights reserved.',
+    sidebarMenu: '菜单',
+    returnToTop: '返回顶部',
+    darkModeSwitch: '切换深色模式',
+    lightModeSwitch: '切换浅色模式',
+    skipToContent: '跳到内容',
     search: {
       buttonText: '搜索文档',
       buttonAriaLabel: '搜索文档',

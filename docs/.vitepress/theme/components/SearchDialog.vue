@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter, useData, inBrowser } from 'vitepress'
-import { Search, Hash, ChevronRight, Sparkles, Clock, X } from 'lucide-vue-next'
+import {
+  PhMagnifyingGlass as Search,
+  PhHash as Hash,
+  PhCaretRight as ChevronRight,
+  PhSparkle as Sparkles,
+  PhClock as Clock,
+  PhX as X,
+} from '@phosphor-icons/vue'
 import { useSearchDialog } from '../composables/useSearchDialog'
 import { useDocsSearch, type DocSearchItem } from '../composables/useDocsSearch'
 import { useSearchHistory } from '../composables/useSearchHistory'

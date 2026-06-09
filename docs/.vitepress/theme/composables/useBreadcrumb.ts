@@ -3,16 +3,23 @@ import { useRoute, useData } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
 import { useI18n } from '../../i18n/useI18n'
+import { useRegion } from './useRegion'
 
 export interface BreadcrumbItem {
   text: string
   link?: string
 }
 
+const REGION_PREFIX_RE = /^\/(hk|sg)(?=\/|$)/
 const LOCALE_PREFIX_RE = /^\/(zh-CN|zh-HK)(?=\/|$)/
 
-function stripLocale(p: string): string {
-  return p.replace(LOCALE_PREFIX_RE, '') || '/'
+// 同时剥掉 region 和 locale 前缀 —— 它们不属于文章层级
+function stripPrefixes(p: string): { rest: string; locale: string } {
+  let rest = p.replace(REGION_PREFIX_RE, '')
+  const localeMatch = rest.match(LOCALE_PREFIX_RE)
+  const locale = localeMatch?.[0] ?? ''
+  rest = rest.replace(LOCALE_PREFIX_RE, '') || '/'
+  return { rest, locale }
 }
 
 function stripHtml(html: string): string {
@@ -34,25 +41,11 @@ function findTitleByLink(
   return null
 }
 
-// 在 sidebar 中找精确匹配 `${prefix}overview` 的 link
-function findOverviewLink(
-  items: DefaultTheme.SidebarItem[],
-  target: string,
-): string | null {
-  for (const item of items) {
-    if (item.link === target) return item.link
-    if (item.items?.length) {
-      const r = findOverviewLink(item.items, target)
-      if (r) return r
-    }
-  }
-  return null
-}
-
 export function useBreadcrumb() {
   const route = useRoute()
   const { theme, page, frontmatter } = useData()
   const { t } = useI18n()
+  const { withRegionAndLocale } = useRegion()
   const sidebar = computed(() => theme.value.sidebar)
 
   // 把 sidebar 配置摊平成数组（无论是 record 还是 array）
@@ -68,7 +61,7 @@ export function useBreadcrumb() {
 
   // 根据 route.path 找出当前 NAV_TAB
   function findTab(currentPath: string) {
-    const p = stripLocale(currentPath)
+    const { rest: p } = stripPrefixes(currentPath)
     return NAV_TABS.find(tab =>
       tab.path !== '/' &&
       (p === tab.path || tab.categories.some(c => p.startsWith('/' + c + '/'))),
@@ -85,37 +78,30 @@ export function useBreadcrumb() {
   }
 
   const breadcrumbItems = computed<BreadcrumbItem[]>(() => {
-    const homeItem: BreadcrumbItem = {
-      text: t('common.home') || 'Home',
-      link: '/',
-    }
     const currentPath = route.path
-    const noLocale = stripLocale(currentPath)
-    const localePrefix = currentPath.match(LOCALE_PREFIX_RE)?.[0] ?? ''
+    const { rest: noPrefix } = stripPrefixes(currentPath)
 
-    // 当前是主页
-    if (noLocale === '/' || noLocale === '') return [homeItem]
+    // 当前是主页 / 区域根 → 不显示面包屑
+    if (noPrefix === '/' || noPrefix === '') return []
 
-    // 1) 拿到当前 tab
+    // 面包屑规则：非叶子节点跳转目标统一为 `<path>/overview`（调用方在
+    // withRegionAndLocale() 基础上叠加的定制逻辑）；withRegionAndLocale() 负责加 region + locale。
+
+    // 1) 当前 tab —— 作为面包屑首位
     const tab = findTab(currentPath)
     const tabItem: BreadcrumbItem | null = tab
       ? {
         text: t(tab.label) || tab.key,
-        link: `${localePrefix}${tab.path}overview`,
+        link: withRegionAndLocale(`${tab.path}overview`),
       }
       : null
 
-    // 2) 拆出当前路径在 tab 下的「中间段」（剔除最后一段当前页）
-    //    e.g. /stock-trading/trading-hours-and-rules/sg-trading-rules
-    //    segments = ['stock-trading', 'trading-hours-and-rules', 'sg-trading-rules']
-    //    tab 本身是 stock-trading，所以中间段 = ['trading-hours-and-rules']
-    const segments = noLocale.replace(/^\/+/, '').split('/').filter(Boolean)
-    // 末段是当前页，跳过
+    // 2) 拆 URL 段，剔除末段（末段是当前页本身）
+    const segments = noPrefix.replace(/^\/+/, '').split('/').filter(Boolean)
     const lastSeg = segments[segments.length - 1] || ''
     const intermediate = segments.slice(0, -1)
 
-    // 3) 每段查 dirNames 显示名；link 优先从 sidebar 找该段 group 的 overview，
-    //    没有再回退到 /path/
+    // 3) 每段：dirNames 翻译 + 统一指向同级 /overview
     const intermediateItems: BreadcrumbItem[] = []
     for (let i = 0; i < intermediate.length; i++) {
       const seg = intermediate[i]
@@ -123,22 +109,31 @@ export function useBreadcrumb() {
       const translated = t(key)
       const text = translated && translated !== key ? translated : seg
       const subPath = '/' + intermediate.slice(0, i + 1).join('/')
-      const overviewLink = findOverviewLink(allSidebarItems.value, `${subPath}/overview`)
-      const link = overviewLink
-        ? `${localePrefix}${overviewLink}`
-        : `${localePrefix}${subPath}/`
-      intermediateItems.push({ text, link })
+      intermediateItems.push({ text, link: withRegionAndLocale(`${subPath}/overview`) })
     }
 
-    // 4) 当前页项（无 link）
+    // 4) 当前页（无 link）
     const currentTitle = currentTitleFor(currentPath, lastSeg)
     const currentItem: BreadcrumbItem = { text: String(currentTitle) }
 
-    // 5) 拼装：Home / Tab / intermediate.../ current
-    const result: BreadcrumbItem[] = [homeItem]
+    // 5) 拼装：Tab / intermediate... / current
+    //    Home 与 region（hk/sg）不属于文章层级，不参与面包屑
+    const result: BreadcrumbItem[] = []
     if (tabItem) result.push(tabItem)
-    result.push(...intermediateItems)
-    result.push(currentItem)
+
+    // 去重：如果首段 intermediate 的显示文本与 tab 完全相同（多见于英文 locale，
+    // nav.label 与 dirNames 翻译都是同一个词），跳过这段，避免「Derivatives / Derivatives」
+    let working = intermediateItems
+    if (tabItem && working[0]?.text === tabItem.text) {
+      working = working.slice(1)
+    }
+    result.push(...working)
+
+    // 去重：currentItem 文本与列表最后一项相同（如 tab overview 页 frontmatter.title === tab）
+    const last = result[result.length - 1]
+    if (!last || last.text !== currentItem.text) {
+      result.push(currentItem)
+    }
     return result
   })
 

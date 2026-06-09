@@ -17,8 +17,8 @@ export const NAV_TABS: NavTab[] = [
     label: 'data.navTabs.getting-started',
     path: '/getting-started/',
     categories: [
-      'getting-started', 'app-guide', 'account', 'troubleshooting',
-      'deposit', 'withdrawal', 'transfers-and-fx',
+      'getting-started', 'app-guide', 'account',
+      'deposit', 'withdrawal', 'transfers-and-fx', 'troubleshooting',
     ],
   },
   {

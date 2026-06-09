@@ -6,7 +6,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div v-if="breadcrumbItems.length >= 2" class="lb-breadcrumb">
+  <div v-if="breadcrumbItems.length >= 1" class="lb-breadcrumb">
     <nav class="flex items-center" :aria-label="t('common.breadcrumbAria')">
       <ol class="flex items-center flex-wrap gap-y-1 m-0 p-0 list-none">
         <li

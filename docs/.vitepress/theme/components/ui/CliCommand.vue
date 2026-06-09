@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Copy, Check, ExternalLink as ExternalLinkIcon } from 'lucide-vue-next'
+import {
+  PhCopy as Copy,
+  PhCheck as Check,
+  PhArrowSquareOut as ExternalLinkIcon,
+} from '@phosphor-icons/vue'
 
 interface Props {
   command: string

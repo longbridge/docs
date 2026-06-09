@@ -6,17 +6,13 @@ import { categoryGroups } from '../../data/category-groups'
 
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
 const { t } = useI18n()
-const { withRegion } = useRegion()
+const { withRegionAndLocale } = useRegion()
 
 const cols = [
   categoryGroups[0], // 交易类
   categoryGroups[3], // 账户支撑
   categoryGroups[4], // 帮助
 ]
-
-function toHref(path: string) {
-  return withRegion(path.endsWith('/') ? `${path}overview` : path)
-}
 
 function askAi() {
   openAIModal('')
@@ -43,7 +39,7 @@ function askAi() {
           <div class="ftm__col-title">{{ t(col.name) }}</div>
           <ul class="ftm__list">
             <li v-for="item in col.items" :key="item.path">
-              <a :href="toHref(item.path)" class="ftm__link">{{ t(item.label) }}</a>
+              <a :href="withRegionAndLocale(item.path)" class="ftm__link">{{ t(item.label) }}</a>
             </li>
           </ul>
         </div>
@@ -53,8 +49,8 @@ function askAi() {
         <span class="ftm__copy">{{ t('footerMini.copyright') }}</span>
         <nav class="ftm__bottom-nav" :aria-label="t('footerMini.navAriaLabel')">
           <a href="https://longbridge.com" target="_blank" rel="noopener" class="ftm__bottom-link">{{ t('footerMini.official') }}</a>
-          <a :href="withRegion('/compliance-and-tax/privacy-policy')" class="ftm__bottom-link">{{ t('footerMini.privacy') }}</a>
-          <a :href="toHref('/compliance-and-tax/')" class="ftm__bottom-link">{{ t('footerMini.compliance') }}</a>
+          <a :href="withRegionAndLocale('/compliance-and-tax/privacy-policy')" class="ftm__bottom-link">{{ t('footerMini.privacy') }}</a>
+          <a :href="withRegionAndLocale('/compliance-and-tax/')" class="ftm__bottom-link">{{ t('footerMini.compliance') }}</a>
         </nav>
       </div>
     </div>

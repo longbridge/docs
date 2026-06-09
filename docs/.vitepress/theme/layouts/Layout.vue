@@ -5,7 +5,6 @@ import DefaultTheme from 'vitepress/theme'
 import HomeNavbar from '../components/HomeNavbar.vue'
 import PageHero from '../components/PageHero.vue'
 import PageFeedback from '../components/PageFeedback.vue'
-import AiChatDrawer from '../components/AiChatDrawer.vue'
 import SearchDialog from '../components/SearchDialog.vue'
 import { useAIModal } from '../composables/useAIModal'
 import { useI18n } from '../../i18n/useI18n'
@@ -19,7 +18,7 @@ const isDocPage = computed(() => {
 
 const isHomePage = computed(() => frontmatter.value.layout === 'page')
 
-const { modalOpen, initialQuery, openAIModal } = useAIModal()
+const { openAIModal } = useAIModal()
 const { t } = useI18n()
 
 function syncHomeClass(val: boolean) {
@@ -61,11 +60,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', syncNavHeight)
 })
 
-watch(modalOpen, (open) => {
-  if (!inBrowser) return
-  document.documentElement.classList.toggle('ai-drawer-open', open)
-}, { immediate: true })
-
 // 文章页：把侧边栏激活项滚动到视口中间（仅初次进入或路由切换时执行一次）
 const route = useRoute()
 function centerActiveSidebarItem() {
@@ -74,9 +68,11 @@ function centerActiveSidebarItem() {
   setTimeout(() => {
     const sidebar = document.querySelector<HTMLElement>('.VPSidebar')
     if (!sidebar) return
+    // 不排除 collapsible：group 本身指向 overview 时，VitePress 把它标为 is-active，
+    // 应该跟普通 leaf 一样滚到屏幕中间（is-active 始终是当前页本身；ancestor 是 has-active）
     const active = sidebar.querySelector<HTMLElement>(
-      '.VPSidebarItem.is-active:not(.collapsible) > .item > .link, ' +
-      '.VPSidebarItem.is-active:not(.collapsible) > .item > .VPLink'
+      '.VPSidebarItem.is-active > .item > .link, ' +
+      '.VPSidebarItem.is-active > .item > .VPLink'
     )
     if (!active) return
     const aRect = active.getBoundingClientRect()
@@ -88,7 +84,7 @@ function centerActiveSidebarItem() {
     const visibleHeight = sRect.height - navHeight
     const target = sidebar.scrollTop + (aRect.top - sRect.top) - navHeight - visibleHeight / 2 + aRect.height / 2
     sidebar.scrollTo({ top: Math.max(0, target), behavior: 'smooth' })
-  }, 200)
+  }, 50)
 }
 watch(() => route.path, centerActiveSidebarItem, { immediate: true })
 onMounted(centerActiveSidebarItem)
@@ -189,10 +185,8 @@ onMounted(applyCollapsedPreference)
     </template>
     <template #layout-bottom>
       <SearchDialog />
-      <AiChatDrawer v-model="modalOpen" :initial-query="initialQuery" />
       <button
         v-if="!isHomePage"
-        v-show="!modalOpen"
         class="ai-fab-mobile fixed bottom-7 right-7 w-12 h-12 rounded-full bg-brand-1 text-white border-0 cursor-pointer flex items-center justify-center z-[999] transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5"
         style="box-shadow: 0 4px 16px var(--vp-c-brand-soft);"
         @click="openAIModal()"

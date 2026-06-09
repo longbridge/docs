@@ -17,7 +17,7 @@ export const newUserSteps: UserPathStep[] = [
     num: '01',
     title: 'newUserPath.steps.downloadApp.title',
     subtitle: 'newUserPath.steps.downloadApp.subtitle',
-    path: '/app-guide/',
+    path: '/getting-started/download-app',
     durationLabel: 'newUserPath.steps.downloadApp.duration',
   },
   {

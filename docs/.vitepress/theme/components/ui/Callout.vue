@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Lightbulb, AlertTriangle, AlertOctagon, Info, CheckCircle2, ShieldAlert } from 'lucide-vue-next'
+import {
+  PhLightbulb as Lightbulb,
+  PhWarning as AlertTriangle,
+  PhWarningOctagon as AlertOctagon,
+  PhInfo as Info,
+  PhCheckCircle as CheckCircle2,
+  PhShieldWarning as ShieldAlert,
+} from '@phosphor-icons/vue'
 
 interface Props {
   type?: 'tip' | 'warning' | 'danger' | 'info' | 'caution' | 'success'

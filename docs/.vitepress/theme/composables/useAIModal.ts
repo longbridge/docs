@@ -1,72 +1,31 @@
-import { ref } from 'vue'
-import { useLocalStorage } from '@vueuse/core'
+// AI 入口统一桥接到 Helora iframe（script 由 config.mts head 注入并自动 boot）。
+// 保留 openAIModal(query) / toggleAIModal() API 形态，让所有现存调用点（HomeNavbar /
+// SearchDialog / 首页各 section 的 inject）无需改动；query 参数 Helora 当前 API 未
+// 支持，传入会被丢弃（视觉上 panel 打开后用户重新输入）。
 
-export interface TextPart {
-  type: 'text'
-  text: string
+declare global {
+  interface Window {
+    Helora?: {
+      open: () => void
+      close: () => void
+      show?: () => void
+      hide?: () => void
+      destroy?: () => void
+    }
+  }
 }
-
-export interface FilePart {
-  type: 'file'
-  mediaType: string
-  url: string
-  filename?: string
-}
-
-export type MessagePart = TextPart | FilePart
-
-export interface Message {
-  id: string
-  role: 'user' | 'assistant'
-  parts: MessagePart[]
-  loading?: boolean // true = waiting for first chunk (show dots)
-  final?: boolean   // true = stream complete
-}
-
-export function newMessageId(): string {
-  return `msg_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`
-}
-
-export function messageText(msg: Message): string {
-  return msg.parts
-    .filter((p): p is TextPart => p.type === 'text')
-    .map(p => p.text)
-    .join('')
-}
-
-const modalOpen = ref(false)
-const initialQuery = ref('')
-
-// Module-level: persists across component mount/unmount, survives modal close.
-// On read (page reload), normalize: clear loading state and mark as final.
-// Storage key bumped to v2 — legacy `lb-ai-chat` data is intentionally dropped.
-const messages = useLocalStorage<Message[]>('lb-ai-chat-v2', [], {
-  serializer: {
-    read: (raw) => {
-      try {
-        const parsed = JSON.parse(raw) as Message[]
-        return parsed.map(m => ({ ...m, loading: false, final: true }))
-      } catch {
-        return []
-      }
-    },
-    write: (val) => JSON.stringify(val),
-  },
-})
 
 export function useAIModal() {
-  function openAIModal(query?: string) {
-    initialQuery.value = query ?? ''
-    modalOpen.value = true
+  function openAIModal(_query?: string) {
+    if (typeof window === 'undefined') return
+    window.Helora?.open()
   }
 
+  // Helora 内部自管开关；toggle 语义统一映射到 open（点击未展开时打开，
+  // 已展开时再点 Helora 自己处理为 noop / 收起）
   function toggleAIModal() {
-    modalOpen.value = !modalOpen.value
+    openAIModal()
   }
 
-  function clearMessages() {
-    messages.value = []
-  }
-
-  return { modalOpen, initialQuery, openAIModal, toggleAIModal, messages, clearMessages }
+  return { openAIModal, toggleAIModal }
 }

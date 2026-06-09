@@ -2,9 +2,16 @@
 import { data as _topicCountsRaw } from '../../../topic-counts.data'
 import type { TopicKey, TopicCounts } from '../../../topic-counts.data'
 import {
-  Zap, User, ArrowDownCircle, ArrowUpCircle, ArrowLeftRight,
-  TrendingUp, Shield, Gift, ClipboardList,
-} from 'lucide-vue-next'
+  PhLightning as Zap,
+  PhUser as User,
+  PhArrowCircleDown as ArrowDownCircle,
+  PhArrowCircleUp as ArrowUpCircle,
+  PhArrowsLeftRight as ArrowLeftRight,
+  PhTrendUp as TrendingUp,
+  PhShield as Shield,
+  PhGift as Gift,
+  PhClipboardText as ClipboardList,
+} from '@phosphor-icons/vue'
 import { useI18n } from '../../../i18n/useI18n'
 
 const { t } = useI18n()

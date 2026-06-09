@@ -1766,10 +1766,8 @@ html.ai-resizing .hn-root {
     color: var(--vp-c-text-1);
   }
 
-  .hn-more-item.is-active {
-    color: var(--vp-c-text-1);
-    font-weight: 500;
-  }
+  /* .hn-more-item.is-active 放到下方 unlayered 区，避开 VitePress 默认
+   * unlayered `a {}` 的 color 覆盖（跟 .hn-lang-item.is-active 一致） */
 
   .hn-more-divider {
     @apply my-1 mx-2;
@@ -2606,6 +2604,14 @@ html.ai-resizing .hn-root {
   background: var(--vp-c-bg-soft);
 }
 
+/* kebab popover 内 NAV_TABS 当前激活项：brand 主题色 + bold。放 unlayered
+ * 避开 VitePress 默认 a{} 颜色覆盖 */
+.hn-more-item.is-active,
+.hn-more-item.is-active:hover {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
 /* AskHero dark 渐变覆盖：Vue scoped style 里写 :global(.dark) 不生效，挪到全局 */
 .dark .ask-hero {
   background: linear-gradient(170deg, rgba(0, 184, 184, 0.08) 0%, var(--vp-c-bg) 55%) !important;
@@ -2645,6 +2651,13 @@ html.ai-resizing .hn-root {
   gap: 12px;
 }
 
+.dark .hn-search-btn {
+  background: rgba(255, 255, 255, 0.06);
+}
+.dark .hn-search-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @media (max-width: 768px) {
   .hn-search-btn {
     padding: 0 8px;
@@ -2681,6 +2694,13 @@ html.ai-resizing .hn-root {
   /* 显式 padding：unlayered 优先级高于 @layer components，避免被 button reset 干扰 */
   padding: 0 20px;
   gap: 10px;
+}
+
+.dark .hn-askai-btn {
+  background: rgba(255, 255, 255, 0.06);
+}
+.dark .hn-askai-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {

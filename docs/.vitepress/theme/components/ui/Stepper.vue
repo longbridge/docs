@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount, provide, ref, watch } from 'vue'
-import { Check } from 'lucide-vue-next'
+import { PhCheck as Check } from '@phosphor-icons/vue'
 
 interface Step {
   id: string

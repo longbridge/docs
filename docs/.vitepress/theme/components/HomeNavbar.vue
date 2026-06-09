@@ -1,17 +1,27 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { useRoute, useData, inBrowser } from 'vitepress'
-import { MoreVertical, ExternalLink, Sun, Moon, Globe, Github, ChevronDown } from 'lucide-vue-next'
+import {
+  PhDotsThreeVertical as MoreVertical,
+  PhArrowSquareOut as ExternalLink,
+  PhSun as Sun,
+  PhMoon as Moon,
+  PhGlobe as Globe,
+  PhGithubLogo as Github,
+  PhCaretDown as ChevronDown,
+} from '@phosphor-icons/vue'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
 import { useAIModal } from '../composables/useAIModal'
 import { useSearchDialog } from '../composables/useSearchDialog'
 import { useColorMode } from '../composables/useColorMode'
+import { useRegion } from '../composables/useRegion'
 import { useI18n } from '../../i18n/useI18n'
 
 const route = useRoute()
 const { lang } = useData()
 const { toggleAIModal } = useAIModal()
 const { open: openSearch } = useSearchDialog()
+const { withRegionAndLocale } = useRegion()
 const { isDark, toggle: toggleTheme } = useColorMode()
 const { t } = useI18n()
 
@@ -28,9 +38,10 @@ const apiPopoverRef = ref<HTMLElement>()
 function toggleApi() { apiOpen.value = !apiOpen.value }
 
 // ── Region / Language switcher ─────────────────────────────────
+// SG 文档尚未上线，暂只暴露 HK；上线时把 sg 项取消注释即可
 const REGIONS = [
   { code: 'hk', labelKey: 'common.regionHK'},
-  { code: 'sg', labelKey: 'common.regionSG' },
+  // { code: 'sg', labelKey: 'common.regionSG' },
 ]
 
 const LANGS = [
@@ -240,7 +251,7 @@ onBeforeUnmount(() => {
     <div class="hn-top-bar">
       <div class="hn-container">
         <!-- Logo -->
-        <a :href="`/${currentRegion}/`" class="hn-logo" :aria-label="t('brand.homeAriaLabel')">
+        <a :href="withRegionAndLocale('/')" class="hn-logo" :aria-label="t('brand.homeAriaLabel')">
           <img
             src="https://assets.lbctrl.com/uploads/34ee0a83-6f70-4aea-aa49-7ba5df3c64c4/longbridge-light.png"
             :alt="t('brand.logoAlt')"
@@ -383,7 +394,7 @@ onBeforeUnmount(() => {
                 <a
                   v-for="tab in NAV_TABS"
                   :key="tab.path"
-                  :href="tab.path === '/' ? `/${currentRegion}/` : `/${currentRegion}${tab.path}overview`"
+                  :href="withRegionAndLocale(tab.path)"
                   class="hn-more-item"
                   :class="{ 'is-active': activeTab === tab.path }"
                   role="menuitem"
@@ -411,7 +422,7 @@ onBeforeUnmount(() => {
         <a
           v-for="tab in NAV_TABS"
           :key="tab.path"
-          :href="tab.path === '/' ? `/${currentRegion}/` : `/${currentRegion}${tab.path}overview`"
+          :href="withRegionAndLocale(tab.path)"
           class="hn-sub-tab"
           :class="{ 'is-active': activeTab === tab.path }"
           :data-tab-path="tab.path"

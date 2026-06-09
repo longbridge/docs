@@ -6,7 +6,7 @@ import { useRegion } from '../../composables/useRegion'
 
 const router = useRouter()
 const { t } = useI18n()
-const { withRegion } = useRegion()
+const { withRegionAndLocale } = useRegion()
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const { withRegion } = useRegion()
               v-for="item in group.items"
               :key="item.path"
               class="category-groups__chip"
-              @click="router.go(withRegion(item.path))"
+              @click="router.go(withRegionAndLocale(item.path))"
             >
               {{ t(item.label) }}
             </button>

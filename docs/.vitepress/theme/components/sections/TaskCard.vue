@@ -3,29 +3,34 @@ import { computed } from 'vue'
 import { useRouter } from 'vitepress'
 import { useI18n } from '../../../i18n/useI18n'
 import { useRegion } from '../../composables/useRegion'
+// Phosphor 不区分 BarChart2/3，统一用 PhChartBar；FileCheck 无对等，用 PhSealCheck
+// 表达"已验证文件"语义
 import {
-  UserPlus, Users, Layers, CircleHelp, ArrowLeftRight,
-  ArrowDownToLine, Zap, RefreshCw, RefreshCcw, Send, Smartphone, Globe, Globe2,
-  TrendingUp, TrendingDown, BookOpen, Receipt, BarChart2, BarChart3, Timer, ListOrdered,
-  PieChart, FileText,
-  ArrowUpFromLine, Building2, Shuffle,
-  Flame, ShieldCheck, FileCheck, Wrench,
-} from 'lucide-vue-next'
+  PhUserPlus, PhUsers, PhStack, PhQuestion, PhArrowsLeftRight,
+  PhArrowLineDown, PhLightning, PhArrowsClockwise, PhArrowsCounterClockwise, PhPaperPlaneTilt,
+  PhDeviceMobile, PhGlobe, PhGlobeSimple,
+  PhTrendUp, PhTrendDown, PhBookOpen, PhReceipt, PhChartBar, PhTimer, PhListNumbers,
+  PhChartPie, PhFileText,
+  PhArrowLineUp, PhBuildingOffice, PhShuffle,
+  PhFire, PhShieldCheck, PhSealCheck, PhWrench,
+} from '@phosphor-icons/vue'
 import type { TaskCard } from '../../data/journey'
 
 const props = defineProps<{ task: TaskCard }>()
 
 const router = useRouter()
 const { t } = useI18n()
-const { withRegion } = useRegion()
+const { withRegionAndLocale } = useRegion()
 
 const iconMap: Record<string, unknown> = {
-  UserPlus, Users, Layers, CircleHelp, ArrowLeftRight,
-  ArrowDownToLine, Zap, RefreshCw, RefreshCcw, Send, Smartphone, Globe, Globe2,
-  TrendingUp, TrendingDown, BookOpen, Receipt, BarChart2, BarChart3, Timer, ListOrdered,
-  PieChart, FileText,
-  ArrowUpFromLine, Building2, Shuffle,
-  Flame, ShieldCheck, FileCheck, Wrench,
+  UserPlus: PhUserPlus, Users: PhUsers, Layers: PhStack, CircleHelp: PhQuestion, ArrowLeftRight: PhArrowsLeftRight,
+  ArrowDownToLine: PhArrowLineDown, Zap: PhLightning, RefreshCw: PhArrowsClockwise, RefreshCcw: PhArrowsCounterClockwise,
+  Send: PhPaperPlaneTilt, Smartphone: PhDeviceMobile, Globe: PhGlobe, Globe2: PhGlobeSimple,
+  TrendingUp: PhTrendUp, TrendingDown: PhTrendDown, BookOpen: PhBookOpen, Receipt: PhReceipt,
+  BarChart2: PhChartBar, BarChart3: PhChartBar, Timer: PhTimer, ListOrdered: PhListNumbers,
+  PieChart: PhChartPie, FileText: PhFileText,
+  ArrowUpFromLine: PhArrowLineUp, Building2: PhBuildingOffice, Shuffle: PhShuffle,
+  Flame: PhFire, ShieldCheck: PhShieldCheck, FileCheck: PhSealCheck, Wrench: PhWrench,
 }
 
 const iconComponent = computed(() => iconMap[props.task.icon] ?? null)
@@ -35,7 +40,7 @@ const iconComponent = computed(() => iconMap[props.task.icon] ?? null)
   <article
     class="task-card"
     role="article"
-    @click="router.go(withRegion(task.href))"
+    @click="router.go(withRegionAndLocale(task.href))"
   >
     <div class="task-card__header">
       <component

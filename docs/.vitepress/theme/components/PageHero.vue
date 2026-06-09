@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useData, inBrowser } from 'vitepress'
-import { useBreadcrumb } from '../composables/useBreadcrumb'
 import DocBreadcrumb from './Breadcrumb/index.vue'
 import { useI18n } from '../../i18n/useI18n'
 
 const { frontmatter, page } = useData()
-const { breadcrumbItems } = useBreadcrumb()
 const { t } = useI18n()
 
-const eyebrow = computed(() =>
-  frontmatter.value.category ?? breadcrumbItems.value.at(-2)?.text ?? ''
-)
 const title = computed(() => frontmatter.value.title || page.value.title)
 const lead = computed(() => frontmatter.value.description || '')
 
@@ -29,7 +24,6 @@ function copyLink() {
 <template>
   <header class="lb-doc-hero" v-if="title">
     <DocBreadcrumb />
-    <div v-if="eyebrow" class="lb-eyebrow">{{ eyebrow }}</div>
     <div class="lb-title-row">
       <h1 class="lb-title">{{ title }}</h1>
       <button class="lb-copy-btn" @click="copyLink" :title="copied ? t('page.linkCopied') : t('page.copyLink')">

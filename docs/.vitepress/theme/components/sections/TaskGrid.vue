@@ -9,7 +9,7 @@ import TaskCard from './TaskCard.vue'
 
 const { t } = useI18n()
 const router = useRouter()
-const { withRegion } = useRegion()
+const { withRegionAndLocale } = useRegion()
 
 const props = defineProps<{ categoryId: string }>()
 
@@ -57,7 +57,7 @@ watch([() => props.categoryId, () => activeMarket.value], () => {
             v-for="task in extraRows"
             :key="task.id"
             class="expand-row"
-            @click="router.go(withRegion(task.href))"
+            @click="router.go(withRegionAndLocale(task.href))"
           >
             <span class="expand-row__title">{{ t(task.title) }}</span>
             <span class="expand-row__subtitle">{{ t(task.subtitle) }}</span>

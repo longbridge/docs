@@ -1,5 +1,4 @@
 import { defineConfig, type Plugin } from 'vitepress'
-import { loadEnv } from 'vite'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
 import path from 'path'
@@ -9,15 +8,10 @@ import { normalizeMdPlugin } from './md-plugins/normalize-md'
 import { buildEndCdnPrefix } from './cdn-prefix'
 import { NAV_TABS } from './tabs.config'
 import zhCN from './i18n/locales/zh-CN'
+import en from './i18n/locales/en'
+import zhHK from './i18n/locales/zh-HK'
 
-// 读取 docs/.env.local（不入 git）中的私密配置
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
-const env = loadEnv('development', path.resolve(__dirname, '..'), '')
-
-// dev proxy: 直接用完整 endpoint 路径作 key
-// vite proxy 是 prefix 匹配，整路径作 key 既能命中请求，又不会误拦其他路由
-const AI_ENDPOINT_PATH = env.VITE_AI_API_ENDPOINT || '/api/forward/v1/customer-service/docs/chat'
-const AI_PROXY_PREFIX = AI_ENDPOINT_PATH
 
 // 每次 build 锁定一个 region；前端跨 region 跳转走绝对 URL（window.location.href）
 const REGION_ALL = ['hk', 'sg'] as const
@@ -208,25 +202,25 @@ function generateSidebarItemsFromDir(dir: string, base: string, dirNames: Record
 }
 
 // 顶级分类 icon 字典(对齐 docs.cdp.coinbase.com 风格)
-// 使用 lucide icon 名,经 UnoCSS preset-icons 渲染为 `<span class="i-lucide-XXX">` 的 CSS mask SVG
+// 使用 Phosphor icon 名,经 UnoCSS preset-icons 渲染为 `<span class="i-ph-XXX">` 的 CSS mask SVG
 const CATEGORY_ICONS: Record<string, string> = {
-  'getting-started':           'rocket',
-  'app-guide':                 'smartphone',
-  'account':                   'user-round',
-  'deposit':                   'arrow-down-to-line',
-  'withdrawal':                'arrow-up-from-line',
-  'transfers-and-fx':          'arrow-left-right',
-  'stock-trading':             'trending-up',
-  'derivatives':               'layers',
-  'crypto':                    'bitcoin',
+  'getting-started':           'book',
+  'app-guide':                 'device-mobile-speaker',
+  'account':                   'identification-card',
+  'deposit':                   'hand-deposit',
+  'withdrawal':                'hand-withdraw',
+  'transfers-and-fx':          'swap',
+  'stock-trading':             'chart-line-up',
+  'derivatives':               'function',
+  'crypto':                    'currency-btc',
   'ipo':                       'star',
-  'margin':                    'scale',
-  'funds-and-wealth':          'wallet',
-  'market-data':               'bar-chart-3',
-  'portfolio-and-statements':  'file-text',
+  'margin':                    'scales',
+  'funds-and-wealth':          'vault',
+  'market-data':               'chart-bar',
+  'portfolio-and-statements':  'chart-pie-slice',
   'rewards':                   'gift',
   'compliance-and-tax':        'shield-check',
-  'troubleshooting':           'life-buoy',
+  'troubleshooting':           'bug',
 }
 
 // 分类展示顺序（文档中心侧边栏按此顺序排列）
@@ -237,6 +231,7 @@ const categoryOrder = [
   'deposit',
   'withdrawal',
   'transfers-and-fx',
+  'troubleshooting',
   'stock-trading',
   'derivatives',
   'crypto',
@@ -247,7 +242,6 @@ const categoryOrder = [
   'portfolio-and-statements',
   'rewards',
   'compliance-and-tax',
-  'troubleshooting',
 ]
 
 // 生成侧边栏配置（始终从 zh-CN 读取作为唯一内容源，按 urlPrefix 给 link/key 加前缀）
@@ -275,7 +269,7 @@ function generateSidebar(dirNames: Record<string, string>, urlPrefix = '') {
     const items = generateSidebarItemsFromDir(dirPath, `${urlPrefix}/${dir}`, dirNames)
     const iconName = CATEGORY_ICONS[dir]
     const iconHtml = iconName
-      ? `<span class="sidebar-group-icon i-lucide-${iconName}" aria-hidden="true"></span>`
+      ? `<span class="sidebar-group-icon i-ph-${iconName}" aria-hidden="true"></span>`
       : ''
     const label = dirNames[dir] || dir
     // 顶级分类目录如果有 overview.md，也让标题可点
@@ -318,9 +312,12 @@ function generateSidebar(dirNames: Record<string, string>, urlPrefix = '') {
 }
 
 // 三套 sidebar：urlPrefix 不带 region（base 已经处理）
-const sidebarRoot = generateSidebar(zhCN.data.dirNames, '')
+// dirNames 各 locale 独立来源；缺 key 时回退 zh-CN（en/zh-HK 翻译未完成的 token）
+const mergedEnDirNames = { ...zhCN.data.dirNames, ...en.data.dirNames }
+const mergedZhHKDirNames = { ...zhCN.data.dirNames, ...zhHK.data.dirNames }
+const sidebarRoot = generateSidebar(mergedEnDirNames, '')
 const sidebarZhCN = generateSidebar(zhCN.data.dirNames, '/zh-CN')
-const sidebarZhHK = generateSidebar(zhCN.data.dirNames, '/zh-HK')
+const sidebarZhHK = generateSidebar(mergedZhHKDirNames, '/zh-HK')
 
 const sharedNav = [
   { text: '首页', link: '/' },
@@ -352,6 +349,20 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: 'https://assets.wbrks.com/assets/logo/logo1.png' }],
+
+    // ── Helora 客服 / AI 嵌入 ───────────────────────────────────────────
+    // 项目所有 AI 入口（HomeNavbar Ask AI 按钮、SearchDialog AI row、首页各 section
+    // 内的 Ask AI 按钮）都走 useAIModal → window.Helora.open()。
+    // 顺序敏感：内联 HeloraConfig 必须在 iife 之前；configKey 按 region 切换多品牌
+    // 配置（HK = helora-hk，SG 暂用默认 helora，后台新增 helora-sg 后再切）。
+    // proxy 联调阶段 staging，验收后切 prod。
+    ['script', {}, `window.HeloraConfig = ${JSON.stringify({
+      proxy: 'staging',
+      source: 'web',
+      configPlatform: 'web',
+      configKey: BUILD_REGION === 'hk' ? 'helora-hk' : 'helora',
+    })};`],
+    ['script', { src: 'https://assets.lbkrs.com/h5hub/helora-embed/helora-embed-0.1.0.dev.iife.js' }],
   ],
 
   // BUILD_REGION 锁定后，srcExclude 已排除其它 region 目录；rewrites 把
@@ -381,6 +392,12 @@ export default defineConfig({
         lastUpdated: { text: 'Last updated', formatOptions: { dateStyle: 'medium' } },
         editLink: { pattern: editLinkPattern, text: 'Edit this page on GitHub' },
         docFooter: { prev: 'Previous', next: 'Next' },
+        sidebarMenuLabel: 'Menu',
+        returnToTopLabel: 'Return to top',
+        darkModeSwitchLabel: 'Appearance',
+        lightModeSwitchTitle: 'Switch to light theme',
+        darkModeSwitchTitle: 'Switch to dark theme',
+        skipToContentLabel: 'Skip to content',
       },
     },
     'zh-CN': {
@@ -397,6 +414,12 @@ export default defineConfig({
         editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
         docFooter: { prev: zhCN.vp.prev, next: zhCN.vp.next },
         footer: { message: zhCN.vp.footerMessage },
+        sidebarMenuLabel: zhCN.vp.sidebarMenu,
+        returnToTopLabel: zhCN.vp.returnToTop,
+        darkModeSwitchLabel: zhCN.vp.darkModeSwitch,
+        lightModeSwitchTitle: zhCN.vp.lightModeSwitch,
+        darkModeSwitchTitle: zhCN.vp.darkModeSwitch,
+        skipToContentLabel: zhCN.vp.skipToContent,
       },
     },
     'zh-HK': {
@@ -413,6 +436,12 @@ export default defineConfig({
         editLink: { pattern: editLinkPattern, text: '在 GitHub 上編輯此頁' },
         docFooter: { prev: '上一篇', next: '下一篇' },
         footer: { message: '© 2026 Longbridge. All rights reserved.' },
+        sidebarMenuLabel: '選單',
+        returnToTopLabel: '返回頂部',
+        darkModeSwitchLabel: '切換深色模式',
+        lightModeSwitchTitle: '切換淺色模式',
+        darkModeSwitchTitle: '切換深色模式',
+        skipToContentLabel: '跳至內容',
       },
     },
   },
@@ -523,15 +552,7 @@ export default defineConfig({
       __VUE_PROD_DEVTOOLS__: false,
     },
     ssr: {
-      noExternal: ['@rive-app/canvas', 'vue-i18n', '@intlify/core-base', '@intlify/message-compiler'],
-    },
-    server: {
-      proxy: {
-        [AI_PROXY_PREFIX]: {
-          target: env.VITE_AI_API_HOST,
-          changeOrigin: true,
-        },
-      },
+      noExternal: ['vue-i18n', '@intlify/core-base', '@intlify/message-compiler'],
     },
   },
 })

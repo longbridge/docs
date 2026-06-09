@@ -4,18 +4,18 @@ import extractorMdc from '@unocss/extractor-mdc'
 
 // Longbridge Docs — UnoCSS 配置
 //
-// 设计原则:
-// 1. preset-wind3 提供 Tailwind v3 兼容的工具类,让 shadcn-vue 源码与 openapi-website
+// 设计原则：
+// 1. preset-wind3 提供 Tailwind v3 兼容的工具类，让 shadcn-vue 源码与 openapi-website
 //    的 `--at-apply: rounded-xl px-2 py-1` 写法都能直接工作。
-// 2. theme 颜色全部指向 CSS variables,真实色值在 tailwind.css / css-var.scss 中定义,
-//    保证 docs 现有的 Longbridge UX 5.0 token 体系(--vp-c-brand-1 = #00b8b8)不被破坏。
-// 3. transformer-directives 接管 @apply,替换原 tailwindcss 的同名指令。
-// 4. extractor-mdc 让 markdown 文件中(`{.bg-foo}` 形式)的类也能被扫描到。
+// 2. theme 颜色全部指向 CSS variables，真实色值在 tailwind.css / css-var.scss 中定义，
+//    保证 docs 现有的 Longbridge UX 5.0 token 体系 (--vp-c-brand-1 = #00b8b8) 不被破坏。
+// 3. transformer-directives 接管 @apply，替换原 tailwindcss 的同名指令。
+// 4. extractor-mdc 让 markdown 文件中 (`{.bg-foo}` 形式) 的类也能被扫描到。
 export default defineConfig({
   presets: [
     presetWind3(),
-    // mintlify-style icon mask 注入:`<span class="i-lucide-rocket" />` 自动渲染 SVG
-    // 用 mask 模式让 icon 颜色继承 currentColor,大小走 width/height
+    // mintlify-style icon mask 注入:`<span class="i-ph-rocket" />` 自动渲染 SVG
+    // 用 mask 模式让 icon 颜色继承 currentColor，大小走 width/height
     presetIcons({
       scale: 1,
       warn: true,
@@ -33,7 +33,7 @@ export default defineConfig({
       '2xl': '1536px',
     },
     colors: {
-      // ── Longbridge brand 色板(指向 CSS variable,具体值在 tailwind.css 顶部定义) ──
+      // ── Longbridge brand 色板 (指向 CSS variable，具体值在 tailwind.css 顶部定义) ──
       brand: {
         DEFAULT: 'var(--vp-c-brand-1)',
         1: 'var(--vp-c-brand-1)',
@@ -115,27 +115,28 @@ export default defineConfig({
       card: '12px',
     },
   },
-  // sidebar 顶级分组 icon 在 config.mts 中是 `i-lucide-${name}` 动态拼接,
-  // UnoCSS 静态扫描无法发现它们,必须显式 safelist 出来。
+  // sidebar 顶级分组 icon 在 config.mts 中是 `i-ph-${name}` 动态拼接，
+  // UnoCSS 静态扫描无法发现它们，必须显式 safelist 出来。
   // 与 config.mts:CATEGORY_ICONS 保持同步。
   safelist: [
-    'i-lucide-rocket',
-    'i-lucide-smartphone',
-    'i-lucide-user-round',
-    'i-lucide-arrow-down-to-line',
-    'i-lucide-arrow-up-from-line',
-    'i-lucide-arrow-left-right',
-    'i-lucide-trending-up',
-    'i-lucide-layers',
-    'i-lucide-bitcoin',
-    'i-lucide-star',
-    'i-lucide-scale',
-    'i-lucide-wallet',
-    'i-lucide-bar-chart-3',
-    'i-lucide-file-text',
-    'i-lucide-gift',
-    'i-lucide-shield-check',
-    'i-lucide-life-buoy',
+    'i-ph-book',
+    'i-ph-rocket',
+    'i-ph-device-mobile-speaker',
+    'i-ph-identification-card',
+    'i-ph-hand-deposit',
+    'i-ph-hand-withdraw',
+    'i-ph-swap',
+    'i-ph-chart-line-up',
+    'i-ph-function',
+    'i-ph-currency-btc',
+    'i-ph-star',
+    'i-ph-scales',
+    'i-ph-vault',
+    'i-ph-chart-bar',
+    'i-ph-chart-pie-slice',
+    'i-ph-gift',
+    'i-ph-shield-check',
+    'i-ph-bug',
   ],
   extractors: [extractorMdc()],
   transformers: [
