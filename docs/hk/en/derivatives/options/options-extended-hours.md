@@ -15,35 +15,46 @@ sidebar: true
 
 当前开放部分热门股票和 ETF 期权的近期合约支持盘前交易。
 
-目前支持的正股包括：QQQ、SPY、AAPL、AMD、AMZN、GOOGL、META、MSFT、NVDA、TSLA
-做市商将持续评估并更新支持的标的名单，更多标的扩展中。
+目前支持的正股包括：QQQ、SPY、AAPL、AMD、AMZN、GOOGL、META、MSFT、NVDA、TSLA 做市商将持续评估并更新支持的标的名单，更多标的扩展中。
 
-查看方式：
-- 长桥 App **期权盘前交易榜单**，实时查看支持的正股列表
+查看方式： - 长桥 App **期权盘前交易榜单**，实时查看支持的正股列表
 
-![期权盘前交易榜单入口](./images/0b4708df54333338e3200ac6cddd6e77.png)
+![](./images/HeaMbXUbYo19WexP9wNj6ErWpeh.png)
 
-![期权盘前交易榜单](./images/cb70f2e66a5c0b7c2bd9c45375264797.png)
+期权盘前交易榜单入口
+
+![](./images/TPt2b3jpIoCRKtx0xXqjpiEgpqg.png)
+
+期权盘前交易榜单
 
 - 期权链页面：勾选「支持盘前交易」筛选，带「盘前」标签的价格为盘前最新报价
 
-![期权链盘前筛选](./images/7dbd8254aaad20958a25c0315a256946.png)
+![](./images/UHFNbByHno263sxvGbijSBowpDc.png)
+
+期权链盘前筛选
 
 ## 如何交易
 
 在盘前时段（美东 04:00 - 09:30），进入支持期权盘前交易的期权链页面，点击期权合约，在底部交易抽屉中选择「盘前交易 4:00 - 9:30」类型即可委托。
 
-![选择盘前交易类型](./images/2d031b81db87b28550761a5f4ffd94a4.png)
+![](./images/DjnubJKtXoJ2HbxXlfOjKMEpp5g.png)
 
-![盘前交易下单界面](./images/60c9e2e3882f96afab264ec6a9ecf803.png)
+选择盘前交易类型
+
+![](./images/GzzWbxRnmo3rgNxAtFqjsXdWpRe.png)
+
+盘前交易下单界面
 
 首次交易时 App 会引导签署相关风险声明，完成后即可继续交易。
 
 ### 订单规则
 
 - 仅支持限价单
+
 - 订单仅当日有效，不支持提前预埋
+
 - 正式开盘前未成交的盘前订单会被系统自动撤销
+
 - 盘前时段暂不支持卖空。已持有的期权如支持盘前交易，可在该时段卖出平仓
 
 盘前交易为做市商非公开撮合模式，委托不会进入公开的 BBO（最佳买卖盘），因此在订单簿中不可见；报价匹配时即可成交。
@@ -62,4 +73,6 @@ sidebar: true
 
 App 支持自定义是否使用盘前价格计算期权持仓市值和盈亏。设置路径：我的 - 设置 - 资产设置 - 开启或关闭「期权使用延长时段价格」。
 
-![期权延长时段价格设置](./images/f1d1b7d348968f03cd2f0bce64279ca0.png)
+![](./images/Lwj7b4PBRoRrgixegBBjKV7nprX.png)
+
+期权延长时段价格设置

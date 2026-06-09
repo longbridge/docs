@@ -9,13 +9,15 @@ sidebar: true
 
 ## 账户介绍
 
-![日内融账户概览](./images/intraday-overview.png)
+![](./images/E2Q2bghVNo0zYgxsb7Hj6F66pud.png)
+
+日内融账户概览
 
 日内融业务是长桥香港针对成熟交易类型投资者开通的专属交易模式。投资者需在当前券商账户下开设日内融子账户，通过主子账户资金或股票划转后，实现日内融账户下的交易。
 
 ## 开通账户
 
-[开通日内融账户链接](https://activity.longbridgehk.com/pipeline/intraday_financingtrade/index.html)
+[开通日内融账户链接](https%3A%2F%2Factivity.longbridgehk.com%2Fpipeline%2Fintraday_financingtrade%2Findex.html)
 
 ## 交易额度
 
@@ -27,14 +29,11 @@ sidebar: true
 
 ### 香港市场
 
-持续交易时段：09:30 - 15:40（香港时间 GMT+8）
-收盘前 20 分钟初始保证金要求调整至 100%，收盘前 15 分钟维持保证金要求调整至 100%。
+持续交易时段：09:30 - 15:40（香港时间 GMT+8） 收盘前 20 分钟初始保证金要求调整至 100%，收盘前 15 分钟维持保证金要求调整至 100%。
 
 ### 美国市场
 
-夏令时：16:30 - 03:40（香港时间 GMT+8）
-冬令时：17:30 - 04:40（香港时间 GMT+8）
-收盘前 20 分钟初始保证金要求调整至 100%，收盘前 15 分钟维持保证金要求调整至 100%。
+夏令时：16:30 - 03:40（香港时间 GMT+8） 冬令时：17:30 - 04:40（香港时间 GMT+8） 收盘前 20 分钟初始保证金要求调整至 100%，收盘前 15 分钟维持保证金要求调整至 100%。
 
 盘后不支持日内融资交易。美股盘前时段开市 30 分钟后才接受日内融资交易账户下单。
 
@@ -44,11 +43,15 @@ sidebar: true
 
 查询个别股票是否支持日内融：长桥 App - 选择日内融账户 - 选择股票 - 点开「支持融资」了解更多。
 
-![App 查询日内融支持股票](./images/56dfb22f5ac82cd8a9822bb2c911226c.png)
+![](./images/BaefbR5i2oyf5mxMGacjEU0Kphf.png)
 
-![可交易股票说明](./images/intraday-eligible-stocks.png)
+App 查询日内融支持股票
 
-[日内融资交易合资格股票名单](https://support.longbridgehk.com/topics/2y8a2ip/8we2bz)
+![](./images/PZq8bP3vcol1Jgx3KhRjjoBtp5c.png)
+
+可交易股票说明
+
+[日内融资交易合资格股票名单](https%3A%2F%2Fsupport.longbridgehk.com%2Ftopics%2F2y8a2ip%2F8we2bz)
 
 日内融资交易账户不支持香港市场的竞价订单。
 
@@ -70,13 +73,13 @@ sidebar: true
 
 **极端天气**：遭遇黑色暴雨警告或八号或以上台风信号等极端天气时，长桥证券可能随时关闭日内融资账户的融资额度。
 
-**欠款利息**：日内未及时补足欠款，所欠款项产生融资利息，[利率及计算公式参考收费表](https://longbridge.hk/rate)。
+**欠款利息**：日内未及时补足欠款，所欠款项产生融资利息，[利率及计算公式参考收费表](https%3A%2F%2Flongbridge.hk%2Frate)。
 
 ## 修改资料
 
 如需修改姓名、手机号、邮箱等个人信息，请填写信息修改申请表并发送邮件申请修改。
 
-[信息修改申请表](https://pub.lbkrs.com/files/202602/unkgiG99RY8AmtaY/___20260206.pdf)
+[信息修改申请表](https%3A%2F%2Fpub.lbkrs.com%2Ffiles%2F202602%2FunkgiG99RY8AmtaY%2F___20260206.pdf)
 
 提交邮箱：service@longbridge.hk
 
@@ -86,6 +89,6 @@ sidebar: true
 
 如需注销日内融资账户，请填写注销申请表并发送邮件至香港官方邮箱。
 
-[注销申请表](https://pub.lbkrs.com/files/202602/LS5FyJKJf5ZmQAVT/___20260225.pdf)
+[注销申请表](https%3A%2F%2Fpub.lbkrs.com%2Ffiles%2F202602%2FLS5FyJKJf5ZmQAVT%2F___20260225.pdf)
 
 提交邮箱：service@longbridge.hk

@@ -17,10 +17,8 @@ sidebar: true
 ### 期权
 
 - [期权基础](/derivatives/options/options-basics)
-- [开通期权交易](/derivatives/options/enable-options)
 - [期权买方](/derivatives/options/options-buyer)
 - [期权卖方](/derivatives/options/options-seller)
-- [期权策略](/derivatives/options/options-strategies)
 - [期权计算器](/derivatives/options/options-calculator)
 - [期权链](/derivatives/options/options-chain)
 - [期权行情字段介绍](/derivatives/options/options-fields)

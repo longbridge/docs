@@ -11,13 +11,13 @@ sidebar: true
 
 适用于 iOS 和 Android 的移动端交易平台。全球热点资讯、实时市场行情、账户资产与交易操作一体化，随时随地使用。
 
-下载方式详见：[下载 App](/getting-started/download-app)
+下载方式详见：下载 App
 
 ## Longbridge Pro（桌面端）
 
 面向专业交易者的桌面端平台，适用于 Mac 和 Windows。提供超百种技术指标，联合 TradingView 的 12 种划线工具，支持图表交易、市场深度、自定义布局等专业功能。
 
-下载方式详见：[下载 App](/getting-started/download-app)
+下载方式详见：下载 App
 
 ## Web Trade
 
@@ -29,6 +29,4 @@ sidebar: true
 
 了解更多详见 Longbridge 开发者文档。
 
----
-
-*本文仅供参考，不构成任何投资建议。*
+_本文仅供参考，不构成任何投资建议。_

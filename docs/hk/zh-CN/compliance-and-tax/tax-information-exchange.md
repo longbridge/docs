@@ -13,19 +13,17 @@ CRS（Common Reporting Standard，共同申报标准）也称 AEOI（Automatic E
 
 所有参与国家/地区的金融机构必须遵守 CRS 要求收集资料，进行年度申报，与其他参与 CRS 国家/地区交换信息。香港是参与 CRS 的地区之一，香港的所有金融机构（包括银行、保险公司、资产管理公司及券商）均须遵守 CRS/AEOI 的法律法规。
 
-[OECD 官网](https://www.oecd.org/en/topics/sub-issues/international-standards-on-tax-transparency/tax-transparency-resource-centre.html)
-[香港税务局 AEOI 网站](https://www.ird.gov.hk/chs/tax/dta_aeoi.htm)
+[OECD 官网](https%3A%2F%2Fwww.oecd.org%2Fen%2Ftopics%2Fsub-issues%2Finternational-standards-on-tax-transparency%2Ftax-transparency-resource-centre.html) [香港税务局 AEOI 网站](https%3A%2F%2Fwww.ird.gov.hk%2Fchs%2Ftax%2Fdta_aeoi.htm)
 
 ## 为何与我有关
 
 香港税务机关要求金融机构（包括长桥证券（香港））收集和报告客户税务状况相关的信息。
 
 - 开设账户或投资新金融产品时，需要填写并签署自我证明表格
+
 - 税务身份或个人信息发生改变时，需及时通知更新税务资料
 
-相关表格：
-- [CRS 自我证明表格](https://pub.lbkrs.com/files/202504/i9v9JXMP1bCppLFG/CRS.pdf)（长桥提供）
-- [自我认证表格参考资料](https://www.ird.gov.hk/chs/tax/aeoi/self_cert.htm)（香港税务局）
+相关表格： - [CRS 自我证明表格](https%3A%2F%2Fpub.lbkrs.com%2Ffiles%2F202504%2Fi9v9JXMP1bCppLFG%2FCRS.pdf)（长桥提供） - [自我认证表格参考资料](https%3A%2F%2Fwww.ird.gov.hk%2Fchs%2Ftax%2Faeoi%2Fself_cert.htm)（香港税务局）
 
 ## 受影响的客户
 
@@ -35,24 +33,27 @@ CRS（Common Reporting Standard，共同申报标准）也称 AEOI（Automatic E
 
 ## 税务居住地
 
-一般根据以下因素判断：
-- 个人：身处之地或逗留时间（如一个课税年度超过 183 天）
-- 公司：成为法团的地点或中央管理及控制的地点
+一般根据以下因素判断： - 个人：身处之地或逗留时间（如一个课税年度超过 183 天） - 公司：成为法团的地点或中央管理及控制的地点
 
 被要求缴交税款不代表自动成为该国税务居民。如有疑问请寻求专业税务或法律协助。
 
 ## 需要提供的税务信息
 
 - 姓名、地址、出生日期
+
 - 出生地（个人）/ 注册国家（公司）
+
 - 税务居民国家
+
 - 税务编号（TIN）或无税号原因
+
 - 特定公司户的实控人信息（如适用）
 
 ## 被申报的信息
 
 - 年末账户结余或总价值
-- 年度内已记入账户的入款项（包括股息、利息、卖出金额等，不包括交易盈利）
+
+- 年度内已记入账户的入款项（包括股息、利息、卖出金额等）
 
 申报频率：一般一年一次。
 
@@ -64,4 +65,4 @@ CRS（Common Reporting Standard，共同申报标准）也称 AEOI（Automatic E
 
 ## 相关文档
 
-- [美股税表与股息税](/compliance-and-tax/美股税表与股息税) — 税务申报与预扣税率
+- 美股税表与股息税 — 税务申报与预扣税率

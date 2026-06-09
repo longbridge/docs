@@ -48,7 +48,7 @@ sidebar: true
 ## 股权的属性
 
 | 属性 | 说明 |
-|------|------|
+| --- | --- |
 | 股权名称 | 正股名称 +「股权」 |
 | 股权代码 | 一般为 29XX（可交易）或 44XXX（不可交易） |
 | 正股名称 | 对应的正股名称 |
@@ -81,8 +81,9 @@ sidebar: true
 
 ## 供股公告查询工具
 
-- 港股公司行动：[香港交易所披露易](https://www.hkexnews.hk/index_c.htm)
-- 美股公司行动：[SEC EDGAR](https://www.sec.gov/edgar/search/)
+- 港股公司行动：[香港交易所披露易](https%3A%2F%2Fwww.hkexnews.hk%2Findex_c.htm)
+
+- 美股公司行动：[SEC EDGAR](https%3A%2F%2Fwww.sec.gov%2Fedgar%2Fsearch%2F)
 
 ## 供股公告解读示例
 
@@ -90,33 +91,48 @@ sidebar: true
 
 **供股比例**（每持有 2 股可获得 1 股股权）：
 
-![供股比例公告截图](./images/GDO0bNJkioZ0D0xN7XMjzjMYpAc.png)
+![](./images/QOEqbRxphoMaUgxIHpVjyZL2pce.png)
+
+供股比例公告截图
 
 **认购价**（0.35 港币 / 股）：
 
-![认购价公告截图](./images/Il9PbMcp8oL8ksxVpBTjEp0Ppeh.png)
+![](./images/S7YybuhrLoY0zCxs3qFjrwo7pQb.png)
+
+认购价公告截图
 
 **除权日**（2025 年 10 月 9 日）：
 
-![除权日公告截图](./images/TT0kbNythoRRyEx3Emajg4dipVd.png)
+![](./images/WWDRbo0Cho8WSMxFD1xjZQUopRg.png)
+
+除权日公告截图
 
 **超额认购条款**：
 
-![超额认购公告截图](./images/WQxIb2quuoFT9WxCf2ijKSE4ptc.png)
+![](./images/KqobbFxXPoPLDpxfkO7jDwyxpPh.png)
+
+超额认购公告截图
 
 **股权代码及价格**：
 
-![股权代码及价格截图](./images/Hv3mbkWhioZeu7xeZj7jZh5fpKH.png)
+![](./images/HJ4cb0NZcoVfoAxs2GZjG6v6ppc.png)
+
+股权代码及价格截图
 
 ## 供股收费
 
 合资格股东收到派发股权时会产生代收费用，由长桥代交易所收取。
 
 - 长桥代收费：30 港币 / 只股票
+
 - 交易所代收费：1.5 港币 / 手
 
 例如港股 00080 一手 10000 股，客户持有一手并获派股权，会产生 30 港币（长桥）+ 1.5 港币（交易所）的代收费。
 
-![供股代收费明细](./images/FYJCbJ2b5o75rhxednNjRIGppTh.png)
+![](./images/GUrob3QhJocii4xincajbvQapVg.png)
+
+供股代收费明细
 
 若客户并非合资格股东，未收到额定分配的股权，不会产生代收费。此类客户若想参与供股，需先从市场上买入可交易股权（按正常交易费用收取）。
+
+

@@ -12,7 +12,6 @@ sidebar: true
 ### 开户
 
 - [如何开通综合账户](/account/opening/open-account)
-- [标准账户停运与迁移](/account/opening/standard-account-migration)
 - [开户被拒怎么办](/account/opening/account-rejected)
 
 ### 账户类型
@@ -20,7 +19,6 @@ sidebar: true
 - [综合账户](/account/account-types/comprehensive-account)
 - [模拟账户](/account/account-types/paper-trading)
 - [日内融账户](/account/account-types/intraday-margin)
-- [虚拟资产账户](/account/account-types/virtual-asset)
 
 ### 账户安全
 

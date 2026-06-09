@@ -27,7 +27,6 @@ sidebar: true
 - [每日签到](/rewards/activities/daily-check-in)
 - [交易挑战](/rewards/activities/trading-challenge)
 - [交易排名](/rewards/activities/trading-ranking)
-- [交易红包](/rewards/activities/trading-red-packet)
 - [抽奖活动](/rewards/activities/lucky-draw)
 - [秒杀活动](/rewards/activities/flash-sale)
 - [猜涨跌](/rewards/activities/predict-market)

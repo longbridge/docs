@@ -13,11 +13,15 @@ sidebar: true
 
 - 方式一：长桥 App - 个股详情 - 更多 - 定投，创建该股票的定投计划
 
-![个股详情定投入口](./images/ce19165cb9de69fbe0090cac63226c28.png)
+![](./images/TC1pb6yzcoRk3PxxUCtjXNEZpof.png)
+
+个股详情定投入口
 
 - 方式二：长桥 App - 资产 - 全部功能 - 股票定投，进入定投界面
 
-![全部功能定投入口](./images/3e2ab67c2f0cad862061f4a14a9a7cca.png)
+![](./images/XDvbbqboTo40Ekxv8QkjN18jp3f.png)
+
+全部功能定投入口
 
 ## 创建定投计划
 
@@ -35,31 +39,43 @@ sidebar: true
 
 余额不足（且未开启融资）时，当次定投创建失败，可在定投记录中查看失败原因并收到消息推送。连续失败三次定投计划将自动暂停。
 
-![创建定投计划界面](./images/ad72e521433947277c40df07fd9c03ba.png)
+![](./images/FYMQbMaDaossK9xSP6Wj83Ahpke.png)
+
+创建定投计划界面
 
 ## 定投计划维护
 
 长桥 App - 资产 - 全部功能 - 股票定投，可进行以下操作：
 
 - 查看累计定投金额
+
 - 管理定投状态：修改、暂停、恢复、终止
+
 - 查看定投详情：每笔定投的时间、成交价、数量、成交金额（定投失败会记录失败原因）
 
 累计盈亏基于所有定投股票的买入成本与当前价值计算，不反映手动卖出操作对盈亏的影响。
 
-![定投计划维护界面](./images/1_24651_mh2rqo0x2rspzt9spy5_.jpeg)
+![](./images/SXhMbqowconVAExEQJsjU4bCpKb.jpg)
 
-![定投详情记录](./images/1_24651_mh2rqup3qm2wldn6g0h_.jpeg)
+定投计划维护界面
+
+![](./images/LybobiZU9oj5KqxhKINjvHD5pZc.jpg)
+
+定投详情记录
 
 ## 查看定投提醒与订单记录
 
 - 定投通知：长桥 App - 右上角通知 - 股票定投
 
-![定投通知消息](./images/LBC2bm4AVofvKqxdVpZjHA2lpcg.png)
+![](./images/YdiWb1c0KotrlwxFZUUj5Dm6p6g.png)
+
+定投通知消息
 
 - 订单记录：长桥 App - 资产 - 全部功能 - 订单记录（定投订单会有定投标识，可在「策略订单」标签页查看）
 
-![定投订单记录](./images/A5OhbnpzaouiNdx9VR5joZXTpTe.png)
+![](./images/WZqsbh2FvoGl2Yx2HRpjz8pmpkg.png)
+
+定投订单记录
 
 ## 免责声明
 
@@ -67,5 +83,6 @@ sidebar: true
 
 ## 相关文档
 
-- [美股交易规则与结算](/stock-trading/交易时间与规则/美股交易规则与结算) — 美股交易时段
-- [美股卖空](/stock-trading/交易时间与规则/美股卖空) — 相关交易规则
+- 美股交易规则与结算 — 美股交易时段
+
+- 美股卖空 — 相关交易规则

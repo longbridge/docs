@@ -2,6 +2,8 @@
   "hk-trading-rules",
   "us-trading-rules",
   "sg-trading-rules",
+  "hk-short-selling",
   "us-short-selling",
-  "us-regular-investment"
+  "us-regular-investment",
+  "us-t1-settlement-faq"
 ]

@@ -4,8 +4,6 @@
 
 ## 本章导航
 
-- [完成首笔基金定投](/funds-and-wealth/funds/first-fund-regular-investment)
-- [基金定投协议](/funds-and-wealth/funds/fund-agreement)
 - [基金基础](/funds-and-wealth/funds/fund-basics)
 - [基金分红与交易限制](/funds-and-wealth/funds/fund-faq)
 - [基金收费](/funds-and-wealth/funds/fund-fees)

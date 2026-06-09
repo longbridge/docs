@@ -1,9 +1,11 @@
 [
   "opening",
-  "account-types",
   "biometric-auth",
   "account-switching",
-  "account-faq",
+  "account-types",
+  "standing-authority",
+  "dormant-account",
   "anti-fraud",
-  "estate"
+  "estate",
+  "account-faq"
 ]

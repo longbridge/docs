@@ -6,4 +6,3 @@
 
 - [开户被拒怎么办](/account/opening/account-rejected)
 - [如何开通综合账户](/account/opening/open-account)
-- [标准账户停运与迁移](/account/opening/standard-account-migration)

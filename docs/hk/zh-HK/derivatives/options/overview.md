@@ -6,7 +6,6 @@
 
 - [领式策略](/derivatives/options/collar-strategy)
 - [股票担保策略](/derivatives/options/covered-stock-strategies)
-- [开通期权交易](/derivatives/options/enable-options)
 - [如何买入期权](/derivatives/options/how-to-buy-options)
 - [期权基础](/derivatives/options/options-basics)
 - [期权买方](/derivatives/options/options-buyer)
@@ -16,8 +15,6 @@
 - [期权行情字段](/derivatives/options/options-fields)
 - [期权交易入门](/derivatives/options/options-getting-started)
 - [期权卖方](/derivatives/options/options-seller)
-- [期权策略](/derivatives/options/options-strategies)
-- [期权条款](/derivatives/options/options-terms)
 - [跨式策略](/derivatives/options/straddle-strategy)
 - [宽跨式策略](/derivatives/options/strangle-strategy)
 - [垂直价差策略](/derivatives/options/vertical-spread-strategy)

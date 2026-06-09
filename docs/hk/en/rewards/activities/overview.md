@@ -13,4 +13,3 @@
 - [猜涨跌](/rewards/activities/predict-market)
 - [交易挑战](/rewards/activities/trading-challenge)
 - [交易排名](/rewards/activities/trading-ranking)
-- [交易红包](/rewards/activities/trading-red-packet)

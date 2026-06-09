@@ -9,26 +9,21 @@ sidebar: true
 
 ## 本章导航
 
-### 投资者资格
-
-- [专业投资者认证](/compliance-and-tax/professional-investor)
-
-### 基金投资
-
-- [基金](/funds-and-wealth/funds/fund-basics)
-- [基金交易规则](/funds-and-wealth/funds/fund-trading-rules)
-- [基金收费](/funds-and-wealth/funds/fund-fees)
-- [基金定投](/funds-and-wealth/funds/fund-regular-investment)
-- [基金常见问题](/funds-and-wealth/funds/fund-faq)
+- [如何开通余额通](/funds-and-wealth/how-to-enable-cash-plus)
+- [闲钱理财](/funds-and-wealth/idle-cash)
+- [结构化产品](/funds-and-wealth/structured-products)
 
 ### 余额通
 
-- [余额通](/funds-and-wealth/cash-plus/cash-plus)
-- [余额通交易规则](/funds-and-wealth/cash-plus/cash-plus-trading-rules)
 - [余额通常见问题](/funds-and-wealth/cash-plus/cash-plus-faq)
+- [余额通交易规则](/funds-and-wealth/cash-plus/cash-plus-trading-rules)
+- [余额通](/funds-and-wealth/cash-plus/cash-plus)
 
-### 其他理财
+### 基金
 
-- [闲钱理财](/funds-and-wealth/idle-cash)
-- [结构化产品](/funds-and-wealth/structured-products)
-- [货币基金交易规则](/funds-and-wealth/money-market-fund-rules)
+- [基金基础](/funds-and-wealth/funds/fund-basics)
+- [基金分红与交易限制](/funds-and-wealth/funds/fund-faq)
+- [基金收费](/funds-and-wealth/funds/fund-fees)
+- [基金定投](/funds-and-wealth/funds/fund-regular-investment)
+- [基金销售协议](/funds-and-wealth/funds/fund-sales-agreement)
+- [基金交易规则](/funds-and-wealth/funds/fund-trading-rules)

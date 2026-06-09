@@ -22,14 +22,18 @@ LongbridgeAI 在 App 内以多种形态存在：
 
 **LongbridgeAI IM**
 
-![LongbridgeAI IM 对话界面](./images/1_15331_mmvsads84wnrjmhea5v_.jpeg)
+![](./images/WMFgbfRaKooo7XxxX2Pj0S2Cppb.jpg)
+
+LongbridgeAI IM 对话界面
 
 ## 服务范围
 
 LongbridgeAI 专注于财经领域，可协助处理以下需求：
 
 - **查找财经信息**：像搜索引擎一样快速查找股票、市场、宏观等相关信息
+
 - **事件详情追踪**：获取重要事件的发展时间线
+
 - **事件解释与归因**：比对大量财经信息与用户观点，尝试对事件进行解释和归因
 
 ## 不提供的服务
@@ -37,14 +41,19 @@ LongbridgeAI 专注于财经领域，可协助处理以下需求：
 以下需求超出 LongbridgeAI 的服务范围：
 
 - **选股**：目前尚不具备基本面、技术面选股能力
+
 - **投资决策**：能提供信息总结与分析，但不能代替人类的投资和交易决策
+
 - **预测股市走势**：可以分析市场趋势，但无法预测未来走势
+
 - **非财经领域问题**：包括政治、法律、道德、天气、娱乐等
 
 ## 与 ChatGPT 的区别
 
 - LongbridgeAI 会结合财经资讯和社区发言进行回复，这些是传统大语言模型所没有的
+
 - LongbridgeAI 更加专注于财经领域，而 ChatGPT 可以处理广泛的通用信息
+
 - LongbridgeAI 会持续与 App 能力深度整合迭代
 
 ## 使用建议
@@ -52,15 +61,20 @@ LongbridgeAI 专注于财经领域，可协助处理以下需求：
 为获得更准确的回答：
 
 - 问题聚焦于投资和财经领域
+
 - 描述尽量具体、简洁、无歧义，明确问题的主体和对象
 
 **正面示例**（问题主体、对象具体明确）
 
-![正面示例](./images/ff4ac066881f549d10cc86b98dc28888.png)
+![](./images/Isu3boq86orPfex11S4jYxzjp67.png)
+
+正面示例
 
 **反面示例**（问题宏大、模糊、试图预测）
 
-![反面示例](./images/7605c8a27d0af36d42dfe2e5d1816f4b.png)
+![](./images/TD2aben4QoJ96Jx3hEajT3BCpKf.png)
+
+反面示例
 
 ## 问题反馈
 
