@@ -1,18 +1,30 @@
 <script setup lang="ts">
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import { useI18n } from '../../../i18n/useI18n'
 import { useRegion } from '../../composables/useRegion'
 import { categoryGroups } from '../../data/category-groups'
 
 const openAIModal = inject<(q: string) => void>('openAIModal', () => {})
 const { t } = useI18n()
-const { withRegionAndLocale } = useRegion()
+const { withRegionAndLocale, articleExists } = useRegion()
 
-const cols = [
-  categoryGroups[0], // 交易类
-  categoryGroups[3], // 账户支撑
-  categoryGroups[4], // 帮助
+// 三列基础数据：交易类 / 账户支撑 / 帮助
+const baseCols = [
+  categoryGroups[0],
+  categoryGroups[3],
+  categoryGroups[4],
 ]
+
+// 按当前 region 过滤：item.path 对应文章不存在则隐藏；整列被清空也不再渲染
+const cols = computed(() =>
+  baseCols
+    .map((c) => ({ ...c, items: c.items.filter((it) => articleExists(it.path)) }))
+    .filter((c) => c.items.length > 0),
+)
+
+// 底部行的隐私 / 合规链接同样按 region 过滤
+const showPrivacy = computed(() => articleExists('/compliance-and-tax/privacy-policy'))
+const showCompliance = computed(() => articleExists('/compliance-and-tax/'))
 
 function askAi() {
   openAIModal('')
@@ -49,8 +61,8 @@ function askAi() {
         <span class="ftm__copy">{{ t('footerMini.copyright') }}</span>
         <nav class="ftm__bottom-nav" :aria-label="t('footerMini.navAriaLabel')">
           <a href="https://longbridge.com" target="_blank" rel="noopener" class="ftm__bottom-link">{{ t('footerMini.official') }}</a>
-          <a :href="withRegionAndLocale('/compliance-and-tax/privacy-policy')" class="ftm__bottom-link">{{ t('footerMini.privacy') }}</a>
-          <a :href="withRegionAndLocale('/compliance-and-tax/')" class="ftm__bottom-link">{{ t('footerMini.compliance') }}</a>
+          <a v-if="showPrivacy" :href="withRegionAndLocale('/compliance-and-tax/privacy-policy')" class="ftm__bottom-link">{{ t('footerMini.privacy') }}</a>
+          <a v-if="showCompliance" :href="withRegionAndLocale('/compliance-and-tax/')" class="ftm__bottom-link">{{ t('footerMini.compliance') }}</a>
         </nav>
       </div>
     </div>

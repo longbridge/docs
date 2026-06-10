@@ -1,20 +1,31 @@
-import { ref } from 'vue'
-import { inBrowser, useData } from 'vitepress'
+import { computed } from 'vue'
+import { inBrowser, useData, useRoute } from 'vitepress'
+
+// 由 config.mts 通过 vite define 注入：每 region 实际存在的文章路径列表
+// （无 .md 后缀，以 / 开头），用于判断"目标页面是否存在"以隐藏失效链接
+declare const __LB_REGION_ARTICLES__: Record<string, string[]>
+const REGION_ARTICLES: Record<string, Set<string>> = Object.fromEntries(
+  Object.entries(typeof __LB_REGION_ARTICLES__ !== 'undefined' ? __LB_REGION_ARTICLES__ : {})
+    .map(([k, v]) => [k, new Set(v)]),
+)
 
 // region 优先级：URL 第一段 > cookie > 'hk' 默认。
 // 单 VitePress 实例下 base=/，region 完全由 URL 路径段决定。
-function readRegion(): 'hk' | 'sg' {
-  if (!inBrowser) return 'hk'
-  const p = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
-  if (p) return p[1] as 'hk' | 'sg'
-  const m = document.cookie.match(/(?:^|; )region=([^;]*)/)
-  if (m && (m[1] === 'sg' || m[1] === 'hk')) return m[1]
-  return 'hk'
-}
-
+// 用 computed 读 useRoute().path 让 region 跟随 SPA 导航实时更新，避免在
+// `/hk` 上初次挂载后切到 `/sg` 时 region 还卡在 'hk'。
 export function useRegion() {
-  const region = ref<'hk' | 'sg'>(readRegion())
+  const route = useRoute()
   const { lang } = useData()
+
+  const region = computed<'hk' | 'sg'>(() => {
+    const p = route.path.match(/^\/(hk|sg)(\/|$)/)
+    if (p) return p[1] as 'hk' | 'sg'
+    if (inBrowser) {
+      const m = document.cookie.match(/(?:^|; )region=([^;]*)/)
+      if (m && (m[1] === 'sg' || m[1] === 'hk')) return m[1] as 'hk' | 'sg'
+    }
+    return 'hk'
+  })
 
   /**
    * 项目内"跳转 URL 构造"的唯一公共方法。规则：
@@ -48,5 +59,24 @@ export function useRegion() {
     return `/${target}${rest === '/' ? '/' : rest}`
   }
 
-  return { region, withRegionAndLocale, toRegion }
+  /**
+   * 当前 region 下指定文章是否存在。规则：
+   *   - 外链 / 锚点 / mailto / 相对路径：直接放行（无法判断，默认存在）
+   *   - 索引为空（SSR 或 define 未注入）：放行（避免误隐藏）
+   *   - 目录路径（以 / 结尾，非根）：检查 `${path}overview`
+   *   - 其他：strip region/locale 前缀后查 Set
+   */
+  function articleExists(href: string | undefined | null): boolean {
+    if (!href) return false
+    if (/^https?:\/\//.test(href) || href.startsWith('#') || href.startsWith('mailto:')) return true
+    if (!href.startsWith('/')) return true
+    const articles = REGION_ARTICLES[region.value]
+    if (!articles || articles.size === 0) return true
+    let bare = href.replace(/^\/(hk|sg)(\/(zh-CN|zh-HK))?/, '')
+    if (bare !== '/' && bare.endsWith('/')) bare = `${bare}overview`
+    if (!bare.startsWith('/')) bare = '/' + bare
+    return articles.has(bare)
+  }
+
+  return { region, withRegionAndLocale, toRegion, articleExists }
 }

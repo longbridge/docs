@@ -49,7 +49,7 @@ const iconMap: Record<string, unknown> = {
 
 const router = useRouter()
 const { t } = useI18n()
-const { withRegionAndLocale, region } = useRegion()
+const { withRegionAndLocale, region, articleExists } = useRegion()
 
 // region → 显示哪些 market 的任务：
 //   hk 用户能买港股 + 美股 → ['hk', 'us']
@@ -66,8 +66,8 @@ watch(region, () => {
   expanded.value = false
 })
 
-function matchesRegion(task: { markets: Market[] }) {
-  return task.markets.some(m => regionMarkets.value.includes(m))
+function matchesRegion(task: { markets: Market[]; href: string }) {
+  return task.markets.some(m => regionMarkets.value.includes(m)) && articleExists(task.href)
 }
 
 const filteredTasks = computed(() => {

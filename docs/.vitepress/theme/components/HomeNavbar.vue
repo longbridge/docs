@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
-import { useRoute, useData, inBrowser } from 'vitepress'
+import { useRoute, useRouter, useData, inBrowser } from 'vitepress'
 import {
   PhDotsThreeVertical as MoreVertical,
   PhArrowSquareOut as ExternalLink,
@@ -26,7 +26,8 @@ const route = useRoute()
 const { lang } = useData()
 const { toggleAIModal } = useAIModal()
 const { open: openSearch } = useSearchDialog()
-const { withRegionAndLocale } = useRegion()
+const { region, withRegionAndLocale } = useRegion()
+const router = useRouter()
 const { isDark, toggle: toggleTheme } = useColorMode()
 const { t } = useI18n()
 
@@ -76,31 +77,23 @@ function writeCookie(name: string, value: string) {
   document.cookie = `${name}=${encodeURIComponent(value)}; path=/; expires=${expires}; SameSite=Lax`
 }
 
-// region 优先级：URL 第一段 > cookie > 'hk'。URL 是当前实际访问的 region，
-// 永远权威，避免 cookie 残留状态与可见 URL 不一致。
-const currentRegion = ref<string>('hk')
-if (inBrowser) {
-  const pathMatch = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
-  if (pathMatch) {
-    currentRegion.value = pathMatch[1]
-  } else {
-    const r = readCookie('region')
-    if (r === 'hk' || r === 'sg') currentRegion.value = r
-  }
-}
+// region 来自 useRegion()——computed 读 useRoute().path 实时跟随 SPA 导航。
+// 这里不再维护单独的 currentRegion 本地 ref。
 
 function switchRegion(target: typeof REGIONS[number]) {
-  if (target.code === currentRegion.value) {
+  if (target.code === region.value) {
     langOpen.value = false
     return
   }
   writeCookie('region', target.code)
-  currentRegion.value = target.code
   if (!inBrowser) return
-  // 把 URL 第一段 region 换掉，保留 locale + 剩余路径
+  // SPA 切 region：把 URL 第一段 region 换掉，保留 locale + 剩余路径，
+  // 然后 router.go 走 VitePress 内部导航（替代以前的全页刷新）
   const p = window.location.pathname
   const next = p.replace(/^\/(hk|sg)(?=\/|$)/, `/${target.code}`)
-  window.location.href = next === p ? `/${target.code}/` : next
+  const targetUrl = next === p ? `/${target.code}/` : next
+  router.go(targetUrl)
+  langOpen.value = false
 }
 
 const currentLang = computed(() => {
@@ -118,15 +111,14 @@ function switchLang(target: typeof LANGS[number]) {
     return
   }
   if (!inBrowser) return
-  const region = currentRegion.value || 'hk'
+  const r = region.value
   // 剥掉当前 region + locale 前缀，得到 region 内剩余路径
   const p = route.path
   let rest = p.replace(/^\/(hk|sg)(\/(zh-CN|zh-HK))?/, '')
   if (!rest.startsWith('/')) rest = '/' + rest
   // 目标 locale 在该 region 下的前缀（按 LANGS.link 推断，默认语言 en 不带 locale 段）
   const langSegment = target.code === 'en' ? '' : `/${target.code}`
-  const nextPath = `/${region}${langSegment}${rest === '/' ? '/' : rest}`
-  window.location.href = nextPath
+  router.go(`/${r}${langSegment}${rest === '/' ? '/' : rest}`)
 }
 
 const activeTab = computed(() => {
@@ -148,7 +140,7 @@ const activeTab = computed(() => {
 // 此时回退到该 tab.categories 里第一个实际存在的分类的 overview，避免 404。
 type VisibleTab = (typeof NAV_TABS)[number] & { landingHref: string }
 const visibleNavTabs = computed<VisibleTab[]>(() => {
-  const cats = new Set(REGION_CATEGORIES[currentRegion.value] ?? [])
+  const cats = new Set(REGION_CATEGORIES[region.value] ?? [])
   const out: VisibleTab[] = []
   for (const t of NAV_TABS) {
     if (t.path === '/') {
@@ -338,12 +330,12 @@ onBeforeUnmount(() => {
                   :key="r.code"
                   type="button"
                   class="hn-lang-item hn-lang-item--region"
-                  :class="{ 'is-active': r.code === currentRegion }"
+                  :class="{ 'is-active': r.code === region }"
                   role="menuitem"
                   @click="switchRegion(r)"
                 >
                   <span class="hn-lang-text">{{ t(r.labelKey) }}</span>
-                  <svg v-if="r.code === currentRegion" class="hn-lang-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg v-if="r.code === region" class="hn-lang-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </button>

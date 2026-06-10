@@ -344,6 +344,27 @@ for (const region of REGION_ALL) {
   }
 }
 
+// 每 region 实际存在的所有文章相对路径（无 .md 后缀，以 / 开头），用于让
+// TaskIndex 等首页 section 在 sg 等内容不全的 region 下过滤掉对应缺失的卡片。
+const regionArticles: Record<string, string[]> = {}
+function collectArticles(dir: string, prefix: string, acc: string[]) {
+  if (!fs.existsSync(dir)) return
+  for (const entry of fs.readdirSync(dir)) {
+    if (entry.startsWith('.') || entry === 'images' || entry === '_order.json') continue
+    const full = path.join(dir, entry)
+    if (fs.statSync(full).isDirectory()) {
+      collectArticles(full, `${prefix}/${entry}`, acc)
+    } else if (entry.endsWith('.md')) {
+      acc.push(`${prefix}/${entry.replace(/\.md$/, '')}`)
+    }
+  }
+}
+for (const region of REGION_ALL) {
+  const acc: string[] = []
+  collectArticles(`./docs/${region}/zh-CN`, '', acc)
+  regionArticles[region] = acc
+}
+
 const sharedNav = [
   { text: '首页', link: '/' },
   { text: '文档', link: '/docs/' },
@@ -604,6 +625,10 @@ export default defineConfig({
       __VUE_PROD_DEVTOOLS__: false,
       // 注入每 region 实际存在的顶级分类列表，给 HomeNavbar 过滤 NAV_TABS
       __LB_REGION_CATEGORIES__: JSON.stringify(regionCategories),
+      // 注入每 region 实际存在的文章路径列表（无 .md 后缀，以 / 开头），
+      // 让 TaskIndex 等 home section 在 sg 等内容不全的 region 下过滤掉
+      // 对应缺失的卡片
+      __LB_REGION_ARTICLES__: JSON.stringify(regionArticles),
     },
     ssr: {
       noExternal: ['vue-i18n', '@intlify/core-base', '@intlify/message-compiler'],

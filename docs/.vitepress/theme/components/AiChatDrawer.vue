@@ -4,6 +4,7 @@ import { useLocalStorage, useMediaQuery } from '@vueuse/core'
 import { useData } from 'vitepress'
 import { PhArrowsOutSimple, PhArrowsInSimple, PhX } from '@phosphor-icons/vue'
 import { useI18n } from '../../i18n/useI18n'
+import { useRegion } from '../composables/useRegion'
 
 const props = defineProps<{
   modelValue: boolean
@@ -13,14 +14,15 @@ const props = defineProps<{
 const emit = defineEmits<{ 'update:modelValue': [boolean] }>()
 const { t } = useI18n()
 const { isDark, lang } = useData()
+const { region } = useRegion()
 
-// 内嵌 Helora Agent 页面 URL；如需切换环境改这里
-const IFRAME_BASE = 'https://app.longbridge.xyz/helora/agent'
+// Helora Agent 嵌入页面 base，按当前 region 落到对应子路径
+const IFRAME_ROOT = 'https://app.longbridge.xyz/helora/agent'
 
-// iframe URL：带 theme + locale query 跟随项目；initialQuery 走 hash。
-// 注意：theme / locale 变化会让 src 变更触发 iframe reload（会话状态会重置）。
-// 若要保留会话改用 postMessage 通信，目前 Helora iframe 协议没暴露，先选最简
-// 方案——切换主题/语言时重新加载。
+// iframe URL：路径段带 region（hk / sg），query 带 theme + locale；initialQuery 走 hash。
+// 注意：region / theme / locale 变化都会让 src 变更触发 iframe reload（会话状态
+// 会重置）。若要保留会话改用 postMessage 通信，Helora iframe 协议目前没暴露，
+// 先选最简方案——切换时重新加载。
 const iframeSrc = computed(() => {
   const params = new URLSearchParams({
     theme: isDark.value ? 'dark' : 'light',
@@ -28,7 +30,7 @@ const iframeSrc = computed(() => {
   })
   const q = props.initialQuery?.trim()
   const hash = q ? `#q=${encodeURIComponent(q)}` : ''
-  return `${IFRAME_BASE}?${params.toString()}${hash}`
+  return `${IFRAME_ROOT}/${region.value}?${params.toString()}${hash}`
 })
 
 // ── 桌面 drawer 宽度 + 拖拽 ──────────────────────────────────
