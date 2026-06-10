@@ -13,37 +13,40 @@ import zhHK from './i18n/locales/zh-HK'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
-// 每次 build 锁定一个 region；前端跨 region 跳转走绝对 URL（window.location.href）
+// 单 VitePress 实例同时服务 /hk/* 与 /sg/*。zh-CN 是各 region 的内容主源，
+// 缺 en / zh-HK 目录时启动期自动从 zh-CN 物理镜像（避免 rewrites 失配 + 默认
+// locale 找不到 index.md）。
 const REGION_ALL = ['hk', 'sg'] as const
-const BUILD_REGION = (process.env.BUILD_REGION || 'hk').toLowerCase()
-if (!REGION_ALL.includes(BUILD_REGION as any)) {
-  throw new Error(`Invalid BUILD_REGION "${BUILD_REGION}". Expected one of: ${REGION_ALL.join(', ')}`)
-}
+const LOCALES = ['en', 'zh-CN', 'zh-HK'] as const
 
-// 访问 /some/page.md 返回原始 markdown 源码（开发模式 + 生产构建）
-// dev 模式：访问当前 region 之外的路径（如 base=/hk/ 时访问 /sg/）改写到 base 内的
-// 不存在 path，让 VitePress 走它内置 NotFound 模板渲染（带 navbar + 完整 layout），
-// 而不是 Vite 抛 "configured with public base URL" 的原始报错页。
-// 浏览器地址栏的 URL 不变，只是 server 内部把它当 base 内未匹配 path 处理。
-function wrongRegionRedirectPlugin(): Plugin {
-  return {
-    name: 'lb-wrong-region-404',
-    configureServer(server) {
-      const base = `/${BUILD_REGION}/`
-      server.middlewares.use((req, res, next) => {
-        const url = (req.url ?? '').replace(/\?.*$/, '')
-        const accept = req.headers['accept'] ?? ''
-        if (!accept.includes('text/html')) return next()
-        if (url === '/' || url.startsWith(base) || url.startsWith('/@') || url.startsWith('/__')) return next()
-        // 内部 rewrite：把 url 改成 base 内一个肯定不存在的 path，VitePress SSR 会
-        // 渲染 NotFound 组件 + 完整主题 layout
-        req.url = base + '__not_found__'
-        next()
-      })
-    },
+function mirrorMissingLocales() {
+  for (const region of REGION_ALL) {
+    const root = path.resolve(`./docs/${region}`)
+    const src = path.join(root, 'zh-CN')
+    if (!fs.existsSync(src)) continue
+    function copyRecursive(s: string, d: string) {
+      fs.mkdirSync(d, { recursive: true })
+      for (const entry of fs.readdirSync(s)) {
+        const sp = path.join(s, entry)
+        const dp = path.join(d, entry)
+        const st = fs.statSync(sp)
+        if (st.isDirectory()) copyRecursive(sp, dp)
+        else fs.copyFileSync(sp, dp)
+      }
+    }
+    for (const target of ['en', 'zh-HK']) {
+      const dst = path.join(root, target)
+      if (!fs.existsSync(dst)) {
+        copyRecursive(src, dst)
+        console.log(`[config] auto-mirrored ${region}/zh-CN → ${region}/${target}`)
+      }
+    }
   }
 }
+mirrorMissingLocales()
 
+// 访问 /<region>(/<locale>)?/some/page.md 返回原始 markdown 源码
+// （开发模式 + 生产构建）。
 function rawMarkdownPlugin(): Plugin {
   return {
     name: 'raw-markdown-source',
@@ -53,33 +56,32 @@ function rawMarkdownPlugin(): Plugin {
         if (!url.endsWith('.md')) return next()
 
         // 只处理浏览器导航请求，放过 Vite 内部模块导入（import('/xxx.md')）
-        // 浏览器导航时 Accept 包含 text/html，模块导入时为 */*
         const accept = req.headers['accept'] ?? ''
         if (!accept.includes('text/html')) return next()
 
-        // 优先从 hk/en 目录查找（rewrites 把 hk/en/* 映射到根）
-        const candidates = [
-          path.join(`docs/${BUILD_REGION}/en`, url),
-          path.join('docs', url),
-        ]
-
-        for (const filePath of candidates) {
-          if (fs.existsSync(filePath)) {
-            const content = fs.readFileSync(filePath, 'utf-8')
-            res.setHeader('Content-Type', 'text/plain; charset=utf-8')
-            res.end(content)
-            return
-          }
+        // URL → 源文件路径：
+        //   /hk/foo.md                → docs/hk/en/foo.md（en 默认无 locale 段）
+        //   /hk/zh-CN/foo.md          → docs/hk/zh-CN/foo.md
+        //   /sg/zh-HK/account/foo.md  → docs/sg/zh-HK/account/foo.md
+        const m = url.match(/^\/(hk|sg)(?:\/(zh-CN|zh-HK))?(\/.*)$/)
+        if (!m) return next()
+        const region = m[1]
+        const locale = m[2] || 'en'
+        const rest = m[3]
+        const filePath = path.join('docs', region, locale, rest)
+        if (fs.existsSync(filePath)) {
+          const content = fs.readFileSync(filePath, 'utf-8')
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+          res.end(content)
+          return
         }
-
         next()
       })
     },
 
     // 生产构建：把所有 .md 源文件复制到 dist，保持与 HTML 相同的路径结构
     closeBundle() {
-      // 与 VitePress outDir 同步
-      const outDir = path.resolve(`docs/.vitepress/dist/${BUILD_REGION}`)
+      const outDir = path.resolve('docs/.vitepress/dist')
       if (!fs.existsSync(outDir)) return
 
       function copyMdFiles(srcDir: string, urlBase: string) {
@@ -97,14 +99,16 @@ function rawMarkdownPlugin(): Plugin {
         }
       }
 
-      // outDir 已经是 dist/<region>/，URL 内部不带 region 前缀；md 副本与 HTML 同路径
+      // 单 dist 内同时含两个 region：
       //   docs/<region>/en/*     → dist/<region>/*
       //   docs/<region>/zh-CN/*  → dist/<region>/zh-CN/*
       //   docs/<region>/zh-HK/*  → dist/<region>/zh-HK/*
-      const srcRoot = path.resolve(`docs/${BUILD_REGION}`)
-      copyMdFiles(path.join(srcRoot, 'en'), '')
-      copyMdFiles(path.join(srcRoot, 'zh-CN'), '/zh-CN')
-      copyMdFiles(path.join(srcRoot, 'zh-HK'), '/zh-HK')
+      for (const region of REGION_ALL) {
+        const srcRoot = path.resolve(`docs/${region}`)
+        copyMdFiles(path.join(srcRoot, 'en'), `/${region}`)
+        copyMdFiles(path.join(srcRoot, 'zh-CN'), `/${region}/zh-CN`)
+        copyMdFiles(path.join(srcRoot, 'zh-HK'), `/${region}/zh-HK`)
+      }
     },
   }
 }
@@ -244,10 +248,10 @@ const categoryOrder = [
   'compliance-and-tax',
 ]
 
-// 生成侧边栏配置（始终从 zh-CN 读取作为唯一内容源，按 urlPrefix 给 link/key 加前缀）
-function generateSidebar(dirNames: Record<string, string>, urlPrefix = '') {
-  // 当前 region 的 zh-CN 作为 sidebar 内容源
-  const contentRoot = `./docs/${BUILD_REGION}/zh-CN`
+// 生成侧边栏配置：从指定 region 的 zh-CN 读目录结构（zh-CN 是内容主源），按
+// urlPrefix 给 link/key 加前缀。urlPrefix 形如 `/hk`、`/hk/zh-CN`、`/sg/zh-HK` 等。
+function generateSidebar(region: string, dirNames: Record<string, string>, urlPrefix: string) {
+  const contentRoot = `./docs/${region}/zh-CN`
 
   const topDirs = (() => {
     try {
@@ -311,13 +315,34 @@ function generateSidebar(dirNames: Record<string, string>, urlPrefix = '') {
   return sidebar
 }
 
-// 三套 sidebar：urlPrefix 不带 region（base 已经处理）
+// 6 套 sidebar：两个 region × 三个 locale
 // dirNames 各 locale 独立来源；缺 key 时回退 zh-CN（en/zh-HK 翻译未完成的 token）
 const mergedEnDirNames = { ...zhCN.data.dirNames, ...en.data.dirNames }
 const mergedZhHKDirNames = { ...zhCN.data.dirNames, ...zhHK.data.dirNames }
-const sidebarRoot = generateSidebar(mergedEnDirNames, '')
-const sidebarZhCN = generateSidebar(zhCN.data.dirNames, '/zh-CN')
-const sidebarZhHK = generateSidebar(mergedZhHKDirNames, '/zh-HK')
+
+// root locale（en，URL 不带 locale 段）：包含 /hk/* 与 /sg/* 的 en sidebar
+const sidebarRoot = {
+  ...generateSidebar('hk', mergedEnDirNames, '/hk'),
+  ...generateSidebar('sg', mergedEnDirNames, '/sg'),
+}
+// 非默认 locale 合并到对应 locale.themeConfig.sidebar 里
+const sidebarHkZhCN = generateSidebar('hk', zhCN.data.dirNames, '/hk/zh-CN')
+const sidebarSgZhCN = generateSidebar('sg', zhCN.data.dirNames, '/sg/zh-CN')
+const sidebarHkZhHK = generateSidebar('hk', mergedZhHKDirNames, '/hk/zh-HK')
+const sidebarSgZhHK = generateSidebar('sg', mergedZhHKDirNames, '/sg/zh-HK')
+
+// 每个 region 实际存在的顶级分类目录。HomeNavbar 据此过滤 NAV_TABS，避免
+// 显示 sg 没有的 derivatives / crypto / compliance 等 sub-tab（点了会 404）
+const regionCategories: Record<string, string[]> = {}
+for (const region of REGION_ALL) {
+  const root = `./docs/${region}/zh-CN`
+  try {
+    regionCategories[region] = fs.readdirSync(root)
+      .filter(e => !skipDirs.has(e) && !e.startsWith('.') && fs.statSync(path.join(root, e)).isDirectory())
+  } catch {
+    regionCategories[region] = []
+  }
+}
 
 const sharedNav = [
   { text: '首页', link: '/' },
@@ -330,12 +355,10 @@ const editLinkPattern = 'https://github.com/longbridge/docs/edit/main/docs/:path
 export default defineConfig({
   title: zhCN.vp.title,
   description: zhCN.vp.description,
-  // 每 region 单独 build：BUILD_REGION 决定 base / outDir / 源目录 / rewrites。
-  // 当前 region 锁定后该次 build 产物完全独立（HTML + assets 都在 dist/<region>/）。
-  // 默认 hk；通过 `BUILD_REGION=sg yarn build` 为另一个 region 构建。
-  base: `/${BUILD_REGION}/`,
-  outDir: `.vitepress/dist/${BUILD_REGION}`,
-  srcExclude: REGION_ALL.filter(r => r !== BUILD_REGION).map(r => `${r}/**`),
+  // 单 VitePress 实例同时服务 /hk/* 与 /sg/*。产物落到 .vitepress/dist 根下
+  // （含 /hk 与 /sg 子目录），dev 端 `yarn dev` 一个端口即可访问全部 region。
+  base: '/',
+  outDir: '.vitepress/dist',
   appearance: 'light',
   ignoreDeadLinks: true,
   cleanUrls: true,
@@ -351,24 +374,23 @@ export default defineConfig({
     ['link', { rel: 'shortcut icon', type: 'image/x-icon', href: 'https://assets.wbrks.com/assets/logo/logo1.png' }],
   ],
 
-  // BUILD_REGION 锁定后，srcExclude 已排除其它 region 目录；rewrites 把
-  // <region>/<lang>/... → <lang>/... （en 作为该 region 的默认语言落到根）
-  //   docs/hk/en/foo.md      → /foo（配合 base=/hk/ 最终 URL = /hk/foo）
-  //   docs/hk/zh-CN/foo.md   → /zh-CN/foo（URL = /hk/zh-CN/foo）
-  //   docs/hk/zh-HK/foo.md   → /zh-HK/foo（URL = /hk/zh-HK/foo）
+  // rewrites 把 `<region>/en/*` 落到 `<region>/*`，让 en 成为该 region 的默认
+  // locale（URL 不带语言段）。zh-CN/zh-HK 的 URL 直接等于 src 路径，不需要 rewrite。
+  //   docs/hk/en/foo.md      → /hk/foo
+  //   docs/hk/zh-CN/foo.md   → /hk/zh-CN/foo
+  //   docs/sg/en/account/*   → /sg/account/*
   rewrites: {
-    [`${BUILD_REGION}/en/index.md`]: 'index.md',
-    [`${BUILD_REGION}/en/docs/index.md`]: 'docs/index.md',
-    [`${BUILD_REGION}/en/:path*`]: ':path*',
-    [`${BUILD_REGION}/zh-CN/:path*`]: 'zh-CN/:path*',
-    [`${BUILD_REGION}/zh-HK/:path*`]: 'zh-HK/:path*',
+    'hk/en/:path*': 'hk/:path*',
+    'sg/en/:path*': 'sg/:path*',
   },
 
+  // 5 个 locale：root（en，匹配 /hk/* /sg/* 中不在子 locale 下的 URL）+ 4 个
+  // region+lang 组合多段 key。VitePress 按 URL 最长前缀匹配解析当前 locale。
   locales: {
     root: {
       label: 'English',
       lang: 'en',
-      link: '/',
+      link: '/hk/',
       title: 'Longbridge Docs',
       description: 'Longbridge Docs',
       themeConfig: {
@@ -386,15 +408,15 @@ export default defineConfig({
         skipToContentLabel: 'Skip to content',
       },
     },
-    'zh-CN': {
+    'hk/zh-CN': {
       label: '简体中文',
       lang: 'zh-CN',
-      link: '/zh-CN/',
+      link: '/hk/zh-CN/',
       title: zhCN.vp.title,
       description: zhCN.vp.description,
       themeConfig: {
         nav: sharedNav,
-        sidebar: sidebarZhCN,
+        sidebar: sidebarHkZhCN,
         outline: { level: [2, 4], label: zhCN.vp.outline },
         lastUpdated: { text: zhCN.vp.lastUpdated, formatOptions: { dateStyle: 'medium' } },
         editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
@@ -408,15 +430,59 @@ export default defineConfig({
         skipToContentLabel: zhCN.vp.skipToContent,
       },
     },
-    'zh-HK': {
+    'hk/zh-HK': {
       label: '繁體中文',
       lang: 'zh-HK',
-      link: '/zh-HK/',
+      link: '/hk/zh-HK/',
       title: 'Longbridge Docs',
       description: 'Longbridge Docs',
       themeConfig: {
         nav: sharedNav,
-        sidebar: sidebarZhHK,
+        sidebar: sidebarHkZhHK,
+        outline: { level: [2, 4], label: '本頁內容' },
+        lastUpdated: { text: '最近更新', formatOptions: { dateStyle: 'medium' } },
+        editLink: { pattern: editLinkPattern, text: '在 GitHub 上編輯此頁' },
+        docFooter: { prev: '上一篇', next: '下一篇' },
+        footer: { message: '© 2026 Longbridge. All rights reserved.' },
+        sidebarMenuLabel: '選單',
+        returnToTopLabel: '返回頂部',
+        darkModeSwitchLabel: '切換深色模式',
+        lightModeSwitchTitle: '切換淺色模式',
+        darkModeSwitchTitle: '切換深色模式',
+        skipToContentLabel: '跳至內容',
+      },
+    },
+    'sg/zh-CN': {
+      label: '简体中文',
+      lang: 'zh-CN',
+      link: '/sg/zh-CN/',
+      title: zhCN.vp.title,
+      description: zhCN.vp.description,
+      themeConfig: {
+        nav: sharedNav,
+        sidebar: sidebarSgZhCN,
+        outline: { level: [2, 4], label: zhCN.vp.outline },
+        lastUpdated: { text: zhCN.vp.lastUpdated, formatOptions: { dateStyle: 'medium' } },
+        editLink: { pattern: editLinkPattern, text: zhCN.vp.editLink },
+        docFooter: { prev: zhCN.vp.prev, next: zhCN.vp.next },
+        footer: { message: zhCN.vp.footerMessage },
+        sidebarMenuLabel: zhCN.vp.sidebarMenu,
+        returnToTopLabel: zhCN.vp.returnToTop,
+        darkModeSwitchLabel: zhCN.vp.darkModeSwitch,
+        lightModeSwitchTitle: zhCN.vp.lightModeSwitch,
+        darkModeSwitchTitle: zhCN.vp.darkModeSwitch,
+        skipToContentLabel: zhCN.vp.skipToContent,
+      },
+    },
+    'sg/zh-HK': {
+      label: '繁體中文',
+      lang: 'zh-HK',
+      link: '/sg/zh-HK/',
+      title: 'Longbridge Docs',
+      description: 'Longbridge Docs',
+      themeConfig: {
+        nav: sharedNav,
+        sidebar: sidebarSgZhHK,
         outline: { level: [2, 4], label: '本頁內容' },
         lastUpdated: { text: '最近更新', formatOptions: { dateStyle: 'medium' } },
         editLink: { pattern: editLinkPattern, text: '在 GitHub 上編輯此頁' },
@@ -528,7 +594,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [UnoCSS(), wrongRegionRedirectPlugin(), rawMarkdownPlugin()],
+    plugins: [UnoCSS(), rawMarkdownPlugin()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './theme'),
@@ -536,6 +602,8 @@ export default defineConfig({
     },
     define: {
       __VUE_PROD_DEVTOOLS__: false,
+      // 注入每 region 实际存在的顶级分类列表，给 HomeNavbar 过滤 NAV_TABS
+      __LB_REGION_CATEGORIES__: JSON.stringify(regionCategories),
     },
     ssr: {
       noExternal: ['vue-i18n', '@intlify/core-base', '@intlify/message-compiler'],

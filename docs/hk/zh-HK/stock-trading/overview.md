@@ -5,7 +5,7 @@ sidebar: true
 
 # 股票交易
 
-本章节涵盖长桥股票交易全流程，包括港股/美股/新加坡市场的交易时段与结算规则、各类订单类型、交易费用、公司行动处理、股票转仓，以及桌面端工具使用说明。
+本章节涵盖长桥股票交易全流程，包括港股/美股的交易时段与结算规则、各类订单类型、交易费用、公司行动处理、股票转仓，以及桌面端工具使用说明。
 
 ## 本章导航
 
@@ -58,7 +58,6 @@ sidebar: true
 
 - [港股沽空](/stock-trading/trading-hours-and-rules/hk-short-selling)
 - [港股交易规则](/stock-trading/trading-hours-and-rules/hk-trading-rules)
-- [新加坡交易规则](/stock-trading/trading-hours-and-rules/sg-trading-rules)
 - [美股定投](/stock-trading/trading-hours-and-rules/us-regular-investment)
 - [美股卖空](/stock-trading/trading-hours-and-rules/us-short-selling)
 - [美股 T+1 结算](/stock-trading/trading-hours-and-rules/us-t1-settlement-faq)

@@ -1,10 +1,8 @@
 import { ref } from 'vue'
-import { inBrowser, useData, withBase } from 'vitepress'
+import { inBrowser, useData } from 'vitepress'
 
 // region 优先级：URL 第一段 > cookie > 'hk' 默认。
-// URL 是当前实际访问的 region，永远权威，避免 cookie 残留与可见 URL 不一致。
-// 单次 build 内 region 是恒定的（VitePress base = /<region>/），useRegion 主要
-// 给跨 region 跳转用：构造目标 region 的绝对 URL。
+// 单 VitePress 实例下 base=/，region 完全由 URL 路径段决定。
 function readRegion(): 'hk' | 'sg' {
   if (!inBrowser) return 'hk'
   const p = window.location.pathname.match(/^\/(hk|sg)(\/|$)/)
@@ -21,32 +19,30 @@ export function useRegion() {
   /**
    * 项目内"跳转 URL 构造"的唯一公共方法。规则：
    *   1. 外链 / mailto / # / 相对路径：原样透传
-   *   2. 目录路径（以 / 结尾，且非区域根 /）：自动补 overview，
-   *      因为目录类跳转的真实落地页是 overview.md
+   *   2. 目录路径（以 / 结尾，且非根 /）：自动补 overview
    *   3. lang === 'en'（root locale）：路径不带语言段
    *   4. lang === 'zh-CN' / 'zh-HK'：前缀 /<lang>
-   *   5. 最外层 withBase 自动补 region（base = /<region>/）
+   *   5. 显式前缀当前 region（base=/，VitePress 不会自动加 region 段）
    *
    * 调用方传入"裸"路径（不带 region 与 locale 前缀），如 `/account/dormant-account`
    * 或 `/account/`。输出：`/hk/account/dormant-account`（en）/
    * `/hk/zh-CN/account/overview`（zh-CN 目录）。
    *
-   * 面包屑等若需直接传入已包含 /overview 的完整路径（如 `${subPath}/overview`），
-   * 不以 / 结尾，本规则不会重复追加。
+   * 幂等：href 已含 region/locale 前缀也能安全处理（先 strip 再重组）。
    */
   function withRegionAndLocale(href: string | undefined | null): string {
     if (!href) return ''
     if (/^https?:\/\//.test(href) || href.startsWith('mailto:') || href.startsWith('#')) return href
     if (!href.startsWith('/')) return href
-    // strip 已有 region + locale 前缀，保证 idempotent（搜索结果 id 等可能已带 locale）
+    // strip 已有 region + locale 前缀，保证 idempotent
     let bare = href.replace(/^\/(hk|sg)(\/(zh-CN|zh-HK))?/, '')
     if (!bare.startsWith('/')) bare = '/' + bare
     if (bare !== '/' && bare.endsWith('/')) bare = `${bare}overview`
     const localeSegment = lang.value === 'en' ? '' : `/${lang.value}`
-    return withBase(`${localeSegment}${bare}`)
+    return `/${region.value}${localeSegment}${bare}`
   }
 
-  // 跨 region：忽略当前 base，直接构造目标 region 的绝对 URL
+  // 跨 region：构造目标 region 的绝对 URL（忽略当前 region/locale）
   function toRegion(target: 'hk' | 'sg', pathWithinRegion = '/'): string {
     const rest = pathWithinRegion.startsWith('/') ? pathWithinRegion : '/' + pathWithinRegion
     return `/${target}${rest === '/' ? '/' : rest}`

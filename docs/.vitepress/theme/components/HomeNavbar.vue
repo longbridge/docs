@@ -11,6 +11,11 @@ import {
   PhCaretDown as ChevronDown,
 } from '@phosphor-icons/vue'
 import { NAV_TABS } from '../../../.vitepress/tabs.config'
+
+// 由 config.mts 通过 vite define 注入：每 region 实际存在的顶级分类目录列表
+declare const __LB_REGION_CATEGORIES__: Record<string, string[]>
+const REGION_CATEGORIES: Record<string, string[]> =
+  typeof __LB_REGION_CATEGORIES__ !== 'undefined' ? __LB_REGION_CATEGORIES__ : {}
 import { useAIModal } from '../composables/useAIModal'
 import { useSearchDialog } from '../composables/useSearchDialog'
 import { useColorMode } from '../composables/useColorMode'
@@ -38,10 +43,9 @@ const apiPopoverRef = ref<HTMLElement>()
 function toggleApi() { apiOpen.value = !apiOpen.value }
 
 // ── Region / Language switcher ─────────────────────────────────
-// SG 文档尚未上线，暂只暴露 HK；上线时把 sg 项取消注释即可
 const REGIONS = [
   { code: 'hk', labelKey: 'common.regionHK'},
-  // { code: 'sg', labelKey: 'common.regionSG' },
+  { code: 'sg', labelKey: 'common.regionSG' },
 ]
 
 const LANGS = [
@@ -137,6 +141,29 @@ const activeTab = computed(() => {
   if (tab) return tab.path
   // 没有任何业务 tab 命中 → 视为首页
   return '/'
+})
+
+// 当前 region 下实际有内容的 tab 才显示；Home（path '/'）始终保留。
+// tab.path 指向的主分类在 region 里可能不存在（例如 sg 没 getting-started），
+// 此时回退到该 tab.categories 里第一个实际存在的分类的 overview，避免 404。
+type VisibleTab = (typeof NAV_TABS)[number] & { landingHref: string }
+const visibleNavTabs = computed<VisibleTab[]>(() => {
+  const cats = new Set(REGION_CATEGORIES[currentRegion.value] ?? [])
+  const out: VisibleTab[] = []
+  for (const t of NAV_TABS) {
+    if (t.path === '/') {
+      out.push({ ...t, landingHref: '/' })
+      continue
+    }
+    // tab.path 形如 '/stock-trading/'，主分类即去掉前后斜杠
+    const primary = t.path.replace(/^\/|\/$/g, '')
+    const firstAvail = cats.has(primary)
+      ? primary
+      : t.categories.find((c) => cats.has(c))
+    if (!firstAvail) continue
+    out.push({ ...t, landingHref: `/${firstAvail}/overview` })
+  }
+  return out
 })
 
 // sub-bar 激活 tab 的滑动下划线位置
@@ -392,9 +419,9 @@ onBeforeUnmount(() => {
                 </a>
                 <div class="hn-more-divider" />
                 <a
-                  v-for="tab in NAV_TABS"
+                  v-for="tab in visibleNavTabs"
                   :key="tab.path"
-                  :href="withRegionAndLocale(tab.path)"
+                  :href="withRegionAndLocale(tab.landingHref)"
                   class="hn-more-item"
                   :class="{ 'is-active': activeTab === tab.path }"
                   role="menuitem"
@@ -420,9 +447,9 @@ onBeforeUnmount(() => {
           }"
         />
         <a
-          v-for="tab in NAV_TABS"
+          v-for="tab in visibleNavTabs"
           :key="tab.path"
-          :href="withRegionAndLocale(tab.path)"
+          :href="withRegionAndLocale(tab.landingHref)"
           class="hn-sub-tab"
           :class="{ 'is-active': activeTab === tab.path }"
           :data-tab-path="tab.path"
