@@ -32,10 +32,12 @@ if (inBrowser) {
 
   // 必须在 VitePress router 注册其全局 click 拦截之前监听，否则点 group link
   // 时 VitePress 会先 router.go() 跳转，我们的 preventDefault 已经晚了。
-  // 行为：点击 group 始终触发 caret toggle（展开/收起切换），同时让 VitePress
-  // 继续跳转到 overview。跳转完成后路由切换会让目标 group 变 active，VitePress
-  // 内置 watchPostEffect 会把它强制展开 —— 由 Layout.vue 的 applyCollapsedPreference
-  // 在 post route 阶段把用户的折叠偏好再次应用回 DOM。
+  // 行为：点击 group 文字 →
+  //   收起态：补 caret 展开 + 让 VitePress 跳转 overview
+  //   展开态且点击会跳转（不在该 group 的 overview 页）：只跳转、不收起——
+  //     跳转后 group 变 active 会被 VitePress watchPostEffect 强制展开，
+  //     先收起会出现"收起 0.28s 动画 → 立刻重新展开"的整栏闪烁
+  //   展开态且已在 overview 页（点击无导航发生）：toggle 收起
   window.addEventListener('click', (e: MouseEvent) => {
     const target = e.target as HTMLElement | null
     if (!target) return
@@ -46,6 +48,10 @@ if (inBrowser) {
     const group = item.parentElement as HTMLElement | null
     if (!group || !group.classList.contains('VPSidebarItem')) return
     if (!group.classList.contains('collapsible')) return
+    if (!group.classList.contains('collapsed')) {
+      const norm = (p: string) => p.replace(/\.html$/, '').replace(/\/$/, '')
+      if (norm(link.pathname) !== norm(location.pathname)) return
+    }
     const caret = group.querySelector<HTMLElement>(':scope > .item > .caret')
     if (!caret) return
     caret.click()
