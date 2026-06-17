@@ -121,7 +121,3 @@ Penny Interval Program 允许部分期权以最低 0.01 USD 增量交易。
 如委托价格不符合增量要求，订单可能不会按预期优先级成交甚至被拒绝。
 
 [名单查询](https%3A%2F%2Fwww.theocc.com%2Fmarket-data%2Fmarket-data-reports%2Fseries-and-trading-data%2Fpenny-program)
-
-## 相关文档
-
-- 开通期权交易 — 开通流程
