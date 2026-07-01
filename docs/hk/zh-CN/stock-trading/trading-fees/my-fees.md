@@ -17,8 +17,6 @@ sidebar: true
 
 ## 港股
 
-![我的费率 - 港股](./images/fees-hk.png)
-
 ### 长桥证券收费
 
 | 费用项  | 说明                       |
