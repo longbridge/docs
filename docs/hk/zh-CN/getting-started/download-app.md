@@ -19,20 +19,6 @@ sidebar: true
 
 长桥 iOS App 已在中国大陆 App Store 下架，中国大陆地区用户无法通过中国大陆 Apple ID 下载。海外其他地区用户可使用当地 Apple ID 在 App Store 正常搜索并下载。
 
-### 中国大陆通过 TestFlight 下载
-
-- HK App：使用大陆 Apple ID 下载 TestFlight，[点击加入](https%3A%2F%2Ftestflight.apple.com%2Fjoin%2Fq27PHAxw)后选择长桥 App 安装。
-
-![](./images/Nu2NborIhog1bYxnVZWj2lzbpWf.png)
-
-TestFlight 安装长桥 HK App
-
-- SG App：使用其他地区 Apple ID 下载 TestFlight，[点击加入](https%3A%2F%2Ftestflight.apple.com%2Fjoin%2FWVQMKEyl)后选择长桥 App 安装。
-
-![](./images/IkahbZhzAoccqWxAfHXjSCZTpab.png)
-
-TestFlight 安装长桥 SG App
-
 ### 更新已安装的 App
 
 打开【设置】→【App Store】→ 开启【App 更新】，即可自动更新。也可在 App Store 右上角头像 →【账户】页面下拉刷新后，进入【App】或【已购项目】手动更新。
