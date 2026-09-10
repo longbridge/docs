@@ -121,13 +121,10 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
 .lb-topnav__link:active {
   transform: scale(0.97);
 }
-/* 选中态:All Topics 下拉展开 = 参考选中项胶囊 (淡底 + 0.5px 细边 + 投影 + 毛玻璃)。
-   用户明确要求「选中态 = 背景色 + border」，优先于「默认不加 border」的通用审美。 */
+/* 展开态:All Topics 下拉展开时保持与 hover 同款浅底 (和 Home hover 一致),不加深、不加 border。
+   (深底+border 是营销站给「当前选中页」的样式，下拉触发钮不该用) */
 [data-lb-dropdown-trigger][aria-expanded="true"] {
-  background: rgba(var(--foreground-rgb), 0.1);
-  border-color: rgba(var(--foreground-rgb), 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(var(--foreground-rgb), 0.06);
 }
 
 /* Transparent header: keep dark text (hero is light-coloured);hover 底色沿用 base 的
@@ -138,6 +135,8 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
 
 .lb-topnav__chevron {
   flex-shrink: 0;
+  /* 显式 4px:"All Topics" 是文本节点，.lb-topnav__link > * + * 的相邻兄弟选择器够不着 svg */
+  margin-left: 4px;
   transition: transform 0.18s ease;
 }
 [data-lb-dropdown-trigger][aria-expanded="true"] .lb-topnav__chevron {
@@ -263,7 +262,8 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
 .lb-mega__right {
   display: flex;
   flex-direction: column;
-  padding: 32px 32px 24px;
+  /* 上 13:让右侧标题 (36 图标) 中心与左侧第一项中心 (12 panel + 9 tab + icon 半) 对齐 */
+  padding: 13px 32px 24px;
   background: rgba(var(--foreground-rgb), 0.02);
   position: relative;
   min-width: 0;

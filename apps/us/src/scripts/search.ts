@@ -63,29 +63,34 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
       '<div class="lb-search-modal__hint">Search is available on the built site — run <code>astro preview</code></div>'
   }
 
-  // ── Recent search history (query strings, Zendesk parity) ─────────────────
+  // ── Recently viewed(记录点击过的文章 {title,url},不是搜索词)──────────────
+  // v2:数据模型从 string[](搜索词) 改为 {title,url}[](点击的文章);老 v1 数据自然被忽略
 
-  const HISTORY_KEY = 'lb_search_history_v1'
+  type HistoryItem = { title: string; url: string }
+  const HISTORY_KEY = 'lb_search_history_v2'
   const HISTORY_LIMIT = 10
 
-  function readHistory(): string[] {
-    try { return JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]') || [] } catch { return [] }
+  function readHistory(): HistoryItem[] {
+    try {
+      const arr = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]')
+      return Array.isArray(arr)
+        ? arr.filter((x: any) => x && typeof x.title === 'string' && typeof x.url === 'string')
+        : []
+    } catch { return [] }
   }
-  function writeHistory(list: string[]) {
+  function writeHistory(list: HistoryItem[]) {
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(list)) } catch { /* quota exceeded */ }
   }
-  function saveHistoryQuery(q: string) {
-    const trimmed = q.trim()
-    if (!trimmed) return
-    const lower = trimmed.toLowerCase()
-    const list = readHistory().filter((h) => h && h.toLowerCase() !== lower)
-    list.unshift(trimmed)
+  function saveHistoryArticle(title: string, url: string) {
+    const t = title.trim(), u = url.trim()
+    if (!t || !u) return
+    const list = readHistory().filter((h) => h.url !== u) // 按 url 去重，重复点击挪到最前
+    list.unshift({ title: t, url: u })
     writeHistory(list.slice(0, HISTORY_LIMIT))
   }
-  function removeHistoryQuery(q: string) {
-    if (!q) return
-    const lower = q.toLowerCase()
-    writeHistory(readHistory().filter((h) => h && h.toLowerCase() !== lower))
+  function removeHistoryArticle(url: string) {
+    if (!url) return
+    writeHistory(readHistory().filter((h) => h.url !== url))
   }
   function clearHistoryList() { writeHistory([]) }
 
@@ -101,19 +106,20 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
     let out =
       '<div class="lb-search-modal__history">' +
       '  <div class="lb-search-modal__history-head">' +
-      '    <span class="lb-search-modal__history-label">Recent searches</span>' +
+      '    <span class="lb-search-modal__history-label">Recently viewed</span>' +
       '    <button type="button" class="lb-search-modal__history-clear" data-clear-history>Clear</button>' +
       '  </div>' +
       '  <ul class="lb-search-modal__history-list">'
 
-    list.forEach((q) => {
+    // 历史行本身就是文章链接 (<a>),点击直接跳转;× 按钮按 url 删除
+    list.forEach((it) => {
       out +=
         '<li class="lb-search-modal__history-row">' +
-        '  <button type="button" class="lb-search-modal__history-item" data-run-history-query="' + esc(q) + '">' +
+        '  <a class="lb-search-modal__history-item" href="' + esc(it.url) + '">' +
         CLOCK_SVG +
-        '    <span class="lb-search-modal__history-title">' + esc(q) + '</span>' +
-        '  </button>' +
-        '  <button type="button" class="lb-search-modal__history-remove" data-remove-history data-history-q="' + esc(q) + '" aria-label="Remove">' + REMOVE_SVG + '</button>' +
+        '    <span class="lb-search-modal__history-title">' + esc(it.title) + '</span>' +
+        '  </a>' +
+        '  <button type="button" class="lb-search-modal__history-remove" data-remove-history data-history-url="' + esc(it.url) + '" aria-label="Remove">' + REMOVE_SVG + '</button>' +
         '</li>'
     })
     out += '</ul></div>'
@@ -234,10 +240,10 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
       const target = e.target as HTMLElement | null
       if (!target?.closest) return
 
-      // Remove single history query
+      // Remove single history item (by url)
       const rm = target.closest('[data-remove-history]') as HTMLElement | null
       if (rm && results!.contains(rm)) {
-        removeHistoryQuery(rm.getAttribute('data-history-q') ?? '')
+        removeHistoryArticle(rm.getAttribute('data-history-url') ?? '')
         showHistory()
         e.preventDefault()
         e.stopPropagation()
@@ -253,25 +259,14 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
         return
       }
 
-      // History query row click: re-run that search (do NOT navigate)
-      const qBtn = target.closest('[data-run-history-query]') as HTMLElement | null
-      if (qBtn && results!.contains(qBtn)) {
-        const q = qBtn.getAttribute('data-run-history-query') ?? ''
-        if (q) {
-          modalInput!.value = q
-          modalInput!.focus()
-          lastQuery = '' // force re-render
-          run(q)
-        }
-        e.preventDefault()
-        return
-      }
-
-      // Result link click: save the CURRENT query, then close
+      // 文章链接点击 (搜索结果 或 历史记录):存下点击的文章 {title,url},再关闭;
+      // 浏览器按 <a href> 正常跳转。历史行本身也是文章链接，重复点会被挪到最前。
       const a = target.closest('a[href]') as HTMLAnchorElement | null
       if (!a || !results!.contains(a)) return
-      const currentQ = modalInput!.value.trim()
-      if (currentQ) saveHistoryQuery(currentQ)
+      const url = a.getAttribute('href') ?? ''
+      const titleEl = a.querySelector('.lb-search-modal__title, .lb-search-modal__history-title')
+      const title = (titleEl?.textContent ?? '').trim()
+      if (title && url) saveHistoryArticle(title, url)
       setTimeout(closeModal, 0)
     },
     true // capture phase
