@@ -16,21 +16,30 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
   // ── Pagefind lazy loader ──────────────────────────────────────────────────
 
   let pagefind: any = null
+  let pagefindPromise: Promise<any> | null = null
 
-  async function ensurePagefind() {
-    if (pagefind) return pagefind
-    try {
-      // trailingSlash:'never' 下 BASE_URL 不带尾斜杠 ('/us/en/support'),必须规范化后再拼路径，
-      // 否则得到 '/us/en/supportpagefind/…' → 404 → 搜索在构建站上也不可用
-      const base = import.meta.env.BASE_URL.replace(/\/$/, '')
-      pagefind = await import(/* @vite-ignore */ base + '/pagefind/pagefind.js')
-      // 索引以 dist 根为基准记 URL(无 base 前缀),让 Pagefind 自动把 base 拼到每条结果 url 上
-      await pagefind.options({ baseUrl: base + '/' })
-      await pagefind.init()
-    } catch {
-      pagefind = null // dev server has no index; gracefully degrade
-    }
-    return pagefind
+  // 去掉自家防抖后每次按键都会走到这里 (且 openModal 会提前预热),用 in-flight promise 去重，
+  // 避免并发重复 import / options / init
+  function ensurePagefind(): Promise<any> {
+    if (pagefind) return Promise.resolve(pagefind)
+    if (pagefindPromise) return pagefindPromise
+    pagefindPromise = (async () => {
+      try {
+        // trailingSlash:'never' 下 BASE_URL 不带尾斜杠 ('/us/en/support'),必须规范化后再拼路径，
+        // 否则得到 '/us/en/supportpagefind/…' → 404 → 搜索在构建站上也不可用
+        const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+        const pf = await import(/* @vite-ignore */ base + '/pagefind/pagefind.js')
+        // 索引以 dist 根为基准记 URL(无 base 前缀),让 Pagefind 自动把 base 拼到每条结果 url 上
+        await pf.options({ baseUrl: base + '/' })
+        await pf.init()
+        pagefind = pf
+      } catch {
+        pagefind = null // dev server has no index; gracefully degrade
+        pagefindPromise = null // 加载失败允许下次重试
+      }
+      return pagefind
+    })()
+    return pagefindPromise
   }
 
   // ── Utilities ─────────────────────────────────────────────────────────────
@@ -128,7 +137,6 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
 
   // ── Search ────────────────────────────────────────────────────────────────
 
-  let debounceTimer: ReturnType<typeof setTimeout> | null = null
   let lastQuery = ''
 
   async function run(q: string) {
@@ -167,11 +175,12 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
     results!.innerHTML = out
   }
 
+  // 不再自套 setTimeout:Pagefind 的 debouncedSearch 已内置 300ms 防抖 + 索引预加载，
+  // 叠加自家防抖只会让用户多等一截 (之前 250 + 300 = 550ms 才开始查)
   function trigger() {
-    if (debounceTimer !== null) clearTimeout(debounceTimer)
     const q = modalInput!.value.trim()
     if (!q) { lastQuery = ''; showHistory(); return }
-    debounceTimer = setTimeout(() => { run(q) }, 250)
+    run(q)
   }
 
   // ── Open / Close ──────────────────────────────────────────────────────────
@@ -180,6 +189,8 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
     modal!.hidden = false
     modal!.setAttribute('aria-hidden', 'false')
     document.documentElement.classList.add('lb-search-open')
+    // 打开即后台预热 Pagefind(运行时 + WASM + 索引),用户读界面/打字期间就加载好，首查不卡冷启动
+    void ensurePagefind()
     if (typeof seed === 'string') modalInput!.value = seed
     setTimeout(() => {
       modalInput!.focus()
@@ -207,9 +218,11 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
   modalInput!.addEventListener('input', trigger)
 
   // Close on [data-close] click inside modal (backdrop + close button)
+  // closest 而非 hasAttribute:点到关闭按钮内部的 svg/path 时也能冒泡命中 [data-close]
+  // (App 触摸必点在 × 图标上，hasAttribute 拿到的是 svg/path 而非 button → 之前关不掉)
   modal!.addEventListener('click', (e) => {
     const target = e.target as HTMLElement | null
-    if (target?.hasAttribute('data-close')) closeModal()
+    if (target?.closest('[data-close]')) closeModal()
   })
 
   // ESC to close

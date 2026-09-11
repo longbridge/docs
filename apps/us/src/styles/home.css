@@ -178,6 +178,9 @@
   outline: none;
   cursor: pointer;
   caret-color: transparent;
+  /* readonly 触发器：禁选区，配合 tap-highlight:transparent 消除 App 上点击时的灰底/阴影 (#135) */
+  -webkit-user-select: none;
+  user-select: none;
   -webkit-appearance: none;
   appearance: none;
 }
@@ -203,6 +206,14 @@
 @media (max-width: 900px) {
   .hero-search-btn { width: 44px; height: 44px; }
   .hero-search-btn svg { width: 22px; height: 22px; }
+}
+
+/* App WebView 点击这几个 hero 交互元素时的灰色 tap 高亮 (#135「选中阴影」) 不好看，统一去掉;
+   :active/:hover 已有自定义反馈 */
+.hero-search-input,
+.hero-search-btn,
+.hero-hot-tag {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Hot tags: 实心 teal 胶囊 */
