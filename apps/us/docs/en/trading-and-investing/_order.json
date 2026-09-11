@@ -1,9 +1,6 @@
 [
-  "signal",
-  "margin-trading",
-  "trading-basics",
-  "options-overview",
-  "trading-rules",
-  "crypto-trading",
-  "options-trading"
+  "margin",
+  "trading",
+  "crypto",
+  "options"
 ]
