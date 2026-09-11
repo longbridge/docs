@@ -270,7 +270,9 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
 }
 .lb-mega__panel { display: none; flex-direction: column; flex: 1; min-height: 0; min-width: 0; }
 .lb-mega__panel.is-active { display: flex; }
-.lb-mega__head { display: flex; align-items: center; }
+/* padding-left 12:与文章行的内容对齐 (文章 a 在 ul 内有 12px 内边距，圆点落在 44px);
+   head 图标同样落在 44px，和圆点左对齐 */
+.lb-mega__head { display: flex; align-items: center; padding-left: 12px; }
 .lb-mega__head-icon {
   display: inline-flex;
   align-items: center;
@@ -304,7 +306,8 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   display: flex;
   align-items: center;
   padding: 10px 12px;
-  margin: 0 -12px;
+  /* 不再用 -12px 负边距把 hover 胶囊拉到面板边缘;胶囊留在 ul 内，左右自带面板留白 */
+  margin: 0;
   border-radius: 10px;
   font-size: 13.5px;
   line-height: 1.45;
@@ -330,6 +333,7 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   /* 无 margin-top:auto —— 由 .lb-mega__arts 的 flex:1 撑满把它顶到底部。
      两者同用会争抢剩余空间，导致 arts 不满高、fitArts 少算一条。 */
   padding-top: 24px;
+  padding-left: 12px; /* 与 head / 文章内容左对齐 (44px) */
   display: inline-flex;
   align-items: center;
   font-size: 13px;

@@ -9,10 +9,7 @@ zendesk_category_id: 15933223104783
 
 ## Sections
 
-- [Signal](/trading-and-investing/signal/overview)
-- [Margin Trading](/trading-and-investing/margin-trading/overview)
-- [Trading Basics](/trading-and-investing/trading-basics/overview)
-- [Options Overview](/trading-and-investing/options-overview/overview)
-- [Trading Rules](/trading-and-investing/trading-rules/overview)
-- [Crypto Trading](/trading-and-investing/crypto-trading/overview)
-- [Options Trading](/trading-and-investing/options-trading/overview)
+- [Margin](/trading-and-investing/margin/overview)
+- [Trading](/trading-and-investing/trading/overview)
+- [Crypto](/trading-and-investing/crypto/overview)
+- [Options](/trading-and-investing/options/overview)

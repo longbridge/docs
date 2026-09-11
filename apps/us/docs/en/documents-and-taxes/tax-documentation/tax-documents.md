@@ -2,10 +2,10 @@
 title: Tax Documents
 zendesk_article_id: 17445724650639
 zendesk_section_id: 15003351858319
-zendesk_updated_at: '2026-09-02T09:37:20Z'
+zendesk_updated_at: '2026-09-09T02:20:34Z'
 zendesk_edited_at: '2026-09-02T09:37:20Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17445724650639-Tax-Documents'
-promoted: false
+promoted: true
 position: 0
 ---
 Tax documents summarize the information you may need for annual tax filing, such as reportable income and transactions in your account. This article explains how to find, view, and download your tax documents.

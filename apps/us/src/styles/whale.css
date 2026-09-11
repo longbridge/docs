@@ -363,3 +363,8 @@ html[theme='dark'] .lb-fab-menu,
 /* 注:.lb-app-navbar 原 gap:12 已移除。导航栏为 justify-content:space-between,
    back 在左、actions 在右、title 绝对居中 (不在流内),项间距由 space-between 决定，
    无需 margin;若加 > * + * 反而会把绝对定位的 title 顶偏。 */
+
+/* App 端搜索模态关闭 × :窄头部里 svg 会被 flex 压缩变小,给个 14px 下限保底 */
+html.is-whale-app .lb-search-modal__close svg {
+  min-width: 14px;
+}
