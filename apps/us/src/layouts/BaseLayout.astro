@@ -53,6 +53,14 @@ const shareDesc = description ?? "Got a question? From account setup to placing 
     <meta name="twitter:image" content={OG_IMAGE} />
     <!-- Anti-FOUC: theme applied before first paint(内含 UA lbcommitid → html.is-whale-app) -->
     <script is:inline set:html={themeMode} />
+    <!-- 沉浸式(原生 lbFitsStatusBar=2:状态栏透明不占位)给 html 打标,供 whale.css 兜底 Android 状态栏高度;首屏前执行避免跳变 -->
+    <script is:inline>
+      ;(function () {
+        if (/[?&]lbFitsStatusBar=2(?![0-9])/.test(location.search)) {
+          document.documentElement.classList.add('is-immersive-sb')
+        }
+      })()
+    </script>
     <!-- App WebView 内禁用双指/双击缩放(对齐 Zendesk document_head.hbs:2) -->
     <script is:inline>
       ;(function () {
