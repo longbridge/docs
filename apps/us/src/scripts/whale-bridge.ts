@@ -203,6 +203,18 @@ if (isWhale) {
       fab.style.transition = ''
       if (!moved) {
         document.querySelector<HTMLElement>('[data-lb-cat-drawer-open]')?.click()
+        // 触摸抬起后浏览器会在触点合成一发 ghost click;此刻全屏遮罩 (data-lb-cat-drawer-close) 已盖住触点，
+        // 那发 click 命中遮罩会把刚打开的抽屉立刻关掉 (Android 明显，iOS 落点算法不同未暴露)。
+        // 抓下一发 click:只吞"会关抽屉"的那发，真实点击放行;400ms 没等到就撤，不误伤后续点击。
+        const swallowGhost = (ev: Event) => {
+          document.removeEventListener('click', swallowGhost, true)
+          if ((ev.target as Element | null)?.closest?.('[data-lb-cat-drawer-close]')) {
+            ev.stopPropagation()
+            ev.preventDefault()
+          }
+        }
+        document.addEventListener('click', swallowGhost, true)
+        setTimeout(() => document.removeEventListener('click', swallowGhost, true), 400)
         return
       }
       const r = fab.getBoundingClientRect()
