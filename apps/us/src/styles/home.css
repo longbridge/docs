@@ -67,7 +67,9 @@
 }
 @media (max-width: 900px) {
   .hero.hero--dark {
-    background-size: auto 60%;
+    /* 插图高度:≥393px 恒 272(与桌面口径一致的"正好"),窄屏按 69vw 收缩，
+       避免文字换行把 hero 撑高、auto 60% 连带把插图胀大侵占标题/描述 */
+    background-size: auto min(272px, 69vw);
     background-position: right -16px top 0;
     min-height: 0;
     padding-bottom: 40px;
