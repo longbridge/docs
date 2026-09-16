@@ -29,6 +29,13 @@ html.is-whale-app .lb-footer {
 html.is-whale-app {
   --lb-safe-top: env(safe-area-inset-top, 0px);
 }
+/* 沉浸式 (lbFitsStatusBar=2:原生把状态栏透明化、内容顶到状态栏下) 时兜底状态栏高度。
+   iOS 刘海由 env 给出 (≥24,max 取它，iOS 不变);Android 的 env 常为 0(只反映挖孔),
+   纯前端拿不到真实高度，用 Android 标准 status_bar_height=24dp 兜底，叠加导航栏原有 +8 共 32px,
+   可清掉 ≤32dp 的状态栏 (含三星挖孔机)。仅沉浸页生效，非沉浸页 (原生已占位) 不受影响。 */
+html.is-whale-app.is-immersive-sb {
+  --lb-safe-top: max(env(safe-area-inset-top, 0px), 24px);
+}
 
 /* ── H5 App 导航栏：基础 (默认隐藏，仅 App 内显示) ─────────────────────── */
 .lb-app-navbar {
@@ -364,7 +371,7 @@ html[theme='dark'] .lb-fab-menu,
    back 在左、actions 在右、title 绝对居中 (不在流内),项间距由 space-between 决定，
    无需 margin;若加 > * + * 反而会把绝对定位的 title 顶偏。 */
 
-/* App 端搜索模态关闭 × :窄头部里 svg 会被 flex 压缩变小,给个 14px 下限保底 */
+/* App 端搜索模态关闭 × :窄头部里 svg 会被 flex 压缩变小，给个 14px 下限保底 */
 html.is-whale-app .lb-search-modal__close svg {
   min-width: 14px;
 }
