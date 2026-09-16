@@ -173,10 +173,10 @@ html.is-whale-app.is-scrolled body.lb-has-hero .lb-app-navbar__search {
    内容顶距 = 导航栏底 (safe + 56) + 47 → 有刘海时标题落在 162px，与 Zendesk 一致 */
 html.is-whale-app body.lb-has-hero .hero {
   padding-top: 0;
-  /* App 内 hero 盒子顶在屏幕 0，背景插画默认 top 0 会被固定导航栏压住；
-     纵向下移 30px 让插画从导航栏下方露出（仅 App，不动 web 移动端的 top 0）。
-     横向沿用移动端 right -16px。 */
-  background-position: right -16px top 30px;
+  /* 插画纵向锚点跟随安全区，使"插画→内容"的距离在 iOS/Android 一致 (内容顶=safe+103):
+     iOS(safe47) 插画落 30px 时观感正好 → 通用式 top = safe-17;
+     Android(safe24) 据此上移到 7px，与 iOS 相对位置对齐，iOS 保持 30 不变。横向沿用 right -16px。 */
+  background-position: right -16px top calc(var(--lb-safe-top) - 17px);
 }
 html.is-whale-app body.lb-has-hero .hero__inner {
   padding-top: calc(var(--lb-safe-top) + 103px);
