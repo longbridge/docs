@@ -368,8 +368,15 @@ html[theme='dark'] .article-body img,
     margin-right: 0;
   }
 
+  /* 小屏标题梯度:文章标题 24 / h2 21 / h3 18(桌面为 40 / 24 / 20) */
   .article-title {
-    font-size: 28px;
+    font-size: 24px;
+  }
+  .article-body h2 {
+    font-size: 21px;
+  }
+  .article-body h3 {
+    font-size: 18px;
   }
 
   /* 小屏：两列改上下堆叠 */
