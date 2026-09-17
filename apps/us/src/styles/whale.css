@@ -240,10 +240,8 @@ html.is-whale-app .article-page__main#main-content {
 }
 
 /* App 内文章正文的块间距收紧 (窄栏里全局值显得过大;仅 App，不动 web):
-   标题→正文、段落→标题、标题→标题 的空隙都由这几条 margin 决定 */
-html.is-whale-app .article-body {
-  margin-top: 12px;
-}
+   段落→标题、标题→标题 的空隙由这几条 margin 决定。
+   标题→正文(.article-body 的 margin-top)不覆写，与 web 小屏一致走基础值 30px */
 html.is-whale-app .article-body h1,
 html.is-whale-app .article-body h2,
 html.is-whale-app .article-body h3,
