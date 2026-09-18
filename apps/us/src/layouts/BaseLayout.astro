@@ -22,6 +22,13 @@ interface Props {
 }
 
 const { title, description, isHome = false, hideFooter = false } = Astro.props
+
+// hero 背景图的 CDN 变体(阿里云 OSS 处理参数)。⚠️ 必须与 home.css 中的 URL 逐字一致,
+// 否则 preload 不命中,浏览器会把同一张图下载两次。改一处务必同步另一处。
+const HERO_BG = 'https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png'
+const HERO_IMG_MOBILE = `${HERO_BG}?x-oss-process=image/resize,w_1000/format,webp`
+const HERO_IMG_DESKTOP = `${HERO_BG}?x-oss-process=image/resize,w_1200/format,webp`
+const HERO_IMG_DESKTOP_2X = `${HERO_BG}?x-oss-process=image/resize,w_1600/format,webp`
 const pageTitle = isHome ? 'Longbridge Help Center' : `${title} – Longbridge Help Center`
 
 // SEO / 社交分享 unfurl(Slack / Facebook / Twitter)。SITE_ORIGIN / OG_IMAGE 单一来源见 lib/seo。
@@ -35,6 +42,14 @@ const shareDesc = description ?? "Got a question? From account setup to placing 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- 图片 CDN 预连接:首页 hero/sun 与全站 logo 同域,提前完成 DNS+TLS(Lighthouse 实测省 ~300ms)。
+         不加 crossorigin —— 背景图是非 CORS 请求,加了反而会另开一条连接。 -->
+    <link rel="preconnect" href="https://assets.lbkrs.com" />
+    <!-- hero 背景图是 CSS background,要等 CSS 解析完才被发现,起步晚且正是 LCP 元素。
+         按断点各预载一档抢跑;仅首页,其他页不浪费。 -->
+    {isHome && <link rel="preload" as="image" media="(max-width: 900px)" href={HERO_IMG_MOBILE} />}
+    {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (max-resolution: 1.99dppx)" href={HERO_IMG_DESKTOP} />}
+    {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (min-resolution: 2dppx)" href={HERO_IMG_DESKTOP_2X} />}
     <link rel="icon" href="https://assets.wbrks.com/assets/logo/logo1.png" type="image/png" />
     <title>{pageTitle}</title>
     <meta name="description" content={shareDesc} />
