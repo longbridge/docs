@@ -68,12 +68,49 @@ const shareDesc = description ?? "Got a question? From account setup to placing 
     <meta name="twitter:image" content={OG_IMAGE} />
     <!-- Anti-FOUC: theme applied before first paint(内含 UA lbcommitid → html.is-whale-app) -->
     <script is:inline set:html={themeMode} />
-    <!-- 沉浸式(原生 lbFitsStatusBar=2:状态栏透明不占位)给 html 打标,供 whale.css 兜底 Android 状态栏高度;首屏前执行避免跳变 -->
+    <!-- 顶部安全区。两件事都必须在首屏前做完,否则整页会跳一次:
+         1) 沉浸式(原生 lbFitsStatusBar=2:状态栏透明不占位)给 html 打标,供 whale.css 兜底 Android 状态栏高度
+         2) 把上次量到的安全区高度写成 --lb-safe-top-boot 垫住首帧 —— WKWebView 首帧
+            env(safe-area-inset-top) 解析为 0,约 100ms 后才给真值(WebKit #191872) -->
     <script is:inline>
       ;(function () {
+        var html = document.documentElement
         if (/[?&]lbFitsStatusBar=2(?![0-9])/.test(location.search)) {
-          document.documentElement.classList.add('is-immersive-sb')
+          html.classList.add('is-immersive-sb')
         }
+        // 读缓存垫首帧。这里不判 is-whale-app:--lb-safe-top-boot 只被 html.is-whale-app
+        // 下的规则消费,普通浏览器里设了也不生效,换来的是不依赖该 class 何时打上
+        // (dev 的 ?lb-whale=1 覆盖脚本排在本段之后)。parseInt 兜底:缓存被写脏时
+        // 拼出的 'abcpx' 会让整条 max() 在计算期失效,顶距直接塌掉。
+        var KEY = 'lb-safe-top'
+        try {
+          var cached = parseInt(localStorage.getItem(KEY), 10)
+          if (cached > 0) html.style.setProperty('--lb-safe-top-boot', cached + 'px')
+        } catch (e) {}
+
+        // 探针量真值回写。只在竖屏采样:横屏/分屏的顶部安全区更小,写进缓存会让竖屏
+        // 首帧多留白。量到就立刻收手,量不到最多试 40 帧(约 0.6s)后放弃,不常驻。
+        var probe = document.createElement('div')
+        probe.style.cssText =
+          'position:absolute;top:-9999px;left:0;width:0;height:0;padding-top:env(safe-area-inset-top,0px)'
+        var tries = 0
+        function sample() {
+          var v = parseFloat(getComputedStyle(probe).paddingTop) || 0
+          if (v > 0 && window.innerHeight > window.innerWidth) {
+            try { localStorage.setItem(KEY, String(Math.round(v))) } catch (e) {}
+            probe.remove()
+            return
+          }
+          if (++tries < 40) requestAnimationFrame(sample)
+          else probe.remove()
+        }
+        function start() {
+          if (!html.classList.contains('is-whale-app')) return
+          document.body.appendChild(probe)
+          requestAnimationFrame(sample)
+        }
+        if (document.body) start()
+        else document.addEventListener('DOMContentLoaded', start)
       })()
     </script>
     <!-- App WebView 内禁用双指/双击缩放(对齐 Zendesk document_head.hbs:2) -->

@@ -26,15 +26,20 @@ html.is-whale-app .lb-footer {
 
 /* ── 顶部安全区：唯一取值点。刘海/灵动岛设备 >0，无安全区设备（Android、老机型）为 0；
    导航栏高度、首页 hero 顶距、文章页顶距全部由它推导，公式在 0 时自动退化。 ── */
+/* --lb-safe-top-boot 是首帧地板，由 BaseLayout head 内联脚本从 localStorage 写入。
+   WKWebView 首帧把 env(safe-area-inset-top) 解析成 0，约 100ms 后才给真实值
+   (WebKit #191872)，导致整页随本变量一起下跳一次。用上次在本机量到的值垫住首帧，
+   真实值到位后 max() 取值不变，跳变消失。首次进入无缓存时退化为原行为。
+   env() 的第二参数是「不支持时」的兜底、不是「值为 0 时」的兜底，所以只能靠 max()。 */
 html.is-whale-app {
-  --lb-safe-top: env(safe-area-inset-top, 0px);
+  --lb-safe-top: max(env(safe-area-inset-top, 0px), var(--lb-safe-top-boot, 0px));
 }
 /* 沉浸式 (lbFitsStatusBar=2:原生把状态栏透明化、内容顶到状态栏下) 时兜底状态栏高度。
    iOS 刘海由 env 给出 (≥24,max 取它，iOS 不变);Android 的 env 常为 0(只反映挖孔),
    纯前端拿不到真实高度，用 Android 标准 status_bar_height=24dp 兜底，叠加导航栏原有 +8 共 32px,
    可清掉 ≤32dp 的状态栏 (含三星挖孔机)。仅沉浸页生效，非沉浸页 (原生已占位) 不受影响。 */
 html.is-whale-app.is-immersive-sb {
-  --lb-safe-top: max(env(safe-area-inset-top, 0px), 24px);
+  --lb-safe-top: max(env(safe-area-inset-top, 0px), var(--lb-safe-top-boot, 0px), 24px);
 }
 
 /* ── H5 App 导航栏：基础 (默认隐藏，仅 App 内显示) ─────────────────────── */
