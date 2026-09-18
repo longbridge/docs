@@ -110,14 +110,19 @@ html.is-whale-app .lb-app-navbar__title {
   color: #0a0e19;
 }
 
-/* 安卓沉浸态维持原几何:兜底 24 + 8 = 32px,用于清掉三星等较高状态栏。
+/* 沉浸态导航栏顶距:安卓兜底 32px(清掉三星等较高状态栏),iOS 用真实安全区。
+   必须是 max 而不是 `safe + 8`—— 后者不分平台,iOS 的 --lb-safe-top 是真实的 59,
+   加完变 67,比不带 lbFitsStatusBar=2 的文章页(max(59,8)=59)低 8px,同一 App 里
+   两个页面的导航栏对不齐。安卓 env 通常为 0、--lb-safe-top 取 24 兜底,
+   max(24,32)=32 与原来的 24+8 逐像素相同,行为不变。
    这里只覆写导航栏自身,不动 --lb-safe-top —— 那个变量还被 hero/抽屉/文章顶距共用,
    改它会把安卓上所有内容一起推下去。 */
 html.is-whale-app.is-immersive-sb .lb-app-navbar {
-  padding-top: calc(var(--lb-safe-top) + 8px);
+  padding-top: max(var(--lb-safe-top), 32px);
 }
 html.is-whale-app.is-immersive-sb .lb-app-navbar__title {
-  margin-top: calc(var(--lb-safe-top) / 2);
+  /* 标题绝对居中,补偿上下 padding 不对称:(padding-top - 8) / 2,与上式同步改 */
+  margin-top: calc(max(var(--lb-safe-top), 32px) / 2 - 4px);
 }
 
 /* 返回按钮 / 右侧动作组：胶囊 PNG 作为 ::before 底图 */
