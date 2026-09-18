@@ -16,7 +16,11 @@
   background-color: #C2FFF7;
   color: #0a0e19;
   min-height: 480px;
-  background-image: url("https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png");
+  /* 图片走 CDN(阿里云 OSS)处理参数按需缩放+转 WebP,不改动源文件:
+     原图 2674×2120 / 234KB PNG,手机只显示约 343px 宽,过采样 8 倍。
+     手机统一 w_1000(≈55KB):覆盖 3x 屏所需的约 1029px,2x/3x 都清晰;桌面档在下方 min-width:901px 覆盖。
+     ⚠️ 该 URL 与 BaseLayout 的 hero preload 必须逐字一致,否则 preload 不命中会重复下载 */
+  background-image: url("https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png?x-oss-process=image/resize,w_1000/format,webp");
   background-repeat: no-repeat;
   isolation: isolate;
 }
@@ -42,7 +46,8 @@
   left: -12vw;
   width: 37vw;
   height: 37vw;
-  background: url("https://assets.lbkrs.com/uploads/d07e860c-e88d-4309-9fb4-b735618f0868/sun.png") center/contain no-repeat;
+  /* 原图 1434² / 83KB;桌面显示约 37vw → w_400 足够(≈15KB),小屏档见下方 768 断点 */
+  background: url("https://assets.lbkrs.com/uploads/d07e860c-e88d-4309-9fb4-b735618f0868/sun.png?x-oss-process=image/resize,w_400/format,webp") center/contain no-repeat;
   z-index: 1;
   opacity: 0.95;
   pointer-events: none;
@@ -50,6 +55,8 @@
 /* 小屏:sun 光晕固定成小尺寸，只在左上角一小块 (不随 vw 在较宽小屏放大) */
 @media (max-width: 768px) {
   .hero.hero--dark::after {
+    /* 小屏只显示 140px → w_200 足够(≈4KB) */
+    background-image: url("https://assets.lbkrs.com/uploads/d07e860c-e88d-4309-9fb4-b735618f0868/sun.png?x-oss-process=image/resize,w_200/format,webp");
     width: 140px;
     height: 140px;
     top: -50px;
@@ -60,9 +67,19 @@
 /* 右侧 3D 插图定位 */
 @media (min-width: 901px) {
   .hero.hero--dark {
+    /* 桌面显示 815px 宽 → w_1200 覆盖到约 1.5 倍屏(≈73KB) */
+    background-image: url("https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png?x-oss-process=image/resize,w_1200/format,webp");
     background-size: 815px auto;
     /* y 从 -104 下移 50 到 -54:上 padding 由 159 调到 208(+49) 后内容下移，插图 (背景图) 顶部锚定需同步跟下 */
     background-position: calc(50% + 235px) -54px;
+  }
+}
+/* 视网膜桌面:815px 显示宽在 2x 屏上需要约 1630px 源图,w_1200(1.47x)会发虚。
+   仅 2dppx 以上加载 w_1600(≈1.96x,123KB);1x 屏仍用上面的 w_1200(73KB),不多付流量。
+   ⚠️ 与 BaseLayout 的 preload 断点必须一一对应,否则预载会落空并重复下载 */
+@media (min-width: 901px) and (min-resolution: 2dppx) {
+  .hero.hero--dark {
+    background-image: url("https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png?x-oss-process=image/resize,w_1600/format,webp");
   }
 }
 @media (max-width: 900px) {
