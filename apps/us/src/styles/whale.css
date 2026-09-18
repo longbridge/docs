@@ -50,7 +50,10 @@ html.is-whale-app .lb-app-navbar {
   z-index: 100;
   align-items: center;
   justify-content: space-between;
-  padding: calc(var(--lb-safe-top) + 8px) 16px 8px 16px;
+  /* 顶距贴着安全区起始位置,与 iOS 原生导航栏一致(原先在安全区之上又加 8px,
+     导致 iOS 比原生低 8px)。安卓沉浸态另有覆写,见下方 is-immersive-sb。
+     max(...,8px):安卓非沉浸时安全区为 0,给 8px 保底不贴顶。 */
+  padding: max(var(--lb-safe-top), 8px) 16px 8px 16px;
 }
 
 .lb-app-navbar__btn {
@@ -87,7 +90,9 @@ html.is-whale-app .lb-app-navbar__title {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  margin-top: calc(var(--lb-safe-top) / 2);
+  /* 标题绝对居中于导航栏盒子,需按上下 padding 不对称量补偿:margin-top = padding-top/2 - 4。
+     与上方 padding 同步,改一处必须改另一处,否则标题与按钮不齐。 */
+  margin-top: calc(max(var(--lb-safe-top), 8px) / 2 - 4px);
   max-width: 55%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -98,6 +103,16 @@ html.is-whale-app .lb-app-navbar__title {
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #0a0e19;
+}
+
+/* 安卓沉浸态维持原几何:兜底 24 + 8 = 32px,用于清掉三星等较高状态栏。
+   这里只覆写导航栏自身,不动 --lb-safe-top —— 那个变量还被 hero/抽屉/文章顶距共用,
+   改它会把安卓上所有内容一起推下去。 */
+html.is-whale-app.is-immersive-sb .lb-app-navbar {
+  padding-top: calc(var(--lb-safe-top) + 8px);
+}
+html.is-whale-app.is-immersive-sb .lb-app-navbar__title {
+  margin-top: calc(var(--lb-safe-top) / 2);
 }
 
 /* 返回按钮 / 右侧动作组：胶囊 PNG 作为 ::before 底图 */
