@@ -17,7 +17,8 @@
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     </button>
     <button type="button" class="lb-app-navbar__btn lb-app-navbar__close" aria-label="Close" data-lb-app-close>
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4" fill="currentColor" stroke="none"/></svg>
+      <!-- viewBox 用 20 而非同栏其它图标的 24:svg 被 CSS 锁死 20px 渲染,1 单位 = 1px,才能逐像素对上设计稿的 12×12 叉 + 2px 描边 -->
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 4 16M4 4l12 12"/></svg>
     </button>
   </div>
 </div>
