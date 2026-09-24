@@ -1,0 +1,70 @@
+name: Sync Zendesk content
+
+# 从 Pages 部署里拆出来的独立 workflow。
+# 拆分原因:内容同步是"让 main 保持最新"的唯一机制,而 main 同时喂给 GitLab
+# 那条生产流水线(它每次构建都 fetch upstream main)。同步若和 Pages 部署挤在
+# 同一个 workflow + 同一个 concurrency group 里,Pages 一旦卡住同步也跟着不跑
+# —— 2026-07-30~09-24 就是这么烂掉的:bun install 挂死 6 小时占住 group:pages,
+# 后续 100 次 run 全被挤成 cancelled,zendesk-sync[bot] 一次都没提交过,
+# 仓库内容落后 13 天。
+
+on:
+  # Zendesk 发文时经 GitHub API repository_dispatch 推来
+  # (事件名保持不变,外部 webhook 无需改动)
+  repository_dispatch:
+    types: [zendesk-sync]
+  # webhook 漏掉时的兜底
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write # 提交同步下来的内容
+  actions: write # 内容有变化时触发 deploy.yml
+
+concurrency:
+  group: zendesk-sync # 独立于 group:pages,不被部署阻塞
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # 必须有:上次就是 bun install 无限挂起(lockfile 里全是内网 URL,runner
+    # 连不上,TCP 丢包不回所以不报错、只干等),拖满 6 小时还不算失败。
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      # frozen:lockfile 与 package.json 不一致时直接失败,不静默改写
+      - run: bun install --frozen-lockfile
+
+      # 只需要 ZENDESK_SUBDOMAIN(实例域名);email/token 可选,这里不给,
+      # 走匿名读取已发布内容(见 apps/us/scripts/zendesk/client.ts)。
+      - name: Sync US content from Zendesk
+        env:
+          ZENDESK_SUBDOMAIN: longbridgeus
+        run: bun run sync:us
+
+      - name: Commit synced content
+        id: commit
+        run: |
+          git config user.name "zendesk-sync[bot]"
+          git config user.email "zendesk-sync[bot]@users.noreply.github.com"
+          git add apps/us/docs/en
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "内容无变化,不提交"
+          else
+            git commit -m "chore(us): sync zendesk content"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # 用 GITHUB_TOKEN 推的 commit 不会触发 on:push 的 workflow(GitHub 防递归
+      # 的设计),所以这里显式派发。workflow_dispatch 是该限制的明确例外 ——
+      # 文档写明它"always create workflow runs",用 GITHUB_TOKEN 也照样触发。
+      - name: Trigger Pages deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

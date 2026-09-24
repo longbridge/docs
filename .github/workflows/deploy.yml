@@ -4,15 +4,14 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Zendesk webhook fires this via GitHub API repository_dispatch (event_type: zendesk-sync)
-  repository_dispatch:
-    types: [zendesk-sync]
-  # Fallback if a webhook is missed: sync every 6h (off-hour minute to spread API load)
+  # Zendesk 内容同步已拆到 zendesk-sync.yml:它提交完会显式派发本 workflow。
+  # 这里保留一个错峰的定时兜底(:37 而非 :17),万一那次派发没成,Pages 也不会
+  # 长期停更。
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '37 */6 * * *'
 
 permissions:
-  contents: write # sync job commits refreshed content back to main
+  contents: read # 同步搬走后这里不再写仓库
   pages: write
   id-token: write
 
@@ -23,31 +22,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 必须有:2026-07-30~09-24 期间 bun install 无限挂起(lockfile 里全是内网
+    # URL,runner 连不上,TCP 丢包不回所以只干等不报错),单次占满 6 小时,
+    # 把后续 100 次 run 全挤成 cancelled —— 从头到尾没有一次 failed 通知,
+    # 于是烂了近两个月没人发现。超时是让下次能被发现。
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v2
 
-      - run: bun install
-
-      # Auto-sync: only on webhook (repository_dispatch) or scheduled fallback.
-      # Only ZENDESK_SUBDOMAIN is required (the instance host); email/token are
-      # optional — omitted here, so sync runs anonymously (published content is
-      # readable without auth, see scripts/zendesk/client.ts). If anonymous is
-      # ever blocked by Cloudflare, add ZENDESK_EMAIL/ZENDESK_API_TOKEN repo
-      # secrets to the env block below.
-      - name: Sync US content from Zendesk
-        if: github.event_name == 'repository_dispatch' || github.event_name == 'schedule'
-        env:
-          ZENDESK_SUBDOMAIN: longbridgeus
-        run: bun run sync:us
-      - name: Commit synced content
-        if: github.event_name == 'repository_dispatch' || github.event_name == 'schedule'
-        run: |
-          git config user.name "zendesk-sync[bot]"
-          git config user.email "zendesk-sync[bot]@users.noreply.github.com"
-          git add apps/us/docs/en
-          git diff --cached --quiet || { git commit -m "chore(us): sync zendesk content"; git push; }
+      # frozen:lockfile 与 package.json 不一致时直接失败,不静默改写
+      - run: bun install --frozen-lockfile
 
       # 三个 region app 各自独立构建(monorepo:apps/hk apps/sg apps/us,
       # 共享层在 packages/shared)。每个 app base=/{region}/,产物合并后
@@ -79,6 +65,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    # 同理:deploy 卡住也会占住 group:pages 拖垮后续 run
+    timeout-minutes: 15
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
