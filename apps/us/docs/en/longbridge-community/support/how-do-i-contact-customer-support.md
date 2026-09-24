@@ -2,8 +2,8 @@
 title: 'How do I contact customer support?'
 zendesk_article_id: 17350120095503
 zendesk_section_id: 14925844023183
-zendesk_updated_at: '2026-09-08T09:42:26Z'
-zendesk_edited_at: '2026-09-08T09:42:26Z'
+zendesk_updated_at: '2026-09-10T05:57:08Z'
+zendesk_edited_at: '2026-09-10T05:57:08Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17350120095503-How-do-I-contact-customer-support'
 promoted: true
 position: 0
@@ -18,7 +18,7 @@ If your question needs a detailed explanation, or involves specific information 
 
 If you'd like an immediate answer, you can chat with our support team in real time during service hours.
 
--   Service hours: Monday to Friday, 9:00–16:00 ET
+-   Service hours: Monday to Friday, 9:00am - 6:00pm ET
 
 -   How to start a chat: Tap your profile picture in the top-left corner > **Contact us** > **Chat live with us**
 

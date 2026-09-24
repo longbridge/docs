@@ -1,9 +1,9 @@
 ---
-title: 'How to transfer assets out of your Longbridge account?'
+title: How to transfer assets out of your Longbridge account
 zendesk_article_id: 16303545965327
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-08-25T08:27:18Z'
-zendesk_edited_at: '2026-08-25T08:27:18Z'
+zendesk_updated_at: '2026-09-10T05:51:16Z'
+zendesk_edited_at: '2026-09-10T05:51:16Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303545965327-How-to-transfer-assets-out-of-your-Longbridge-account'
 promoted: true
 position: 0

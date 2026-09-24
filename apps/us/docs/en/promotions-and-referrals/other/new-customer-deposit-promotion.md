@@ -2,10 +2,10 @@
 title: New Customer Deposit Promotion
 zendesk_article_id: 17101738769167
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-09-08T10:00:32Z'
+zendesk_updated_at: '2026-09-24T03:32:33Z'
 zendesk_edited_at: '2026-09-08T10:00:32Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101738769167-New-Customer-Deposit-Promotion'
-promoted: false
+promoted: true
 position: 0
 ---
 # Terms & Conditions

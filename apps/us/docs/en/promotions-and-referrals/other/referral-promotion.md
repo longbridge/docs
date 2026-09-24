@@ -2,10 +2,10 @@
 title: Referral Promotion
 zendesk_article_id: 17101658656271
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-09-09T03:48:29Z'
+zendesk_updated_at: '2026-09-24T03:32:53Z'
 zendesk_edited_at: '2026-09-09T03:48:29Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101658656271-Referral-Promotion'
-promoted: false
+promoted: true
 position: 0
 ---
 ## Longbridge Referral Promotion

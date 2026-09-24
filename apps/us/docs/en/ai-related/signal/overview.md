@@ -9,4 +9,4 @@ zendesk_section_id: 17193236722831
 
 ## Articles
 
-- [What is a Signal](/ai-related/signal/what-is-a-signal)
+- [What is a Signal？](/ai-related/signal/what-is-a-signal)

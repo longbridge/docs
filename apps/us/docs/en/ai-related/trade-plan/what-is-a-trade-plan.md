@@ -1,9 +1,9 @@
 ---
-title: What is a trade plan
+title: What is a trade plan？
 zendesk_article_id: 17161600996367
 zendesk_section_id: 17163436112783
-zendesk_updated_at: '2026-09-08T08:45:41Z'
-zendesk_edited_at: '2026-09-08T08:45:41Z'
+zendesk_updated_at: '2026-09-10T05:54:46Z'
+zendesk_edited_at: '2026-09-10T05:54:45Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17161600996367-What-is-a-trade-plan'
 promoted: true
 position: 0

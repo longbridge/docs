@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC Terms of Service
 zendesk_article_id: 14864594652431
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-09-04T08:35:44Z'
-zendesk_edited_at: '2026-09-04T08:35:44Z'
+zendesk_updated_at: '2026-09-23T02:17:40Z'
+zendesk_edited_at: '2026-09-23T02:17:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864594652431-Long-Bridge-Securities-LLC-Terms-of-Service'
 promoted: false
 position: 4
@@ -66,7 +66,7 @@ THIS SOFTWARE LICENSE, NON-DISCLOSURE AGREEMENT AND LIABILITY WAIVER (the “Agr
 
 The title to Longbridge software and updates shall remain the sole property of Longbridge or its affiliates, including all patents, copyrights, trademarks and other intellectual property rights. You shall not sell, exchange or transfer the Longbridge software to others. You shall not copy, modify, translate, decompile, reverse engineer, disassemble or reduce to a human readable form, or adapt the Longbridge software or use it to create a derivative work, unless authorized in writing by Longbridge (through its Chief Executive Officer or General Counsel). Longbridge is entitled to immediate injunctive relief, without the necessity of establishing irreparable injury, for threatened breaches of these undertakings.
 
-Before you start using our Services, please read these terms of service (“Terms”), the [Longbridge Privacy Policy](https://docs.google.com/document/d/1MMisbEORbKfntlLMbwtfCaNAR1meQL2q/edit?usp=drive_link&ouid=110650433800514858810&rtpof=true&sd=true) and fully understand the contents of each agreement, especially the clauses that limit or exclude our liability. By using or accessing the Longbridge Application software or other Longbridge software, you acknowledge your agreement to these Terms.
+Before you start using our Services, please read these terms of service (“Terms”), the [Longbridge Privacy Policy](/longbridge-community/privacy-policy/long-bridge-securities-llc-privacy-policy) and fully understand the contents of each agreement, especially the clauses that limit or exclude our liability. By using or accessing the Longbridge Application software or other Longbridge software, you acknowledge your agreement to these Terms.
 
 If you have any questions, comments or suggestions regarding the content of these Terms, you may contact us by email at [support@Longbridge.com](mailto:support@Longbridge.com).
 
@@ -146,7 +146,7 @@ v.  emergency situations in which public privacy and security are at risk; and
 
 vi. other situations in which Longbridge determines such disclosure is necessary.
 
-Users can read the [Longbridge Privacy Policy](https://docs.google.com/document/d/1MMisbEORbKfntlLMbwtfCaNAR1meQL2q/edit?usp=drive_link&ouid=110650433800514858810&rtpof=true&sd=true) for more details.
+Users can read the [Longbridge Privacy Policy](/longbridge-community/privacy-policy/long-bridge-securities-llc-privacy-policy) for more details.
 
 B. You accept the Longbridge Privacy Policy ("Longbridge Privacy Policy") and the Longbridge Cookie Policy ("Cookie Policy"), which are posted on Longbridge's website and incorporated herein by reference. You consent to the collection, recording, retention and use of your information as described in the Longbridge Privacy Policy and the Cookie Policy.
 

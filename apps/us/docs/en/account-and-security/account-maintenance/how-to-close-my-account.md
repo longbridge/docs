@@ -2,15 +2,15 @@
 title: How to close my account
 zendesk_article_id: 14925796090767
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-09-08T08:57:19Z'
-zendesk_edited_at: '2026-09-08T08:57:19Z'
+zendesk_updated_at: '2026-09-10T05:48:21Z'
+zendesk_edited_at: '2026-09-10T05:48:21Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14925796090767-How-to-close-my-account'
 promoted: false
 position: 0
 ---
 The following is the operation guide for canceling an account.
 
-Open the Longbridge App > _**Me**_ > _**Help and Customer Service**_, and then contact customer service. When processing your account cancellation, customer service will verify your identity and other information, and confirm your intention to cancel, ensuring the security of your account and property. In addition, customer service will guide and assist you with any necessary pre-operations to ensure your account meets all the cancellation conditions.
+Open the Longbridge App > **Profile Icon > Account > Close account.** You will be prompted to enter your pin and will see the criteria required to close your account on the next screen. You will not be able to close your account until you meet the criteria. Once you meet the criteria, select the "close account" button at the bottom of the screen.
 
 **Notes**
 

@@ -18,4 +18,3 @@ zendesk_section_id: 15933265134991
 - [Understanding Your Portfolio Performance Metrics](/trading-and-investing/trading/understanding-your-portfolio-performance-metrics)
 - [Guide to Basic Market Indicators](/trading-and-investing/trading/guide-to-basic-market-indicators)
 - [Important Information on Penny Stocks](/trading-and-investing/trading/important-information-on-penny-stocks)
-- [Fees & Charges](/trading-and-investing/trading/fees-charges)

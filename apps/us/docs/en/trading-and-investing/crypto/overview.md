@@ -9,6 +9,7 @@ zendesk_section_id: 15003348738319
 
 ## Articles
 
+- [Trade Crypto on Longbridge](/trading-and-investing/crypto/trade-crypto-on-longbridge)
 - [General Crypto Questions](/trading-and-investing/crypto/general-crypto-questions)
 - [Supported Cryptocurrencies](/trading-and-investing/crypto/supported-cryptocurrencies)
 - [Bakkt & Account Basics](/trading-and-investing/crypto/bakkt-account-basics)

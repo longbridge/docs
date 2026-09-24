@@ -2,8 +2,8 @@
 title: How to update my account profile
 zendesk_article_id: 17430126495631
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-09-08T08:55:10Z'
-zendesk_edited_at: '2026-09-08T08:55:09Z'
+zendesk_updated_at: '2026-09-17T03:14:33Z'
+zendesk_edited_at: '2026-09-17T03:14:32Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17430126495631-How-to-update-my-account-profile'
 promoted: true
 position: 0
@@ -36,8 +36,6 @@ The following fields can be updated. Changes will be synced to your account once
 
 -   Phone Number
 
--   Full Name
-
 -   Address
 
 -   Employment Information
@@ -66,14 +64,10 @@ Once submitted, your change request is typically reviewed within 1 business day.
 
 ## FAQs
 
-**Q1: Can I remove my trusted contact?**
-
-No. Due to brokerage system requirements, trusted contacts can be updated but not removed once added.
-
-**Q2: What if my change request is rejected?**
+**Q1: What if my change request is rejected?**
 
 You will receive a notification with the reason for rejection. Please go to _Account Profile_, make the necessary corrections, and resubmit.
 
-**Q3: Can I update my date of birth, SSN, or citizenship online?**
+**Q2: Can I update my name, date of birth, SSN, or citizenship online?**
 
 These fields cannot be updated through the App. Please contact our customer support team for assistance.

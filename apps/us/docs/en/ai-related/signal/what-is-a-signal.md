@@ -1,9 +1,9 @@
 ---
-title: What is a Signal
+title: What is a Signal？
 zendesk_article_id: 17194090857103
 zendesk_section_id: 17193236722831
-zendesk_updated_at: '2026-09-08T08:59:33Z'
-zendesk_edited_at: '2026-09-08T08:59:33Z'
+zendesk_updated_at: '2026-09-10T05:54:25Z'
+zendesk_edited_at: '2026-09-10T05:54:25Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17194090857103-What-is-a-Signal'
 promoted: true
 position: 0

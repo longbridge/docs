@@ -17,3 +17,4 @@ zendesk_section_id: 17465785717135
 - [Day-Trading Risk Disclosure Statement](/longbridge-community/resources/day-trading-risk-disclosure-statement)
 - [Long Bridge Securities LLC  Margin Disclosure Statement](/longbridge-community/resources/long-bridge-securities-llc-margin-disclosure-statement)
 - [Customer Identification Program Notice](/longbridge-community/resources/customer-identification-program-notice)
+- [Fees & Charges](/longbridge-community/resources/fees-charges)

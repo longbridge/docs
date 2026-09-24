@@ -2,10 +2,10 @@
 title: Longbridge Founding Member Program
 zendesk_article_id: 17366908038031
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-09-09T02:21:50Z'
-zendesk_edited_at: '2026-09-08T09:53:59Z'
+zendesk_updated_at: '2026-09-24T03:39:13Z'
+zendesk_edited_at: '2026-09-22T06:03:46Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17366908038031-Longbridge-Founding-Member-Program'
-promoted: true
+promoted: false
 position: 0
 ---
 ## Terms & Conditions
@@ -52,16 +52,12 @@ A continuous 60-calendar-day period beginning on the next calendar day following
 
 ## 4\. How to Participate
 
-[https://longbridge-group.jp.larksuite.com/sync/FOPGdcnj5sYv2zbVJuyjKaSyppg](https://longbridge-group.jp.larksuite.com/sync/FOPGdcnj5sYv2zbVJuyjKaSyppg)
-
-Funding your account is not required to receive Founding Member status or to activate the complimentary Alpha tier benefit described in Section 5.1.
+Funding your account is not required to receive Founding Member Status or to activate the complimentary Alpha tier benefit.
 
 However, customers who choose to fund their account during the Program Period may also be eligible for a deposit reward of up to $1,500 in stock or cryptocurrency under the separate Longbridge New Customer Promotion. To qualify for that reward:
 
 1.  Connect your bank and deposit funds (ACH or wire transfer) or initiate an ACAT transfer.
-
 2.  Complete funding sufficient to qualify for at least one reward tier described in Section 5.3.
-
 3.  Maintain the required Qualified Funding Amount through the applicable Holding Period checkpoint.
 
 Deposits must both be initiated and fully settled during the Program Period to qualify for the New Customer Promotion reward. See Section 5.3 and the full New Customer Promotion Terms and Conditions for complete details.
@@ -75,15 +71,10 @@ Confirmed Founding Members are entitled to the following benefits, subject to th
 Founding Members receive three (3) months of complimentary Max tier access beginning on the date their Founding Member status is confirmed. No deposit is required to activate or maintain this benefit.
 
 -   The Max tier provides access to the full Longbridge feature set, including exclusive product capabilities not available on the Free tier.
-
 -   The retail value of Max tier access is $299.97 per person for the three-month period.
-
 -   Complimentary Max access will be credited to the customer's account upon confirmation of Founding Member status and will appear under My Rewards in the Longbridge app. No additional redemption action is required to activate it.
-
 -   The benefit must be activated within 3 months of the date it is credited. If not activated within that period, the reward will expire automatically and will no longer be available. Expired rewards have no cash value and cannot be reinstated.
-
 -   Upon expiration of the complimentary period, the account will revert to the Free tier unless the customer elects to subscribe to a paid plan.
-
 -   The complimentary Max tier benefit is non-transferable and has no cash value.
 
 ### 5.2 Product Access and Engagement Benefits
