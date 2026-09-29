@@ -3,11 +3,12 @@ import { getCollection, render } from 'astro:content'
 import ArticleLayout from '../layouts/ArticleLayout.astro'
 import CategoryOverview from '../layouts/CategoryOverview.astro'
 import SectionOverview from '../layouts/SectionOverview.astro'
+import { docRoute } from '../lib/nav-core'
 
 export async function getStaticPaths() {
   const entries = await getCollection('docs')
   return entries.map((entry) => ({
-    params: { slug: entry.id },
+    params: { slug: docRoute(entry.id, entry.data.zendesk_article_id) },
     props: { entry },
   }))
 }

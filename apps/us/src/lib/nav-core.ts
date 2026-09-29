@@ -1,5 +1,14 @@
+/**
+ * 文档对外路由 (不含 base、不带前导斜杠)。文章按 Zendesk 文章 ID 定位，分类/小节/文章改名都不影响链接;
+ * 没有文章 ID 的 (分类/小节落地页) 仍用目录路径。路由、导航链接、同步时的正文内链改写都从这里取。
+ */
+export function docRoute(id: string, articleId?: number): string {
+  return articleId != null ? `articles/${articleId}` : id
+}
+
 export interface RawDoc {
   id: string // 'cat/sec/article' | 'cat/overview' | 'cat/sec/overview'
+  articleId?: number
   title: string
   promoted?: boolean
   position?: number
@@ -44,7 +53,7 @@ export function buildNavFromRaw(docs: RawDoc[], orders: Record<string, string[]>
     const [cat, sec, slug] = seg
     const bySec = articles.get(cat) ?? new Map()
     const list = bySec.get(sec) ?? []
-    list.push({ slug, title: d.title, path: `/${cat}/${sec}/${slug}`, promoted: d.promoted ?? false, position: d.position ?? 0, updatedAt: d.updatedAt ?? '' })
+    list.push({ slug, title: d.title, path: '/' + docRoute(d.id, d.articleId), promoted: d.promoted ?? false, position: d.position ?? 0, updatedAt: d.updatedAt ?? '' })
     bySec.set(sec, list); articles.set(cat, bySec)
   }
   const cats: NavCategory[] = []

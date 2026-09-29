@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro'
 import SideTree from '../components/SideTree.astro'
 import Footer from '../components/Footer.astro'
 import { getNav } from '../lib/nav'
+import { docRoute } from '../lib/nav-core'
 import { withBase } from '../lib/paths'
 import { deriveDescription, SITE_ORIGIN, OG_IMAGE } from '../lib/seo'
 import type { CollectionEntry } from 'astro:content'
@@ -44,7 +45,7 @@ const otherRest = otherArticles.filter((a) => !a.promoted)
 const related = [...catArticles, ...otherPromoted, ...otherRest].slice(0, 5)
 
 // ── currentPath for SideTree (needs /us prefix) ───────────────────────────
-const currentPath = withBase('/' + entry.id)
+const currentPath = withBase('/' + docRoute(entry.id, entry.data.zendesk_article_id))
 
 // SEO:每篇独立 meta description(正文首段派生,派生不出回退 BaseLayout 默认简介)
 const description = deriveDescription(entry.body)
