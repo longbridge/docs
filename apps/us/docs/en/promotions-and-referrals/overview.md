@@ -9,4 +9,4 @@ zendesk_category_id: 15003360384015
 
 ## Sections
 
-- [Other](/promotions-and-referrals/other/overview)
+- [Promotions](/promotions-and-referrals/promotions/overview)

@@ -2,11 +2,11 @@
 title: Guide to Basic Market Indicators
 zendesk_article_id: 16581304980495
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-08T08:24:08Z'
+zendesk_updated_at: '2026-09-30T21:17:39Z'
 zendesk_edited_at: '2026-09-08T08:24:08Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16581304980495-Guide-to-Basic-Market-Indicators'
 promoted: true
-position: 0
+position: 4
 ---
 ## 1\. Market capitalization
 

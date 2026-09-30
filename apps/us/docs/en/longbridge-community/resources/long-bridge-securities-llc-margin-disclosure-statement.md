@@ -2,11 +2,11 @@
 title: Long Bridge Securities LLC  Margin Disclosure Statement
 zendesk_article_id: 15051127098639
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-08T09:45:58Z'
+zendesk_updated_at: '2026-09-30T19:11:10Z'
 zendesk_edited_at: '2026-05-29T10:41:20Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051127098639-Long-Bridge-Securities-LLC-Margin-Disclosure-Statement'
 promoted: false
-position: 0
+position: 3
 ---
 This document provides you with basic information about purchasing securities on margin and alerts you to the risks involved with trading securities using margin. Consult customer support at Long Bridge Securities LLC (“Longbridge”, “we” or “us”) regarding any questions or concerns you may have with your margin account.
 

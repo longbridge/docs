@@ -2,11 +2,11 @@
 title: Long Bridge Securities LLC Disclosure of Fractional Share Trading
 zendesk_article_id: 15051252452623
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-08T09:46:09Z'
+zendesk_updated_at: '2026-09-30T19:11:10Z'
 zendesk_edited_at: '2026-05-29T10:35:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051252452623-Long-Bridge-Securities-LLC-Disclosure-of-Fractional-Share-Trading'
 promoted: false
-position: 0
+position: 6
 ---
 In consideration of Apex Clearing Corporation (“Apex”) and Long Bridge Securities LLC (“Longbridge”) allowing me to purchase and sell fractional interests of certain securities (“fractional shares”), I agree, with respect to any Account, whether margin or cash, to the terms in this addendum (“Addendum”) to the Customer Account Agreement (“Agreement”). Unless noted otherwise, capitalized terms have the same meaning here as in the Agreement. In the case of conflict between the Agreement and the Addendum, the terms of the Addendum will control for purposes of the subject matter herein.
 

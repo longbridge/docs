@@ -2,7 +2,7 @@
 title: Order Types
 zendesk_article_id: 17189334721039
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-08T08:24:30Z'
+zendesk_updated_at: '2026-09-30T21:17:39Z'
 zendesk_edited_at: '2026-08-25T08:25:44Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17189334721039-Order-Types'
 promoted: false

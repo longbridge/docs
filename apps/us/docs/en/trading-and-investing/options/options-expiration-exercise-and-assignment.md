@@ -2,11 +2,11 @@
 title: 'Options Expiration, Exercise, and Assignment'
 zendesk_article_id: 17548425965839
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-09T06:07:13Z'
+zendesk_updated_at: '2026-09-30T18:50:51Z'
 zendesk_edited_at: '2026-09-09T06:07:13Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17548425965839-Options-Expiration-Exercise-and-Assignment'
 promoted: false
-position: 0
+position: 3
 ---
 ## Overview
 

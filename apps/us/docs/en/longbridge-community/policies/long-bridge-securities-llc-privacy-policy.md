@@ -2,11 +2,11 @@
 title: Long Bridge Securities LLC Privacy Policy
 zendesk_article_id: 14864729940111
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-09-08T10:03:32Z'
+zendesk_updated_at: '2026-09-30T19:11:27Z'
 zendesk_edited_at: '2026-09-08T10:03:32Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864729940111-Long-Bridge-Securities-LLC-Privacy-Policy'
 promoted: false
-position: 3
+position: 0
 ---
 Long Bridge Securities LLC is a broker-dealer registered with the U.S. Securities and Exchange Commission (“**SEC**”) and member of the Financial Industry Regulatory Authority (“**FINRA**”) and the Securities Investor Protection Corporation (“**SIPC**”) that provides brokerage and trading services, including a mobile trading application, and artificial intelligence-powered financial services to investors. Long Bridge Crypto LLC is a Financial Crimes Enforcement Network (“**FinCEN**”) registered and state licensed money services business. Long Bridge Securities LLC and its affiliates are collectively referred to in this document as “**Longbridge**,” “we,” “our,” or “us.”
 

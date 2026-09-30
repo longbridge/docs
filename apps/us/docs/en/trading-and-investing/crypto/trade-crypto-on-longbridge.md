@@ -2,11 +2,11 @@
 title: Trade Crypto on Longbridge
 zendesk_article_id: 17618730193295
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-15T02:18:55Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-09-15T02:18:55Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17618730193295-Trade-Crypto-on-Longbridge'
 promoted: false
-position: 0
+position: 1
 ---
 ## How to trade crypto in your Bakkt crypto account via the Longbridge Platform？
 

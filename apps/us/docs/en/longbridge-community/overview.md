@@ -12,4 +12,4 @@ zendesk_category_id: 14864532786575
 - [Agreements](/longbridge-community/agreements/overview)
 - [Resources](/longbridge-community/resources/overview)
 - [Support](/longbridge-community/support/overview)
-- [Privacy Policy](/longbridge-community/privacy-policy/overview)
+- [Policies](/longbridge-community/policies/overview)

@@ -2,11 +2,11 @@
 title: 'Day-Trading Risk Disclosure Statement'
 zendesk_article_id: 15051111638415
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-08T09:47:40Z'
-zendesk_edited_at: '2026-08-25T08:40:28Z'
+zendesk_updated_at: '2026-09-30T21:25:40Z'
+zendesk_edited_at: '2026-09-30T21:25:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051111638415-Day-Trading-Risk-Disclosure-Statement'
 promoted: false
-position: 0
+position: 8
 ---
 You should consider the following points before engaging in a day-trading strategy. For purposes of this notice, a "day-trading strategy" means an overall trading strategy characterized by the regular transmission by a customer of intra-day orders to effect both purchase and sale transactions in the same security or securities.
 
@@ -24,6 +24,12 @@ $16 and an average of 29 transactions are conducted per day, an investor would n
 
 **Day trading on margin or short selling may result in losses beyond your initial investment.** When you day trade with funds borrowed from a firm or someone else, you can lose more than the funds you originally placed at risk. A decline in the value of the securities that are purchased may require you to provide additional funds to the firm to avoid the forced sale of those securities or other securities in your account. Short selling as part of your day-trading strategy also may lead to extraordinary losses, because you may have to purchase a stock at a very high price in order to cover a short position.
 
-**Day Trading may result in increased Minimum Equity Requirements in your account.** Pattern day trading (“PDT”) occurs when Customer initiates four (4) or more day trades within five business days. If Customer places a fourth day trade in a five (5) business day period, the Broker will mark the account as a “PDT”. The customer will be required to maintain minimum equity in the account of $25,000. If the account falls below the $25,000 requirement, the pattern day trader will not be permitted to day trade until the account is restored to the $25,000 minimum equity level. Certain systems may prevent customers from breaching the PDT threshold in equity trading. Options customers can also become flagged as PDT and will be subject to the above requirements.
+**Margin Requirements for Day Trading.** As of June 4, 2026, FINRA no longer uses the "pattern day trader" designation, and the $25,000 minimum equity requirement for day traders no longer applies. Day trades are no longer counted toward any limit.
+
+Instead, day trading in a margin account is governed by intraday margin requirements. Here's what that means for you:
+
+-   Your intraday buying power is based on your account's real-time margin excess, not on a fixed multiple of the previous day's balance.
+-   If a trade during the day leaves your account short of the required margin, Longbridge will follow standard procedures found in the margin agreement.
+-   Longbridge may set its own requirements that are stricter than FINRA's minimums.
 
 **Potential Registration Requirements.** Persons providing investment advice for others or managing securities accounts for others may need to register either as an "Investment Adviser" under the Investment Advisers Act of 1940 or as a "Broker" or "Dealer" under the Securities Exchange Act of 1934. Such activities may also trigger state registration requirements.

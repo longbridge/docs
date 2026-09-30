@@ -2,11 +2,11 @@
 title: Guide to the Option Price Calculator
 zendesk_article_id: 16581088897423
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-08T07:59:24Z'
+zendesk_updated_at: '2026-09-30T18:50:51Z'
 zendesk_edited_at: '2026-09-08T07:59:23Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16581088897423-Guide-to-the-Option-Price-Calculator'
 promoted: false
-position: 0
+position: 6
 ---
 Option prices are influenced by three key factors: underlying security price, time to expiration, and implied volatility. The option price calculator allows you to input predictive parameters to calculate the reference price and break even point of an option, helping you assess price rationality, profit potential, and risk ranges in directional trade and arbitrage strategies.
 

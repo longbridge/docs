@@ -2,11 +2,11 @@
 title: Customer Identification Program Notice
 zendesk_article_id: 15050348171151
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-08T09:45:33Z'
+zendesk_updated_at: '2026-09-30T19:11:10Z'
 zendesk_edited_at: '2026-05-29T10:36:05Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15050348171151-Customer-Identification-Program-Notice'
 promoted: false
-position: 0
+position: 2
 ---
 Important Notice About Opening an Account
 

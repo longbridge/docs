@@ -1,11 +1,12 @@
 [
-  "trading-fees",
-  "overnight-trading",
+  "order-types",
   "order-execution",
   "fractional-shares",
-  "otc-trading-and-pink-sheets",
-  "order-types",
   "understanding-your-portfolio-performance-metrics",
   "guide-to-basic-market-indicators",
-  "important-information-on-penny-stocks"
+  "overnight-trading",
+  "otc-trading-and-pink-sheets",
+  "impact-on-long-term-orders",
+  "important-information-on-penny-stocks",
+  "trading-fees"
 ]

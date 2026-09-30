@@ -2,11 +2,11 @@
 title: 'Bakkt & Account Basics'
 zendesk_article_id: 15329403717519
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-08T09:03:57Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-09-08T09:03:57Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15329403717519-Bakkt-Account-Basics'
 promoted: false
-position: 0
+position: 3
 labels:
   - key_lbus_trading_investing_crypto_trading_001
 ---

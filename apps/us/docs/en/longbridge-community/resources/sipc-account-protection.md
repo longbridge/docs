@@ -2,7 +2,7 @@
 title: SIPC Account Protection
 zendesk_article_id: 15051221917583
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-08T09:45:14Z'
+zendesk_updated_at: '2026-09-30T19:11:10Z'
 zendesk_edited_at: '2026-05-29T10:41:39Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051221917583-SIPC-Account-Protection'
 promoted: false

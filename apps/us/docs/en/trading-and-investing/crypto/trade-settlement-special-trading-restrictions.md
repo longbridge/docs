@@ -2,7 +2,7 @@
 title: 'Trade Settlement & Special Trading Restrictions'
 zendesk_article_id: 15330340547343
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-08T08:33:47Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-08-21T02:52:35Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330340547343-Trade-Settlement-Special-Trading-Restrictions'
 promoted: false

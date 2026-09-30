@@ -2,11 +2,11 @@
 title: Supported Cryptocurrencies
 zendesk_article_id: 17161631950863
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-30T01:59:04Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-09-30T01:59:04Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17161631950863-Supported-Cryptocurrencies'
 promoted: true
-position: 0
+position: 2
 ---
 Bakkt offers a wide variety of cryptocurrencies in the United States. The most up-to-date list is as follows:
 [https://bakkt.readme.io/page/supported-assets](https://bakkt.readme.io/page/supported-assets)

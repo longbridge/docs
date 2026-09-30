@@ -2,7 +2,7 @@
 title: General Crypto Questions
 zendesk_article_id: 17545174481167
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-09T02:30:23Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-09-09T02:30:23Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17545174481167-General-Crypto-Questions'
 promoted: false

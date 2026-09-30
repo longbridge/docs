@@ -2,11 +2,11 @@
 title: 'Fees & Charges'
 zendesk_article_id: 15016098154767
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-14T03:05:28Z'
+zendesk_updated_at: '2026-09-30T19:11:10Z'
 zendesk_edited_at: '2026-09-14T03:05:28Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15016098154767-Fees-Charges'
 promoted: false
-position: 0
+position: 1
 ---
 This Fee Schedule describes fees and charges that may apply to brokerage accounts offered by Longbridge Securities, LLC ("Longbridge," "we," "us," or "our"). Not all fees apply to every account or transaction. Certain fees are charged by third parties, including regulators, exchanges, or our clearing broker, and may be passed through to customers.
 

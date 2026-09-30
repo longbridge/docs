@@ -2,7 +2,7 @@
 title: 'Crypto Asset Storage & Cross-Account Transfers'
 zendesk_article_id: 15330342024975
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-08T08:35:49Z'
+zendesk_updated_at: '2026-09-30T18:51:38Z'
 zendesk_edited_at: '2026-09-08T08:35:49Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330342024975-Crypto-Asset-Storage-Cross-Account-Transfers'
 promoted: false
