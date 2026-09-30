@@ -109,6 +109,9 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
     '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>'
 
   function showHistory() {
+    // 面板不再显示任何查询的结果，必须清掉 lastQuery:否则 run() 的去重会把"再次输入同一个词"
+    // 当成结果已在屏上而直接跳过 (关闭后点按钮重开 → 粘贴同一个词 → 一直停在最近浏览)
+    lastQuery = ''
     const list = readHistory()
     if (!list.length) { showHint('Type to search articles...'); return }
 
@@ -179,7 +182,7 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
   // 叠加自家防抖只会让用户多等一截 (之前 250 + 300 = 550ms 才开始查)
   function trigger() {
     const q = modalInput!.value.trim()
-    if (!q) { lastQuery = ''; showHistory(); return }
+    if (!q) { showHistory(); return }
     run(q)
   }
 
