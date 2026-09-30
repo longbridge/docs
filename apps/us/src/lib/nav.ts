@@ -29,7 +29,7 @@ export async function getNav(): Promise<NavCategory[]> {
   if (cache) return cache
   const entries = await getCollection('docs')
   const raw: RawDoc[] = entries.map((e) => ({
-    id: e.id, title: e.data.title, promoted: e.data.promoted,
+    id: e.id, articleId: e.data.zendesk_article_id, title: e.data.title, promoted: e.data.promoted,
     position: e.data.position, updatedAt: e.data.zendesk_updated_at,
   }))
   const catOrder = loadCategoryOrder()

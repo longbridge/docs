@@ -1,0 +1,25 @@
+---
+// 已对外投放的旧三段式文章地址 → 跳到 /articles/{id}。映射与取舍见 src/data/legacy-article-paths.ts。
+import { getCollection } from 'astro:content'
+import LegacyRedirect from '../components/LegacyRedirect.astro'
+import { LEGACY_ARTICLE_PATHS } from '../data/legacy-article-paths'
+import { docRoute } from '../lib/nav-core'
+import { withBase } from '../lib/paths'
+
+export async function getStaticPaths() {
+  const entries = await getCollection('docs')
+  const live = new Set(entries.map((e) => e.data.zendesk_article_id))
+  // 与 [...slug].astro 生成的真实页面撞路径的不生成,真实页面优先
+  const taken = new Set(entries.map((e) => docRoute(e.id, e.data.zendesk_article_id)))
+  return Object.entries(LEGACY_ARTICLE_PATHS)
+    .filter(([path, id]) => live.has(id) && !taken.has(path))
+    .map(([path, id]) => ({
+      params: { legacy: path },
+      props: { to: withBase('/' + docRoute(path, id)) },
+    }))
+}
+
+const { to } = Astro.props
+---
+
+<LegacyRedirect to={to} />

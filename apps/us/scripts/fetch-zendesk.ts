@@ -29,6 +29,7 @@ import {
 } from './zendesk/writer'
 import { ARTICLE_FILTER, CONTENT_ROOT, ID_BLOCKLIST, LOCALES_TO_PULL, LOCALE_TO_FS } from './zendesk.config'
 import type { Article, Category, Section } from './zendesk/types'
+import { docRoute } from '../src/lib/nav-core'
 
 dotenv.config({ path: '.env.local' })
 
@@ -144,7 +145,7 @@ async function syncLocale(client: ZendeskClient, zdLocale: string, fsLocale: str
     catSlug: string
     secSlug: string
     artSlug: string
-    docsPath: string // {/fsLocale}/{cat}/{sec}/{art} (无 .md;fsLocale=en 时省略段;/us/ 前缀由 VitePress base 提供，md 里不写)
+    docsPath: string // 正文内链目标 {/fsLocale}/articles/{id},规则见 src/lib/nav-core.ts docRoute(base 由 rehype-base-links 补)
   }
   const articlePathById = new Map<number, ArticlePath>()
   const urlLocaleSegment = fsLocale === 'en' ? '' : `/${fsLocale}`
@@ -160,7 +161,7 @@ async function syncLocale(client: ZendeskClient, zdLocale: string, fsLocale: str
       catSlug,
       secSlug,
       artSlug,
-      docsPath: `${urlLocaleSegment}/${catSlug}/${secSlug}/${artSlug}`,
+      docsPath: `${urlLocaleSegment}/${docRoute(`${catSlug}/${secSlug}/${artSlug}`, a.id)}`,
     })
   }
 
