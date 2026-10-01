@@ -9,4 +9,4 @@ zendesk_section_id: 15003308456591
 
 ## Articles
 
-- [How to transfer assets out of my Longbridge account](/deposits-withdrawals-and-transfers/deposits/how-to-transfer-assets-out-of-my-longbridge-account)
+- [How to Deposit Funds](/deposits-withdrawals-and-transfers/deposits/how-to-deposit-funds)

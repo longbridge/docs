@@ -9,4 +9,5 @@ zendesk_category_id: 15003284808975
 
 ## Sections
 
+- [Deposits](/deposits-withdrawals-and-transfers/deposits/overview)
 - [Transfers](/deposits-withdrawals-and-transfers/transfers/overview)

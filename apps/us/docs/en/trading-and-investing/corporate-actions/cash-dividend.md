@@ -2,7 +2,7 @@
 title: Cash Dividend
 zendesk_article_id: 17635620108431
 zendesk_section_id: 17635807026575
-zendesk_updated_at: '2026-09-16T02:55:13Z'
+zendesk_updated_at: '2026-10-01T18:00:26Z'
 zendesk_edited_at: '2026-09-16T02:55:13Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17635620108431-Cash-Dividend'
 promoted: false

@@ -17,3 +17,4 @@ Why didn’t I receive my SMS verification code?
 - [How to Identify and Avoid Scams](/account-and-security/login-and-security/how-to-identify-and-avoid-scams)
 - [Why didn’t I receive my SMS verification code?](/account-and-security/login-and-security/why-didn-t-i-receive-my-sms-verification-code)
 - [What is multi-factor authentication and why do I need to use it?](/account-and-security/login-and-security/what-is-multi-factor-authentication-and-why-do-i-need-to-use-it)
+- [Anti-Fraud Statements & FAQs](/account-and-security/login-and-security/anti-fraud-statements-faqs)

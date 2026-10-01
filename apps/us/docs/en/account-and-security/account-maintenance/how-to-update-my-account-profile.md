@@ -2,7 +2,7 @@
 title: How to update my account profile
 zendesk_article_id: 17430126495631
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-09-30T21:25:19Z'
+zendesk_updated_at: '2026-10-01T18:32:24Z'
 zendesk_edited_at: '2026-09-30T21:25:19Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17430126495631-How-to-update-my-account-profile'
 promoted: true

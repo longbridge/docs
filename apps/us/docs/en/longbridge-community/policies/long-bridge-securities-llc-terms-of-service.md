@@ -2,7 +2,7 @@
 title: Long Bridge Securities LLC Terms of Service
 zendesk_article_id: 14864594652431
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-09-30T19:11:27Z'
+zendesk_updated_at: '2026-10-01T18:02:17Z'
 zendesk_edited_at: '2026-09-23T02:17:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864594652431-Long-Bridge-Securities-LLC-Terms-of-Service'
 promoted: false

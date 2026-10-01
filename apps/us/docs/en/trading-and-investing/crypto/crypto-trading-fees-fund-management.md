@@ -2,8 +2,8 @@
 title: 'Crypto Trading Fees & Fund Management'
 zendesk_article_id: 15330268876687
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-30T18:51:38Z'
-zendesk_edited_at: '2026-09-08T08:32:43Z'
+zendesk_updated_at: '2026-10-01T21:15:27Z'
+zendesk_edited_at: '2026-10-01T21:08:43Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330268876687-Crypto-Trading-Fees-Fund-Management'
 promoted: true
 position: 7
@@ -16,7 +16,7 @@ _Crypto services on the Longbridge Platform are provided by Bakkt Crypto Solutio
 
 When you submit an order to buy or sell cryptocurrency on your Bakkt crypto account via the Longbridge platform, that order is sent to Bakkt for execution.
 
-Bakkt charges a **0.5% trading fee** based on the dollar value of per trade executed.  (Defmond notes: 0.5% as a placeholder. Exact % is to be finalized.)
+Bakkt charges a **0.75% trading fee** based on the dollar value of per trade executed.
 
 ## How do I fund my Bakkt crypto account?
 

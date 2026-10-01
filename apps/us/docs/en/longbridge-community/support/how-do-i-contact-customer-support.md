@@ -2,19 +2,15 @@
 title: 'How do I contact customer support?'
 zendesk_article_id: 17350120095503
 zendesk_section_id: 14925844023183
-zendesk_updated_at: '2026-09-10T05:57:08Z'
-zendesk_edited_at: '2026-09-10T05:57:08Z'
+zendesk_updated_at: '2026-10-01T17:16:09Z'
+zendesk_edited_at: '2026-10-01T17:16:08Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17350120095503-How-do-I-contact-customer-support'
 promoted: true
 position: 0
 ---
 If you run into a problem or need help with your account, trading, or app features, our customer support team is here to help. We offer several ways to reach us, so you can choose the one that fits your situation:
 
-## Email (recommended for detailed questions)
-
-If your question needs a detailed explanation, or involves specific information relating to your account, email is the best option. Send an email to [support@longbridge.com](mailto:support@longbridge.com) and describe the problem as clearly as you can. Screenshots help us look into it faster. We'll reply and follow up as soon as possible.
-
-## Live chat (real-time)
+## Live chat
 
 If you'd like an immediate answer, you can chat with our support team in real time during service hours.
 
@@ -24,7 +20,11 @@ If you'd like an immediate answer, you can chat with our support team in real ti
 
 If you start a chat outside service hours, we'll reply on the next business day.
 
-## Self-service (available anytime)
+## Email
+
+If your question needs a detailed explanation, or involves specific information relating to your account, email is the best option. Send an email to [support@longbridge.com](mailto:support@longbridge.com) and describe the problem as clearly as you can. Screenshots help us look into it faster. We'll reply and follow up as soon as possible.
+
+## Self-service
 
 Many common questions are already answered in the Help Center. Tap your profile picture in the top-left corner > **Help Center**, then search by keyword to find the article you need.
 

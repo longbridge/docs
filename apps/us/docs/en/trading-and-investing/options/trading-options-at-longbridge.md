@@ -1,10 +1,10 @@
 ---
-title: Trade Options at Longbridge
+title: Trading Options at Longbridge
 zendesk_article_id: 17216963278863
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-30T18:50:51Z'
-zendesk_edited_at: '2026-09-08T07:50:36Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17216963278863-Trade-Options-at-Longbridge'
+zendesk_updated_at: '2026-10-01T18:30:43Z'
+zendesk_edited_at: '2026-10-01T18:30:43Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17216963278863-Trading-Options-at-Longbridge'
 promoted: false
 position: 1
 ---
