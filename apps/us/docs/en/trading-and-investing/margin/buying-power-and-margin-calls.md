@@ -2,11 +2,11 @@
 title: Buying Power and Margin Calls
 zendesk_article_id: 15164525272079
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-09-30T18:49:37Z'
+zendesk_updated_at: '2026-10-02T16:59:39Z'
 zendesk_edited_at: '2026-09-08T09:26:00Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15164525272079-Buying-Power-and-Margin-Calls'
 promoted: false
-position: 2
+position: 3
 ---
 ## <span style="font-family: Arial;">Buying power</span> 
 

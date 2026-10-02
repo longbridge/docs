@@ -1,12 +1,12 @@
 ---
-title: How to transfer assets out of your Longbridge account
+title: How to Transfer Assets out of my Longbridge Account
 zendesk_article_id: 16303545965327
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-01T18:33:32Z'
-zendesk_edited_at: '2026-10-01T15:14:52Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303545965327-How-to-transfer-assets-out-of-your-Longbridge-account'
+zendesk_updated_at: '2026-10-02T17:03:35Z'
+zendesk_edited_at: '2026-10-02T17:03:35Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303545965327-How-to-Transfer-Assets-out-of-my-Longbridge-Account'
 promoted: true
-position: 0
+position: 1
 ---
 The _Transfer Assets Out_ feature allows you to move eligible positions from your Longbridge account to an account at another brokerage firm. Because this is a brokerage-to-brokerage transfer, your cost basis is preserved.
 

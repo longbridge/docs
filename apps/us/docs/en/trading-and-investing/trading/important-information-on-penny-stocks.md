@@ -2,11 +2,11 @@
 title: Important Information on Penny Stocks
 zendesk_article_id: 15051240646927
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-30T21:17:39Z'
+zendesk_updated_at: '2026-10-02T19:47:26Z'
 zendesk_edited_at: '2026-09-08T09:06:04Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051240646927-Important-Information-on-Penny-Stocks'
 promoted: false
-position: 8
+position: 12
 ---
 **This statement is required by the U.S. Securities and Exchange Commission (SEC) and contains important information on penny stocks. You are urged to read it before making a purchase or sale.**
 

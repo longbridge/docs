@@ -2,11 +2,11 @@
 title: SIPC Account Protection
 zendesk_article_id: 15051221917583
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-30T19:11:10Z'
+zendesk_updated_at: '2026-10-02T20:17:29Z'
 zendesk_edited_at: '2026-05-29T10:41:39Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051221917583-SIPC-Account-Protection'
 promoted: false
-position: 0
+position: 2
 ---
 The Longbridge Trading App is operated by Long Bridge Securities LLC, a United States (“U.S.”) Securities and Exchange Commission (“SEC”) registered broker-dealer and member of the Financial Industry Regulatory Authority, Inc. (“FINRA”) and the Securities Investor Protection Corporation (“SIPC”).
 

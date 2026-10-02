@@ -2,7 +2,7 @@
 title: 'Who Can Open an Account and What Information Do I need to Provide?'
 zendesk_article_id: 15945456855567
 zendesk_section_id: 17382922631055
-zendesk_updated_at: '2026-10-01T16:58:32Z'
+zendesk_updated_at: '2026-10-02T16:56:57Z'
 zendesk_edited_at: '2026-04-29T05:50:51Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15945456855567-Who-Can-Open-an-Account-and-What-Information-Do-I-need-to-Provide'
 promoted: false

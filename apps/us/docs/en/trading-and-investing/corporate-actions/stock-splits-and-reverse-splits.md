@@ -2,11 +2,11 @@
 title: Stock Splits and Reverse Splits
 zendesk_article_id: 17635987378319
 zendesk_section_id: 17635807026575
-zendesk_updated_at: '2026-10-01T18:00:06Z'
+zendesk_updated_at: '2026-10-02T16:57:39Z'
 zendesk_edited_at: '2026-09-16T02:54:41Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17635987378319-Stock-Splits-and-Reverse-Splits'
 promoted: false
-position: 0
+position: 2
 ---
 ## What is a stock split?
 

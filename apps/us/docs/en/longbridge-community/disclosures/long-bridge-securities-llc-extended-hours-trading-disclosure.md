@@ -1,8 +1,8 @@
 ---
 title: Long Bridge Securities LLC Extended Hours Trading Disclosure
 zendesk_article_id: 15051128883087
-zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-30T19:11:10Z'
+zendesk_section_id: 17847459221391
+zendesk_updated_at: '2026-10-02T20:16:57Z'
 zendesk_edited_at: '2026-05-29T10:41:11Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051128883087-Long-Bridge-Securities-LLC-Extended-Hours-Trading-Disclosure'
 promoted: false

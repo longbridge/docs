@@ -2,11 +2,11 @@
 title: Crypto Tax Reporting
 zendesk_article_id: 15330314073615
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-09-30T18:51:38Z'
+zendesk_updated_at: '2026-10-02T16:57:49Z'
 zendesk_edited_at: '2026-09-08T08:37:42Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330314073615-Crypto-Tax-Reporting'
 promoted: false
-position: 8
+position: 7
 ---
 _Crypto services on the Longbridge Platform are provided by Bakkt Crypto Solutions_
 

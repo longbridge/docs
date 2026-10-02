@@ -2,11 +2,11 @@
 title: How to Transfer Crypto assets out of my Longbridge Account
 zendesk_article_id: 16703966079759
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-09-10T05:52:06Z'
+zendesk_updated_at: '2026-10-02T17:00:04Z'
 zendesk_edited_at: '2026-09-10T05:52:06Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703966079759-How-to-Transfer-Crypto-assets-out-of-my-Longbridge-Account'
 promoted: true
-position: 0
+position: 2
 ---
 Transfer supported tokens from your Longbridge account to an external wallet by following the steps below.
 

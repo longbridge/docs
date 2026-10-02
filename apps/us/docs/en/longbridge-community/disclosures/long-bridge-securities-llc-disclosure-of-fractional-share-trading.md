@@ -1,9 +1,9 @@
 ---
 title: Long Bridge Securities LLC Disclosure of Fractional Share Trading
 zendesk_article_id: 15051252452623
-zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-30T19:11:10Z'
-zendesk_edited_at: '2026-05-29T10:35:40Z'
+zendesk_section_id: 17847459221391
+zendesk_updated_at: '2026-10-02T20:16:49Z'
+zendesk_edited_at: '2026-10-02T20:16:49Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051252452623-Long-Bridge-Securities-LLC-Disclosure-of-Fractional-Share-Trading'
 promoted: false
 position: 6

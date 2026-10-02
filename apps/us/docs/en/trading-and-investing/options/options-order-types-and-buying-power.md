@@ -2,11 +2,11 @@
 title: Options Order Types and Buying Power
 zendesk_article_id: 17545998948111
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-30T18:50:51Z'
+zendesk_updated_at: '2026-10-02T19:15:01Z'
 zendesk_edited_at: '2026-09-09T03:30:03Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17545998948111-Options-Order-Types-and-Buying-Power'
 promoted: false
-position: 2
+position: 6
 ---
 ## Market vs. Limit Orders for Options
 

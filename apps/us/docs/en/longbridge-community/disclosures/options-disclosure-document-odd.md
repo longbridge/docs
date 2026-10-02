@@ -1,8 +1,8 @@
 ---
 title: Options Disclosure Document (ODD)
 zendesk_article_id: 15145821160591
-zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-09-30T19:11:10Z'
+zendesk_section_id: 17847459221391
+zendesk_updated_at: '2026-10-02T20:16:38Z'
 zendesk_edited_at: '2026-02-10T12:35:56Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15145821160591-Options-Disclosure-Document-ODD'
 promoted: false

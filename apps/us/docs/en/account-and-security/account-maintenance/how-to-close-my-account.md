@@ -2,11 +2,11 @@
 title: How to close my account
 zendesk_article_id: 14925796090767
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-09-30T19:04:31Z'
+zendesk_updated_at: '2026-10-02T19:37:12Z'
 zendesk_edited_at: '2026-09-10T05:48:21Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14925796090767-How-to-close-my-account'
 promoted: false
-position: 0
+position: 1
 ---
 The following is the operation guide for canceling an account.
 

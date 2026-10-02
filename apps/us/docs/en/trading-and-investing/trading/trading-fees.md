@@ -2,11 +2,11 @@
 title: Trading Fees
 zendesk_article_id: 17546085527055
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-30T21:17:39Z'
+zendesk_updated_at: '2026-10-02T19:47:26Z'
 zendesk_edited_at: '2026-09-09T03:35:32Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17546085527055-Trading-Fees'
 promoted: false
-position: 9
+position: 1
 ---
 ## What fees apply when trading US stocks, ETFs, and options?
 

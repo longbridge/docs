@@ -2,11 +2,11 @@
 title: Rights Issue
 zendesk_article_id: 17636058603151
 zendesk_section_id: 17635807026575
-zendesk_updated_at: '2026-10-01T17:59:35Z'
+zendesk_updated_at: '2026-10-02T16:57:39Z'
 zendesk_edited_at: '2026-09-16T02:54:13Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17636058603151-Rights-Issue'
 promoted: false
-position: 0
+position: 3
 ---
 ## What is a rights issue?
 

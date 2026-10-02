@@ -2,11 +2,11 @@
 title: Margin Trading
 zendesk_article_id: 15956099297551
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-10-01T18:35:08Z'
+zendesk_updated_at: '2026-10-02T16:59:39Z'
 zendesk_edited_at: '2026-10-01T18:35:08Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15956099297551-Margin-Trading'
 promoted: false
-position: 0
+position: 1
 ---
 ## **Overview**
 

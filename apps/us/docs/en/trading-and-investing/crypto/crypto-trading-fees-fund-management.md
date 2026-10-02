@@ -2,11 +2,11 @@
 title: 'Crypto Trading Fees & Fund Management'
 zendesk_article_id: 15330268876687
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-10-01T21:15:27Z'
+zendesk_updated_at: '2026-10-02T16:57:49Z'
 zendesk_edited_at: '2026-10-01T21:08:43Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330268876687-Crypto-Trading-Fees-Fund-Management'
 promoted: true
-position: 7
+position: 6
 labels:
   - key_lbus_trading_investing_crypto_trading_004
 ---

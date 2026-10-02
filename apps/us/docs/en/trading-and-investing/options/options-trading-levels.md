@@ -2,11 +2,11 @@
 title: Options Trading Levels
 zendesk_article_id: 17175462170639
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-30T18:50:51Z'
+zendesk_updated_at: '2026-10-02T19:15:01Z'
 zendesk_edited_at: '2026-09-08T07:52:06Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17175462170639-Options-Trading-Levels'
 promoted: true
-position: 4
+position: 8
 ---
 ## Overview
 

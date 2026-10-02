@@ -2,11 +2,11 @@
 title: 'Long-term Orders'
 zendesk_article_id: 17636127476367
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-01T18:31:45Z'
+zendesk_updated_at: '2026-10-02T19:47:26Z'
 zendesk_edited_at: '2026-10-01T18:31:45Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17636127476367-Long-term-Orders'
 promoted: false
-position: 7
+position: 14
 ---
 ## What is a long-term order?
 

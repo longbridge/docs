@@ -2,11 +2,11 @@
 title: Guide to Index Options
 zendesk_article_id: 16581190476815
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-09-30T18:50:51Z'
+zendesk_updated_at: '2026-10-02T19:15:01Z'
 zendesk_edited_at: '2026-08-27T02:52:43Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16581190476815-Guide-to-Index-Options'
 promoted: true
-position: 5
+position: 9
 ---
 ## Concept of index option contracts
 

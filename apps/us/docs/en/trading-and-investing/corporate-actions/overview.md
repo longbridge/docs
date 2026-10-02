@@ -9,7 +9,7 @@ zendesk_section_id: 17635807026575
 
 ## Articles
 
-- [Rights Issue](/trading-and-investing/corporate-actions/rights-issue)
-- [Stock Splits and Reverse Splits](/trading-and-investing/corporate-actions/stock-splits-and-reverse-splits)
-- [Stock Dividend](/trading-and-investing/corporate-actions/stock-dividend)
 - [Cash Dividend](/trading-and-investing/corporate-actions/cash-dividend)
+- [Stock Dividend](/trading-and-investing/corporate-actions/stock-dividend)
+- [Stock Splits and Reverse Splits](/trading-and-investing/corporate-actions/stock-splits-and-reverse-splits)
+- [Rights Issue](/trading-and-investing/corporate-actions/rights-issue)

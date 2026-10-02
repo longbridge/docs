@@ -1,8 +1,8 @@
 ---
 title: 'Day-Trading Risk Disclosure Statement'
 zendesk_article_id: 15051111638415
-zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-10-01T18:33:02Z'
+zendesk_section_id: 17847459221391
+zendesk_updated_at: '2026-10-02T20:17:04Z'
 zendesk_edited_at: '2026-09-30T21:25:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051111638415-Day-Trading-Risk-Disclosure-Statement'
 promoted: false

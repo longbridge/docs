@@ -1,8 +1,8 @@
 ---
 title: Long Bridge Securities LLC  Order Routing and Payment for Order Flow Information
 zendesk_article_id: 15051165024527
-zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-10-01T18:01:20Z'
+zendesk_section_id: 17847459221391
+zendesk_updated_at: '2026-10-02T20:17:26Z'
 zendesk_edited_at: '2026-09-17T02:33:31Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051165024527-Long-Bridge-Securities-LLC-Order-Routing-and-Payment-for-Order-Flow-Information'
 promoted: false

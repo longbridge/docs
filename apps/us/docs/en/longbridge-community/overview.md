@@ -9,6 +9,7 @@ zendesk_category_id: 14864532786575
 
 ## Sections
 
+- [Disclosures](/longbridge-community/disclosures/overview)
 - [Agreements](/longbridge-community/agreements/overview)
 - [Resources](/longbridge-community/resources/overview)
 - [Support](/longbridge-community/support/overview)

@@ -2,11 +2,11 @@
 title: OTC Trading and Pink Sheets
 zendesk_article_id: 17350000553103
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-30T21:17:39Z'
+zendesk_updated_at: '2026-10-02T19:47:26Z'
 zendesk_edited_at: '2026-08-28T09:37:19Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17350000553103-OTC-Trading-and-Pink-Sheets'
 promoted: false
-position: 6
+position: 11
 ---
 ## What is OTC trading？
 

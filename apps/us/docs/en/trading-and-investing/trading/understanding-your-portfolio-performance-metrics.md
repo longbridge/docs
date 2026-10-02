@@ -2,11 +2,11 @@
 title: Understanding Your Portfolio Performance Metrics
 zendesk_article_id: 17163717058063
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-09-30T21:17:39Z'
+zendesk_updated_at: '2026-10-02T19:47:26Z'
 zendesk_edited_at: '2026-09-08T08:50:22Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17163717058063-Understanding-Your-Portfolio-Performance-Metrics'
 promoted: true
-position: 3
+position: 10
 ---
 Longbridge provides multiple ways to measure your portfolio's performance. This article explains how each metric is calculated and when to use them.
 

@@ -2,11 +2,11 @@
 title: 'Crypto Trade Settlement & Special Trading Restrictions'
 zendesk_article_id: 15330340547343
 zendesk_section_id: 15003348738319
-zendesk_updated_at: '2026-10-01T21:17:12Z'
+zendesk_updated_at: '2026-10-02T16:57:49Z'
 zendesk_edited_at: '2026-10-01T21:17:12Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15330340547343-Crypto-Trade-Settlement-Special-Trading-Restrictions'
 promoted: false
-position: 4
+position: 3
 ---
 _Crypto services on the Longbridge Platform are provided by Bakkt Crypto Solutions_
 

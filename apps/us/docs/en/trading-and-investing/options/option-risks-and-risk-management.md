@@ -2,7 +2,7 @@
 title: Option Risks and Risk Management
 zendesk_article_id: 17604890353423
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-10-01T17:57:46Z'
+zendesk_updated_at: '2026-10-02T19:15:01Z'
 zendesk_edited_at: '2026-09-14T02:42:28Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17604890353423-Option-Risks-and-Risk-Management'
 promoted: false

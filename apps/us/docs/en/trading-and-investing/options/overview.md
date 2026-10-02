@@ -10,10 +10,11 @@ zendesk_section_id: 15003353810063
 ## Articles
 
 - [Option Risks and Risk Management](/trading-and-investing/options/option-risks-and-risk-management)
+- [Options Overview](/trading-and-investing/options/options-overview)
+- [Trading Options at Longbridge](/trading-and-investing/options/trading-options-at-longbridge)
 - [Options FAQ](/trading-and-investing/options/options-faq)
 - [Options Chain](/trading-and-investing/options/options-chain)
 - [Options Strategies](/trading-and-investing/options/options-strategies)
-- [Trading Options at Longbridge](/trading-and-investing/options/trading-options-at-longbridge)
 - [Options Order Types and Buying Power](/trading-and-investing/options/options-order-types-and-buying-power)
 - [Options Expiration, Exercise, and Assignment](/trading-and-investing/options/options-expiration-exercise-and-assignment)
 - [Options Trading Levels](/trading-and-investing/options/options-trading-levels)

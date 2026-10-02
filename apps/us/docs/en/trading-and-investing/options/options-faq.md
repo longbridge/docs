@@ -2,11 +2,11 @@
 title: Options FAQ
 zendesk_article_id: 15956993709583
 zendesk_section_id: 15003353810063
-zendesk_updated_at: '2026-10-01T18:36:35Z'
+zendesk_updated_at: '2026-10-02T19:15:01Z'
 zendesk_edited_at: '2026-04-29T06:22:51Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15956993709583-Options-FAQ'
 promoted: false
-position: 0
+position: 3
 ---
 ## **Can I settle a short call option with underlying shares?**
 

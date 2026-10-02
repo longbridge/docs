@@ -2,11 +2,11 @@
 title: Stock Dividend
 zendesk_article_id: 17635855443727
 zendesk_section_id: 17635807026575
-zendesk_updated_at: '2026-10-01T18:00:54Z'
+zendesk_updated_at: '2026-10-02T16:57:39Z'
 zendesk_edited_at: '2026-09-16T03:04:14Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17635855443727-Stock-Dividend'
 promoted: false
-position: 0
+position: 1
 ---
 ## **What are stock Dividends?**
 
