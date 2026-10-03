@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC Terms of Service
 zendesk_article_id: 14864594652431
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-10-01T18:02:17Z'
-zendesk_edited_at: '2026-09-23T02:17:40Z'
+zendesk_updated_at: '2026-10-03T07:23:14Z'
+zendesk_edited_at: '2026-10-03T07:23:14Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864594652431-Long-Bridge-Securities-LLC-Terms-of-Service'
 promoted: false
 position: 1
@@ -68,7 +68,7 @@ The title to Longbridge software and updates shall remain the sole property of L
 
 Before you start using our Services, please read these terms of service (“Terms”), the [Longbridge Privacy Policy](/articles/14864729940111) and fully understand the contents of each agreement, especially the clauses that limit or exclude our liability. By using or accessing the Longbridge Application software or other Longbridge software, you acknowledge your agreement to these Terms.
 
-If you have any questions, comments or suggestions regarding the content of these Terms, you may contact us by email at [support@Longbridge.com](mailto:support@Longbridge.com).
+If you have any questions, comments or suggestions regarding the content of these Terms, you may contact us by email at **support@longbridge.com**.
 
 ## **1.** **Data Access and Registration**
 

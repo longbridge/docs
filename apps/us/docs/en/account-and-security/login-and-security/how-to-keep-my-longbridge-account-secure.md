@@ -2,8 +2,8 @@
 title: How to keep my Longbridge account secure
 zendesk_article_id: 17289179856911
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-09-08T08:50:40Z'
-zendesk_edited_at: '2026-09-08T08:50:24Z'
+zendesk_updated_at: '2026-10-03T07:19:13Z'
+zendesk_edited_at: '2026-10-03T07:19:13Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17289179856911-How-to-keep-my-Longbridge-account-secure'
 promoted: true
 position: 0
@@ -58,4 +58,4 @@ Review your account activity and statements regularly. If you notice a login, tr
 
 -   Review your account for any unfamiliar activity or setting changes.
 
--   Contact our customer support team as soon as possible at [support@longbridge.com](mailto:support@longbridge.com) or through the Longbridge app.
+-   Contact our customer support team as soon as possible at **support@longbridge.com** or through the Longbridge app.

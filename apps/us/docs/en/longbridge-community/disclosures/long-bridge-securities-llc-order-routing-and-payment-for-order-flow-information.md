@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC  Order Routing and Payment for Order Flow Information
 zendesk_article_id: 15051165024527
 zendesk_section_id: 17847459221391
-zendesk_updated_at: '2026-10-02T20:17:26Z'
-zendesk_edited_at: '2026-09-17T02:33:31Z'
+zendesk_updated_at: '2026-10-03T07:20:52Z'
+zendesk_edited_at: '2026-10-03T07:20:52Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15051165024527-Long-Bridge-Securities-LLC-Order-Routing-and-Payment-for-Order-Flow-Information'
 promoted: false
 position: 4
@@ -28,7 +28,7 @@ Pursuant to federal securities regulation, firms are required to make publicly a
 
 SEC Rule 606(b) also requires broker-dealers to disclose to its customers, upon request, “the identity of the venue to which the customer’s orders were routed for execution in the six months prior to the request, whether the orders were directed orders or non-directed orders, and the time of the transactions, if any, that resulted from such orders.”
 
-U.S. Securities and Exchange Commission rules require all brokerage firms to make publicly available quarterly reports describing their order routing practices. Longbridge quarterly order routing reports are available on the FINRA website at [finra.org/finra-data/606-nms-data](https://www.finra.org/finra-data/606-nms-data). In addition to the basic quarterly reports, under Rule 606 of SEC Regulation NMS, a broker-dealer is required upon a client request to provide information regarding the identity of the market center to which the client's orders were routed in the six months prior to the request; whether the order was a directed or non-directed order, and the time of the transaction, if any, that resulted from such order. Please contact [support@longbridge.com](mailto:support@longbridge.com) if you wish to receive the foregoing routing information for any order(s) within the past six months. Please type "Request for Order Routing Information" in the subject line of your request and please include your name, user id and account number as well as the date of the order, the security, the quantity, and any other information necessary to identify the order (e.g., the time of day if there were several similar orders that day.)
+U.S. Securities and Exchange Commission rules require all brokerage firms to make publicly available quarterly reports describing their order routing practices. Longbridge quarterly order routing reports are available on the FINRA website at [finra.org/finra-data/606-nms-data](https://www.finra.org/finra-data/606-nms-data). In addition to the basic quarterly reports, under Rule 606 of SEC Regulation NMS, a broker-dealer is required upon a client request to provide information regarding the identity of the market center to which the client's orders were routed in the six months prior to the request; whether the order was a directed or non-directed order, and the time of the transaction, if any, that resulted from such order. Please contact **support@longbridge.com** if you wish to receive the foregoing routing information for any order(s) within the past six months. Please type "Request for Order Routing Information" in the subject line of your request and please include your name, user id and account number as well as the date of the order, the security, the quantity, and any other information necessary to identify the order (e.g., the time of day if there were several similar orders that day.)
 
 ## PAYMENT FOR ORDER FLOW DISCLOSURE
 

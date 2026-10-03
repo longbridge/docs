@@ -2,8 +2,8 @@
 title: How to Identify and Avoid Scams
 zendesk_article_id: 17175344044943
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-10-01T18:02:45Z'
-zendesk_edited_at: '2026-09-28T03:07:58Z'
+zendesk_updated_at: '2026-10-03T07:19:56Z'
+zendesk_edited_at: '2026-10-03T07:19:56Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17175344044943-How-to-Identify-and-Avoid-Scams'
 promoted: true
 position: 0
@@ -34,4 +34,4 @@ Scammers may impersonate legitimate companies using fake email addresses and loo
 
 -   **Do not** click on any suspicious links or open unexpected attachments.
 
--   Reach out directly to Longbridge support at [support@longbridge.com](mailto:support@longbridge.com) or through the Longbridge app to verify any communication you believe did not come from our team.
+-   Reach out directly to Longbridge support at **support@longbridge.com** or through the Longbridge app to verify any communication you believe did not come from our team.
