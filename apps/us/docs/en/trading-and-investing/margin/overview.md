@@ -11,5 +11,4 @@ zendesk_section_id: 15933265672975
 
 - [Margin Trading](/trading-and-investing/margin/margin-trading)
 - [Margin Requirements and Buying Power](/trading-and-investing/margin/margin-requirements-and-buying-power)
-- [Buying Power and Margin Calls](/trading-and-investing/margin/buying-power-and-margin-calls)
 - [Enable or Disable Margin Trading](/trading-and-investing/margin/enable-or-disable-margin-trading)

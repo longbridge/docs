@@ -13,6 +13,7 @@ zendesk_section_id: 15933265134991
 - [Trading Fees](/trading-and-investing/trading/trading-fees)
 - [Order Types](/trading-and-investing/trading/order-types)
 - [Profit/Loss](/trading-and-investing/trading/profit-loss)
+- [Understanding Buying Power and Margin Call](/trading-and-investing/trading/understanding-buying-power-and-margin-call)
 - [Fractional Shares](/trading-and-investing/trading/fractional-shares)
 - [What is Fully Paid Securities Lending (FPSL)?](/trading-and-investing/trading/what-is-fully-paid-securities-lending-fpsl)
 - [Short Selling](/trading-and-investing/trading/short-selling)
