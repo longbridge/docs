@@ -5,13 +5,27 @@ interface Props {
   isHome?: boolean
 }
 const { isHome = false } = Astro.props
+
+// Fees & Charges 的 PDF 还没给,拿到后按文档顺序插在 Form CRS 和 BCP 之间
+const FOOTER_LINKS = [
+  { label: 'BrokerCheck', href: 'https://brokercheck.finra.org/' },
+  { label: 'Form CRS', href: 'https://assets.lbkrs.com/uploads/51d37842-0dc1-42f0-bf24-fe36c7da20e3/LBS-Form-CRS-final-.pdf' },
+  { label: 'Business Continuity Plan', href: 'https://assets.lbkrs.com/uploads/dd20724a-f3d6-4ca5-a94c-61ff1ab9d691/BCP-Disclosure-final-.pdf' },
+]
 ---
 
 <footer class:list={["lb-footer", { "lb-footer--home": isHome }]}>
   <div class="lb-footer__main">
     <div class="lb-footer__brand">
       <p class="lb-footer__tagline">Explore. Inspire. Trade.</p>
-      <p class="lb-footer__meta">Member FINRA / SIPC · © 2026 Long Bridge Securities LLC.</p>
+      <p class="lb-footer__meta">
+        Member FINRA / <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer">SIPC</a> · © 2026 Long Bridge Securities LLC.
+      </p>
+      <ul class="lb-footer__links">
+        {FOOTER_LINKS.map((l) => (
+          <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+        ))}
+      </ul>
     </div>
     <a href={withBase('/')} class="lb-footer__logo-link" aria-label="Longbridge Home">
       <!-- 与 header / 线上 footer 同款 logo:浅色主题深墨,深色主题浅墨 -->
@@ -39,8 +53,7 @@ const { isHome = false } = Astro.props
   <div class="lb-footer__divider" role="presentation"></div>
 
   <p class="lb-footer__disclaimer">
-    This communication is for informational purposes only and is not investment advice, a recommendation, or an offer or solicitation to buy or sell any security or crypto asset. Investing involves risk, including possible loss of principal. AI-generated content may be incomplete or inaccurate and should not be relied upon as the sole basis for any investment decision. Cryptocurrency is not protected by SIPC. Promotional offers are subject to eligibility requirements, deposit requirements, limitations, and terms and conditions. Additional information about Long Bridge Securities available through FINRA BrokerCheck at{' '}
-    <a href="https://brokercheck.finra.org" target="_blank" rel="noopener noreferrer">brokercheck.finra.org</a>.
+    This communication is for informational purposes only and is not investment advice, a recommendation, or an offer or solicitation to buy or sell any security or crypto asset. Investing involves risk, including possible loss of principal. AI-generated content may be incomplete or inaccurate and should not be relied upon as the sole basis for any investment decision. Cryptocurrency is not protected by SIPC. Promotional offers are subject to eligibility requirements, deposit requirements, limitations, and terms and conditions.
   </p>
   <p class="lb-footer__disclaimer lb-footer__disclaimer--affiliate">
     Longbridge AI Technologies LLC is an affiliated technology company of Long Bridge Securities LLC and provides software, platform, and technology services that support the Longbridge investing experience. It is not a broker-dealer and does not provide securities brokerage services.
