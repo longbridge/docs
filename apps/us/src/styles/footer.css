@@ -127,12 +127,30 @@ html[theme="dark"] .lb-footer__logo--dark,
 .lb-footer__disclaimer--affiliate {
   margin-top: 14px;
 }
-.lb-footer__disclaimer a {
+.lb-footer__meta a,
+.lb-footer__links a {
   color: var(--muted-foreground);
   text-decoration: underline;
 }
-.lb-footer__disclaimer a:hover {
+.lb-footer__meta a:hover,
+.lb-footer__links a:hover {
   color: var(--accent-teal);
+}
+
+/* 文档链接列表：一行排开，窄屏整项换行。不用 · 分隔：换行后行首会挂一个孤立的点 */
+.lb-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted-foreground);
+}
+.lb-footer__links li {
+  margin-right: 16px;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
