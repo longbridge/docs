@@ -2,17 +2,17 @@
 title: 'How to deposit funds?'
 zendesk_article_id: 16303076614671
 zendesk_section_id: 15003308456591
-zendesk_updated_at: '2026-10-03T04:05:52Z'
-zendesk_edited_at: '2026-10-03T04:05:51Z'
+zendesk_updated_at: '2026-10-05T16:30:55Z'
+zendesk_edited_at: '2026-10-05T16:30:54Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303076614671-How-to-deposit-funds'
 promoted: false
 position: 0
 ---
-You can fund your Longbridge account using ACH bank transfer (free, up to USD 50,000/day) or wire transfer (fees may apply). This article walks you through both methods step by step.
+You can fund your Longbridge account using ACH bank transfer (free, up to $50,000/day) or wire transfer (fees may apply). This article walks you through both methods step by step.
 
 **Deposit Limits at a Glance**
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="159;309;217"><colgroup><col style="width: 23%;"> <col style="width: 45%;"> <col style="width: 32%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>ACH</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Wire</strong></div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Daily limit</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>$50,000.00</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>None</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Processing time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Up to 5 business days</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Depends on your bank</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Fee</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Free (returned deposits incur a USD 30 fee)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Bank fees may apply</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Limit reset time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>16:00 ET each business day</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>N/A</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="159;309;217"><colgroup><col style="width: 23%;"> <col style="width: 45%;"> <col style="width: 32%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>ACH</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Wire</strong></div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Daily limit</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>$50,000.00</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>None</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Processing time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Up to 5 business days</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Depends on your bank</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Fee</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Free (returned deposits incur a $30 fee)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Bank fees may apply</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Limit reset time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>16:00 ET each business day</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>N/A</div></td></tr></tbody></table>
 
 **Method 1: ACH Deposit (Recommended)**
 
@@ -22,10 +22,10 @@ ACH transfers are free and the easiest way to deposit. You must have at least on
 
 1.  Tap _Transfers_ on the home screen, then tap _Deposit_.
 2.  On the _How would you like to deposit?_ screen, tap _ACH_.
-3.  Enter the amount you wish to deposit. The minimum is USD 0.01 and the maximum is your remaining daily limit.
+3.  Enter the amount you wish to deposit. The minimum is $0.01 and the maximum is your remaining daily limit.
 4.  Check the _From_ field below the amount. This shows your currently selected bank account. Tap it to switch to a different linked ACH account if needed.
 5.  After a valid amount has been entered, tap _Next_.
-6.  Review the summary screen — it shows your deposit amount and the source bank account. Please note that returned ACH deposits may be subject to a USD 30 fee.
+6.  Review the summary screen — it shows your deposit amount and the source bank account. Please note that returned ACH deposits may be subject to a $30 fee.
 7.  Tap _Deposit now_ to submit.
 
 Once submitted, you will see a confirmation screen showing:
@@ -40,7 +40,7 @@ Tap _OK_ to return to the _Transfers_ page.
 
 **Understanding Your Daily Limit**
 
-Your daily ACH deposit limit is USD 50,000, calculated based on all ACH deposits you submitted that day that are in progress or completed.
+Your daily ACH deposit limit is $50,000, calculated based on all ACH deposits you submitted that day that are in progress or completed.
 
 -   Deposits submitted on non-working days count toward the next working day's limit.
 -   The limit resets every business day at 16:00 ET.
@@ -65,10 +65,10 @@ Wire deposits are initiated on your end — either through your bank's online pl
 
 You can cancel an ACH deposit while it is still in progress.
 
-5.  Go to _Transfers_ > _Transfer history_.
-6.  Tap the deposit record you want to cancel.
-7.  On the detail page, tap _Cancel deposit_.
-8.  Tap _Yes, cancel_ to confirm. The deposit will be withdrawn and the page will refresh.
+1.  Go to _Transfers_ > _Transfer history_.
+2.  Tap the deposit record you want to cancel.
+3.  On the detail page, tap _Cancel deposit_.
+4.  Tap _Yes, cancel_ to confirm. The deposit will be withdrawn and the page will refresh.
 
 <table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="778"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Note</strong></div><div>Deposits that have already been completed, rejected, or returned cannot be canceled. If cancellation is no longer available, you will see a message explaining the current status.</div></td></tr></tbody></table>
 
@@ -85,7 +85,7 @@ Please note:
 
 **Q2: What happens if my deposit is returned?**
 
-Returned deposits will appear as _Returned_ in your _Transfer history_, and a USD 30 return fee may be charged. The returned amount will be reflected as a fee on the deposit detail page.
+Returned deposits will appear as _Returned_ in your _Transfer history_, and a $30 return fee may be charged. The returned amount will be reflected as a fee on the deposit detail page.
 
 **Q3: Why was my deposit rejected?**
 

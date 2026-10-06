@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC Cookie Policy
 zendesk_article_id: 14864745184399
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-10-02T21:38:49Z'
-zendesk_edited_at: '2026-10-02T21:38:49Z'
+zendesk_updated_at: '2026-10-05T20:13:23Z'
+zendesk_edited_at: '2026-10-05T20:13:22Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864745184399-Long-Bridge-Securities-LLC-Cookie-Policy'
 promoted: false
 position: 2
@@ -38,6 +38,6 @@ These cookies and web beacons may be set throughout the Longbridge website by it
 
 ## Managing Your Cookie Preferences
 
-You have many choices with regards to the management of cookies on your computer. All major browsers allow you to block or delete cookies from your system. However, if you do decide to disable cookies you may not be able to access some areas of the Longbridge website, or the website may not function incorrectly correctly. To learn more about your ability to manage cookies and web beacons and how to disable them, please consult the privacy features in your browser or visit [www.allaboutcookies.org](http://www.allaboutcookies.org).
+You have many choices with regards to the management of cookies on your computer. All major browsers allow you to block or delete cookies from your system. However, if you do decide to disable cookies you may not be able to access some areas of the Longbridge website, or the website may not function incorrectly correctly. To learn more about your ability to manage cookies and web beacons and how to disable them, please consult the privacy features in your browser or visit [www.allaboutcookies.org](https://allaboutcookies.org/).
 
 Any website links to third-party websites may also use cookies and web beacons over which we have no control. We recommend that you check the relevant third parties’ privacy policy for information about any cookies and web beacons that they may use.

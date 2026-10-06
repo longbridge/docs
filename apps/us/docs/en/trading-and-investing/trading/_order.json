@@ -1,4 +1,5 @@
 [
+  "instant-buying-power",
   "trading-rules",
   "trading-fees",
   "order-types",
@@ -9,11 +10,9 @@
   "short-selling",
   "overnight-trading",
   "what-are-unsettled-funds",
-  "order-execution",
   "understanding-your-portfolio-performance-metrics",
   "otc-trading-and-pink-sheets",
   "important-information-on-penny-stocks",
-  "guide-to-basic-market-indicators",
   "long-term-orders",
   "pre-market-and-post-market-quotes-introduction"
 ]

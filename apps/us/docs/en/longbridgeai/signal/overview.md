@@ -9,4 +9,5 @@ zendesk_section_id: 17193236722831
 
 ## Articles
 
+- [Catalyst Introduction](/longbridgeai/signal/catalyst-introduction)
 - [What is a Signal？](/longbridgeai/signal/what-is-a-signal)

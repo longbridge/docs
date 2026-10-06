@@ -2,8 +2,8 @@
 title: Margin Trading
 zendesk_article_id: 15956099297551
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-10-02T16:59:39Z'
-zendesk_edited_at: '2026-10-01T18:35:08Z'
+zendesk_updated_at: '2026-10-05T20:20:17Z'
+zendesk_edited_at: '2026-10-05T20:20:17Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15956099297551-Margin-Trading'
 promoted: false
 position: 1
@@ -18,7 +18,7 @@ A margin enabled account allows a trader/investor to use their account’s holdi
 
 ## **Rules Based Margin**
 
-Longbridge allows customers to trade on margin using the rules set forth by FINRA Rule 4210 and Regulation T. These rules establish the initial and maintenance requirements for various securities and security types and ensure compliance with industry standards. ([Margin Account](https://longbridgeus.zendesk.com/hc/en-us/articles/15949178284815-Margin-vs-Cash-Account-Differences-and-Requirements)s must have equity of $2,000 to utilize margin leverage)
+Longbridge allows customers to trade on margin using the rules set forth by FINRA Rule 4210 and Regulation T. These rules establish the initial and maintenance requirements for various securities and security types and ensure compliance with industry standards. ([Margin Accounts](/articles/17366581905807) must have equity of $2,000 to utilize margin leverage)
 
 Regulation T requires that customers provide a minimum of 50% of the initial capital required for a new purchase. This means that a purchase of XYZ stock of $10,000 would require $5,000 be provided by the customer and the other $5,000 be borrowed (and subject to interest) from the brokerage firm.
 
