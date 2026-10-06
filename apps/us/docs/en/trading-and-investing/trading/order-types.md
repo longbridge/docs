@@ -2,11 +2,11 @@
 title: Order Types
 zendesk_article_id: 17189334721039
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-02T19:47:26Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-08-25T08:25:44Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17189334721039-Order-Types'
 promoted: false
-position: 2
+position: 3
 ---
 When trading US stocks, investors can choose from different order types depending on their trading strategy, price expectations, and risk tolerance. Below is an overview of the main order types supported.
 

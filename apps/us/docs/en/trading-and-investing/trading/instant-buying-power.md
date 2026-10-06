@@ -2,11 +2,11 @@
 title: Instant Buying Power
 zendesk_article_id: 17877868710415
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-06T02:28:21Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-10-06T02:28:21Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17877868710415-Instant-Buying-Power'
 promoted: false
-position: 0
+position: 5
 ---
 ## What is Instant Buying Power?
 

@@ -2,11 +2,11 @@
 title: 'What is Fully Paid Securities Lending (FPSL)?'
 zendesk_article_id: 17088780416783
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-02T19:47:26Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-08-27T02:43:56Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17088780416783-What-is-Fully-Paid-Securities-Lending-FPSL'
 promoted: true
-position: 5
+position: 8
 ---
 Fully Paid Securities Lending (FPSL) allows eligible securities that you fully own to be loaned to qualified borrowers in exchange for potential lending income. If your shares are in demand, they may be loaned through the program and you may receive a portion of the revenue generated from the loan.
 

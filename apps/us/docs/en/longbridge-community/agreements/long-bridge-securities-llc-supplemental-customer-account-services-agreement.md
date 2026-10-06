@@ -1,9 +1,9 @@
 ---
 title: Long Bridge Securities LLC Supplemental Customer Account Services Agreement
 zendesk_article_id: 17853211477775
-zendesk_section_id: 17847459221391
-zendesk_updated_at: '2026-10-03T08:29:34Z'
-zendesk_edited_at: '2026-10-03T08:29:34Z'
+zendesk_section_id: 17536565108879
+zendesk_updated_at: '2026-10-06T16:38:38Z'
+zendesk_edited_at: '2026-10-06T16:38:38Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17853211477775-Long-Bridge-Securities-LLC-Supplemental-Customer-Account-Services-Agreement'
 promoted: false
 position: 0

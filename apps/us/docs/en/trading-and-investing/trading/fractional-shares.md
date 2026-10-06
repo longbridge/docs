@@ -2,11 +2,11 @@
 title: Fractional Shares
 zendesk_article_id: 17350062144143
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-02T19:47:26Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-09-08T09:00:52Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17350062144143-Fractional-Shares'
 promoted: false
-position: 4
+position: 7
 ---
 ## What is fractional share trading?
 

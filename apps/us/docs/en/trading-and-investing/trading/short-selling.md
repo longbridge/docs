@@ -2,11 +2,11 @@
 title: Short Selling
 zendesk_article_id: 15955974465295
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-02T19:47:26Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-10-01T16:43:50Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15955974465295-Short-Selling'
 promoted: false
-position: 6
+position: 9
 ---
 ## **What is short selling?**
 

@@ -2,11 +2,11 @@
 title: Understanding Buying Power and Margin Call
 zendesk_article_id: 15164525272079
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-03T04:20:25Z'
+zendesk_updated_at: '2026-10-06T17:51:44Z'
 zendesk_edited_at: '2026-10-03T04:20:25Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15164525272079-Understanding-Buying-Power-and-Margin-Call'
 promoted: false
-position: 3
+position: 6
 ---
 ## Buying power
 

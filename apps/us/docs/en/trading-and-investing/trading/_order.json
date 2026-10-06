@@ -1,18 +1,22 @@
 [
-  "instant-buying-power",
+  "trade-stocks-etfs-on-longbridge",
   "trading-rules",
   "trading-fees",
   "order-types",
   "profit-loss",
+  "instant-buying-power",
   "understanding-buying-power-and-margin-call",
   "fractional-shares",
   "what-is-fully-paid-securities-lending-fpsl",
   "short-selling",
   "overnight-trading",
   "what-are-unsettled-funds",
+  "order-execution",
   "understanding-your-portfolio-performance-metrics",
   "otc-trading-and-pink-sheets",
   "important-information-on-penny-stocks",
+  "guide-to-basic-market-indicators",
   "long-term-orders",
-  "pre-market-and-post-market-quotes-introduction"
+  "pre-market-and-post-market-quotes-introduction",
+  "introduction-to-market-data"
 ]
