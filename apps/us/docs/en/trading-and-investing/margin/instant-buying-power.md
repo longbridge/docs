@@ -2,26 +2,24 @@
 title: Instant Buying Power
 zendesk_article_id: 17877853160591
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-10-05T19:03:23Z'
-zendesk_edited_at: '2026-10-05T19:03:23Z'
+zendesk_updated_at: '2026-10-06T02:28:21Z'
+zendesk_edited_at: '2026-10-06T02:28:20Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17877853160591-Instant-Buying-Power'
 promoted: false
 position: 0
 ---
-# What is Instant Buying Power?
+## What is Instant Buying Power?
 
 Instant Buying Power lets you start trading stocks as soon as you submit an ACH deposit, up to $1,000, without waiting for the deposit to be reviewed and posted to your account.
 
 ACH deposits usually take until the next business day to post. Instant Buying Power bridges that gap: it gives you temporary buying power while your deposit is pending, and it's replaced by your full deposit amount in cash once the deposit posts. **Important:** Instant Buying Power is not cash and is provided before your ACH deposit has been successfully completed. If your deposit is rejected or returned after you use Instant Buying Power, you remain responsible for any resulting losses or account deficiency.
 
-## **How it works**
+## How it works
 
 Your Instant Buying Power equals the total of your pending ACH deposits, up to a limit of $1,000.
 
 1.  **You submit an ACH deposit.** Instant Buying Power is added to your stock buying power right away, while the deposit is still pending.
-
 2.  **Your deposit is reviewed.** Deposits are typically reviewed and posted by the next business day.
-
 3.  **Your deposit posts.** The full deposit amount is credited to your account as cash, and the Instant Buying Power for that deposit is removed at the same time. Your buying power doesn't drop during this switch.
 
 ## Where to see it
@@ -44,7 +42,7 @@ For example, you deposit $600 and then $700. Your Instant Buying Power is $1,000
 
 Instant Buying Power can only be used to trade stocks. Once your deposit posts, the cash from that deposit can be used like any other cash in your account.
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="180;300;300"><colgroup><col style="width: 16.44%;"> <col style="width: 40.4%;"> <col style="width: 43.16%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>While your deposit is pending (Instant Buying Power)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After your deposit posts (cash)</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade stocks</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade options</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade crypto</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After 5 business days</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Margin leverage</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No, it's added to your buying power dollar for dollar</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes, under standard margin requirements</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Withdraw</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After 5 business days</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="180;300;300"><colgroup><col style="width: 16%;"> <col style="width: 40%;"> <col style="width: 44%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>While your deposit is pending (Instant Buying Power)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After your deposit posts (cash)</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade stocks</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade options</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Trade crypto</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After 5 business days</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Margin leverage</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No, it's added to your buying power dollar for dollar</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Yes, under standard margin requirements</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Withdraw</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>After 5 business days</div></td></tr></tbody></table>
 
 Instant Buying Power isn't cash. It doesn't change your account balance or equity, and it can't be withdrawn.
 
@@ -55,9 +53,7 @@ You get Instant Buying Power automatically when you make an eligible deposit. Th
 A deposit is eligible when:
 
 -   It's an ACH deposit from a bank account linked through Plaid.
-
 -   Your account is in good standing, with no restrictions.
-
 -   Your account hasn't lost Instant Buying Power access because of previous failed or returned deposits.
 
 These deposits don't receive Instant Buying Power:
@@ -73,7 +69,6 @@ If your deposit doesn't go through, the Instant Buying Power for it is removed. 
 A deposit can fail at two points:
 
 -   **Rejected before it posts.** The Instant Buying Power for that deposit is removed immediately.
-
 -   **Returned after it posts.** Your bank can reverse an ACH deposit days later, for example because of insufficient funds. The deposited cash is removed from your account, which may leave a negative cash balance.
 
 In either case, you're responsible for any losses and any negative balance. We may cover them using other funds in your account.

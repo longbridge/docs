@@ -2,8 +2,8 @@
 title: 'How to deposit funds?'
 zendesk_article_id: 16303076614671
 zendesk_section_id: 15003308456591
-zendesk_updated_at: '2026-10-05T16:30:55Z'
-zendesk_edited_at: '2026-10-05T16:30:54Z'
+zendesk_updated_at: '2026-10-06T02:33:19Z'
+zendesk_edited_at: '2026-10-06T02:33:19Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303076614671-How-to-deposit-funds'
 promoted: false
 position: 0
@@ -76,7 +76,7 @@ You can cancel an ACH deposit while it is still in progress.
 
 **Q1: How long does an ACH deposit take?**
 
-ACH deposits are typically credited to your account by the next business day (T+1). Once your deposit is successful, you'll receive instant buying power, so you can start trading right away. Learn more about Instant Buying Power. You'll see an estimated completion date on the confirmation screen after submitting.
+ACH deposits are typically credited to your account by the next business day (T+1). Once your deposit is successful, you'll receive instant buying power, so you can start trading right away. Learn more about [**Instant Buying Power**](/articles/17877868710415). You'll see an estimated completion date on the confirmation screen after submitting.
 
 Please note:
 
