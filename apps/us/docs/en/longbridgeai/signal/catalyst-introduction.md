@@ -2,11 +2,11 @@
 title: Catalyst Introduction
 zendesk_article_id: 17877921347855
 zendesk_section_id: 17193236722831
-zendesk_updated_at: '2026-10-05T19:12:22Z'
+zendesk_updated_at: '2026-10-06T19:28:18Z'
 zendesk_edited_at: '2026-10-05T19:12:22Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17877921347855-Catalyst-Introduction'
 promoted: false
-position: 0
+position: 1
 ---
 # What is a Catalyst? 
 

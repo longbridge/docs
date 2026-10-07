@@ -1,9 +1,9 @@
 ---
 title: Monthly Statements
 zendesk_article_id: 17850770429711
-zendesk_section_id: 15003351858319
-zendesk_updated_at: '2026-10-03T03:31:04Z'
-zendesk_edited_at: '2026-10-03T03:31:04Z'
+zendesk_section_id: 17893318725519
+zendesk_updated_at: '2026-10-06T19:29:50Z'
+zendesk_edited_at: '2026-10-06T19:29:50Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850770429711-Monthly-Statements'
 promoted: false
 position: 0

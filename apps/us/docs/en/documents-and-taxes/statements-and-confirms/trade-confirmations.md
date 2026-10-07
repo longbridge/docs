@@ -1,9 +1,9 @@
 ---
 title: Trade Confirmations
 zendesk_article_id: 17850758407951
-zendesk_section_id: 15003351858319
-zendesk_updated_at: '2026-10-03T03:25:35Z'
-zendesk_edited_at: '2026-10-03T03:25:35Z'
+zendesk_section_id: 17893318725519
+zendesk_updated_at: '2026-10-06T19:29:56Z'
+zendesk_edited_at: '2026-10-06T19:29:56Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850758407951-Trade-Confirmations'
 promoted: false
 position: 0

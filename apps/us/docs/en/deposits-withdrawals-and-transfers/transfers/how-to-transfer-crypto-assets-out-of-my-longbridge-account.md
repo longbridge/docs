@@ -2,8 +2,8 @@
 title: How to Transfer Crypto assets out of my Longbridge Account
 zendesk_article_id: 16703966079759
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-02T17:00:04Z'
-zendesk_edited_at: '2026-09-10T05:52:06Z'
+zendesk_updated_at: '2026-10-06T18:38:05Z'
+zendesk_edited_at: '2026-10-06T18:38:05Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703966079759-How-to-Transfer-Crypto-assets-out-of-my-Longbridge-Account'
 promoted: true
 position: 2
@@ -16,9 +16,9 @@ Transfer supported tokens from your Longbridge account to an external wallet by 
 
 -   Have your destination wallet address ready — you can paste it or scan a QR code.
 
--   Withdrawals are subject to a daily limit of USD 5,000, shared across all crypto tokens. This limit resets daily at 20:00 ET. Check your remaining limit before submitting.
+-   Withdrawals are subject to a daily limit of $5,000, shared across all crypto tokens. This limit resets daily at 20:00 ET. Check your remaining limit before submitting.
 
--   Withdrawals equivalent to USD 3,000 or more require Travel Rule verification (see Step 6).
+-   Withdrawals equivalent to $3,000 or more require Travel Rule verification (see Step 6).
 
 **Step 1: Open Crypto Transfer**
 
@@ -82,7 +82,7 @@ Once all fields are completed correctly, tap _Next_. The system will validate yo
 
 -   If the address is valid, a confirmation pop-up will appear.
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="414"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Note</strong></div><div>For withdrawals of USD 3,000 or more, the system verifies the address at this stage. If verification fails, correct the address or contact customer support.</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="414"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Note</strong></div><div>For withdrawals of $3,000 or more, the system verifies the address at this stage. If verification fails, correct the address or contact customer support.</div></td></tr></tbody></table>
 
 **Step 5: Review and Confirm**
 
@@ -96,9 +96,9 @@ All amounts are shown in both the crypto token denomination and USD equivalent.
 
 Once you have reviewed everything, tap _Submit_.
 
-**Step 6: Travel Rule Verification (USD 3,000+ only)**
+**Step 6: Travel Rule Verification ($3,000+ only)**
 
-If your withdrawal is equivalent to USD 3,000 or more, you must complete _Travel Rule verification_ before your request can be submitted.
+If your withdrawal is equivalent to $3,000 or more, you must complete _Travel Rule verification_ before your request can be submitted.
 
 **Question: Is the receiving wallet self-hosted (e.g., your own hardware or software wallet)?**
 
@@ -174,4 +174,4 @@ No. Longbridge only supports withdrawals to wallets you own. Transfers to third-
 
 Q6: What is a VASP?
 
-A Virtual Asset Service Provider (VASP) is a regulated crypto exchange or custodian, such as Coinbase or Kraken. If your destination wallet is held at a VASP, you will need to identify it during Travel Rule verification for withdrawals of USD 3,000 or more.
+A Virtual Asset Service Provider (VASP) is a regulated crypto exchange or custodian, such as Coinbase or Kraken. If your destination wallet is held at a VASP, you will need to identify it during Travel Rule verification for withdrawals of $3,000 or more.

@@ -2,8 +2,8 @@
 title: How to Transfer Crypto assets into my Longbridge Account
 zendesk_article_id: 16703968594447
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-02T17:02:49Z'
-zendesk_edited_at: '2026-10-02T17:02:49Z'
+zendesk_updated_at: '2026-10-06T18:40:09Z'
+zendesk_edited_at: '2026-10-06T18:40:09Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703968594447-How-to-Transfer-Crypto-assets-into-my-Longbridge-Account'
 promoted: true
 position: 3
@@ -66,7 +66,7 @@ Open your external wallet or exchange and send crypto to the deposit address sho
 
 Deposits are usually processed quickly, depending on blockchain confirmation times. You can track the deposit status under _Transfer History._
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="414"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Important</strong></div><div>A minimum deposit of USD 10.00 (or equivalent in cryptocurrency) is required per transaction.</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="414"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Important</strong></div><div>A minimum deposit of $10.00 (or equivalent in cryptocurrency) is required per transaction.</div></td></tr></tbody></table>
 
 ## Tracking Your Deposit
 

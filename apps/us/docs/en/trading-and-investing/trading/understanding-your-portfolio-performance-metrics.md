@@ -2,8 +2,8 @@
 title: Understanding Your Portfolio Performance Metrics
 zendesk_article_id: 17163717058063
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-06T17:51:44Z'
-zendesk_edited_at: '2026-09-08T08:50:22Z'
+zendesk_updated_at: '2026-10-06T18:29:56Z'
+zendesk_edited_at: '2026-10-06T18:29:56Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17163717058063-Understanding-Your-Portfolio-Performance-Metrics'
 promoted: true
 position: 13
@@ -16,9 +16,9 @@ All cost basis calculations follow the **First In, First Out (FIFO)** method. Un
 
 For example, suppose you build a position in XYZ through three separate purchases and later sell 150 shares.
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="213;567"><colgroup><col style="width: 27%;"> <col style="width: 73%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 1 — Jan 3</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at USD 10.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 2 — Feb 7</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at USD 14.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 3 — Mar 12</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at USD 18.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Sell — Apr 1</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Sell 150 shares at USD 20.00</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="213;567"><colgroup><col style="width: 27%;"> <col style="width: 73%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 1 — Jan 3</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at $10.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 2 — Feb 7</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at $14.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Lot 3 — Mar 12</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Buy 100 shares at $18.00</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Sell — Apr 1</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Sell 150 shares at $20.00</div></td></tr></tbody></table>
 
-Under FIFO, all 100 shares from Lot 1 are sold first, and the remaining 50 shares are taken from Lot 2. The cost basis for this sale is (100 × USD 10.00) + (50 × USD 14.00) = **USD 1,700.00**. The remaining 50 shares from Lot 2 and all shares in Lot 3 stay in the portfolio at their original purchase prices.
+Under FIFO, all 100 shares from Lot 1 are sold first, and the remaining 50 shares are taken from Lot 2. The cost basis for this sale is (100 × $10.00) + (50 × $14.00) = $**1,700.00**. The remaining 50 shares from Lot 2 and all shares in Lot 3 stay in the portfolio at their original purchase prices.
 
 ## Daily P&L cutoff time
 

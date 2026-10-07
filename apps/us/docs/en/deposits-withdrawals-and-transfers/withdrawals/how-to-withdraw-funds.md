@@ -1,10 +1,10 @@
 ---
-title: 'How to withdraw funds?'
+title: How to Withdraw Funds
 zendesk_article_id: 17850987112719
 zendesk_section_id: 15003292497935
-zendesk_updated_at: '2026-10-03T03:58:59Z'
-zendesk_edited_at: '2026-10-03T03:58:59Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850987112719-How-to-withdraw-funds'
+zendesk_updated_at: '2026-10-06T19:21:46Z'
+zendesk_edited_at: '2026-10-06T19:21:46Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850987112719-How-to-Withdraw-Funds'
 promoted: false
 position: 0
 ---
@@ -12,7 +12,7 @@ Withdrawals allow you to transfer funds from your Longbridge account to a linked
 
 **Withdrawal Limits at a Glance**
 
-<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="170;315;315"><colgroup><col style="width: 24.17%;"> <col style="width: 29.57%;"> <col style="width: 46.26%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>ACH</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Wire</strong></div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Daily limit</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>USD 50,000.00</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No set limit</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Processing time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>1–3 business days</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Up to 1 business day</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Fee</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Free (returned transfers incur a USD 30 fee)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>A wire fee applies. The amount is shown in the app when you select your bank account for withdrawal. Your receiving bank may also charge a fee for incoming wires. Please check with your bank for details.</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Limit reset time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>15:30 ET on each business day</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>N/A</div></td></tr></tbody></table>
+<table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="170;315;315"><colgroup><col style="width: 24%;"> <col style="width: 30%;"> <col style="width: 46%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>&nbsp;</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>ACH</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Wire</strong></div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Daily limit</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>$50,000.00</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>No set limit</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Processing time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>1–3 business days</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Up to 1 business day</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Fee</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>Free (returned transfers incur a $30 fee)</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>A wire fee applies. The amount is shown in the app when you select your bank account for withdrawal. Your receiving bank may also charge a fee for incoming wires. Please check with your bank for details.</div></td></tr><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Limit reset time</strong></div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>15:30 ET on each business day</div></td><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div>N/A</div></td></tr></tbody></table>
 
 **How to Submit a Withdrawal**
 
@@ -52,10 +52,10 @@ This is the maximum you can currently withdraw, based on your available account 
 
 **ACH daily limit**
 
-ACH withdrawals are subject to a daily limit of USD 50,000. The maximum amount you can withdraw is the lesser of:
+ACH withdrawals are subject to a daily limit of $50,000. The maximum amount you can withdraw is the lesser of:
 
 -   Your available balance, and
--   USD 50,000 minus the total amount of ACH withdrawals submitted today with a status of _Initiated_, _In Progress_, or _Completed_.
+-   $50,000 minus the total amount of ACH withdrawals submitted today with a status of _Initiated_, _In Progress_, or _Completed_.
 
 Withdrawals submitted on non-working days count toward the next working day's limit. The limit resets at 15:30 ET on each working day.
 
@@ -85,9 +85,9 @@ After submission, the success screen will display:
 
 You can cancel a withdrawal only while it is in the _Initiated_ status (the earliest stage, before it has been sent for processing).
 
-4.  Go to _Transfers_ > _Transfer history_.
-5.  Tap the withdrawal record you want to cancel.
-6.  On the detail page, tap _Cancel withdrawal._
-7.  Tap _Yes, cancel_ to confirm.
+1.  Go to _Transfers_ > _Transfer history_.
+2.  Tap the withdrawal record you want to cancel.
+3.  On the detail page, tap _Cancel withdrawal._
+4.  Tap _Yes, cancel_ to confirm.
 
 <table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="796"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Note</strong></div><div>Withdrawals can only be canceled before they reach the In progress status. You will see a message indicating the current status if cancellation is unavailable.</div></td></tr></tbody></table>

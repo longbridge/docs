@@ -2,11 +2,11 @@
 title: Enable or Disable Margin Trading
 zendesk_article_id: 17445641834127
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-10-02T16:59:39Z'
+zendesk_updated_at: '2026-10-06T19:26:47Z'
 zendesk_edited_at: '2026-09-01T03:28:12Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17445641834127-Enable-or-Disable-Margin-Trading'
 promoted: false
-position: 4
+position: 3
 ---
 Margin trading lets you borrow funds against the eligible securities in your account to purchase additional securities or act on market opportunities beyond your available cash. This article explains how to turn margin investing on or off, and what to expect when you do.
 

@@ -11,3 +11,4 @@ zendesk_section_id: 17536015135887
 
 - [How to update my account profile](/account-and-security/account-maintenance/how-to-update-my-account-profile)
 - [How to close my account](/account-and-security/account-maintenance/how-to-close-my-account)
+- [How to link and remove a bank account](/account-and-security/account-maintenance/how-to-link-and-remove-a-bank-account)

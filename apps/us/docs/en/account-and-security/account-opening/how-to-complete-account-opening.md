@@ -1,9 +1,9 @@
 ---
-title: 'How to complete account opening?'
+title: How to complete account opening
 zendesk_article_id: 17852034260879
 zendesk_section_id: 17382922631055
-zendesk_updated_at: '2026-10-03T05:59:10Z'
-zendesk_edited_at: '2026-10-03T05:59:10Z'
+zendesk_updated_at: '2026-10-06T19:24:25Z'
+zendesk_edited_at: '2026-10-06T19:24:25Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17852034260879-How-to-complete-account-opening'
 promoted: false
 position: 0
@@ -50,7 +50,7 @@ Note: Large Traders are defined as trading either $2 million in shares or $20 mi
 
 **Step 10.** Read and accept the margin disclosure statement to open a margin account.
 
-**Note:** A margin account requires a minimum equity balance of USD 2,000. If your equity falls below this amount, your account will function as a cash-only account.
+**Note:** A margin account requires a minimum equity balance of $2,000. If your equity falls below this amount, your account will function as a cash-only account.
 
 **Step 11.** Choose whether to enroll in our Fully-Paid Securities Lending (FPSL) Program. If you enroll, you can earn passive income by lending fully paid securities held in your account. You must read and accept the corresponding agreement before enrollment.
 

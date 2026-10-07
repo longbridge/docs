@@ -2,7 +2,7 @@
 title: Margin Requirements and Buying Power
 zendesk_article_id: 15956010099471
 zendesk_section_id: 15933265672975
-zendesk_updated_at: '2026-10-02T16:59:39Z'
+zendesk_updated_at: '2026-10-06T19:26:47Z'
 zendesk_edited_at: '2026-10-01T16:55:49Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15956010099471-Margin-Requirements-and-Buying-Power'
 promoted: false

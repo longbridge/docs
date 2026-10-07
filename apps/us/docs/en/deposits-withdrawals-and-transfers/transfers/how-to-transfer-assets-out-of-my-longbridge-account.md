@@ -2,8 +2,8 @@
 title: How to Transfer Assets out of my Longbridge Account
 zendesk_article_id: 16303545965327
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-02T17:03:35Z'
-zendesk_edited_at: '2026-10-02T17:03:35Z'
+zendesk_updated_at: '2026-10-06T18:31:23Z'
+zendesk_edited_at: '2026-10-06T18:31:23Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303545965327-How-to-Transfer-Assets-out-of-my-Longbridge-Account'
 promoted: true
 position: 1
@@ -20,7 +20,7 @@ Before initiating a transfer-out, make sure:
 
 -   Your Longbridge account has no restrictions that would block an outgoing transfer.
 
--   Your Longbridge account has sufficient cash balance to cover the USD 75 transfer fee.
+-   Your Longbridge account has sufficient cash balance to cover the $75 transfer fee.
 
 -   The receiving brokerage account is held under the same name as your Longbridge account.
 

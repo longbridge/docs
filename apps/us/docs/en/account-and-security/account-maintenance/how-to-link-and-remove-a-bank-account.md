@@ -1,12 +1,12 @@
 ---
 title: How to link and remove a bank account
-zendesk_article_id: 17850908499215
-zendesk_section_id: 15003308456591
-zendesk_updated_at: '2026-10-06T19:18:09Z'
-zendesk_edited_at: '2026-10-06T19:18:09Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850908499215-How-to-link-and-remove-a-bank-account'
+zendesk_article_id: 17893306268687
+zendesk_section_id: 17536015135887
+zendesk_updated_at: '2026-10-06T19:25:37Z'
+zendesk_edited_at: '2026-10-06T19:18:59Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17893306268687-How-to-link-and-remove-a-bank-account'
 promoted: false
-position: 0
+position: 2
 ---
 Longbridge supports two types of bank account connections: ACH and Wire. This guide walks you through how to link a new bank account, and how to remove one you no longer need.
 

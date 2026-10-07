@@ -1,14 +1,14 @@
 ---
-title: How to Transfer Assets Into Your Longbridge Account
+title: How to Transfer Assets into my Longbridge Account
 zendesk_article_id: 16303157218575
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-03T04:13:37Z'
-zendesk_edited_at: '2026-10-03T04:13:37Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303157218575-How-to-Transfer-Assets-Into-Your-Longbridge-Account'
+zendesk_updated_at: '2026-10-06T18:32:08Z'
+zendesk_edited_at: '2026-10-06T18:32:08Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303157218575-How-to-Transfer-Assets-into-my-Longbridge-Account'
 promoted: false
 position: 0
 ---
-The free _Transfer Assets In_ feature lets you move eligible stocks, ETFs, and USD cash from an account at another brokerage firm directly into your Longbridge account. Cost basis information for eligible securities is generally transferred from the delivering brokerage when available.
+The free _Transfer Assets In_ feature lets you move eligible stocks, ETFs, and cash from an account at another brokerage firm directly into your Longbridge account. Cost basis information for eligible securities is generally transferred from the delivering brokerage when available.
 
 <table class="wysiwyg-table-resized" style="border-collapse: collapse; border-style: none;" data-ace-table-col-widths="795"><colgroup><col style="width: 100%;"></colgroup><tbody><tr style="height: 39px;"><td style="border-color: rgb(222, 224, 227); padding: 8px; vertical-align: top;" colspan="1" rowspan="1"><div><strong>Note</strong></div><div>Transfers are processed through the DTCC system and coordinated between both brokerages. Processing typically takes up to 7 business days.</div></td></tr></tbody></table>
 
