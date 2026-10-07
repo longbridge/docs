@@ -2,15 +2,15 @@
 title: Long Bridge Securities LLC Cookie Policy
 zendesk_article_id: 14864745184399
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-10-05T20:13:23Z'
-zendesk_edited_at: '2026-10-05T20:13:22Z'
+zendesk_updated_at: '2026-10-07T21:46:40Z'
+zendesk_edited_at: '2026-10-07T21:46:40Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864745184399-Long-Bridge-Securities-LLC-Cookie-Policy'
 promoted: false
 position: 2
 ---
 ## What are Cookies and Web Beacons?
 
-Cookies are pieces of data that a website transfers to a user’s hard drive for record-keeping purposes. Web beacons are transparent pixel images that are used in collecting information about website usage, e-mail email response and tracking. Generally, cookies may contain information about your Internet Protocol (“IP”) addresses, the region or general location where your computer or device is accessing the Internet, browser type, operating system and other usage information about the website or your usage of services provided by Longbridge, including a history of the pages you view.
+Cookies are pieces of data that a website transfers to a user’s hard drive for record-keeping purposes. Web beacons are transparent pixel images that are used in collecting information about website usage, email response and tracking. Generally, cookies may contain information about your Internet Protocol (“IP”) addresses, the region or general location where your computer or device is accessing the Internet, browser type, operating system and other usage information about the website or your usage of services provided by Longbridge, including a history of the pages you view.
 
 ## How Longbridge Uses Cookies and Web Beacons
 
@@ -38,6 +38,6 @@ These cookies and web beacons may be set throughout the Longbridge website by it
 
 ## Managing Your Cookie Preferences
 
-You have many choices with regards to the management of cookies on your computer. All major browsers allow you to block or delete cookies from your system. However, if you do decide to disable cookies you may not be able to access some areas of the Longbridge website, or the website may not function incorrectly correctly. To learn more about your ability to manage cookies and web beacons and how to disable them, please consult the privacy features in your browser or visit [www.allaboutcookies.org](https://allaboutcookies.org/).
+You have many choices with regards to the management of cookies on your computer. All major browsers allow you to block or delete cookies from your system. However, if you do decide to disable cookies you may not be able to access some areas of the Longbridge website, or the website may not function correctly. To learn more about your ability to manage cookies and web beacons and how to disable them, please consult the privacy features in your browser or visit [www.allaboutcookies.org](https://allaboutcookies.org/).
 
 Any website links to third-party websites may also use cookies and web beacons over which we have no control. We recommend that you check the relevant third parties’ privacy policy for information about any cookies and web beacons that they may use.

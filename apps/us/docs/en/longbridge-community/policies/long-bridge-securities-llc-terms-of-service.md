@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC Terms of Service
 zendesk_article_id: 14864594652431
 zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-10-03T07:23:14Z'
-zendesk_edited_at: '2026-10-03T07:23:14Z'
+zendesk_updated_at: '2026-10-07T21:43:20Z'
+zendesk_edited_at: '2026-10-07T21:43:20Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864594652431-Long-Bridge-Securities-LLC-Terms-of-Service'
 promoted: false
 position: 1
@@ -182,11 +182,11 @@ You acknowledge and understand that the use of the Services entails risks includ
 
 ii. Responsibility for Your Orders/Trades
 
-You are responsible for the confidentiality and use of, and will reasonably safeguard and will not permit others to use, your account credentials, such as your username, password or security device. You agree to provide immediate Notice to Longbridge of any theft or loss of such credentials, or any unauthorized access to your account. Use of your credentials to effect any action will constitute conclusive evidence that Longbridge may treat such action as authorized. You is responsible for all transactions entered using your credentials. Longbridge is not liable for loss or damages caused by any third party using your credentials. Unless Longbridge agrees in a writing executed by its Chief Executive Officer, you will not permit any third party to access your account using your account credentials.
+You are responsible for the confidentiality and use of, and will reasonably safeguard and will not permit others to use, your account credentials, such as your username, password or security device. You agree to provide immediate Notice to Longbridge of any theft or loss of such credentials, or any unauthorized access to your account. Use of your credentials to effect any action will constitute conclusive evidence that Longbridge may treat such action as authorized. You are responsible for all transactions entered using your credentials. Longbridge is not liable for loss or damages caused by any third party using your credentials. Unless Longbridge agrees in a writing executed by its Chief Executive Officer, you will not permit any third party to access your account using your account credentials.
 
 iii. Special Risks of Algorithmic Orders
 
-Longbridge makes available certain order types that use computerized algorithms. These order types allow you to input various conditions as part of an order placed with Longbridge. You agree that if algorithmic order types are used, it is your responsibility to understand how the order type works, including through review of the information on the Longbridge website describing the particular order types. Algorithmic trading involves special risks, including, among others, the risk of software or design flaws, technical errors, adverse market impacts from algorithmic orders and rapid losses. You understand and agree to accept these risks when using algorithmic orders and you waives any right to make claims against Longbridge in connection with such orders.
+Longbridge makes available certain order types that use computerized algorithms. These order types allow you to input various conditions as part of an order placed with Longbridge. You agree that if algorithmic order types are used, it is your responsibility to understand how the order type works, including through review of the information on the Longbridge website describing the particular order types. Algorithmic trading involves special risks, including, among others, the risk of software or design flaws, technical errors, adverse market impacts from algorithmic orders and rapid losses. You understand and agree to accept these risks when using algorithmic orders and you waive any right to make claims against Longbridge in connection with such orders.
 
 iv. Payment for Orders and Rebates
 
@@ -206,7 +206,7 @@ vii. Liquidation
 
 YOU AGREE THAT LONGBRIDGE HAS THE RIGHT, IN ITS SOLE DISCRETION, BUT NOT THE OBLIGATION, TO LIQUIDATE ALL OR ANY PART OF YOUR POSITIONS OR ASSETS IN ANY OF YOUR LONGBRIDGE ACCOUNTS, INDIVIDUAL OR JOINT, AT ANY TIME AND IN ANY MANNER (INCLUDING BUT NOT LIMITED TO PREMARKET/ AFTER-MARKET TRADING AND PRIVATE SALES) AND THROUGH ANY MARKET OR DEALER, WITHOUT PRIOR NOTICE OR MARGIN CALL IF LONGBRIDGE DEEMS, IN ITS SOLE DISCRETION, THAT SUCH  ACTION IS NECESSARY OR ADVISABLE FOR THE PROTECTION OF THE FIRM.
 
-YOU SHALL BE LIABLE AND WILL PROMPTLY PAY LONGBRIDGE FOR ANY DEFICIENCIES IN YOUR ACCOUNT THAT ARISE FROM SUCH LIQUIDATION OR REMAIN AFTER SUCH LIQUIDATION. LONGBRIDGE HAS NO LIABILITY FOR ANY LOSS SUSTAINED BY YOU IN CONNECTION WITH SUCH LIQUIDATION (OR IF LONGBRIDGE DELAYS EFFECTING, OR DOES NOT EFFECT, SUCH LIQUIDATION), EVEN IF YOU RE-ESTABLISHE A LIQUIDATED POSITION AT A WORSE PRICE. YOU SHALL REIMBURSE AND HOLD LONGBRIDGE HARMLESS FOR ALL ACTIONS, OMISSIONS, COSTS, FEES (INCLUDING, BUT NOT LIMITED TO, ATTORNEY'S FEES), OR LIABILITIES ASSOCIATED WITH ANY SUCH LIQUIDATION UNDERTAKEN BY LONGBRIDGE.
+YOU SHALL BE LIABLE AND WILL PROMPTLY PAY LONGBRIDGE FOR ANY DEFICIENCIES IN YOUR ACCOUNT THAT ARISE FROM SUCH LIQUIDATION OR REMAIN AFTER SUCH LIQUIDATION. LONGBRIDGE HAS NO LIABILITY FOR ANY LOSS SUSTAINED BY YOU IN CONNECTION WITH SUCH LIQUIDATION (OR IF LONGBRIDGE DELAYS EFFECTING, OR DOES NOT EFFECT, SUCH LIQUIDATION), EVEN IF YOU RE-ESTABLISH A LIQUIDATED POSITION AT A WORSE PRICE. YOU SHALL REIMBURSE AND HOLD LONGBRIDGE HARMLESS FOR ALL ACTIONS, OMISSIONS, COSTS, FEES (INCLUDING, BUT NOT LIMITED TO, ATTORNEY'S FEES), OR LIABILITIES ASSOCIATED WITH ANY SUCH LIQUIDATION UNDERTAKEN BY LONGBRIDGE.
 
 viii. Position Limits
 
@@ -306,11 +306,11 @@ The titles and headings contained in this Agreement are included for convenience
 
 LONGBRIDGE AND ITS AFFILIATES ARE NOT FINANCIAL ADVISORS AND DO NOT OFFER ANY FINANCIAL ADVICE. ALL INVESTING INCURS RISK INCLUDING, BUT NOT LIMITED TO, THE LOSS OF PRINCIPAL AND YOU COULD LOSE MORE THAN YOUR INITIAL INVESTMENT.
 
-ANY INVESTMENT INFORMATION PROVIDED BY LONGBRDGE DOES NOT CONSTITUTE AN OFFER TO BUY, SOLICITATION OF AN OFFER TO SELL, OR A RECOMMENDATION TO TRADE ANY STOCKS, OPTIONS, OR ANY OTHER FINANCIAL PRODUCTS.
+ANY INVESTMENT INFORMATION PROVIDED BY LONGBRIDGE DOES NOT CONSTITUTE AN OFFER TO BUY, SOLICITATION OF AN OFFER TO SELL, OR A RECOMMENDATION TO TRADE ANY STOCKS, OPTIONS, OR ANY OTHER FINANCIAL PRODUCTS.
 
 ANY INFORMATION PROVIDED BY LONGBRIDGE REGARDING SPECIFIC INVESTMENTS OR TRADING STRATEGIES IS PROVIDED FOR EDUCATIONAL AND ILLUSTRATIVE PURPOSES ONLY. PAST PERFORMANCE IS NOT INDICATIVE OF FUTURE RESULTS.
 
-INFORMATION PROVIDE BY LONGBRIDGE DOES NOT AND IS NOT INTENDED TO CONSIDER THE PARTICULAR FINANCIAL CONDITIONS, INVESTMENT OBJECTIVES, OR REQUIREMENTS OF INDIVIDUAL CUSTOMERS. BEFORE MAKING INVESTMENT DECISIONS, YOU SHOULD CONSIDER WHETHER IT IS SUITABLE FOR YOUR PARTICULAR CIRCUMSTANCES AND, AS NECESSARY, SEEK PROFESSIONAL ADVICE.
+INFORMATION PROVIDED BY LONGBRIDGE DOES NOT AND IS NOT INTENDED TO CONSIDER THE PARTICULAR FINANCIAL CONDITIONS, INVESTMENT OBJECTIVES, OR REQUIREMENTS OF INDIVIDUAL CUSTOMERS. BEFORE MAKING INVESTMENT DECISIONS, YOU SHOULD CONSIDER WHETHER IT IS SUITABLE FOR YOUR PARTICULAR CIRCUMSTANCES AND, AS NECESSARY, SEEK PROFESSIONAL ADVICE.
 
 ## **23.** **Service of Process**
 

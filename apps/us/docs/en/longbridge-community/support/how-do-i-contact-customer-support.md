@@ -2,7 +2,7 @@
 title: 'How do I contact customer support?'
 zendesk_article_id: 17350120095503
 zendesk_section_id: 14925844023183
-zendesk_updated_at: '2026-10-03T07:18:18Z'
+zendesk_updated_at: '2026-10-07T17:05:30Z'
 zendesk_edited_at: '2026-10-03T07:18:18Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17350120095503-How-do-I-contact-customer-support'
 promoted: true

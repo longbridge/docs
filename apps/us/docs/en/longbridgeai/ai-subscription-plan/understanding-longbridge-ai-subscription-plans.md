@@ -2,7 +2,7 @@
 title: Understanding Longbridge AI Subscription Plans
 zendesk_article_id: 17128848104207
 zendesk_section_id: 17128788024079
-zendesk_updated_at: '2026-10-02T17:48:05Z'
+zendesk_updated_at: '2026-10-07T14:23:23Z'
 zendesk_edited_at: '2026-10-02T17:48:05Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17128848104207-Understanding-Longbridge-AI-Subscription-Plans'
 promoted: true
