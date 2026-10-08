@@ -9,9 +9,7 @@ zendesk_category_id: 14864532786575
 
 ## Sections
 
-- [Disclosures](/longbridge-community/disclosures/overview)
-- [Agreements](/longbridge-community/agreements/overview)
-- [Policies](/longbridge-community/policies/overview)
+- [Disclosures, Policies, & Agreements](/longbridge-community/disclosures-policies-and-agreements/overview)
 - [Resources](/longbridge-community/resources/overview)
 - [Support](/longbridge-community/support/overview)
 - [Mobile App Essentials](/longbridge-community/mobile-app-essentials/overview)

@@ -1,8 +1,8 @@
 ---
 title: Personal Information Protection
 zendesk_article_id: 15947834201359
-zendesk_section_id: 14864612550159
-zendesk_updated_at: '2026-10-01T17:02:26Z'
+zendesk_section_id: 17920135773199
+zendesk_updated_at: '2026-10-08T16:32:16Z'
 zendesk_edited_at: '2026-04-29T05:31:28Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15947834201359-Personal-Information-Protection'
 promoted: false

@@ -1,8 +1,8 @@
 ---
 title: Biometric Authentication Agreement
 zendesk_article_id: 14864818677007
-zendesk_section_id: 17536565108879
-zendesk_updated_at: '2026-09-30T19:09:40Z'
+zendesk_section_id: 17920135773199
+zendesk_updated_at: '2026-10-08T16:31:23Z'
 zendesk_edited_at: '2026-09-04T08:25:38Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864818677007-Biometric-Authentication-Agreement'
 promoted: false
