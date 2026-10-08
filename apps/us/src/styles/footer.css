@@ -127,8 +127,7 @@ html[theme="dark"] .lb-footer__logo--dark,
 .lb-footer__disclaimer--affiliate {
   margin-top: 14px;
 }
-.lb-footer__meta a,
-.lb-footer__links a {
+.lb-footer__meta a {
   color: var(--muted-foreground);
   text-decoration: underline;
 }
@@ -137,20 +136,37 @@ html[theme="dark"] .lb-footer__logo--dark,
   color: var(--accent-teal);
 }
 
-/* 文档链接列表：一行排开，窄屏整项换行。不用 · 分隔：换行后行首会挂一个孤立的点 */
+/* 文档链接列表：竖线分隔，窄屏整项换行。
+   每项前都带一根竖线，ul 左移一根竖线的宽度，外层 overflow 把每行行首那根裁掉；
+   外层四周多留 2px(padding 撑开、margin 抵回)，免得把链接的焦点框也裁掉 */
+.lb-footer__links-clip {
+  overflow: hidden;
+  margin: 6px -2px -2px;
+  padding: 2px;
+}
 .lb-footer__links {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 8px 0 0;
+  margin: 0 0 0 -28px;
   padding: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--muted-foreground);
 }
 .lb-footer__links li {
-  margin-right: 16px;
   white-space: nowrap;
+}
+.lb-footer__links li::before {
+  content: '|';
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+  color: var(--muted-foreground);
+  opacity: 0.6;
+}
+.lb-footer__links a {
+  color: var(--foreground);
+  text-decoration: underline;
 }
 
 @media (max-width: 640px) {

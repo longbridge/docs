@@ -1,15 +1,14 @@
 ---
-import { withBase } from '../lib/paths'
 
 interface Props {
   isHome?: boolean
 }
 const { isHome = false } = Astro.props
 
-// Fees & Charges 的 PDF 还没给,拿到后按文档顺序插在 Form CRS 和 BCP 之间
 const FOOTER_LINKS = [
   { label: 'BrokerCheck', href: 'https://brokercheck.finra.org/' },
   { label: 'Form CRS', href: 'https://assets.lbkrs.com/uploads/51d37842-0dc1-42f0-bf24-fe36c7da20e3/LBS-Form-CRS-final-.pdf' },
+  { label: 'Fees & Charges', href: 'https://assets.lbkrs.com/uploads/bc116567-a61a-4a3a-972d-e540b8eba635/Fee-Schedule.pdf' },
   { label: 'Business Continuity Plan', href: 'https://assets.lbkrs.com/uploads/dd20724a-f3d6-4ca5-a94c-61ff1ab9d691/BCP-Disclosure-final-.pdf' },
 ]
 ---
@@ -21,13 +20,21 @@ const FOOTER_LINKS = [
       <p class="lb-footer__meta">
         Member FINRA / <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer">SIPC</a> · © 2026 Long Bridge Securities LLC.
       </p>
-      <ul class="lb-footer__links">
-        {FOOTER_LINKS.map((l) => (
-          <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
-        ))}
-      </ul>
+      <div class="lb-footer__links-clip">
+        <ul class="lb-footer__links">
+          {FOOTER_LINKS.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
     </div>
-    <a href={withBase('/')} class="lb-footer__logo-link" aria-label="Longbridge Home">
+    <a
+      href="https://assets.lbkrs.com/uploads/a105e31a-1337-4b33-926a-01f5ea21e412/Disclosure-Library.pdf"
+      class="lb-footer__logo-link"
+      aria-label="Longbridge Disclosures"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <!-- footer 专用 "Disclosures" logo(与 header 不同):浅色主题深墨,深色主题浅墨 -->
       <img
         src="https://assets.lbkrs.com/uploads/05c08735-c894-4890-9a92-9b39baba23d1/footer-logo-light.png"
