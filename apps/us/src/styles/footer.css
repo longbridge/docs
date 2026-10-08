@@ -153,6 +153,13 @@ html[theme="dark"] .lb-footer__logo--dark,
   font-size: 14px;
   line-height: 1.5;
 }
+/* 横排时链接行比右侧 logo(高 32px)低，可以延伸到 logo 那一列下方，免得加粗后在文章页窄列里提前折行。
+   256 = logo 宽 32×474/66≈230 + 与 brand 的间距 24 + 上面抵掉的 2px */
+@media (min-width: 641px) {
+  .lb-footer__links-clip {
+    margin-right: -256px;
+  }
+}
 .lb-footer__links li {
   white-space: nowrap;
 }
@@ -166,6 +173,7 @@ html[theme="dark"] .lb-footer__logo--dark,
 }
 .lb-footer__links a {
   color: var(--foreground);
+  font-weight: 600;
   text-decoration: underline;
 }
 
