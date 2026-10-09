@@ -86,4 +86,4 @@ Under **SEC Regulation NMS** and **FINRA Rule 5310**, broker-dealers are require
 
 -   **Extended hours:** During pre-market and after-hours sessions, Regulation NMS does not apply, meaning price protection rules may not extenxd across venues.
 
-To learn more about our execution quality, please visit this link : [_Order Routing and Payment for Order Flow Information_](https://longbridgeus.zendesk.com/hc/en-us/articles/15051165024527)
+To learn more about our execution quality, please visit this link : [_Order Routing and Payment for Order Flow Information_](/articles/15051165024527)
