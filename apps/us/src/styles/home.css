@@ -532,15 +532,3 @@ html[theme="dark"] .catx-card,
   }
 }
 
-html[theme="dark"] .catx-card__icon,
-.theme-dark .catx-card__icon {
-  background: rgba(0, 240, 196, 0.12);
-  color: var(--accent-teal);
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([theme="light"]):not(.theme-light) .catx-card__icon {
-    background: rgba(0, 240, 196, 0.12);
-    color: var(--accent-teal);
-  }
-}

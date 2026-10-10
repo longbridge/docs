@@ -215,17 +215,13 @@ html.is-whale-app .lb-cat-drawer__header {
 
 /* Helpful Topics 卡片:App 内更紧凑。web 亮色卡片按 Zendesk 定过 (32/20) 不动，仅 App 覆写。
    - padding 16 + min-height 归 0(否则 92 的 min-height 吃掉 padding 变化，卡片高度不变)
-   - 标题 15px;icon 与标题 12px 间距已由基础 .catx-card gap 提供，无需覆写
-   - icon 去底：深色模式默认给 .catx-card__icon 加了 teal 半透明底 (home.css)，!important 压过它 */
+   - 标题 15px;icon 与标题 12px 间距已由基础 .catx-card gap 提供，无需覆写 */
 html.is-whale-app .catx-card {
   padding: 16px;
   min-height: 0;
 }
 html.is-whale-app .catx-card__title {
   font-size: 15px;
-}
-html.is-whale-app .catx-card__icon {
-  background: transparent !important;
 }
 /* Helpful Topics 区块标题 20px、tab 标题 15px(仅 App;web 亮色沿用 28/20 Zendesk 值)。
    tab 字号变了会改变 tab 宽度，下划线由 JS 按 load/resize 重算，自动对齐。 */
