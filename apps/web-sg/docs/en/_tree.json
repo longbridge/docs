@@ -1,0 +1,630 @@
+[
+  {
+    "slug": "accountsecurity",
+    "title": "Account & Security",
+    "desc": "Learn about account setup, management, and security. ",
+    "icon": "https://assets.lbctrl.com/uploads/96d8325b7543690f2f77e94d5b35ee3c.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "account_opening",
+        "title": "Account opening",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "openanaccount",
+            "title": "How to open a Longbridge account?"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "account_security",
+        "title": "Account security",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "antifraud",
+            "title": "Scam Advisory & FAQs"
+          },
+          {
+            "slug": "strongpassword",
+            "title": "Guide to setting a strong password"
+          },
+          {
+            "slug": "kqym1v",
+            "title": "Beware of fraudulent Longbridge apps and websites to prevent fraud. 5 tips to keep your investment account safe!"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountfaqs",
+        "title": "Account FAQs",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "accounttypes",
+            "title": "What are the available account types?"
+          },
+          {
+            "slug": "termination",
+            "title": "How do I cancel my account？"
+          },
+          {
+            "slug": "safe",
+            "title": "Is Long Bridge Securities Pte. Ltd. safe?"
+          },
+          {
+            "slug": "accredited-investor",
+            "title": "What's an Accredited Investor (AI)?"
+          },
+          {
+            "slug": "nl0lyo",
+            "title": "Notice Regarding Service Adjustments Applicable to Clients Accessing Services from Mainland China"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "fundstransfers",
+    "title": "Funds & Transfers",
+    "desc": "Handle deposits, withdrawals, exchanges, and asset transfers with ease. ",
+    "icon": "https://assets.lbctrl.com/uploads/74357a2cc386faa6d1feb3ef5add8bf0.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "depositfunds",
+        "title": "Deposit funds",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "bgot76",
+            "title": "Deposit via Wise Guide"
+          },
+          {
+            "slug": "depositfail",
+            "title": "Why was my deposit unsuccessful?"
+          },
+          {
+            "slug": "Deposit",
+            "title": "Guide to Deposit"
+          },
+          {
+            "slug": "DDA",
+            "title": "Deposit via DDA Guide"
+          },
+          {
+            "slug": "internetbankingtransfer",
+            "title": "Deposit via Internet Banking Transfer Guide"
+          },
+          {
+            "slug": "PayNow",
+            "title": "Deposit via PayNow Guide"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "withdrawfunds",
+        "title": "Withdraw funds",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "wise",
+            "title": "Withdrawal to Wise Account Guide"
+          },
+          {
+            "slug": "bank-auth",
+            "title": "Guide to Adding a Bank Account"
+          },
+          {
+            "slug": "Withdrawalsfaqs",
+            "title": "Withdrawal FAQs"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundsoverview",
+        "title": "Funds overview",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "intradayPL",
+            "title": "Intraday P/L"
+          },
+          {
+            "slug": "PLcost",
+            "title": "Calculation of P/L & Cost"
+          },
+          {
+            "slug": "u7ttgq",
+            "title": "Cross-Broker Fund Transfer Instructions"
+          },
+          {
+            "slug": "DescriptionofFieldindicators",
+            "title": "Stock Account-Description of Field indicators"
+          },
+          {
+            "slug": "totalassets",
+            "title": "Total Assets-Description of Field Indicators"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "currencyexchange",
+        "title": "Currency exchange",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "FAQs",
+            "title": "Currency Conversion FAQs"
+          },
+          {
+            "slug": "FAQ_Automatic_Currency_Exchange",
+            "title": "Auto-Repayment FAQs"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cashplus",
+        "title": "Cash Plus",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "cash_plus_introduction",
+            "title": "Introduction to Cash Plus"
+          },
+          {
+            "slug": "FAQ",
+            "title": "Cash Plus FAQ"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "stocktransfer",
+        "title": "Stock transfer",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "GuidanceOfShareTransferIn",
+            "title": "How do I transfer shares into my account?"
+          },
+          {
+            "slug": "transferinstockdetails",
+            "title": "Transfer In Stock Details"
+          },
+          {
+            "slug": "ADRconversion",
+            "title": "How to complete ADR conversion?"
+          },
+          {
+            "slug": "sharetransferout",
+            "title": "How do I transfer shares out of my account?"
+          },
+          {
+            "slug": "kd8fpx",
+            "title": "How to transfer stocks from CDP?"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "marketstrading",
+    "title": "Markets & Trading",
+    "desc": "Understand global markets and essential trading rules. ",
+    "icon": "https://assets.lbctrl.com/uploads/2463e93f1c8d15304f5356c992919508.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "marketoverview",
+        "title": "Market overview",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ineq5l",
+            "title": "Option Market Data Fields Introductions"
+          },
+          {
+            "slug": "2480z3",
+            "title": "Options Quotes and Trading in Extended Hours"
+          },
+          {
+            "slug": "hrdvqx",
+            "title": "Option Trading Statistics"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "usmarket",
+        "title": "US market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "otcfaq",
+            "title": "OTC Trading/Pink Sheets FAQs"
+          },
+          {
+            "slug": "a8a5l9",
+            "title": "What is the US stock order book?"
+          },
+          {
+            "slug": "UStradingrules",
+            "title": "US Trading Rules"
+          },
+          {
+            "slug": "USmarketquotes",
+            "title": "US Stock Pre-Market and After-Hours Trading Rules"
+          },
+          {
+            "slug": "USordertypes",
+            "title": "Understanding Order Types"
+          },
+          {
+            "slug": "marketorder",
+            "title": "What Is a Market Order?"
+          },
+          {
+            "slug": "fractionalshares",
+            "title": "What's US Fractional Shares Trading?"
+          },
+          {
+            "slug": "shortselling",
+            "title": "US Stock Short Selling (Securities Financing) FAQs"
+          },
+          {
+            "slug": "Overnighttrading",
+            "title": "What is the US stock overnight session?"
+          },
+          {
+            "slug": "OptionsTradingFAQs",
+            "title": "Options Trading FAQs"
+          },
+          {
+            "slug": "USstockoptions",
+            "title": "Basic Knowledge Of US Stock Options"
+          },
+          {
+            "slug": "ADR",
+            "title": "American Depository Receipt Custody Fees"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "hkmarket",
+        "title": "HK market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "HKtradingrules",
+            "title": "HK Trading Rules"
+          },
+          {
+            "slug": "cbbccall",
+            "title": "Call and Settlement Time for HK CBBCs"
+          },
+          {
+            "slug": "Greymarkettrading",
+            "title": "Dark Market Trading Rules"
+          },
+          {
+            "slug": "HKordertypes",
+            "title": "Order Types - HK"
+          },
+          {
+            "slug": "marketorder-hk",
+            "title": "HK Market Order"
+          },
+          {
+            "slug": "OddLotTradesFAQ",
+            "title": "Odd Lot Trades - HK"
+          },
+          {
+            "slug": "Warrantsandcbbcs",
+            "title": "What are warrants and CBBCs?"
+          },
+          {
+            "slug": "hkbmp",
+            "title": "Hong Kong Stock BMP Quotes"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sgmarket",
+        "title": "SG market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "SGXTRADINGRULE",
+            "title": "SGX Trading Rules—Securities Market"
+          },
+          {
+            "slug": "SGordertypes",
+            "title": "What are the types of orders? - SG"
+          },
+          {
+            "slug": "DLCs",
+            "title": "Singapore Market Daily Leverage Certificates (DLCs)"
+          },
+          {
+            "slug": "Oldlottradesfaq",
+            "title": "Fractional share trading FAQs - SG"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "margin_financing",
+        "title": "Margin financing",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "portfoliomargin",
+            "title": "What's portfolio margin?"
+          },
+          {
+            "slug": "Supportmargintrading",
+            "title": "How to check if a stock supports margin trading?"
+          },
+          {
+            "slug": "accountmargin",
+            "title": "Account Risk Control Rules"
+          },
+          {
+            "slug": "margincall",
+            "title": "Margin Call Rules"
+          },
+          {
+            "slug": "relatedfaqs",
+            "title": "Margin Financing FAQs"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundtrading",
+        "title": "Fund trading",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "fundtypes",
+            "title": "Understanding Fund Types"
+          },
+          {
+            "slug": "fundterminology",
+            "title": "Understanding fund-related concepts"
+          },
+          {
+            "slug": "fundrules",
+            "title": "Fund Subscription and Redemption Rules"
+          },
+          {
+            "slug": "faqs",
+            "title": "Fund FAQs"
+          },
+          {
+            "slug": "fundtradingfees",
+            "title": "Fund Fee Rules"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "gridtrading",
+        "title": "Grid trading",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "gridtrading",
+            "title": "What is Grid Trading?"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "corporateactions",
+        "title": "Corporate actions",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "stocksubscription",
+            "title": "What is a Rights Issue?"
+          },
+          {
+            "slug": "dividendselection",
+            "title": "Understanding Dividend Selection and Processing Time"
+          },
+          {
+            "slug": "stockdividends",
+            "title": "What's a stock dividend?"
+          },
+          {
+            "slug": "dividends",
+            "title": "What's dividend/special dividend distribution?"
+          },
+          {
+            "slug": "stocksplit",
+            "title": "What is a Stock Split and How is it Processed?"
+          },
+          {
+            "slug": "corporateactions",
+            "title": "How do corporate actions affect long-term orders?"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "tradingfaqs",
+        "title": "Trading FAQs",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "pl-analysis",
+            "title": "Guide to Profit and Loss Analysis"
+          },
+          {
+            "slug": "attachedorder",
+            "title": "Understanding attached orders"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "productsfeatures",
+    "title": "Products & Features",
+    "desc": "Get practical guides for our mobile and desktop platforms. ",
+    "icon": "https://assets.lbctrl.com/uploads/07dd6aba39185a28768e8a4eb7ab1d58.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "longbridgeapp",
+        "title": "Longbridge App",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "8oxefb",
+            "title": "What is a recurring investment?"
+          },
+          {
+            "slug": "e1xqwc",
+            "title": "TradePlan Disclosure Statement"
+          },
+          {
+            "slug": "personalized-push-description",
+            "title": "Personalized Push Description？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "longbridgepro",
+        "title": "Longbridge Pro",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "attach-order",
+            "title": "Introduction to Chart Trading Attached Order Settings"
+          },
+          {
+            "slug": "guide",
+            "title": "Longbridge Pro Component and Layout Description"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "campaigns",
+    "title": "Campaigns",
+    "desc": "Check out the latest campaigns and your exclusive perks. ",
+    "icon": "https://assets.lbctrl.com/uploads/090db88c311683bf7e5d4f1d60172005.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "ongoingcampaigns",
+        "title": "Ongoing campaigns",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "cowraising",
+            "title": "Instructions"
+          },
+          {
+            "slug": "7sko35",
+            "title": "October 2026 Longbridge Singapore Options Trading Leaderboard Campaign"
+          },
+          {
+            "slug": "ue9o55",
+            "title": "October 2026 Longbridge Singapore Options Newcomer Reward Promotion"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "pastcampaigns",
+        "title": "Past campaigns",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ca0kbo",
+            "title": "August 2026 Longbridge Singapore Options Newcomer Reward Promotion"
+          },
+          {
+            "slug": "p3aqn1",
+            "title": "August 2026 Longbridge Singapore Options Trading Leaderboard Campaign"
+          },
+          {
+            "slug": "iqzul6",
+            "title": "September 2026 Longbridge Singapore Options Trading Leaderboard Campaign"
+          },
+          {
+            "slug": "0wt3l2",
+            "title": "September 2026 Longbridge Singapore Options Newcomer Reward Promotion"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cardandcouponfaqs",
+        "title": "Card and Coupon FAQs",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "optioncash",
+            "title": "Option Cash Coupon FAQs"
+          },
+          {
+            "slug": "platformfee",
+            "title": "Platform Fees Coupons FAQs"
+          },
+          {
+            "slug": "interestboost",
+            "title": "Interest Boost Coupons FAQs"
+          },
+          {
+            "slug": "StockCashCoupon",
+            "title": "Stock Cash Coupon FAQs"
+          }
+        ],
+        "children": []
+      }
+    ]
+  }
+]

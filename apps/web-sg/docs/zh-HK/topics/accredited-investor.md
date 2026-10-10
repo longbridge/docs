@@ -1,0 +1,10 @@
+---
+title: "什麼是合格投資者 (AI)？"
+topic_id: "9407"
+category_slug: "accountfaqs"
+updated_at: "1784789453"
+seo_title: "什麼是合格投資者？福利與資格詳解\n"
+seo_description: "了解新加坡合格投資者身份、其福利及資格標準。享受專屬金融產品，如IPO、結構性票據和債券。通過長橋 App輕鬆選擇加入或退出。"
+related: [{"categorySlug":"accountfaqs","slug":"accounttypes","title":"有哪些可用的帳戶類型？"},{"categorySlug":"accountfaqs","slug":"termination","title":"如何賬號註銷？"},{"categorySlug":"accountfaqs","slug":"safe","title":"Long Bridge Securities Pte. Ltd. 值得信賴嗎？"},{"categorySlug":"accountfaqs","slug":"nl0lyo","title":"關於適用於從中國大陸訪問服務的客户服務調整的通知"}]
+---
+<p style="text-align: justify">合格投資者（AI）是指符合新加坡金融管理局（MAS）規定的要求，並選擇被金融機構視爲 AI 的人。合格投資者被認爲更專業並能更好保護自己的利益。</p><h3 style="text-align: justify">成爲合格投資者（AI）有什麼好處？</h3><p style="text-align: justify">合格投資者（AI）通常可以獲得更廣泛的金融產品和服務，包括受限制的產品，如首次公開募股（IPO）、結構性票據、股票掛鉤票據和精選債券。</p><p style="text-align: justify">例如，AI 在 HK 市場認購 IPO，將不受認購最低 200,000SGD（或等值外幣）的限制。</p><h3 style="text-align: justify">我如何能成爲 AI？</h3><p style="text-align: justify">符合任何一項資格標準即可申請成爲合格投資者：</p><ul><li style="text-align: justify">前 12 個月的收入不少於 30 萬新元（或等值的外幣）</li><li style="text-align: justify">價值超過 200 萬新元（或等值外幣）的個人資產淨值，其中投資者主要居住地的淨值最多隻能貢獻新元 100 萬</li><li style="text-align: justify">淨值超過 100 萬新元（或等值外幣）的金融資產</li></ul><p style="text-align: justify">其中 “金融資產” 是指：新加坡銀行法（第 19 章）第 4B 條所界定的存款</p><h3 style="text-align: justify">如果我已經在其他金融機構申報 AI，我還需要在長橋證券私人有限公司申報嗎？</h3><p style="text-align: justify">是的，您仍然需要在長橋證券私人有限公司申報，並附上證明文件。</p><h3 style="text-align: justify">其他金融機構的金融資產可以被視爲我的金融資產淨值的一部分嗎？</h3><p style="text-align: justify">是的，您在其他金融機構持有的金融資產也會被考慮在內。</p><h3 style="text-align: justify">我如何選擇申報/退出 AI 認證？</h3><p style="text-align: justify">您可以通過我們的長橋 App &gt; <strong>資產</strong> &gt; <strong>全部功能</strong> &gt; <strong>合格投資者</strong>認證選擇申報/退出 AI。</p><p style="text-align: justify"> </p><p><strong>關鍵要點</strong>：</p><p>成為合格投資者（AI）可解鎖更廣泛的金融產品和服務，滿足以下任一條件即可申請：</p><p>年收入不少於 30 萬新元<br/>淨資產超過 200 萬新元（住房限 100 萬新元）<br/>金融資產淨值超過 100 萬新元。</p><p>即使已是其他機構的 AI，仍需在長橋單獨認證。請通過長橋 App 的合格投資者認證功能在線辦理。</p><p> </p><p><strong>免責聲明</strong></p><p><i>本文僅作參考，不構成任何投資建議。</i></p>

@@ -1,0 +1,14 @@
+---
+import HkFooter from './footer/HkFooter.astro'
+import SgFooter from './footer/SgFooter.astro'
+import { REGION } from '../lib/site'
+import '../styles/site-footer.css'
+
+interface Props {
+  /** 当前页站内路径：页脚的语言切换跳同一页的其它语言版本(同 discover careers 的 localeLinkBuilder) */
+  pagePath: string
+}
+const { pagePath } = Astro.props
+---
+
+{REGION.code === 'hk' ? <HkFooter pagePath={pagePath} /> : <SgFooter pagePath={pagePath} />}

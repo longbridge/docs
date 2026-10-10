@@ -1,0 +1,10 @@
+---
+title: "Option Trading Statistics"
+topic_id: "25647"
+category_slug: "marketoverview"
+updated_at: "1784789463"
+seo_title: "Option Trading Statistics | Singapore | Longbridge"
+seo_description: "A Longbridge Singapore guide to option Trading Statistics, covering the key rules, timing, and mechanics you need to know before trading."
+related: [{"categorySlug":"marketoverview","slug":"ineq5l","title":"Option Market Data Fields Introductions"},{"categorySlug":"marketoverview","slug":"2480z3","title":"Options Quotes and Trading in Extended Hours "}]
+---
+<p style="margin-left: 0pt"><strong>1. What is Put/Call ratio</strong></p><p style="margin-left: 0pt">The Put/Call ratio is the ratio of the total trading volume or position of all put options on a certain trading day to the total trading volume or position of all put options.</p><p style="margin-left: 0pt"><strong>2. Basic Operations of Option Trading Statistics</strong></p><p style="margin-left: 0pt">Click on the tab above to switch between total trading volume data or total position data, and view the current day's data and historical curves; Long press the curve chart to view the total trading volume or total position data for a certain day.</p><p style="margin-left: 0pt"><strong>3. What is the function of Put/Call ratio</strong></p><p style="margin-left: 0pt">Generally speaking, the smaller the Put/Call ratio, the more investors trade or hold call options, indicating their tendency to be bullish. The larger the Put/Call ratio, the more investors trade or hold put options, indicating their tendency to be bearish. In practical applications, the Put/Call ratio is best analyzed in conjunction with the total trading volume/total position data. When the total trading volume/total position values increase synchronously, the above conclusions become more accurate. </p><p style="margin-left: 0cm"> </p><p style="margin-left: 0cm"><strong>Disclosures</strong></p><p style="margin-left: 0pt"><i>The above analysis is a general rule and does not represent any advices.</i></p>

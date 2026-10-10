@@ -1,0 +1,23 @@
+{
+  "name": "@lb-docs/web-support",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "description": "HK / SG 官网帮助中心共享源码(Astro srcDir + 同步脚本),由 apps/web-hk、apps/web-sg 以地区参数消费。纯源码包，无构建步骤。",
+  "exports": {
+    "./astro-config": "./astro-config.mjs",
+    "./region": "./region.mjs"
+  },
+  "scripts": {
+    "test": "bun test"
+  },
+  "dependencies": {
+    "astro": "^7.2.0",
+    "pagefind": "^1.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/node": "^26.4.0",
+    "typescript": "5"
+  }
+}

@@ -1,0 +1,165 @@
+---
+import '../styles/tokens.css'
+import '../styles/base.css'
+import '../styles/header.css'
+import '../styles/side-tree.css'
+import '../styles/search.css'
+import '../styles/whale.css'
+import Header from '../components/Header.astro'
+import AppNavbar from '../components/AppNavbar.astro'
+import Footer from '../components/Footer.astro'
+import CatDrawer from '../components/CatDrawer.astro'
+import SearchModal from '../components/SearchModal.astro'
+import themeMode from '../scripts/theme-mode.js?raw'
+import { getDict } from '../lib/i18n'
+import { API_HOST, FAVICON, OG_IMAGE, REGION, SITE_ORIGIN, alternates, canonicalUrl, localePath } from '../lib/site'
+import { supportHeaders } from '../../region.mjs'
+
+interface Props {
+  /** 已格式化的完整 <title> */
+  title: string
+  description: string
+  keywords?: string
+  /** 站内页面路径(/support…),用于 canonical / hreflang / 语言切换 */
+  pagePath: string
+  ogType?: 'website' | 'article'
+  /** 追加到 @graph 的 JSON-LD 节点(Organization / WebSite 已内置) */
+  jsonLd?: Record<string, unknown>[]
+  isHome?: boolean
+  /** 文章页传入，移动端分类抽屉据此展开并高亮当前文章 */
+  currentSlug?: string
+}
+
+const { title, description, keywords, pagePath, ogType = 'website', jsonLd = [], isHome = false, currentSlug } = Astro.props
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const canonical = canonicalUrl(locale, pagePath)
+// 与现网 localeToOgLocale 输出一致
+const OG_LOCALE: Record<string, string> = { 'en': 'en_US', 'zh-HK': 'zh_HK', 'zh-CN': 'zh_CN' }
+
+// hero 背景图 CDN 变体，与 home.css 中的 URL 逐字一致(否则 preload 不命中，见 apps/us BaseLayout)
+const HERO_BG = 'https://assets.lbkrs.com/uploads/962fe7f1-bbf1-462c-80b8-35f72d462e18/hero-bg3.png'
+const HERO_IMG_MOBILE = `${HERO_BG}?x-oss-process=image/resize,w_1000/format,webp`
+const HERO_IMG_DESKTOP = `${HERO_BG}?x-oss-process=image/resize,w_1200/format,webp`
+const HERO_IMG_DESKTOP_2X = `${HERO_BG}?x-oss-process=image/resize,w_1600/format,webp`
+
+const graph = [
+  { '@type': 'Organization', '@id': `${SITE_ORIGIN}/#organization`, name: 'Longbridge', url: SITE_ORIGIN, logo: FAVICON },
+  { '@type': 'WebSite', '@id': `${SITE_ORIGIN}/#website`, name: d.siteName, url: canonicalUrl(locale, '/support'), inLanguage: locale },
+  ...jsonLd,
+]
+
+// 浏览器脚本(搜索 / 反馈 / 文案)读取的运行时配置
+const clientConfig = {
+  region: REGION.code,
+  locale,
+  apiHost: API_HOST,
+  headers: supportHeaders(REGION, locale),
+  prefix: localePath(locale, ''),
+  i18n: d,
+}
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="preconnect" href="https://assets.lbkrs.com" />
+    {isHome && <link rel="preload" as="image" media="(max-width: 900px)" href={HERO_IMG_MOBILE} />}
+    {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (max-resolution: 1.99dppx)" href={HERO_IMG_DESKTOP} />}
+    {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (min-resolution: 2dppx)" href={HERO_IMG_DESKTOP_2X} />}
+    <link rel="icon" href={FAVICON} type="image/png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    {/* llms 发现指针：.md / llms.txt 由后端 portal-rs 实时生成，nginx 拦截转发，这里只声明 */}
+    <link rel="alternate" type="text/markdown" href={`${canonical}.md`} />
+    <link rel="alternate" type="text/plain" href={`${canonical}/llms.txt`} />
+    {alternates(pagePath).map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Longbridge" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content={OG_LOCALE[locale]} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@longbridgehk" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={OG_IMAGE} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')} />
+    <script type="application/json" id="lb-support-config" is:inline set:html={JSON.stringify(clientConfig).replace(/</g, '\\u003c')} />
+    <!-- Anti-FOUC + App 检测(UA lbcommitid → html.is-whale-app) -->
+    <script is:inline set:html={themeMode} />
+    <!-- App 顶部安全区垫首帧，逻辑同 apps/us BaseLayout(WebKit #191872) -->
+    <script is:inline>
+      ;(function () {
+        var html = document.documentElement
+        if (/[?&]lbFitsStatusBar=2(?![0-9])/.test(location.search)) html.classList.add('is-immersive-sb')
+        var KEY = 'lb-safe-top'
+        try {
+          var cached = parseInt(localStorage.getItem(KEY), 10)
+          if (cached > 0) html.style.setProperty('--lb-safe-top-boot', cached + 'px')
+        } catch (e) {}
+        var probe = document.createElement('div')
+        probe.style.cssText = 'position:absolute;top:-9999px;left:0;width:0;height:0;padding-top:env(safe-area-inset-top,0px)'
+        var tries = 0
+        function sample() {
+          var v = parseFloat(getComputedStyle(probe).paddingTop) || 0
+          if (v > 0 && window.innerHeight > window.innerWidth) {
+            try { localStorage.setItem(KEY, String(Math.round(v))) } catch (e) {}
+            probe.remove()
+            return
+          }
+          if (++tries < 40) requestAnimationFrame(sample)
+          else probe.remove()
+        }
+        function start() {
+          if (!html.classList.contains('is-whale-app')) return
+          document.body.appendChild(probe)
+          requestAnimationFrame(sample)
+        }
+        if (document.body) start()
+        else document.addEventListener('DOMContentLoaded', start)
+      })()
+    </script>
+    <!-- App WebView 内禁用缩放 -->
+    <script is:inline>
+      ;(function () {
+        var ua = navigator.userAgent || ''
+        if (!/longbridge|whale|_dsbridge/i.test(ua)) return
+        var m = document.querySelector('meta[name="viewport"]')
+        if (!m) return
+        var c = m.getAttribute('content') || ''
+        if (c.indexOf('user-scalable') > -1) return
+        m.setAttribute('content', c + ', user-scalable=no, maximum-scale=1.0, minimum-scale=1.0')
+      })()
+    </script>
+    {
+      import.meta.env.DEV && (
+        <script is:inline>
+          /* 仅 dev:?lb-whale=1 在普通浏览器里模拟 App 环境 */
+          if (/[?&]lb-whale=1/.test(location.search)) document.documentElement.classList.add('is-whale-app')
+        </script>
+      )
+    }
+  </head>
+  <body class={isHome ? 'lb-has-hero' : undefined}>
+    <a class="skip-navigation" href="#main-content">{d.skipToContent}</a>
+    <AppNavbar />
+    <Header pagePath={pagePath} />
+    <CatDrawer pagePath={pagePath} currentSlug={currentSlug} />
+    <SearchModal />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer pagePath={pagePath} />
+  </body>
+</html>

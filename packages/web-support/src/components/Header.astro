@@ -1,0 +1,127 @@
+---
+import CatIcon from './CatIcon.astro'
+import { getContent } from '../lib/content'
+import { fmt, getDict, LOCALE_LABELS } from '../lib/i18n'
+import { HOME_PATH, REGION, localePath } from '../lib/site'
+
+interface Props {
+  /** 当前页面的站内路径，语言切换跳到同一页的其它语言版本 */
+  pagePath: string
+}
+
+const { pagePath } = Astro.props
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const { nav } = getContent(locale)
+const home = localePath(locale, HOME_PATH)
+const flag = (code: string) => `/${REGION.code}/support/flags/${code}.svg`
+
+// 切地区：去目标地区帮助中心首页，尽量保留当前语言(HK/SG 均支持三语;US 帮助中心仅英文)
+const DEFAULT_LOCALE = { hk: 'zh-HK', sg: 'en' } as const
+const regionHome = (code: 'hk' | 'sg') => `/${code}${locale === DEFAULT_LOCALE[code] ? '' : '/' + locale}/support`
+const REGION_OPTIONS = [
+  { code: 'hk', label: d.regionHK, href: regionHome('hk') },
+  { code: 'sg', label: d.regionSG, href: regionHome('sg') },
+  { code: 'us', label: d.regionUS, href: '/us/en/support' },
+]
+
+const LOGO_LIGHT_URL = 'https://assets.lbkrs.com/uploads/f6e3a8fd-c43b-471a-99b2-650ae061e2e8/logo_light.png'
+const LOGO_DARK_URL = 'https://assets.lbkrs.com/uploads/8d92f710-23cf-4c62-a800-d2928c216c75/logo_dark.png'
+const CHECK_SVG = '<svg class="lb-region__check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>'
+---
+
+<header class="lb-header" id="lb-header">
+  <div class="lb-header__inner">
+    <a href={home} class="lb-header__logo" aria-label={d.siteName}>
+      <img src={LOGO_LIGHT_URL} alt="Longbridge" class="lb-logo lb-logo--light" width="494" height="68" loading="eager" decoding="async" />
+      <img src={LOGO_DARK_URL} alt="Longbridge" class="lb-logo lb-logo--dark" width="494" height="68" loading="eager" decoding="async" />
+    </a>
+
+    <nav class="lb-topnav" aria-label="Main navigation">
+      <a href={home} class="lb-topnav__link">{d.home}</a>
+
+      <div class="lb-topnav__dropdown" data-lb-dropdown>
+        <button class="lb-topnav__link lb-topnav__trigger" aria-expanded="false" aria-haspopup="true" aria-controls="lb-mega-menu" data-lb-dropdown-trigger>
+          {d.allTopics}
+          <svg class="lb-topnav__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+
+        <div class="lb-mega" id="lb-mega-menu" hidden aria-label={d.allTopics}>
+          <ul class="lb-mega__left" role="tablist">
+            {nav.map((cat, idx) => (
+              <li>
+                <a class={`lb-mega__cat${idx === 0 ? ' is-active' : ''}`} data-idx={idx} href={localePath(locale, cat.path)} role="tab" aria-selected={idx === 0 ? 'true' : 'false'} data-lb-cat-tab>
+                  <span class="lb-mega__cat-icon" aria-hidden="true"><CatIcon slug={cat.slug} icon={cat.icon} /></span>
+                  <span class="lb-mega__cat-name">{cat.title}</span>
+                  <span class="lb-mega__cat-count">{cat.count}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div class="lb-mega__right">
+            {nav.map((cat, idx) => (
+              <div class={`lb-mega__panel${idx === 0 ? ' is-active' : ''}`} data-idx={idx} role="tabpanel" aria-label={cat.title}>
+                <div class="lb-mega__head">
+                  <span class="lb-mega__head-icon" aria-hidden="true"><CatIcon slug={cat.slug} icon={cat.icon} /></span>
+                  <span class="lb-mega__head-name">{cat.title}</span>
+                </div>
+                <ul class="lb-mega__arts">
+                  {cat.sections.flatMap((s) => s.articles).map((art) => (
+                    <li><a href={localePath(locale, art.path)}><span class="lb-mega__art-title">{art.title}</span></a></li>
+                  ))}
+                </ul>
+                <a href={localePath(locale, cat.path)} class="lb-mega__view-all">
+                  {fmt(d.viewAll, { count: cat.count })}
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <button class="lb-header-search-btn lb-icon-btn" aria-label={d.openSearch} aria-haspopup="dialog" data-lb-search-open>
+        <svg viewBox="0 0 1024 1024" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M113.777778 432.469333a318.691556 318.691556 0 1 0 637.44 0A318.691556 318.691556 0 0 0 113.777778 432.469333z m581.745778 343.324445a432.469333 432.469333 0 1 1 80.440888-80.497778l206.506667 206.620444-80.384 80.440889-206.506667-206.506666z" /></svg>
+      </button>
+    </nav>
+
+    <div class="lb-header__actions">
+      <div class="lb-region" data-lb-region>
+        <button class="lb-icon-btn lb-region__trigger" aria-expanded="false" aria-haspopup="true" aria-controls="lb-region-menu" data-lb-region-trigger aria-label={d.selectRegion}>
+          <svg viewBox="0 0 1024 1024" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M512 85.33h-0.18C276.26 85.43 85.33 276.42 85.33 512c0 235.64 191.03 426.67 426.67 426.67 235.64 0 426.67-191.03 426.67-426.67 0-235.64-191.03-426.67-426.67-426.67z m351.65 390.1H705.22c-4.6-119.17-31.46-224.37-71.39-295.4 124.26 45.61 215.81 159.02 229.82 295.4z m-703.31 73.14h158.4c4.6 119.16 31.45 224.35 71.39 295.39-124.24-45.63-215.77-159.02-229.79-295.39z m158.4-73.14h-158.4c14.02-136.37 105.54-249.76 229.79-295.39-39.93 71.04-66.79 176.23-71.39 295.39z m263.79 308c-32.86 72.3-63.31 82.09-70.55 82.09-7.24 0-37.69-9.79-70.55-82.09-26.5-58.3-45.54-140.37-49.49-234.86h240.07c-3.95 94.49-22.98 176.57-49.48 234.86z m-190.58-308c3.95-94.49 22.99-176.57 49.49-234.86 32.86-72.3 63.31-82.09 70.55-82.09 7.23 0 37.68 9.79 70.55 82.09 26.5 58.3 45.53 140.37 49.49 234.86H391.95z m241.87 368.54c39.94-71.03 66.8-176.23 71.39-295.4h158.44c-14.01 136.38-105.56 249.79-229.83 295.4z" /></svg>
+        </button>
+
+        <div class="lb-region__menu" id="lb-region-menu" hidden role="menu" aria-label={d.selectRegion} data-lb-locale-links>
+          <div class="lb-region__section-title">{d.selectRegion}</div>
+          {REGION_OPTIONS.map((r) => (
+            <a class:list={['lb-region__option', { 'is-active': r.code === REGION.code }]} role="menuitem" href={r.href} aria-current={r.code === REGION.code ? 'true' : undefined}>
+              <img class="lb-region__flag" src={flag(r.code)} width="22" height="22" alt="" aria-hidden="true" />
+              <span class="lb-region__text">{r.label}</span>
+              {r.code === REGION.code && <Fragment set:html={CHECK_SVG} />}
+            </a>
+          ))}
+          <div class="lb-region__section-title">{d.language}</div>
+          {REGION.locales.map((l) => (
+            <a class:list={['lb-region__option', { 'is-active': l === locale }]} role="menuitem" href={localePath(l, pagePath)} hreflang={l} lang={l} aria-current={l === locale ? 'true' : undefined}>
+              <span class="lb-region__text">{LOCALE_LABELS[l]}</span>
+              {l === locale && <Fragment set:html={CHECK_SVG} />}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <button class="lb-header-search-btn lb-header__mobile-search" aria-label={d.openSearch} data-lb-search-open>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+      </button>
+
+      <button class="lb-hamburger" aria-label={d.openMenu} aria-expanded="false" aria-controls="lb-cat-drawer" data-lb-cat-drawer-open type="button">
+        <svg class="lb-hamburger__icon lb-hamburger__icon--open" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+        <svg class="lb-hamburger__icon lb-hamburger__icon--close is-hidden" viewBox="0 0 20 20" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" /></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  import '../scripts/header.ts'
+</script>

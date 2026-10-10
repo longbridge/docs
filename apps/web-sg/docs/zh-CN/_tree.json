@@ -1,0 +1,630 @@
+[
+  {
+    "slug": "accountsecurity",
+    "title": "账户相关",
+    "desc": "关于开户、认证、账户管理及账户安全等基础服务",
+    "icon": "https://assets.lbctrl.com/uploads/96d8325b7543690f2f77e94d5b35ee3c.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "account_opening",
+        "title": "开户指南",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "openanaccount",
+            "title": "如何开设长桥账户？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "account_security",
+        "title": "账户安全",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "antifraud",
+            "title": "诈骗警示与常见问题"
+          },
+          {
+            "slug": "strongpassword",
+            "title": "强密码设置指南"
+          },
+          {
+            "slug": "kqym1v",
+            "title": "谨防「山寨长桥」！这 5 大贴士守住你的投资账户安全"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountfaqs",
+        "title": "账户常见问题",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "accounttypes",
+            "title": "有哪些可用的帐户类型？"
+          },
+          {
+            "slug": "termination",
+            "title": "如何注销账号？"
+          },
+          {
+            "slug": "safe",
+            "title": "Long Bridge Securities Pte. Ltd. 值得信赖吗？"
+          },
+          {
+            "slug": "accredited-investor",
+            "title": "什么是合格投资者 (AI)？"
+          },
+          {
+            "slug": "nl0lyo",
+            "title": "关于适用于从中国大陆访问服务的客户服务调整的通知"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "fundstransfers",
+    "title": "资金与转仓",
+    "desc": "涵盖资金存取、货币兑换、余额通及股票转移等全链路操作指南",
+    "icon": "https://assets.lbctrl.com/uploads/74357a2cc386faa6d1feb3ef5add8bf0.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "depositfunds",
+        "title": "存入资金",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "bgot76",
+            "title": "如何完成 Wise 入金？"
+          },
+          {
+            "slug": "depositfail",
+            "title": "我的资金为什么无法存入？"
+          },
+          {
+            "slug": "Deposit",
+            "title": "入金操作指南"
+          },
+          {
+            "slug": "DDA",
+            "title": "如何完成 DDA 入金？"
+          },
+          {
+            "slug": "internetbankingtransfer",
+            "title": "如何完成网银转账入金？"
+          },
+          {
+            "slug": "PayNow",
+            "title": "如何完成 PayNow 入金？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "withdrawfunds",
+        "title": "提取资金",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "wise",
+            "title": "如何提现至 Wise 账户？"
+          },
+          {
+            "slug": "bank-auth",
+            "title": "添加银行账户操作指南"
+          },
+          {
+            "slug": "Withdrawalsfaqs",
+            "title": "提现常见问题"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundsoverview",
+        "title": "资金相关",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "intradayPL",
+            "title": "资产当日盈亏说明"
+          },
+          {
+            "slug": "PLcost",
+            "title": "持仓盈亏说明"
+          },
+          {
+            "slug": "u7ttgq",
+            "title": "跨券商资金划转常见问题"
+          },
+          {
+            "slug": "DescriptionofFieldindicators",
+            "title": "股票账户字段说明"
+          },
+          {
+            "slug": "totalassets",
+            "title": "总资产字段说明"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "currencyexchange",
+        "title": "货币兑换",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "FAQs",
+            "title": "货币兑换常见问题"
+          },
+          {
+            "slug": "FAQ_Automatic_Currency_Exchange",
+            "title": "自动还款常见问题"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cashplus",
+        "title": "余额通",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "cash_plus_introduction",
+            "title": "余额通介绍"
+          },
+          {
+            "slug": "FAQ",
+            "title": "余额通常见问题汇总"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "stocktransfer",
+        "title": "股票转移",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "GuidanceOfShareTransferIn",
+            "title": "如何转入股票？"
+          },
+          {
+            "slug": "transferinstockdetails",
+            "title": "转入股票证券信息"
+          },
+          {
+            "slug": "ADRconversion",
+            "title": "如何完成 ADR 转换？"
+          },
+          {
+            "slug": "sharetransferout",
+            "title": "如何转出股票？"
+          },
+          {
+            "slug": "kd8fpx",
+            "title": "如何从 CDP 转移股票？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "marketstrading",
+    "title": "行情与交易",
+    "desc": "涵盖交易操作规则、市场机制等交易核心问题",
+    "icon": "https://assets.lbctrl.com/uploads/2463e93f1c8d15304f5356c992919508.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "marketoverview",
+        "title": "行情介绍",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ineq5l",
+            "title": "期权行情字段介绍"
+          },
+          {
+            "slug": "2480z3",
+            "title": "期权延长时段行情与交易"
+          },
+          {
+            "slug": "hrdvqx",
+            "title": "期权成交统计"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "usmarket",
+        "title": "美股市场",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "otcfaq",
+            "title": "场外交易 / 粉单常见问题"
+          },
+          {
+            "slug": "a8a5l9",
+            "title": "什么是美股深度摆盘"
+          },
+          {
+            "slug": "UStradingrules",
+            "title": "美股交易规则"
+          },
+          {
+            "slug": "USmarketquotes",
+            "title": "美股盘前盘后行情规则"
+          },
+          {
+            "slug": "USordertypes",
+            "title": "订单类型有哪些？ - 美国"
+          },
+          {
+            "slug": "marketorder",
+            "title": "什么是市价单？"
+          },
+          {
+            "slug": "fractionalshares",
+            "title": "什么是美股碎股交易"
+          },
+          {
+            "slug": "shortselling",
+            "title": "美股卖空（融券）常见问题"
+          },
+          {
+            "slug": "Overnighttrading",
+            "title": "什么是美股夜盘"
+          },
+          {
+            "slug": "OptionsTradingFAQs",
+            "title": "期权常见问题"
+          },
+          {
+            "slug": "USstockoptions",
+            "title": "什么是美股期权？"
+          },
+          {
+            "slug": "ADR",
+            "title": "美国存托凭证 (ADR) 托管费用"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "hkmarket",
+        "title": "港股市场",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "HKtradingrules",
+            "title": "交易规则"
+          },
+          {
+            "slug": "cbbccall",
+            "title": "港股牛熊证回收及结算时间"
+          },
+          {
+            "slug": "Greymarkettrading",
+            "title": "暗盘交易规则"
+          },
+          {
+            "slug": "HKordertypes",
+            "title": "订单类型有哪些？ - 香港"
+          },
+          {
+            "slug": "marketorder-hk",
+            "title": "什么是香港市价单"
+          },
+          {
+            "slug": "OddLotTradesFAQ",
+            "title": "碎股交易常见问题 - 香港"
+          },
+          {
+            "slug": "Warrantsandcbbcs",
+            "title": "什么是窝轮、牛熊证"
+          },
+          {
+            "slug": "hkbmp",
+            "title": "港股 BMP 行情说明"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sgmarket",
+        "title": "新加坡市场",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "SGXTRADINGRULE",
+            "title": "新交所交易规则 - 证券市场"
+          },
+          {
+            "slug": "SGordertypes",
+            "title": "订单类型有哪些？ - 新加坡"
+          },
+          {
+            "slug": "DLCs",
+            "title": "什么是新加坡市场每日杠杆证书 (DLCs)"
+          },
+          {
+            "slug": "Oldlottradesfaq",
+            "title": "碎股交易常见问题 - 新加坡"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "margin_financing",
+        "title": "融资交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "portfoliomargin",
+            "title": "什么是组合保证金"
+          },
+          {
+            "slug": "Supportmargintrading",
+            "title": "如何查询股票是否支持融资交易？"
+          },
+          {
+            "slug": "accountmargin",
+            "title": "账户风控规则"
+          },
+          {
+            "slug": "margincall",
+            "title": "追缴保证金规则"
+          },
+          {
+            "slug": "relatedfaqs",
+            "title": "融资相关常见问题解答"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundtrading",
+        "title": "基金交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "fundtypes",
+            "title": "基金类型介绍"
+          },
+          {
+            "slug": "fundterminology",
+            "title": "基金相关字段解释"
+          },
+          {
+            "slug": "fundrules",
+            "title": "基金买入和卖出规则"
+          },
+          {
+            "slug": "faqs",
+            "title": "基金常见问题"
+          },
+          {
+            "slug": "fundtradingfees",
+            "title": "基金收费规则"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "gridtrading",
+        "title": "网格交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "gridtrading",
+            "title": "什么是网格交易"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "corporateactions",
+        "title": "公司行动",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "stocksubscription",
+            "title": "什么是供股？"
+          },
+          {
+            "slug": "dividendselection",
+            "title": "什么是选股选息及处理时间？"
+          },
+          {
+            "slug": "stockdividends",
+            "title": "什么是送股及处理时间？"
+          },
+          {
+            "slug": "dividends",
+            "title": "什么是派息/特殊派息及处理时间？"
+          },
+          {
+            "slug": "stocksplit",
+            "title": "什么是拆分股及处理时间"
+          },
+          {
+            "slug": "corporateactions",
+            "title": "公司行动对长期订单有什么影响？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "tradingfaqs",
+        "title": "交易常见问题",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "pl-analysis",
+            "title": "盈亏分析操作指南"
+          },
+          {
+            "slug": "attachedorder",
+            "title": "什么是附加订单？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "productsfeatures",
+    "title": "产品与功能",
+    "desc": "深入解析智能工具的实操指南与桌面端的高效使用技巧",
+    "icon": "https://assets.lbctrl.com/uploads/07dd6aba39185a28768e8a4eb7ab1d58.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "longbridgeapp",
+        "title": "客户端功能",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "8oxefb",
+            "title": "什么是股票定投？"
+          },
+          {
+            "slug": "e1xqwc",
+            "title": "TradePlan 风险声明"
+          },
+          {
+            "slug": "personalized-push-description",
+            "title": "个性化推荐是什么？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "longbridgepro",
+        "title": "桌面端功能",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "attach-order",
+            "title": "图表交易的附加单设置介绍"
+          },
+          {
+            "slug": "guide",
+            "title": "Longbridge Pro 桌面端组件、布局说明"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "campaigns",
+    "title": "活动介绍",
+    "desc": "最新市场活动、福利优惠及用户专属权益说明",
+    "icon": "https://assets.lbctrl.com/uploads/090db88c311683bf7e5d4f1d60172005.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "ongoingcampaigns",
+        "title": "当前活动",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "cowraising",
+            "title": "养牛活动规则"
+          },
+          {
+            "slug": "7sko35",
+            "title": "2026 年 10 月长桥新加坡期权交易榜活动"
+          },
+          {
+            "slug": "ue9o55",
+            "title": "2026 年 10 月长桥新加坡期权新人礼活动"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "pastcampaigns",
+        "title": "往期活动",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ca0kbo",
+            "title": "2026 年 08 月长桥新加坡期权新人礼活动"
+          },
+          {
+            "slug": "p3aqn1",
+            "title": "2026 年 08 月 长桥新加坡期权交易榜活动"
+          },
+          {
+            "slug": "iqzul6",
+            "title": "2026 年 09 月长桥新加坡期权交易榜活动"
+          },
+          {
+            "slug": "0wt3l2",
+            "title": "2026 年 09 月长桥新加坡期权新人礼活动"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cardandcouponfaqs",
+        "title": "卡券常见问题",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "optioncash",
+            "title": "期权现金卡常见问题"
+          },
+          {
+            "slug": "platformfee",
+            "title": "平台费抵扣卡常见问题"
+          },
+          {
+            "slug": "interestboost",
+            "title": "加息券常见问题"
+          },
+          {
+            "slug": "StockCashCoupon",
+            "title": "股票现金卡常见问题"
+          }
+        ],
+        "children": []
+      }
+    ]
+  }
+]

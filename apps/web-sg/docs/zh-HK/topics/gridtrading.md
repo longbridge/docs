@@ -1,0 +1,10 @@
+---
+title: "什麼是網格交易"
+topic_id: "15492"
+category_slug: "gridtrading"
+updated_at: "1784789461"
+seo_title: "什麼是網格交易？策略指南與參數設置"
+seo_description: "了解網格交易，這是一種利用股價波動獲利的策略。掌握如何設置參數、提交網格交易訂單，以及有效管理風險。"
+related: []
+---
+<p style="margin-left: 0px">網格交易是一種基於股價波動的場景下，設定好策略參數並由系統根據參數執行低買高賣從而賺取波段差價的交易策略。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/e4e559dd0b3d1bf3922119b297991679"/></figure><p style="margin-left: 0px">投資者事先將資產分成多份，設定好基準價格以及基於基準價格上漲下跌的價差繪製對應網格，當股價下跌觸發網格時，按照設定的價格和數量買入一份，相反當股價上漲觸發網格時，賣出一份，通過反復買入賣出的操作，賺取差價。</p><h4 style="margin-left: 0px"><strong>如何提交網格策略？</strong></h4><p style="margin-left: 0px">步驟 1. 通過快捷交易抽屜或者直接進入交易大廳後，在訂單類型中選擇<strong>網格交易</strong>。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/fbf73e9c6fdae7039e7fe9fd3d734b89"/></figure><p style="margin-left: 0px">步驟 2. 按介面提示輸入價格和數量參數後提交策略。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/aa43d2d293f3c395a1da95101b667375"/></figure><p>步驟 3. 提交完成後，在個股詳情頁可看到對應網格策略記錄，可點擊直接進入策略單詳情。資產首頁或訂單記錄頁也可以看到策略訂單記錄，以及對應的交易和盈虧情况。當出現策略不適用於當前行情趨勢，或者其他原因需要暫停監控的話，可點擊策略單，選擇暫停操作，或直接撤銷，若需要調整策略參數，可點擊修改進行改單操作。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/b21eb481914c50c43c2a91bb7b210cf3"/></figure><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/d20d33a0480a53284124502606be8fa3"/></figure><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/65163ff6767fe4ef542cbf97ea8b91df"/></figure><h4 style="margin-left: 0px"><strong>策略參數如何設定？</strong></h4><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/4acc4d5b0beca739a63e27f598ca100f"/></figure><p style="margin-left: 0px"><span style="color: #888888"><strong>注</strong>：網格交易不支持美股盤前/盤後及港股競價時段交易。</span></p><p style="margin-left: 0px"> </p><p style="margin-left: 0px"><i>本文僅供參考，不構成任何投資建議。</i></p>

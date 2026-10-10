@@ -1,0 +1,9 @@
+---
+import { CAT_ICONS, iconKeyForSlug } from '../lib/cat-icons'
+
+interface Props { slug: string; icon?: string }
+// CMS 给了分类图标就用 CMS 的(与现网一致),否则回退 US 站的 lucide 线性图标
+const { slug, icon } = Astro.props
+---
+
+{icon ? <img src={icon} alt="" width="20" height="20" loading="lazy" decoding="async" /> : <Fragment set:html={CAT_ICONS[iconKeyForSlug(slug)]} />}

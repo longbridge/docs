@@ -1,0 +1,169 @@
+/* 官网 HK / SG 页脚。尺寸与浅色取值对照 longbridge.com/hk、/sg 线上渲染结果
+   (website-footer.preset.js:border #EAEBEC、text_color_1 #000、1_supplement #464f56、2 #82888d、3 #AFB3B6、brand #00b8b8)。
+   官网没有深色模式，深色按本站 tokens 映射。 */
+.lb-site-footer {
+  --fs-bg: #fff;
+  --fs-text-1: #000;
+  --fs-text-supp: #464f56;
+  --fs-text-2: #82888d;
+  --fs-text-3: #afb3b6;
+  --fs-entity-desc: rgba(0, 0, 0, 0.65);
+  --fs-border: #eaebec;
+  --fs-brand: #00b8b8;
+  background: var(--fs-bg);
+  color: var(--fs-text-1);
+  font-size: 12px;
+  line-height: 16px;
+}
+html[theme='dark'] .lb-site-footer,
+.theme-dark .lb-site-footer {
+  --fs-bg: var(--background);
+  --fs-text-1: var(--foreground);
+  --fs-text-supp: #b7bcc2;
+  --fs-text-2: var(--muted-foreground);
+  --fs-text-3: #7c8087;
+  --fs-entity-desc: rgba(255, 255, 255, 0.65);
+  --fs-border: var(--border);
+  --fs-brand: var(--accent-teal);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([theme='light']):not(.theme-light) .lb-site-footer {
+    --fs-bg: var(--background);
+    --fs-text-1: var(--foreground);
+    --fs-text-supp: #b7bcc2;
+    --fs-text-2: var(--muted-foreground);
+    --fs-text-3: #7c8087;
+    --fs-entity-desc: rgba(255, 255, 255, 0.65);
+    --fs-border: var(--border);
+    --fs-brand: var(--accent-teal);
+  }
+}
+
+.lb-site-footer a { color: var(--fs-text-supp); text-decoration: none; transition: color 0.2s; }
+.lb-site-footer a:hover { color: var(--fs-brand); }
+.lb-site-footer p { margin: 0; }
+
+.lb-site-footer__inner { box-sizing: border-box; padding: 40px 15px 0; }
+/* 左右边距照官网 banner-responsive(packages/tailwindcss/src/_container.scss):<640 为 15,640~1391 为 96,≥1392 锁 1200 版心 */
+@media (min-width: 640px) {
+  .lb-site-footer__inner { padding-inline: 96px; }
+}
+@media (min-width: 1392px) {
+  .lb-site-footer__inner { padding-inline: calc(50% - 600px); }
+}
+
+/* ── 多列区 ─────────────────────────────────────────────── */
+.lb-site-footer__cols { display: flex; flex-direction: column; }
+.lb-site-footer__col { display: flex; flex-direction: column; }
+.lb-site-footer__col + .lb-site-footer__col { margin-top: 20px; }
+@media (min-width: 768px) {
+  .lb-site-footer__cols { flex-direction: row; justify-content: space-between; }
+  .lb-site-footer__col + .lb-site-footer__col { margin-top: 0; }
+  /* HK 中文列间无固定间距(靠 space-between),英文 gap-4 / @lg:gap-16 */
+  .lb-site-footer--en .lb-site-footer__col + .lb-site-footer__col { margin-left: 16px; }
+}
+@media (min-width: 1024px) {
+  .lb-site-footer--en .lb-site-footer__col + .lb-site-footer__col { margin-left: 64px; }
+  .lb-site-footer__below-lg { display: none; }
+}
+@media (max-width: 1023.98px) {
+  .lb-site-footer__from-lg { display: none !important; }
+}
+@media (min-width: 1392px) {
+  .lb-site-footer__below-xl { display: none; }
+}
+@media (max-width: 1391.98px) {
+  .lb-site-footer__from-xl { display: none !important; }
+}
+/* 官网宿主页面对 HK 页脚列的全局规则(.layout-footer-column-container) */
+.lb-site-footer--hk .lb-site-footer__col { max-width: 300px; }
+.lb-site-footer--hk .lb-site-footer__col:first-child { flex-basis: 218px; }
+@media (min-width: 1200px) {
+  .lb-site-footer--hk .lb-site-footer__col:first-child { flex-shrink: 0; }
+}
+.lb-site-footer__group + .lb-site-footer__group { margin-top: 28px; }
+.lb-site-footer__label { margin-bottom: 12px; color: var(--fs-text-1); font-size: 14px; line-height: 20px; font-weight: 600; }
+.lb-site-footer__items { display: flex; flex-direction: column; }
+.lb-site-footer__items > * + * { margin-top: 12px; }
+.lb-site-footer__phone { display: flex; align-items: flex-start; color: var(--fs-text-supp); }
+.lb-site-footer__phone > span { margin-right: 4px; }
+/* 官网这一行包了一层继承 24px 行高的 div,行高比其他链接多 8px */
+.lb-site-footer__strut { line-height: 24px; }
+.lb-site-footer__social { display: flex; align-items: center; }
+.lb-site-footer__social a { display: block; width: 20px; height: 20px; }
+.lb-site-footer__social a + a { margin-left: 8px; }
+.lb-site-footer__social a:hover { color: var(--fs-text-1); }
+.lb-site-footer__social svg { display: block; width: 100%; height: 100%; }
+
+.lb-site-footer__hours { margin-top: 20px; color: var(--fs-text-3); }
+.lb-site-footer__hours p { margin-bottom: 8px; white-space: pre-line; }
+.lb-site-footer__hours p:nth-child(2) { margin-bottom: 16px; }
+
+.lb-site-footer__hr { height: 0; margin: 24px 0; border: 0; border-top: 1px solid var(--fs-border); }
+.lb-site-footer--sg .lb-site-footer__hr { margin: 20px 0; }
+
+.lb-site-footer__meta { display: flex; flex-direction: column; align-items: flex-start; row-gap: 16px; padding-bottom: 12px; color: var(--fs-text-3); }
+@media (min-width: 1392px) {
+  .lb-site-footer__meta { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+.lb-site-footer__langs { display: flex; flex-wrap: wrap; color: var(--fs-text-supp); }
+.lb-site-footer__langs > * + * { margin-left: 4px; }
+.lb-site-footer__langs a:hover { color: var(--fs-text-1); }
+
+.lb-site-footer__note { color: var(--fs-text-3); white-space: pre-line; }
+.lb-site-footer__note--strong { color: var(--fs-text-2); line-height: 17px; }
+.lb-site-footer__note a,
+.lb-site-footer__entity-desc a,
+.lb-site-footer__disclaimer a { color: var(--fs-brand); text-decoration: underline; }
+
+/* ── 持牌信息 ───────────────────────────────────────────── */
+.lb-site-footer__licensed { padding: 24px 0; }
+.lb-site-footer__licensed-title { margin-bottom: 24px; color: var(--fs-text-1); font-size: 20px; line-height: 28px; font-weight: 600; }
+.lb-site-footer__licensed-grid { display: grid; grid-template-columns: 1fr; grid-gap: 32px; }
+@media (min-width: 1024px) {
+  .lb-site-footer__licensed-grid { grid-template-columns: 1fr 1fr; }
+}
+.lb-site-footer__entity { display: flex; align-items: center; margin-bottom: 12px; color: var(--fs-text-1); font-size: 14px; line-height: 21px; }
+.lb-site-footer__entity img { flex: none; width: 16px; height: 16px; margin-right: 8px; }
+.lb-site-footer__entity a { color: var(--fs-text-1); }
+.lb-site-footer__entity a:hover { color: var(--fs-brand); text-decoration: underline; }
+.lb-site-footer__entity-desc { color: var(--fs-text-1); font-size: 14px; line-height: 20px; font-weight: 300; white-space: pre-line; }
+
+/* ── 免责声明 ───────────────────────────────────────────── */
+.lb-site-footer__disclaimer { padding: 24px 0; color: var(--fs-text-3); }
+.lb-site-footer__disclaimer p { margin-bottom: 8px; white-space: pre-line; }
+.lb-site-footer__disclaimer-title { margin-bottom: 8px; color: var(--fs-text-2); font-weight: 700; }
+
+/* ── SG 差异 (sg/footer.tsx):联系方式大字、标题字重 500、持牌区更紧凑 ─────── */
+.lb-site-footer--sg .lb-site-footer__cols { align-items: flex-start; }
+.lb-site-footer--sg .lb-site-footer__col { margin-bottom: 32px; }
+.lb-site-footer--sg .lb-site-footer__col:last-child { margin-bottom: 0; }
+.lb-site-footer--sg .lb-site-footer__col + .lb-site-footer__col { margin-top: 16px; }
+@media (min-width: 768px) {
+  .lb-site-footer--sg .lb-site-footer__col + .lb-site-footer__col { margin-top: 0; margin-left: 40px; }
+}
+.lb-site-footer--sg .lb-site-footer__label { margin-bottom: 16px; font-size: 12px; line-height: 16px; font-weight: 500; }
+@media (min-width: 768px) {
+  .lb-site-footer--sg .lb-site-footer__label { font-size: 14px; line-height: 20px; }
+}
+.lb-site-footer--sg .lb-site-footer__col--contact { padding-bottom: 40px; }
+.lb-site-footer__whatsapp-note { margin-bottom: 16px; }
+.lb-site-footer--sg .lb-site-footer__label--tight { margin-bottom: 8px; }
+.lb-site-footer--sg .lb-site-footer__label--spaced { margin-top: 16px; }
+.lb-site-footer--sg .lb-site-footer__items > * + * { margin-top: 16px; }
+.lb-site-footer__emphasis { margin-bottom: 8px; font-size: 18px; line-height: 28px; font-weight: 600; }
+.lb-site-footer .lb-site-footer__emphasis { color: var(--fs-text-1); }
+.lb-site-footer__muted { color: var(--fs-text-2); white-space: pre-line; }
+.lb-site-footer__gap { margin-bottom: 16px; }
+.lb-site-footer__whatsapp { margin: 28px 0 8px; color: var(--fs-text-supp); }
+.lb-site-footer--sg .lb-site-footer__meta { row-gap: 12px; }
+.lb-site-footer--sg .lb-site-footer__langs { padding-top: 4px; }
+@media (min-width: 768px) {
+  .lb-site-footer--sg .lb-site-footer__meta { flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: 0; }
+}
+.lb-site-footer--sg .lb-site-footer__licensed { padding: 20px 0; }
+.lb-site-footer--sg .lb-site-footer__licensed-title { font-size: 18px; font-weight: 500; }
+.lb-site-footer--sg .lb-site-footer__licensed-grid { grid-gap: 24px 40px; }
+.lb-site-footer--sg .lb-site-footer__entity-desc { color: var(--fs-entity-desc); font-size: 12px; line-height: 16px; font-weight: 400; }
+.lb-site-footer--sg .lb-site-footer__disclaimer { padding-top: 0; }
+.lb-site-footer--sg .lb-site-footer__disclaimer p:nth-of-type(2) { margin-bottom: 24px; }

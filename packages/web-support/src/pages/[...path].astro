@@ -1,0 +1,35 @@
+---
+import HomePage from '../views/HomePage.astro'
+import CategoryPage from '../views/CategoryPage.astro'
+import TopicPage from '../views/TopicPage.astro'
+import { REGION } from '../lib/site'
+import { getContent } from '../lib/content'
+import { categoryPages } from '../lib/nav-core'
+
+type Props = { locale: string; kind: 'home' | 'category' | 'topic'; slug?: string }
+
+// 产物路径 = 对外 URL 去掉地区段：support.html、en/support/category/x.html、en/support/topics/{slug}.html。
+// 文章只按 slug 存一份，对外的 /support/topics/{任意分类}/{slug} 由 nginx 改写过来(现网接口也只认 slug)。
+export function getStaticPaths() {
+  const paths: { params: { path: string }; props: Props }[] = []
+  for (const locale of REGION.locales) {
+    const prefix = locale === REGION.defaultLocale ? '' : `${locale}/`
+    const { nav, topics } = getContent(locale)
+    paths.push({ params: { path: `${prefix}support` }, props: { locale, kind: 'home' } })
+    for (const c of categoryPages(nav)) {
+      paths.push({ params: { path: `${prefix}support/category/${c.slug}` }, props: { locale, kind: 'category', slug: c.slug } })
+    }
+    for (const slug of topics.keys()) {
+      paths.push({ params: { path: `${prefix}support/topics/${slug}` }, props: { locale, kind: 'topic', slug } })
+    }
+  }
+  return paths
+}
+
+const { locale, kind, slug } = Astro.props
+Astro.locals.locale = locale
+---
+
+{kind === 'home' && <HomePage />}
+{kind === 'category' && <CategoryPage slug={slug!} />}
+{kind === 'topic' && <TopicPage slug={slug!} />}

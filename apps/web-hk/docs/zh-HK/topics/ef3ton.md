@@ -1,0 +1,8 @@
+---
+title: "防詐騙提示 - 提防詐騙連結"
+topic_id: "24209"
+category_slug: "accountsecurity"
+updated_at: "1784789420"
+related: [{"categorySlug":"accountsecurity","slug":"deodvc","title":"共同匯報標準 (CRS)"},{"categorySlug":"accountsecurity","slug":"qb1azo","title":"海外賬戶稅收合規法案 (FATCA)"},{"categorySlug":"accountsecurity","slug":"6gyucb","title":"有關恒生銀行收款賬號出現「可疑賬號」提醒的澄清說明"},{"categorySlug":"accountsecurity","slug":"tkrshi","title":"什麼是休眠賬戶？"},{"categorySlug":"accountsecurity","slug":"o9lpb4","title":"生物認證服務條款及細則"}]
+---
+<h2>警惕釣魚詐騙，守護你的投資安全</h2><p>近日市場上出現冒充金融機構名義發送短訊、WhatsApp 訊息或釣魚連結的詐騙行為，長橋證券（香港）在此特別提醒你提高警覺，攜手防範風險，保障個人資金與資訊安全。</p><h2>提防詐騙連結</h2><p>長橋證券（香港）<strong>官方發出的 WhatsApp 訊息及手機短訊</strong>目前<strong>均不包含任何外部連結</strong>。如您收到任何自稱來自長橋證券、但附有可疑連結的訊息，請<strong>勿點擊、勿轉發、勿回覆</strong>，建議第一時間與我們官方客服進行核實。</p><p>長橋證券（香港）統一外呼號碼如下：</p><p>+852 3851 1777</p><p>+852 3851 1788</p><p>長橋證券（香港）WhatsApp 號碼如下：</p><p>+852 5223 6373</p><p>+852 5170 2190</p><p>+852 6452 3546</p><p>+852 5161 0057</p><h2>雙重驗證保安全</h2><p>長橋證券（香港）已全面啟用<strong>雙重認證（2FA）機制</strong>，從登入、交易到賬戶操作，全方位保護您的身分資訊與資金安全。</p><h2>小貼士：四招提高防騙意識</h2><p><strong>認清官方訊息來源</strong>：僅透過長橋證券 App、官網及認證社交平台發佈資訊。</p><p><strong>不輕信陌生訊息</strong>：如收到自稱為「長橋客服」的陌生來電或訊息，請提高警覺。</p><p><strong>不提供個人資料</strong>：我們不會透過電話、電郵或訊息主動索取登入資料、驗證碼或密碼。</p><p><strong>定期檢查登入紀錄及更改密碼</strong>：建議定期檢視賬戶安全紀錄，並養成更換密碼的習慣。</p><h2>有疑問？歡迎即時查詢</h2><p>如對任何訊息來源有所懷疑，或需要進一步查詢，歡迎通過以下官方渠道與我們聯繫：</p><p>客服熱線（香港）：+852 3851 1777/ +852 3851 1788</p><p>WhatsApp：+852 5223 6373</p><p>官方電郵：<a href="mailto:service@longbridge.hk">service@longbridge.hk</a></p><p>長橋 App 內線上客服</p><p><strong>長橋證券一直致力於為用戶打造一個安全、可靠的投資環境。</strong> 提醒你，保持警覺，是保障投資安全的第一步。讓我們一同提高防詐意識，安心展開你的投資旅程。</p><p style="text-align: right">長橋證券（香港）有限公司</p><p style="text-align: right">2025 年 5 月</p>

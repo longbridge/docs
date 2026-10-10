@@ -1,0 +1,10 @@
+---
+title: "股票現金卡常見問題"
+topic_id: "15626"
+category_slug: "cardandcouponfaqs"
+updated_at: "1784789447"
+seo_title: "如何使用股票現金券進行股票和ETF交易"
+seo_description: "了解如何使用股票現金券抵扣股票和ETF的購買金額。掌握使用規則、退款流程以及如何最大化股票現金券的價值。"
+related: [{"categorySlug":"cardandcouponfaqs","slug":"optioncash","title":"期權現金卡常見問題"},{"categorySlug":"cardandcouponfaqs","slug":"platformfee","title":"平台费抵扣卡常見問題"},{"categorySlug":"cardandcouponfaqs","slug":"interestboost","title":"加息券常見問題"}]
+---
+<h4>1. 如何使用及範圍</h4><ul><li>股票現金券僅嚴格適用於股票和 ETF 的交易。</li><li>每個訂單只能使用一張股票現金券。券的任何未使用金額將在使用後作廢。例如，如果訂單購買金額為新幣 4 元，而股票現金券的價值為新幣 10 元，那麼訂單成交後只有新幣 4 元會返回賬戶，剩餘的 6 元（即股票現金券未使用金額）將作廢。因此，在下訂單前確保選擇正確的券是至關重要的。</li><li>每張股票現金券只能使用一次，不可轉讓，且不能兌換成現金。</li><li>每張股票現金券都有特定的有效期。過期的券將不會被重新發放，並在過期後失效。</li><li>返還金額將在訂單成交後的 1-2 個工作日內返回賬戶。</li><li>Long Bridge Securities Pte. Ltd. 保留扣除或拒絕因非法或不當行為情況下獲取的獎勵的權利。如有任何問題或疑問，請隨時聯繫我們的在線客服。</li></ul><p><strong>使用流程</strong></p><figure class="image image_resized" style="width: 80.36%"><img src="https://assets.lbctrl.com/uploads/1_3622_micxgu4kddmc2ryx1h_.jpeg"/></figure><h4 style="margin-left: 0px">2. 我可以直接用股票現金卡提現嗎？</h4><p style="margin-left: 0px">不可以，股票現金卡不能直接兌換成現金。其主要目的是在買單成交後抵扣相應的金額。返還金額將在訂單成交後的 1-2 個工作日內，返回您的交易賬戶。</p><h4 style="margin-left: 0px">3. 我該如何在交易時使用股票現金卡？</h4><p style="margin-left: 0px">下買單時，系統會自動應用可用的股票現金券。您可以在下單時，在<strong>金額詳情</strong> &gt; <strong>股票現金卡</strong>中更換或者取消選中的股票現金卡。</p><h4 style="margin-left: 0px">4. 當我在交易中使用股票現金卡時，為什麼訂單金額沒有減少？</h4><p style="margin-left: 0px">股票現金卡是先收後返模式。卡券面值對應的金額，將在結算後的 1-2 個工作日內退回您的賬戶。</p><h4 style="margin-left: 0px">5. 如果我用一張價值 SGD 500 的股票現金券支付了 SGD 300 的訂單，剩餘的 SGD 200 還能後續使用嗎？</h4><p style="margin-left: 0px">不行，每張股票現金卡只能使用一次。一旦使用，任何未使用的部分將作廢。</p><h4 style="margin-left: 0px">6. 我有 2 張股票現金卡，分別為 SGD 50 和 SGD 100。交易了三筆，交易金額分別是 SGD 30、SGD 60、SGD 120，將會如何使用和返還？</h4><p style="margin-left: 0px">使用股票現金卡交易時，系統會默認選擇最優卡券進行結算。因此， SGD 60 的這一筆交易會選擇 SGD 50 的股票現金卡，SGD 120 的這一筆交易會選擇 SGD 100 的股票現金卡。對於 SGD 30 的這一筆交易，不會使用任何股票現金卡，因為現有的股票現金卡（SGD 50 和 SGD 100）的價值均高於此訂單。</p><p style="margin-left: 0.0px"> </p><p style="margin-left: 0.0px"><i>本文僅供參考，不構成任何建議。</i></p>

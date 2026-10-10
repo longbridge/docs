@@ -1,0 +1,10 @@
+---
+title: "碎股交易常见问题 - 香港"
+topic_id: "6198"
+category_slug: "hkmarket"
+updated_at: "1784789441"
+seo_title: "香港市场零股交易FAQ：您需要了解的一切"
+seo_description: "了解香港市场零股交易，包括零股定义、买卖价格差异、费用、交易时间、支持的订单类型，以及长桥提供的零股交易和转移服务。"
+related: [{"categorySlug":"hkmarket","slug":"HKtradingrules","title":"交易规则"},{"categorySlug":"hkmarket","slug":"cbbccall","title":"港股牛熊证回收及结算时间"},{"categorySlug":"hkmarket","slug":"Greymarkettrading","title":"暗盘交易规则"},{"categorySlug":"hkmarket","slug":"HKordertypes","title":"订单类型有哪些？ - 香港"},{"categorySlug":"hkmarket","slug":"marketorder-hk","title":"什么是香港市价单"}]
+---
+<p>以下是关于碎股交易常见问题的快速解答。</p><h4>1. 什么是碎股？</h4><p>港股一般以一手为买卖单位，每手所含的股票数量会根据股票价格来决定，1 手可能是 100 股、500 股、1000 股或 2000 股以上不等。「碎股」指少于一个股票之完整买卖单位 (即完整一手) 的证券数量。</p><h4>2. 长桥提供碎股交易服务吗？</h4><p>长桥提供碎股交易服务。您可于长桥 App &gt; <strong>资产</strong> &gt; <strong>交易大厅</strong>选择股票及买卖方向后，在类型中点选「碎股单」，输入价格及数量即可下单。</p><h4>3. 为什么买入碎股会比买入完整一手的价格高？</h4><p>由于碎股市场流通量较少，成交量较低，所以碎股买入价格会比完整一手的价格高。一般情况，碎股与完整一手最少会相差 5 个价位。买入碎股时，您可输入比市价略高的买入价，以让交易有更大成交机会。（价格差距只供参考，以当时市场实际情况为准）</p><h4>4. 为什么卖出碎股会比卖出完整一手的价格低？</h4><p>由于碎股市场流通量较少，成交量较低，所以碎股卖出价格会比完整一手的价格低。一般情况，碎股与完整一手最少会相差 5 个价位。卖出碎股时，您可输入比市价略低的卖出价，以让交易有更大成交机会。（价格差距只供参考，以当时市场实际情况为准）</p><h4>5. 碎股交易的收费如何？</h4><p>碎股交易的收费与整手交易收费相同。详情可参考<a href="https://longbridge.com/sg/zh-CN/pricing"><span style="color: #304ffe">长桥收费表</span></a>。</p><h4>6. 碎股可以和完整一手股票一起下单吗？</h4><p>碎股及整手股票需要分别下单。碎股下单股数必须少于一手数量。</p><h4>7. 碎股可以在什么时间交易？</h4><p>碎股只能在港股的持续交易时段（交易日上午 9:30~12:00 下午 13:00~16:00）交易。碎股不设早市以及收市竞价时段。</p><h4>8. 碎股支持哪种订单类型？下单后可以修改订单吗？</h4><p>碎股买卖仅支持「碎股单」订单类型，不设市价单及条件单。下单后不能修改订单，但可以撤单。</p><h4>9. 提交碎股订单后，为何一直未能成交？</h4><p>由于碎股市场流通量较少，成交量相对较低，所以碎股订单送出后可能会因为没有匹配到买卖对手而一直未能成交。</p><h4>10. 长桥支持碎股转仓吗？</h4><p>长桥支持碎股转入及转出。转仓详情可参考<a href="https://support.longbridge.sg/topics/Sharetransfer/GuidanceOfShareTransferIn?locale=zh-CN"><span style="color: #304ffe">转入股票指引</span></a>及<a href="https://support.longbridge.sg/topics/Sharetransfer/sharetransferout?locale=zh-CN"><span style="color: #304ffe">转出股票指引</span></a>。</p><p> </p><p style="margin-left: 0.0px"><i>本文仅供参考，不构成任何投资建议。</i></p>

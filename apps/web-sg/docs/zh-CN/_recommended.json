@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "bank-auth",
+    "categorySlug": "withdrawfunds",
+    "title": "添加银行账户操作指南"
+  },
+  {
+    "slug": "Deposit",
+    "categorySlug": "depositfunds",
+    "title": "入金操作指南"
+  },
+  {
+    "slug": "GuidanceOfShareTransferIn",
+    "categorySlug": "stocktransfer",
+    "title": "如何转入股票？"
+  },
+  {
+    "slug": "depositfail",
+    "categorySlug": "depositfunds",
+    "title": "我的资金为什么无法存入？"
+  },
+  {
+    "slug": "totalassets",
+    "categorySlug": "fundsoverview",
+    "title": "总资产字段说明"
+  },
+  {
+    "slug": "PLcost",
+    "categorySlug": "fundsoverview",
+    "title": "持仓盈亏说明"
+  }
+]

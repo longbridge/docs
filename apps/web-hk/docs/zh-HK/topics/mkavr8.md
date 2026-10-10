@@ -1,0 +1,8 @@
+---
+title: "關於美股結算周期調整爲 T+1 的説明的常見問題"
+topic_id: "21208"
+category_slug: "usmarket"
+updated_at: "1784789422"
+related: [{"categorySlug":"usmarket","slug":"dp0vs2","title":"美股沽空（融券）常見問題"},{"categorySlug":"usmarket","slug":"yhh7cu","title":"美股 IPO 競價介紹"},{"categorySlug":"usmarket","slug":"fractional-shares","title":"什麼是美股碎股交易"},{"categorySlug":"usmarket","slug":"ut3usr","title":"場外交易 / 粉單常見問題"},{"categorySlug":"usmarket","slug":"portfolio_margin","title":"期權組合保證金常見問題"}]
+---
+<p>本文將快速解答美股結算周期調整為 T+1 的常見疑問。</p><h4>1.什麼是美股 T+1 結算週期？</h4><p>交易日 (T) 是指買賣證券的交易被執行的日期；結算日是指交易訂單涉及的資產進行結算交收的日期。根據新的美股 T+1 結算週期規定，大多數證券交易將在交易日 (T) 後的下一個交易日 (T+1) 內完成結算交收。</p><p>舉例：如果您在週一進行了一筆交易，這筆交易將在週二完成結算交收 (假設週二不是股市假日) 。</p><p><a href="https://www.sec.gov/oiea/investor-alerts-and-bulletins/new-t1-settlement-cycle-what-investors-need-know-investor"><span style="color: rgb(36,91,219)"><u>具體詳情請參考美國證券交易委員會公告</u></span></a></p><h4>2.美股 T+1 結算週期什麼時候開始生效？</h4><p>美股 T+1 結算週期將於美東時間 2024 年 5 月 28 日起開始生效。</p><h4>3.哪些資產類型會受美股 T+1 結算週期的影響？</h4><p>在美國交易所交易的股票、債券、交易所交易基金 (ETF) 、共同基金、市政證券和房地產投資信託基金 (REITs) 等產品（如適用）的結算週期，都將從 T+2 轉為 T+1。適用的資產類型請參考<a href="https://www.dtcc.com/-/media/Files/PDFs/T2/T1-Product-List-Jan-2024.pdf"><span style="color: rgb(36,91,219)"><u>此處</u></span></a>。</p><p>說明：美股期權此前已經是 T+1 結算。</p><h4>4.美股 T+1 結算週期，對您交易有什麼影響？</h4><p>對於交易，沒有變化，您還是可以進行 T+0 美股日內交易。</p><h4>5.美股 T+1 切換後，融資融券利息怎麼計算？</h4><p>美股融資行為造成的欠款計息，以及美股融券行為產生的借券計息將在 T+1 日開始 (此前為 T+2 日) 。</p><h4>6.美股 T+1 切換後，出金規則是否有變化？</h4><p>因為美股交收週期從 T+2 縮短至 T+1，相關資產賣出後獲得的現金可提前至 T+1 日出金；港股相關資產的出金規則沒有變化，最早可在 T+2 日出金。</p><h4>7.餘額通的自動申購贖回規則是否受影響？</h4><p>美股 T+1 只涉及美股交易後對應資產交收時間上的縮短，餘額通的自動申購贖回機制沒有變化。</p><h4>8.美股切換 T+1 之後，港股還是 T+2 交收，賬戶的購買力將如何計算？</h4><p>購買力的計算沒有變化。</p><p> </p><p><strong>免責聲明</strong></p><p><i>本文僅作參考，不構成任何投資建議。</i></p>

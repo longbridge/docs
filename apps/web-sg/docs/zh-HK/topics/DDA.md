@@ -1,0 +1,10 @@
+---
+title: "如何完成 DDA 入金？"
+topic_id: "7761"
+category_slug: "depositfunds"
+updated_at: "1784789435"
+seo_title: "什麼是DDA？透過直接扣款授權即時入金"
+seo_description: "了解DDA（直接扣款授權），即時將新加坡元存入您的Longbridge交易帳戶。綁定銀行帳戶，發起存款，享受流暢的資金轉帳體驗。"
+related: [{"categorySlug":"depositfunds","slug":"bgot76","title":"如何完成 Wise 入金？"},{"categorySlug":"depositfunds","slug":"depositfail","title":"我的資金為什麼無法存入？"},{"categorySlug":"depositfunds","slug":"Deposit","title":"入金操作指南"},{"categorySlug":"depositfunds","slug":"internetbankingtransfer","title":"如何完成網銀轉賬入金？"},{"categorySlug":"depositfunds","slug":"PayNow","title":"如何完成 PayNow 入金？"}]
+---
+<p>本文將介紹什麼是 DDA 以及完成 DDA 入金的操作步驟。</p><h2>1. 什麼是 DDA？</h2><p>DDA（直接付款授權）是銀行與長橋證券合作提供的授權轉賬服務。</p><p>一旦您將您的銀行賬戶與長橋證券交易賬戶綁定，您可以直接從您的長橋 App 發起新元入金。這筆錢將從您的銀行賬戶中扣除，然後存入您在長橋證券開通的賬戶。</p><p><strong>支持貨幣：</strong>SGD</p><p><strong>支持銀行（截至 2023 年 5 月 18 日更新）:</strong></p><ol><li>DBS Bank Limited</li><li>Oversea-Chinese Banking Corp (OCBC)</li><li>United Overseas Bank Limited (UOB)</li><li>The Hongkong and Shanghai Banking Corporation Limited (HSBC)</li><li>Standard Chartered Bank</li><li>Maybank</li></ol><h2>2. 如何通過 DDA 入金？</h2><p>步驟 1. 登錄長橋 App 並綁定您的銀行賬戶 &gt; <strong>資產</strong> &gt; <strong>存入資金</strong> &gt; <strong>DDA </strong>&gt; 選擇入金銀行綁定您的銀行賬戶。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/8262184dee5121c3fb87eeba8e3daf2a"/></figure><p>步驟 2. 綁定狀態為<strong>DDA 已授權</strong>之後，您就可以發起入金。</p><figure class="image image_resized" style="width: 80.16%"><img src="https://pub.pbkrs.com/uploads/2025/beb557c0ef988c37da7c3dad6c19d97c"/></figure><p>步驟 3. 輸入入金金額並點擊<strong>確認轉入</strong>。</p><h2>3. 資金到達您的長橋交易賬戶</h2><p><strong>預計資金到賬時間</strong></p><p>入金金額將即時存入您的交易賬戶 *</p><p>* 如果是在長橋證券的非營業時間段發起入金，則可能有例外情況。</p><p> </p><h2>4. 入金記錄</h2><p>打開長橋 App &gt; <strong>資產</strong> &gt; <strong>存入資金</strong> &gt; 右上角的<strong>匯款證明</strong>查看狀態。您也可通過<strong>資產</strong> &gt; <strong>資金記錄</strong>查看入金歷史記錄。</p><p>入金完成後，您將收到電子郵件和推送通知。</p><p> </p><p><strong>免責聲明</strong></p><p style="margin-left: 0.0px"><i>本文僅供參考，不構成任何投資建議。</i></p>

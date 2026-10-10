@@ -1,0 +1,112 @@
+---
+// 结构移植自 longbridge-websites packages/website-footer/src/hk/footer.tsx(数据见 src/footer/index.ts)
+import { hkFooter, richText } from '../../footer'
+import LinkGroup from './LinkGroup.astro'
+import HkSocialGroup from './HkSocialGroup.astro'
+import { localePath } from '../../lib/site'
+
+interface Props { pagePath: string }
+const { pagePath } = Astro.props
+const locale = Astro.locals.locale
+const f = hkFooter(locale)
+const digits = (s: string) => s.replace(/\D/g, '')
+const ext = { target: '_blank', rel: 'noopener noreferrer' }
+const { trading, account, info, about, terms } = f.columns
+---
+
+{/* 官网按容器宽度重排列：<1392 賬戶類型并入交易列，<1024 條款/關注并入關於列(两处都渲染、按宽度隐藏一份) */}
+
+<footer class:list={['lb-site-footer lb-site-footer--hk', { 'lb-site-footer--en': locale === 'en' }]} data-section-id="footer">
+  <div class="lb-site-footer__inner">
+    <div class="lb-site-footer__cols">
+      <div class="lb-site-footer__col">
+        <div class="lb-site-footer__group">
+          <div class="lb-site-footer__label">{f.contact.phoneTitle}</div>
+          <div class="lb-site-footer__items">
+            <div class="lb-site-footer__phone">
+              <span>{f.contact.hkPhoneLabel}</span>
+              <a href={`tel:${digits(f.contact.hkPhone)}`}>{f.contact.hkPhone}</a>
+            </div>
+            <div class="lb-site-footer__strut"><a href={`tel:${digits(f.contact.globalPhone)}`}>{f.contact.globalPhone}</a></div>
+          </div>
+        </div>
+        <div class="lb-site-footer__group">
+          <div class="lb-site-footer__label">WhatsApp</div>
+          <div class="lb-site-footer__items">
+            <a href={`https://api.whatsapp.com/send/?phone=${digits(f.contact.whatsapp)}&text=`} {...ext}>{f.contact.whatsapp}</a>
+          </div>
+        </div>
+        {f.contact.emails.map((e) => (
+          <div class="lb-site-footer__group">
+            <div class="lb-site-footer__label">{e.title}</div>
+            <div class="lb-site-footer__items"><a href={`mailto:${e.address}`}>{e.address}</a></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="lb-site-footer__col">
+        <LinkGroup col={trading} />
+        <LinkGroup col={account} cls="lb-site-footer__below-xl" />
+      </div>
+      <div class="lb-site-footer__col lb-site-footer__from-xl">
+        <LinkGroup col={account} />
+      </div>
+      <div class="lb-site-footer__col">
+        <LinkGroup col={info} />
+      </div>
+      <div class="lb-site-footer__col">
+        <LinkGroup col={about} />
+        <LinkGroup col={terms} cls="lb-site-footer__below-lg" />
+        <HkSocialGroup title={f.socialTitle} cls="lb-site-footer__below-lg" />
+      </div>
+      <div class="lb-site-footer__col lb-site-footer__from-lg">
+        <LinkGroup col={terms} />
+        <HkSocialGroup title={f.socialTitle} />
+      </div>
+    </div>
+
+    <div class="lb-site-footer__hours">
+      {f.serviceHours.map((h) => <p>{h}</p>)}
+      <p>{f.onlineServiceNote}</p>
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <div class="lb-site-footer__meta">
+      <p>{f.copyright}</p>
+      <p>{f.offers}</p>
+    </div>
+    <div class="lb-site-footer__langs" data-lb-locale-links>
+      {f.languages.map((l, i) => (
+        <>
+          {i > 0 && <span>/</span>}
+          <a href={localePath(l.locale, pagePath)} hreflang={l.locale} lang={l.locale}>{l.label}</a>
+        </>
+      ))}
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <p class="lb-site-footer__note">{f.statement}</p>
+    <hr class="lb-site-footer__hr" />
+
+    <div class="lb-site-footer__licensed">
+      <div class="lb-site-footer__licensed-title">{f.licensedTitle}</div>
+      <div class="lb-site-footer__licensed-grid">
+        {f.licensed.map((e) => (
+          <div>
+            <div class="lb-site-footer__entity">
+              <img src={e.flag} alt="" width="16" height="16" loading="lazy" decoding="async" />
+              {e.link ? <a href={e.link} {...ext}>{e.name}</a> : <span>{e.name}</span>}
+            </div>
+            <p class="lb-site-footer__entity-desc" set:html={richText(e.desc, e.licenseLink)} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <div class="lb-site-footer__disclaimer">
+      <div class="lb-site-footer__disclaimer-title">{f.disclaimerTitle}</div>
+      {f.disclaimerItems.map((d) => <p>{d}</p>)}
+    </div>
+  </div>
+</footer>

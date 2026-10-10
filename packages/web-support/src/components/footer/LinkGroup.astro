@@ -1,0 +1,14 @@
+---
+import type { FooterLink } from '../../footer'
+
+interface Props { col: { title: string; links: FooterLink[] }; cls?: string }
+const { col, cls } = Astro.props
+const ext = { target: '_blank', rel: 'noopener noreferrer' }
+---
+
+<div class:list={['lb-site-footer__group', cls]}>
+  <div class="lb-site-footer__label">{col.title}</div>
+  <div class="lb-site-footer__items">
+    {col.links.map((l) => (l.external ? <a href={l.href} {...ext}>{l.label}</a> : <a href={l.href}>{l.label}</a>))}
+  </div>
+</div>

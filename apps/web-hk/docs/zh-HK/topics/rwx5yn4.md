@@ -1,0 +1,8 @@
+---
+title: "基金收費規則"
+topic_id: "3937"
+category_slug: "fundtrading"
+updated_at: "1784789428"
+related: [{"categorySlug":"fundtrading","slug":"0ubv12","title":"貨幣基金買入/贖回時間規則"},{"categorySlug":"fundtrading","slug":"x71sm57","title":"基金常見問題"},{"categorySlug":"fundtrading","slug":"uqn2kwo","title":"基金申購和贖回規則"},{"categorySlug":"fundtrading","slug":"etf","title":"LBHK 基金銷售服務協議（含 ETF)"},{"categorySlug":"fundtrading","slug":"hk-aip-agreement","title":"基金定投協議"}]
+---
+<p>投資者在長橋買賣基金時，主要涉及兩類費用：由券商收取的申贖費用和由基金公司每日從基金資產中計提的運作費用。</p><figure class="table"><table><colgroup><col style="width: 28.05%"/><col style="width: 31.52%"/><col style="width: 40.43%"/></colgroup><thead><tr><th><p style="text-align: center">收費項目</p></th><th><p style="text-align: center">收費方</p></th><th><p style="text-align: center">收費標準</p></th></tr></thead><tbody><tr><td><p style="text-align: center">申購費率</p></td><td rowspan="2"><p style="text-align: center">長橋證券（香港）有限公司</p></td><td rowspan="2"><p style="text-align: center">0</p></td></tr><tr><td><p style="text-align: center">贖回費率</p></td></tr><tr><td><p style="text-align: center">管理費</p></td><td rowspan="2"><p style="text-align: center">基金公司</p></td><td rowspan="2"><p style="text-align: center">不同基金的收費不同，以基金詳情頁為準</p></td></tr><tr><td><p style="text-align: center">託管費</p></td></tr></tbody></table></figure><blockquote><p>註：基金管理費及託管費等基金運作費用每日從基金資產中計提，投資者無需額外支付，每個交易日公佈的基金淨值中已扣除運作費用。</p></blockquote><p><strong>關鍵要點</strong>：</p><ul><li>買賣費用（投資者直接支付）<ul><li>申購費/贖回費：由長橋證券公司收取</li><li>目前為 0，即免申購費和贖回費</li></ul></li><li>持有費用（投資者間接支付）<ul><li>管理費/托管費：由基金公司收取</li><li>收費標準：因基金而異，需查看具體基金的詳情頁</li><li>支付方式：無需投資者額外支付。這些費用會每日從基金總資產中自動計提。</li></ul></li></ul><p> </p><p><strong>免責聲明</strong></p><p><i>本文僅作參考，不構成任何投資建議。</i></p>

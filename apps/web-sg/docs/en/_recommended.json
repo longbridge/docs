@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "bank-auth",
+    "categorySlug": "withdrawfunds",
+    "title": "Guide to Adding a Bank Account"
+  },
+  {
+    "slug": "Deposit",
+    "categorySlug": "depositfunds",
+    "title": "Guide to Deposit"
+  },
+  {
+    "slug": "GuidanceOfShareTransferIn",
+    "categorySlug": "stocktransfer",
+    "title": "How do I transfer shares into my account?"
+  },
+  {
+    "slug": "depositfail",
+    "categorySlug": "depositfunds",
+    "title": "Why was my deposit unsuccessful?"
+  },
+  {
+    "slug": "totalassets",
+    "categorySlug": "fundsoverview",
+    "title": "Total Assets-Description of Field Indicators"
+  },
+  {
+    "slug": "PLcost",
+    "categorySlug": "fundsoverview",
+    "title": "Calculation of P/L & Cost"
+  }
+]

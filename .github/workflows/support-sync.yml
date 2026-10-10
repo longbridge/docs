@@ -1,0 +1,44 @@
+name: Sync HK/SG support content
+
+# 官网 HK / SG 帮助中心(apps/web-hk、apps/web-sg)的内容同步：拉 CMS 接口生成 docs/ 下的 md,
+# 有变化才提交到 main。GitLab 生产流水线每次构建都 fetch upstream main 并在构建前再同步一次，
+# 这里的定时提交保证 main 上的内容和变更历史不落后。结构与 zendesk-sync.yml 一致、互不阻塞。
+
+on:
+  schedule:
+    - cron: '47 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write # 提交同步下来的内容
+
+concurrency:
+  group: support-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+
+      # 公开 GET 接口，无需凭据;任一篇拉取失败即非 0 退出且不改动 docs/(见 fetch-support.ts)
+      - name: Sync HK content
+        run: bun run sync:web-hk
+      - name: Sync SG content
+        run: bun run sync:web-sg
+
+      - name: Commit synced content
+        run: |
+          git config user.name "support-sync[bot]"
+          git config user.email "support-sync[bot]@users.noreply.github.com"
+          git add apps/web-hk/docs apps/web-sg/docs
+          if git diff --cached --quiet; then
+            echo "内容无变化，不提交"
+          else
+            git commit -m "chore(web-support): sync hk/sg support content"
+            git push origin HEAD:main
+          fi

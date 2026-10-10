@@ -1,0 +1,1095 @@
+[
+  {
+    "slug": "1v0peh2",
+    "title": "Account & Security",
+    "desc": "Learn about account setup, management, and security. ",
+    "icon": "https://assets.lbctrl.com/uploads/bd1deaf71ea6726db76b4768242cd45d.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "accountopeningguide",
+        "title": "Account opening guide",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "d5vhrx",
+            "title": "How can users in Hong Kong open an account using online transfers?"
+          },
+          {
+            "slug": "39id7vx",
+            "title": "How can users in Hong Kong open an account using a third-party witness?"
+          },
+          {
+            "slug": "4ko13et",
+            "title": "How can users in Hong Kong open an account using a check?"
+          },
+          {
+            "slug": "pq7pcq",
+            "title": "Client Agreement"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountsecurity",
+        "title": "Account security",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "deodvc",
+            "title": "Common Reporting Standard (CRS)"
+          },
+          {
+            "slug": "qb1azo",
+            "title": "Foreign Account Tax Compliance Act (FATCA)"
+          },
+          {
+            "slug": "6gyucb",
+            "title": "Clarification Regarding \"Suspicious Account\" Alert on Hang Seng Bank Receiving Account"
+          },
+          {
+            "slug": "tkrshi",
+            "title": "What is a dormant account?"
+          },
+          {
+            "slug": "o9lpb4",
+            "title": "Terms and Conditions for the Biometric Authentication Service"
+          },
+          {
+            "slug": "ef3ton",
+            "title": "Longbridge Anti-Fraud Tips"
+          },
+          {
+            "slug": "1zgy936",
+            "title": "How do I cancel my account？"
+          },
+          {
+            "slug": "c0yg7",
+            "title": "平台隐私政策及个人资料收集声明"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountfaqs",
+        "title": "Account FAQs",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "zoy6zum",
+            "title": "Statement Instruction"
+          },
+          {
+            "slug": "j1mnbat",
+            "title": "Statement Field Definitions"
+          },
+          {
+            "slug": "3nspyyp",
+            "title": "Account Security FAQs"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "fundstransfers",
+    "title": "Funds & Transfers",
+    "desc": "Handle deposits, withdrawals, exchanges, and asset transfers with ease. ",
+    "icon": "https://assets.lbctrl.com/uploads/fbd0ba140e5b55ac2ce6a2088d14aa78.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "depositfunds",
+        "title": "Deposit funds",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "41fajdm",
+            "title": "Guide to depositing"
+          },
+          {
+            "slug": "online-banking-transfer",
+            "title": "General Instructions For Online Banking Transfer (Hong Kong Regional Banks)"
+          },
+          {
+            "slug": "hk-fps",
+            "title": "How to complete FPS transfer deposit? (General guide for Hong Kong banks)"
+          },
+          {
+            "slug": "hk-atm",
+            "title": "How do I deposit at an ATM or counter ?"
+          },
+          {
+            "slug": "hk-cheque",
+            "title": "How do I deposit a check?"
+          },
+          {
+            "slug": "hk-edda-deposit",
+            "title": "How to complete eDDA authorization for deposit?"
+          },
+          {
+            "slug": "hk-telegraphictransfer",
+            "title": "How to complete a wire transfer deposit? (non-Hong Kong bank card)"
+          },
+          {
+            "slug": "227ik90",
+            "title": "How to complete a wire transfer? (HSBC)"
+          },
+          {
+            "slug": "hk-hsbcfps",
+            "title": "How to complete FPS transfer deposit? (HSBC)"
+          },
+          {
+            "slug": "1s1y95c",
+            "title": "How to complete eDDA authorization for deposits? (HSBC Hong Kong)"
+          },
+          {
+            "slug": "20q76mm",
+            "title": "How to complete a wire transfer? (Hang Seng Bank)"
+          },
+          {
+            "slug": "42yx1t6",
+            "title": "How to complete a wire transfer? (Bank of China Hong Kong)"
+          },
+          {
+            "slug": "3npoiqm",
+            "title": "How to complete a wire transfer? (Standard Chartered Bank Hong Kong)"
+          },
+          {
+            "slug": "hk-bank-securities",
+            "title": "How to complete a bank-securities transfer? (Minsheng Bank)"
+          },
+          {
+            "slug": "hk-minsheng",
+            "title": "How to complete a wire transfer? (Minsheng Bank)"
+          },
+          {
+            "slug": "za-bank-fps",
+            "title": "How to complete FPS transfer deposit? (ZA Bank)"
+          },
+          {
+            "slug": "za-bank",
+            "title": "How to complete a wire transfer? (ZA Bank)"
+          },
+          {
+            "slug": "hk-onlinetransfer",
+            "title": "How to complete a wire transfer? (China Merchants Bank Hong Kong)"
+          },
+          {
+            "slug": "1vcirzp",
+            "title": "How to complete FPS transfer deposit? (China Merchants Bank Hong Kong)"
+          },
+          {
+            "slug": "41red85",
+            "title": "How to complete eDDA authorization for deposits? (China Merchants Bank)"
+          },
+          {
+            "slug": "citi-bank",
+            "title": "How to complete a wire transfer? (Citibank)"
+          },
+          {
+            "slug": "icbc-hk",
+            "title": "How to complete a wire transfer deposit? (ICBC (Asia))"
+          },
+          {
+            "slug": "2ab2624",
+            "title": "How to complete FPS transfer deposit? (ICBC (Asia))"
+          },
+          {
+            "slug": "16evyi7",
+            "title": "国家外汇政策"
+          },
+          {
+            "slug": "afnz0y",
+            "title": "Bank Card Guidelines (General)"
+          },
+          {
+            "slug": "edda-boc",
+            "title": "Bank of China (Hong Kong) eDDA Authorization"
+          },
+          {
+            "slug": "edda-hsb",
+            "title": "How to complete eDDA authorization for deposits? (Hang Seng Bank)"
+          },
+          {
+            "slug": "edda-icbc",
+            "title": "How to complete eDDA authorization for deposits? (ICBC (Asia))"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "withdrawfunds",
+        "title": "Withdraw funds",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "qa1uwl",
+            "title": "General Withdraw Guidelines"
+          },
+          {
+            "slug": "bank-auth",
+            "title": "Example of bank card verification materials"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cashplus",
+        "title": "Cash Plus",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3aaubgi",
+            "title": "Cash Plus FAQs"
+          },
+          {
+            "slug": "hk-mmf-rules",
+            "title": "Cash Plus Trading Rules"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "conversion",
+        "title": "Conversion",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "hk-exchange",
+            "title": "Guide to Currency Exchange"
+          },
+          {
+            "slug": "FAQ_Automatic_Currency_Exchange",
+            "title": "Auto-Repayment FAQs"
+          },
+          {
+            "slug": "Automatic_Currency_Exchange",
+            "title": "Client Authorization and Acknowledgement Letter -Automatic Currency Exchange and Repayment Service"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sharetransfer",
+        "title": "Share Transfer",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ojhekr",
+            "title": "如何从华盛证券转仓到长桥证券？"
+          },
+          {
+            "slug": "hwpklk",
+            "title": "How to transfer stocks from Tiger Brokers to Longbridge? — Integrated account"
+          },
+          {
+            "slug": "fqnpss",
+            "title": "Guide to Depositing Hong Kong Physical Stock Certificates"
+          },
+          {
+            "slug": "p3yxv9x",
+            "title": "How do I transfer between Hong Kong and US  stocks?"
+          },
+          {
+            "slug": "2hho5bd",
+            "title": "How to transfer stocks from Interactive Brokers (including Tiger Brokers and Snowball X)?"
+          },
+          {
+            "slug": "3q8hewq",
+            "title": "How to transfer stocks from Stellar Securities to Longbridge?"
+          },
+          {
+            "slug": "n5lljr",
+            "title": "How to transfer stocks from Snowball X to Longbridge?"
+          },
+          {
+            "slug": "13tncp6",
+            "title": "How to transfer stocks from Kaisa Financial Group (Jiatou Global) to Longbridge?"
+          },
+          {
+            "slug": "1m3e6s5",
+            "title": "How to transfer stocks from Huatai Securities to Longbridge?"
+          },
+          {
+            "slug": "1nc4c4a",
+            "title": "How do I transfer shares out of my account?"
+          },
+          {
+            "slug": "6d9vi8",
+            "title": "How do I transfer shares into my account?"
+          },
+          {
+            "slug": "47azunp",
+            "title": "Transfer In Stock Details"
+          },
+          {
+            "slug": "nx0g9f",
+            "title": "How to transfer stocks from Homaer to Longbridge?"
+          },
+          {
+            "slug": "2xf0w4f",
+            "title": "How to transfer stocks from Futu Securities to Longbridge?"
+          },
+          {
+            "slug": "3pp6plw",
+            "title": "How to transfer stocks from Hafoo Securities to Longbridge?"
+          },
+          {
+            "slug": "4c4yrgk",
+            "title": "How to transfer stocks from Tiger Brokers to Longbridge? — Global account (IB)"
+          },
+          {
+            "slug": "2ie9ler",
+            "title": "How to transfer stocks from uSMART Securities to Longbridge?"
+          },
+          {
+            "slug": "ry67m1",
+            "title": "How to transfer stocks from BOCI to Longbridge?"
+          },
+          {
+            "slug": "1fcpl3w",
+            "title": "How to transfer stocks from Computershare (Alibaba Health employees)?"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "marketdataandtrading",
+    "title": "Market Data and Trading",
+    "desc": "Understand global markets and essential trading rules. ",
+    "icon": "https://assets.lbctrl.com/uploads/176fc9613de9ad7e11ff240f58dd9239.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "marketoverview",
+        "title": "Market overview",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "faq",
+            "title": "Crypto Trading FAQs"
+          },
+          {
+            "slug": "4jpdot",
+            "title": "Options Extended Hours FAQs"
+          },
+          {
+            "slug": "2mi6gv",
+            "title": "Option Trading Statistics"
+          },
+          {
+            "slug": "99xxdf",
+            "title": "Understanding virtual asset indicators"
+          },
+          {
+            "slug": "va_trade_types",
+            "title": "Introduction to Virtual Asset Transaction Record"
+          },
+          {
+            "slug": "f57407",
+            "title": "What is put/call ratio?"
+          },
+          {
+            "slug": "Introduction_Of_OrderBook_PRO",
+            "title": "What is the US stock order book (desktop version)?"
+          },
+          {
+            "slug": "Introduction_Of_OrderBook",
+            "title": "What is the US stock order book?"
+          },
+          {
+            "slug": "ezfz4v",
+            "title": "Introduction to Virtual asset related products"
+          },
+          {
+            "slug": "sby5a2",
+            "title": "What is the option price calculator?"
+          },
+          {
+            "slug": "pqyngu",
+            "title": "Market Data Access: Device Usage Rules"
+          },
+          {
+            "slug": "fcmbsz",
+            "title": "What is market position overview?"
+          },
+          {
+            "slug": "stock-fields",
+            "title": "Introduction to Market Data"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "usmarket",
+        "title": "US market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "dp0vs2",
+            "title": "US Stock Short Selling (Securities Financing) FAQs"
+          },
+          {
+            "slug": "yhh7cu",
+            "title": "Introduction to U.S. Stock IPO Auctions"
+          },
+          {
+            "slug": "fractional-shares",
+            "title": "What's US Fractional Shares Trading?"
+          },
+          {
+            "slug": "ut3usr",
+            "title": "Over the Counter Trading FAQs"
+          },
+          {
+            "slug": "mkavr8",
+            "title": "FAQs about changing the US stock settlement cycle to T+1"
+          },
+          {
+            "slug": "portfolio_margin",
+            "title": "Options Portfolio Margin FAQs"
+          },
+          {
+            "slug": "Overnight20230922",
+            "title": "What is the US stock overnight session?"
+          },
+          {
+            "slug": "options",
+            "title": "Basic Knowledge Of US Stock Options"
+          },
+          {
+            "slug": "2yucafb",
+            "title": "Example of calculation rules for trading commissions, third-party fees, and margin financing interest in the US stock market"
+          },
+          {
+            "slug": "29gat9a",
+            "title": "US Stock Trading Rules"
+          },
+          {
+            "slug": "40mc7ij",
+            "title": "ADR Custody Fee Rules"
+          },
+          {
+            "slug": "c4los9",
+            "title": "Options Trading FAQs"
+          },
+          {
+            "slug": "us-pre-post-mkt-intro",
+            "title": "US Stock Pre-Market and After-Hours Trading Rules"
+          },
+          {
+            "slug": "user-agreement",
+            "title": "平台服务协议"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "hkmarket",
+        "title": "HK market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "64c1tf",
+            "title": "Guide to Short Selling Hong Kong Stocks"
+          },
+          {
+            "slug": "rpop8q",
+            "title": "Example of calculation rules for trading commissions, third-party fees, and margin financing interest in the Hong Kong stock market"
+          },
+          {
+            "slug": "dytbxi",
+            "title": "港股牛熊证回收及结算时间"
+          },
+          {
+            "slug": "a46bzt",
+            "title": "Odd Lot Trades FAQs"
+          },
+          {
+            "slug": "3et7xd6",
+            "title": "Introduction to Warrants and CBBCs"
+          },
+          {
+            "slug": "order-types-hk",
+            "title": "Order Types - HK"
+          },
+          {
+            "slug": "37pu3ox",
+            "title": "Gray Market Trading"
+          },
+          {
+            "slug": "adyhmx",
+            "title": "FAQs on Trading Arrangements During Severe Weather Trading"
+          },
+          {
+            "slug": "ips",
+            "title": "Subscription Statement"
+          },
+          {
+            "slug": "ipo-reservation-rules",
+            "title": "HK IPO Pre-subscription Rules"
+          },
+          {
+            "slug": "wt-fields-intro",
+            "title": "HK Warrants and Market Data Fields Introductions"
+          },
+          {
+            "slug": "4gdrk7d",
+            "title": "Trading Rules"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sgmarket",
+        "title": "SG market",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "4729kpi",
+            "title": "Singapore Market Daily Leverage Certificates (DLCs)"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "corporateactions",
+        "title": "Corporate actions",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "8a04f1",
+            "title": "What’s dividend/special dividend distribution?"
+          },
+          {
+            "slug": "xehbn2",
+            "title": "What’s a stock dividend?"
+          },
+          {
+            "slug": "j1605t",
+            "title": "What’s dividend selection?"
+          },
+          {
+            "slug": "hoprck",
+            "title": "What's a stock split?"
+          },
+          {
+            "slug": "7vvq4e",
+            "title": "What's a rights issue?"
+          },
+          {
+            "slug": "v7i2n47",
+            "title": "How do corporate actions affect long-term orders?"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "iposubscription",
+        "title": "IPO subscription",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3gzpxjc",
+            "title": "IPO Subscription Terms and Conditions"
+          },
+          {
+            "slug": "203ho05",
+            "title": "IPO Subscription Related"
+          },
+          {
+            "slug": "1hpez20",
+            "title": "IPO Subscription Fees"
+          },
+          {
+            "slug": "rimmvj",
+            "title": "Step-by-step Guide to IPO Subscription"
+          },
+          {
+            "slug": "1lii2n0",
+            "title": "FAQ - IPO Subscription"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "marginfinancing",
+        "title": "Margin financing",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3aysfh8",
+            "title": "Guide to Longbridge Integrated Account"
+          },
+          {
+            "slug": "2u2kyg0",
+            "title": "Margin Call Rules"
+          },
+          {
+            "slug": "1ddrdj",
+            "title": "What is the currency margin?"
+          },
+          {
+            "slug": "2npbyr3",
+            "title": "Margin Financing Related FAQs"
+          },
+          {
+            "slug": "169xolr",
+            "title": "Account Risk Control Rules"
+          },
+          {
+            "slug": "f3rni3x",
+            "title": "How to check if a stock supports margin trading?"
+          },
+          {
+            "slug": "dfk7xu",
+            "title": "Intraday Financing Trade FAQs"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "optionstrading",
+        "title": "Options trading",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "calendar",
+            "title": "Calendar Spread"
+          },
+          {
+            "slug": "vertical-spread",
+            "title": "Vertical spread"
+          },
+          {
+            "slug": "collar",
+            "title": "Collar"
+          },
+          {
+            "slug": "strangle",
+            "title": "Strangle"
+          },
+          {
+            "slug": "straddle",
+            "title": "Straddle"
+          },
+          {
+            "slug": "covered-stock",
+            "title": "Covered Stock"
+          },
+          {
+            "slug": "op-fields-intro",
+            "title": "Option Market Data Fields Introductions"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundtrading",
+        "title": "Fund trading",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "0ubv12",
+            "title": "Money Market Fund Subscription /Redemption Rules"
+          },
+          {
+            "slug": "x71sm57",
+            "title": "Fund FAQs"
+          },
+          {
+            "slug": "rwx5yn4",
+            "title": "Fund Fee Rules"
+          },
+          {
+            "slug": "uqn2kwo",
+            "title": "Fund Subscription and Redemption Rules"
+          },
+          {
+            "slug": "etf",
+            "title": "Fund Subscription Agreement（ETF Included）"
+          },
+          {
+            "slug": "hk-aip-agreement",
+            "title": "Agreement of Fund Automatic Investment Plan"
+          },
+          {
+            "slug": "1earfgc",
+            "title": "Understanding fund-related concepts"
+          },
+          {
+            "slug": "w6opv7",
+            "title": "Guide to Professional Investor"
+          },
+          {
+            "slug": "1oqs7ao",
+            "title": "Understanding Fund Types"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "gridtrading",
+        "title": "Grid trading",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "desktop_grid_trade_help",
+            "title": "Understanding grid trading (desktop)"
+          },
+          {
+            "slug": "44v0zg",
+            "title": "What's grid trading - dormancy state?"
+          },
+          {
+            "slug": "multiple_placement",
+            "title": "What's multiply placement?"
+          },
+          {
+            "slug": "grid_trade_baseprice",
+            "title": "What's the base price?"
+          },
+          {
+            "slug": "grid-trade-help",
+            "title": "What is Grid Trading"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "tradingfaqs",
+        "title": "Trading FAQs",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "il33cp",
+            "title": "Guide to Market Order"
+          },
+          {
+            "slug": "PL_Analysis",
+            "title": "Guide to Profit and Loss Analysis"
+          },
+          {
+            "slug": "order-types-us",
+            "title": "Understanding Order Types"
+          },
+          {
+            "slug": "2mb858",
+            "title": "What are the trading platforms?"
+          },
+          {
+            "slug": "12t0qf",
+            "title": "Terms and Conditions for Trading Options (16 Jul 2024)"
+          },
+          {
+            "slug": "attach_order_help",
+            "title": "Understanding attached orders"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "desktop",
+    "title": "Desktop",
+    "desc": "Get practical guides for our mobile and desktop platforms. ",
+    "icon": "https://assets.lbctrl.com/uploads/424161ee48ab2cb6813c2c162ea82705.png",
+    "topics": [
+      {
+        "slug": "89qm1a",
+        "title": "How to Connect Longbridge AI in Claude"
+      }
+    ],
+    "children": [
+      {
+        "slug": "longbridgeapp",
+        "title": "Longbridge App",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "tc816l",
+            "title": "What is a recurring investment?"
+          },
+          {
+            "slug": "ai-subscription-plans",
+            "title": "LongbridgeAI Subscription Plans"
+          },
+          {
+            "slug": "8kpz6l",
+            "title": "Why didn’t I receive my SMS verification code ?"
+          },
+          {
+            "slug": "vuj6wu",
+            "title": "存量用户更新/安装 App 指引（安卓手机版）"
+          },
+          {
+            "slug": "zg2476",
+            "title": "存量用户安装更新 App 指引（苹果手机版）"
+          },
+          {
+            "slug": "portai",
+            "title": "LongbridgeAI Information Assistant - Introduction and Usage Instructions"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "longbridgepro",
+        "title": "Longbridge Pro",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "desktop-attach-order",
+            "title": "Introduction to Chart Trading Attach Order Settings"
+          },
+          {
+            "slug": "z3znzt",
+            "title": "Longbridge Pro Component and Layout Description"
+          },
+          {
+            "slug": "Desktop_Depth_of_Market",
+            "title": "Depth of Market Introduction"
+          },
+          {
+            "slug": "pcezrl",
+            "title": "Component Splicing Instructions"
+          },
+          {
+            "slug": "9o4yiz",
+            "title": "Introduction to Chart Trading"
+          },
+          {
+            "slug": "hotkey_rules",
+            "title": "Desktop Hotkey Rules"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "campaigns",
+    "title": "Campaigns",
+    "desc": "Check out the latest campaigns and your exclusive perks.",
+    "icon": "https://assets.lbctrl.com/uploads/faa9b734af93b794bd06e56c3014380f.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "ongoingcampaigns",
+        "title": "Ongoing campaigns",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "n5njlm",
+            "title": "荃灣 DIY 活動細則"
+          },
+          {
+            "slug": "bvbkdx",
+            "title": "LongbridgeAI x RentSmart Activity Rules"
+          },
+          {
+            "slug": "4fc2cd",
+            "title": "LongbridgeAI \"Grow Your AI Assistant\" Challenge Rules"
+          },
+          {
+            "slug": "e61ked",
+            "title": "LongbridgeAI x CHARGESPOT"
+          },
+          {
+            "slug": "q3iwqy",
+            "title": "Longbridge AI Register&First Question Refer Bonus"
+          },
+          {
+            "slug": "2c1xg4",
+            "title": "Options Beginner Welcome gifts (October 2026)"
+          },
+          {
+            "slug": "h8ru4z",
+            "title": "Try Longbridge AI Pro — On Us"
+          },
+          {
+            "slug": "2mvckd",
+            "title": "LongbridgeAI x AIRSIM"
+          },
+          {
+            "slug": "live-trading-leaderboard",
+            "title": "Live Trading Leaderboard & Incentive Programs"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "pastcampaigns",
+        "title": "Past campaigns",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "hclq9x",
+            "title": "Longbridge Café Tsuen Wan | Mid-Autumn Lantern-Making DIY Workshop"
+          },
+          {
+            "slug": "1gnfaf",
+            "title": "Options Beginner Welcome gifts (September 2026)"
+          },
+          {
+            "slug": "kpa6pg",
+            "title": "Options Beginner Welcome gifts (August 2026)"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "investmentacademy",
+    "title": "Investment Academy",
+    "desc": "Build investing knowledge, from basics to advanced strategies. ",
+    "icon": "https://assets.lbctrl.com/uploads/da829fc4a8c0495b692c8627f4330648.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "structured_product_qa",
+        "title": "Structured Product Q&A",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "bqwilp",
+            "title": "投资者教育声明"
+          },
+          {
+            "slug": "oh1t6b",
+            "title": "什么是结构性产品？"
+          },
+          {
+            "slug": "pobqcu",
+            "title": "结构性产品的认购门槛是多少？"
+          },
+          {
+            "slug": "e159bs",
+            "title": "结构性产品的 \"挂钩标的\"指的是什么？"
+          },
+          {
+            "slug": "8yk2ew",
+            "title": "什么是\"敲出界限\"?"
+          },
+          {
+            "slug": "uj1cb8",
+            "title": "什么是\"执行价\"？什么情况下会发生\"接票\"？"
+          },
+          {
+            "slug": "6ipots",
+            "title": "什么是\"敲入界限\"? 它有哪些观察类型？"
+          },
+          {
+            "slug": "grbbxs",
+            "title": "结构性产品的不可赎回期指的是什么？"
+          },
+          {
+            "slug": "mkujr1",
+            "title": "挂钩多个标的产品如何判断最后的风险与收益？"
+          },
+          {
+            "slug": "6i78lr",
+            "title": "购买挂钩个股的结构性产品后，我能拿到挂钩股票的分红吗？"
+          },
+          {
+            "slug": "qom23u",
+            "title": "结构性产品的结算类型指的是什么？"
+          },
+          {
+            "slug": "henuy9",
+            "title": "产品的订单类型指的是什么，通常支持哪些订单类型？"
+          },
+          {
+            "slug": "t5vu5e",
+            "title": "结构性产品可能面临的风险有哪些？"
+          },
+          {
+            "slug": "8dzwko",
+            "title": "结构性产品的发行人是谁？"
+          },
+          {
+            "slug": "s23vg7",
+            "title": "什么是 FCN？"
+          },
+          {
+            "slug": "sli924",
+            "title": "FCN 的认购门槛？期限是多长？"
+          },
+          {
+            "slug": "t3onnm",
+            "title": "FCN 的票息怎么发放，是固定的吗？"
+          },
+          {
+            "slug": "2aw23q",
+            "title": "\"敲出界限\"在 FCN 里指的是什么？"
+          },
+          {
+            "slug": "zpn5v4",
+            "title": "FCN 的敲出观察有哪些类型？"
+          },
+          {
+            "slug": "mlzaoy",
+            "title": "FCN 什么情况下会\"接票\"?"
+          },
+          {
+            "slug": "unefcz",
+            "title": "FCN 最后收益如何判断？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "longbridgenews",
+    "title": "Longbridge News",
+    "desc": "See the latest product updates, market insights, and brand news. ",
+    "icon": "https://assets.lbctrl.com/uploads/4816555fc36b2a830bde2514f1dfbbef.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "brandnews",
+        "title": "Brand news",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "refreshed-visual-identity-shift-toward-intelligent-finance",
+            "title": "Longbridge Securities Introduces a Refreshed Visual Identity to Reflect Its Evolution Toward Intelligent Finance"
+          }
+        ],
+        "children": []
+      }
+    ]
+  }
+]

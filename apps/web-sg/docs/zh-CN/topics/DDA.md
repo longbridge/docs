@@ -1,0 +1,10 @@
+---
+title: "如何完成 DDA 入金？"
+topic_id: "7761"
+category_slug: "depositfunds"
+updated_at: "1784789435"
+seo_title: "什么是DDA？通过直接扣款授权即时入金"
+seo_description: "了解DDA（直接扣款授权），实现即时将新加坡元存入您的Longbridge交易账户。绑定银行账户，发起存款，享受无缝资金转账体验。"
+related: [{"categorySlug":"depositfunds","slug":"bgot76","title":"如何完成 Wise 入金？"},{"categorySlug":"depositfunds","slug":"depositfail","title":"我的资金为什么无法存入？"},{"categorySlug":"depositfunds","slug":"Deposit","title":"入金操作指南"},{"categorySlug":"depositfunds","slug":"internetbankingtransfer","title":"如何完成网银转账入金？"},{"categorySlug":"depositfunds","slug":"PayNow","title":"如何完成 PayNow 入金？"}]
+---
+<p>本文将介绍什么是 DDA 以及完成 DDA 入金的操作步骤。</p><h2>1. 什么是 DDA？</h2><p>DDA（直接付款授权）是银行与长桥证券合作提供的授权转账服务。</p><p>一旦您将您的银行账户与长桥证券交易账户绑定，您可以直接从您的长桥 App 发起新元入金。这笔钱将从您的银行账户中扣除，然后存入您在长桥证券开通的账户。</p><p><strong>支持货币：</strong>SGD</p><p><strong>支持银行（截至 2023 年 5 月 18 日更新）:</strong></p><ol><li>DBS Bank Limited</li><li>Oversea-Chinese Banking Corp (OCBC)</li><li>United Overseas Bank Limited (UOB)</li><li>The Hongkong and Shanghai Banking Corporation Limited (HSBC)</li><li>Standard Chartered Bank</li><li>Maybank</li></ol><h2>2. 如何通过 DDA 入金？</h2><p>步骤 1. 登录长桥 App 并绑定您的银行账户 &gt; <strong>资产</strong> &gt; <strong>存入资金</strong> &gt; <strong>DDA</strong> &gt; 选择入金银行绑定您的银行账户。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/193099cc3e46040fa94c192d4228db82"/></figure><p>步骤 2. 绑定状态为 “DDA 已授权” 之后，您就可以发起入金。</p><figure class="image image_resized" style="width: 80.16%"><img src="https://pub.pbkrs.com/uploads/2025/dbd83c51cddbea4eab8f3f028cf2931a"/></figure><p>步骤 3. 输入入金金额并点击 “确认存入”。</p><h2>3. 资金到达您的长桥交易账户</h2><p><strong>预计资金到账时间</strong></p><p>入金金额将即时存入您的交易账户 *</p><p>* 如果是在长桥证券的非营业时间段发起入金，则可能有例外情况。</p><h2>4. 入金记录</h2><p>打开长桥 App &gt; <strong>资产</strong> &gt; <strong>存入资金</strong> &gt; 右上角的<strong>汇款证明</strong>查看状态。您也可通过<strong>资产</strong> &gt; <strong>资金记录</strong>查看入金历史记录。</p><p>入金完成后，您将收到电子邮件和推送通知。</p><p> </p><p><strong>免责声明</strong></p><p style="margin-left: 0.0px"><i>本文仅供参考，不构成任何投资建议。</i></p>

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SideTree from '../components/SideTree.astro'
+import TopicFeedback from '../components/TopicFeedback.astro'
+import { getContent } from '../lib/content'
+import { getDict } from '../lib/i18n'
+import { locateArticle } from '../lib/nav-core'
+import { HOME_PATH, TOPIC_CAT_TOKEN, canonicalUrl, formatTitle, localePath, stripHtml, topicPath } from '../lib/site'
+import '../styles/article.css'
+import '../styles/toc.css'
+import '../styles/topic.css'
+
+interface Props { slug: string }
+
+const { slug } = Astro.props
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const { nav, topics } = getContent(locale)
+const topic = topics.get(slug)!
+const loc = locateArticle(nav, slug)
+
+// 站内链接用文章直属分类;SEO 地址(canonical 等)与现网一样跟随请求里的分类段：构建产物写占位符，
+// 由 nginx 替换(见 TOPIC_CAT_TOKEN)。dev 没有 nginx,直接用直属分类
+const href = localePath(locale, topicPath(topic.categorySlug, slug))
+const pagePath = topicPath(import.meta.env.DEV ? topic.categorySlug : TOPIC_CAT_TOKEN, slug)
+const plain = stripHtml(topic.content)
+const rawTitle = topic.seoTitle || topic.title
+const description = topic.seoDescription || plain.slice(0, 160) || rawTitle
+
+// 相关文章：优先 CMS 的 other_topics(现网口径),为空时补同分组文章，保持 US 两栏版式
+const related = (
+  topic.related.length > 0
+    ? topic.related.map((r) => ({ title: r.title, path: topicPath(r.categorySlug, r.slug), slug: r.slug }))
+    : (loc?.section.articles ?? []).map((a) => ({ title: a.title, path: a.path, slug: a.slug }))
+)
+  .filter((r) => r.slug !== slug)
+  .slice(0, 5)
+
+const updatedAt = topic.updatedAt && /^\d+$/.test(topic.updatedAt) ? new Date(Number(topic.updatedAt) * 1000).toISOString() : topic.updatedAt
+const jsonLd = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: d.helpCenter, item: canonicalUrl(locale, HOME_PATH) },
+      { '@type': 'ListItem', position: 2, name: rawTitle, item: canonicalUrl(locale, pagePath) },
+    ],
+  },
+  ...(plain
+    ? [{ '@type': 'FAQPage', mainEntity: { '@type': 'Question', name: rawTitle, acceptedAnswer: { '@type': 'Answer', text: plain } }, ...(updatedAt ? { dateModified: updatedAt } : {}) }]
+    : []),
+]
+---
+
+<BaseLayout title={formatTitle(locale, rawTitle)} description={description} pagePath={pagePath} ogType="article" jsonLd={jsonLd} currentSlug={slug}>
+  <div class="article-page">
+    <aside class="article-page__aside side-tree" aria-label={d.categories}>
+      <SideTree nav={nav} currentSlug={slug} />
+    </aside>
+
+    <!-- 内层 main#main-content 沿用 apps/us 结构：header/article/whale.css 的间距规则依赖它 -->
+    <main class="article-page__main" id="main-content">
+      <h1 class="article-title" data-pagefind-meta="title">{topic.title}</h1>
+
+      <!-- data-pagefind-body:只索引正文;href 元数据带分类段，搜索结果直接跳 canonical 地址 -->
+      <div class="article-body support-topic-article" data-pagefind-body data-pagefind-meta={`href:${href}`} set:html={topic.content} />
+
+      <div data-article-path={href} data-article-title={topic.title} hidden />
+
+      {topic.topicId && <TopicFeedback topicId={topic.topicId} />}
+
+      {(loc?.prev || loc?.next) && (
+        <nav class="topic-adjacent" aria-label={`${d.prev} / ${d.next}`}>
+          {loc?.prev ? (
+            <a class="topic-adjacent__link topic-adjacent__link--prev" href={localePath(locale, loc.prev.path)}>
+              <span class="topic-adjacent__label">{d.prev}</span>
+              <span class="topic-adjacent__title">{loc.prev.title}</span>
+            </a>
+          ) : <span />}
+          {loc?.next && (
+            <a class="topic-adjacent__link topic-adjacent__link--next" href={localePath(locale, loc.next.path)}>
+              <span class="topic-adjacent__label">{d.next}</span>
+              <span class="topic-adjacent__title">{loc.next.title}</span>
+            </a>
+          )}
+        </nav>
+      )}
+
+      <div class="article-relatives">
+        <section class="article-recent" data-recent-articles hidden aria-label={d.recentArticles}>
+          <h2 class="article-relatives__title">{d.recentArticles}</h2>
+          <ul></ul>
+        </section>
+        {related.length > 0 && (
+          <section class="article-related" aria-label={d.relatedArticles}>
+            <h2 class="article-relatives__title">{d.relatedArticles}</h2>
+            <ul>
+              {related.map((r) => <li><a href={localePath(locale, r.path)}>{r.title}</a></li>)}
+            </ul>
+          </section>
+        )}
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<script>
+  import '../scripts/client-router.ts'
+  import '../scripts/article.ts'
+  import '../scripts/toc.ts'
+  import '../scripts/feedback.ts'
+</script>

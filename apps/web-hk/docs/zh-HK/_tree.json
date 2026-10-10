@@ -1,0 +1,1095 @@
+[
+  {
+    "slug": "1v0peh2",
+    "title": "賬戶相關",
+    "desc": "關於開戶、認證、賬戶管理及賬戶安全等基礎服務",
+    "icon": "https://assets.lbctrl.com/uploads/bd1deaf71ea6726db76b4768242cd45d.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "accountopeningguide",
+        "title": "開戶指南",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "d5vhrx",
+            "title": "中國香港地區用戶如何開戶？ - 入金見證"
+          },
+          {
+            "slug": "39id7vx",
+            "title": "中國香港地區用戶如何開戶？ -第三方見證"
+          },
+          {
+            "slug": "4ko13et",
+            "title": "中國香港地區用戶如何開戶？ - 郵寄支票"
+          },
+          {
+            "slug": "pq7pcq",
+            "title": "客戶協議"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountsecurity",
+        "title": "賬戶安全",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "deodvc",
+            "title": "共同匯報標準 (CRS)"
+          },
+          {
+            "slug": "qb1azo",
+            "title": "海外賬戶稅收合規法案 (FATCA)"
+          },
+          {
+            "slug": "6gyucb",
+            "title": "有關恒生銀行收款賬號出現「可疑賬號」提醒的澄清說明"
+          },
+          {
+            "slug": "tkrshi",
+            "title": "什麼是休眠賬戶？"
+          },
+          {
+            "slug": "o9lpb4",
+            "title": "生物認證服務條款及細則"
+          },
+          {
+            "slug": "ef3ton",
+            "title": "防詐騙提示 - 提防詐騙連結"
+          },
+          {
+            "slug": "1zgy936",
+            "title": "如何完成賬號注銷？"
+          },
+          {
+            "slug": "c0yg7",
+            "title": "平台隱私政策及個人資料收集聲明"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "accountfaqs",
+        "title": "賬戶常見問題",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "zoy6zum",
+            "title": "結單相關操作指南"
+          },
+          {
+            "slug": "j1mnbat",
+            "title": "結單字段解释說明"
+          },
+          {
+            "slug": "3nspyyp",
+            "title": "賬戶相關常見問題解答"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "fundstransfers",
+    "title": "資金與轉倉",
+    "desc": "涵蓋資金存取、貨幣兌換、余額通及股票轉移等全鏈路操作指南",
+    "icon": "https://assets.lbctrl.com/uploads/fbd0ba140e5b55ac2ce6a2088d14aa78.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "depositfunds",
+        "title": "存入資金",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "41fajdm",
+            "title": "入金操作指南"
+          },
+          {
+            "slug": "online-banking-transfer",
+            "title": "如何完成網銀轉賬？（香港銀行通用）"
+          },
+          {
+            "slug": "hk-fps",
+            "title": "如何完成 FPS 轉賬入金？（香港銀行通用）"
+          },
+          {
+            "slug": "hk-atm",
+            "title": "如何完成 ATM/櫃臺轉賬入金？"
+          },
+          {
+            "slug": "hk-cheque",
+            "title": "如何完成 Cheque 支票轉賬入金？"
+          },
+          {
+            "slug": "hk-edda-deposit",
+            "title": "如何完成 eDDA 授權入金？"
+          },
+          {
+            "slug": "hk-telegraphictransfer",
+            "title": "如何完成電匯轉賬入金？（非香港銀行卡）"
+          },
+          {
+            "slug": "227ik90",
+            "title": "如何完成網銀轉賬？（匯豐銀行）"
+          },
+          {
+            "slug": "hk-hsbcfps",
+            "title": "如何完成 FPS 轉賬入金？（匯豐銀行）"
+          },
+          {
+            "slug": "1s1y95c",
+            "title": "如何完成 eDDA 授權入金？（匯豐銀行）"
+          },
+          {
+            "slug": "20q76mm",
+            "title": "如何完成網銀轉賬？（恒生銀行）"
+          },
+          {
+            "slug": "42yx1t6",
+            "title": "如何完成網銀轉賬？（中銀香港）"
+          },
+          {
+            "slug": "3npoiqm",
+            "title": "如何完成網銀轉賬？（香港渣打銀行）"
+          },
+          {
+            "slug": "hk-bank-securities",
+            "title": "如何完成銀證轉賬？（民生銀行）"
+          },
+          {
+            "slug": "hk-minsheng",
+            "title": "如何完成網銀轉賬？（民生銀行）"
+          },
+          {
+            "slug": "za-bank-fps",
+            "title": "如何完成 FPS 轉賬入金？（眾安銀行）"
+          },
+          {
+            "slug": "za-bank",
+            "title": "如何完成網銀轉賬？（眾安銀行）"
+          },
+          {
+            "slug": "hk-onlinetransfer",
+            "title": "如何完成網銀轉賬？（招行香港）"
+          },
+          {
+            "slug": "1vcirzp",
+            "title": "如何完成 FPS 轉賬入金？（招行香港）"
+          },
+          {
+            "slug": "41red85",
+            "title": "如何完成 eDDA 授權入金？（招商銀行）"
+          },
+          {
+            "slug": "citi-bank",
+            "title": "如何完成網銀轉賬？（花旗銀行）"
+          },
+          {
+            "slug": "icbc-hk",
+            "title": "如何完成網銀轉賬？（工銀亞洲）"
+          },
+          {
+            "slug": "2ab2624",
+            "title": "如何完成 FPS 轉賬入金？（工銀亞洲）"
+          },
+          {
+            "slug": "16evyi7",
+            "title": "國家外匯政策"
+          },
+          {
+            "slug": "afnz0y",
+            "title": "銀行卡指引（通用）"
+          },
+          {
+            "slug": "edda-boc",
+            "title": "如何完成 eDDA 授權入金？（中銀香港）"
+          },
+          {
+            "slug": "edda-hsb",
+            "title": "如何完成 eDDA 授權入金？（恒生銀行）"
+          },
+          {
+            "slug": "edda-icbc",
+            "title": "如何完成 eDDA 授權入金？（工銀亞洲）"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "withdrawfunds",
+        "title": "提取資金",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "qa1uwl",
+            "title": "通用出金操作指南"
+          },
+          {
+            "slug": "bank-auth",
+            "title": "銀行卡認證資料示例圖"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "cashplus",
+        "title": "餘額通",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3aaubgi",
+            "title": "餘額通常見問題匯總"
+          },
+          {
+            "slug": "hk-mmf-rules",
+            "title": "餘額通交易規則"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "conversion",
+        "title": "貨幣兌換",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "hk-exchange",
+            "title": "貨幣兌換操作指南"
+          },
+          {
+            "slug": "FAQ_Automatic_Currency_Exchange",
+            "title": "自動還款常見問題解答"
+          },
+          {
+            "slug": "Automatic_Currency_Exchange",
+            "title": "客戶確認函 -自動換匯還款服務"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sharetransfer",
+        "title": "股票轉移",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "ojhekr",
+            "title": "如何從華盛證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "hwpklk",
+            "title": "如何從老虎證券轉倉到長橋證券？ - 綜合賬戶"
+          },
+          {
+            "slug": "fqnpss",
+            "title": "港股實物股票存入指引"
+          },
+          {
+            "slug": "p3yxv9x",
+            "title": "如何完成港/美股轉換？"
+          },
+          {
+            "slug": "2hho5bd",
+            "title": "如何從盈透證券（含老虎、雪盈）轉入股票？"
+          },
+          {
+            "slug": "3q8hewq",
+            "title": "如何從恆星證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "n5lljr",
+            "title": "如何從雪盈證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "13tncp6",
+            "title": "如何從佳兆業證券（佳投環球）轉倉到長橋證券？"
+          },
+          {
+            "slug": "1m3e6s5",
+            "title": "如何從從華泰國際轉倉到長橋證券？"
+          },
+          {
+            "slug": "1nc4c4a",
+            "title": "如何轉出股票？"
+          },
+          {
+            "slug": "6d9vi8",
+            "title": "如何轉入股票？"
+          },
+          {
+            "slug": "47azunp",
+            "title": "轉入股票證券信息"
+          },
+          {
+            "slug": "nx0g9f",
+            "title": "如何從荷馬證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "2xf0w4f",
+            "title": "如何從富途證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "3pp6plw",
+            "title": "如何從哈富證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "4c4yrgk",
+            "title": "如何從老虎證券轉倉到長橋證券？ - 環球賬戶（IB）"
+          },
+          {
+            "slug": "2ie9ler",
+            "title": "如何從盈立證券轉倉到長橋證券？"
+          },
+          {
+            "slug": "ry67m1",
+            "title": "如何從中銀國際轉倉到長橋證券 ？"
+          },
+          {
+            "slug": "1fcpl3w",
+            "title": "如何從 Computershare 轉入股票（阿里健康員工）？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "marketdataandtrading",
+    "title": "行情與交易",
+    "desc": "涵蓋交易操作規則、市場機制等交易核心問題",
+    "icon": "https://assets.lbctrl.com/uploads/176fc9613de9ad7e11ff240f58dd9239.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "marketoverview",
+        "title": "行情介紹",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "faq",
+            "title": "加密貨幣交易常見問題"
+          },
+          {
+            "slug": "4jpdot",
+            "title": "期權延長時段常見問題"
+          },
+          {
+            "slug": "2mi6gv",
+            "title": "期權成交統計"
+          },
+          {
+            "slug": "99xxdf",
+            "title": "虛擬資產行情字段介紹"
+          },
+          {
+            "slug": "va_trade_types",
+            "title": "虛擬資產逐筆明細介紹"
+          },
+          {
+            "slug": "f57407",
+            "title": "什麽是看跌/看漲期權比率"
+          },
+          {
+            "slug": "Introduction_Of_OrderBook_PRO",
+            "title": "什麽是美股深度擺盤（桌面端）"
+          },
+          {
+            "slug": "Introduction_Of_OrderBook",
+            "title": "什麽是美股深度擺盤"
+          },
+          {
+            "slug": "ezfz4v",
+            "title": "虛擬資產產品資料介紹"
+          },
+          {
+            "slug": "sby5a2",
+            "title": "什麽是期權價格計算器"
+          },
+          {
+            "slug": "pqyngu",
+            "title": "行情權限單設備使用規則"
+          },
+          {
+            "slug": "fcmbsz",
+            "title": "什麽是籌碼分布"
+          },
+          {
+            "slug": "stock-fields",
+            "title": "行情數據字段介紹"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "usmarket",
+        "title": "美股市場",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "dp0vs2",
+            "title": "美股沽空（融券）常見問題"
+          },
+          {
+            "slug": "yhh7cu",
+            "title": "美股 IPO 競價介紹"
+          },
+          {
+            "slug": "fractional-shares",
+            "title": "什麼是美股碎股交易"
+          },
+          {
+            "slug": "ut3usr",
+            "title": "場外交易 / 粉單常見問題"
+          },
+          {
+            "slug": "mkavr8",
+            "title": "關於美股結算周期調整爲 T+1 的説明的常見問題"
+          },
+          {
+            "slug": "portfolio_margin",
+            "title": "期權組合保證金常見問題"
+          },
+          {
+            "slug": "Overnight20230922",
+            "title": "什麽是美股夜盤"
+          },
+          {
+            "slug": "options",
+            "title": "什麽是美股期權？"
+          },
+          {
+            "slug": "2yucafb",
+            "title": "美股市場交易佣金，第三方收費及融資利息計算示例"
+          },
+          {
+            "slug": "29gat9a",
+            "title": "美股交易規則"
+          },
+          {
+            "slug": "40mc7ij",
+            "title": "美國存托憑證 (ADR) 托管費用規則"
+          },
+          {
+            "slug": "c4los9",
+            "title": "期權常見問題"
+          },
+          {
+            "slug": "us-pre-post-mkt-intro",
+            "title": "美股盤前盤後行情規則"
+          },
+          {
+            "slug": "user-agreement",
+            "title": "平台服務協議"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "hkmarket",
+        "title": "港股市場",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "64c1tf",
+            "title": "港股沽空"
+          },
+          {
+            "slug": "rpop8q",
+            "title": "港股市場交易佣金、第三方收費及融資利息計算示例"
+          },
+          {
+            "slug": "dytbxi",
+            "title": "港股牛熊證回收及結算時間"
+          },
+          {
+            "slug": "a46bzt",
+            "title": "碎股交易常見問題"
+          },
+          {
+            "slug": "3et7xd6",
+            "title": "窩輪、牛熊證介紹"
+          },
+          {
+            "slug": "order-types-hk",
+            "title": "港股訂單類型說明"
+          },
+          {
+            "slug": "37pu3ox",
+            "title": "暗盤交易"
+          },
+          {
+            "slug": "adyhmx",
+            "title": "惡劣天氣香港市場交易安排常見問題"
+          },
+          {
+            "slug": "ips",
+            "title": "認購聲明"
+          },
+          {
+            "slug": "ipo-reservation-rules",
+            "title": "港股融資打新預約細則"
+          },
+          {
+            "slug": "wt-fields-intro",
+            "title": "港股輪證介紹及字段說明"
+          },
+          {
+            "slug": "4gdrk7d",
+            "title": "交易規則"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "sgmarket",
+        "title": "新加坡市場",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "4729kpi",
+            "title": "新加坡市場每日槓桿證書 (DLCs)"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "corporateactions",
+        "title": "公司行動",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "8a04f1",
+            "title": "什麼是派息/特殊派息？"
+          },
+          {
+            "slug": "xehbn2",
+            "title": "什麼是送股？"
+          },
+          {
+            "slug": "j1605t",
+            "title": "什麼是選股選息？"
+          },
+          {
+            "slug": "hoprck",
+            "title": "什麼是拆分股？"
+          },
+          {
+            "slug": "7vvq4e",
+            "title": "什麼是供股？"
+          },
+          {
+            "slug": "v7i2n47",
+            "title": "公司行動對長期訂單有什麼影響？"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "iposubscription",
+        "title": "新股認購",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3gzpxjc",
+            "title": "證券新股認購聲明"
+          },
+          {
+            "slug": "203ho05",
+            "title": "新股認購相關事項"
+          },
+          {
+            "slug": "1hpez20",
+            "title": "新股認購收費標準"
+          },
+          {
+            "slug": "rimmvj",
+            "title": "如何進行新股認購？"
+          },
+          {
+            "slug": "1lii2n0",
+            "title": "新股認購常見問題"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "marginfinancing",
+        "title": "融資交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "3aysfh8",
+            "title": "長橋綜合賬戶操作指南"
+          },
+          {
+            "slug": "2u2kyg0",
+            "title": "追繳保證金規則"
+          },
+          {
+            "slug": "1ddrdj",
+            "title": "什麼是貨幣保證金"
+          },
+          {
+            "slug": "2npbyr3",
+            "title": "融資相關常見問題解答"
+          },
+          {
+            "slug": "169xolr",
+            "title": "賬戶風控規則"
+          },
+          {
+            "slug": "f3rni3x",
+            "title": "如何查詢股票是否支持融資交易？"
+          },
+          {
+            "slug": "dfk7xu",
+            "title": "日內融資交易常見問題"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "optionstrading",
+        "title": "期權交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "calendar",
+            "title": "什麼是 Calendar Spread 跨期期權策略？"
+          },
+          {
+            "slug": "vertical-spread",
+            "title": "什麼是 Vertical spread 跨價期權？"
+          },
+          {
+            "slug": "collar",
+            "title": "什麼是 Collar 領式策略？"
+          },
+          {
+            "slug": "strangle",
+            "title": "什麼是 Strangle 勒束式策略？"
+          },
+          {
+            "slug": "straddle",
+            "title": "什麽是 Straddle 跨式策略？"
+          },
+          {
+            "slug": "covered-stock",
+            "title": "什麽是 Covered Stock 股票擔保？"
+          },
+          {
+            "slug": "op-fields-intro",
+            "title": "期權行情字段介紹"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "fundtrading",
+        "title": "基金交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "0ubv12",
+            "title": "貨幣基金買入/贖回時間規則"
+          },
+          {
+            "slug": "x71sm57",
+            "title": "基金常見問題"
+          },
+          {
+            "slug": "rwx5yn4",
+            "title": "基金收費規則"
+          },
+          {
+            "slug": "uqn2kwo",
+            "title": "基金申購和贖回規則"
+          },
+          {
+            "slug": "etf",
+            "title": "LBHK 基金銷售服務協議（含 ETF)"
+          },
+          {
+            "slug": "hk-aip-agreement",
+            "title": "基金定投協議"
+          },
+          {
+            "slug": "1earfgc",
+            "title": "基金相關字段解釋"
+          },
+          {
+            "slug": "w6opv7",
+            "title": "專業投資者 (PI) 操作指南"
+          },
+          {
+            "slug": "1oqs7ao",
+            "title": "什麽是基金類型"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "gridtrading",
+        "title": "網格交易",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "desktop_grid_trade_help",
+            "title": "什麽是網格交易（桌面端）？"
+          },
+          {
+            "slug": "44v0zg",
+            "title": "什麽是網格交易 - 休眠狀態？"
+          },
+          {
+            "slug": "multiple_placement",
+            "title": "什麽是倍數委托？"
+          },
+          {
+            "slug": "grid_trade_baseprice",
+            "title": "什麽是基準價格？"
+          },
+          {
+            "slug": "grid-trade-help",
+            "title": "什麼是網格交易"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "tradingfaqs",
+        "title": "交易常見問題",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "il33cp",
+            "title": "巿價單操作指南"
+          },
+          {
+            "slug": "PL_Analysis",
+            "title": "盈虧分析操作指南"
+          },
+          {
+            "slug": "order-types-us",
+            "title": "訂單類型有哪些？"
+          },
+          {
+            "slug": "2mb858",
+            "title": "交易平台有哪些？"
+          },
+          {
+            "slug": "12t0qf",
+            "title": "期權交易條款和條件"
+          },
+          {
+            "slug": "attach_order_help",
+            "title": "什麽是附加訂單？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "desktop",
+    "title": "產品與功能",
+    "desc": "深入解析智能工具的實操指南與桌面端的使用技巧",
+    "icon": "https://assets.lbctrl.com/uploads/424161ee48ab2cb6813c2c162ea82705.png",
+    "topics": [
+      {
+        "slug": "89qm1a",
+        "title": "如何在 Claude 中連接 Longbridge AI"
+      }
+    ],
+    "children": [
+      {
+        "slug": "longbridgeapp",
+        "title": "客戶端功能",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "tc816l",
+            "title": "什麼是股票定投？"
+          },
+          {
+            "slug": "ai-subscription-plans",
+            "title": "LongbridgeAI 訂閱套餐介紹"
+          },
+          {
+            "slug": "8kpz6l",
+            "title": "為什麽收不到短信驗證碼？"
+          },
+          {
+            "slug": "vuj6wu",
+            "title": "存量用户更新/安裝 App 指引（安卓手機版）"
+          },
+          {
+            "slug": "zg2476",
+            "title": "存量用戶安裝更新 App 指引（蘋果手機版）"
+          },
+          {
+            "slug": "portai",
+            "title": "LongbridgeAI 信息助手介紹與使用說明"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "longbridgepro",
+        "title": "桌面端功能",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "desktop-attach-order",
+            "title": "圖表交易的附加單設置介紹"
+          },
+          {
+            "slug": "z3znzt",
+            "title": "桌面端組件、佈局說明"
+          },
+          {
+            "slug": "Desktop_Depth_of_Market",
+            "title": "市場深度功能介紹"
+          },
+          {
+            "slug": "pcezrl",
+            "title": "組件拼接使用說明"
+          },
+          {
+            "slug": "9o4yiz",
+            "title": "圖表交易介紹"
+          },
+          {
+            "slug": "hotkey_rules",
+            "title": "桌面端快捷鍵說明"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "campaigns",
+    "title": "活動介紹",
+    "desc": "最新市場活動、福利優惠及用戶專屬權益說明",
+    "icon": "https://assets.lbctrl.com/uploads/faa9b734af93b794bd06e56c3014380f.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "ongoingcampaigns",
+        "title": "當前活動",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "n5njlm",
+            "title": "荃灣 DIY 活動細則"
+          },
+          {
+            "slug": "bvbkdx",
+            "title": "LongbridgeAI x RentSmart 活動細則"
+          },
+          {
+            "slug": "4fc2cd",
+            "title": "LongbridgeAI「AI 助理養成賽」活動細則"
+          },
+          {
+            "slug": "e61ked",
+            "title": "LongbridgeAI x CHARGESPOT"
+          },
+          {
+            "slug": "q3iwqy",
+            "title": "Longbridge AI 邀请首問送 Pro 卡活動細則"
+          },
+          {
+            "slug": "2c1xg4",
+            "title": "2026 年 10 月長橋香港期權新人專屬禮活動"
+          },
+          {
+            "slug": "h8ru4z",
+            "title": "長橋請你體驗 Longbridge AI Pro"
+          },
+          {
+            "slug": "2mvckd",
+            "title": "LongbridgeAI x AIRSIM"
+          },
+          {
+            "slug": "live-trading-leaderboard",
+            "title": "實盤榜單及激勵活動"
+          }
+        ],
+        "children": []
+      },
+      {
+        "slug": "pastcampaigns",
+        "title": "往期活動",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "hclq9x",
+            "title": "Longbridge Café 荃灣門店「中秋手藝·花燈映月」線下 DIY 活動"
+          },
+          {
+            "slug": "1gnfaf",
+            "title": "2026 年 9 月長橋香港期權新人專屬禮活動"
+          },
+          {
+            "slug": "kpa6pg",
+            "title": "2026 年 8 月長橋香港期權新人專屬禮活動"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "investmentacademy",
+    "title": "投資學堂",
+    "desc": "提供從基礎入門到實戰策略的系統性投資知識課程",
+    "icon": "https://assets.lbctrl.com/uploads/da829fc4a8c0495b692c8627f4330648.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "structured_product_qa",
+        "title": "結構化產品問答",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "bqwilp",
+            "title": "投資者教育聲明"
+          },
+          {
+            "slug": "oh1t6b",
+            "title": "甚麼是結構性產品？"
+          },
+          {
+            "slug": "pobqcu",
+            "title": "結構性產品的認購門檻是多少？"
+          },
+          {
+            "slug": "e159bs",
+            "title": "結構性產品的「掛鈎標的」指的是甚麼"
+          },
+          {
+            "slug": "8yk2ew",
+            "title": "甚麼是「敲出界限」？"
+          },
+          {
+            "slug": "uj1cb8",
+            "title": "甚麼是「行使價」？甚麼情況下會發生「接貨」？"
+          },
+          {
+            "slug": "6ipots",
+            "title": "甚麼是「敲入界限」？它有哪些觀察類型？"
+          },
+          {
+            "slug": "grbbxs",
+            "title": "結構性產品的不可贖回期指的是甚麼？"
+          },
+          {
+            "slug": "mkujr1",
+            "title": "掛鈎多個標的的產品如何判斷最終的風險與回報？"
+          },
+          {
+            "slug": "6i78lr",
+            "title": "購買掛鈎個股的結構性產品後，我能取得掛鈎股票的股息嗎？"
+          },
+          {
+            "slug": "qom23u",
+            "title": "結構性產品的結算類型指的是甚麼？"
+          },
+          {
+            "slug": "henuy9",
+            "title": "產品的落盤類型指的是甚麼，通常支援哪些落盤類型？"
+          },
+          {
+            "slug": "t5vu5e",
+            "title": "結構性產品可能面臨的風險有哪些？"
+          },
+          {
+            "slug": "8dzwko",
+            "title": "結構性產品的發行人是誰？"
+          },
+          {
+            "slug": "s23vg7",
+            "title": "甚麼是 FCN？"
+          },
+          {
+            "slug": "sli924",
+            "title": "FCN 的認購門檻？期限有多長？"
+          },
+          {
+            "slug": "t3onnm",
+            "title": "FCN 的票息如何發放，是固定的嗎？"
+          },
+          {
+            "slug": "2aw23q",
+            "title": "「敲出界限」在 FCN 裏指的是甚麼？"
+          },
+          {
+            "slug": "zpn5v4",
+            "title": "FCN 的敲出觀察有哪些類型？"
+          },
+          {
+            "slug": "mlzaoy",
+            "title": "FCN 在甚麼情況下會「接貨」？"
+          },
+          {
+            "slug": "unefcz",
+            "title": "FCN 的最終回報如何判斷？"
+          }
+        ],
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "longbridgenews",
+    "title": "長橋資訊",
+    "desc": "發布長橋最新產品動態、市場洞察及公司官方公告",
+    "icon": "https://assets.lbctrl.com/uploads/4816555fc36b2a830bde2514f1dfbbef.png",
+    "topics": [],
+    "children": [
+      {
+        "slug": "brandnews",
+        "title": "品牌動態",
+        "desc": "",
+        "icon": "",
+        "topics": [
+          {
+            "slug": "refreshed-visual-identity-shift-toward-intelligent-finance",
+            "title": "長橋證券推出全新品牌視覺形象，體現邁向智能金融的進化"
+          }
+        ],
+        "children": []
+      }
+    ]
+  }
+]

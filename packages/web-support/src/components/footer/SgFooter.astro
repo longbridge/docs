@@ -1,0 +1,103 @@
+---
+// 结构移植自 longbridge-websites packages/website-footer/src/sg/footer.tsx(数据见 src/footer/index.ts)
+import { sgFooter, richText, SOCIAL } from '../../footer'
+import { SOCIAL_ICONS } from '../../footer/icons'
+import { localePath } from '../../lib/site'
+
+interface Props { pagePath: string }
+const { pagePath } = Astro.props
+const locale = Astro.locals.locale
+const f = sgFooter(locale)
+const ext = { target: '_blank', rel: 'noopener noreferrer' }
+---
+
+<footer class="lb-site-footer lb-site-footer--sg" data-section-id="footer">
+  <div class="lb-site-footer__inner">
+    <div class="lb-site-footer__cols">
+      <div class="lb-site-footer__col lb-site-footer__col--contact">
+        <div class="lb-site-footer__label lb-site-footer__label--tight">{f.contact.emailTitle}</div>
+        <a class="lb-site-footer__emphasis" href={`mailto:${f.contact.email}`}>{f.contact.email}</a>
+        <div class="lb-site-footer__muted lb-site-footer__gap">{f.contact.emailNote}</div>
+        <a class="lb-site-footer__emphasis" href={`tel:${f.contact.phone.replace(/\s/g, '')}`}>{f.contact.phone}</a>
+        <div class="lb-site-footer__muted">{f.contact.dealingHours}</div>
+      </div>
+
+      <div class="lb-site-footer__col">
+        <div class="lb-site-footer__label">{f.institutions.title}</div>
+        <div class="lb-site-footer__items">
+          <a href={f.institutions.corporate.href}>{f.institutions.corporate.label}</a>
+          <a href={f.institutions.openapi.href} {...ext}>{f.institutions.openapi.label}</a>
+        </div>
+        <div class="lb-site-footer__whatsapp">
+          <span>{f.institutions.whatsappLabel}</span><a href={`https://wa.me/${f.institutions.whatsapp.replace(/\D/g, '')}`} {...ext}>{f.institutions.whatsapp}</a>
+        </div>
+        <div class="lb-site-footer__muted lb-site-footer__whatsapp-note">{f.institutions.whatsappNote}</div>
+      </div>
+
+      <div class="lb-site-footer__col">
+        <div class="lb-site-footer__label">{f.terms.title}</div>
+        <div class="lb-site-footer__items">
+          {f.terms.links.map((l) => <a href={l.href} {...ext}>{l.label}</a>)}
+        </div>
+      </div>
+
+      <div class="lb-site-footer__col">
+        <div class="lb-site-footer__label">{f.about.title}</div>
+        <div class="lb-site-footer__items">
+          {f.about.links.map((l) => (l.external ? <a href={l.href} {...ext}>{l.label}</a> : <a href={l.href}>{l.label}</a>))}
+        </div>
+      </div>
+
+      <div class="lb-site-footer__col">
+        <div class="lb-site-footer__label">{f.partnership.title}</div>
+        <div class="lb-site-footer__items">
+          <a href={f.partnership.affiliate.href} {...ext}>{f.partnership.affiliate.label}</a>
+        </div>
+        <div class="lb-site-footer__label lb-site-footer__label--spaced">{f.followTitle}</div>
+        <div class="lb-site-footer__social">
+          {SOCIAL.sg.map((s) => <a href={s.href} aria-label={f.followLabel(s.name)} {...ext} set:html={SOCIAL_ICONS[s.icon]} />)}
+        </div>
+      </div>
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <div class="lb-site-footer__meta">
+      <p>{f.copyright}</p>
+      <p>{f.offers}</p>
+    </div>
+    <div class="lb-site-footer__langs" data-lb-locale-links>
+      {f.languages.map((l, i) => (
+        <>
+          {i > 0 && <span>/</span>}
+          <a href={localePath(l.locale, pagePath)} hreflang={l.locale} lang={l.locale}>{l.label}</a>
+        </>
+      ))}
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <p class="lb-site-footer__note lb-site-footer__note--strong" set:html={richText(f.regulation, f.regulationLink)} />
+    <hr class="lb-site-footer__hr" />
+
+    <div class="lb-site-footer__licensed">
+      <div class="lb-site-footer__licensed-title">{f.licensedTitle}</div>
+      <div class="lb-site-footer__licensed-grid">
+        {f.licensed.map((e) => (
+          <div>
+            <div class="lb-site-footer__entity">
+              <img src={e.flag} alt="" width="16" height="16" loading="lazy" decoding="async" />
+              {e.link ? <a href={e.link} {...ext}>{e.name}</a> : <span>{e.name}</span>}
+            </div>
+            <p class="lb-site-footer__entity-desc" set:html={richText(e.desc, e.licenseLink)} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <hr class="lb-site-footer__hr" />
+    <div class="lb-site-footer__disclaimer">
+      {f.notes.map((n) => <p>{n}</p>)}
+      <div class="lb-site-footer__disclaimer-title">{f.disclaimerTitle}</div>
+      {f.disclaimerItems.map((d) => <p set:html={richText(d, f.riskDisclosureLink)} />)}
+    </div>
+  </div>
+</footer>

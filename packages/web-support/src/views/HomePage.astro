@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getContent } from '../lib/content'
+import { getDict } from '../lib/i18n'
+import { iconFor } from '../lib/catx-icons'
+import { HOME_PATH, formatTitle, localePath, topicPath } from '../lib/site'
+import '../styles/home.css'
+
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const { nav, recommended } = getContent(locale)
+
+// 现网首页 Trending 取推荐前 3
+const trending = recommended.slice(0, 3)
+
+const ARROW_SVG =
+  '<svg class="catx__card-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>'
+
+const tabData = nav.map((cat, i) => {
+  const used: Record<string, boolean> = {}
+  return {
+    slug: cat.slug,
+    title: cat.title,
+    href: localePath(locale, cat.path),
+    isFirst: i === 0,
+    cards: cat.sections.flatMap((s) =>
+      s.articles.map((a) => ({
+        href: localePath(locale, a.path),
+        icon: iconFor(s.title, cat.title, used),
+        title: a.title,
+        sectionTitle: s.direct ? '' : s.title,
+      })),
+    ),
+  }
+})
+---
+
+<BaseLayout title={formatTitle(locale, d.helpCenter)} description={d.seoHomeDescription} keywords={d.seoHomeKeywords} pagePath={HOME_PATH} isHome={true}>
+  <section class="section hero hero--dark" aria-label={d.search}>
+    <div class="hero__inner">
+      <h1 class="hero-title"><span class="hero-title-line"><span class="hero-title-accent">{d.heroTitleAccent}</span> {d.heroTitleRest}</span></h1>
+      <p class="hero-sub">{d.heroSub}</p>
+
+      <div class="hero-search-wrap">
+        <input class="hero-search-input" id="hero-search" type="search" placeholder={d.searchPlaceholder} aria-label={d.search} readonly />
+        <button class="hero-search-btn" type="button" aria-label={d.search} data-lb-hero-search>
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#001612" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" /></svg>
+        </button>
+      </div>
+
+      {trending.length > 0 && (
+        <div class="hero-hot-tags" role="group" aria-label={d.trending}>
+          <span class="hero-hot-label">{d.trending}</span>
+          {trending.map((r) => (
+            <a class="hero-hot-tag" href={localePath(locale, topicPath(r.categorySlug, r.slug))}>{r.title}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {tabData.length > 0 && (
+    <section class="catx-section" aria-label={d.findByCategory} data-catx-tabs>
+      <div class="catx-container">
+        <h2 class="catx-title">{d.findByCategory}</h2>
+        <div class="catx-tabs" role="tablist" aria-label={d.categories}>
+          <div class="catx__underline" hidden></div>
+          {tabData.map((tab) => (
+            <button class={`catx__tab${tab.isFirst ? ' is-active' : ''}`} role="tab" aria-selected={tab.isFirst ? 'true' : 'false'} data-key={tab.slug}>{tab.title}</button>
+          ))}
+        </div>
+        {tabData.map((tab) => (
+          <div class="catx__grid" role="tabpanel" data-tab={tab.slug} data-href={tab.href} hidden={tab.isFirst ? undefined : true}>
+            {tab.cards.map((card) => (
+              <a class="catx-card" href={card.href}>
+                <span class="catx-card__icon" set:html={card.icon} aria-hidden="true" />
+                <span class="catx-card__body">
+                  <span class="catx-card__title">{card.title}</span>
+                  {card.sectionTitle && <span class="catx-card__sub">{card.sectionTitle}</span>}
+                </span>
+                <span set:html={ARROW_SVG} />
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <script>
+    import '../scripts/catx'
+  </script>
+
+  <script>
+    declare global {
+      interface Window {
+        lbOpenSearch?: (query: string) => void
+      }
+    }
+    const heroInput = document.getElementById('hero-search') as HTMLInputElement | null
+    heroInput?.addEventListener('focus', () => {
+      const q = heroInput.value
+      heroInput.blur()
+      window.lbOpenSearch?.(q)
+    })
+    document.querySelector<HTMLButtonElement>('[data-lb-hero-search]')?.addEventListener('click', () => {
+      window.lbOpenSearch?.(heroInput?.value ?? '')
+    })
+  </script>
+</BaseLayout>
