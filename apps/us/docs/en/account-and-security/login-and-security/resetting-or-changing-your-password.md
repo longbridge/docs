@@ -2,8 +2,8 @@
 title: Resetting or Changing Your Password
 zendesk_article_id: 17336012682895
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-09-10T05:49:06Z'
-zendesk_edited_at: '2026-09-10T05:49:06Z'
+zendesk_updated_at: '2026-10-12T19:21:34Z'
+zendesk_edited_at: '2026-10-12T19:21:34Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17336012682895-Resetting-or-Changing-Your-Password'
 promoted: false
 position: 0
@@ -64,7 +64,7 @@ Use these steps to update your login password when you already have access to yo
 
 3.  Enter the verification code sent to your phone number or email.
 
-4.  Complete two-factor (2FA) cross-verification.
+4.  Complete two-factor Authentication (2FA).
 
 5.  Set your new login password.
 
