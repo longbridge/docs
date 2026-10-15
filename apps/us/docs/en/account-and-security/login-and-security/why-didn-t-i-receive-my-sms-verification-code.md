@@ -2,8 +2,8 @@
 title: 'Why didn’t I receive my SMS verification code?'
 zendesk_article_id: 16511520516111
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-09-08T10:02:34Z'
-zendesk_edited_at: '2026-09-08T10:02:34Z'
+zendesk_updated_at: '2026-10-15T16:37:37Z'
+zendesk_edited_at: '2026-10-15T16:37:37Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16511520516111-Why-didn-t-I-receive-my-SMS-verification-code'
 promoted: true
 position: 0
@@ -54,16 +54,14 @@ In rare cases, there may be temporary issues with the mobile network or your car
 
 -   Check with friends on the same carrier in the same area to see if they have similar issues.
 
-## Alternative option: Contact customer service immediately
+## Alternative option: Contact customer service
 
-If you need urgent help, or the issue remains after the steps above, contact our customer service team. Please note our support team cannot read out the verification code to you — instead, they will help you troubleshoot and can switch you to an alternative verification method.
+If you need urgent help, or the issue remains after the steps above, contact our customer service team. Please note our support team cannot read out the verification code to you — instead, they will help you troubleshoot and can switch you to an alternative verification method if needed.
 
-1.  **Online customer service** — Click the _online customer service_ option in our app or on our website. This is the recommended and fastest way to get help.
+1.  **Online customer service** — Click the _Contact us_ option in our app or on our website to reach our support team via live-chat or email.
 
-2.  **Switch to email verification** — If SMS still won't arrive, ask support to send the verification code to your registered email instead.
+2.  **Switch to email verification** — If SMS still won't arrive, switch your verification to email instead of SMS.
 
-3.  **Customer service hotline:** — Dial **(877) 445-5234**. Calling is best for urgent issues.
-
-Both methods will connect you with a dedicated support representative. If you need urgent assistance, **calling is the most efficient way.**
+3.  **Customer service hotline:** — Dial **(877) 445-5234**.
 
 **Tips:** In most cases, refreshing your network signal, checking for SMS blocking, and confirming your number will resolve the issue. If you still can't receive the code, our customer service team is always ready to help.
