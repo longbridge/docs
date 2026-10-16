@@ -2,8 +2,8 @@
 title: How to update my account profile
 zendesk_article_id: 17430126495631
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-10-06T19:25:22Z'
-zendesk_edited_at: '2026-09-30T21:25:19Z'
+zendesk_updated_at: '2026-10-16T19:14:11Z'
+zendesk_edited_at: '2026-10-16T19:14:11Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17430126495631-How-to-update-my-account-profile'
 promoted: true
 position: 0
@@ -42,9 +42,9 @@ The following fields can be updated. Changes will be synced to your account once
 
 -   Regulatory Response Questionnaire
 
-### Invest Profile Changes
+### Investor Profile Changes
 
-To make changes to your investor profile, please contact our customer support team using the "contact us" feature in the Longbridge platform or by emailing support@longbridge.com.
+To make changes to your investor profile, please [contact our customer support team](/articles/17350120095503) using the "contact us" feature in the Longbridge platform or by emailing support@longbridge.com.
 
 ## Review Process
 
@@ -60,4 +60,4 @@ You will receive a notification with the reason for rejection. Please go to _Acc
 
 **Q2: Can I update my name, date of birth, SSN, or citizenship online?**
 
-These fields cannot be updated through the App. Please contact our customer support team for assistance.
+These fields cannot be updated through the App. Please [contact our customer support team](/articles/17350120095503) for assistance.
