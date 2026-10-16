@@ -4,14 +4,14 @@ import { sgFooter, richText, SOCIAL } from '../../footer'
 import { SOCIAL_ICONS } from '../../footer/icons'
 import { localePath } from '../../lib/site'
 
-interface Props { pagePath: string }
-const { pagePath } = Astro.props
+interface Props { pagePath: string; layout: 'home' | 'page' | 'column' }
+const { pagePath, layout } = Astro.props
 const locale = Astro.locals.locale
 const f = sgFooter(locale)
 const ext = { target: '_blank', rel: 'noopener noreferrer' }
 ---
 
-<footer class="lb-site-footer lb-site-footer--sg" data-section-id="footer">
+<footer class:list={['lb-site-footer lb-site-footer--sg', { 'lb-site-footer--page': layout === 'page', 'lb-site-footer--column': layout === 'column' }]} data-section-id="footer">
   <div class="lb-site-footer__inner">
     <div class="lb-site-footer__cols">
       <div class="lb-site-footer__col lb-site-footer__col--contact">

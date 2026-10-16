@@ -22,9 +22,13 @@ function setTriggerState(open: boolean): void {
   })
 }
 
+// 关闭后把焦点还给打开抽屉的按钮，键盘用户不用从页首重新找
+let returnFocus: HTMLElement | null = null
+
 function openDrawer(): void {
   const drawer = getDrawer()
   if (!drawer) return
+  returnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
 
   drawer.removeAttribute('hidden')
   drawer.setAttribute('aria-hidden', 'false')
@@ -38,14 +42,16 @@ function openDrawer(): void {
   firstFocusable?.focus()
 }
 
-function closeDrawer(): void {
+export function closeDrawer(restoreFocus = true): void {
   const drawer = getDrawer()
-  if (!drawer) return
+  if (!drawer || drawer.hasAttribute('hidden')) return
 
   drawer.setAttribute('hidden', '')
   drawer.setAttribute('aria-hidden', 'true')
   document.documentElement.classList.remove(SCROLL_LOCK_CLASS)
   setTriggerState(false)
+  if (restoreFocus && returnFocus?.isConnected) returnFocus.focus()
+  returnFocus = null
 }
 
 // ── Open trigger ─────────────────────────────────────────────────────────────
@@ -84,7 +90,7 @@ document.addEventListener(
     if (!link || !drawer.contains(link)) return
 
     // Close immediately; navigation continues after this handler returns.
-    closeDrawer()
+    closeDrawer(false)
   },
   true, // capture phase so we run before any stopPropagation on inner elements
 )
@@ -92,6 +98,6 @@ document.addEventListener(
 // ── bfcache: reset drawer state when navigating back ─────────────────────────
 window.addEventListener('pageshow', (e) => {
   if (e.persisted) {
-    closeDrawer()
+    closeDrawer(false)
   }
 })

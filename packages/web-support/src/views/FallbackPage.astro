@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import SideTree from '../components/SideTree.astro'
+import TopicFeedback from '../components/TopicFeedback.astro'
+import Footer from '../components/Footer.astro'
+import { getContent } from '../lib/content'
+import { getDict } from '../lib/i18n'
+import { HOME_PATH, TOPIC_CAT_TOKEN, TOPIC_SLUG_TOKEN, formatTitle, localePath, topicPath } from '../lib/site'
+import '../styles/article.css'
+import '../styles/toc.css'
+import '../styles/topic.css'
+
+// 兜底页：静态产物里没有的路径(隐藏分类下的文章、构建后才发布的文章、根本不存在的地址)由 nginx
+// 回这个页，不再转发旧站。文章地址由 scripts/topic-fallback.ts 运行时拉详情渲染，拉不到显示「文檔建設中」。
+// canonical / hreflang / 语言切换链接里的分类段和 slug 由 nginx sub_filter 换成请求里的值(见 TOPIC_SLUG_TOKEN)
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const { nav } = getContent(locale)
+const pagePath = topicPath(TOPIC_CAT_TOKEN, TOPIC_SLUG_TOKEN)
+const DOC_ICON = '<svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>'
+---
+
+<BaseLayout title={formatTitle(locale, d.helpCenter)} description={d.seoHomeDescription} pagePath={pagePath} ogType="article" footerInContent>
+  <div class="article-page">
+    <aside class="article-page__aside side-tree" aria-label={d.categories}>
+      <SideTree nav={nav} currentSlug="" />
+    </aside>
+
+    <div class="article-page__main" data-topic-fallback aria-busy="true">
+      <div class="topic-fallback__loading" data-fallback-loading role="status">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div data-fallback-article hidden>
+        <h1 class="article-title" data-fallback-title></h1>
+        <div class="article-body support-topic-article" data-fallback-body></div>
+        <div data-fallback-feedback-slot></div>
+        <div class="article-relatives">
+          <section class="article-recent" data-recent-articles hidden aria-label={d.recentArticles}>
+            <h2 class="article-relatives__title">{d.recentArticles}</h2>
+            <ul></ul>
+          </section>
+          <section class="article-related" data-fallback-related hidden aria-label={d.relatedArticles}>
+            <h2 class="article-relatives__title">{d.relatedArticles}</h2>
+            <ul></ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="topic-fallback__state" data-fallback-empty hidden>
+        <span class="topic-fallback__icon" set:html={DOC_ICON} />
+        <h1 class="topic-fallback__title">{d.notFoundTitle}</h1>
+        <p class="topic-fallback__desc">{d.notFoundDesc}</p>
+        <a class="topic-fallback__btn" href={localePath(locale, HOME_PATH)}>{d.backToHome}</a>
+      </div>
+
+      <div class="topic-fallback__state" data-fallback-error hidden>
+        <p class="topic-fallback__desc">{d.loadFailed}</p>
+        <button type="button" class="topic-fallback__btn" data-fallback-retry>{d.retry}</button>
+      </div>
+
+      <!-- 反馈要等拿到文章 id 才挂上去(feedback.ts 一挂就会展示) -->
+      <template data-fallback-feedback><TopicFeedback topicId="" /></template>
+    </div>
+
+    <!-- 页脚在正文列(第 2 列第 2 行),左侧分类栏跨两行吸顶，同 US 详情页 -->
+    <Footer pagePath={pagePath} layout="column" />
+  </div>
+</BaseLayout>
+
+<script>
+  import '../scripts/client-router.ts'
+  import '../scripts/article.ts'
+  import '../scripts/toc.ts'
+  import '../scripts/feedback.ts'
+  import '../scripts/topic-fallback.ts'
+</script>

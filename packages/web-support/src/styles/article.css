@@ -66,15 +66,10 @@ html[theme="dark"] .article-page__aside::-webkit-scrollbar-thumb {
 
 /* ── Article main column ───────────────────────────────────────── */
 /* 左右 30:正文列 820 - 60 = 正文 760，对齐 Zendesk article 的内 padding */
+/* 顶 24:标题与左侧菜单齐平，对齐 Zendesk(header 高度已由外层 main#main-content 让出) */
 .article-page__main {
   min-width: 0;
-  padding: 32px 30px 48px;
-}
-
-/* 覆盖全局 main#main-content 的 padding-top:56(文章页容器已让出 header 空间)。
-   带 id 的选择器才能压过 main#main-content。内容距顶 24、标题与左侧菜单齐平，对齐 Zendesk。 */
-.article-page__main#main-content {
-  padding-top: 24px;
+  padding: 24px 30px 48px;
 }
 
 /* ── Breadcrumb ────────────────────────────────────────────────── */

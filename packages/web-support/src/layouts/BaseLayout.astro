@@ -28,9 +28,11 @@ interface Props {
   isHome?: boolean
   /** 文章页传入，移动端分类抽屉据此展开并高亮当前文章 */
   currentSlug?: string
+  /** 文章类页面把页脚放进正文列自己渲染(<Footer layout="column" />),这里不再输出 */
+  footerInContent?: boolean
 }
 
-const { title, description, keywords, pagePath, ogType = 'website', jsonLd = [], isHome = false, currentSlug } = Astro.props
+const { title, description, keywords, pagePath, ogType = 'website', jsonLd = [], isHome = false, currentSlug, footerInContent = false } = Astro.props
 const locale = Astro.locals.locale
 const d = getDict(locale)
 const canonical = canonicalUrl(locale, pagePath)
@@ -160,6 +162,6 @@ const clientConfig = {
     <main id="main-content">
       <slot />
     </main>
-    <Footer pagePath={pagePath} />
+    {!footerInContent && <Footer pagePath={pagePath} layout={isHome ? 'home' : 'page'} />}
   </body>
 </html>

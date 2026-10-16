@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import SideTree from '../components/SideTree.astro'
 import TopicFeedback from '../components/TopicFeedback.astro'
+import Footer from '../components/Footer.astro'
 import { getContent } from '../lib/content'
 import { getDict } from '../lib/i18n'
 import { locateArticle } from '../lib/nav-core'
@@ -51,14 +52,13 @@ const jsonLd = [
 ]
 ---
 
-<BaseLayout title={formatTitle(locale, rawTitle)} description={description} pagePath={pagePath} ogType="article" jsonLd={jsonLd} currentSlug={slug}>
+<BaseLayout title={formatTitle(locale, rawTitle)} description={description} pagePath={pagePath} ogType="article" jsonLd={jsonLd} currentSlug={slug} footerInContent>
   <div class="article-page">
     <aside class="article-page__aside side-tree" aria-label={d.categories}>
       <SideTree nav={nav} currentSlug={slug} />
     </aside>
 
-    <!-- 内层 main#main-content 沿用 apps/us 结构：header/article/whale.css 的间距规则依赖它 -->
-    <main class="article-page__main" id="main-content">
+    <div class="article-page__main">
       <h1 class="article-title" data-pagefind-meta="title">{topic.title}</h1>
 
       <!-- data-pagefind-body:只索引正文;href 元数据带分类段，搜索结果直接跳 canonical 地址 -->
@@ -99,7 +99,10 @@ const jsonLd = [
           </section>
         )}
       </div>
-    </main>
+    </div>
+
+    <!-- 页脚在正文列(第 2 列第 2 行),左侧分类栏跨两行吸顶，同 US 详情页 -->
+    <Footer pagePath={pagePath} layout="column" />
   </div>
 </BaseLayout>
 

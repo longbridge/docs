@@ -217,7 +217,11 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
 
   // ── Open / Close ──────────────────────────────────────────────────────────
 
+  // 关闭后把焦点还给打开弹窗的元素(搜索按钮 / 首页搜索框)
+  let returnFocus: HTMLElement | null = null
+
   function openModal(seed?: string) {
+    if (modal!.hidden) returnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null
     modal!.hidden = false
     modal!.setAttribute('aria-hidden', 'false')
     document.documentElement.classList.add('lb-search-open')
@@ -239,6 +243,8 @@ const results = document.getElementById('lb-search-results') as HTMLElement | nu
     modal!.hidden = true
     modal!.setAttribute('aria-hidden', 'true')
     document.documentElement.classList.remove('lb-search-open')
+    if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true })
+    returnFocus = null
   }
 
   // Expose global opener for hero / hot-tags (Task 7 will call window.lbOpenSearch)

@@ -5,8 +5,8 @@ import LinkGroup from './LinkGroup.astro'
 import HkSocialGroup from './HkSocialGroup.astro'
 import { localePath } from '../../lib/site'
 
-interface Props { pagePath: string }
-const { pagePath } = Astro.props
+interface Props { pagePath: string; layout: 'home' | 'page' | 'column' }
+const { pagePath, layout } = Astro.props
 const locale = Astro.locals.locale
 const f = hkFooter(locale)
 const digits = (s: string) => s.replace(/\D/g, '')
@@ -16,7 +16,7 @@ const { trading, account, info, about, terms } = f.columns
 
 {/* 官网按容器宽度重排列：<1392 賬戶類型并入交易列，<1024 條款/關注并入關於列(两处都渲染、按宽度隐藏一份) */}
 
-<footer class:list={['lb-site-footer lb-site-footer--hk', { 'lb-site-footer--en': locale === 'en' }]} data-section-id="footer">
+<footer class:list={['lb-site-footer lb-site-footer--hk', { 'lb-site-footer--en': locale === 'en', 'lb-site-footer--page': layout === 'page', 'lb-site-footer--column': layout === 'column' }]} data-section-id="footer">
   <div class="lb-site-footer__inner">
     <div class="lb-site-footer__cols">
       <div class="lb-site-footer__col">

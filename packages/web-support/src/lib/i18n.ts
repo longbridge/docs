@@ -60,6 +60,11 @@ const en = {
   seoCategoryTitle: '{category} - Help Center',
   seoCategoryDescription: 'Browse {category} articles and FAQs on Longbridge Help Center.',
   seoCategoryKeywords: '{category}, Longbridge help, FAQ, support',
+  notFoundTitle: 'This document is under construction and not yet available',
+  notFoundDesc: 'Please visit the Help Center home page for other content, or contact customer service for help.',
+  backToHome: 'Back to Help Center',
+  loadFailed: 'Failed to load. Please check your network and try again.',
+  retry: 'Retry',
 }
 
 export type Dict = typeof en
@@ -122,6 +127,11 @@ const zhHK: Dict = {
   seoCategoryTitle: '{category} - 幫助中心',
   seoCategoryDescription: '瀏覽長橋幫助中心 {category} 下的文章與常見問題。',
   seoCategoryKeywords: '{category}, 長橋幫助，常見問題，客服支持',
+  notFoundTitle: '文檔建設中，暫未提供此項的相關文檔',
+  notFoundDesc: '請訪問幫助中心首頁查詢其他內容，或聯繫客服獲得幫助',
+  backToHome: '返回幫助中心首頁',
+  loadFailed: '載入失敗，請檢查網絡後重試',
+  retry: '重試',
 }
 
 const zhCN: Dict = {
@@ -182,6 +192,11 @@ const zhCN: Dict = {
   seoCategoryTitle: '{category} - 帮助中心',
   seoCategoryDescription: '浏览长桥帮助中心 {category} 下的文章与常见问题。',
   seoCategoryKeywords: '{category}, 长桥帮助, 常见问题, 客服支持',
+  notFoundTitle: '文档建设中，暂未提供此项的相关文档',
+  notFoundDesc: '请访问帮助中心首页查询其他内容，或联系客服获得帮助',
+  backToHome: '返回帮助中心首页',
+  loadFailed: '加载失败，请检查网络后重试',
+  retry: '重试',
 }
 
 const DICTS: Record<string, Dict> = { 'en': en, 'zh-HK': zhHK, 'zh-CN': zhCN }

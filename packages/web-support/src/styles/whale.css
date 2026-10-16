@@ -250,13 +250,12 @@ html.is-whale-app body:not(.lb-has-hero) .lb-app-navbar__actions::before {
 html.is-whale-app body:not(.lb-has-hero) .lb-app-navbar__search {
   display: inline-flex !important;
 }
-/* 正文下推让出固定导航栏 (替代 header 高度占位，叠加安全区)。
-   只作用于 body 直系的外层 main：文章页内层 .article-page__main 也带 id=main-content，
-   不加 > 会叠两次；内层顶距对齐 Zendesk App 态 .article-header padding-top:12 */
+/* 正文下推让出固定导航栏 (替代 header 高度占位，叠加安全区);
+   文章正文列顶距对齐 Zendesk App 态 .article-header padding-top:12 */
 html.is-whale-app body:not(.lb-has-hero) > main#main-content {
   padding-top: calc(var(--lb-safe-top) + 56px);
 }
-html.is-whale-app .article-page__main#main-content {
+html.is-whale-app .article-page__main {
   padding-top: 12px;
 }
 

@@ -3,6 +3,12 @@
    Replaces $text_color → var(--foreground), $brand_color → var(--accent-teal).
 */
 
+/* ── 页面容器：与文章页 .article-page 同宽(US 没有分类页，没带这条) ── */
+.container { width: 90%; max-width: 1396px; margin: 0 auto; }
+@media (max-width: 1023px) {
+  .container { width: 100%; padding: 0 16px; box-sizing: border-box; }
+}
+
 /* ── Breadcrumb ─────────────────────────────────────────────────── */
 .sub-nav {
   padding: 16px 0;

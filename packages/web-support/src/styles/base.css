@@ -84,3 +84,15 @@ a {
 }
 [dir=rtl] .skip-navigation:focus,
 [dir=rtl] .skip-navigation:active { left: initial; right: auto; }
+
+/* 系统开了「减少动态效果」:过渡 / 动画瞬时完成，CSS 平滑滚动关掉(JS 里的平滑滚动在调用处判断) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

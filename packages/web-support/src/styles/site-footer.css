@@ -1,7 +1,9 @@
 /* 官网 HK / SG 页脚。尺寸与浅色取值对照 longbridge.com/hk、/sg 线上渲染结果
    (website-footer.preset.js:border #EAEBEC、text_color_1 #000、1_supplement #464f56、2 #82888d、3 #AFB3B6、brand #00b8b8)。
    官网没有深色模式，深色按本站 tokens 映射。 */
+/* 断点用容器查询(同官网 Tailwind @container):页脚放进文章正文列时按列宽排版，全宽时等同视口断点 */
 .lb-site-footer {
+  container-type: inline-size;
   --fs-bg: #fff;
   --fs-text-1: #000;
   --fs-text-supp: #464f56;
@@ -45,40 +47,52 @@ html[theme='dark'] .lb-site-footer,
 
 .lb-site-footer__inner { box-sizing: border-box; padding: 40px 15px 0; }
 /* 左右边距照官网 banner-responsive(packages/tailwindcss/src/_container.scss):<640 为 15,640~1391 为 96,≥1392 锁 1200 版心 */
-@media (min-width: 640px) {
+@container (min-width: 640px) {
   .lb-site-footer__inner { padding-inline: 96px; }
 }
-@media (min-width: 1392px) {
+@container (min-width: 1392px) {
   .lb-site-footer__inner { padding-inline: calc(50% - 600px); }
+}
+/* 分类页：与内容容器(listing.css .container)同一个盒子。跟随页面布局，用视口断点 */
+.lb-site-footer--page .lb-site-footer__inner { width: 90%; max-width: 1396px; margin: 0 auto; padding-inline: 0; }
+@media (max-width: 1023px) {
+  .lb-site-footer--page .lb-site-footer__inner { width: 100%; padding-inline: 16px; }
+}
+/* 文章页：页脚在 .article-page 正文列，左右各留 30 与正文(760)对齐，顶部分隔线同 US 详情页 */
+.article-page > .lb-site-footer { grid-column: 2; min-width: 0; }
+.lb-site-footer--column .lb-site-footer__inner { margin: 0 30px; padding: 32px 0 0; border-top: 1px solid var(--fs-border); }
+@media (max-width: 1023px) {
+  .article-page > .lb-site-footer { grid-column: 1; }
+  .lb-site-footer--column .lb-site-footer__inner { margin: 0; }
 }
 
 /* ── 多列区 ─────────────────────────────────────────────── */
 .lb-site-footer__cols { display: flex; flex-direction: column; }
 .lb-site-footer__col { display: flex; flex-direction: column; }
 .lb-site-footer__col + .lb-site-footer__col { margin-top: 20px; }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
   .lb-site-footer__cols { flex-direction: row; justify-content: space-between; }
   .lb-site-footer__col + .lb-site-footer__col { margin-top: 0; }
   /* HK 中文列间无固定间距(靠 space-between),英文 gap-4 / @lg:gap-16 */
   .lb-site-footer--en .lb-site-footer__col + .lb-site-footer__col { margin-left: 16px; }
 }
-@media (min-width: 1024px) {
+@container (min-width: 1024px) {
   .lb-site-footer--en .lb-site-footer__col + .lb-site-footer__col { margin-left: 64px; }
   .lb-site-footer__below-lg { display: none; }
 }
-@media (max-width: 1023.98px) {
+@container (max-width: 1023.98px) {
   .lb-site-footer__from-lg { display: none !important; }
 }
-@media (min-width: 1392px) {
+@container (min-width: 1392px) {
   .lb-site-footer__below-xl { display: none; }
 }
-@media (max-width: 1391.98px) {
+@container (max-width: 1391.98px) {
   .lb-site-footer__from-xl { display: none !important; }
 }
 /* 官网宿主页面对 HK 页脚列的全局规则(.layout-footer-column-container) */
 .lb-site-footer--hk .lb-site-footer__col { max-width: 300px; }
 .lb-site-footer--hk .lb-site-footer__col:first-child { flex-basis: 218px; }
-@media (min-width: 1200px) {
+@container (min-width: 1200px) {
   .lb-site-footer--hk .lb-site-footer__col:first-child { flex-shrink: 0; }
 }
 .lb-site-footer__group + .lb-site-footer__group { margin-top: 28px; }
@@ -103,7 +117,7 @@ html[theme='dark'] .lb-site-footer,
 .lb-site-footer--sg .lb-site-footer__hr { margin: 20px 0; }
 
 .lb-site-footer__meta { display: flex; flex-direction: column; align-items: flex-start; row-gap: 16px; padding-bottom: 12px; color: var(--fs-text-3); }
-@media (min-width: 1392px) {
+@container (min-width: 1392px) {
   .lb-site-footer__meta { flex-direction: row; justify-content: space-between; align-items: center; }
 }
 .lb-site-footer__langs { display: flex; flex-wrap: wrap; color: var(--fs-text-supp); }
@@ -120,7 +134,7 @@ html[theme='dark'] .lb-site-footer,
 .lb-site-footer__licensed { padding: 24px 0; }
 .lb-site-footer__licensed-title { margin-bottom: 24px; color: var(--fs-text-1); font-size: 20px; line-height: 28px; font-weight: 600; }
 .lb-site-footer__licensed-grid { display: grid; grid-template-columns: 1fr; grid-gap: 32px; }
-@media (min-width: 1024px) {
+@container (min-width: 1024px) {
   .lb-site-footer__licensed-grid { grid-template-columns: 1fr 1fr; }
 }
 .lb-site-footer__entity { display: flex; align-items: center; margin-bottom: 12px; color: var(--fs-text-1); font-size: 14px; line-height: 21px; }
@@ -139,11 +153,11 @@ html[theme='dark'] .lb-site-footer,
 .lb-site-footer--sg .lb-site-footer__col { margin-bottom: 32px; }
 .lb-site-footer--sg .lb-site-footer__col:last-child { margin-bottom: 0; }
 .lb-site-footer--sg .lb-site-footer__col + .lb-site-footer__col { margin-top: 16px; }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
   .lb-site-footer--sg .lb-site-footer__col + .lb-site-footer__col { margin-top: 0; margin-left: 40px; }
 }
 .lb-site-footer--sg .lb-site-footer__label { margin-bottom: 16px; font-size: 12px; line-height: 16px; font-weight: 500; }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
   .lb-site-footer--sg .lb-site-footer__label { font-size: 14px; line-height: 20px; }
 }
 .lb-site-footer--sg .lb-site-footer__col--contact { padding-bottom: 40px; }
@@ -158,7 +172,7 @@ html[theme='dark'] .lb-site-footer,
 .lb-site-footer__whatsapp { margin: 28px 0 8px; color: var(--fs-text-supp); }
 .lb-site-footer--sg .lb-site-footer__meta { row-gap: 12px; }
 .lb-site-footer--sg .lb-site-footer__langs { padding-top: 4px; }
-@media (min-width: 768px) {
+@container (min-width: 768px) {
   .lb-site-footer--sg .lb-site-footer__meta { flex-direction: row; justify-content: space-between; align-items: center; padding-bottom: 0; }
 }
 .lb-site-footer--sg .lb-site-footer__licensed { padding: 20px 0; }
@@ -167,3 +181,14 @@ html[theme='dark'] .lb-site-footer,
 .lb-site-footer--sg .lb-site-footer__entity-desc { color: var(--fs-entity-desc); font-size: 12px; line-height: 16px; font-weight: 400; }
 .lb-site-footer--sg .lb-site-footer__disclaimer { padding-top: 0; }
 .lb-site-footer--sg .lb-site-footer__disclaimer p:nth-of-type(2) { margin-bottom: 24px; }
+
+/* SG 页脚宽 768~1023(全宽中屏、文章正文列):官网 5 列横排放不下 —— 英文长词撑出横向滚动，
+   中文条款列被挤成一字一行(线上同样如此)。这一档改两行：联系方式独占一行，其余 4 列第二行平分。
+   ≥1024 保持官网 5 列 */
+@container (min-width: 768px) and (max-width: 1023.98px) {
+  .lb-site-footer--sg .lb-site-footer__cols { flex-wrap: wrap; }
+  .lb-site-footer--sg .lb-site-footer__col:first-child { flex: 0 0 100%; padding-bottom: 0; }
+  /* 4 列 + 3 个 40 间距正好一行 */
+  .lb-site-footer--sg .lb-site-footer__col:not(:first-child) { flex: 1 1 calc(25% - 30px); min-width: 0; }
+  .lb-site-footer--sg .lb-site-footer__col:nth-child(2) { margin-left: 0; }
+}

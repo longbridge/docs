@@ -154,3 +154,45 @@
 .topic-adjacent__link--next { text-align: right; }
 .topic-adjacent__label { font-size: 13px; color: var(--muted-foreground); }
 .topic-adjacent__title { margin-top: 4px; font-size: 15px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ── 兜底页(views/FallbackPage.astro)── */
+/* 404:去掉左侧分类菜单，正文与页脚单列 */
+.article-page.is-not-found { grid-template-columns: minmax(0, 1fr); }
+.article-page.is-not-found > .article-page__aside { display: none; }
+.article-page.is-not-found > .lb-site-footer { grid-column: 1; }
+/* 提示区撑到大半屏、内容垂直居中，页脚不紧贴着提示 */
+.article-page.is-not-found .topic-fallback__state { min-height: 64vh; justify-content: center; box-sizing: border-box; }
+
+/* 下面几个块都设了 display,hidden 属性要显式压住 */
+.topic-fallback__loading[hidden],
+.topic-fallback__state[hidden] { display: none; }
+.topic-fallback__loading { display: flex; flex-direction: column; padding-top: 8px; }
+.topic-fallback__loading span { display: block; height: 16px; border-radius: 8px; background: var(--muted); }
+.topic-fallback__loading span:first-child { width: 60%; height: 32px; margin-bottom: 28px; }
+.topic-fallback__loading span + span { margin-top: 14px; }
+.topic-fallback__loading span:last-child { width: 80%; }
+@media (prefers-reduced-motion: no-preference) {
+  .topic-fallback__loading span { animation: topic-fallback-pulse 1.4s ease-in-out infinite; }
+}
+@keyframes topic-fallback-pulse { 50% { opacity: 0.5; } }
+
+.topic-fallback__state { display: flex; flex-direction: column; align-items: center; padding: 96px 16px; text-align: center; }
+.topic-fallback__icon { display: inline-flex; margin-bottom: 20px; color: var(--muted-foreground); }
+.topic-fallback__title { margin: 0 0 8px; font-size: 18px; font-weight: 600; line-height: 26px; color: var(--foreground); }
+.topic-fallback__desc { margin: 0 0 24px; max-width: 420px; font-size: 14px; line-height: 22px; color: var(--muted-foreground); }
+.topic-fallback__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.topic-fallback__btn:hover { border-color: var(--accent-teal); color: var(--accent-teal); }
+.topic-fallback__btn:focus-visible { outline: 2px solid var(--accent-teal); outline-offset: 2px; }

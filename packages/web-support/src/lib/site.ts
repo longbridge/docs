@@ -14,7 +14,7 @@ export const SITE_ORIGIN = 'https://longbridge.com'
 export const OG_IMAGE = 'https://assets.lbctrl.com/uploads/b510b04f-9238-4fe0-b39d-11e076876ac1/longbridge-og.png!web'
 export const FAVICON = 'https://assets.wbrks.com/assets/logo/logo1.png'
 
-export { HOME_PATH, TOPIC_CAT_TOKEN, categoryPath, topicPath } from './paths'
+export { HOME_PATH, TOPIC_CAT_TOKEN, TOPIC_SLUG_TOKEN, categoryPath, topicPath } from './paths'
 
 /**
  * 站内页面路径(以 /support 开头)→ 对外路径。默认语言不带语言段(/hk/support),

@@ -111,7 +111,7 @@ function buildToc(): void {
         const hdr = document.querySelector<HTMLElement>('header.header, .lb-header')
         target.style.scrollMarginTop =
           Math.round((hdr ? hdr.getBoundingClientRect().bottom : 56) + 20) + 'px'
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
         history.replaceState(null, '', '#' + h.id)
       }
     })

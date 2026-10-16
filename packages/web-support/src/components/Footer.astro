@@ -7,8 +7,13 @@ import '../styles/site-footer.css'
 interface Props {
   /** 当前页站内路径：页脚的语言切换跳同一页的其它语言版本(同 discover careers 的 localeLinkBuilder) */
   pagePath: string
+  /**
+   * home:官网 1200 版心(与 hero 同宽);page:与分类页内容容器(.container)同宽;
+   * column:文章页放进 .article-page 网格的正文列(同 US 详情页),由页面自己渲染
+   */
+  layout?: 'home' | 'page' | 'column'
 }
-const { pagePath } = Astro.props
+const { pagePath, layout = 'home' } = Astro.props
 ---
 
-{REGION.code === 'hk' ? <HkFooter pagePath={pagePath} /> : <SgFooter pagePath={pagePath} />}
+{REGION.code === 'hk' ? <HkFooter pagePath={pagePath} layout={layout} /> : <SgFooter pagePath={pagePath} layout={layout} />}

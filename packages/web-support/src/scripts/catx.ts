@@ -117,7 +117,7 @@ function initCatx(): void {
       if (tabsWrap) {
         tabsWrap.scrollTo({
           left: tab.offsetLeft - (tabsWrap.clientWidth - tab.offsetWidth) / 2,
-          behavior: 'smooth',
+          behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
         })
       }
 

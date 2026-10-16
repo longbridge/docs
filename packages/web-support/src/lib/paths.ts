@@ -10,3 +10,6 @@ export const topicPath = (categorySlug: string, slug: string) => `/support/topic
  * 只能出现在 HTML 里，nginx 只对 text/html 做替换。
  */
 export const TOPIC_CAT_TOKEN = '__lb_topic_cat__'
+
+/** 同上，文章 slug 的占位符。只用在兜底页(静态产物里没有的文章由它运行时拉详情) */
+export const TOPIC_SLUG_TOKEN = '__lb_topic_slug__'

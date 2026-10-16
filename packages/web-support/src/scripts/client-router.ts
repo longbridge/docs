@@ -3,6 +3,7 @@
 // → 零闪动、展开态天然保持。任何异常回退整页导航。
 
 import { config } from './config'
+import { closeDrawer } from './drawer'
 
 const MAIN_SEL = '.article-page__main'
 
@@ -49,7 +50,8 @@ async function navigate(href: string, push: boolean): Promise<void> {
 
     const newMain = doc.querySelector(MAIN_SEL)
     const curMain = document.querySelector(MAIN_SEL)
-    if (!newMain || !curMain) {
+    // 目标是兜底页(静态产物里没有、要运行时拉详情的文章):正文靠它自己的脚本渲染，只能整页打开
+    if (!newMain || !curMain || newMain.hasAttribute('data-topic-fallback')) {
       location.href = href
       return
     }
@@ -105,13 +107,9 @@ function updateSidebarCurrent(norm: string): void {
   })
 }
 
+// 走 drawer.ts 的关闭逻辑，按钮的 aria-expanded 一起复位;换页后焦点不回菜单按钮
 function closeOverlays(): void {
-  const cd = document.getElementById('lb-cat-drawer')
-  if (cd && !cd.hasAttribute('hidden')) {
-    cd.setAttribute('hidden', '')
-    cd.setAttribute('aria-hidden', 'true')
-    document.documentElement.classList.remove('lb-drawer-open')
-  }
+  closeDrawer(false)
 }
 
 document.addEventListener('click', (e) => {
