@@ -2,8 +2,8 @@
 title: Getting Started with Your AI Home Screen
 zendesk_article_id: 17906376525071
 zendesk_section_id: 17906401756175
-zendesk_updated_at: '2026-10-08T02:18:38Z'
-zendesk_edited_at: '2026-10-08T02:18:23Z'
+zendesk_updated_at: '2026-10-19T22:46:32Z'
+zendesk_edited_at: '2026-10-19T22:46:31Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17906376525071-Getting-Started-with-Your-AI-Home-Screen'
 promoted: true
 position: 0
@@ -32,7 +32,9 @@ Take a quick quiz to find your **investor portrait**, such as Maverick, Keeper, 
 
 ## 2\. Explore your home screen
 
-### AI widgets![](https://longbridgeus.zendesk.com/hc/article_attachments/17911688508687)
+### AI widgets
+
+![1280X1280 (1).PNG](https://longbridgeus.zendesk.com/hc/article_attachments/18056840645775)
 
 These widgets form **your investing loop**, bringing every step of investing into one place, from spotting news to reviewing results: **Catalyst → Signal → Trade Plan → Profit & Loss**. Your **Strategies** are the lens that turns Catalyst news into Signals and Trade Plans made for you. Each step leads naturally to the next, but you're free to start wherever you like. If you're not sure where to begin, here's an easy way to draft your first trade plan:
 
