@@ -2,8 +2,8 @@
 title: Long Bridge Securities LLC Privacy Policy
 zendesk_article_id: 14864729940111
 zendesk_section_id: 17920135773199
-zendesk_updated_at: '2026-10-09T02:21:17Z'
-zendesk_edited_at: '2026-09-08T10:03:32Z'
+zendesk_updated_at: '2026-10-20T21:05:05Z'
+zendesk_edited_at: '2026-10-20T21:05:05Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/14864729940111-Long-Bridge-Securities-LLC-Privacy-Policy'
 promoted: false
 position: 0
@@ -130,7 +130,7 @@ If you are a resident in any of the states listed below, you have certain additi
 
 **7.4** Illinois residents who use any biometric authentication features (including voice commands) should be aware that biometric data may be collected subject to the Illinois Biometric Information Privacy Act;
 
-_**By enabling biometric authentication, you acknowledge that Longbridge and its service providers may collect, store, and use your biometric identifiers solely for identity verification and account security purposes. You have received notice of the purpose and retention period for such information and voluntarily consent to its collection, storage, use, and destruction in accordance with the relevant sections of the Longbridge Privacy Policy.**_
+_**By enabling biometric authentication, you acknowledge that Longbridge or its service providers may collect, store, and use your biometric identifiers solely for identity verification and account security purposes. You have received notice of the purpose and retention period for such information and voluntarily consent to its collection, storage, use, and destruction in accordance with the relevant sections of the Longbridge Privacy Policy.**_
 
 Certain other states provide residents with additional privacy rights regarding the collection, use, disclosure, and sharing of personal information. Depending on a customer's state of residence and applicable law, customers may have rights that include:
 
