@@ -109,14 +109,18 @@
 /* 三级：文章链接 */
 .side-tree__item {
   display: block;
-  padding: 8px 12px;
+  padding: 6px 12px;
   font-size: 14px;
   line-height: 1.4;
   color: #64748b;
   text-decoration: none;
   border-radius: 6px;
+  /* 超长单词 / URL 也要折行，不能撑出侧栏被裁掉 */
+  overflow-wrap: anywhere;
   transition: background 0.12s, color 0.12s;
 }
+/* 相邻两项的悬停 / 选中底色之间留 4 的空隙;上下 padding 由 8 减到 6,单项节奏不变 */
+.side-tree__item + .side-tree__item { margin-top: 4px; }
 .side-tree__item:hover {
   background: rgba(15, 23, 42, 0.04);
   color: #334155;

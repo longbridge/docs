@@ -27,8 +27,18 @@ const DOC_ICON = '<svg viewBox="0 0 24 24" width="56" height="56" fill="none" st
     </aside>
 
     <div class="article-page__main" data-topic-fallback aria-busy="true">
-      <div class="topic-fallback__loading" data-fallback-loading role="status">
-        <span></span><span></span><span></span>
+      <!-- 骨架屏：仿文章版式(标题两行、段落、小标题、配图、段落);加载态由外层 aria-busy 告知读屏 -->
+      <div class="topic-fallback__loading" data-fallback-loading aria-hidden="true">
+        <span class="sk sk--title"></span>
+        <span class="sk sk--title sk--w50"></span>
+        <span class="sk sk--gap"></span>
+        <span class="sk"></span><span class="sk"></span><span class="sk sk--w90"></span><span class="sk sk--w60"></span>
+        <span class="sk sk--heading"></span>
+        <span class="sk"></span><span class="sk sk--w95"></span><span class="sk sk--w70"></span>
+        <span class="sk sk--image"></span>
+        <span class="sk"></span><span class="sk sk--w85"></span><span class="sk sk--w40"></span>
+        <span class="sk sk--heading sk--w30"></span>
+        <span class="sk"></span><span class="sk sk--w75"></span>
       </div>
 
       <div data-fallback-article hidden>

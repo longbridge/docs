@@ -20,7 +20,7 @@ const CHEVRON_SVG = `<svg class="side-tree__chevron" viewBox="0 0 12 12" aria-hi
   return (
     <div class:list={['side-tree__cat', catIsOpen && 'is-open']}>
       <button type="button" class="side-tree__cat-head" aria-expanded={catIsOpen ? 'true' : 'false'}>
-        <span class="side-tree__cat-icon" aria-hidden="true"><CatIcon slug={cat.slug} icon={cat.icon} /></span>
+        <span class="side-tree__cat-icon" aria-hidden="true"><CatIcon title={cat.title} /></span>
         <span class="side-tree__cat-label">{cat.title}</span>
         <Fragment set:html={CHEVRON_SVG} />
       </button>

@@ -10,7 +10,7 @@
 import { mkdirSync, readdirSync, rmSync, writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { DEFAULT_API_HOST, getRegion, supportHeaders } from '../region.mjs'
-import { normalizeTree, parseTopicUrl, flattenTopics, renderTopicFile, type SupportCategory, type TopicRecord, type RecommendedTopic } from '../src/lib/content-format'
+import { cleanTitle, normalizeTree, parseTopicUrl, flattenTopics, renderTopicFile, type SupportCategory, type TopicRecord, type RecommendedTopic } from '../src/lib/content-format'
 
 const regionFlag = process.argv.indexOf('--region')
 const regionCode = regionFlag > -1 ? process.argv[regionFlag + 1] : undefined
@@ -84,13 +84,13 @@ async function pullLocale(locale: string): Promise<LocaleSnapshot> {
       slug: ref.slug,
       categorySlug: ref.categorySlug,
       topicId: data.id != null ? String(data.id) : undefined,
-      title: topic.title,
-      seoTitle: topic.seo_title || undefined,
+      title: cleanTitle(topic.title),
+      seoTitle: cleanTitle(topic.seo_title) || undefined,
       seoDescription: topic.seo_description || undefined,
       updatedAt: topic.updated_at || undefined,
       related: (data.other_topics ?? [])
         .filter((o: any) => o?.slug && o?.title)
-        .map((o: any) => ({ categorySlug: o.category_slug, slug: o.slug, title: o.title })),
+        .map((o: any) => ({ categorySlug: o.category_slug, slug: o.slug, title: cleanTitle(o.title) })),
       content: topic.content,
     }
     return record
@@ -103,7 +103,7 @@ async function pullLocale(locale: string): Promise<LocaleSnapshot> {
   for (const item of recData?.topics ?? []) {
     const parsed = parseTopicUrl(item?.url)
     if (!parsed || !present.has(parsed.slug) || !item.title) continue
-    recommended.push({ slug: parsed.slug, categorySlug: parsed.categorySlug, title: item.title })
+    recommended.push({ slug: parsed.slug, categorySlug: parsed.categorySlug, title: cleanTitle(item.title) })
   }
 
   console.log(`[sync] ${region.code}/${locale}: ${tree.length} categories, ${topics.length}/${refs.length} topics, ${recommended.length} recommended`)

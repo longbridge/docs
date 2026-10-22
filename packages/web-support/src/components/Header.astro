@@ -51,7 +51,7 @@ const CHECK_SVG = '<svg class="lb-region__check" width="14" height="14" viewBox=
             {nav.map((cat, idx) => (
               <li>
                 <a class={`lb-mega__cat${idx === 0 ? ' is-active' : ''}`} data-idx={idx} href={localePath(locale, cat.path)} role="tab" aria-selected={idx === 0 ? 'true' : 'false'} data-lb-cat-tab>
-                  <span class="lb-mega__cat-icon" aria-hidden="true"><CatIcon slug={cat.slug} icon={cat.icon} /></span>
+                  <span class="lb-mega__cat-icon" aria-hidden="true"><CatIcon title={cat.title} /></span>
                   <span class="lb-mega__cat-name">{cat.title}</span>
                   <span class="lb-mega__cat-count">{cat.count}</span>
                 </a>
@@ -62,7 +62,7 @@ const CHECK_SVG = '<svg class="lb-region__check" width="14" height="14" viewBox=
             {nav.map((cat, idx) => (
               <div class={`lb-mega__panel${idx === 0 ? ' is-active' : ''}`} data-idx={idx} role="tabpanel" aria-label={cat.title}>
                 <div class="lb-mega__head">
-                  <span class="lb-mega__head-icon" aria-hidden="true"><CatIcon slug={cat.slug} icon={cat.icon} /></span>
+                  <span class="lb-mega__head-icon" aria-hidden="true"><CatIcon title={cat.title} /></span>
                   <span class="lb-mega__head-name">{cat.title}</span>
                 </div>
                 <ul class="lb-mega__arts">

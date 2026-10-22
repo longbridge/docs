@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'bun:test'
-import { flattenTopics, normalizeTree, parseTopicFile, parseTopicUrl, renderTopicFile } from '../src/lib/content-format'
+import { cleanTitle, flattenTopics, normalizeTree, parseTopicFile, parseTopicUrl, renderTopicFile } from '../src/lib/content-format'
+import { fmt } from '../src/lib/i18n'
 import { buildNav, categoryPages, locateArticle } from '../src/lib/nav-core'
 
 // 接口原始形状(PascalCase),取自 categories_tree 实际返回
@@ -74,4 +75,16 @@ describe('nav-core', () => {
     expect(locateArticle(nav, 'a1')?.prev).toBeUndefined()
     expect(locateArticle(nav, 'missing')).toBeNull()
   })
+})
+
+test('cleanTitle turns non-breaking spaces into normal spaces so titles can wrap', () => {
+  expect(cleanTitle('How\u00a0can\u00a0users  open an\u202faccount ')).toBe('How can users open an account')
+  expect(cleanTitle('如何從中銀國際轉倉到長橋證券\u00a0？')).toBe('如何從中銀國際轉倉到長橋證券 ？')
+  expect(cleanTitle(undefined)).toBe('')
+})
+
+test('fmt picks the English plural suffix from count', () => {
+  expect(fmt('Expand {count} more article{s}', { count: 1 })).toBe('Expand 1 more article')
+  expect(fmt('Expand {count} more article{s}', { count: 9 })).toBe('Expand 9 more articles')
+  expect(fmt('展開更多 {count} 篇', { count: 1 })).toBe('展開更多 1 篇')
 })

@@ -8,7 +8,6 @@ export interface NavCategory {
   slug: string
   title: string
   desc: string
-  icon: string
   path: string
   count: number
   sections: NavSection[]
@@ -43,7 +42,6 @@ export function buildNav(tree: SupportCategory[]): NavCategory[] {
         slug: top.slug,
         title: top.title,
         desc: top.desc,
-        icon: top.icon,
         path: categoryPath(top.slug),
         count: sections.reduce((n, s) => n + s.articles.length, 0),
         sections,

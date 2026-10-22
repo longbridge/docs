@@ -10,15 +10,14 @@ const en = {
   home: 'Home',
   allTopics: 'All Topics',
   categories: 'Categories',
-  viewAll: 'View all {count} articles',
-  articleCount: '{count} articles',
+  viewAll: 'View all {count} article{s}',
   heroTitleAccent: 'Hello,',
   heroTitleRest: 'how can I help?',
   heroSub: 'Covering account opening, deposits, trading, market data and more',
   searchPlaceholder: 'Enter keywords, e.g. "Trading rules"',
   trending: 'Trending:',
   findByCategory: 'Find answers quickly by category',
-  showMore: 'Expand {count} more articles',
+  showMore: 'Expand {count} more article{s}',
   collapse: 'Collapse',
   searchHint: 'Type to search articles...',
   searching: 'Searching...',
@@ -78,7 +77,6 @@ const zhHK: Dict = {
   allTopics: '全部分類',
   categories: '問題分類',
   viewAll: '查看全部 {count} 篇',
-  articleCount: '{count} 篇',
   heroTitleAccent: '你好，',
   heroTitleRest: '有什麼可以幫助你？',
   heroSub: '覆蓋開戶、入金、交易、行情等常見問題',
@@ -143,7 +141,6 @@ const zhCN: Dict = {
   allTopics: '全部分类',
   categories: '问题分类',
   viewAll: '查看全部 {count} 篇',
-  articleCount: '{count} 篇',
   heroTitleAccent: '你好，',
   heroTitleRest: '有什么可以帮助你？',
   heroSub: '覆盖开户、入金、交易、行情等常见问题',
@@ -209,6 +206,7 @@ export function getDict(locale: string): Dict {
   return d
 }
 
+/** 模板里的 {s} 是英文复数词尾:vars.count 为 1 时为空，其余为 s(中文文案不用) */
 export function fmt(template: string, vars: Record<string, string | number>): string {
-  return template.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''))
+  return template.replace(/\{(\w+)\}/g, (_, k) => (k === 's' ? (Number(vars.count) === 1 ? '' : 's') : String(vars[k] ?? '')))
 }

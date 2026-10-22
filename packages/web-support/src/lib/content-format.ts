@@ -27,18 +27,26 @@ export interface TopicRecord {
 }
 export interface RecommendedTopic { slug: string; categorySlug: string; title: string }
 
+/**
+ * 标题清洗:CMS 里有的标题词间用的是不换行空格(U+00A0 等),整句无法折行，侧栏 / 卡片里会被截断。
+ * 统一换成普通空格并合并连续空白。
+ */
+export function cleanTitle(raw: unknown): string {
+  return String(raw ?? '').replace(/[\u00a0\u2007\u202f]/g, ' ').replace(/\s+/g, ' ').trim()
+}
+
 /** 接口返回 PascalCase(CategorySlug/Child/Topics),这里归一成稳定结构 */
 export function normalizeTree(raw: any[]): SupportCategory[] {
   return (raw ?? [])
     .filter((c) => c?.CategorySlug)
     .map((c) => ({
       slug: String(c.CategorySlug),
-      title: String(c.Title ?? '').trim(),
+      title: cleanTitle(c.Title),
       desc: String(c.Desc ?? ''),
       icon: String(c.Icon ?? ''),
       topics: (c.Topics ?? [])
         .filter((t: any) => t?.Slug && t?.Title)
-        .map((t: any) => ({ slug: String(t.Slug), title: String(t.Title).trim() })),
+        .map((t: any) => ({ slug: String(t.Slug), title: cleanTitle(t.Title) })),
       children: normalizeTree(c.Child ?? []),
     }))
 }
