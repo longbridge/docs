@@ -3,7 +3,7 @@ title: "持倉盈虧說明"
 topic_id: "6620"
 category_slug: "fundsoverview"
 updated_at: "1784789444"
-seo_title: "了解盈虧、成本、攤薄成本和平均成本在投資組合管理中的應用\n\n"
+seo_title: "了解盈虧、成本、攤薄成本和平均成本在投資組合管理中的應用"
 seo_description: "掌握盈虧（P/L）、成本計算（攤薄成本和平均成本）的原理及其對投資組合的影響。探索公式、設定及關鍵區別，助您更高效地管理投資。\n\n\n\n\n\n\n"
 related: [{"categorySlug":"fundsoverview","slug":"intradayPL","title":"資產當日盈虧說明"},{"categorySlug":"fundsoverview","slug":"u7ttgq","title":"跨券商資金划轉常見問題"},{"categorySlug":"fundsoverview","slug":"DescriptionofFieldindicators","title":"股票賬戶字段說明"},{"categorySlug":"fundsoverview","slug":"totalassets","title":"總資產字段說明"}]
 ---

@@ -1,5 +1,5 @@
 ---
-title: " 结构性产品的认购门槛是多少？ "
+title: "结构性产品的认购门槛是多少？"
 topic_id: "27580"
 category_slug: "structured_product_qa"
 updated_at: "1791446705"

@@ -3,7 +3,7 @@ title: "碎股交易常見問題 - 新加坡"
 topic_id: "6360"
 category_slug: "sgmarket"
 updated_at: "1784789442"
-seo_title: "新加坡市場零股交易常見問題\n"
+seo_title: "新加坡市場零股交易常見問題"
 seo_description: "了解新加坡市场零股交易，包括单位股、标准手股数、价格差异、交易时间、支持的订单类型，以及長橋提供的零股交易和转移服务。"
 related: [{"categorySlug":"sgmarket","slug":"SGXTRADINGRULE","title":"新交所交易規則 - 證券市場"},{"categorySlug":"sgmarket","slug":"SGordertypes","title":"訂單類型有哪些？ - 新加坡"},{"categorySlug":"sgmarket","slug":"DLCs","title":"什麼是新加坡市場每日槓桿證書 (DLCs)"}]
 ---

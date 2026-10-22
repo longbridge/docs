@@ -1,5 +1,5 @@
 ---
-title: "如何完成 eDDA 授权入金？（中银香港） "
+title: "如何完成 eDDA 授权入金？（中银香港）"
 topic_id: "1614"
 category_slug: "depositfunds"
 updated_at: "1784789419"

@@ -3,7 +3,7 @@ title: "加息券常见问题"
 topic_id: "23241"
 category_slug: "cardandcouponfaqs"
 updated_at: "1784789464"
-seo_title: "如何使用长桥余额通的加息劵\n\n"
+seo_title: "如何使用长桥余额通的加息劵"
 seo_description: "了解如何激活并最大化使用长桥余额通的加息券。通过长桥 App 轻松跟踪收益、查看详情并计算额外利息。"
 related: [{"categorySlug":"cardandcouponfaqs","slug":"optioncash","title":"期权现金卡常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"platformfee","title":"平台费抵扣卡常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"StockCashCoupon","title":"股票现金卡常见问题"}]
 ---

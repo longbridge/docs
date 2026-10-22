@@ -1,5 +1,5 @@
 ---
-title: " Depth of Market Introduction"
+title: "Depth of Market Introduction"
 topic_id: "21210"
 category_slug: "longbridgepro"
 updated_at: "1784789417"

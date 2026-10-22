@@ -3,7 +3,7 @@ title: "期权现金卡常见问题"
 topic_id: "26002"
 category_slug: "cardandcouponfaqs"
 updated_at: "1784789468"
-seo_title: "期权现金券使用与返现常见问题解答\n"
+seo_title: "期权现金券使用与返现常见问题解答"
 seo_description: "了解如何有效使用期权现金券，包括兑换规则、返现时间及订单匹配逻辑。"
 related: [{"categorySlug":"cardandcouponfaqs","slug":"platformfee","title":"平台费抵扣卡常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"interestboost","title":"加息券常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"StockCashCoupon","title":"股票现金卡常见问题"}]
 ---

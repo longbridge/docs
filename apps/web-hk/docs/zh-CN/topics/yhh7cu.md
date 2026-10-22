@@ -1,5 +1,5 @@
 ---
-title: " 美股 IPO 竞价介绍"
+title: "美股 IPO 竞价介绍"
 topic_id: "28957"
 category_slug: "usmarket"
 updated_at: "1784789431"

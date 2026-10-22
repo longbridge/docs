@@ -1,5 +1,5 @@
 ---
-title: "How do I deposit at an ATM or counter ?"
+title: "How do I deposit at an ATM or counter ?"
 topic_id: "1176"
 category_slug: "depositfunds"
 updated_at: "1784789421"

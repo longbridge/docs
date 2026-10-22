@@ -3,7 +3,7 @@ title: "提现常见问题"
 topic_id: "8576"
 category_slug: "withdrawfunds"
 updated_at: "1784789451"
-seo_title: "如何从Longbridge交易账户中提现：详细步骤指南\n"
+seo_title: "如何从Longbridge交易账户中提现：详细步骤指南"
 seo_description: "了解如何从Longbridge交易账户中提现，包括操作步骤、支持货币、到账时间及重要注意事项。\n"
 related: [{"categorySlug":"withdrawfunds","slug":"wise","title":"如何提现至 Wise 账户？"},{"categorySlug":"withdrawfunds","slug":"bank-auth","title":"添加银行账户操作指南"}]
 ---

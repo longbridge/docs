@@ -3,7 +3,7 @@ title: "港股牛熊证回收及结算时间"
 topic_id: "22788"
 category_slug: "hkmarket"
 updated_at: "1784789456"
-seo_title: "港股CBBC强制收回及结算：流程、示例及剩余价值\n"
+seo_title: "港股CBBC强制收回及结算：流程、示例及剩余价值"
 seo_description: "了解港股CBBC强制收回及结算流程，包括牛熊证计算、剩余价值处理及相关示例。\n"
 related: [{"categorySlug":"hkmarket","slug":"HKtradingrules","title":"交易规则"},{"categorySlug":"hkmarket","slug":"Greymarkettrading","title":"暗盘交易规则"},{"categorySlug":"hkmarket","slug":"HKordertypes","title":"订单类型有哪些？ - 香港"},{"categorySlug":"hkmarket","slug":"marketorder-hk","title":"什么是香港市价单"},{"categorySlug":"hkmarket","slug":"OddLotTradesFAQ","title":"碎股交易常见问题 - 香港"}]
 ---

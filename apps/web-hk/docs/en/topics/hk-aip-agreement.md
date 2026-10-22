@@ -1,5 +1,5 @@
 ---
-title: "Agreement of Fund Automatic Investment Plan "
+title: "Agreement of Fund Automatic Investment Plan"
 topic_id: "1570"
 category_slug: "fundtrading"
 updated_at: "1784789421"

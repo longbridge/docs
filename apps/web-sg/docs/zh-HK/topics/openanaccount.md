@@ -3,7 +3,7 @@ title: "如何開立長橋帳戶？"
 topic_id: "16460"
 category_slug: "account_opening"
 updated_at: "1784789468"
-seo_title: "如何快速開通長橋帳戶：詳細指南\n"
+seo_title: "如何快速開通長橋帳戶：詳細指南"
 seo_description: "了解如何快速開通長橋帳戶。選擇MyInfo或手動輸入，上傳所需文件，完成驗證並電子簽名。"
 related: []
 ---

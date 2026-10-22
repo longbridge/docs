@@ -1,5 +1,5 @@
 ---
-title: "Strangle "
+title: "Strangle"
 topic_id: "24198"
 category_slug: "optionstrading"
 updated_at: "1784789428"

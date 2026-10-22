@@ -1,5 +1,5 @@
 ---
-title: "How do I transfer between Hong Kong and US  stocks?"
+title: "How do I transfer between Hong Kong and US stocks?"
 topic_id: "3763"
 category_slug: "sharetransfer"
 updated_at: "1784789424"

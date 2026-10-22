@@ -1,5 +1,5 @@
 ---
-title: "如何轉入股票？ "
+title: "如何轉入股票？"
 topic_id: "8579"
 category_slug: "stocktransfer"
 updated_at: "1784789440"

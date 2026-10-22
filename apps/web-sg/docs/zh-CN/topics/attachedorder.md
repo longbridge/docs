@@ -3,7 +3,7 @@ title: "什么是附加订单？"
 topic_id: "20446"
 category_slug: "tradingfaqs"
 updated_at: "1784789454"
-seo_title: "股票交易中的附属订单：类型及策略详解\n"
+seo_title: "股票交易中的附属订单：类型及策略详解"
 seo_description: "了解股票交易中的附属订单，包括获利订单、止损订单及括号订单策略。掌握操作方法及重要注意事项。\n"
 related: [{"categorySlug":"tradingfaqs","slug":"pl-analysis","title":"盈亏分析操作指南"}]
 ---

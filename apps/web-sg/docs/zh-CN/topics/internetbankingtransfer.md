@@ -3,7 +3,7 @@ title: "如何完成网银转账入金？"
 topic_id: "7759"
 category_slug: "depositfunds"
 updated_at: "1784789465"
-seo_title: "长桥资金转账指南：步骤、银行信息及存款记录\n"
+seo_title: "长桥资金转账指南：步骤、银行信息及存款记录"
 seo_description: "了解如何将资金转入长桥交易账户，包括收款人信息、详细步骤及查看存款记录的方法。\n\n"
 related: [{"categorySlug":"depositfunds","slug":"bgot76","title":"如何完成 Wise 入金？"},{"categorySlug":"depositfunds","slug":"depositfail","title":"我的资金为什么无法存入？"},{"categorySlug":"depositfunds","slug":"Deposit","title":"入金操作指南"},{"categorySlug":"depositfunds","slug":"DDA","title":"如何完成 DDA 入金？"},{"categorySlug":"depositfunds","slug":"PayNow","title":"如何完成 PayNow 入金？"}]
 ---

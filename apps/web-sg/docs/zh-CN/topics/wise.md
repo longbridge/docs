@@ -3,7 +3,7 @@ title: "如何提现至 Wise 账户？"
 topic_id: "23083"
 category_slug: "withdrawfunds"
 updated_at: "1785400432"
-seo_title: "长桥Wise提现指南：步骤、要求及账户设置\n"
+seo_title: "长桥Wise提现指南：步骤、要求及账户设置"
 seo_description: "了解如何从长桥账户中提现，包括要求、支持的货币及设置Wise账户的方法。"
 related: [{"categorySlug":"withdrawfunds","slug":"bank-auth","title":"添加银行账户操作指南"},{"categorySlug":"withdrawfunds","slug":"Withdrawalsfaqs","title":"提现常见问题"}]
 ---

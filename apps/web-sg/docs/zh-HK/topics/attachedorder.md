@@ -3,7 +3,7 @@ title: "什麼是附加訂單？"
 topic_id: "20446"
 category_slug: "tradingfaqs"
 updated_at: "1784789454"
-seo_title: " 股票交易中的附屬訂單：類型及策略詳解"
+seo_title: "股票交易中的附屬訂單：類型及策略詳解"
 seo_description: "了解股票交易中的附屬訂單，包括獲利訂單、止損訂單及括號訂單策略。掌握操作方法及重要注意事項。"
 related: [{"categorySlug":"tradingfaqs","slug":"pl-analysis","title":"盈虧分析操作指南"}]
 ---

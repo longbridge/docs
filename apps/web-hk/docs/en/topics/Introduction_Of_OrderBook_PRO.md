@@ -1,5 +1,5 @@
 ---
-title: "What is the US stock order book (desktop version)?"
+title: "What is the US stock order book (desktop version)?"
 topic_id: "21675"
 category_slug: "marketoverview"
 updated_at: "1784789418"

@@ -1,5 +1,5 @@
 ---
-title: " Introduction to Cash Plus"
+title: "Introduction to Cash Plus"
 topic_id: "12628"
 category_slug: "cashplus"
 updated_at: "1785477190"

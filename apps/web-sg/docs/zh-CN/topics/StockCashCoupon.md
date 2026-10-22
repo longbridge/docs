@@ -3,7 +3,7 @@ title: "股票现金卡常见问题"
 topic_id: "15626"
 category_slug: "cardandcouponfaqs"
 updated_at: "1784789447"
-seo_title: "如何使用股票现金券进行股票和ETF交易\n\n\n"
+seo_title: "如何使用股票现金券进行股票和ETF交易"
 seo_description: "了解如何使用股票现金券抵扣股票和ETF的购买金额。掌握使用规则、退款流程以及如何最大化股票现金券的价值。"
 related: [{"categorySlug":"cardandcouponfaqs","slug":"optioncash","title":"期权现金卡常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"platformfee","title":"平台费抵扣卡常见问题"},{"categorySlug":"cardandcouponfaqs","slug":"interestboost","title":"加息券常见问题"}]
 ---

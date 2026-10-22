@@ -3,7 +3,7 @@ title: "什麼是合格投資者 (AI)？"
 topic_id: "9407"
 category_slug: "accountfaqs"
 updated_at: "1784789453"
-seo_title: "什麼是合格投資者？福利與資格詳解\n"
+seo_title: "什麼是合格投資者？福利與資格詳解"
 seo_description: "了解新加坡合格投資者身份、其福利及資格標準。享受專屬金融產品，如IPO、結構性票據和債券。通過長橋 App輕鬆選擇加入或退出。"
 related: [{"categorySlug":"accountfaqs","slug":"accounttypes","title":"有哪些可用的帳戶類型？"},{"categorySlug":"accountfaqs","slug":"termination","title":"如何賬號註銷？"},{"categorySlug":"accountfaqs","slug":"safe","title":"Long Bridge Securities Pte. Ltd. 值得信賴嗎？"},{"categorySlug":"accountfaqs","slug":"nl0lyo","title":"關於適用於從中國大陸訪問服務的客户服務調整的通知"}]
 ---

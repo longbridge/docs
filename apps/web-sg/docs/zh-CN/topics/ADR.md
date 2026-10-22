@@ -3,7 +3,7 @@ title: "美国存托凭证 (ADR) 托管费用"
 topic_id: "6312"
 category_slug: "usmarket"
 updated_at: "1784789435"
-seo_title: "什么是ADR？定义、托管费用及扣费详情\n"
+seo_title: "什么是ADR？定义、托管费用及扣费详情"
 seo_description: "了解美国存托凭证（ADR）的定义、托管费用的收取方式、频率及如何查看扣费详情。\n"
 related: [{"categorySlug":"usmarket","slug":"otcfaq","title":"场外交易 / 粉单常见问题"},{"categorySlug":"usmarket","slug":"a8a5l9","title":"什么是美股深度摆盘"},{"categorySlug":"usmarket","slug":"UStradingrules","title":"美股交易规则"},{"categorySlug":"usmarket","slug":"USmarketquotes","title":"美股盘前盘后行情规则"},{"categorySlug":"usmarket","slug":"USordertypes","title":"订单类型有哪些？ - 美国"}]
 ---

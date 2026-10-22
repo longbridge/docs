@@ -3,7 +3,7 @@ title: "持仓盈亏说明"
 topic_id: "6620"
 category_slug: "fundsoverview"
 updated_at: "1784789444"
-seo_title: "了解盈亏、成本、摊薄成本和平均成本在投资组合管理中的应用\n\n"
+seo_title: "了解盈亏、成本、摊薄成本和平均成本在投资组合管理中的应用"
 seo_description: "掌握盈亏（P/L）、成本计算（摊薄成本和平均成本）的原理及其对投资组合的影响。探索公式、设置及关键区别，助您更高效地管理投资。\n\n"
 related: [{"categorySlug":"fundsoverview","slug":"intradayPL","title":"资产当日盈亏说明"},{"categorySlug":"fundsoverview","slug":"u7ttgq","title":"跨券商资金划转常见问题"},{"categorySlug":"fundsoverview","slug":"DescriptionofFieldindicators","title":"股票账户字段说明"},{"categorySlug":"fundsoverview","slug":"totalassets","title":"总资产字段说明"}]
 ---
