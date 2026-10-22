@@ -394,7 +394,8 @@
 /* [hidden] 必须胜过 display:grid / 卡片的 display:flex —— 否则切 tab 与 CARD_LIMIT
    的 element.hidden 不生效，所有 tab 卡片会一次性全显示、切换无反应。 */
 .catx__grid[hidden],
-.catx-card[hidden] {
+.catx-card[hidden],
+.catx-expand-btn[hidden] {
   display: none !important;
 }
 
