@@ -9,6 +9,7 @@ zendesk_category_id: 17128744202383
 
 ## Sections
 
+- [Mobile App Guide](/longbridgeai/mobile-app-guide/overview)
 - [Signal](/longbridgeai/signal/overview)
 - [Investment Style](/longbridgeai/investment-style/overview)
 - [Trade Plan](/longbridgeai/trade-plan/overview)
