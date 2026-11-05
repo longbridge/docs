@@ -55,6 +55,7 @@ const graph = [
 const clientConfig = {
   region: REGION.code,
   locale,
+  locales: REGION.locales,
   apiHost: API_HOST,
   headers: supportHeaders(REGION, locale),
   prefix: localePath(locale, ''),
@@ -66,6 +67,22 @@ const clientConfig = {
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
+    {
+      locale === REGION.defaultLocale && (
+        <script is:inline define:vars={{ code: REGION.code, def: REGION.defaultLocale, locales: REGION.locales }}>
+          /* 路径不带语言段时按官网 locale cookie 跳到对应语言版本;cookie 缺失 / 非本地区语言则留在默认语言 */
+          ;(function () {
+            var m = document.cookie.match(/(?:^|; )locale=([^;]*)/)
+            var l = m && decodeURIComponent(m[1])
+            if (!l || l === def || locales.indexOf(l) < 0) return
+            var base = '/' + code
+            var p = location.pathname
+            if (p.indexOf(base + '/') !== 0) return
+            location.replace(base + '/' + l + p.slice(base.length) + location.search + location.hash)
+          })()
+        </script>
+      )
+    }
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="preconnect" href="https://assets.lbkrs.com" />
     {isHome && <link rel="preload" as="image" media="(max-width: 900px)" href={HERO_IMG_MOBILE} />}

@@ -1,3 +1,5 @@
+import { config } from './config'
+
 /**
  * Header interactions — vanilla TypeScript, no framework.
  * Handles: I1 scroll transition, I2 mega-menu, I11 region switch,
@@ -208,4 +210,20 @@
     const next = current === 'dark' ? 'light' : 'dark';
     (window as any).lbSetThemeMode?.(next, true)
   })
+})()
+
+
+// ── 语言偏好 ────────────────────────────────────────────────────────────────
+// 点任一语言切换链接(头部 / 抽屉 / 页脚，均带 hreflang)时写官网同名 locale cookie,
+// 否则回到不带语言段的默认路径会被 BaseLayout 的 cookie 跳转弹回旧语言。写法对齐官网 @web/cookie setCookie。
+;(function initLocalePref() {
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[hreflang]')
+    const l = a?.getAttribute('hreflang')
+    if (!l || !config.locales.includes(l)) return
+    const host = location.hostname
+    const domain = host === 'localhost' || host === '127.0.0.1' ? '' : `; domain=.${host.split('.').slice(-2).join('.')}`
+    const secure = location.protocol === 'https:' ? '; secure' : ''
+    document.cookie = `locale=${encodeURIComponent(l)}; path=/; max-age=${30 * 86400}; samesite=lax${domain}${secure}`
+  }, true)
 })()

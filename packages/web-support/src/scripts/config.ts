@@ -3,6 +3,8 @@ import type { Dict } from '../lib/i18n'
 export interface SupportClientConfig {
   region: 'hk' | 'sg'
   locale: string
+  /** 本地区支持的语言 */
+  locales: string[]
   apiHost: string
   headers: Record<string, string>
   /** 当前语言的路径前缀，如 /hk 或 /hk/en(拼 /support… 得到站内链接) */
