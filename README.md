@@ -65,4 +65,5 @@ bun run build:web-hk # 构建 + Pagefind 索引(SG 同理:sync/dev/build:web-sg,
   `sync:web-*` 生成(GitHub `support-sync.yml` 每 6 小时提交一次，GitLab 构建前再同步一次),
   不要手改。文章只按 slug 生成一份(`support/topics/{slug}.html`),对外路径
   `/support/topics/{任意分类}/{slug}` 与显式默认语言段由 nginx 改写；静态产物里没有的
-  路径(如不在分类树里的文章)由 nginx 回落到原 discover SSR。
+  路径(如不在分类树里的「独立页面」文章)由 nginx 回落到 `support/_fallback.html`,在浏览器里调文章详情
+  接口渲染，查不到显示 404 文案，不再转发官网旧应用。
