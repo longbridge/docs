@@ -1,0 +1,35 @@
+---
+// App 内(html.is-whale-app)专用 UI,移植自 Zendesk header.hbs:3-27。
+// 非 App 环境由 whale.css 保持 display:none;接线在 scripts/whale-bridge.ts。
+//   .lb-app-navbar  — H5 导航栏(返回 / 标题 / 搜索 / 关闭),替代被隐藏的原生栏
+//   .lb-fab-menu    — 悬浮菜单按钮,打开分类抽屉(App 内 web header 隐藏,这是唯一菜单入口)
+// 搜索按钮带 .lb-search-modal-trigger:search.ts 的委托点击会直接打开搜索框。
+import { getDict } from '../lib/i18n'
+
+const d = getDict(Astro.locals.locale)
+---
+
+<!-- lb-app-navbar--immersive:首页深色 hero 首屏 → 滚动后转浅;去掉该修饰符即恒浅色 -->
+<div class="lb-app-navbar lb-app-navbar--immersive" role="navigation" aria-label="App navigation" data-lb-app-navbar>
+  <button type="button" class="lb-app-navbar__btn lb-app-navbar__back" aria-label={d.back} data-lb-app-back>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  </button>
+  <div class="lb-app-navbar__title">{d.helpCenter}</div>
+  <div class="lb-app-navbar__actions">
+    <button type="button" class="lb-app-navbar__btn lb-app-navbar__search lb-search-modal-trigger" aria-label={d.search} data-lb-app-search>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button type="button" class="lb-app-navbar__btn lb-app-navbar__close" aria-label={d.close} data-lb-app-close>
+      <!-- viewBox 用 20 而非同栏其它图标的 24:svg 被 CSS 锁死 20px 渲染,1 单位 = 1px,才能逐像素对上设计稿的 12×12 叉 + 2px 描边 -->
+      <svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4 4 16M4 4l12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<button type="button" class="lb-fab-menu" aria-label={d.menu} aria-haspopup="true" data-lb-fab-menu>
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
+
+<script>
+  import '../scripts/whale-bridge.ts'
+</script>

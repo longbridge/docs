@@ -1,0 +1,8 @@
+---
+title: "什么是拆分股及处理时间"
+topic_id: "22784"
+category_slug: "corporateactions"
+updated_at: "1784789473"
+related: [{"categorySlug":"corporateactions","slug":"stocksubscription","title":"什么是供股？"},{"categorySlug":"corporateactions","slug":"dividendselection","title":"什么是选股选息及处理时间？"},{"categorySlug":"corporateactions","slug":"stockdividends","title":"什么是送股及处理时间？"},{"categorySlug":"corporateactions","slug":"dividends","title":"什么是派息/特殊派息及处理时间？"},{"categorySlug":"corporateactions","slug":"corporateactions","title":"公司行动对长期订单有什么影响？"}]
+---
+<p style="margin-left: 0px">本文将为您介绍拆分股（拆股与合股）的概念，以及美股和港股市场中拆分股的处理时间。了解这些内容，有助于您在投资过程中更好地理解股票数量和价格的变化，以及相关市场操作规则。</p><h3 style="margin-left: 0px">1. 拆股</h3><p style="margin-left: 0px">拆股，又称分割。当一只股票的价格较高，影响股票的交易量影响投资人（尤其是散户）的购买欲望，这时股份公司就会考虑将股票拆股，分割股票后，股东权益不变，公司的总市值也不变，但是持仓数量会发生变化。在拆股过程中有可能会产生一个临时股票代码，但最后都会恢复到一个股票代码。</p><p style="margin-left: 0px"><strong>举例</strong>：</p><p style="margin-left: 0px">00700 腾讯控股曾经在 2014-05-15 由 1 股拆分为 5 股，持有 100 股，那么就会被拆成 500 股，市场价格会下降，总市值不变。</p><p style="margin-left: 0px">拆股前，100 股 *120HKD=12000 价值</p><p style="margin-left: 0px">拆股后，500 股 *24HKD=12000 价值</p><p style="margin-left: 0px">市场价格降到 24 港币一股了，就会方便散户投资参与，增加市场流动性。</p><h3 style="margin-left: 0px">2. 合股</h3><p style="margin-left: 0px">合股是拆股的相反过程，当股票价格较低时，为了提升公司形象，上市公司会将已发行的股票按比例进行合并，即由多股合并为 1 股。合股后，股价按照相应比例提高，股东权益不变，公司的总市值也不变，但是持仓数量会发生变化。</p><h3 style="margin-left: 0px">3. 处理时效</h3><ul><li>美股：根据交易所提供的拆合股生效时间（effective date），交易日盘前开盘前会完成整个拆合股过程，盘前交易会交易已经过拆合的股票。</li><li>港股：根据交易所提供拆合股生效时间（effective date）收市后完成拆合股及临时交易代码的变更。下一个交易日开市时段可以交易已经过拆合的股票。</li></ul><p style="margin-left: 0px"> </p><p style="margin-left: 0px"><i>本文内容仅供参考，不构成任何投资建议。</i></p>

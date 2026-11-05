@@ -1,0 +1,14 @@
+---
+import { SOCIAL } from '../../footer'
+import { SOCIAL_ICONS } from '../../footer/icons'
+
+interface Props { title: string; cls?: string }
+const { title, cls } = Astro.props
+---
+
+<div class:list={['lb-site-footer__group', cls]}>
+  <div class="lb-site-footer__label">{title}</div>
+  <div class="lb-site-footer__social">
+    {SOCIAL.hk.map((s) => <a href={s.href} aria-label={s.name} target="_blank" rel="noopener noreferrer" set:html={SOCIAL_ICONS[s.icon]} />)}
+  </div>
+</div>

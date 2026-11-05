@@ -1,0 +1,8 @@
+---
+title: "如何進行新股認購？"
+topic_id: "1107"
+category_slug: "iposubscription"
+updated_at: "1784789427"
+related: [{"categorySlug":"iposubscription","slug":"3gzpxjc","title":"證券新股認購聲明"},{"categorySlug":"iposubscription","slug":"203ho05","title":"新股認購相關事項"},{"categorySlug":"iposubscription","slug":"1hpez20","title":"新股認購收費標準"},{"categorySlug":"iposubscription","slug":"1lii2n0","title":"新股認購常見問題"}]
+---
+<p>本文將為您詳細介紹在長橋 App 上進行新股認購的流程，包括認購入口、具體操作步驟以及如何查看認購記錄，幫助您順利完成新股認購。</p><h3>1. 新股認購入口</h3><p>您可以在長橋 App 發起新股認購，長橋 App 下載入口：<a href="https://longbridge.hk/zh-CN/download">軟件下載</a></p><h3>2. 新股認購流程</h3><p>步驟 1. 打開<strong>長橋 App</strong> &gt; <strong>市場</strong> &gt; <strong>新股</strong>，進入新股認購列表頁。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/6a795954748571b75c5ef85084f04a9a"/></figure><p>步驟 2. 在對應的新股列表頁或者新股日歷中的認購中的新股位置點擊 <strong>立即認購</strong> 按鈕，進入認購頁面。</p><p>根據申請認購當時的資產持有情況，有以下兩種認購方式，並選擇需要的認購股數：</p><ul><li><strong>銀行融資認購</strong></li></ul><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/80b2cc384d0be7703a93856e2b0ca949"/></figure><ul><li><strong>普通認購</strong></li></ul><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/a13d59709150307cacda3bad1d792bbf"/></figure><p>步驟 3. 點擊右下角 <strong>申請認購</strong>，確認新股認購訂單後提交新股認購訂單。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/a51093d5ba8d5b69bed0605ba62436e4"/></figure><h3>3. 查看認購記錄</h3><p>在新股頁，可以點擊 <strong>認購記錄</strong>，或者在新股日歷中的新股點擊 <strong>查看訂單</strong>。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/8669e928369b49a50dcca4bd93d956ce"/></figure><p> </p><p><i>本文內容僅供參考，不構成任何投資建議。</i></p>

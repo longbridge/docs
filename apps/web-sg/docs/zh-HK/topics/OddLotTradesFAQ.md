@@ -1,0 +1,10 @@
+---
+title: "碎股交易常見問題 - 香港"
+topic_id: "6198"
+category_slug: "hkmarket"
+updated_at: "1784789441"
+seo_title: "香港市場零股交易FAQ：您需要了解的一切"
+seo_description: "了解香港市場零股交易，包括零股定義、買賣價格差異、費用、交易時間、支持的訂單類型，以及長橋提供的零股交易和轉移服務。"
+related: [{"categorySlug":"hkmarket","slug":"HKtradingrules","title":"交易規則"},{"categorySlug":"hkmarket","slug":"cbbccall","title":"港股牛熊證回收及結算時間"},{"categorySlug":"hkmarket","slug":"Greymarkettrading","title":"暗盤交易規則"},{"categorySlug":"hkmarket","slug":"HKordertypes","title":"訂單類型有哪些？ - 香港"},{"categorySlug":"hkmarket","slug":"marketorder-hk","title":"什麼是香港市價單"}]
+---
+<p>以下是關於碎股交易常見問題的快速解答。</p><h4>1. 什麼是「碎股」？</h4><p>港股一般以一手為買賣單位，每手所含的股票數量會根據股票價格來決定，1 手可能是 100 股、500 股、1000 股或 2000 股以上不等。「碎股」指少於一個股票之完整買賣單位 (即完整一手) 的證券數量。</p><p> </p><h4>2. 長橋提供碎股交易服務嗎？</h4><p>長橋提供碎股交易服務。 您可於長橋 App &gt; <strong>資產</strong> &gt; <strong>交易大廳</strong>選擇股票及買賣方向後，在類型中點選「碎股單」，輸入價格及數量即可下單。</p><p> </p><h4>3. 為什麼買入碎股會比買入完整一手的價格高？</h4><p>由於碎股市場流通量較少，成交量較低，所以碎股買入價格會比完整一手的價格高。一般情況，碎股與完整一手最少會相差 5 個價位。買入碎股時，您可輸入比市價略高的買入價，以讓交易有更大成交機會。（價格差距只供參考，以當時巿場實際情況為準）</p><p> </p><h4>4. 為什麼賣出碎股會比賣出完整一手的價格低？</h4><p>由於碎股市場流通量較少，成交量較低，所以碎股賣出價格會比完整一手的價格低。一般情況，碎股與完整一手最少會相差 5 個價位。賣出碎股時，您可輸入比市價略低的賣出價，以讓交易有更大成交機會。（價格差距只供參考，以當時巿場實際情況為準）</p><p> </p><h4>5. 碎股交易的收費如何？</h4><p>碎股交易的收費與整手交易收費相同。詳情可參考<a href="https://longbridge.com/sg/zh-HK/pricing"><span style="color: #304ffe">長橋收費表</span></a>。</p><p> </p><h4>6. 碎股可以和完整一手股票一起下單嗎？</h4><p>碎股及整手股票需要分別下單。碎股下單股數必須少於一手數量。</p><p> </p><h4>7. 碎股可以在什麼時間交易？</h4><p>碎股只能在港股的持續交易時段（交易日上午 9:30~12:00 下午 13:00~16:00）交易。碎股不設早市以及收市競價時段。</p><p> </p><h4>8. 碎股支持哪種訂單類型？下單後可以修改訂單嗎？</h4><p>碎股買賣僅支持「碎股單」訂單類型，不設巿價單及條件單。 下單後不能修改訂單，但可以撤單。</p><p> </p><h4>9. 提交碎股訂單後 ，為何一直未能成交？</h4><p>由於碎股市場流通量較少，成交量相對較低，所以碎股訂單送出後可能會因為沒有匹配到買賣對手而一直未能成交。</p><p> </p><h4>10. 長橋支持碎股轉倉嗎？</h4><p>長橋支持碎股轉入及轉出。轉倉詳情可參考<a href="https://support.longbridge.sg/topics/Sharetransfer/GuidanceOfShareTransferIn?locale=zh-HK"><span style="color: #304ffe">轉入股票指引</span></a>及<a href="https://support.longbridge.sg/topics/Sharetransfer/sharetransferout?locale=zh-HK"><span style="color: #304ffe">轉出股票指引</span></a>。</p><p> </p><p style="margin-left: 0.0px"><i>本文僅供參考，不構成任何投資建議。</i></p>

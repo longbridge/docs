@@ -1,0 +1,8 @@
+---
+title: "什麼是新加坡市場每日槓桿證書 (DLCs)"
+topic_id: "12698"
+category_slug: "sgmarket"
+updated_at: "1784789436"
+related: [{"categorySlug":"sgmarket","slug":"SGXTRADINGRULE","title":"新交所交易規則 - 證券市場"},{"categorySlug":"sgmarket","slug":"SGordertypes","title":"訂單類型有哪些？ - 新加坡"},{"categorySlug":"sgmarket","slug":"Oldlottradesfaq","title":"碎股交易常見問題 - 新加坡"}]
+---
+<p>本文介紹了每日槓桿證書（DLC）作為一類高槓杆金融衍生品的基本特性、名稱構成規則及投資者適宜性要求，旨在幫助投資者理解這一複雜產品的運作機制與風險特徵。</p><h4>1. DLC 簡介</h4><p>每日槓桿證書 (DLC) 是一種金融衍生品，會爲投資者提供標的資產 (例如市場指數或個股) 每日表現最高 7 倍的固定槓桿。基本原則很簡單 ― 如果標的 資產較前一交易日收盤價波動 1%，那麼 3 倍 DLC 的價值將波動 3%，7 倍 DLC 的價值將波動 7%。</p><p> </p><h4>2. DLC 名稱構成</h4><figure class="image image_resized" style="width: 60.76%"><img src="https://pub.pbkrs.com/uploads/2025/4c9d20c1732f8f60823a5bf5db6868f6"/></figure><p> </p><h4>3. 投資者適宜性</h4><p>適合投資每日槓桿證書 (DLC) 的投資者須願意承擔在短時間內 可能虧損全部投資本金的風險。投資者還應充分了解產品，並具備適當評價和評估產品結構、相關風險、估值、成本和預期 回報的較高知識水平或充足交易經驗。</p><p>DLC 旨在獲取與標的資產每日上漲表現相應的短期投資回報。 DLC 是本質上比其特徵更復雜的產品，因此只適合對複雜產品 具有投資知識並且有高風險承受能力的投資者。所以，所有投 資者均需具備特定投資產品 (SIP) 交易資格才能投資 DLC。 您可從 sgx.com 網站上獲得有關本投資產品的更多信息。</p><p>投資者在作出任何投資決定之前，應先到新加坡交易所官網閱讀有關的 DLC 的上市文件。</p><p> </p><p>更多關於 DLC 的內容，請至<a href="https://www.sgx.com/zh-hans/securities/securities-products#%E6%AF%8F%E6%97%A5%E6%9D%A0%E6%9D%86%E8%AF%81%E4%B9%A6"><span style="color: #304ffe">新加坡證券交易所官網</span></a></p><p> </p><p><strong>關鍵要點</strong>：</p><ul><li><strong>產品屬性</strong>：提供標的資產每日表現最高 7 倍固定槓桿的衍生工具</li><li><strong>運作原理</strong>：標的資產日波動 1% 時，對應倍數的 DLC 價值將產生同等倍數的波動</li><li><strong>名稱規則</strong>：DLC 產品名稱包含標的資產、槓桿倍數、到期日等核心要素</li><li><strong>投資者門檻</strong>：<ul><li>需具備特定投資產品（SIP）交易資格</li><li>應具備複雜產品投資知識和高風險承受能力</li></ul></li></ul><p> </p><p style="margin-left: 0.0px"><i>本文僅供參考，不構成任何投資建議。</i></p>

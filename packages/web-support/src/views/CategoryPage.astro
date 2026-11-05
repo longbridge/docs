@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { getContent } from '../lib/content'
+import { fmt, getDict } from '../lib/i18n'
+import { categoryPages } from '../lib/nav-core'
+import { HOME_PATH, canonicalUrl, categoryPath, formatTitle, localePath } from '../lib/site'
+import '../styles/listing.css'
+
+interface Props { slug: string }
+
+const { slug } = Astro.props
+const locale = Astro.locals.locale
+const d = getDict(locale)
+const { nav } = getContent(locale)
+const page = categoryPages(nav).find((p) => p.slug === slug)
+if (!page) throw new Error(`category ${slug} not in nav`)
+
+// 二级分类页只列本分组;一级分类页按分组列出全部(直挂文章的分组不重复显示标题)
+const { category, section } = page
+const title = section?.title ?? category.title
+const sections = section ? [section] : category.sections
+const pagePath = categoryPath(slug)
+
+const crumbs = [
+  { name: d.helpCenter, path: HOME_PATH },
+  ...(section ? [{ name: category.title, path: category.path }] : []),
+  { name: title, path: pagePath },
+]
+const breadcrumbLd = {
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: canonicalUrl(locale, c.path) })),
+}
+---
+
+<BaseLayout
+  title={formatTitle(locale, fmt(d.seoCategoryTitle, { category: title }))}
+  description={fmt(d.seoCategoryDescription, { category: title })}
+  keywords={fmt(d.seoCategoryKeywords, { category: title })}
+  pagePath={pagePath}
+  jsonLd={[breadcrumbLd]}
+>
+  <div class="container-divider"></div>
+  <div class="container">
+    <nav class="sub-nav sub-nav--article" aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        {crumbs.map((c, i) =>
+          i < crumbs.length - 1 ? (
+            <li class="breadcrumb-item"><a href={localePath(locale, c.path)}>{i === 0 ? d.home : c.name}</a></li>
+          ) : (
+            <li class="breadcrumb-item" aria-current="page">{c.name}</li>
+          ),
+        )}
+      </ol>
+    </nav>
+
+    <div class="category-container">
+      <div class="category-content">
+        <header class="page-header">
+          <h1>{title}</h1>
+          {!section && category.desc && <p class="page-header-description">{category.desc}</p>}
+        </header>
+
+        <div class="section-tree">
+          {sections.map((sec) => (
+            <section class="section" id={sec.slug}>
+              {!(sec.direct && sections.length === 1) && (
+                <h2 class="section-tree-title">
+                  {section || sec.direct ? sec.title : <a href={localePath(locale, sec.path)}>{sec.title}</a>}
+                </h2>
+              )}
+              <ul class="article-list">
+                {sec.articles.map((a) => (
+                  <li class="article-list-item">
+                    <a href={localePath(locale, a.path)} class="article-list-link">{a.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

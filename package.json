@@ -10,10 +10,16 @@
     "dev:hk": "cd apps/hk && bun run dev",
     "dev:sg": "cd apps/sg && bun run dev",
     "dev:us": "cd apps/us && bun run dev",
+    "dev:web-hk": "cd apps/web-hk && bun run dev",
+    "dev:web-sg": "cd apps/web-sg && bun run dev",
     "build:hk": "cd apps/hk && bun run build",
     "build:sg": "cd apps/sg && bun run build",
     "build:us": "cd apps/us && bun run build",
+    "build:web-hk": "cd apps/web-hk && bun run build",
+    "build:web-sg": "cd apps/web-sg && bun run build",
     "build": "bun run build:hk && bun run build:sg && bun run build:us",
-    "sync:us": "cd apps/us && bun run sync"
+    "sync:us": "cd apps/us && bun run sync",
+    "sync:web-hk": "cd apps/web-hk && bun run sync",
+    "sync:web-sg": "cd apps/web-sg && bun run sync"
   }
 }

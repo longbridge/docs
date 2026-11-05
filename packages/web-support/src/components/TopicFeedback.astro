@@ -1,0 +1,41 @@
+---
+import { getDict } from '../lib/i18n'
+
+interface Props { topicId: string }
+const { topicId } = Astro.props
+const d = getDict(Astro.locals.locale)
+const REASONS = [
+  ['incomplete_info', d.feedbackReasonIncomplete],
+  ['unclear_steps', d.feedbackReasonUnclear],
+  ['not_match_problem', d.feedbackReasonNotMatch],
+] as const
+const THUMB = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>'
+---
+
+<!-- 交互见 scripts/feedback.ts;看过 / 反馈过的页面不再展示(与现网一致) -->
+<div class="topic-feedback" data-topic-feedback data-topic-id={topicId} hidden>
+  <p class="topic-feedback__question" data-feedback-question>{d.feedbackQuestion}</p>
+  <div class="topic-feedback__actions">
+    <button type="button" class="topic-feedback__btn" data-feedback="resolved"><Fragment set:html={THUMB} />{d.feedbackYes}</button>
+    <button type="button" class="topic-feedback__btn topic-feedback__btn--down" data-feedback="unresolved"><Fragment set:html={THUMB} />{d.feedbackNo}</button>
+  </div>
+  <p class="topic-feedback__thanks" data-feedback-thanks hidden>{d.feedbackThanks}</p>
+
+  <div class="topic-feedback__dialog" data-feedback-dialog hidden>
+    <div class="topic-feedback__backdrop" data-feedback-close></div>
+    <div class="topic-feedback__panel" role="dialog" aria-modal="true" aria-labelledby="topic-feedback-title">
+      <div class="topic-feedback__panel-head">
+        <h2 id="topic-feedback-title" class="topic-feedback__panel-title">{d.feedbackReasonTitle}</h2>
+        <button type="button" class="topic-feedback__close" data-feedback-close aria-label={d.close}>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <div class="topic-feedback__reasons">
+        {REASONS.map(([type, label]) => <button type="button" class="topic-feedback__reason" data-reason={type}>{label}</button>)}
+      </div>
+      <label class="topic-feedback__other-label" for="topic-feedback-other">{d.feedbackOther}</label>
+      <textarea id="topic-feedback-other" class="topic-feedback__other" rows="2" placeholder={d.feedbackPlaceholder} data-feedback-other></textarea>
+      <button type="button" class="topic-feedback__submit" data-feedback-submit disabled>{d.feedbackSubmit}</button>
+    </div>
+  </div>
+</div>

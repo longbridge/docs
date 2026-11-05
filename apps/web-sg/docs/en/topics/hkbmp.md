@@ -1,0 +1,10 @@
+---
+title: "Hong Kong Stock BMP Quotes"
+topic_id: "5920"
+category_slug: "hkmarket"
+updated_at: "1784789462"
+seo_title: "Hong Kong Stock BMP Quotes | Singapore | Longbridge"
+seo_description: "A Longbridge Singapore guide to hong Kong Stock BMP Quotes, covering the key rules, timing, and mechanics you need to know before trading."
+related: [{"categorySlug":"hkmarket","slug":"HKtradingrules","title":"HK Trading Rules"},{"categorySlug":"hkmarket","slug":"cbbccall","title":"Call and Settlement Time for HK CBBCs"},{"categorySlug":"hkmarket","slug":"Greymarkettrading","title":"Dark Market Trading Rules"},{"categorySlug":"hkmarket","slug":"HKordertypes","title":"Order Types - HK"},{"categorySlug":"hkmarket","slug":"marketorder-hk","title":"HK Market Order"}]
+---
+<h4>What are BMP Quotes?</h4><p>BMP market is the basic quotation service provided by the Hong Kong Stock Exchange (Basic Market Price Service), which provides the following data content:</p><ul><li>Price per order</li><li>Last Transaction Price</li><li>Closing price</li><li>Highest/Lowest Price of the Day</li><li>Volume</li><li>Transaction amount</li><li>Reference Equilibrium Price (IEP) and Reference Equilibrium Volume (IEV) during the pre-opening period</li></ul><p>At the request of the Hong Kong Stock Exchange, the BMP market user list page only provides a maximum of 20 real-time quotes, and the rest are provided in the form of delayed quotes. BMP quotes need to be manually refreshed by users.</p><p> </p><h4>How does Longbridge provide BMP quotations?</h4><p>Longbridge currently provides free Hong Kong stock Lv2 quotes for all mobile end eligible users in the Chinese Mainland, and will switch to BMP quotes in non-Chinese mainland areas.</p><p>The specific market activity or sales policy is subject to the Longbridge activity center/market store.</p><p> </p><p style="margin-left: 0.0px"><strong>Disclosures</strong></p><p style="margin-left: 0.0px"><i>This article is for reference only and does not constitute any investment advice.</i></p>

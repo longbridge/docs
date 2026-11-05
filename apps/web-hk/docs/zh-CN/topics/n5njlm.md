@@ -1,0 +1,8 @@
+---
+title: "荃湾 DIY 活动细则"
+topic_id: "30384"
+category_slug: "ongoingcampaigns"
+updated_at: "1792463669"
+related: [{"categorySlug":"ongoingcampaigns","slug":"mhvtk0","title":"荃湾蠟燭香薰 DIY 活动细则"},{"categorySlug":"ongoingcampaigns","slug":"bvbkdx","title":"LongbridgeAI x RentSmart 活动细则"},{"categorySlug":"ongoingcampaigns","slug":"4fc2cd","title":"LongbridgeAI「AI 助理养成赛」活动细则"},{"categorySlug":"ongoingcampaigns","slug":"e61ked","title":"LongbridgeAI x CHARGESPOT"},{"categorySlug":"ongoingcampaigns","slug":"q3iwqy","title":"Longbridge AI 邀请首问送 Pro 卡活动细则"}]
+---
+<p>一、Longbridge Café 荃灣門店「錦繡重陽 · 珠光扇影」非遺宋錦珍珠團扇手工 DIY</p><p><strong>活動細則與條款</strong></p><p><strong>報名對象</strong>：所有會員均可參與本次活動。</p><p><strong>活動地區：</strong>香港 Longbridge Café 荃灣門店</p><p><strong>活動時間：2026 年 10 月 18 日 至 2026 年 10 月 25 日，下午 14:30 - 16:00</strong></p><p><strong>攜眷機制</strong>：每位成功報名的用戶可免費帶 <strong>1 位</strong> 朋友同行，每對組合共享 1 份材料與 2 杯特飲。</p><p><strong>取消機制</strong>：如需取消，請至少提前 1 天聯繫 Longbridge Café 荃灣門店告知，以便釋出名額給其他用戶。</p><p><strong>二、 現場體驗與安全規範</strong></p><p><strong>手作安全</strong>：</p><p>手作環節需使用膠水黏貼珍珠與錦繡配件。</p><p>現場配備工作人員全程輔助操作，請依指引安全使用工具，避免膠水接觸眼睛或衣物。</p><p><strong>三、 權益與贈品發放</strong></p><p><strong>伴手禮發放條件</strong>：全程參與活動並完成手作團扇，且同意於現場打卡角拍攝留念照片者，即可於離場時領取 Longbridge Café 專屬小贈品（環保袋或鑰匙扣，隨機發放，每人限領一份）。</p><p><strong>肖像與照片授權</strong>：</p><p>活動現場將進行攝影記錄。工作人員將在活動結束後將照片整理至線上相冊，並分享至社群。</p><p>相關照片可能用於 Longbridge Café之社群回顧或宣傳，報名即視為同意上述照片合理使用。</p><p><strong>四、 其他事項</strong></p><p>主辦單位 Longbridge Café保留隨時修改、變更或終止本活動細則之權利，並擁有最終解釋權。</p><p><strong>權益與贈品發放</strong></p><p><strong>伴手禮發放條件</strong>：參加者需完成團扇製作，並同意工作人員協助於打卡角拍攝 1 張照片（用於活動留念及社群花絮），即可領取 Longbridge Café 公司贊助的專屬環保袋。</p><p>Longbridge Café 在法律允許範圍內保留隨時修改、更改或終止本活動條款及細則的權利，毋須另行通知。如有任何爭議，Longbridge Café 保留最終解釋權及決定權。您參與本活動即視為同意將本活動相關數據提供至 Longbridge Café 。</p>

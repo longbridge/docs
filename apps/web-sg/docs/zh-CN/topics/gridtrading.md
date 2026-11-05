@@ -1,0 +1,10 @@
+---
+title: "什么是网格交易"
+topic_id: "15492"
+category_slug: "gridtrading"
+updated_at: "1784789461"
+seo_title: "什么是网格交易？策略指南与参数设置"
+seo_description: "了解网格交易，这是一种利用股价波动获利的策略。掌握如何设置参数、提交网格交易订单，以及有效管理风险。"
+related: []
+---
+<p>网格交易是一种基于股价波动的场景下，设定好策略参数并由系统根据参数执行低买高卖从而赚取波段差价的交易策略。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/b472c632cd6deec5c39fca51a67f112f"/></figure><p style="margin-left: 0px">投资者事先将资产分成多份，设定好基准价格以及基于基准价格上涨下跌的价差绘制对应网格，当股价下跌触发网格时，按照设定的价格和数量买入一份，相反当股价上涨触发网格时，卖出一份，通过反复买入卖出的操作，赚取差价。</p><h4 style="margin-left: 0px"><strong>如何提交网格策略？</strong></h4><p style="margin-left: 0px">步骤 1. 通过快捷交易抽屉或者直接进入交易大厅后，在订单类型中选择<strong>网格交易</strong>。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/5b12e4bc308b7f7c38100577383da030"/></figure><p style="margin-left: 0px">步骤 2. 按界面提示输入价格和数量参数后提交策略。</p><figure class="image image_resized" style="width: 80.16%"><img src="https://pub.pbkrs.com/uploads/2025/d004c2f221bd17c1372193f065e9dab7"/></figure><p style="margin-left: 0px">步骤 3. 提交完成后，在个股详情页可看到对应网格策略记录，可点击直接进入策略单详情。资产首页或订单记录页也可以看到策略订单记录，以及对应的交易和盈亏情况。当出现策略不适用于当前行情趋势，或者其他原因需要暂停监控的话，可点击策略单，选择暂停操作，或直接撤销，若需要调整策略参数，可点击修改进行改单操作。</p><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/92258b06fb24ed9b362bb14ed401c35f"/></figure><figure class="image image_resized" style="width: 80.16%"><img src="https://pub.pbkrs.com/uploads/2025/90f928fc9c15b9442ac379c618aa20e1"/></figure><figure class="image image_resized" style="width: 80.36%"><img src="https://pub.pbkrs.com/uploads/2025/ef9fd4aaf7c01b798b9b6c34450e4dbe"/></figure><h4 style="margin-left: 0px"><strong>策略参数如何设置？</strong></h4><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/fd8f1b5891e7054f4263509dc31cf452"/></figure><p style="margin-left: 0px"><span style="color: #888888"><strong>注：</strong>网格交易不支持美股盘前/盘后及港股竞价时段交易。</span></p><p style="margin-left: 0px"> </p><p style="margin-left: 0px"><i>本文仅供参考，不构成任何投资建议。</i></p>
