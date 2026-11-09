@@ -196,7 +196,7 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   grid-template-columns: 320px 1fr;
   /* HK / SG 分类近 20 个，按内容撑开会拉到接近整屏：限高，左侧分类栏内部滚动 */
   grid-template-rows: minmax(0, 1fr);
-  max-height: min(600px, calc(100vh - var(--lb-header-h) - 24px));
+  max-height: min(440px, calc(100vh - var(--lb-header-h) - 24px));
   background: var(--card);
   color: var(--foreground);
   border: 1px solid var(--border);
