@@ -1,7 +1,7 @@
 ---
 import CatIcon from './CatIcon.astro'
 import { getContent } from '../lib/content'
-import { fmt, getDict, LOCALE_LABELS } from '../lib/i18n'
+import { getDict, LOCALE_LABELS } from '../lib/i18n'
 import { HOME_PATH, REGION, localePath } from '../lib/site'
 
 interface Props {
@@ -52,11 +52,11 @@ const CHECK_SVG = '<svg class="lb-region__check" width="14" height="14" viewBox=
           <ul class="lb-mega__left" role="tablist">
             {nav.map((cat, idx) => (
               <li>
-                <a class={`lb-mega__cat${idx === 0 ? ' is-active' : ''}`} data-idx={idx} href={localePath(locale, cat.path)} role="tab" aria-selected={idx === 0 ? 'true' : 'false'} data-lb-cat-tab>
+                <button type="button" class={`lb-mega__cat${idx === 0 ? ' is-active' : ''}`} data-idx={idx} role="tab" aria-selected={idx === 0 ? 'true' : 'false'} data-lb-cat-tab>
                   <span class="lb-mega__cat-icon" aria-hidden="true"><CatIcon title={cat.title} /></span>
                   <span class="lb-mega__cat-name">{cat.title}</span>
                   <span class="lb-mega__cat-count">{cat.count}</span>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -72,10 +72,6 @@ const CHECK_SVG = '<svg class="lb-region__check" width="14" height="14" viewBox=
                     <li><a href={localePath(locale, art.path)}><span class="lb-mega__art-title">{art.title}</span></a></li>
                   ))}
                 </ul>
-                <a href={localePath(locale, cat.path)} class="lb-mega__view-all">
-                  {fmt(d.viewAll, { count: cat.count })}
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5" /></svg>
-                </a>
               </div>
             ))}
           </div>

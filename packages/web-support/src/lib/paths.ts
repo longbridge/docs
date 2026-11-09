@@ -1,6 +1,5 @@
 /** 站内页面路径(不含地区 / 语言前缀),与现网 /support 路由一一对应 */
 export const HOME_PATH = '/support'
-export const categoryPath = (slug: string) => `/support/category/${slug}`
 export const topicPath = (categorySlug: string, slug: string) => `/support/topics/${categorySlug}/${slug}`
 
 /**

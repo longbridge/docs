@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import { cleanTitle, flattenTopics, normalizeTree, parseTopicFile, parseTopicUrl, renderTopicFile } from '../src/lib/content-format'
 import { fmt } from '../src/lib/i18n'
-import { buildNav, categoryPages, locateArticle } from '../src/lib/nav-core'
+import { buildNav, locateArticle } from '../src/lib/nav-core'
 
 // 接口原始形状(PascalCase),取自 categories_tree 实际返回
 const RAW = [
@@ -61,10 +61,6 @@ describe('nav-core', () => {
     expect(nav[1].sections[0]).toMatchObject({ slug: 'desk', direct: true })
     expect(nav[0].sections[1].articles.map((a) => a.path)).toEqual(['/support/topics/sec/a3', '/support/topics/deep/a4'])
     expect(nav[0].count).toBe(4)
-  })
-
-  test('分类页覆盖一级与二级分类，direct 分组不单独成页', () => {
-    expect(categoryPages(nav).map((p) => p.slug)).toEqual(['acct', 'open', 'sec', 'desk', 'win'])
   })
 
   test('上一篇 / 下一篇按导航顺序跨分类', () => {

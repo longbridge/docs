@@ -536,21 +536,11 @@ html[theme="dark"] .catx-card,
   }
 }
 
-/* HK/SG:热搜项是文章链接(US 为搜索词按钮),前置「熱搜：」标签 */
-a.hero-hot-tag { text-decoration: none; }
+/* HK/SG:前置「熱搜：」标签 */
 .hero-hot-label {
   margin: 14px 0 0 14px;
   /* 与 .hero-sub 同色：hero 底色两种主题下都是浅薄荷色 */
   color: #6c6e75;
   font-size: 16px;
   font-weight: 500;
-}
-/* 推荐文章标题可能很长：胶囊高度随内容，正常换行(不截断标题) */
-a.hero-hot-tag {
-  height: auto;
-  min-height: 36px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  line-height: 1.35;
-  text-align: left;
 }

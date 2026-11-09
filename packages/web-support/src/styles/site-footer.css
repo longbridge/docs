@@ -53,11 +53,6 @@ html[theme='dark'] .lb-site-footer,
 @container (min-width: 1392px) {
   .lb-site-footer__inner { padding-inline: calc(50% - 600px); }
 }
-/* 分类页：与内容容器(listing.css .container)同一个盒子。跟随页面布局，用视口断点 */
-.lb-site-footer--page .lb-site-footer__inner { width: 90%; max-width: 1396px; margin: 0 auto; padding-inline: 0; }
-@media (max-width: 1023px) {
-  .lb-site-footer--page .lb-site-footer__inner { width: 100%; padding-inline: 16px; }
-}
 /* 文章页：页脚在 .article-page 正文列，左右各留 30 与正文(760)对齐，顶部分隔线同 US 详情页 */
 .article-page > .lb-site-footer { grid-column: 2; min-width: 0; }
 .lb-site-footer--column .lb-site-footer__inner { margin: 0 30px; padding: 32px 0 0; border-top: 1px solid var(--fs-border); }

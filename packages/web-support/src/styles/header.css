@@ -194,6 +194,9 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   width: min(780px, calc(100vw - 48px));
   display: grid;
   grid-template-columns: 320px 1fr;
+  /* HK / SG 分类近 20 个，按内容撑开会拉到接近整屏：限高，左侧分类栏内部滚动 */
+  grid-template-rows: minmax(0, 1fr);
+  max-height: min(600px, calc(100vh - var(--lb-header-h) - 24px));
   background: var(--card);
   color: var(--foreground);
   border: 1px solid var(--border);
@@ -213,10 +216,17 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   border-right: 1px solid var(--border);
   list-style: none;
   margin: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .lb-mega__cat {
   display: flex;
   align-items: center;
+  width: 100%;
+  border: 0;
+  font: inherit;
+  text-align: left;
   padding: 9px 12px;
   border-radius: 12px;
   cursor: pointer;
@@ -299,7 +309,9 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   flex-direction: column;
   flex: 1 1 0;
   min-height: 0;
-  overflow: hidden;
+  /* 不再有「查看全部」入口(分类页已取消),文章多时在列表内滚动 */
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 .lb-mega__arts li { margin: 0; padding: 0; min-width: 0; }
 .lb-mega__arts a {
@@ -329,21 +341,6 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
   color: var(--foreground);
 }
 .lb-mega__art-title { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lb-mega__view-all {
-  /* 无 margin-top:auto —— 由 .lb-mega__arts 的 flex:1 撑满把它顶到底部。
-     两者同用会争抢剩余空间，导致 arts 不满高、fitArts 少算一条。 */
-  padding-top: 24px;
-  padding-left: 12px; /* 与 head / 文章内容左对齐 (44px) */
-  display: inline-flex;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-teal);
-  text-decoration: none;
-  flex: none;
-}
-.lb-mega__view-all svg { width: 16px; height: 16px; }
-.lb-mega__view-all:hover { filter: brightness(1.15); }
 
 /* ---- Right action bar ---- */
 .lb-header__actions {
@@ -519,8 +516,6 @@ html[theme="dark"] .lb-header.header--transparent:not(.is-scrolled) .lb-logo--da
 .lb-mega__arts li + li { margin-top: 2px; }
 /* 文章行：圆点 ::before 与标题间距 12(a 内只有 ::before + 单个 title,> * + * 够不着) */
 .lb-mega__arts a::before { margin-right: 12px; }
-/* view-all:文字与箭头 svg 间距 8(子为文本节点 + 单 svg) */
-.lb-mega__view-all svg { margin-left: 8px; }
 .lb-header__actions > * + * { margin-left: 8px; }
 .lb-region__option > * + * { margin-left: 12px; }
 

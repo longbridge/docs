@@ -3,15 +3,27 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import { getContent } from '../lib/content'
 import { getDict } from '../lib/i18n'
 import { iconFor } from '../lib/catx-icons'
-import { HOME_PATH, formatTitle, localePath, topicPath } from '../lib/site'
+import { HOME_PATH, REGION, formatTitle, localePath } from '../lib/site'
 import '../styles/home.css'
 
 const locale = Astro.locals.locale
 const d = getDict(locale)
-const { nav, recommended } = getContent(locale)
+const { nav } = getContent(locale)
 
-// 现网首页 Trending 取推荐前 3
-const trending = recommended.slice(0, 3)
+// 热搜关键词(同 US):点击打开搜索框并带上该词。改词需改这里并重新发布
+const HOT_KEYWORDS: Record<string, Record<string, string[]>> = {
+  hk: {
+    'zh-HK': ['入金', '開戶', '港股', '期權'],
+    'zh-CN': ['入金', '开户', '港股', '期权'],
+    en: ['Deposit', 'Account Opening', 'HK Stocks', 'Options'],
+  },
+  sg: {
+    'zh-HK': ['入金', '開戶', '美股', '期權'],
+    'zh-CN': ['入金', '开户', '美股', '期权'],
+    en: ['Deposit', 'Account Opening', 'US Stocks', 'Options'],
+  },
+}
+const trending = HOT_KEYWORDS[REGION.code]?.[locale] ?? []
 
 const ARROW_SVG =
   '<svg class="catx__card-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>'
@@ -21,7 +33,6 @@ const tabData = nav.map((cat, i) => {
   return {
     slug: cat.slug,
     title: cat.title,
-    href: localePath(locale, cat.path),
     isFirst: i === 0,
     cards: cat.sections.flatMap((s) =>
       s.articles.map((a) => ({
@@ -51,8 +62,8 @@ const tabData = nav.map((cat, i) => {
       {trending.length > 0 && (
         <div class="hero-hot-tags" role="group" aria-label={d.trending}>
           <span class="hero-hot-label">{d.trending}</span>
-          {trending.map((r) => (
-            <a class="hero-hot-tag" href={localePath(locale, topicPath(r.categorySlug, r.slug))}>{r.title}</a>
+          {trending.map((kw) => (
+            <button class="hero-hot-tag" type="button" data-tag={kw}>{kw}</button>
           ))}
         </div>
       )}
@@ -70,7 +81,7 @@ const tabData = nav.map((cat, i) => {
           ))}
         </div>
         {tabData.map((tab) => (
-          <div class="catx__grid" role="tabpanel" data-tab={tab.slug} data-href={tab.href} hidden={tab.isFirst ? undefined : true}>
+          <div class="catx__grid" role="tabpanel" data-tab={tab.slug} hidden={tab.isFirst ? undefined : true}>
             {tab.cards.map((card) => (
               <a class="catx-card" href={card.href}>
                 <span class="catx-card__icon" set:html={card.icon} aria-hidden="true" />
@@ -105,6 +116,9 @@ const tabData = nav.map((cat, i) => {
     })
     document.querySelector<HTMLButtonElement>('[data-lb-hero-search]')?.addEventListener('click', () => {
       window.lbOpenSearch?.(heroInput?.value ?? '')
+    })
+    document.querySelectorAll<HTMLButtonElement>('.hero-hot-tag').forEach((btn) => {
+      btn.addEventListener('click', () => window.lbOpenSearch?.(btn.dataset.tag ?? ''))
     })
   </script>
 </BaseLayout>
