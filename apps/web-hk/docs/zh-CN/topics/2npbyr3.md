@@ -1,0 +1,8 @@
+---
+title: "融资相关常见问题解答"
+topic_id: "1457"
+category_slug: "marginfinancing"
+updated_at: "1785477187"
+related: [{"categorySlug":"marginfinancing","slug":"3aysfh8","title":"长桥综合账户操作指南"},{"categorySlug":"marginfinancing","slug":"2u2kyg0","title":"追缴保证金规则"},{"categorySlug":"marginfinancing","slug":"1ddrdj","title":"什么是货币保证金"},{"categorySlug":"marginfinancing","slug":"169xolr","title":"账户风控规则"},{"categorySlug":"marginfinancing","slug":"f3rni3x","title":"如何查询股票是否支持融资交易？"}]
+---
+<p>本文将快速解答关于融资的常见疑问。</p><p><strong>1. 融资利息如何计算</strong></p><p>融资利息以交收结算后的账户实际金额进行计息，当日融资利息=当日交易日闭市后融资余额 ×（融资利率 /365），最低 0.01 单个币种。</p><p>使用融资购买了股票，即产生了现金欠款，账户实际产生欠款的时间在清算完成当天开始计算，例如：港股 清算时间为 T+2，即 T+2 当天开始计息，日计月结。</p><blockquote><p><strong>注：</strong></p><ol><li>融资利率可能在不预先通知的情况下进行周期性调整，以适应货币汇率的变化；</li><li>融资天数以 365 天为一年，按自然日计算。</li></ol></blockquote><p><strong>2. 如何调整融资额度</strong></p><p>如需调整融资额度，可以进入长桥 App &gt; <strong>资产</strong> &gt; <strong>融资状态</strong>查看是否显示申请调整融资额度按钮，若页面显示此按钮，点击发起额度调整的申请。若不显示此按钮，可以联系专属客服经理进行申请（此项申请不保证一定成功）。</p><p><strong>温馨提示：申请调整融资额度，24 小时内仅可申请两次。</strong></p><p><strong>3. 偿还融资欠款的方式</strong></p><p>目前偿还融资欠款一般有三种方式：</p><ul><li>其他货币有余额足够偿还融资欠款，可以使用货币兑换功能兑换成相应币种用于补足欠款。</li><li>入金：客户入金后会优先补足欠款，补足欠款的部分在入金到账后将不再计息。</li><li>卖出股票：卖出股票后，例如港股需要 T+2 日清算完成，因此在卖出股票后的 T 日和 T+1 日，账户依然有欠款，并产生融资利息，最低 0.01 单个币种。</li></ul><p><strong>4. 偿还融资欠款的时间</strong></p><p>长桥证券美/港股清算时间点为每交易日 17:00（香港时间）。</p><ul><li>例子（一）<ul><li>假设客人于 1 月 1 日（香港时间）使用融资购买了港股，账务日期（STATEMENT DATE）为 1 月 1 日。 客人于 1 月 3 日 17:00 时（香港时间）之前存入该笔交易款项（连同相关交易费用）将 不会产生融资利息。</li></ul></li><li>例子（二）<ul><li>假设客人于 1 月 1 日（香港时间）使用融资购买了美股，账务日期（STATEMENT DATE）为 1 月 2 日。 客人于 1 月 3 日 17:00 时（香港时间）之前存入该笔交易款项（连同相关交易费用）将 不会产生融资利息。</li></ul></li></ul><p> </p><p><strong>免责声明</strong></p><p><i>本文仅作参考，不构成任何投资建议。</i></p>

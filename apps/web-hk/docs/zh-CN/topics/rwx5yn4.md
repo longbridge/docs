@@ -1,0 +1,8 @@
+---
+title: "基金收费规则"
+topic_id: "3937"
+category_slug: "fundtrading"
+updated_at: "1784789428"
+related: [{"categorySlug":"fundtrading","slug":"0ubv12","title":"货币基金买入/赎回时间规则"},{"categorySlug":"fundtrading","slug":"x71sm57","title":"基金常见问题"},{"categorySlug":"fundtrading","slug":"uqn2kwo","title":"基金买入和卖出规则"},{"categorySlug":"fundtrading","slug":"etf","title":"基金销售协议（含 ETF）"},{"categorySlug":"fundtrading","slug":"hk-aip-agreement","title":"基金定投协议"}]
+---
+<p>投资者在长桥买卖基金时，主要涉及两类费用：由券商收取的申赎费用和由基金公司每日从基金资产中计提的运作费用。</p><figure class="table"><table><colgroup><col style="width: 30.77%"/><col style="width: 28.65%"/><col style="width: 40.58%"/></colgroup><thead><tr><th><p style="text-align: center">收费项目</p></th><th><p style="text-align: center">收费方</p></th><th><p style="text-align: center">收费标准</p></th></tr></thead><tbody><tr><td><p style="text-align: center">申购费率</p></td><td rowspan="2"><p style="text-align: center">长桥证券 (香港）有限公司</p></td><td rowspan="2"><p style="text-align: center">0</p></td></tr><tr><td><p style="text-align: center">赎回费率</p></td></tr><tr><td><p style="text-align: center">管理费</p></td><td rowspan="2"><p style="text-align: center">基金公司</p></td><td rowspan="2"><p style="text-align: center">不同基金的收费不同，以基金详情页为准</p></td></tr><tr><td><p style="text-align: center">托管费</p></td></tr></tbody></table></figure><blockquote><p>注：基金管理费及托管费等基金运作费用每日从基金资产中计提，投资者无需额外支付，每个交易日公布的基金净值中已扣除运作费用。</p></blockquote><p><strong>关键要点</strong>：</p><ul><li>买卖费用（投资者直接支付）<ul><li>申购费/赎回费：由长桥证券公司收取</li><li>目前为 0，即免申购费和赎回费</li></ul></li><li>持有费用（投资者间接支付）<ul><li>管理费/托管费：由基金公司收取</li><li>收费标准：因基金而异，需查看具体基金的详情页</li><li>支付方式：无需投资者额外支付。这些费用会每日从基金总资产中自动计提。</li></ul></li></ul><p> </p><p><strong>免责声明</strong></p><p><i>本文仅作参考，不构成任何投资建议。</i></p>

@@ -1,0 +1,8 @@
+---
+title: "转入股票证券信息"
+topic_id: "1557"
+category_slug: "sharetransfer"
+updated_at: "1784789416"
+related: [{"categorySlug":"sharetransfer","slug":"ojhekr","title":"如何从华盛证券转仓到长桥证券？"},{"categorySlug":"sharetransfer","slug":"hwpklk","title":"如何从老虎证券转仓到长桥证券？ - 综合账户"},{"categorySlug":"sharetransfer","slug":"fqnpss","title":"港股实物股票存入指引"},{"categorySlug":"sharetransfer","slug":"p3yxv9x","title":"如何完成港/美股转换？"},{"categorySlug":"sharetransfer","slug":"2hho5bd","title":"如何从盈透证券（含老虎、雪盈）转入股票？"}]
+---
+<h2>1. 转入港股所需券商信息</h2><figure class="table"><table><colgroup><col style="width: 50%"/><col style="width: 50%"/></colgroup><tbody><tr><td>接收券商名称</td><td><p>Long Bridge HK Limited</p><p>长桥证券（香港）有限公司</p></td></tr><tr><td>CCASS 代码（参与者代号）</td><td>B02195</td></tr><tr><td>接收账户</td><td>您的长桥证券账户号码</td></tr><tr><td>联系人</td><td>交收部</td></tr><tr><td>联系人电话</td><td>(+852) 35858944 / (+852) 35858915</td></tr><tr><td>联系人邮箱</td><td><a href="mailto:settlement@longbridge.hk">settlement@longbridge.hk</a></td></tr></tbody></table></figure><h2>2. 转入美股所需券商信息</h2><figure class="table"><table><colgroup><col style="width: 50%"/><col style="width: 50%"/></colgroup><tbody><tr><td>接收券商名称</td><td>Long Bridge HK Limited</td></tr><tr><td>DTC 代码（参与者代号）</td><td>DTC 0534</td></tr><tr><td>接收账户</td><td>您的长桥证券账户号码</td></tr><tr><td>联系人</td><td>Settlement Team</td></tr><tr><td>联系人电话</td><td>(+852) 35858944 / (+852) 35858915</td></tr><tr><td>联系人邮箱</td><td><a href="mailto:settlement@longbridge.hk">settlement@longbridge.hk</a></td></tr></tbody></table></figure><p>注意：若转出券商对接收账户格式有限制，请直接填写 “U11928885”</p><p> </p><p><strong>声明</strong></p><p><i>本文仅供参考，不构成任何投资建议。</i></p>

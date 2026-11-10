@@ -1,0 +1,4 @@
+{
+  "extends": "../../packages/web-support/tsconfig.json",
+  "include": [".astro/types.d.ts", "../../packages/web-support/src/**/*"]
+}

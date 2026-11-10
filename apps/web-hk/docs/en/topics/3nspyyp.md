@@ -1,0 +1,10 @@
+---
+title: "Account Security FAQs"
+topic_id: "1541"
+category_slug: "accountfaqs"
+updated_at: "1784789415"
+seo_title: "Account Security FAQs | Hong Kong | Longbridge"
+seo_description: "Get clear answers on account Security FAQs for your Longbridge HK account, including eligibility, setup, and security steps."
+related: [{"categorySlug":"accountfaqs","slug":"zoy6zum","title":"Statement Instruction"},{"categorySlug":"accountfaqs","slug":"j1mnbat","title":"Statement Field Definitions"}]
+---
+<p style="margin-left: 0cm">Here you’ll find quick answers to common questions about account security. </p><p style="margin-left: 0cm"><strong>1. What is two-factor authentication?</strong></p><p style="margin-left: 0cm">When you perform asset-related operations, like making a trade or viewing your account information, you first need to enter your transaction password. When two-factor authentication is enabled, your app will add another layer of security. </p><p style="margin-left: 0cm">After you enter your password, you'll get a second check, like a security prompt or a code sent to your phone, to make sure it's really you. It’s an easy way to protect your account, and we highly recommend turning it on. </p><p style="margin-left: 0cm"> </p><p style="margin-left: 0cm"><strong>2. Why didn’t I receive my SMS verification code ?</strong></p><p style="margin-left: 0cm">If you cannot receive the SMS verification code, please follow the steps below to troubleshoot:</p><ul style="list-style-type: disc"><li>Please check whether the verification code SMS is blocked</li><li>Please check whether your network connection is stable</li><li>Please check whether your inbox is full</li></ul><p style="margin-left: 0cm">If it does not fall into the above reasons, you can try to log in with your password or contact official customer service.</p><p style="margin-left: 0cm"> </p><p style="margin-left: 0cm"><strong>Disclosures</strong></p><p style="margin-left: 0cm"><i>The information provided herein is for reference only and does not constitute any investment advice.</i></p>

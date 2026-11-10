@@ -1,0 +1,8 @@
+---
+title: "如何进行新股认购？"
+topic_id: "1107"
+category_slug: "iposubscription"
+updated_at: "1784789427"
+related: [{"categorySlug":"iposubscription","slug":"3gzpxjc","title":"证券新股认购声明"},{"categorySlug":"iposubscription","slug":"203ho05","title":"新股认购相关事项"},{"categorySlug":"iposubscription","slug":"1hpez20","title":"新股认购收费标准"},{"categorySlug":"iposubscription","slug":"1lii2n0","title":"新股认购常见问题"}]
+---
+<p>本文将为您详细介绍在长桥 App 上进行新股认购的流程，包括认购入口、具体操作步骤以及如何查看认购记录，帮助您顺利完成新股认购。</p><h3>1. 新股认购入口</h3><p>您可以在长桥 App 发起新股认购，长桥 App 下载入口：<a href="https://longbridge.hk/zh-CN/download">软件下载</a></p><h3>2. 新股认购流程</h3><p>步骤 1. 打开<strong>长桥 App</strong> &gt; <strong>市场</strong> &gt; <strong>新股</strong>，进入新股认购列表页。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/7b965ce3eed477d641905e575a5b3d2e"/></figure><p>步骤 2. 在对应的新股列表页或者新股日历中的认购中的新股位置点击 <strong>立即认购</strong> 按钮，进入认购页面。</p><p>根据申请认购当时的资产持有情况，有以下两种认购方式，并选择需要的认购股数：</p><ul><li><strong>银行融资认购</strong></li></ul><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/fe3456719e76d766c9e979a21cf6c672"/></figure><ul><li><strong>普通认购</strong></li></ul><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/7a134c956c23115bb631de9fa03e13ad"/></figure><p>步骤 3. 点击右下角 <strong>申请认购</strong>，确认新股认购订单后提交新股认购订单。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/d0111f970e7695f717c870a81577fa5e"/></figure><h3>3. 查看认购记录</h3><p>在新股页，可以点击 <strong>认购记录</strong>，或者在新股日历中的新股点击 <strong>查看订单</strong>。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/cf4d03abb9eb461dd8fd06988a0f00b3"/></figure><p> </p><p><i>本文内容仅供参考，不构成任何投资建议。</i></p>

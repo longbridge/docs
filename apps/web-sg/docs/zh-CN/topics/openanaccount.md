@@ -1,0 +1,10 @@
+---
+title: "如何开设长桥账户？"
+topic_id: "16460"
+category_slug: "account_opening"
+updated_at: "1784789468"
+seo_title: "如何快速开通长桥账户：详细指南"
+seo_description: "了解如何快速开通长桥账户。选择MyInfo或手动输入，上传所需文件，完成验证并电子签名。"
+related: []
+---
+<p>以下是长桥新加坡用户开户的步骤说明。</p><p>步骤 1. 下载 Longbridge SG App &gt; 注册 App &gt; <strong>资产</strong>。</p><p>步骤 2. 选择您的开户方式。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/78b34d7208f1f2294526c128ef2c786c"/></figure><p>如果选择 MyInfo，您需要登录 SingPass，您的一些基本信息将被自动填充。请注意，从 MyInfo 导入的信息不可编辑。</p><figure class="image image_resized" style="width: 70.94%"><img src="https://pub.pbkrs.com/uploads/2025/49486d317edb0ceb18edb6c58a9a9f62"/></figure><figure class="image image_resized" style="width: 80.16%"><img src="https://pub.pbkrs.com/uploads/2025/a97320350be2d602babb653db654e236"/></figure><p>如果选择手动输入，请根据您的证件填写个人信息和居住地址。然后，按照以下步骤操作：</p><p>(1) 拍摄您的证件照片</p><figure class="table" style="width: 77.56%"><table><colgroup><col style="width: 21.62%"/><col style="width: 49.08%"/><col style="width: 29.3%"/></colgroup><thead><tr><th colspan="1" rowspan="1">证件</th><th colspan="1" rowspan="1">新加坡，马来西亚，印度尼西亚</th><th colspan="1" rowspan="1">其他国家</th></tr></thead><tbody><tr><td colspan="1" rowspan="1">护照</td><td colspan="1" rowspan="1">✅</td><td colspan="1" rowspan="1">✅</td></tr><tr><td colspan="1" rowspan="1">身份证</td><td colspan="1" rowspan="1">✅</td><td colspan="1" rowspan="1">❌</td></tr></tbody></table></figure><p>(2) 按照指示完成脸部识别</p><p>(3) 上传居住地址证明</p><ul><li>可接受的证件包括银行对账单，政府发放的信件或水电费账单。</li><li>确保文档显示您的全名，地址和日期。</li><li>文档的有效期应在 90 天内。</li></ul><p>步骤 3. 提供就业详情和财务信息</p><blockquote><p>注：雇主名称请提供英文和中文。</p></blockquote><p>步骤 4. 审核所填写的信息。</p><p>步骤 5. 电子签名并提交。</p><figure class="image"><img src="https://pub.pbkrs.com/uploads/2025/7e859497fda4e97d7dacc486045f5f44"/></figure><h4>常见问题解答</h4><h5>Q1：开设 Longbridge 账户需要多长时间？</h5><p>您的 Longbridge 账户通常将在提交开户申请后的 1 到 2 个工作日内处理。请注意，某些情况可能需要额外的处理时间。</p><h5>Q2：如何知道我的账户是否开设成功？</h5><p>账户成功开通后，您将收到电子邮件和 App 内的通知。或者，您可以登录 Longbridge SG App 查看您的账户状态。</p><p> </p><p><i>本文仅供参考，不构成任何投资建议。</i></p>
