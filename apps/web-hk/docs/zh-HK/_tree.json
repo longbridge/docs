@@ -399,6 +399,10 @@
             "title": "虛擬資產逐筆明細介紹"
           },
           {
+            "slug": "c6bq4w",
+            "title": "波動率期限結構"
+          },
+          {
             "slug": "f57407",
             "title": "什麽是看跌/看漲期權比率"
           },
@@ -907,10 +911,6 @@
         "icon": "",
         "topics": [
           {
-            "slug": "mhvtk0",
-            "title": "荃灣蠟燭香薰 DIY 活動細則"
-          },
-          {
             "slug": "n5njlm",
             "title": "荃灣 DIY 活動細則"
           },
@@ -929,6 +929,10 @@
           {
             "slug": "q3iwqy",
             "title": "Longbridge AI 邀请首問送 Pro 卡活動細則"
+          },
+          {
+            "slug": "nmlkav",
+            "title": "2026 年 11 月長橋香港期權新人專屬禮活動"
           },
           {
             "slug": "2c1xg4",
@@ -1095,5 +1099,18 @@
         "children": []
       }
     ]
+  },
+  {
+    "slug": "misc",
+    "title": "其他",
+    "desc": "",
+    "icon": "",
+    "topics": [
+      {
+        "slug": "eovjgu",
+        "title": "什麼是時間條件單"
+      }
+    ],
+    "children": []
   }
 ]

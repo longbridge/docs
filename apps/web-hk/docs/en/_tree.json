@@ -399,6 +399,10 @@
             "title": "Introduction to Virtual Asset Transaction Record"
           },
           {
+            "slug": "c6bq4w",
+            "title": "Volatility Term Structure"
+          },
+          {
             "slug": "f57407",
             "title": "What is put/call ratio?"
           },
@@ -907,10 +911,6 @@
         "icon": "",
         "topics": [
           {
-            "slug": "mhvtk0",
-            "title": "荃灣蠟燭香薰 DIY 活動細則"
-          },
-          {
             "slug": "n5njlm",
             "title": "荃灣 DIY 活動細則"
           },
@@ -929,6 +929,10 @@
           {
             "slug": "q3iwqy",
             "title": "Longbridge AI Register&First Question Refer Bonus"
+          },
+          {
+            "slug": "nmlkav",
+            "title": "Options Beginner Welcome gifts (November 2026)"
           },
           {
             "slug": "2c1xg4",
@@ -1095,5 +1099,18 @@
         "children": []
       }
     ]
+  },
+  {
+    "slug": "misc",
+    "title": "Other",
+    "desc": "",
+    "icon": "",
+    "topics": [
+      {
+        "slug": "eovjgu",
+        "title": "Time Condition Orders"
+      }
+    ],
+    "children": []
   }
 ]
