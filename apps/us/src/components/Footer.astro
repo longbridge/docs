@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/paths'
 
 interface Props {
   isHome?: boolean
@@ -30,11 +31,9 @@ const FOOTER_LINKS = [
       </div>
     </div>
     <a
-      href="https://assets.lbkrs.com/uploads/31205b1e-302a-4870-afc2-4517b6e433e2/Disclosure-Library.pdf"
+      href={withBase('/articles/18308586537103')}
       class="lb-footer__logo-link"
       aria-label="Longbridge Disclosures"
-      target="_blank"
-      rel="noopener noreferrer"
     >
       <!-- footer 专用 "Disclosures" logo(与 header 不同):浅色主题深墨,深色主题浅墨 -->
       <img
