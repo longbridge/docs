@@ -9,4 +9,4 @@ zendesk_category_id: 18017217567375
 
 ## Sections
 
-- [Other](/other/other/overview)
+- [Disclosure](/other/disclosure/overview)
