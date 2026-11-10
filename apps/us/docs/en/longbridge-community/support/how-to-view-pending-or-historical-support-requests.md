@@ -2,11 +2,11 @@
 title: How to view pending or historical support requests
 zendesk_article_id: 17905807255567
 zendesk_section_id: 14925844023183
-zendesk_updated_at: '2026-10-07T17:05:30Z'
+zendesk_updated_at: '2026-11-10T19:20:43Z'
 zendesk_edited_at: '2026-10-07T15:23:52Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17905807255567-How-to-view-pending-or-historical-support-requests'
 promoted: false
-position: 1
+position: 2
 ---
 You can view both your pending and past requests with us by signing in to your support profile [here](https://longbridgeus.zendesk.com/hc/requests).
 
