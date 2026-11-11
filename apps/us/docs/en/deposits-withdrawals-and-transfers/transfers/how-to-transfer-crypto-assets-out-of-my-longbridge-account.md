@@ -1,10 +1,10 @@
 ---
-title: How to Transfer Crypto assets out of my Longbridge Account
+title: 'How to transfer crypto assets out of my Longbridge account?'
 zendesk_article_id: 16703966079759
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-06T18:38:05Z'
-zendesk_edited_at: '2026-10-06T18:38:05Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703966079759-How-to-Transfer-Crypto-assets-out-of-my-Longbridge-Account'
+zendesk_updated_at: '2026-11-11T07:20:55Z'
+zendesk_edited_at: '2026-11-11T07:20:55Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703966079759-How-to-transfer-crypto-assets-out-of-my-Longbridge-account'
 promoted: true
 position: 2
 ---

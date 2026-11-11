@@ -1,9 +1,9 @@
 ---
-title: How to link and remove a bank account
+title: 'How to link and remove a bank account?'
 zendesk_article_id: 17893306268687
 zendesk_section_id: 17536015135887
-zendesk_updated_at: '2026-10-12T20:50:49Z'
-zendesk_edited_at: '2026-10-12T20:50:49Z'
+zendesk_updated_at: '2026-11-11T07:25:51Z'
+zendesk_edited_at: '2026-11-11T07:25:51Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17893306268687-How-to-link-and-remove-a-bank-account'
 promoted: false
 position: 2

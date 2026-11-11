@@ -1,10 +1,10 @@
 ---
-title: How to Identify and Avoid Scams
+title: 'How to identify and avoid scams?'
 zendesk_article_id: 17175344044943
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-10-03T07:19:56Z'
-zendesk_edited_at: '2026-10-03T07:19:56Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17175344044943-How-to-Identify-and-Avoid-Scams'
+zendesk_updated_at: '2026-11-11T07:33:49Z'
+zendesk_edited_at: '2026-11-11T07:33:49Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17175344044943-How-to-identify-and-avoid-scams'
 promoted: true
 position: 0
 ---

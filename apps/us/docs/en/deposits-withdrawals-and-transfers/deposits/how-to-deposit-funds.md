@@ -1,9 +1,9 @@
 ---
-title: How to deposit funds
+title: 'How to deposit funds?'
 zendesk_article_id: 16303076614671
 zendesk_section_id: 15003308456591
-zendesk_updated_at: '2026-10-06T19:17:54Z'
-zendesk_edited_at: '2026-10-06T19:17:54Z'
+zendesk_updated_at: '2026-11-11T07:36:42Z'
+zendesk_edited_at: '2026-11-11T07:36:42Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303076614671-How-to-deposit-funds'
 promoted: false
 position: 0

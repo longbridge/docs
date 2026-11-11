@@ -1,9 +1,9 @@
 ---
-title: How to keep my Longbridge account secure
+title: 'How to keep my Longbridge account secure?'
 zendesk_article_id: 17289179856911
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-10-03T07:19:13Z'
-zendesk_edited_at: '2026-10-03T07:19:13Z'
+zendesk_updated_at: '2026-11-11T07:37:04Z'
+zendesk_edited_at: '2026-11-11T07:37:04Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17289179856911-How-to-keep-my-Longbridge-account-secure'
 promoted: true
 position: 0

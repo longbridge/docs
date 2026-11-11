@@ -1,9 +1,9 @@
 ---
-title: How to complete account opening
+title: 'How to complete account opening?'
 zendesk_article_id: 17852034260879
 zendesk_section_id: 17382922631055
-zendesk_updated_at: '2026-10-06T19:24:25Z'
-zendesk_edited_at: '2026-10-06T19:24:25Z'
+zendesk_updated_at: '2026-11-11T07:40:42Z'
+zendesk_edited_at: '2026-11-11T07:40:42Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17852034260879-How-to-complete-account-opening'
 promoted: false
 position: 0

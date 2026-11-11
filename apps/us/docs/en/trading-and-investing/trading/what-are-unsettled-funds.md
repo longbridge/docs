@@ -1,10 +1,10 @@
 ---
-title: 'What are unsettled Funds?'
+title: 'What are unsettled funds?'
 zendesk_article_id: 15951558820495
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-06T17:51:44Z'
-zendesk_edited_at: '2026-10-01T16:56:39Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15951558820495-What-are-unsettled-Funds'
+zendesk_updated_at: '2026-11-11T08:25:33Z'
+zendesk_edited_at: '2026-11-11T08:25:33Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15951558820495-What-are-unsettled-funds'
 promoted: false
 position: 11
 ---

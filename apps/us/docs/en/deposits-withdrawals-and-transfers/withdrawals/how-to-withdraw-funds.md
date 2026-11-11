@@ -1,10 +1,10 @@
 ---
-title: How to Withdraw Funds
+title: 'How to withdraw funds?'
 zendesk_article_id: 17850987112719
 zendesk_section_id: 15003292497935
-zendesk_updated_at: '2026-10-06T19:21:46Z'
-zendesk_edited_at: '2026-10-06T19:21:46Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850987112719-How-to-Withdraw-Funds'
+zendesk_updated_at: '2026-11-11T07:21:34Z'
+zendesk_edited_at: '2026-11-11T07:21:34Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17850987112719-How-to-withdraw-funds'
 promoted: false
 position: 0
 ---

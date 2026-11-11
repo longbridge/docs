@@ -1,10 +1,10 @@
 ---
-title: How to Transfer Crypto assets into my Longbridge Account
+title: 'How to transfer crypto assets into my Longbridge account?'
 zendesk_article_id: 16703968594447
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-06T18:40:09Z'
-zendesk_edited_at: '2026-10-06T18:40:09Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703968594447-How-to-Transfer-Crypto-assets-into-my-Longbridge-Account'
+zendesk_updated_at: '2026-11-11T08:25:14Z'
+zendesk_edited_at: '2026-11-11T08:25:14Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16703968594447-How-to-transfer-crypto-assets-into-my-Longbridge-account'
 promoted: true
 position: 3
 ---

@@ -1,10 +1,10 @@
 ---
-title: How to Transfer Assets into my Longbridge Account
+title: 'How to transfer assets into my Longbridge account?'
 zendesk_article_id: 16303157218575
 zendesk_section_id: 15933132108303
-zendesk_updated_at: '2026-10-06T18:32:08Z'
-zendesk_edited_at: '2026-10-06T18:32:08Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303157218575-How-to-Transfer-Assets-into-my-Longbridge-Account'
+zendesk_updated_at: '2026-11-11T07:20:36Z'
+zendesk_edited_at: '2026-11-11T07:20:36Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/16303157218575-How-to-transfer-assets-into-my-Longbridge-account'
 promoted: false
 position: 0
 ---

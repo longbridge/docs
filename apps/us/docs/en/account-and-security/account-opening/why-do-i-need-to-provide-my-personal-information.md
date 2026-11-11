@@ -1,10 +1,10 @@
 ---
-title: 'Why Do I Need to Provide my Personal Information?'
+title: 'Why do I need to provide my personal Information?'
 zendesk_article_id: 15945552388751
 zendesk_section_id: 17382922631055
-zendesk_updated_at: '2026-10-02T16:56:57Z'
-zendesk_edited_at: '2026-08-27T03:43:57Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15945552388751-Why-Do-I-Need-to-Provide-my-Personal-Information'
+zendesk_updated_at: '2026-11-11T06:55:44Z'
+zendesk_edited_at: '2026-11-11T06:55:44Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15945552388751-Why-do-I-need-to-provide-my-personal-Information'
 promoted: false
 position: 2
 ---

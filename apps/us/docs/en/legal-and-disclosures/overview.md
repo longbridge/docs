@@ -9,4 +9,4 @@ zendesk_category_id: 18017217567375
 
 ## Sections
 
-- [Disclosure](/legal-and-disclosures/disclosure/overview)
+- [Disclosures, Policies, & Agreements](/legal-and-disclosures/disclosures-policies-and-agreements/overview)
