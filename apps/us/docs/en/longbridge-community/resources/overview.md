@@ -10,4 +10,4 @@ zendesk_section_id: 17465785717135
 ## Articles
 
 - [Longbridge Overview](/longbridge-community/resources/longbridge-overview)
-- [Fees & Charges](/longbridge-community/resources/fees-charges)
+- [Fees & charges](/longbridge-community/resources/fees-charges)

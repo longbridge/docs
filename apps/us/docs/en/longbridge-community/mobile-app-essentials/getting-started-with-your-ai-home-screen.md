@@ -1,10 +1,10 @@
 ---
-title: Getting Started with Your AI Home Screen
+title: Getting started with your AI home screen
 zendesk_article_id: 17906376525071
 zendesk_section_id: 17906401756175
-zendesk_updated_at: '2026-10-19T22:46:32Z'
-zendesk_edited_at: '2026-10-19T22:46:31Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17906376525071-Getting-Started-with-Your-AI-Home-Screen'
+zendesk_updated_at: '2026-11-12T02:40:22Z'
+zendesk_edited_at: '2026-11-12T02:40:21Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17906376525071-Getting-started-with-your-AI-home-screen'
 promoted: true
 position: 0
 ---

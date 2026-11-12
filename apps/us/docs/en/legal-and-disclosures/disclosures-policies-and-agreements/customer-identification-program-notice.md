@@ -1,10 +1,10 @@
 ---
-title: Customer Identification Program Notice
+title: Customer identification program notice
 zendesk_article_id: 15050348171151
 zendesk_section_id: 17920135773199
-zendesk_updated_at: '2026-10-09T02:26:36Z'
-zendesk_edited_at: '2026-10-09T02:26:36Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15050348171151-Customer-Identification-Program-Notice'
+zendesk_updated_at: '2026-11-12T02:44:35Z'
+zendesk_edited_at: '2026-11-12T02:44:35Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15050348171151-Customer-identification-program-notice'
 promoted: false
 position: 3
 ---

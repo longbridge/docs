@@ -9,4 +9,4 @@ zendesk_section_id: 17906401756175
 
 ## Articles
 
-- [Getting Started with Your AI Home Screen](/longbridge-community/mobile-app-essentials/getting-started-with-your-ai-home-screen)
+- [Getting started with your AI home screen](/longbridge-community/mobile-app-essentials/getting-started-with-your-ai-home-screen)

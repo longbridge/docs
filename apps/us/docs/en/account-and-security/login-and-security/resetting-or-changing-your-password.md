@@ -1,10 +1,10 @@
 ---
-title: Resetting or Changing Your Password
+title: Resetting or changing your password
 zendesk_article_id: 17336012682895
 zendesk_section_id: 16511552522383
-zendesk_updated_at: '2026-10-12T19:21:34Z'
-zendesk_edited_at: '2026-10-12T19:21:34Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17336012682895-Resetting-or-Changing-Your-Password'
+zendesk_updated_at: '2026-11-12T02:42:50Z'
+zendesk_edited_at: '2026-11-12T02:42:50Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17336012682895-Resetting-or-changing-your-password'
 promoted: false
 position: 0
 ---

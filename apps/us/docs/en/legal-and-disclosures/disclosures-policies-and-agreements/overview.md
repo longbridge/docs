@@ -20,7 +20,7 @@ zendesk_section_id: 17920135773199
 - [Biometric Authentication Agreement](/legal-and-disclosures/disclosures-policies-and-agreements/biometric-authentication-agreement)
 - [Long Bridge Securities LLC Cookie Policy](/legal-and-disclosures/disclosures-policies-and-agreements/long-bridge-securities-llc-cookie-policy)
 - [Long Bridge Securities LLC  Margin Disclosure Statement](/legal-and-disclosures/disclosures-policies-and-agreements/long-bridge-securities-llc-margin-disclosure-statement)
-- [Customer Identification Program Notice](/legal-and-disclosures/disclosures-policies-and-agreements/customer-identification-program-notice)
+- [Customer identification program notice](/legal-and-disclosures/disclosures-policies-and-agreements/customer-identification-program-notice)
 - [Long Bridge Securities LLC  Order Routing and Payment for Order Flow Information](/legal-and-disclosures/disclosures-policies-and-agreements/long-bridge-securities-llc-order-routing-and-payment-for-order-flow-information)
 - [Options Disclosure Document (ODD)](/legal-and-disclosures/disclosures-policies-and-agreements/options-disclosure-document-odd)
 - [Long Bridge Securities LLC Disclosure of Fractional Share Trading](/legal-and-disclosures/disclosures-policies-and-agreements/long-bridge-securities-llc-disclosure-of-fractional-share-trading)

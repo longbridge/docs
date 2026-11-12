@@ -1,10 +1,10 @@
 ---
-title: 'Fees & Charges'
+title: 'Fees & charges'
 zendesk_article_id: 15016098154767
 zendesk_section_id: 17465785717135
-zendesk_updated_at: '2026-10-07T18:29:00Z'
-zendesk_edited_at: '2026-10-07T18:28:16Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15016098154767-Fees-Charges'
+zendesk_updated_at: '2026-11-12T03:52:39Z'
+zendesk_edited_at: '2026-11-12T03:52:38Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/15016098154767-Fees-charges'
 promoted: false
 position: 1
 ---

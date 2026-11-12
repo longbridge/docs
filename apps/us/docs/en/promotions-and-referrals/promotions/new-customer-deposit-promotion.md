@@ -1,10 +1,10 @@
 ---
-title: New Customer Deposit Promotion
+title: New customer deposit promotion
 zendesk_article_id: 17101738769167
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-10-07T00:08:52Z'
-zendesk_edited_at: '2026-10-07T00:08:47Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101738769167-New-Customer-Deposit-Promotion'
+zendesk_updated_at: '2026-11-12T02:40:58Z'
+zendesk_edited_at: '2026-11-12T02:40:58Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101738769167-New-customer-deposit-promotion'
 promoted: true
 position: 0
 ---
@@ -138,7 +138,7 @@ Please note, deposits must both be initiated and fully settled during the Promot
 
 -   The customer must claim the reward within sixty (60) days from the date it becomes available.
 
--   Once claimed, the selected stock reward will be credited to the customer's Eligible Account within five (5) business days.
+-   Once claimed, the selected stock reward will be credited to the customer's Eligible Account within five (5) trading days.
 
 -   If eligibility requirements are not met, or if the reward is not claimed within the 60-day claim period, the reward will be forfeited, will expire automatically, and will no longer be available for redemption. Expired rewards have no cash value, are non-transferable, and cannot be reinstated.
 
