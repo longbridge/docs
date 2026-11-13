@@ -2,25 +2,27 @@
 title: Market Data Promotion
 zendesk_article_id: 17099376146447
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-10-07T15:01:27Z'
-zendesk_edited_at: '2026-10-07T15:01:23Z'
+zendesk_updated_at: '2026-11-12T22:15:39Z'
+zendesk_edited_at: '2026-11-12T22:15:39Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17099376146447-Market-Data-Promotion'
 promoted: false
 position: 0
 ---
 # **Terms & Conditions**
 
-Participation in this promotion ("Promotion") constitutes the participant's full and unconditional agreement to these Terms & Conditions. The Promotion is offered by Long Bridge Securities LLC ("Longbridge") to provide eligible customers with complimentary market data subscriptions upon funding their Longbridge U.S. brokerage account during the Promotion Period.
+Participation in this promotion ("Promotion") constitutes the participant's full and unconditional agreement to these Terms & Conditions. The Promotion is offered by Long Bridge Securities LLC ("Longbridge") to provide eligible customers with complimentary market data subscriptions upon opening (Tier 1) or funding (Tier 2) their Longbridge U.S. brokerage account during the Promotion Period.
 
 This promotion is intended to enhance the trading experience of new and existing customers and is not intended to incentivize trading activity. Customers are not required to place any trades to qualify for this promotion.
 
 # 1.Promotion Period
 
-This promotion is valid from October 9, 2026, 12:00 AM ET – December 31, 2026, 11:59 PM ET, 2026, 11:59 PM ET (the "Promotion Period").
+This promotion is valid from October 9, 2026, 12:00 AM ET – December 31, 2026, 11:59 PM ET (the "Promotion Period").
 
 # 2\. Eligibility
 
--   All approved new and existing customers (as determined by Tax ID) who fund and settle their Longbridge account during the Promotion Period.
+-   Tier 1: all approved new and existing Longbridge brokerage account holders.
+
+-   Tier 2: all approved new and existing customers (as determined by Tax ID) who fund and settle their Longbridge account during the Promotion Period.
 
 -   All eligible customers must be legal U.S. residents and ages 18+ years as of the date of participation.
 
@@ -30,7 +32,7 @@ This promotion is valid from October 9, 2026, 12:00 AM ET – December 31, 2026,
 
 ### 3.1 Eligible Account
 
-A Longbridge brokerage account opened, approved, and in good standing during the Promotion Period.
+A Longbridge brokerage account that is approved and in good standing.
 
 ### 3.2 Qualified Funding Amount
 
@@ -40,23 +42,23 @@ Total cash deposits and asset transfers in, minus any withdrawals or asset trans
 
 To participate and receive a market data subscription, an eligible customer must:
 
--   Open and fund a brokerage account by tapping "Discover my edge" on the homepage.
+-   Tier 1: Open a brokerage account by tapping "Discover my edge" on the homepage. Tier 1 market data is activated once the account is approved. No deposit is required.
 
--   Connect your bank and deposit funds (ACH/wire) or initiate an ACAT transfer-in of securities.
+-   Tier 2: Connect your bank and deposit funds (ACH/wire) or initiate an ACAT transfer-in of securities.
 
--   Complete funding (via cash deposit or asset transfer) that results in a Qualified Funding Amount meeting one of the subscription tiers below.
+-   Complete funding (via cash deposit or asset transfer) that results in a Qualified Funding Amount of $2,000 or more.
 
 -   Most approvals are completed within 1–2 business days; additional documentation may be required.
 
-Please note, deposits must both be initiated and fully settled during the Promotion Period to qualify for the promotion.
+Please note, for Tier 2, deposits must both be initiated and fully settled during the Promotion Period to qualify for the promotion.
 
 # 5\. Rewards
 
 ### 5.1 Market Data Subscription Tiers
 
-Upon meeting the applicable Qualified Funding Amount, eligible customers will receive complimentary access to the corresponding market data subscriptions for a period of ninety (90) calendar days ("Subscription Period"), as set forth below:
+Eligible customers will receive complimentary access to the corresponding market data subscriptions for a period of ninety (90) calendar days ("Subscription Period"), as set forth below. Tier 1 is available to all approved brokerage account holders, with no deposit required. Tier 2 is provided upon meeting the applicable Qualified Funding Amount.
 
-**Tier 1 – Deposit or transfer in $100 or more:**
+**Tier 1 – Open a Longbridge brokerage account (no deposit required):**
 
 -   Consolidated U.S. Market Data (including OTC real-time)
 
@@ -70,7 +72,7 @@ All Tier 1 subscriptions, plus:
 
 -   Blue Ocean Level 2
 
-The two tiers are independent and may be earned simultaneously within the same Promotion Period. A customer who meets the Tier 1 threshold will receive the Tier 1 subscriptions; upon subsequently meeting the Tier 2 threshold, the customer will additionally receive the Tier 2 subscriptions. Each tier is evaluated and awarded separately based on the customer's net Qualified Funding Amount at the time the applicable threshold is first reached.
+The two tiers are independent and may be earned simultaneously within the same Promotion Period. Tier 1 is awarded upon account approval. Tier 2 is awarded separately, based on the customer's net Qualified Funding Amount at the time the $2,000 threshold is first reached during the Promotion Period. Customers who received Tier 1 before this update keep their current Subscription Period.
 
 ### 5.2 Eligible Funding Methods
 
@@ -78,11 +80,13 @@ Qualifying deposits include cash deposits (ACH or wire transfer) and inbound sec
 
 ### 5.3 Subscription Activation and Period
 
-The 90-day complimentary Subscription Period begins on the calendar day immediately following the settlement date of the deposit or transfer that establishes the customer's qualification for the applicable tier (the "Qualifying Settlement Date").
+Tier 1: market data subscriptions will be activated in the Longbridge app within two (2) business days of account approval. The 90-day Subscription Period begins on the activation date.
 
-Market data subscriptions will be activated in the Longbridge app within two (2) business days of the Qualifying Settlement Date. Customers will receive an in-app notification upon activation.
+Tier 2: The 90-day complimentary Subscription Period begins on the calendar day immediately following the settlement date of the deposit or transfer that establishes the customer's qualification for Tier 2 (the "Qualifying Settlement Date").
 
-The Subscription Period runs for ninety (90) consecutive calendar days from Day 1. After the Subscription Period expires, continued access to the applicable market data will be subject to the then-current subscription fees published in the Longbridge app.
+Tier 2 market data subscriptions will be activated in the Longbridge app within two (2) business days of the Qualifying Settlement Date. Customers will receive an in-app notification upon activation.
+
+Each Subscription Period runs for ninety (90) consecutive calendar days from Day 1. After the Subscription Period expires, continued access to the applicable market data will be subject to the then-current subscription fees published in the Longbridge app.
 
 ### 5.4 Marketing Communications Disclaimer
 
@@ -94,7 +98,7 @@ Any market data product or subscription shown in connection with this Promotion,
 
 -   The market data subscriptions in this program are offered by Long Bridge Securities LLC. Long Bridge Securities LLC and Longbridge AI Technologies LLC are indirect, wholly owned subsidiaries of Longbridge. The Longbridge App is a trading platform developed by Longport Technologies LLC. Securities products available through the Longbridge App are offered by Long Bridge Securities LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (SEC) and a member of FINRA and SIPC. For more information, visit FINRA BrokerCheck and www.sipc.org.
 
--   This offer includes two subscription tiers, each of which can be claimed once per account. No more than one account per person may participate in this promotion. You must have an approved and funded brokerage account with Long Bridge Securities LLC to receive any promotional market data subscription. This offer cannot be reacquired by reopening a previously closed account.
+-   This offer includes two subscription tiers, each of which can be claimed once per account. No more than one account per person may participate in this promotion. You must have an approved brokerage account with Long Bridge Securities LLC to receive Tier 1, and an approved and funded brokerage account to receive Tier 2. This offer cannot be reacquired by reopening a previously closed account.
 
 -   Market data subscriptions provided under this Promotion are for informational purposes only. Long Bridge Securities LLC and Longbridge AI Technologies LLC do not provide investment advice or recommendations. Receipt of market data subscriptions does not constitute investment advice.
 
@@ -116,7 +120,7 @@ Any market data product or subscription shown in connection with this Promotion,
 
 -   Participation in this promotion does not require the use of advisory services and does not affect any investment recommendations provided through the platform.
 
--   Offer subject to eligibility requirements and funding thresholds. See full promotion terms in the Longbridge app.
+-   Offer subject to eligibility requirements and, for Tier 2, funding thresholds. See full promotion terms in the Longbridge app.
 
 -   Longbridge reserves the right, in its sole discretion, to determine eligibility for the Promotion and whether a customer has satisfied the requirements of these Terms. All determinations by Longbridge shall be final.
 
