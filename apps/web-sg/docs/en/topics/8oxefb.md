@@ -2,7 +2,7 @@
 title: "What is a recurring investment?"
 topic_id: "27165"
 category_slug: "longbridgeapp"
-updated_at: "1784789434"
+updated_at: "1794735011"
 seo_title: "What is a recurring investment? | Singapore | Longbridge"
 seo_description: "Learn how a recurring investment works on the Longbridge Singapore app, including setup steps and where to find the feature."
 related: [{"categorySlug":"longbridgeapp","slug":"e1xqwc","title":"TradePlan Disclosure Statement"},{"categorySlug":"longbridgeapp","slug":"personalized-push-description","title":"Personalized Push Description？"}]
