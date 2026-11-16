@@ -2,8 +2,8 @@
 title: Longbridge Founding Member Program
 zendesk_article_id: 17366908038031
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-11-16T05:55:41Z'
-zendesk_edited_at: '2026-11-16T05:55:41Z'
+zendesk_updated_at: '2026-11-16T09:43:33Z'
+zendesk_edited_at: '2026-11-16T09:43:33Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17366908038031-Longbridge-Founding-Member-Program'
 promoted: false
 position: 0
@@ -160,7 +160,7 @@ To claim the New Customer Promotion reward (if applicable), please follow the st
 
 -   In the event of any discrepancy between translated versions and the original English version of these Terms, the English version shall prevail.
 
--   These Terms incorporate by reference the applicable provisions of the Terms of Service. The Terms of Service are available [here](https://longbridge.com/us/en/support/articles/14864594652431).
+-   These Terms incorporate by reference the applicable provisions of the Terms of Service. The Terms of Service are available [here](https://assets.lbkrs.com/uploads/317ef02f-85e7-4afa-9e76-8acd8c0b42fe/Terms-of-Service-final-.pdf).
 
 -   This Program is subject to applicable regulatory requirements and may not be available in all jurisdictions.
 
@@ -170,6 +170,4 @@ To claim the New Customer Promotion reward (if applicable), please follow the st
 
 # **8\. Arbitration & Class Action Waiver**
 
-By participating in this Program, you agree that any dispute arising out of or relating to the Program will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://longbridge.com/us/en/support/articles/14864594652431) and [Customer Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)
-
-[https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)
+By participating in this Program, you agree that any dispute arising out of or relating to the Program will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://assets.lbkrs.com/uploads/317ef02f-85e7-4afa-9e76-8acd8c0b42fe/Terms-of-Service-final-.pdf) and [Customer Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf).

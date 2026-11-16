@@ -1,10 +1,10 @@
 ---
-title: Disclosure library
+title: Disclosure Library
 zendesk_article_id: 18308586537103
 zendesk_section_id: 17920135773199
-zendesk_updated_at: '2026-11-11T09:59:21Z'
-zendesk_edited_at: '2026-11-11T08:43:22Z'
-source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/18308586537103-Disclosure-library'
+zendesk_updated_at: '2026-11-16T09:50:02Z'
+zendesk_edited_at: '2026-11-16T09:50:01Z'
+source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/18308586537103-Disclosure-Library'
 promoted: false
 position: 0
 ---

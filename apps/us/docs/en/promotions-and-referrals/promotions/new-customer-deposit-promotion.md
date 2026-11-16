@@ -2,8 +2,8 @@
 title: New customer deposit promotion
 zendesk_article_id: 17101738769167
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-11-16T04:59:29Z'
-zendesk_edited_at: '2026-11-16T04:59:29Z'
+zendesk_updated_at: '2026-11-16T09:49:50Z'
+zendesk_edited_at: '2026-11-16T09:49:50Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101738769167-New-customer-deposit-promotion'
 promoted: true
 position: 0
@@ -186,7 +186,7 @@ The reward will appear in Reward History with a status of Processing or Credited
 
 -   In case of discrepancies between translations and the original English version of these Terms, the English version shall prevail.
 
--   These Terms incorporate by reference the applicable provisions of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://longbridge.com/us/en/support/articles/17853211477775).
+-   These Terms incorporate by reference the applicable provisions of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://assets.lbkrs.com/uploads/f707c945-ad00-4fb0-aab3-37d5deb49824/LBS-Customer-Services-Agreement-final-Oct-6-2026-v3.pdf).
 
 -   This promotion is subject to applicable regulatory requirements and may not be available in all jurisdictions.
 
@@ -198,4 +198,4 @@ The reward will appear in Reward History with a status of Processing or Credited
 
 ## **8\. Arbitration & Class Action Waiver**
 
-By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://longbridge.com/us/en/support/articles/14864594652431) and [Customer Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)[.](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)
+By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://assets.lbkrs.com/uploads/317ef02f-85e7-4afa-9e76-8acd8c0b42fe/Terms-of-Service-final-.pdf) and [Customer Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)[.](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)

@@ -2,8 +2,8 @@
 title: Market Data Promotion
 zendesk_article_id: 17099376146447
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-11-12T22:15:39Z'
-zendesk_edited_at: '2026-11-12T22:15:39Z'
+zendesk_updated_at: '2026-11-16T09:52:33Z'
+zendesk_edited_at: '2026-11-16T09:52:33Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17099376146447-Market-Data-Promotion'
 promoted: false
 position: 0
@@ -114,7 +114,7 @@ Any market data product or subscription shown in connection with this Promotion,
 
 -   In case of discrepancies between translations and the original English version of these Terms, the English version shall prevail.
 
--   These Terms incorporate by reference the applicable provisions of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://longbridge.com/us/en/support/articles/17853211477775).
+-   These Terms incorporate by reference the applicable provisions of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://assets.lbkrs.com/uploads/f707c945-ad00-4fb0-aab3-37d5deb49824/LBS-Customer-Services-Agreement-final-Oct-6-2026-v3.pdf).
 
 -   This promotion is subject to applicable regulatory requirements and may not be available in all jurisdictions.
 
@@ -126,4 +126,4 @@ Any market data product or subscription shown in connection with this Promotion,
 
 # **7\. Arbitration & Class Action Waiver**
 
-By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://longbridge.com/us/en/support/articles/14864594652431) and [Customer Agreement](https://longbridge.com/us/en/support/articles/17853211477775).
+By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://assets.lbkrs.com/uploads/317ef02f-85e7-4afa-9e76-8acd8c0b42fe/Terms-of-Service-final-.pdf) and [Customer Agreement](https://longbridge.com/us/en/support/articles/17853211477775).
