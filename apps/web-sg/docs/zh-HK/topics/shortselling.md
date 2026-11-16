@@ -2,7 +2,7 @@
 title: "美股沽空（融券）常見問題"
 topic_id: "20053"
 category_slug: "usmarket"
-updated_at: "1784789472"
+updated_at: "1794800672"
 seo_title: "美股做空指南：流程、風險及費用"
 seo_description: "了解美股做空的基本知識，包括操作流程、相關費用、保證金要求、風險及注意事項，助您順利交易。"
 related: [{"categorySlug":"usmarket","slug":"otcfaq","title":"場外交易 / 粉單常見問題"},{"categorySlug":"usmarket","slug":"a8a5l9","title":"什麽是美股深度擺盤"},{"categorySlug":"usmarket","slug":"UStradingrules","title":"美股交易規則"},{"categorySlug":"usmarket","slug":"USmarketquotes","title":"美股盤前盤後行情規則"},{"categorySlug":"usmarket","slug":"USordertypes","title":"訂單類型有哪些？ - 美國"}]
