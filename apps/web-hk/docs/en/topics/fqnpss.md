@@ -2,7 +2,7 @@
 title: "Guide to Depositing Hong Kong Physical Stock Certificates"
 topic_id: "21741"
 category_slug: "sharetransfer"
-updated_at: "1794565190"
+updated_at: "1794815286"
 seo_title: "Guide to Depositing Hong Kong Physical Stock | Hong Kong | Longbridge"
 seo_description: "Follow this Longbridge HK guide on guide to Depositing Hong Kong Physical Stock Certificates, including the steps and documents needed to complete the process."
 related: [{"categorySlug":"sharetransfer","slug":"ojhekr","title":"如何从华盛证券转仓到长桥证券？"},{"categorySlug":"sharetransfer","slug":"hwpklk","title":"How to transfer stocks from Tiger Brokers to Longbridge? — Integrated account"},{"categorySlug":"sharetransfer","slug":"p3yxv9x","title":"How do I transfer between Hong Kong and US stocks?"},{"categorySlug":"sharetransfer","slug":"2hho5bd","title":"How to transfer stocks from Interactive Brokers (including Tiger Brokers and Snowball X)?"},{"categorySlug":"sharetransfer","slug":"3q8hewq","title":"How to transfer stocks from Stellar Securities to Longbridge?"}]
