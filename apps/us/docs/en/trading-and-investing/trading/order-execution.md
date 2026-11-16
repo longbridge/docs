@@ -2,8 +2,8 @@
 title: Order Execution
 zendesk_article_id: 17545036426895
 zendesk_section_id: 15933265134991
-zendesk_updated_at: '2026-10-06T17:51:44Z'
-zendesk_edited_at: '2026-10-06T15:44:29Z'
+zendesk_updated_at: '2026-11-16T04:38:43Z'
+zendesk_edited_at: '2026-11-16T04:38:43Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17545036426895-Order-Execution'
 promoted: false
 position: 12
@@ -86,4 +86,4 @@ Under **SEC Regulation NMS** and **FINRA Rule 5310**, broker-dealers are require
 
 -   **Extended hours:** During pre-market and after-hours sessions, Regulation NMS does not apply, meaning price protection rules may not extenxd across venues.
 
-To learn more about our execution quality, please visit this link : [_Order Routing and Payment for Order Flow Information_](/articles/15051165024527)
+To learn more about our execution quality, please visit this link : [_Order Routing and Payment for Order Flow Information_](https://assets.lbkrs.com/uploads/17601ae3-a467-4bca-bb4a-404c7c71d707/Payment-for-Order-Flow-final-.pdf)

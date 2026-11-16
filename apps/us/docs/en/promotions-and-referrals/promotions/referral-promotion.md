@@ -2,8 +2,8 @@
 title: Referral Promotion
 zendesk_article_id: 17101658656271
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-10-07T14:53:53Z'
-zendesk_edited_at: '2026-10-07T14:53:49Z'
+zendesk_updated_at: '2026-11-16T05:03:44Z'
+zendesk_edited_at: '2026-11-16T05:03:44Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101658656271-Referral-Promotion'
 promoted: true
 position: 0
@@ -18,7 +18,7 @@ The Promotion is valid from October 9, 2026, 12:00 AM ET – December 31, 2026, 
 
 ## **2\. Eligibility**
 
-### 2.1 **Referrer Eligibility**
+### 2.1 Referrer Eligibility
 
 To be eligible as a referrer ("Referrer"), a participant must:
 
@@ -28,7 +28,7 @@ To be eligible as a referrer ("Referrer"), a participant must:
 
 -   Referrals of Invitees residing in the same household as, or who are immediate family members of, a Longbridge employee are not eligible
 
-### 2.2 **Invitee Eligibility**
+### 2.2 Invitee Eligibility
 
 To be eligible as an invitee ("Invitee"), a participant must:
 
@@ -124,7 +124,7 @@ Please note, securities transferred through ACATS will be valued based on the ma
 
 -   Referrers may only share their referral link and must not make statements regarding investment performance, trading strategies, or expected benefits of opening a brokerage account or accepting any compensation from Invitees.
 
-## 8\. Other Terms and Conditions
+## **8\. Other Terms and Conditions**
 
 -   Longbridge reserves the right to modify, suspend, or terminate this Promotion at any time without prior notice.
 
@@ -136,10 +136,10 @@ Please note, securities transferred through ACATS will be valued based on the ma
 
 -   In the event of any conflict between translated versions and the English version of these Terms, the English version shall prevail.
 
--   These Terms incorporate by reference the applicable terms of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://longbridge.com/us/en/support/articles/17853211477775).
+-   These Terms incorporate by reference the applicable terms of the Customer Agreement, including its arbitration and class-action waiver provisions. The agreement is available [here](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf).
 
 -   This promotion may not be available in all jurisdictions and is subject to applicable regulatory requirements.
 
-### 9\. Arbitration & Class Action Waiver
+### **9\. Arbitration & Class Action Waiver**
 
 By participating in this offer, you agree that any dispute between you and Long Bridge Securities LLC, its affiliates, officers, directors, or employees arising from this agreement or the use of Longbridge's services shall be resolved through binding arbitration under the rules of FINRA, as detailed in the Terms of Services and the Long Bridge Securities Customer Services Agreement.

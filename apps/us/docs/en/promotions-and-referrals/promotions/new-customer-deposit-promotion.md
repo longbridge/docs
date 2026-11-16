@@ -2,8 +2,8 @@
 title: New customer deposit promotion
 zendesk_article_id: 17101738769167
 zendesk_section_id: 17098398860303
-zendesk_updated_at: '2026-11-12T02:40:58Z'
-zendesk_edited_at: '2026-11-12T02:40:58Z'
+zendesk_updated_at: '2026-11-16T04:59:29Z'
+zendesk_edited_at: '2026-11-16T04:59:29Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17101738769167-New-customer-deposit-promotion'
 promoted: true
 position: 0
@@ -198,4 +198,4 @@ The reward will appear in Reward History with a status of Processing or Credited
 
 ## **8\. Arbitration & Class Action Waiver**
 
-By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://longbridge.com/us/en/support/articles/14864594652431) and [Customer Agreement](https://longbridge.com/us/en/support/articles/17853211477775).
+By participating in this Promotion, you agree that any dispute arising out of or relating to the Promotion will be resolved in accordance with the applicable arbitration provisions of the [Terms of Service](https://longbridge.com/us/en/support/articles/14864594652431) and [Customer Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)[.](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)
