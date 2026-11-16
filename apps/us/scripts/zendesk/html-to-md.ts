@@ -22,7 +22,9 @@ export function htmlToMarkdown(html: string, opts: HtmlToMdOptions = {}): string
         const rawHref = el.getAttribute('href') ?? ''
         const title = el.getAttribute('title')
         const newHref = opts.rewriteLink!(rawHref) ?? rawHref
-        const linkText = content.trim() || rawHref
+        const linkText = content.trim()
+        // 无可见文字的链接（如飞书粘贴残留的空 span）在 Zendesk 上不显示，这里同样丢弃，不拿 href 充当文字
+        if (!linkText) return ''
         if (!newHref) return linkText
         return title ? `[${linkText}](${newHref} "${title}")` : `[${linkText}](${newHref})`
       },
