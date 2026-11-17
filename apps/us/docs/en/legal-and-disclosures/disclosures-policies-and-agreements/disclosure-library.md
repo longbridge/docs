@@ -2,8 +2,8 @@
 title: Disclosure Library
 zendesk_article_id: 18308586537103
 zendesk_section_id: 17920135773199
-zendesk_updated_at: '2026-11-16T09:50:02Z'
-zendesk_edited_at: '2026-11-16T09:50:01Z'
+zendesk_updated_at: '2026-11-17T02:01:45Z'
+zendesk_edited_at: '2026-11-17T02:01:45Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/18308586537103-Disclosure-Library'
 promoted: false
 position: 0
@@ -67,7 +67,7 @@ Brokerage accounts are opened through the Longbridge mobile application. Disclos
 
 ## Agreements & Consents
 
--   [Terms of Service](https://assets.lbkrs.com/uploads/317ef02f-85e7-4afa-9e76-8acd8c0b42fe/Terms-of-Service-final-.pdf)
+-   [Terms of Service](https://assets.lbkrs.com/uploads/971aa1d9-f75d-4d09-956a-b0e9ed11b51f/11_13_2026_Terms_of_Service_-_FINAL.pdf)
 -   [Customer Services Agreement](https://assets.lbkrs.com/uploads/2fb863e8-47a8-4a7e-93ff-162690e31810/LBS-Customer-Services-Agreement-final-10-23-2026.pdf)
 
 ## Platform Disclosure
