@@ -11,6 +11,7 @@ Why didn’t I receive my SMS verification code?
 
 ## Articles
 
+- [How do I change or reset my PIN?](/account-and-security/login-and-security/how-do-i-change-or-reset-my-pin)
 - [Why does Longbridge ask for a selfie when I open an account?](/account-and-security/login-and-security/why-does-longbridge-ask-for-a-selfie-when-i-open-an-account)
 - [Resetting or changing your password](/account-and-security/login-and-security/resetting-or-changing-your-password)
 - [Update login email and phone number](/account-and-security/login-and-security/update-login-email-and-phone-number)
