@@ -2,7 +2,7 @@
 title: "What's portfolio margin?"
 topic_id: "22639"
 category_slug: "margin_financing"
-updated_at: "1784789470"
+updated_at: "1795141752"
 seo_title: "What's portfolio margin? | Singapore | Longbridge"
 seo_description: "Understand portfolio margin on Longbridge Singapore, including how margin requirements and eligibility are calculated."
 related: [{"categorySlug":"margin_financing","slug":"Supportmargintrading","title":"How to check if a stock supports margin trading?"},{"categorySlug":"margin_financing","slug":"accountmargin","title":"Account Risk Control Rules"},{"categorySlug":"margin_financing","slug":"margincall","title":"Margin Call Rules"},{"categorySlug":"margin_financing","slug":"relatedfaqs","title":"Margin Financing FAQs"}]

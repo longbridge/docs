@@ -2,7 +2,7 @@
 title: "什么是组合保证金"
 topic_id: "22639"
 category_slug: "margin_financing"
-updated_at: "1784789470"
+updated_at: "1795141752"
 seo_title: "什么是投资组合保证金？策略与影响解析"
 seo_description: "了解投资组合保证金、备兑认购和备兑认沽策略、保证金要求，以及企业行动对交易账户的影响。通过Longbridge的投资组合保证金系统优化资金分配。"
 related: [{"categorySlug":"margin_financing","slug":"Supportmargintrading","title":"如何查询股票是否支持融资交易？"},{"categorySlug":"margin_financing","slug":"accountmargin","title":"账户风控规则"},{"categorySlug":"margin_financing","slug":"margincall","title":"追缴保证金规则"},{"categorySlug":"margin_financing","slug":"relatedfaqs","title":"融资相关常见问题解答"}]

@@ -2,7 +2,7 @@
 title: "什麼是組合保證金"
 topic_id: "22639"
 category_slug: "margin_financing"
-updated_at: "1784789470"
+updated_at: "1795141752"
 seo_title: "什麼是投資組合保證金？策略與影響解析"
 seo_description: "了解投資組合保證金、備兌認購和備兌認沽策略、保證金要求，以及企業行動對交易帳戶的影響。透過長橋的投資組合保證金系統優化資金分配。"
 related: [{"categorySlug":"margin_financing","slug":"Supportmargintrading","title":"如何查詢股票是否支持融資交易？"},{"categorySlug":"margin_financing","slug":"accountmargin","title":"賬戶風控規則"},{"categorySlug":"margin_financing","slug":"margincall","title":"追繳保證金規則"},{"categorySlug":"margin_financing","slug":"relatedfaqs","title":"融資相關常見問題解答"}]
