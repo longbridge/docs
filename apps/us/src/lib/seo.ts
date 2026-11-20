@@ -4,6 +4,14 @@ export const SITE_ORIGIN = 'https://longbridge.com'
 export const OG_IMAGE = SITE_ORIGIN + '/us/en/support/og-image.png'
 
 /**
+ * 页面规范地址(canonical / og:url / JSON-LD 共用)。build.format:'file' 下 Astro.url.pathname
+ * 带 .html(首页是 /index.html),对外地址不带，这里去掉，避免搜索引擎收录 .html 版本。
+ */
+export function canonicalUrl(pathname: string): string {
+  return SITE_ORIGIN + pathname.replace(/\/index\.html$/, '').replace(/\.html$/, '')
+}
+
+/**
  * 从文章正文 markdown 派生 meta description:取第一段正文，去掉 markdown 语法，
  * 截断到 ~155 字 (词边界)。派生不出来时返回 undefined，由调用方回退默认简介。
  */

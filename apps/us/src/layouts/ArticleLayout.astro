@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro'
 import { getNav } from '../lib/nav'
 import { docRoute } from '../lib/nav-core'
 import { withBase } from '../lib/paths'
-import { deriveDescription, SITE_ORIGIN, OG_IMAGE } from '../lib/seo'
+import { deriveDescription, canonicalUrl, SITE_ORIGIN, OG_IMAGE } from '../lib/seo'
 import type { CollectionEntry } from 'astro:content'
 import '../styles/article.css'
 import '../styles/toc.css'
@@ -51,7 +51,7 @@ const currentPath = withBase('/' + docRoute(entry.id, entry.data.zendesk_article
 const description = deriveDescription(entry.body)
 
 // SEO:结构化数据(Article + BreadcrumbList),供 Google 富摘要 / SERP 面包屑。JSON-LD 放 body 内合规。
-const canonical = SITE_ORIGIN + Astro.url.pathname
+const canonical = canonicalUrl(Astro.url.pathname)
 const ORG = { '@type': 'Organization', name: 'Longbridge', url: SITE_ORIGIN }
 const jsonLd = [
   {
