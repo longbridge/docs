@@ -2,8 +2,8 @@
 title: Disclosure Library
 zendesk_article_id: 18308586537103
 zendesk_section_id: 17920135773199
-zendesk_updated_at: '2026-11-17T02:01:45Z'
-zendesk_edited_at: '2026-11-17T02:01:45Z'
+zendesk_updated_at: '2026-11-23T05:51:13Z'
+zendesk_edited_at: '2026-11-23T05:51:13Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/18308586537103-Disclosure-Library'
 promoted: false
 position: 0
@@ -83,3 +83,8 @@ Brokerage accounts are opened through the Longbridge mobile application. Disclos
 
 -   [FINRA Broker Check](https://brokercheck.finra.org/)
 -   [SIPC](https://www.sipc.org/for-investors/)
+
+## Longbridge Adviser LLC — Investment Adviser
+
+-   [Form CRS — Client Relationship Summary](https://assets.lbkrs.com/uploads/165c75bc-7393-432a-a7ca-ea528c96aca0/Longbridge-Adviser---Form-CRS-FINAL-11-20-2026.pdf)
+-   [Form ADV Part 2A — Disclosure Brochure](https://assets.lbkrs.com/uploads/f8b88cb3-ee07-4974-9506-f47593233698/Longbridge-Adviser---Form-ADV-Part-2A-FINAL-11-20-26.pdf)
