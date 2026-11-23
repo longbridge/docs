@@ -13,6 +13,11 @@ const FOOTER_LINKS = [
   { label: 'Fees & Charges', href: 'https://assets.lbkrs.com/uploads/bc116567-a61a-4a3a-972d-e540b8eba635/Fee-Schedule.pdf' },
   { label: 'Business Continuity Plan', href: 'https://assets.lbkrs.com/uploads/057f6484-0cfb-4d88-b7ee-d1b99d88f682/BCP-Disclosure-Notice-Oct-16-2026-update-FINAL.pdf' },
 ]
+
+const ADVISER_LINKS = [
+  { label: 'Adviser Form CRS', href: 'https://assets.lbkrs.com/uploads/165c75bc-7393-432a-a7ca-ea528c96aca0/Longbridge-Adviser---Form-CRS-FINAL-11-20-2026.pdf' },
+  { label: 'Form ADV Part 2A (Brochure)', href: 'https://assets.lbkrs.com/uploads/f8b88cb3-ee07-4974-9506-f47593233698/Longbridge-Adviser---Form-ADV-Part-2A-FINAL-11-20-26.pdf' },
+]
 ---
 
 <footer class:list={["lb-footer", { "lb-footer--home": isHome }]}>
@@ -55,6 +60,22 @@ const FOOTER_LINKS = [
         decoding="async"
       />
     </a>
+  </div>
+
+  <div class="lb-footer__divider" role="presentation"></div>
+
+  <div class="lb-footer__main lb-footer__main--adviser">
+    <div class="lb-footer__brand">
+      <p class="lb-footer__tagline">Longbridge Adviser LLC</p>
+      <p class="lb-footer__meta">SEC-registered investment adviser and affiliate of Long Bridge Securities LLC.</p>
+      <div class="lb-footer__links-clip">
+        <ul class="lb-footer__links">
+          {ADVISER_LINKS.map((l) => (
+            <li><a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="lb-footer__divider" role="presentation"></div>

@@ -160,6 +160,12 @@ html[theme="dark"] .lb-footer__logo--dark,
     margin-right: -256px;
   }
 }
+/* Adviser 区右侧没有 logo，不往右借位，否则会撑出横向滚动 */
+@media (min-width: 641px) {
+  .lb-footer__main--adviser .lb-footer__links-clip {
+    margin-right: -2px;
+  }
+}
 .lb-footer__links li {
   white-space: nowrap;
 }
