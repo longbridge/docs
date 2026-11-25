@@ -2,8 +2,8 @@
 title: 'How to complete account opening?'
 zendesk_article_id: 17852034260879
 zendesk_section_id: 17382922631055
-zendesk_updated_at: '2026-11-11T07:40:42Z'
-zendesk_edited_at: '2026-11-11T07:40:42Z'
+zendesk_updated_at: '2026-11-25T17:35:05Z'
+zendesk_edited_at: '2026-11-25T17:35:05Z'
 source_url: 'https://longbridgeus.zendesk.com/hc/en-us/articles/17852034260879-How-to-complete-account-opening'
 promoted: false
 position: 0
@@ -32,7 +32,7 @@ Go to the Longbridge App, tap _Open_ _trading account_, tap _Get started_, and c
 
 **Step 4.** Enter your **marital status and employment information**. If you select _Employed_ or _Self - employed_, you must also provide your occupation, employer name, and employer address.
 
-## Module 2 Let's wrap up these employment questions
+## Module 2 Employment questions
 
 **Step 5.** Complete the regulatory questionnaire. Answer truthfully on questions regarding public-company affiliation, senior political figure (SPF)/politically exposed person (PEP) status, employment in securities industry, and other related affiliations. If you select _Yes_ under any question, provide the required details.
 
@@ -40,7 +40,7 @@ Go to the Longbridge App, tap _Open_ _trading account_, tap _Get started_, and c
 
 **Step 7.** Add a trusted contact for additional account protection. This is optional. If you choose to add one, provide the contact's name and mobile number.
 
-## Module 3 Let’s take a look at your investment profile
+## Module 3 Investment profile
 
 **Step 8.** Answer the investment profile questions in turn, including your investment time horizon, liquidity needs, household income, investment objective, investment experience, annual income, liquid net worth, net worth, expected portfolio size, the percentage of your total investable assets that you plan to invest with Longbridge, risk tolerance, and whether you are in the highest federal income tax bracket.
 
