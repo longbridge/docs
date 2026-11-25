@@ -85,6 +85,8 @@ const clientConfig = {
     }
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="preconnect" href="https://assets.lbkrs.com" />
+    {/* 神策 SDK(与开发者平台同版本),初始化与页面浏览上报见 scripts/sensors.ts */}
+    <script is:inline defer src="https://assets.lbkrs.com/pkg/sensorsdata/1.27.11.min.js"></script>
     {isHome && <link rel="preload" as="image" media="(max-width: 900px)" href={HERO_IMG_MOBILE} />}
     {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (max-resolution: 1.99dppx)" href={HERO_IMG_DESKTOP} />}
     {isHome && <link rel="preload" as="image" media="(min-width: 901px) and (min-resolution: 2dppx)" href={HERO_IMG_DESKTOP_2X} />}
@@ -180,5 +182,8 @@ const clientConfig = {
       <slot />
     </main>
     {!footerInContent && <Footer pagePath={pagePath} />}
+    <script>
+      import '../scripts/sensors'
+    </script>
   </body>
 </html>
