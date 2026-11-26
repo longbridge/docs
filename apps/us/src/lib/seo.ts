@@ -1,3 +1,5 @@
+import { withBase } from './paths'
+
 // 站点 SEO 单一来源：规范生产域 + OG 大图绝对 URL(canonical / og / JSON-LD 共用，
 // 避免在 BaseLayout 与各 layout 里重复硬编码)。base 固定 /us/en/support/。
 export const SITE_ORIGIN = 'https://longbridge.com'
@@ -9,6 +11,11 @@ export const OG_IMAGE = SITE_ORIGIN + '/us/en/support/og-image.png'
  */
 export function canonicalUrl(pathname: string): string {
   return SITE_ORIGIN + pathname.replace(/\/index\.html$/, '').replace(/\.html$/, '')
+}
+
+/** 站内路由 (不含 base,如 '/articles/123') → 生产域绝对地址。sitemap / llms.txt / .md 共用 */
+export function siteUrl(path: string): string {
+  return canonicalUrl(withBase(path))
 }
 
 /**
