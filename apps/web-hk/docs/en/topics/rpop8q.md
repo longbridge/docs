@@ -2,7 +2,7 @@
 title: "Example of calculation rules for trading commissions, third-party fees, and margin financing interest in the Hong Kong stock market"
 topic_id: "25880"
 category_slug: "hkmarket"
-updated_at: "1784795644"
+updated_at: "1795770790"
 seo_title: "Example of calculation rules for trading | Hong Kong | Longbridge"
 seo_description: "A Longbridge HK guide to example of calculation rules for trading commissions, third-party fees,, covering the key rules, timing, and mechanics you need to know…"
 related: [{"categorySlug":"hkmarket","slug":"64c1tf","title":"Guide to Short Selling Hong Kong Stocks"},{"categorySlug":"hkmarket","slug":"a46bzt","title":"Odd Lot Trades FAQs"},{"categorySlug":"hkmarket","slug":"3et7xd6","title":"Introduction to Warrants and CBBCs"},{"categorySlug":"hkmarket","slug":"order-types-hk","title":"Order Types - HK"},{"categorySlug":"hkmarket","slug":"37pu3ox","title":"Gray Market Trading"}]

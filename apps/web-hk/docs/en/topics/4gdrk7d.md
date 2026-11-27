@@ -2,7 +2,7 @@
 title: "Trading Rules"
 topic_id: "1593"
 category_slug: "hkmarket"
-updated_at: "1785477178"
+updated_at: "1795764122"
 seo_title: "Trading Rules | Hong Kong | Longbridge"
 seo_description: "A Longbridge HK guide to trading Rules, covering the key rules, timing, and mechanics you need to know before trading."
 related: [{"categorySlug":"hkmarket","slug":"64c1tf","title":"Guide to Short Selling Hong Kong Stocks"},{"categorySlug":"hkmarket","slug":"rpop8q","title":"Example of calculation rules for trading commissions, third-party fees, and margin financing interest in the Hong Kong stock market"},{"categorySlug":"hkmarket","slug":"a46bzt","title":"Odd Lot Trades FAQs"},{"categorySlug":"hkmarket","slug":"3et7xd6","title":"Introduction to Warrants and CBBCs"},{"categorySlug":"hkmarket","slug":"order-types-hk","title":"Order Types - HK"}]

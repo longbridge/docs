@@ -552,7 +552,12 @@
     "title": "Campaigns",
     "desc": "Check out the latest campaigns and your exclusive perks. ",
     "icon": "https://assets.lbctrl.com/uploads/090db88c311683bf7e5d4f1d60172005.png",
-    "topics": [],
+    "topics": [
+      {
+        "slug": "c1hysv",
+        "title": "LongbridgeAI First Question, Free 7-Day Pro Card (Singapore) — Terms and Conditions"
+      }
+    ],
     "children": [
       {
         "slug": "ongoingcampaigns",
@@ -646,5 +651,18 @@
         "children": []
       }
     ]
+  },
+  {
+    "slug": "28nggs8",
+    "title": "Event Rules",
+    "desc": "",
+    "icon": "",
+    "topics": [
+      {
+        "slug": "lpd3af",
+        "title": "2026 Dec Wealth Welcome rewards"
+      }
+    ],
+    "children": []
   }
 ]
